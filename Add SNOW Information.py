@@ -100,7 +100,7 @@ def get_data_1(action=None, success=None, container=None, results=None, handle=N
 def format_3(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):
     phantom.debug('format_3() called')
     
-    template = """container_pin?_filter_container={0}&_filter_message=\"snow_id\""""
+    template = """/rest/container_pin?_filter_container={0}&_filter_message=\"snow_id\""""
 
     # parameter list for template variable replacement
     parameters = [
