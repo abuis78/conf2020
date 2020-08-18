@@ -40,15 +40,15 @@ def playbook_conf2020_Get_Service_information_1(action=None, success=None, conta
     phantom.debug('playbook_conf2020_Get_Service_information_1() called')
     
     # call playbook "conf2020/Get Service information", returns the playbook_run_id
-    playbook_run_id = phantom.playbook(playbook="conf2020/Get Service information", container=container, name="playbook_conf2020_Get_Service_information_1", callback=playbook_itsi_itsi_ITSI_start_NGINX_1)
+    playbook_run_id = phantom.playbook(playbook="conf2020/Get Service information", container=container, name="playbook_conf2020_Get_Service_information_1", callback=playbook_conf2020_Restart_Service_1)
 
     return
 
-def playbook_itsi_itsi_ITSI_start_NGINX_1(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):
-    phantom.debug('playbook_itsi_itsi_ITSI_start_NGINX_1() called')
+def playbook_conf2020_Restart_Service_1(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):
+    phantom.debug('playbook_conf2020_Restart_Service_1() called')
     
-    # call playbook "itsi/ITSI_start_NGINX", returns the playbook_run_id
-    playbook_run_id = phantom.playbook(playbook="itsi/ITSI_start_NGINX", container=container, name="playbook_itsi_itsi_ITSI_start_NGINX_1", callback=playbook_itsi_itsi_ITSI_close_episode_snow_1)
+    # call playbook "conf2020/Restart Service", returns the playbook_run_id
+    playbook_run_id = phantom.playbook(playbook="conf2020/Restart Service", container=container, name="playbook_conf2020_Restart_Service_1", callback=playbook_itsi_itsi_ITSI_close_episode_snow_1)
 
     return
 
