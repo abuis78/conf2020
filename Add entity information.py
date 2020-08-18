@@ -101,7 +101,7 @@ def decision_2(action=None, success=None, container=None, results=None, handle=N
 def DedupeListEntries(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):
     phantom.debug('DedupeListEntries() called')
     
-    container_data = phantom.collect2(container=container, datapath=['artifact:*.cef.entity_title', 'artifact:*.id'])
+    container_data = phantom.collect2(container=container, datapath=['artifact:*.cef.entity_key', 'artifact:*.id'])
     container_item_0 = [item[0] for item in container_data]
 
     DedupeListEntries__entity_list = None
@@ -138,13 +138,9 @@ def get_entity_1(action=None, success=None, container=None, results=None, handle
     parameters = []
     
     # build parameters list for 'get_entity_1' call
-    #parameters.append({
-    #    'itsi_entity_id': DedupeListEntries__entity_list,
-    #})
-    
-    for entity_title in DedupeListEntries__entity_list:
+    for entity_key in DedupeListEntries__entity_list:
         parameters.append({
-            'entity_title': entity_title,
+            'itsi_entity_id': entity_key,
         })
 
     phantom.act(action="get entity", parameters=parameters, assets=['splunk itsi'], callback=pin_1, name="get_entity_1")

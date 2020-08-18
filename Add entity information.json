@@ -7,7 +7,7 @@
             "clean": true,
             "code_block": "",
             "description": "",
-            "hash": "a9da5ee39def9c469468ddb0690a369937738a8e",
+            "hash": "19ff5cc4e9f7c6d52cadb52c67bfd60613e111e7",
             "joint": {
                 "cells": [
                     {
@@ -217,8 +217,8 @@
                         "join_code": "# read-only block view not available",
                         "join_optional": [],
                         "join_start": 1,
-                        "line_end": 167,
-                        "line_start": 154,
+                        "line_end": 163,
+                        "line_start": 150,
                         "name": "",
                         "notes": "",
                         "number": 0,
@@ -608,174 +608,6 @@
                         "z": 147
                     },
                     {
-                        "active": false,
-                        "angle": 0,
-                        "attrs": {
-                            ".background": {
-                                "fill": "#FFFFFF",
-                                "stroke": "#637282",
-                                "transform": "rotate(45 30 70)"
-                            },
-                            ".inPorts>.port-0>.port-body": {
-                                "port": {
-                                    "id": "in",
-                                    "type": "in"
-                                }
-                            },
-                            ".number": {
-                                "text": 2
-                            },
-                            ".outPorts>.port-0": {
-                                "port": {
-                                    "id": "out-1",
-                                    "type": "out"
-                                },
-                                "ref-x": 83,
-                                "ref-y": 40
-                            },
-                            ".outPorts>.port-0>.port-body": {
-                                "port": {
-                                    "id": "out-1",
-                                    "type": "out"
-                                }
-                            },
-                            "g.delete": {
-                                "display": "none"
-                            },
-                            "g.error": {
-                                "opacity": 0
-                            },
-                            "g.notes": {
-                                "display": "block"
-                            },
-                            "g.notes image": {
-                                "opacity": 1
-                            }
-                        },
-                        "block_code": "def decision_2(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):\n    phantom.debug('decision_2() called')\n\n    # check for 'if' condition 1\n    matched = phantom.decision(\n        container=container,\n        conditions=[\n            [\"artifact:*.cef.entity_title\", \"!=\", \"\"],\n            [\"artifact:*.cef.entity_key\", \"!=\", \"\"],\n        ],\n        logical_operator='and')\n\n    # call connected blocks if condition 1 matched\n    if matched:\n        DedupeListEntries(action=action, success=success, container=container, results=results, handle=handle, custom_function=custom_function)\n        return\n\n    return",
-                        "callback_code": "",
-                        "callback_start": 1,
-                        "callsback": false,
-                        "connected_to_start": true,
-                        "connection_name": "",
-                        "connection_type": "",
-                        "custom_callback": "",
-                        "custom_code": "",
-                        "custom_join": "",
-                        "custom_name": "",
-                        "description": "",
-                        "hasElse": false,
-                        "has_custom": false,
-                        "has_custom_block": false,
-                        "has_custom_callback": false,
-                        "has_custom_join": false,
-                        "id": "d3eb790a-a937-4217-9de2-37679bb3d53c",
-                        "inPorts": [
-                            "in"
-                        ],
-                        "join_code": "",
-                        "join_optional": [],
-                        "join_start": 1,
-                        "line_end": 101,
-                        "line_start": 82,
-                        "name": "decision",
-                        "notes": "",
-                        "number": 2,
-                        "order": 6,
-                        "outPorts": [
-                            "out-1"
-                        ],
-                        "outputs": [
-                            {
-                                "conditions": [
-                                    {
-                                        "comparison": "!=",
-                                        "data_type": "",
-                                        "param": "artifact:*.cef.entity_title",
-                                        "value": ""
-                                    },
-                                    {
-                                        "comparison": "!=",
-                                        "data_type": "",
-                                        "param": "artifact:*.cef.entity_key",
-                                        "value": ""
-                                    }
-                                ],
-                                "display": "If",
-                                "logic": "and",
-                                "type": "if"
-                            }
-                        ],
-                        "ports": {
-                            "groups": {
-                                "in": {
-                                    "attrs": {
-                                        ".port-body": {
-                                            "fill": "#fff",
-                                            "magnet": true,
-                                            "r": 10,
-                                            "stroke": "#000"
-                                        },
-                                        ".port-label": {
-                                            "fill": "#000"
-                                        }
-                                    },
-                                    "label": {
-                                        "position": {
-                                            "args": {
-                                                "y": 10
-                                            },
-                                            "name": "left"
-                                        }
-                                    },
-                                    "position": {
-                                        "name": "left"
-                                    }
-                                },
-                                "out": {
-                                    "attrs": {
-                                        ".port-body": {
-                                            "fill": "#fff",
-                                            "magnet": true,
-                                            "r": 10,
-                                            "stroke": "#000"
-                                        },
-                                        ".port-label": {
-                                            "fill": "#000"
-                                        }
-                                    },
-                                    "label": {
-                                        "position": {
-                                            "args": {
-                                                "y": 10
-                                            },
-                                            "name": "right"
-                                        }
-                                    },
-                                    "position": {
-                                        "name": "right"
-                                    }
-                                }
-                            }
-                        },
-                        "position": {
-                            "x": -600,
-                            "y": 100
-                        },
-                        "previous_function": "",
-                        "previous_name": "decision_2",
-                        "show_number": true,
-                        "size": {
-                            "height": 82,
-                            "width": 82
-                        },
-                        "state": "decision",
-                        "status": "",
-                        "type": "coa.Decision",
-                        "warn": "",
-                        "z": 173
-                    },
-                    {
                         "action": "get data",
                         "action_type": "investigate",
                         "active": false,
@@ -1129,364 +961,6 @@
                     {
                         "active": false,
                         "angle": 0,
-                        "attrs": {
-                            ".background": {
-                                "fill": "#FFFFFF",
-                                "stroke": "#818D99"
-                            },
-                            ".color-band": {
-                                "fill": "#171D21"
-                            },
-                            ".functionBlock": {
-                                "text": "DedupeListEntries"
-                            },
-                            ".inPorts>.port-in": {
-                                "ref": ".background",
-                                "ref-x": 0.5
-                            },
-                            ".inPorts>.port-in>.port-body": {
-                                "port": {
-                                    "id": "in",
-                                    "type": "in"
-                                }
-                            },
-                            ".message": {
-                                "opacity": 0,
-                                "ref-x": 5,
-                                "ref-y": 105,
-                                "text": "Configuring now"
-                            },
-                            ".outPorts>.port-out": {
-                                "ref": ".background",
-                                "ref-x": 0.5
-                            },
-                            ".outPorts>.port-out>.port-body": {
-                                "port": {
-                                    "id": "out",
-                                    "type": "out"
-                                }
-                            },
-                            ".title": {
-                                "text": "custom function"
-                            },
-                            "g.delete": {
-                                "display": "none"
-                            },
-                            "g.error": {
-                                "opacity": 1
-                            },
-                            "g.error image": {
-                                "xlink:href": "/inc/coa/img/block_icon_warn_grey.svg"
-                            },
-                            "g.notes": {
-                                "display": "block"
-                            },
-                            "g.notes image": {
-                                "opacity": 1
-                            }
-                        },
-                        "block_code": "def DedupeListEntries(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):\n    phantom.debug('DedupeListEntries() called')\n    \n    container_data = phantom.collect2(container=container, datapath=['artifact:*.cef.entity_title', 'artifact:*.id'])\n    container_item_0 = [item[0] for item in container_data]\n\n    DedupeListEntries__entity_list = None\n\n    ################################################################################\n    ## Custom Code Start\n    ################################################################################\n\n    # Write your custom code here...\n    phantom.debug('DedupeListEntries() formatted_data_1: {}'.format(container_item_0))\n\n    seen = {}\n    DedupeListEntries__entity_list = [seen.setdefault(x, x) for x in container_item_0 if x not in seen]\n    \n    phantom.debug('DedupeListEntries() DedupeListEntries__entity_list: {}'.format(DedupeListEntries__entity_list))\n\n    ################################################################################\n    ## Custom Code End\n    ################################################################################\n\n    phantom.save_run_data(key='DedupeListEntries:entity_list', value=json.dumps(DedupeListEntries__entity_list))\n    Create_URL_Parameters(container=container)\n\n    return",
-                        "callback_code": "",
-                        "callback_start": 1,
-                        "callsback": false,
-                        "connected_to_start": true,
-                        "connection_name": "",
-                        "connection_type": "",
-                        "customCodeEndLineOffset": 7,
-                        "customCodeStartLine": 11,
-                        "custom_callback": "",
-                        "custom_code": "def DedupeListEntries(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None):\n    phantom.debug('DedupeListEntries() called')\n    container_data = phantom.collect2(container=container, datapath=['artifact:*.cef.entity_title', 'artifact:*.id'])\n    container_item_0 = [item[0] for item in container_data]\n\n    DedupeListEntries__entity_list = None\n\n    ################################################################################\n    ## Custom Code Start\n    ################################################################################\n\n    # Write your custom code here...\n    phantom.debug('DedupeListEntries() formatted_data_1: {}'.format(container_item_0))\n\n    seen = {}\n    DedupeListEntries__entity_list = [seen.setdefault(x, x) for x in container_item_0 if x not in seen]\n    \n    phantom.debug('DedupeListEntries() DedupeListEntries__entity_list: {}'.format(DedupeListEntries__entity_list))\n\n    ################################################################################\n    ## Custom Code End\n    ################################################################################\n\n    phantom.save_run_data(key='DedupeListEntries:entity_list', value=json.dumps(DedupeListEntries__entity_list))\n    format_3(container=container)\n\n    return",
-                        "custom_join": "",
-                        "custom_name": "DedupeListEntries",
-                        "description": "",
-                        "functionBlock": "custom function",
-                        "has_custom": true,
-                        "has_custom_block": false,
-                        "has_custom_callback": false,
-                        "has_custom_join": false,
-                        "id": "a8dc7827-7774-4a39-b82b-12a6b3ae9595",
-                        "inPorts": [
-                            "in"
-                        ],
-                        "join_code": "",
-                        "join_optional": [],
-                        "join_start": 1,
-                        "legacy": true,
-                        "line_end": 130,
-                        "line_start": 101,
-                        "message": "Configuring now",
-                        "name": "custom function",
-                        "notes": "",
-                        "number": 1,
-                        "order": 7,
-                        "outPorts": [
-                            "out"
-                        ],
-                        "outputVariables": [
-                            {
-                                "position": 0,
-                                "type": "",
-                                "value": "entity_list"
-                            }
-                        ],
-                        "parameters": [
-                            {
-                                "position": 0,
-                                "type": "",
-                                "value": "artifact:*.cef.entity_title"
-                            }
-                        ],
-                        "ports": {
-                            "groups": {
-                                "in": {
-                                    "attrs": {
-                                        ".port-body": {
-                                            "fill": "#fff",
-                                            "magnet": true,
-                                            "r": 10,
-                                            "stroke": "#000"
-                                        },
-                                        ".port-label": {
-                                            "fill": "#000"
-                                        }
-                                    },
-                                    "label": {
-                                        "position": {
-                                            "args": {
-                                                "y": 10
-                                            },
-                                            "name": "left"
-                                        }
-                                    },
-                                    "position": {
-                                        "name": "left"
-                                    }
-                                },
-                                "out": {
-                                    "attrs": {
-                                        ".port-body": {
-                                            "fill": "#fff",
-                                            "magnet": true,
-                                            "r": 10,
-                                            "stroke": "#000"
-                                        },
-                                        ".port-label": {
-                                            "fill": "#000"
-                                        }
-                                    },
-                                    "label": {
-                                        "position": {
-                                            "args": {
-                                                "y": 10
-                                            },
-                                            "name": "right"
-                                        }
-                                    },
-                                    "position": {
-                                        "name": "right"
-                                    }
-                                }
-                            }
-                        },
-                        "position": {
-                            "x": -460,
-                            "y": 100
-                        },
-                        "previous_function": "",
-                        "previous_name": "DedupeListEntries",
-                        "show_number": true,
-                        "size": {
-                            "height": 100,
-                            "width": 180
-                        },
-                        "state": "custom function",
-                        "status": "deprecating",
-                        "title": "custom function",
-                        "type": "coa.FunctionBlock",
-                        "userGeneratedCode": "\n    # Write your custom code here...\n    phantom.debug('DedupeListEntries() formatted_data_1: {}'.format(container_item_0))\n\n    seen = {}\n    DedupeListEntries__entity_list = [seen.setdefault(x, x) for x in container_item_0 if x not in seen]\n    \n    phantom.debug('DedupeListEntries() DedupeListEntries__entity_list: {}'.format(DedupeListEntries__entity_list))\n",
-                        "warn": false,
-                        "z": 176
-                    },
-                    {
-                        "active": false,
-                        "angle": 0,
-                        "attrs": {
-                            ".background": {
-                                "fill": "#FFFFFF",
-                                "stroke": "#818D99"
-                            },
-                            ".color-band": {
-                                "fill": "#171D21"
-                            },
-                            ".format": {
-                                "text": "Create URL Parameters"
-                            },
-                            ".inPorts>.port-in": {
-                                "ref": ".background",
-                                "ref-x": 0.5
-                            },
-                            ".inPorts>.port-in>.port-body": {
-                                "port": {
-                                    "id": "in",
-                                    "type": "in"
-                                }
-                            },
-                            ".message": {
-                                "opacity": 0,
-                                "text": "Configuring now"
-                            },
-                            ".outPorts>.port-out-1": {
-                                "ref": ".background",
-                                "ref-x": 0.5
-                            },
-                            ".outPorts>.port-out-1>.port-body": {
-                                "port": {
-                                    "id": "out-1",
-                                    "type": "out"
-                                }
-                            },
-                            ".title": {
-                                "text": "format"
-                            },
-                            "g.code image": {
-                                "opacity": 1
-                            },
-                            "g.delete": {
-                                "display": "none"
-                            },
-                            "g.error": {
-                                "opacity": 0
-                            },
-                            "g.error image": {
-                                "xlink:href": "/inc/coa/img/block_icon_warn.svg"
-                            },
-                            "g.notes": {
-                                "display": "block"
-                            },
-                            "g.notes image": {
-                                "opacity": 1
-                            }
-                        },
-                        "block_code": "def Create_URL_Parameters(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):\n    phantom.debug('Create_URL_Parameters() called')\n    \n    template = \"\"\"/rest/container_pin?_filter_container={0}&_filter_message=\\\"{1}\\\"\"\"\"\n\n    # parameter list for template variable replacement\n    parameters = [\n        \"container:id\",\n        \"DedupeListEntries:custom_function:entity_list\",\n    ]\n\n    phantom.format(container=container, template=template, parameters=parameters, name=\"Create_URL_Parameters\")\n\n    Get_PIN(container=container)\n\n    return",
-                        "callback_code": "",
-                        "callback_start": 1,
-                        "callsback": false,
-                        "connected_to_start": true,
-                        "connection_name": "",
-                        "connection_type": "",
-                        "custom_callback": "",
-                        "custom_code": "",
-                        "custom_join": "",
-                        "custom_name": "Create URL Parameters",
-                        "description": "",
-                        "format": "format",
-                        "has_custom": false,
-                        "has_custom_block": false,
-                        "has_custom_callback": false,
-                        "has_custom_join": false,
-                        "id": "6ad36b16-5dbb-4a16-beaa-a28a452c5b50",
-                        "inPorts": [
-                            "in"
-                        ],
-                        "join_code": "",
-                        "join_optional": [],
-                        "join_start": 1,
-                        "line_end": 64,
-                        "line_start": 47,
-                        "message": "Configuring now",
-                        "name": "format",
-                        "notes": "",
-                        "number": 3,
-                        "order": 4,
-                        "outPorts": [
-                            "out-1"
-                        ],
-                        "parameters": [
-                            {
-                                "position": 0,
-                                "type": "",
-                                "value": "container:id"
-                            },
-                            {
-                                "position": 1,
-                                "type": "",
-                                "value": "DedupeListEntries:custom_function:entity_list"
-                            }
-                        ],
-                        "ports": {
-                            "groups": {
-                                "in": {
-                                    "attrs": {
-                                        ".port-body": {
-                                            "fill": "#fff",
-                                            "magnet": true,
-                                            "r": 10,
-                                            "stroke": "#000"
-                                        },
-                                        ".port-label": {
-                                            "fill": "#000"
-                                        }
-                                    },
-                                    "label": {
-                                        "position": {
-                                            "args": {
-                                                "y": 10
-                                            },
-                                            "name": "left"
-                                        }
-                                    },
-                                    "position": {
-                                        "name": "left"
-                                    }
-                                },
-                                "out": {
-                                    "attrs": {
-                                        ".port-body": {
-                                            "fill": "#fff",
-                                            "magnet": true,
-                                            "r": 10,
-                                            "stroke": "#000"
-                                        },
-                                        ".port-label": {
-                                            "fill": "#000"
-                                        }
-                                    },
-                                    "label": {
-                                        "position": {
-                                            "args": {
-                                                "y": 10
-                                            },
-                                            "name": "right"
-                                        }
-                                    },
-                                    "position": {
-                                        "name": "right"
-                                    }
-                                }
-                            }
-                        },
-                        "position": {
-                            "x": -220,
-                            "y": 100
-                        },
-                        "previous_function": "",
-                        "previous_name": "Create_URL_Parameters",
-                        "show_number": true,
-                        "size": {
-                            "height": 100,
-                            "width": 180
-                        },
-                        "state": "format",
-                        "status": "",
-                        "template": "/rest/container_pin?_filter_container={0}&_filter_message=\"{1}\"",
-                        "title": "format",
-                        "type": "coa.Format",
-                        "warn": false,
-                        "z": 177
-                    },
-                    {
-                        "active": false,
-                        "angle": 0,
                         "api": "pin",
                         "attrs": {
                             ".api": {
@@ -1830,6 +1304,532 @@
                         "z": 180
                     },
                     {
+                        "active": false,
+                        "angle": 0,
+                        "attrs": {
+                            ".background": {
+                                "fill": "#FFFFFF",
+                                "stroke": "#637282",
+                                "transform": "rotate(45 30 70)"
+                            },
+                            ".inPorts>.port-0>.port-body": {
+                                "port": {
+                                    "id": "in",
+                                    "type": "in"
+                                }
+                            },
+                            ".number": {
+                                "text": 2
+                            },
+                            ".outPorts>.port-0": {
+                                "port": {
+                                    "id": "out-1",
+                                    "type": "out"
+                                },
+                                "ref-x": 83,
+                                "ref-y": 40
+                            },
+                            ".outPorts>.port-0>.port-body": {
+                                "port": {
+                                    "id": "out-1",
+                                    "type": "out"
+                                }
+                            },
+                            "g.delete": {
+                                "display": "none"
+                            },
+                            "g.error": {
+                                "opacity": 0
+                            },
+                            "g.notes": {
+                                "display": "block"
+                            },
+                            "g.notes image": {
+                                "opacity": 1
+                            }
+                        },
+                        "block_code": "def decision_2(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):\n    phantom.debug('decision_2() called')\n\n    # check for 'if' condition 1\n    matched = phantom.decision(\n        container=container,\n        conditions=[\n            [\"artifact:*.cef.entity_title\", \"!=\", \"\"],\n            [\"artifact:*.cef.entity_key\", \"!=\", \"\"],\n        ],\n        logical_operator='and')\n\n    # call connected blocks if condition 1 matched\n    if matched:\n        DedupeListEntries(action=action, success=success, container=container, results=results, handle=handle, custom_function=custom_function)\n        return\n\n    return",
+                        "callback_code": "",
+                        "callback_start": 1,
+                        "callsback": false,
+                        "connected_to_start": true,
+                        "connection_name": "",
+                        "connection_type": "",
+                        "custom_callback": "",
+                        "custom_code": "",
+                        "custom_join": "",
+                        "custom_name": "",
+                        "description": "",
+                        "hasElse": false,
+                        "has_custom": false,
+                        "has_custom_block": false,
+                        "has_custom_callback": false,
+                        "has_custom_join": false,
+                        "id": "d3eb790a-a937-4217-9de2-37679bb3d53c",
+                        "inPorts": [
+                            "in"
+                        ],
+                        "join_code": "",
+                        "join_optional": [],
+                        "join_start": 1,
+                        "line_end": 101,
+                        "line_start": 82,
+                        "name": "decision",
+                        "notes": "",
+                        "number": 2,
+                        "order": 6,
+                        "outPorts": [
+                            "out-1"
+                        ],
+                        "outputs": [
+                            {
+                                "conditions": [
+                                    {
+                                        "comparison": "!=",
+                                        "data_type": "",
+                                        "param": "artifact:*.cef.entity_title",
+                                        "value": ""
+                                    },
+                                    {
+                                        "comparison": "!=",
+                                        "data_type": "",
+                                        "param": "artifact:*.cef.entity_key",
+                                        "value": ""
+                                    }
+                                ],
+                                "display": "If",
+                                "logic": "and",
+                                "type": "if"
+                            }
+                        ],
+                        "ports": {
+                            "groups": {
+                                "in": {
+                                    "attrs": {
+                                        ".port-body": {
+                                            "fill": "#fff",
+                                            "magnet": true,
+                                            "r": 10,
+                                            "stroke": "#000"
+                                        },
+                                        ".port-label": {
+                                            "fill": "#000"
+                                        }
+                                    },
+                                    "label": {
+                                        "position": {
+                                            "args": {
+                                                "y": 10
+                                            },
+                                            "name": "left"
+                                        }
+                                    },
+                                    "position": {
+                                        "name": "left"
+                                    }
+                                },
+                                "out": {
+                                    "attrs": {
+                                        ".port-body": {
+                                            "fill": "#fff",
+                                            "magnet": true,
+                                            "r": 10,
+                                            "stroke": "#000"
+                                        },
+                                        ".port-label": {
+                                            "fill": "#000"
+                                        }
+                                    },
+                                    "label": {
+                                        "position": {
+                                            "args": {
+                                                "y": 10
+                                            },
+                                            "name": "right"
+                                        }
+                                    },
+                                    "position": {
+                                        "name": "right"
+                                    }
+                                }
+                            }
+                        },
+                        "position": {
+                            "x": -600,
+                            "y": 100
+                        },
+                        "previous_function": "",
+                        "previous_name": "decision_2",
+                        "show_number": true,
+                        "size": {
+                            "height": 82,
+                            "width": 82
+                        },
+                        "state": "decision",
+                        "status": "",
+                        "type": "coa.Decision",
+                        "warn": "",
+                        "z": 187
+                    },
+                    {
+                        "active": false,
+                        "angle": 0,
+                        "attrs": {
+                            ".background": {
+                                "fill": "#FFFFFF",
+                                "stroke": "#818D99"
+                            },
+                            ".color-band": {
+                                "fill": "#171D21"
+                            },
+                            ".functionBlock": {
+                                "text": "DedupeListEntries"
+                            },
+                            ".inPorts>.port-in": {
+                                "ref": ".background",
+                                "ref-x": 0.5
+                            },
+                            ".inPorts>.port-in>.port-body": {
+                                "port": {
+                                    "id": "in",
+                                    "type": "in"
+                                }
+                            },
+                            ".message": {
+                                "opacity": 0,
+                                "ref-x": 5,
+                                "ref-y": 105,
+                                "text": "Configuring now"
+                            },
+                            ".outPorts>.port-out": {
+                                "ref": ".background",
+                                "ref-x": 0.5
+                            },
+                            ".outPorts>.port-out>.port-body": {
+                                "port": {
+                                    "id": "out",
+                                    "type": "out"
+                                }
+                            },
+                            ".title": {
+                                "text": "custom function"
+                            },
+                            "g.delete": {
+                                "display": "none"
+                            },
+                            "g.error": {
+                                "opacity": 1
+                            },
+                            "g.error image": {
+                                "xlink:href": "/inc/coa/img/block_icon_warn_grey.svg"
+                            },
+                            "g.notes": {
+                                "display": "block"
+                            },
+                            "g.notes image": {
+                                "opacity": 1
+                            }
+                        },
+                        "block_code": "def DedupeListEntries(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):\n    phantom.debug('DedupeListEntries() called')\n    \n    container_data = phantom.collect2(container=container, datapath=['artifact:*.cef.entity_key', 'artifact:*.id'])\n    container_item_0 = [item[0] for item in container_data]\n\n    DedupeListEntries__entity_list = None\n\n    ################################################################################\n    ## Custom Code Start\n    ################################################################################\n\n    # Write your custom code here...\n    phantom.debug('DedupeListEntries() formatted_data_1: {}'.format(container_item_0))\n\n    seen = {}\n    DedupeListEntries__entity_list = [seen.setdefault(x, x) for x in container_item_0 if x not in seen]\n    \n    phantom.debug('DedupeListEntries() DedupeListEntries__entity_list: {}'.format(DedupeListEntries__entity_list))\n\n    ################################################################################\n    ## Custom Code End\n    ################################################################################\n\n    phantom.save_run_data(key='DedupeListEntries:entity_list', value=json.dumps(DedupeListEntries__entity_list))\n    Create_URL_Parameters(container=container)\n\n    return",
+                        "callback_code": "",
+                        "callback_start": 1,
+                        "callsback": false,
+                        "connected_to_start": true,
+                        "connection_name": "",
+                        "connection_type": "",
+                        "customCodeEndLineOffset": 7,
+                        "customCodeStartLine": 11,
+                        "custom_callback": "",
+                        "custom_code": "def DedupeListEntries(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None):\n    phantom.debug('DedupeListEntries() called')\n    container_data = phantom.collect2(container=container, datapath=['artifact:*.cef.entity_title', 'artifact:*.id'])\n    container_item_0 = [item[0] for item in container_data]\n\n    DedupeListEntries__entity_list = None\n\n    ################################################################################\n    ## Custom Code Start\n    ################################################################################\n\n    # Write your custom code here...\n    phantom.debug('DedupeListEntries() formatted_data_1: {}'.format(container_item_0))\n\n    seen = {}\n    DedupeListEntries__entity_list = [seen.setdefault(x, x) for x in container_item_0 if x not in seen]\n    \n    phantom.debug('DedupeListEntries() DedupeListEntries__entity_list: {}'.format(DedupeListEntries__entity_list))\n\n    ################################################################################\n    ## Custom Code End\n    ################################################################################\n\n    phantom.save_run_data(key='DedupeListEntries:entity_list', value=json.dumps(DedupeListEntries__entity_list))\n    format_3(container=container)\n\n    return",
+                        "custom_join": "",
+                        "custom_name": "DedupeListEntries",
+                        "description": "",
+                        "functionBlock": "custom function",
+                        "has_custom": true,
+                        "has_custom_block": false,
+                        "has_custom_callback": false,
+                        "has_custom_join": false,
+                        "id": "a8dc7827-7774-4a39-b82b-12a6b3ae9595",
+                        "inPorts": [
+                            "in"
+                        ],
+                        "join_code": "",
+                        "join_optional": [],
+                        "join_start": 1,
+                        "legacy": true,
+                        "line_end": 130,
+                        "line_start": 101,
+                        "message": "Configuring now",
+                        "name": "custom function",
+                        "notes": "",
+                        "number": 1,
+                        "order": 7,
+                        "outPorts": [
+                            "out"
+                        ],
+                        "outputVariables": [
+                            {
+                                "position": 0,
+                                "type": "",
+                                "value": "entity_list"
+                            }
+                        ],
+                        "parameters": [
+                            {
+                                "position": 0,
+                                "type": "",
+                                "value": "artifact:*.cef.entity_key"
+                            }
+                        ],
+                        "ports": {
+                            "groups": {
+                                "in": {
+                                    "attrs": {
+                                        ".port-body": {
+                                            "fill": "#fff",
+                                            "magnet": true,
+                                            "r": 10,
+                                            "stroke": "#000"
+                                        },
+                                        ".port-label": {
+                                            "fill": "#000"
+                                        }
+                                    },
+                                    "label": {
+                                        "position": {
+                                            "args": {
+                                                "y": 10
+                                            },
+                                            "name": "left"
+                                        }
+                                    },
+                                    "position": {
+                                        "name": "left"
+                                    }
+                                },
+                                "out": {
+                                    "attrs": {
+                                        ".port-body": {
+                                            "fill": "#fff",
+                                            "magnet": true,
+                                            "r": 10,
+                                            "stroke": "#000"
+                                        },
+                                        ".port-label": {
+                                            "fill": "#000"
+                                        }
+                                    },
+                                    "label": {
+                                        "position": {
+                                            "args": {
+                                                "y": 10
+                                            },
+                                            "name": "right"
+                                        }
+                                    },
+                                    "position": {
+                                        "name": "right"
+                                    }
+                                }
+                            }
+                        },
+                        "position": {
+                            "x": -460,
+                            "y": 100
+                        },
+                        "previous_function": "",
+                        "previous_name": "DedupeListEntries",
+                        "show_number": true,
+                        "size": {
+                            "height": 100,
+                            "width": 180
+                        },
+                        "state": "custom function",
+                        "status": "deprecating",
+                        "title": "custom function",
+                        "type": "coa.FunctionBlock",
+                        "userGeneratedCode": "\n    # Write your custom code here...\n    phantom.debug('DedupeListEntries() formatted_data_1: {}'.format(container_item_0))\n\n    seen = {}\n    DedupeListEntries__entity_list = [seen.setdefault(x, x) for x in container_item_0 if x not in seen]\n    \n    phantom.debug('DedupeListEntries() DedupeListEntries__entity_list: {}'.format(DedupeListEntries__entity_list))\n",
+                        "warn": false,
+                        "z": 188
+                    },
+                    {
+                        "active": false,
+                        "angle": 0,
+                        "attrs": {
+                            ".background": {
+                                "fill": "#FFFFFF",
+                                "stroke": "#818D99"
+                            },
+                            ".color-band": {
+                                "fill": "#171D21"
+                            },
+                            ".format": {
+                                "text": "Create URL Parameters"
+                            },
+                            ".inPorts>.port-in": {
+                                "ref": ".background",
+                                "ref-x": 0.5
+                            },
+                            ".inPorts>.port-in>.port-body": {
+                                "port": {
+                                    "id": "in",
+                                    "type": "in"
+                                }
+                            },
+                            ".message": {
+                                "opacity": 0,
+                                "text": "Configuring now"
+                            },
+                            ".outPorts>.port-out-1": {
+                                "ref": ".background",
+                                "ref-x": 0.5
+                            },
+                            ".outPorts>.port-out-1>.port-body": {
+                                "port": {
+                                    "id": "out-1",
+                                    "type": "out"
+                                }
+                            },
+                            ".title": {
+                                "text": "format"
+                            },
+                            "g.code image": {
+                                "opacity": 1
+                            },
+                            "g.delete": {
+                                "display": "none"
+                            },
+                            "g.error": {
+                                "opacity": 0
+                            },
+                            "g.error image": {
+                                "xlink:href": "/inc/coa/img/block_icon_warn.svg"
+                            },
+                            "g.notes": {
+                                "display": "block"
+                            },
+                            "g.notes image": {
+                                "opacity": 1
+                            }
+                        },
+                        "block_code": "def Create_URL_Parameters(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):\n    phantom.debug('Create_URL_Parameters() called')\n    \n    template = \"\"\"/rest/container_pin?_filter_container={0}&_filter_message=\\\"{1}\\\"\"\"\"\n\n    # parameter list for template variable replacement\n    parameters = [\n        \"container:id\",\n        \"DedupeListEntries:custom_function:entity_list\",\n    ]\n\n    phantom.format(container=container, template=template, parameters=parameters, name=\"Create_URL_Parameters\")\n\n    Get_PIN(container=container)\n\n    return",
+                        "callback_code": "",
+                        "callback_start": 1,
+                        "callsback": false,
+                        "connected_to_start": true,
+                        "connection_name": "",
+                        "connection_type": "",
+                        "custom_callback": "",
+                        "custom_code": "",
+                        "custom_join": "",
+                        "custom_name": "Create URL Parameters",
+                        "description": "",
+                        "format": "format",
+                        "has_custom": false,
+                        "has_custom_block": false,
+                        "has_custom_callback": false,
+                        "has_custom_join": false,
+                        "id": "6ad36b16-5dbb-4a16-beaa-a28a452c5b50",
+                        "inPorts": [
+                            "in"
+                        ],
+                        "join_code": "",
+                        "join_optional": [],
+                        "join_start": 1,
+                        "line_end": 64,
+                        "line_start": 47,
+                        "message": "Configuring now",
+                        "name": "format",
+                        "notes": "",
+                        "number": 3,
+                        "order": 4,
+                        "outPorts": [
+                            "out-1"
+                        ],
+                        "parameters": [
+                            {
+                                "position": 0,
+                                "type": "",
+                                "value": "container:id"
+                            },
+                            {
+                                "position": 1,
+                                "type": "",
+                                "value": "DedupeListEntries:custom_function:entity_list"
+                            }
+                        ],
+                        "ports": {
+                            "groups": {
+                                "in": {
+                                    "attrs": {
+                                        ".port-body": {
+                                            "fill": "#fff",
+                                            "magnet": true,
+                                            "r": 10,
+                                            "stroke": "#000"
+                                        },
+                                        ".port-label": {
+                                            "fill": "#000"
+                                        }
+                                    },
+                                    "label": {
+                                        "position": {
+                                            "args": {
+                                                "y": 10
+                                            },
+                                            "name": "left"
+                                        }
+                                    },
+                                    "position": {
+                                        "name": "left"
+                                    }
+                                },
+                                "out": {
+                                    "attrs": {
+                                        ".port-body": {
+                                            "fill": "#fff",
+                                            "magnet": true,
+                                            "r": 10,
+                                            "stroke": "#000"
+                                        },
+                                        ".port-label": {
+                                            "fill": "#000"
+                                        }
+                                    },
+                                    "label": {
+                                        "position": {
+                                            "args": {
+                                                "y": 10
+                                            },
+                                            "name": "right"
+                                        }
+                                    },
+                                    "position": {
+                                        "name": "right"
+                                    }
+                                }
+                            }
+                        },
+                        "position": {
+                            "x": -220,
+                            "y": 100
+                        },
+                        "previous_function": "",
+                        "previous_name": "Create_URL_Parameters",
+                        "show_number": true,
+                        "size": {
+                            "height": 100,
+                            "width": 180
+                        },
+                        "state": "format",
+                        "status": "",
+                        "template": "/rest/container_pin?_filter_container={0}&_filter_message=\"{1}\"",
+                        "title": "format",
+                        "type": "coa.Format",
+                        "warn": false,
+                        "z": 189
+                    },
+                    {
                         "action": "get entity",
                         "action_type": "generic",
                         "active": false,
@@ -2018,7 +2018,7 @@
                         "connection_name": "Get PIN",
                         "connection_type": "action",
                         "custom_callback": "",
-                        "custom_code": "def get_entity_1(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):\n    phantom.debug('get_entity_1() called')\n        \n    #phantom.debug('Action: {0} {1}'.format(action['name'], ('SUCCEEDED' if success else 'FAILED')))\n    \n    DedupeListEntries__entity_list = json.loads(phantom.get_run_data(key='DedupeListEntries:entity_list'))\n    # collect data for 'get_entity_1' call\n\n    parameters = []\n    \n    # build parameters list for 'get_entity_1' call\n    #parameters.append({\n    #    'itsi_entity_id': DedupeListEntries__entity_list,\n    #})\n    \n    for entity_title in DedupeListEntries__entity_list:\n        parameters.append({\n            'entity_title': entity_title,\n        })\n\n    phantom.act(action=\"get entity\", parameters=parameters, assets=['splunk itsi'], callback=pin_1, name=\"get_entity_1\")\n\n    return",
+                        "custom_code": "def get_entity_1(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):\n    phantom.debug('get_entity_1() called')\n        \n    #phantom.debug('Action: {0} {1}'.format(action['name'], ('SUCCEEDED' if success else 'FAILED')))\n    \n    DedupeListEntries__entity_list = json.loads(phantom.get_run_data(key='DedupeListEntries:entity_list'))\n    # collect data for 'get_entity_1' call\n\n    parameters = []\n    \n    # build parameters list for 'get_entity_1' call\n    for entity_key in DedupeListEntries__entity_list:\n        parameters.append({\n            'itsi_entity_id': entity_key,\n        })\n\n    phantom.act(action=\"get entity\", parameters=parameters, assets=['splunk itsi'], callback=pin_1, name=\"get_entity_1\")\n\n    return",
                         "custom_join": "",
                         "custom_name": "",
                         "delay": 0,
@@ -2034,7 +2034,7 @@
                         "join_code": "",
                         "join_optional": [],
                         "join_start": 1,
-                        "line_end": 154,
+                        "line_end": 150,
                         "line_start": 130,
                         "message": "Configuring now",
                         "name": "get entity",
@@ -2116,7 +2116,7 @@
                         "title": "Generic",
                         "type": "coa.Action",
                         "warn": false,
-                        "z": 181
+                        "z": 190
                     }
                 ]
             },
@@ -2126,7 +2126,7 @@
         "schema": 4,
         "version": "4.9.34514"
     },
-    "create_time": "2020-08-18T10:29:33.418570+00:00",
+    "create_time": "2020-08-18T10:32:47.625916+00:00",
     "draft_mode": false,
     "labels": [
         "itsi"
