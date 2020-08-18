@@ -785,7 +785,7 @@ def decision_8(action=None, success=None, container=None, results=None, handle=N
 def format_15(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):
     phantom.debug('format_15() called')
     
-    template = """artifact?_filter_container={0}&_filter_type=\"notable\"&_filter_tags__icontains=\"service_restart_in_progress\""""
+    template = """/rest/artifact?_filter_container={0}&_filter_type=\"notable\"&_filter_tags__icontains=\"service_restart_in_progress\""""
 
     # parameter list for template variable replacement
     parameters = [
