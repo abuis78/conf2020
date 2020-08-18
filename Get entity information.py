@@ -62,24 +62,6 @@ def DedupeListEntries(action=None, success=None, container=None, results=None, h
 
     return
 
-def get_entity_2(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):
-    phantom.debug('get_entity_2() called')
-
-    DedupeListEntries__new_list = json.loads(phantom.get_run_data(key='DedupeListEntries:new_list'))
-    # collect data for 'get_entity_2' call
-
-    parameters = []
-    
-    # build parameters list for 'get_entity_2' call
-    for entity_title in DedupeListEntries__new_list:
-        parameters.append({
-            'entity_title': entity_title,
-        })
-
-    phantom.act("get entity", parameters=parameters, assets=['splunk itsi'], callback=pin_6, name="get_entity_2")
-
-    return
-
 def format_1(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):
     phantom.debug('format_1() called')
     
@@ -129,7 +111,7 @@ def decision_6(action=None, success=None, container=None, results=None, handle=N
 
     # call connected blocks if condition 1 matched
     if matched:
-        get_entity_2(action=action, success=success, container=container, results=results, handle=handle, custom_function=custom_function)
+        get_entity_3(action=action, success=success, container=container, results=results, handle=handle, custom_function=custom_function)
         return
 
     # call connected blocks for 'else' condition 2
@@ -154,6 +136,26 @@ def pin_6(action=None, success=None, container=None, results=None, handle=None, 
         results_item_1_1 = item[1]
 
         phantom.pin(container=container, data=results_item_1_1, message=results_item_1_0, pin_type="card", pin_style="grey", name=None)
+
+    return
+
+def get_entity_3(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):
+    phantom.debug('get_entity_3() called')
+        
+    #phantom.debug('Action: {0} {1}'.format(action['name'], ('SUCCEEDED' if success else 'FAILED')))
+    
+    DedupeListEntries__new_list = json.loads(phantom.get_run_data(key='DedupeListEntries:new_list'))
+    # collect data for 'get_entity_3' call
+
+    parameters = []
+    
+    # build parameters list for 'get_entity_3' call
+    for entity_title in DedupeListEntries__new_list:
+        parameters.append({
+            'entity_title': entity_title,
+        })
+
+    phantom.act(action="get entity", parameters=parameters, assets=['splunk itsi'], name="get_entity_3")
 
     return
 
