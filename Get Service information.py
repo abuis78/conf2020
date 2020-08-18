@@ -78,7 +78,7 @@ def Format_Service_Name(action=None, success=None, container=None, results=None,
 
     # parameter list for template variable replacement
     parameters = [
-        "Get_Service:action_result.data.*.identifying_name",
+        "get_service_2:action_result.data.*.identifying_name",
     ]
 
     phantom.format(container=container, template=template, parameters=parameters, name="Format_Service_Name")
@@ -99,24 +99,24 @@ def format_2(action=None, success=None, container=None, results=None, handle=Non
 
     phantom.format(container=container, template=template, parameters=parameters, name="format_2")
 
-    Get_Service(container=container)
+    get_service_2(container=container)
 
     return
 
-def Get_Service(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):
-    phantom.debug('Get_Service() called')
+def get_service_2(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):
+    phantom.debug('get_service_2() called')
 
-    # collect data for 'Get_Service' call
+    # collect data for 'get_service_2' call
     formatted_data_1 = phantom.get_format_data(name='format_2')
 
     parameters = []
     
-    # build parameters list for 'Get_Service' call
+    # build parameters list for 'get_service_2' call
     parameters.append({
-        'indexed_itsi_service_id': formatted_data_1,
+        'itsi_service_id': formatted_data_1,
     })
 
-    phantom.act(action="get service", parameters=parameters, assets=['splunk itsi'], callback=Format_Service_Name, name="Get_Service")
+    phantom.act(action="get service", parameters=parameters, assets=['','splunk itsi'], callback=Format_Service_Name, name="get_service_2")
 
     return
 
