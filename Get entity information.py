@@ -83,7 +83,7 @@ def get_entity_2(action=None, success=None, container=None, results=None, handle
 def format_1(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):
     phantom.debug('format_1() called')
     
-    template = """container_pin?_filter_container={0}&_filter_message=\"Entity: {1}\""""
+    template = """/rest/container_pin?_filter_container={0}&_filter_message=\"Entity: {1}\""""
 
     # parameter list for template variable replacement
     parameters = [
