@@ -18,7 +18,7 @@ def on_start(container):
 def Build_REST_call_for_entity_data(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):
     phantom.debug('Build_REST_call_for_entity_data() called')
     
-    template = """container_pin?_filter_container={0}&_filter_message__icontains=\"Entity\""""
+    template = """/rest/container_pin?_filter_container={0}&_filter_message__icontains=\"Entity\""""
 
     # parameter list for template variable replacement
     parameters = [
@@ -329,7 +329,7 @@ def add_snow_work_note(action=None, success=None, container=None, results=None, 
 def format_9(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):
     phantom.debug('format_9() called')
     
-    template = """container_pin?_filter_container={0}&_filter_message__icontains=\"Service\""""
+    template = """/rest/container_pin?_filter_container={0}&_filter_message__icontains=\"Service\""""
 
     # parameter list for template variable replacement
     parameters = [
@@ -683,7 +683,7 @@ def execute_program_3(action=None, success=None, container=None, results=None, h
 def build_rest_call_url_1(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):
     phantom.debug('build_rest_call_url_1() called')
     
-    template = """container_pin/{0}"""
+    template = """/rest/container_pin/{0}"""
 
     # parameter list for template variable replacement
     parameters = [
@@ -717,7 +717,7 @@ def format_13(action=None, success=None, container=None, results=None, handle=No
 def format_14(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):
     phantom.debug('format_14() called')
     
-    template = """container_pin/{0}"""
+    template = """/rest/container_pin/{0}"""
 
     # parameter list for template variable replacement
     parameters = [
