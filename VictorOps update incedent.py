@@ -24,7 +24,7 @@ def format_1(action=None, success=None, container=None, results=None, handle=Non
 
     phantom.format(container=container, template=template, parameters=parameters, name="format_1")
 
-    update_incident_1(container=container)
+    format_2(container=container)
 
     return
 
@@ -33,6 +33,7 @@ def update_incident_1(action=None, success=None, container=None, results=None, h
 
     # collect data for 'update_incident_1' call
     formatted_data_1 = phantom.get_format_data(name='format_1')
+    formatted_data_2 = phantom.get_format_data(name='format_2')
 
     parameters = []
     
@@ -42,10 +43,26 @@ def update_incident_1(action=None, success=None, container=None, results=None, h
         'message_type': "INFO",
         'entity_id': formatted_data_1,
         'entity_display_name': "",
-        'state_message': "",
+        'state_message': formatted_data_2,
     })
 
     phantom.act(action="update incident", parameters=parameters, assets=['victorops'], name="update_incident_1")
+
+    return
+
+def format_2(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):
+    phantom.debug('format_2() called')
+    
+    template = """Die Container ID {0}"""
+
+    # parameter list for template variable replacement
+    parameters = [
+        "container:id",
+    ]
+
+    phantom.format(container=container, template=template, parameters=parameters, name="format_2")
+
+    update_incident_1(container=container)
 
     return
 

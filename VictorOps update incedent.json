@@ -7,7 +7,7 @@
             "clean": true,
             "code_block": "",
             "description": "",
-            "hash": "be23eb8d95f78bfade451a2caf0f237dcfdc8fb0",
+            "hash": "f3c04926375ec8265601c99688360040864c7bc5",
             "joint": {
                 "cells": [
                     {
@@ -218,12 +218,12 @@
                         "join_code": "# read-only block view not available",
                         "join_optional": [],
                         "join_start": 1,
-                        "line_end": 65,
-                        "line_start": 52,
+                        "line_end": 82,
+                        "line_start": 69,
                         "name": "",
                         "notes": "",
                         "number": 0,
-                        "order": 4,
+                        "order": 5,
                         "outPorts": [],
                         "ports": {
                             "groups": {
@@ -335,6 +335,250 @@
                         "z": 3
                     },
                     {
+                        "attrs": {
+                            ".connection": {
+                                "stroke": "#818D99",
+                                "stroke-width": 2
+                            },
+                            ".marker-target": {
+                                "d": "M 10 0 L 0 5 L 10 10 z",
+                                "fill": "#818D99",
+                                "stroke": "#818D99"
+                            }
+                        },
+                        "connector": {
+                            "args": {
+                                "radius": 5
+                            },
+                            "name": "rounded"
+                        },
+                        "endDirections": [
+                            "left"
+                        ],
+                        "id": "eb705f31-520b-4be0-8fd8-5c66fa58ac0a",
+                        "router": {
+                            "name": "metro"
+                        },
+                        "source": {
+                            "id": "ee8a25b6-8e2e-4163-85c9-66bafca9b1db",
+                            "selector": "> g:nth-child(1) > g:nth-child(2) > g:nth-child(1) > circle:nth-child(1)"
+                        },
+                        "startDirections": [
+                            "right"
+                        ],
+                        "target": {
+                            "id": "35d5ca70-d37a-4cb6-aed2-bccdfca6c944",
+                            "selector": ".port-body[type=\"input\"]"
+                        },
+                        "type": "link",
+                        "z": 8
+                    },
+                    {
+                        "attrs": {
+                            ".connection": {
+                                "stroke": "#818D99",
+                                "stroke-width": 2
+                            },
+                            ".marker-target": {
+                                "d": "M 10 0 L 0 5 L 10 10 z",
+                                "fill": "#818D99",
+                                "stroke": "#818D99"
+                            }
+                        },
+                        "connector": {
+                            "args": {
+                                "radius": 5
+                            },
+                            "name": "rounded"
+                        },
+                        "endDirections": [
+                            "left"
+                        ],
+                        "id": "0f5b3d94-3417-4d44-bb69-b91f646f0f52",
+                        "router": {
+                            "name": "metro"
+                        },
+                        "source": {
+                            "id": "35d5ca70-d37a-4cb6-aed2-bccdfca6c944",
+                            "selector": "> g:nth-child(1) > g:nth-child(2) > g:nth-child(1) > circle:nth-child(1)"
+                        },
+                        "startDirections": [
+                            "right"
+                        ],
+                        "target": {
+                            "id": "8dd1cbce-b420-4d1a-b7e4-2481c8ce0c62",
+                            "selector": "> g:nth-child(1) > g:nth-child(1) > g:nth-child(1) > circle:nth-child(1)"
+                        },
+                        "type": "link",
+                        "z": 10
+                    },
+                    {
+                        "active": false,
+                        "angle": 0,
+                        "attrs": {
+                            ".background": {
+                                "fill": "#FFFFFF",
+                                "stroke": "#818D99"
+                            },
+                            ".color-band": {
+                                "fill": "#171D21"
+                            },
+                            ".format": {
+                                "text": "format 2"
+                            },
+                            ".inPorts>.port-in": {
+                                "ref": ".background",
+                                "ref-x": 0.5
+                            },
+                            ".inPorts>.port-in>.port-body": {
+                                "port": {
+                                    "id": "in",
+                                    "type": "in"
+                                }
+                            },
+                            ".message": {
+                                "opacity": 0,
+                                "text": "Configuring now"
+                            },
+                            ".outPorts>.port-out-1": {
+                                "ref": ".background",
+                                "ref-x": 0.5
+                            },
+                            ".outPorts>.port-out-1>.port-body": {
+                                "port": {
+                                    "id": "out-1",
+                                    "type": "out"
+                                }
+                            },
+                            ".title": {
+                                "text": "format"
+                            },
+                            "g.delete": {
+                                "display": "none"
+                            },
+                            "g.error": {
+                                "opacity": 0
+                            },
+                            "g.error image": {
+                                "xlink:href": "/inc/coa/img/block_icon_warn.svg"
+                            },
+                            "g.notes": {
+                                "display": "block"
+                            }
+                        },
+                        "block_code": "def format_2(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):\n    phantom.debug('format_2() called')\n    \n    template = \"\"\"Die Container ID {0}\"\"\"\n\n    # parameter list for template variable replacement\n    parameters = [\n        \"container:id\",\n    ]\n\n    phantom.format(container=container, template=template, parameters=parameters, name=\"format_2\")\n\n    update_incident_1(container=container)\n\n    return",
+                        "callback_code": "",
+                        "callback_start": 1,
+                        "callsback": false,
+                        "connected_to_start": true,
+                        "connection_name": "",
+                        "connection_type": "",
+                        "custom_callback": "",
+                        "custom_code": "",
+                        "custom_join": "",
+                        "custom_name": "",
+                        "description": "",
+                        "format": "format",
+                        "has_custom": false,
+                        "has_custom_block": false,
+                        "has_custom_callback": false,
+                        "has_custom_join": false,
+                        "id": "35d5ca70-d37a-4cb6-aed2-bccdfca6c944",
+                        "inPorts": [
+                            "in"
+                        ],
+                        "join_code": "",
+                        "join_optional": [],
+                        "join_start": 1,
+                        "line_end": 69,
+                        "line_start": 53,
+                        "message": "Configuring now",
+                        "name": "format",
+                        "notes": "",
+                        "number": 2,
+                        "order": 4,
+                        "outPorts": [
+                            "out-1"
+                        ],
+                        "parameters": [
+                            {
+                                "position": 0,
+                                "type": "",
+                                "value": "container:id"
+                            }
+                        ],
+                        "ports": {
+                            "groups": {
+                                "in": {
+                                    "attrs": {
+                                        ".port-body": {
+                                            "fill": "#fff",
+                                            "magnet": true,
+                                            "r": 10,
+                                            "stroke": "#000"
+                                        },
+                                        ".port-label": {
+                                            "fill": "#000"
+                                        }
+                                    },
+                                    "label": {
+                                        "position": {
+                                            "args": {
+                                                "y": 10
+                                            },
+                                            "name": "left"
+                                        }
+                                    },
+                                    "position": {
+                                        "name": "left"
+                                    }
+                                },
+                                "out": {
+                                    "attrs": {
+                                        ".port-body": {
+                                            "fill": "#fff",
+                                            "magnet": true,
+                                            "r": 10,
+                                            "stroke": "#000"
+                                        },
+                                        ".port-label": {
+                                            "fill": "#000"
+                                        }
+                                    },
+                                    "label": {
+                                        "position": {
+                                            "args": {
+                                                "y": 10
+                                            },
+                                            "name": "right"
+                                        }
+                                    },
+                                    "position": {
+                                        "name": "right"
+                                    }
+                                }
+                            }
+                        },
+                        "position": {
+                            "x": 600,
+                            "y": 80
+                        },
+                        "previous_function": "",
+                        "previous_name": "format_2",
+                        "show_number": true,
+                        "size": {
+                            "height": 100,
+                            "width": 180
+                        },
+                        "state": "format",
+                        "status": "",
+                        "template": "Die Container ID {0}",
+                        "title": "format",
+                        "type": "coa.Format",
+                        "warn": false,
+                        "z": 12
+                    },
+                    {
                         "active": false,
                         "angle": 0,
                         "attrs": {
@@ -385,7 +629,7 @@
                                 "display": "block"
                             }
                         },
-                        "block_code": "def format_1(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):\n    phantom.debug('format_1() called')\n    \n    template = \"\"\"ITSI Alert: {0}\"\"\"\n\n    # parameter list for template variable replacement\n    parameters = [\n        \"container:source_data_identifier\",\n    ]\n\n    phantom.format(container=container, template=template, parameters=parameters, name=\"format_1\")\n\n    update_incident_1(container=container)\n\n    return",
+                        "block_code": "def format_1(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):\n    phantom.debug('format_1() called')\n    \n    template = \"\"\"ITSI Alert: {0}\"\"\"\n\n    # parameter list for template variable replacement\n    parameters = [\n        \"container:source_data_identifier\",\n    ]\n\n    phantom.format(container=container, template=template, parameters=parameters, name=\"format_1\")\n\n    format_2(container=container)\n\n    return",
                         "callback_code": "",
                         "callback_start": 1,
                         "callsback": false,
@@ -495,46 +739,7 @@
                         "title": "format",
                         "type": "coa.Format",
                         "warn": false,
-                        "z": 5
-                    },
-                    {
-                        "attrs": {
-                            ".connection": {
-                                "stroke": "#818D99",
-                                "stroke-width": 2
-                            },
-                            ".marker-target": {
-                                "d": "M 10 0 L 0 5 L 10 10 z",
-                                "fill": "#818D99",
-                                "stroke": "#818D99"
-                            }
-                        },
-                        "connector": {
-                            "args": {
-                                "radius": 5
-                            },
-                            "name": "rounded"
-                        },
-                        "endDirections": [
-                            "left"
-                        ],
-                        "id": "922bf06e-083c-4f6f-9fe0-2448bff0e16d",
-                        "router": {
-                            "name": "metro"
-                        },
-                        "source": {
-                            "id": "ee8a25b6-8e2e-4163-85c9-66bafca9b1db",
-                            "selector": "> g:nth-child(1) > g:nth-child(2) > g:nth-child(1) > circle:nth-child(1)"
-                        },
-                        "startDirections": [
-                            "right"
-                        ],
-                        "target": {
-                            "id": "8dd1cbce-b420-4d1a-b7e4-2481c8ce0c62",
-                            "selector": ".port-body[type=\"input\"]"
-                        },
-                        "type": "link",
-                        "z": 6
+                        "z": 13
                     },
                     {
                         "action": "update incident",
@@ -546,7 +751,7 @@
                             "entity_id": "format_1:formatted_data",
                             "message_type": "INFO",
                             "routing_key": "",
-                            "state_message": ""
+                            "state_message": "format_2:formatted_data"
                         },
                         "angle": 0,
                         "app": "VictorOps",
@@ -578,7 +783,7 @@
                                     "entity_id": "format_1:formatted_data",
                                     "message_type": "INFO",
                                     "routing_key": "",
-                                    "state_message": ""
+                                    "state_message": "format_2:formatted_data"
                                 },
                                 "has_app": true,
                                 "id": 18,
@@ -796,6 +1001,9 @@
                             "g.error": {
                                 "opacity": 0
                             },
+                            "g.error image": {
+                                "xlink:href": "/inc/coa/img/block_icon_warn.svg"
+                            },
                             "g.icon image": {
                                 "xlink:href": "/inc/coa/img/block_icon_generic.svg"
                             },
@@ -803,7 +1011,7 @@
                                 "display": "block"
                             }
                         },
-                        "block_code": "def update_incident_1(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):\n    phantom.debug('update_incident_1() called')\n\n    # collect data for 'update_incident_1' call\n    formatted_data_1 = phantom.get_format_data(name='format_1')\n\n    parameters = []\n    \n    # build parameters list for 'update_incident_1' call\n    parameters.append({\n        'routing_key': \"\",\n        'message_type': \"INFO\",\n        'entity_id': formatted_data_1,\n        'entity_display_name': \"\",\n        'state_message': \"\",\n    })\n\n    phantom.act(action=\"update incident\", parameters=parameters, assets=['victorops'], name=\"update_incident_1\")\n\n    return",
+                        "block_code": "def update_incident_1(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):\n    phantom.debug('update_incident_1() called')\n\n    # collect data for 'update_incident_1' call\n    formatted_data_1 = phantom.get_format_data(name='format_1')\n    formatted_data_2 = phantom.get_format_data(name='format_2')\n\n    parameters = []\n    \n    # build parameters list for 'update_incident_1' call\n    parameters.append({\n        'routing_key': \"\",\n        'message_type': \"INFO\",\n        'entity_id': formatted_data_1,\n        'entity_display_name': \"\",\n        'state_message': formatted_data_2,\n    })\n\n    phantom.act(action=\"update incident\", parameters=parameters, assets=['victorops'], name=\"update_incident_1\")\n\n    return",
                         "callback_code": "",
                         "callback_start": 1,
                         "callsback": true,
@@ -828,7 +1036,7 @@
                         "join_code": "",
                         "join_optional": [],
                         "join_start": 1,
-                        "line_end": 52,
+                        "line_end": 53,
                         "line_start": 31,
                         "message": "Configuring now",
                         "name": "update incident",
@@ -891,7 +1099,7 @@
                             }
                         },
                         "position": {
-                            "x": 680,
+                            "x": 840,
                             "y": 80
                         },
                         "previous_function": "",
@@ -910,7 +1118,7 @@
                         "title": "Generic",
                         "type": "coa.Action",
                         "warn": "",
-                        "z": 7
+                        "z": 14
                     }
                 ]
             },
@@ -920,7 +1128,7 @@
         "schema": 4,
         "version": "4.9.34514"
     },
-    "create_time": "2020-08-18T14:25:05.036056+00:00",
+    "create_time": "2020-08-18T14:26:19.039799+00:00",
     "draft_mode": false,
     "labels": [
         "*"
