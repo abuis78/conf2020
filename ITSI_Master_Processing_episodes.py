@@ -7,56 +7,56 @@ from datetime import datetime, timedelta
 def on_start(container):
     phantom.debug('on_start() called')
     
-    # call 'playbook_itsi_ITSI_notable_clean_up_1' block
-    playbook_itsi_ITSI_notable_clean_up_1(container=container)
+    # call 'playbook_conf2020_Notable_clean_up_1' block
+    playbook_conf2020_Notable_clean_up_1(container=container)
 
     return
 
-def playbook_itsi_itsi_create_hud_snow_1(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):
-    phantom.debug('playbook_itsi_itsi_create_hud_snow_1() called')
+def playbook_itsi_itsi_itsi_create_hud_snow_1(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):
+    phantom.debug('playbook_itsi_itsi_itsi_create_hud_snow_1() called')
     
     # call playbook "itsi/itsi_create_hud_snow", returns the playbook_run_id
-    playbook_run_id = phantom.playbook(playbook="itsi/itsi_create_hud_snow", container=container, name="playbook_itsi_itsi_create_hud_snow_1", callback=playbook_itsi_ITSI_Pin_Information_V2_1)
+    playbook_run_id = phantom.playbook(playbook="itsi/itsi_create_hud_snow", container=container, name="playbook_itsi_itsi_itsi_create_hud_snow_1", callback=playbook_itsi_itsi_ITSI_Pin_Information_V2_1)
 
     return
 
-def playbook_itsi_ITSI_notable_clean_up_1(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):
-    phantom.debug('playbook_itsi_ITSI_notable_clean_up_1() called')
+def playbook_conf2020_Notable_clean_up_1(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):
+    phantom.debug('playbook_conf2020_Notable_clean_up_1() called')
     
-    # call playbook "itsi/ITSI_notable_clean_up", returns the playbook_run_id
-    playbook_run_id = phantom.playbook(playbook="itsi/ITSI_notable_clean_up", container=container, name="playbook_itsi_ITSI_notable_clean_up_1", callback=playbook_itsi_itsi_create_hud_snow_1)
+    # call playbook "conf2020/Notable_clean_up", returns the playbook_run_id
+    playbook_run_id = phantom.playbook(playbook="conf2020/Notable_clean_up", container=container, name="playbook_conf2020_Notable_clean_up_1", callback=playbook_itsi_itsi_itsi_create_hud_snow_1)
 
     return
 
-def playbook_itsi_ITSI_Pin_Information_V2_1(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):
-    phantom.debug('playbook_itsi_ITSI_Pin_Information_V2_1() called')
+def playbook_itsi_itsi_ITSI_Pin_Information_V2_1(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):
+    phantom.debug('playbook_itsi_itsi_ITSI_Pin_Information_V2_1() called')
     
     # call playbook "itsi/ITSI_Pin_Information_V2", returns the playbook_run_id
-    playbook_run_id = phantom.playbook(playbook="itsi/ITSI_Pin_Information_V2", container=container, name="playbook_itsi_ITSI_Pin_Information_V2_1", callback=playbook_itsi_ITSI_Pin_Service_information_1)
+    playbook_run_id = phantom.playbook(playbook="itsi/ITSI_Pin_Information_V2", container=container, name="playbook_itsi_itsi_ITSI_Pin_Information_V2_1", callback=playbook_itsi_itsi_ITSI_Pin_Service_information_1)
 
     return
 
-def playbook_itsi_ITSI_Pin_Service_information_1(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):
-    phantom.debug('playbook_itsi_ITSI_Pin_Service_information_1() called')
+def playbook_itsi_itsi_ITSI_Pin_Service_information_1(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):
+    phantom.debug('playbook_itsi_itsi_ITSI_Pin_Service_information_1() called')
     
     # call playbook "itsi/ITSI_Pin_Service_information", returns the playbook_run_id
-    playbook_run_id = phantom.playbook(playbook="itsi/ITSI_Pin_Service_information", container=container, name="playbook_itsi_ITSI_Pin_Service_information_1", callback=playbook_itsi_ITSI_start_NGINX_1)
+    playbook_run_id = phantom.playbook(playbook="itsi/ITSI_Pin_Service_information", container=container, name="playbook_itsi_itsi_ITSI_Pin_Service_information_1", callback=playbook_itsi_itsi_ITSI_start_NGINX_1)
 
     return
 
-def playbook_itsi_ITSI_start_NGINX_1(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):
-    phantom.debug('playbook_itsi_ITSI_start_NGINX_1() called')
+def playbook_itsi_itsi_ITSI_start_NGINX_1(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):
+    phantom.debug('playbook_itsi_itsi_ITSI_start_NGINX_1() called')
     
     # call playbook "itsi/ITSI_start_NGINX", returns the playbook_run_id
-    playbook_run_id = phantom.playbook(playbook="itsi/ITSI_start_NGINX", container=container, name="playbook_itsi_ITSI_start_NGINX_1", callback=playbook_itsi_ITSI_close_episode_snow_1)
+    playbook_run_id = phantom.playbook(playbook="itsi/ITSI_start_NGINX", container=container, name="playbook_itsi_itsi_ITSI_start_NGINX_1", callback=playbook_itsi_itsi_ITSI_close_episode_snow_1)
 
     return
 
-def playbook_itsi_ITSI_close_episode_snow_1(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):
-    phantom.debug('playbook_itsi_ITSI_close_episode_snow_1() called')
+def playbook_itsi_itsi_ITSI_close_episode_snow_1(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):
+    phantom.debug('playbook_itsi_itsi_ITSI_close_episode_snow_1() called')
     
     # call playbook "itsi/ITSI_close_episode_snow", returns the playbook_run_id
-    playbook_run_id = phantom.playbook(playbook="itsi/ITSI_close_episode_snow", container=container, name="playbook_itsi_ITSI_close_episode_snow_1")
+    playbook_run_id = phantom.playbook(playbook="itsi/ITSI_close_episode_snow", container=container, name="playbook_itsi_itsi_ITSI_close_episode_snow_1")
 
     return
 
