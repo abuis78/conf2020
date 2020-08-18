@@ -129,7 +129,7 @@ def DedupeListEntries(action=None, success=None, container=None, results=None, h
 
 def get_entity_1(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):
     phantom.debug('get_entity_1() called')
-    
+        
     #phantom.debug('Action: {0} {1}'.format(action['name'], ('SUCCEEDED' if success else 'FAILED')))
     
     DedupeListEntries__entity_list = json.loads(phantom.get_run_data(key='DedupeListEntries:entity_list'))
@@ -142,8 +142,7 @@ def get_entity_1(action=None, success=None, container=None, results=None, handle
         parameters.append({
             'entity_title': entity_title,
         })
-    
-    phantom.act("get entity", parameters=parameters, assets=['splunk itsi'], callback=pin_1, name="get_entity_1")
+    phantom.act(action="get entity", parameters=parameters, assets=['splunk itsi'], callback=pin_1, name="get_entity_1")
 
     return
 
