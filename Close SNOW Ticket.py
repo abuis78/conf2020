@@ -59,7 +59,7 @@ def decision_1(action=None, success=None, container=None, results=None, handle=N
 
     # call connected blocks if condition 1 matched
     if matched:
-        close_episode_1(action=action, success=success, container=container, results=results, handle=handle, custom_function=custom_function)
+        SNOW_Closed_episode(action=action, success=success, container=container, results=results, handle=handle, custom_function=custom_function)
         return
 
     # call connected blocks for 'else' condition 2
@@ -70,83 +70,28 @@ def decision_1(action=None, success=None, container=None, results=None, handle=N
 def add_episode_comment_1(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):
     phantom.debug('add_episode_comment_1() called')
 
-    source_data_identifier_value = container.get('source_data_identifier', None)
-
     # collect data for 'add_episode_comment_1' call
 
     parameters = []
     
     # build parameters list for 'add_episode_comment_1' call
     parameters.append({
-        'comment': "Service was restarted",
-        'itsi_group_id': source_data_identifier_value,
+        'itsi_group_id': "",
+        'comment': "The service has restarted",
     })
 
-    phantom.act(action="add episode comment", parameters=parameters, assets=['splunk itsi'], callback=update_episode_1, name="add_episode_comment_1")
-
-    return
-
-def update_episode_1(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):
-    phantom.debug('update_episode_1() called')
-        
-    #phantom.debug('Action: {0} {1}'.format(action['name'], ('SUCCEEDED' if success else 'FAILED')))
-    
-    # collect data for 'update_episode_1' call
-    results_data_1 = phantom.collect2(container=container, datapath=['add_episode_comment_1:action_result.parameter.itsi_group_id', 'add_episode_comment_1:action_result.parameter.context.artifact_id'], action_results=results)
-
-    parameters = []
-    
-    # build parameters list for 'update_episode_1' call
-    for results_item_1 in results_data_1:
-        if results_item_1[0]:
-            parameters.append({
-                'owner': "",
-                'status': "Resolved",
-                'severity': "Normal",
-                'itsi_group_id': results_item_1[0],
-                # context (artifact id) is added to associate results with the artifact
-                'context': {'artifact_id': results_item_1[1]},
-            })
-
-    phantom.act(action="update episode", parameters=parameters, assets=['splunk itsi'], callback=SNOW_Update_Resolved, name="update_episode_1", parent_action=action)
-
-    return
-
-def close_episode_1(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):
-    phantom.debug('close_episode_1() called')
-        
-    #phantom.debug('Action: {0} {1}'.format(action['name'], ('SUCCEEDED' if success else 'FAILED')))
-    
-    # collect data for 'close_episode_1' call
-    container_data = phantom.collect2(container=container, datapath=['artifact:*.cef.itsi_policy_id', 'artifact:*.id'])
-    results_data_1 = phantom.collect2(container=container, datapath=['update_episode_1:action_result.parameter.itsi_group_id', 'update_episode_1:action_result.parameter.context.artifact_id'], action_results=results)
-
-    parameters = []
-    
-    # build parameters list for 'close_episode_1' call
-    for container_item in container_data:
-        for results_item_1 in results_data_1:
-            if results_item_1[0]:
-                parameters.append({
-                    'break_episode': True,
-                    'itsi_group_id': results_item_1[0],
-                    'itsi_policy_id': container_item[0],
-                    # context (artifact id) is added to associate results with the artifact
-                    'context': {'artifact_id': results_item_1[1]},
-                })
-
-    phantom.act(action="close episode", parameters=parameters, assets=['splunk itsi'], callback=SNOW_Closed_episode, name="close_episode_1")
+    phantom.act(action="add episode comment", parameters=parameters, assets=['','splunk itsi'], callback=SNOW_Update_Resolved, name="add_episode_comment_1")
 
     return
 
 def SNOW_Update_Resolved(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):
     phantom.debug('SNOW_Update_Resolved() called')
     
-    template = """{{\"work_notes\": \"Service was started and ITSI episode status is been set to resolved: {0}\"}}"""
+    template = """{{\"work_notes\": \"Service was started and ITSI episode status is been set to resolved\"}}"""
 
     # parameter list for template variable replacement
     parameters = [
-        "update_episode_1:action_result.parameter.status",
+        "artifact:*.cef.act",
     ]
 
     phantom.format(container=container, template=template, parameters=parameters, name="SNOW_Update_Resolved")
@@ -190,7 +135,7 @@ def SNOW_Closed_episode(action=None, success=None, container=None, results=None,
 
     # parameter list for template variable replacement
     parameters = [
-        "close_episode_1:action_result.status",
+        "artifact:*.cef.act",
     ]
 
     phantom.format(container=container, template=template, parameters=parameters, name="SNOW_Closed_episode")
@@ -395,7 +340,7 @@ def update_ticket_5(action=None, success=None, container=None, results=None, han
                 'context': {'artifact_id': results_item_1[1]},
             })
 
-    phantom.act(action="update ticket", parameters=parameters, assets=['servicenow'], callback=close_episode_2, name="update_ticket_5")
+    phantom.act(action="update ticket", parameters=parameters, assets=['servicenow'], callback=join_set_status_1, name="update_ticket_5")
 
     return
 
@@ -443,38 +388,11 @@ def join_set_status_1(action=None, success=None, container=None, results=None, h
     phantom.debug('join_set_status_1() called')
 
     # check if all connected incoming playbooks, actions, or custom functions are done i.e. have succeeded or failed
-    if phantom.completed(action_names=['update_ticket_4', 'close_episode_2']):
+    if phantom.completed(action_names=['update_ticket_4', 'update_ticket_5']):
         
         # call connected block "set_status_1"
         set_status_1(container=container, handle=handle)
     
-    return
-
-def close_episode_2(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):
-    phantom.debug('close_episode_2() called')
-        
-    #phantom.debug('Action: {0} {1}'.format(action['name'], ('SUCCEEDED' if success else 'FAILED')))
-    
-    # collect data for 'close_episode_2' call
-    container_data = phantom.collect2(container=container, datapath=['artifact:*.cef.itsi_policy_id', 'artifact:*.id'])
-    results_data_1 = phantom.collect2(container=container, datapath=['update_episode_1:action_result.parameter.itsi_group_id', 'update_episode_1:action_result.parameter.context.artifact_id'], action_results=results)
-
-    parameters = []
-    
-    # build parameters list for 'close_episode_2' call
-    for container_item in container_data:
-        for results_item_1 in results_data_1:
-            if results_item_1[0]:
-                parameters.append({
-                    'break_episode': True,
-                    'itsi_group_id': results_item_1[0],
-                    'itsi_policy_id': container_item[0],
-                    # context (artifact id) is added to associate results with the artifact
-                    'context': {'artifact_id': results_item_1[1]},
-                })
-
-    phantom.act(action="close episode", parameters=parameters, assets=['splunk itsi'], callback=join_set_status_1, name="close_episode_2", parent_action=action)
-
     return
 
 def on_finish(container, summary):

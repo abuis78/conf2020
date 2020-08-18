@@ -7,6 +7,7 @@
             "clean": true,
             "code_block": "",
             "description": "",
+            "hash": "59a24e4a442c1ee6bfac397408ee947616a0eefe",
             "joint": {
                 "cells": [
                     {
@@ -198,7 +199,7 @@
                         "callback_start": 1,
                         "callsback": false,
                         "connected_to_start": true,
-                        "connection_name": "update ticket 4, close episode 2",
+                        "connection_name": "update ticket 4, update ticket 5",
                         "connection_type": "action",
                         "custom_callback": "",
                         "custom_code": "",
@@ -216,12 +217,12 @@
                         "join_code": "# read-only block view not available",
                         "join_optional": [],
                         "join_start": 1,
-                        "line_end": 493,
-                        "line_start": 480,
+                        "line_end": 411,
+                        "line_start": 398,
                         "name": "",
                         "notes": "",
                         "number": 0,
-                        "order": 23,
+                        "order": 20,
                         "outPorts": [],
                         "ports": {
                             "groups": {
@@ -352,124 +353,6 @@
                         "endDirections": [
                             "left"
                         ],
-                        "id": "e616d7b1-5f4e-467f-b13e-77e219d856af",
-                        "router": {
-                            "name": "metro"
-                        },
-                        "source": {
-                            "id": "c4c60b6a-12f0-4115-924e-c03142f032f0",
-                            "selector": "> g:nth-child(1) > g:nth-child(2) > g:nth-child(1) > circle:nth-child(1)"
-                        },
-                        "startDirections": [
-                            "right"
-                        ],
-                        "target": {
-                            "id": "9c068e84-f452-4142-92fe-7cf5c6885102",
-                            "selector": ".port-body[type=\"input\"]"
-                        },
-                        "type": "link",
-                        "z": 60
-                    },
-                    {
-                        "attrs": {
-                            ".connection": {
-                                "stroke": "#818D99",
-                                "stroke-width": 2
-                            },
-                            ".marker-target": {
-                                "d": "M 10 0 L 0 5 L 10 10 z",
-                                "fill": "#818D99",
-                                "stroke": "#818D99"
-                            }
-                        },
-                        "connector": {
-                            "args": {
-                                "radius": 5
-                            },
-                            "name": "rounded"
-                        },
-                        "endDirections": [
-                            "left"
-                        ],
-                        "id": "70b6ca1c-8c93-48eb-8580-c9c1c5d7cbbc",
-                        "router": {
-                            "name": "metro"
-                        },
-                        "source": {
-                            "id": "0414a88c-51fd-411c-a624-6ead59fe89d5",
-                            "port": "out-1",
-                            "selector": "> g:nth-child(1) > g:nth-child(2) > g:nth-child(1) > circle:nth-child(1)"
-                        },
-                        "startDirections": [
-                            "right"
-                        ],
-                        "target": {
-                            "id": "8e62dddb-0516-4a47-a86a-571c6b270188",
-                            "selector": ".port-body[type=\"input\"]"
-                        },
-                        "type": "link",
-                        "z": 72
-                    },
-                    {
-                        "attrs": {
-                            ".connection": {
-                                "stroke": "#818D99",
-                                "stroke-width": 2
-                            },
-                            ".marker-target": {
-                                "d": "M 10 0 L 0 5 L 10 10 z",
-                                "fill": "#818D99",
-                                "stroke": "#818D99"
-                            }
-                        },
-                        "connector": {
-                            "args": {
-                                "radius": 5
-                            },
-                            "name": "rounded"
-                        },
-                        "endDirections": [
-                            "left"
-                        ],
-                        "id": "c579ee76-b78c-4c2a-8cfc-b81b677a8990",
-                        "router": {
-                            "name": "metro"
-                        },
-                        "source": {
-                            "id": "9c068e84-f452-4142-92fe-7cf5c6885102",
-                            "selector": "> g:nth-child(1) > g:nth-child(2) > g:nth-child(1) > circle:nth-child(1)"
-                        },
-                        "startDirections": [
-                            "right"
-                        ],
-                        "target": {
-                            "id": "dcaea38a-c503-4978-843a-f6ff8322c4a7",
-                            "selector": ".port-body[type=\"input\"]"
-                        },
-                        "type": "link",
-                        "z": 80
-                    },
-                    {
-                        "attrs": {
-                            ".connection": {
-                                "stroke": "#818D99",
-                                "stroke-width": 2
-                            },
-                            ".marker-target": {
-                                "d": "M 10 0 L 0 5 L 10 10 z",
-                                "fill": "#818D99",
-                                "stroke": "#818D99"
-                            }
-                        },
-                        "connector": {
-                            "args": {
-                                "radius": 5
-                            },
-                            "name": "rounded"
-                        },
-                        "endDirections": [
-                            "left"
-                        ],
                         "id": "89d39564-e308-4f65-aa78-aaa2bc43f6ab",
                         "router": {
                             "name": "metro"
@@ -487,45 +370,6 @@
                         },
                         "type": "link",
                         "z": 87
-                    },
-                    {
-                        "attrs": {
-                            ".connection": {
-                                "stroke": "#818D99",
-                                "stroke-width": 2
-                            },
-                            ".marker-target": {
-                                "d": "M 10 0 L 0 5 L 10 10 z",
-                                "fill": "#818D99",
-                                "stroke": "#818D99"
-                            }
-                        },
-                        "connector": {
-                            "args": {
-                                "radius": 5
-                            },
-                            "name": "rounded"
-                        },
-                        "endDirections": [
-                            "left"
-                        ],
-                        "id": "a744103f-0667-4ca2-bf4e-a1c6b27e1257",
-                        "router": {
-                            "name": "metro"
-                        },
-                        "source": {
-                            "id": "8e62dddb-0516-4a47-a86a-571c6b270188",
-                            "selector": "> g:nth-child(1) > g:nth-child(2) > g:nth-child(1) > circle:nth-child(1)"
-                        },
-                        "startDirections": [
-                            "right"
-                        ],
-                        "target": {
-                            "id": "703faa83-5714-41ef-9f57-fb5583cf35b5",
-                            "selector": ".port-body[type=\"input\"]"
-                        },
-                        "type": "link",
-                        "z": 89
                     },
                     {
                         "attrs": {
@@ -646,705 +490,6 @@
                         "z": 105
                     },
                     {
-                        "action": "add episode comment",
-                        "action_type": "generic",
-                        "active": false,
-                        "active_keys": {},
-                        "active_values": {
-                            "comment": "Service was restarted",
-                            "itsi_group_id": "container:source_data_identifier"
-                        },
-                        "angle": 0,
-                        "app": "Splunk IT Service Intelligence",
-                        "appid": "afab2702-4bb9-4b12-8cad-2035868db12d",
-                        "approver": "",
-                        "assets": [
-                            {
-                                "action": "add episode comment",
-                                "actions": [
-                                    "test connectivity",
-                                    "get episode",
-                                    "update episode",
-                                    "add episode comment",
-                                    "get episode events",
-                                    "break episode",
-                                    "close episode",
-                                    "add episode ticket",
-                                    "get episode tickets",
-                                    "get entity",
-                                    "get entity services",
-                                    "get service",
-                                    "get service entities",
-                                    "get service kpis",
-                                    "update service status",
-                                    "get maintenance window",
-                                    "add maintenance window",
-                                    "update maintenance window",
-                                    "end maintenance window",
-                                    "get neap",
-                                    "update neap status",
-                                    "get cs",
-                                    "update cs status"
-                                ],
-                                "active": true,
-                                "app_name": "Splunk IT Service Intelligence",
-                                "app_version": "0.5.0",
-                                "appid": "afab2702-4bb9-4b12-8cad-2035868db12d",
-                                "asset_name": "splunk itsi nova",
-                                "config_type": "asset",
-                                "count": 0,
-                                "fields": {
-                                    "comment": "Service was restarted",
-                                    "itsi_group_id": "container:source_data_identifier"
-                                },
-                                "has_app": true,
-                                "id": 11,
-                                "loaded": false,
-                                "missing": false,
-                                "name": "splunk itsi",
-                                "output": [
-                                    {
-                                        "column_name": "itsi_group_id",
-                                        "column_order": 0,
-                                        "contains": [
-                                            "splunk itsi episode id"
-                                        ],
-                                        "data_path": "action_result.parameter.itsi_group_id",
-                                        "data_type": "string"
-                                    },
-                                    {
-                                        "column_name": "comment",
-                                        "column_order": 1,
-                                        "contains": [
-                                            "comment"
-                                        ],
-                                        "data_path": "action_result.parameter.comment",
-                                        "data_type": "string"
-                                    },
-                                    {
-                                        "column_name": "status",
-                                        "column_order": 2,
-                                        "data_path": "action_result.status",
-                                        "data_type": "string"
-                                    },
-                                    {
-                                        "column_name": "data",
-                                        "column_order": 3,
-                                        "data_path": "action_result.data",
-                                        "data_type": "string"
-                                    },
-                                    {
-                                        "column_name": "summary",
-                                        "column_order": 4,
-                                        "data_path": "action_result.summary",
-                                        "data_type": "string"
-                                    },
-                                    {
-                                        "data_path": "action_result.message",
-                                        "data_type": "string"
-                                    },
-                                    {
-                                        "data_path": "summary.total_objects",
-                                        "data_type": "numeric"
-                                    },
-                                    {
-                                        "data_path": "summary.total_objects_successful",
-                                        "data_type": "numeric"
-                                    }
-                                ],
-                                "parameters": {
-                                    "comment": {
-                                        "contains": [
-                                            "comment"
-                                        ],
-                                        "data_type": "string",
-                                        "default": "",
-                                        "description": "Comment to add",
-                                        "key": "comment",
-                                        "order": 1,
-                                        "primary": false,
-                                        "required": true,
-                                        "value_list": []
-                                    },
-                                    "itsi_group_id": {
-                                        "contains": [
-                                            "splunk itsi episode id"
-                                        ],
-                                        "data_type": "string",
-                                        "default": "",
-                                        "description": "Splunk ITSI episode id",
-                                        "key": "itsi_group_id",
-                                        "order": 0,
-                                        "primary": true,
-                                        "required": true,
-                                        "value_list": []
-                                    }
-                                },
-                                "product_name": "IT Service Intelligence",
-                                "product_vendor": "Splunk",
-                                "targets": "11",
-                                "type": "generic"
-                            }
-                        ],
-                        "attrs": {
-                            ".action": {
-                                "text": "add episode comment"
-                            },
-                            ".background": {
-                                "fill": "#FFFFFF",
-                                "stroke": "#E6984E"
-                            },
-                            ".color-band": {
-                                "fill": "#171D21"
-                            },
-                            ".inPorts>.port-in": {
-                                "ref": ".background",
-                                "ref-x": 0.5
-                            },
-                            ".inPorts>.port-in>.port-body": {
-                                "port": {
-                                    "id": "in",
-                                    "type": "in"
-                                }
-                            },
-                            ".message": {
-                                "opacity": 0,
-                                "ref-x": 5,
-                                "ref-y": 105,
-                                "text": "Configuring now"
-                            },
-                            ".outPorts>.port-out": {
-                                "ref": ".background",
-                                "ref-x": 0.5
-                            },
-                            ".outPorts>.port-out>.port-body": {
-                                "port": {
-                                    "id": "out",
-                                    "type": "out"
-                                }
-                            },
-                            ".title": {
-                                "text": "Generic"
-                            },
-                            "g.approver image": {
-                                "opacity": 1
-                            },
-                            "g.code image": {
-                                "opacity": 1
-                            },
-                            "g.delete": {
-                                "display": "none"
-                            },
-                            "g.error": {
-                                "opacity": 1
-                            },
-                            "g.error image": {
-                                "xlink:href": "/inc/coa/img/block_icon_warn.svg"
-                            },
-                            "g.icon image": {
-                                "xlink:href": "/inc/coa/img/block_icon_generic.svg"
-                            },
-                            "g.notes": {
-                                "display": "block"
-                            },
-                            "g.notes image": {
-                                "opacity": 1
-                            },
-                            "g.timer image": {
-                                "opacity": 1
-                            }
-                        },
-                        "block_code": "def add_episode_comment_1(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):\n    phantom.debug('add_episode_comment_1() called')\n\n    source_data_identifier_value = container.get('source_data_identifier', None)\n\n    # collect data for 'add_episode_comment_1' call\n\n    parameters = []\n    \n    # build parameters list for 'add_episode_comment_1' call\n    parameters.append({\n        'comment': \"Service was restarted\",\n        'itsi_group_id': source_data_identifier_value,\n    })\n\n    phantom.act(action=\"add episode comment\", parameters=parameters, assets=['splunk itsi'], callback=update_episode_1, name=\"add_episode_comment_1\")\n\n    return",
-                        "callback_code": "",
-                        "callback_start": 1,
-                        "callsback": true,
-                        "color": "",
-                        "connected_to_start": true,
-                        "connection_name": "",
-                        "connection_type": "",
-                        "custom_callback": "",
-                        "custom_code": "",
-                        "custom_join": "",
-                        "custom_name": "",
-                        "delay": 0,
-                        "description": "",
-                        "has_custom": false,
-                        "has_custom_block": false,
-                        "has_custom_callback": false,
-                        "has_custom_join": false,
-                        "id": "c4c60b6a-12f0-4115-924e-c03142f032f0",
-                        "inPorts": [
-                            "in"
-                        ],
-                        "join_code": "",
-                        "join_optional": [],
-                        "join_start": 1,
-                        "line_end": 89,
-                        "line_start": 70,
-                        "message": "Configuring now",
-                        "name": "add episode comment",
-                        "notes": "",
-                        "number": 1,
-                        "order": 4,
-                        "outPorts": [
-                            "out"
-                        ],
-                        "ports": {
-                            "groups": {
-                                "in": {
-                                    "attrs": {
-                                        ".port-body": {
-                                            "fill": "#fff",
-                                            "magnet": true,
-                                            "r": 10,
-                                            "stroke": "#000"
-                                        },
-                                        ".port-label": {
-                                            "fill": "#000"
-                                        }
-                                    },
-                                    "label": {
-                                        "position": {
-                                            "args": {
-                                                "y": 10
-                                            },
-                                            "name": "left"
-                                        }
-                                    },
-                                    "position": {
-                                        "name": "left"
-                                    }
-                                },
-                                "out": {
-                                    "attrs": {
-                                        ".port-body": {
-                                            "fill": "#fff",
-                                            "magnet": true,
-                                            "r": 10,
-                                            "stroke": "#000"
-                                        },
-                                        ".port-label": {
-                                            "fill": "#000"
-                                        }
-                                    },
-                                    "label": {
-                                        "position": {
-                                            "args": {
-                                                "y": 10
-                                            },
-                                            "name": "right"
-                                        }
-                                    },
-                                    "position": {
-                                        "name": "right"
-                                    }
-                                }
-                            }
-                        },
-                        "position": {
-                            "x": 260,
-                            "y": -60
-                        },
-                        "previous_function": "",
-                        "previous_name": "add_episode_comment_1",
-                        "required_params": {
-                            "comment": true,
-                            "itsi_group_id": true
-                        },
-                        "reviewer": "",
-                        "show_number": false,
-                        "size": {
-                            "height": 100,
-                            "width": 180
-                        },
-                        "state": "app_action_assets",
-                        "status": "warn",
-                        "title": "Generic",
-                        "type": "coa.Action",
-                        "warn": false,
-                        "z": 119
-                    },
-                    {
-                        "action": "update episode",
-                        "action_type": "generic",
-                        "active": false,
-                        "active_keys": {},
-                        "active_values": {
-                            "itsi_group_id": "add_episode_comment_1:action_result.parameter.itsi_group_id",
-                            "owner": "",
-                            "severity": "Normal",
-                            "status": "Resolved"
-                        },
-                        "angle": 0,
-                        "app": "Splunk IT Service Intelligence",
-                        "appid": "afab2702-4bb9-4b12-8cad-2035868db12d",
-                        "approver": "",
-                        "assets": [
-                            {
-                                "action": "update episode",
-                                "actions": [
-                                    "test connectivity",
-                                    "get episode",
-                                    "update episode",
-                                    "add episode comment",
-                                    "get episode events",
-                                    "break episode",
-                                    "close episode",
-                                    "add episode ticket",
-                                    "get episode tickets",
-                                    "get entity",
-                                    "get entity services",
-                                    "get service",
-                                    "get service entities",
-                                    "get service kpis",
-                                    "update service status",
-                                    "get maintenance window",
-                                    "add maintenance window",
-                                    "update maintenance window",
-                                    "end maintenance window",
-                                    "get neap",
-                                    "update neap status",
-                                    "get cs",
-                                    "update cs status"
-                                ],
-                                "active": true,
-                                "app_name": "Splunk IT Service Intelligence",
-                                "app_version": "0.5.0",
-                                "appid": "afab2702-4bb9-4b12-8cad-2035868db12d",
-                                "asset_name": "splunk itsi nova",
-                                "config_type": "asset",
-                                "count": 0,
-                                "fields": {
-                                    "itsi_group_id": "add_episode_comment_1:action_result.parameter.itsi_group_id",
-                                    "owner": "",
-                                    "severity": "Normal",
-                                    "status": "Resolved"
-                                },
-                                "has_app": true,
-                                "id": 11,
-                                "loaded": false,
-                                "missing": false,
-                                "name": "splunk itsi",
-                                "output": [
-                                    {
-                                        "column_name": "itsi_group_id",
-                                        "column_order": 0,
-                                        "contains": [
-                                            "splunk itsi episode id"
-                                        ],
-                                        "data_path": "action_result.parameter.itsi_group_id",
-                                        "data_type": "string"
-                                    },
-                                    {
-                                        "column_name": "status",
-                                        "column_order": 1,
-                                        "contains": [
-                                            "status"
-                                        ],
-                                        "data_path": "action_result.parameter.status",
-                                        "data_type": "string"
-                                    },
-                                    {
-                                        "column_name": "severity",
-                                        "column_order": 2,
-                                        "contains": [
-                                            "severity"
-                                        ],
-                                        "data_path": "action_result.parameter.severity",
-                                        "data_type": "string"
-                                    },
-                                    {
-                                        "column_name": "owner",
-                                        "column_order": 3,
-                                        "contains": [
-                                            "owner"
-                                        ],
-                                        "data_path": "action_result.parameter.owner",
-                                        "data_type": "string"
-                                    },
-                                    {
-                                        "column_name": "status",
-                                        "column_order": 4,
-                                        "data_path": "action_result.status",
-                                        "data_type": "string"
-                                    },
-                                    {
-                                        "column_name": "data",
-                                        "column_order": 5,
-                                        "data_path": "action_result.data",
-                                        "data_type": "string"
-                                    },
-                                    {
-                                        "column_name": "summary",
-                                        "column_order": 6,
-                                        "data_path": "action_result.summary",
-                                        "data_type": "string"
-                                    },
-                                    {
-                                        "data_path": "action_result.message",
-                                        "data_type": "string"
-                                    },
-                                    {
-                                        "data_path": "summary.total_objects",
-                                        "data_type": "numeric"
-                                    },
-                                    {
-                                        "data_path": "summary.total_objects_successful",
-                                        "data_type": "numeric"
-                                    }
-                                ],
-                                "parameters": {
-                                    "itsi_group_id": {
-                                        "contains": [
-                                            "splunk itsi episode id"
-                                        ],
-                                        "data_type": "string",
-                                        "default": "",
-                                        "description": "Splunk ITSI episode id",
-                                        "key": "itsi_group_id",
-                                        "order": 0,
-                                        "primary": true,
-                                        "required": true,
-                                        "value_list": []
-                                    },
-                                    "owner": {
-                                        "contains": [
-                                            "owner"
-                                        ],
-                                        "data_type": "string",
-                                        "default": "",
-                                        "description": "Episode owner",
-                                        "key": "owner",
-                                        "order": 3,
-                                        "primary": false,
-                                        "required": false,
-                                        "value_list": []
-                                    },
-                                    "severity": {
-                                        "contains": [
-                                            "severity"
-                                        ],
-                                        "data_type": "string",
-                                        "default": "",
-                                        "description": "Episode severity",
-                                        "key": "severity",
-                                        "order": 2,
-                                        "primary": false,
-                                        "required": false,
-                                        "value_list": [
-                                            "Info",
-                                            "Normal",
-                                            "Low",
-                                            "Medium",
-                                            "High",
-                                            "Critical"
-                                        ]
-                                    },
-                                    "status": {
-                                        "contains": [
-                                            "status"
-                                        ],
-                                        "data_type": "string",
-                                        "default": "",
-                                        "description": "Episode status",
-                                        "key": "status",
-                                        "order": 1,
-                                        "primary": false,
-                                        "required": false,
-                                        "value_list": [
-                                            "Unassigned",
-                                            "New",
-                                            "In Progress",
-                                            "Pending",
-                                            "Resolved",
-                                            "Closed"
-                                        ]
-                                    }
-                                },
-                                "product_name": "IT Service Intelligence",
-                                "product_vendor": "Splunk",
-                                "targets": "11",
-                                "type": "generic"
-                            }
-                        ],
-                        "attrs": {
-                            ".action": {
-                                "text": "update episode"
-                            },
-                            ".background": {
-                                "fill": "#FFFFFF",
-                                "stroke": "#E6984E"
-                            },
-                            ".color-band": {
-                                "fill": "#171D21"
-                            },
-                            ".inPorts>.port-in": {
-                                "ref": ".background",
-                                "ref-x": 0.5
-                            },
-                            ".inPorts>.port-in>.port-body": {
-                                "port": {
-                                    "id": "in",
-                                    "type": "in"
-                                }
-                            },
-                            ".message": {
-                                "opacity": 0,
-                                "ref-x": 5,
-                                "ref-y": 105,
-                                "text": "Configuring now"
-                            },
-                            ".outPorts>.port-out": {
-                                "ref": ".background",
-                                "ref-x": 0.5
-                            },
-                            ".outPorts>.port-out>.port-body": {
-                                "port": {
-                                    "id": "out",
-                                    "type": "out"
-                                }
-                            },
-                            ".title": {
-                                "text": "Generic"
-                            },
-                            "g.approver image": {
-                                "opacity": 1
-                            },
-                            "g.code image": {
-                                "opacity": 1
-                            },
-                            "g.delete": {
-                                "display": "none"
-                            },
-                            "g.error": {
-                                "opacity": 1
-                            },
-                            "g.error image": {
-                                "xlink:href": "/inc/coa/img/block_icon_warn.svg"
-                            },
-                            "g.icon image": {
-                                "xlink:href": "/inc/coa/img/block_icon_generic.svg"
-                            },
-                            "g.notes": {
-                                "display": "block"
-                            },
-                            "g.notes image": {
-                                "opacity": 1
-                            },
-                            "g.timer image": {
-                                "opacity": 1
-                            }
-                        },
-                        "block_code": "def update_episode_1(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):\n    phantom.debug('update_episode_1() called')\n        \n    #phantom.debug('Action: {0} {1}'.format(action['name'], ('SUCCEEDED' if success else 'FAILED')))\n    \n    # collect data for 'update_episode_1' call\n    results_data_1 = phantom.collect2(container=container, datapath=['add_episode_comment_1:action_result.parameter.itsi_group_id', 'add_episode_comment_1:action_result.parameter.context.artifact_id'], action_results=results)\n\n    parameters = []\n    \n    # build parameters list for 'update_episode_1' call\n    for results_item_1 in results_data_1:\n        if results_item_1[0]:\n            parameters.append({\n                'owner': \"\",\n                'status': \"Resolved\",\n                'severity': \"Normal\",\n                'itsi_group_id': results_item_1[0],\n                # context (artifact id) is added to associate results with the artifact\n                'context': {'artifact_id': results_item_1[1]},\n            })\n\n    phantom.act(action=\"update episode\", parameters=parameters, assets=['splunk itsi'], callback=SNOW_Update_Resolved, name=\"update_episode_1\", parent_action=action)\n\n    return",
-                        "callback_code": "",
-                        "callback_start": 1,
-                        "callsback": true,
-                        "color": "",
-                        "connected_to_start": true,
-                        "connection_name": "add episode comment",
-                        "connection_type": "action",
-                        "custom_callback": "",
-                        "custom_code": "",
-                        "custom_join": "",
-                        "custom_name": "",
-                        "delay": 0,
-                        "description": "",
-                        "has_custom": false,
-                        "has_custom_block": false,
-                        "has_custom_callback": false,
-                        "has_custom_join": false,
-                        "id": "9c068e84-f452-4142-92fe-7cf5c6885102",
-                        "inPorts": [
-                            "in"
-                        ],
-                        "join_code": "",
-                        "join_optional": [],
-                        "join_start": 1,
-                        "line_end": 115,
-                        "line_start": 89,
-                        "message": "Configuring now",
-                        "name": "update episode",
-                        "notes": "",
-                        "number": 1,
-                        "order": 5,
-                        "outPorts": [
-                            "out"
-                        ],
-                        "ports": {
-                            "groups": {
-                                "in": {
-                                    "attrs": {
-                                        ".port-body": {
-                                            "fill": "#fff",
-                                            "magnet": true,
-                                            "r": 10,
-                                            "stroke": "#000"
-                                        },
-                                        ".port-label": {
-                                            "fill": "#000"
-                                        }
-                                    },
-                                    "label": {
-                                        "position": {
-                                            "args": {
-                                                "y": 10
-                                            },
-                                            "name": "left"
-                                        }
-                                    },
-                                    "position": {
-                                        "name": "left"
-                                    }
-                                },
-                                "out": {
-                                    "attrs": {
-                                        ".port-body": {
-                                            "fill": "#fff",
-                                            "magnet": true,
-                                            "r": 10,
-                                            "stroke": "#000"
-                                        },
-                                        ".port-label": {
-                                            "fill": "#000"
-                                        }
-                                    },
-                                    "label": {
-                                        "position": {
-                                            "args": {
-                                                "y": 10
-                                            },
-                                            "name": "right"
-                                        }
-                                    },
-                                    "position": {
-                                        "name": "right"
-                                    }
-                                }
-                            }
-                        },
-                        "position": {
-                            "x": 480,
-                            "y": -60
-                        },
-                        "previous_function": "",
-                        "previous_name": "update_episode_1",
-                        "required_params": {
-                            "itsi_group_id": true
-                        },
-                        "reviewer": "",
-                        "show_number": false,
-                        "size": {
-                            "height": 100,
-                            "width": 180
-                        },
-                        "state": "app_action_assets",
-                        "status": "warn",
-                        "title": "Generic",
-                        "type": "coa.Action",
-                        "warn": false,
-                        "z": 120
-                    },
-                    {
                         "active": false,
                         "angle": 0,
                         "attrs": {
@@ -1406,7 +551,7 @@
                                 "opacity": 1
                             }
                         },
-                        "block_code": "def decision_1(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):\n    phantom.debug('decision_1() called')\n\n    # check for 'if' condition 1\n    matched = phantom.decision(\n        container=container,\n        action_results=results,\n        conditions=[\n            [\"Approval_Close_Incident:action_result.summary.responses.0\", \"==\", \"Yes\"],\n        ])\n\n    # call connected blocks if condition 1 matched\n    if matched:\n        close_episode_1(action=action, success=success, container=container, results=results, handle=handle, custom_function=custom_function)\n        return\n\n    # call connected blocks for 'else' condition 2\n    SNOW_Not_Closed(action=action, success=success, container=container, results=results, handle=handle, custom_function=custom_function)\n\n    return",
+                        "block_code": "def decision_1(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):\n    phantom.debug('decision_1() called')\n\n    # check for 'if' condition 1\n    matched = phantom.decision(\n        container=container,\n        action_results=results,\n        conditions=[\n            [\"Approval_Close_Incident:action_result.summary.responses.0\", \"==\", \"Yes\"],\n        ])\n\n    # call connected blocks if condition 1 matched\n    if matched:\n        SNOW_Closed_episode(action=action, success=success, container=container, results=results, handle=handle, custom_function=custom_function)\n        return\n\n    # call connected blocks for 'else' condition 2\n    SNOW_Not_Closed(action=action, success=success, container=container, results=results, handle=handle, custom_function=custom_function)\n\n    return",
                         "callback_code": "",
                         "callback_start": 1,
                         "callsback": false,
@@ -1862,7 +1007,7 @@
                         "callsback": true,
                         "color": "",
                         "connected_to_start": true,
-                        "connection_name": "update episode",
+                        "connection_name": "add episode comment",
                         "connection_type": "action",
                         "custom_callback": "",
                         "custom_code": "",
@@ -1881,13 +1026,13 @@
                         "join_code": "",
                         "join_optional": [],
                         "join_start": 1,
-                        "line_end": 311,
-                        "line_start": 290,
+                        "line_end": 256,
+                        "line_start": 235,
                         "message": "Configuring now",
                         "name": "get data",
                         "notes": "",
                         "number": 1,
-                        "order": 14,
+                        "order": 12,
                         "outPorts": [
                             "out"
                         ],
@@ -3072,13 +2217,13 @@
                         "join_code": "",
                         "join_optional": [],
                         "join_start": 1,
-                        "line_end": 186,
-                        "line_start": 158,
+                        "line_end": 131,
+                        "line_start": 103,
                         "message": "Configuring now",
                         "name": "update ticket",
                         "notes": "",
                         "number": 1,
-                        "order": 8,
+                        "order": 6,
                         "outPorts": [
                             "out"
                         ],
@@ -3168,178 +2313,6 @@
                                 "fill": "#171D21"
                             },
                             ".format": {
-                                "text": "SNOW Update Resolved"
-                            },
-                            ".inPorts>.port-in": {
-                                "ref": ".background",
-                                "ref-x": 0.5
-                            },
-                            ".inPorts>.port-in>.port-body": {
-                                "port": {
-                                    "id": "in",
-                                    "type": "in"
-                                }
-                            },
-                            ".message": {
-                                "opacity": 0,
-                                "text": "Configuring now"
-                            },
-                            ".outPorts>.port-out-1": {
-                                "ref": ".background",
-                                "ref-x": 0.5
-                            },
-                            ".outPorts>.port-out-1>.port-body": {
-                                "port": {
-                                    "id": "out-1",
-                                    "type": "out"
-                                }
-                            },
-                            ".title": {
-                                "text": "format"
-                            },
-                            "g.code image": {
-                                "opacity": 1
-                            },
-                            "g.delete": {
-                                "display": "none"
-                            },
-                            "g.error": {
-                                "opacity": 0
-                            },
-                            "g.error image": {
-                                "xlink:href": "/inc/coa/img/block_icon_warn.svg"
-                            },
-                            "g.notes": {
-                                "display": "block"
-                            },
-                            "g.notes image": {
-                                "opacity": 1
-                            }
-                        },
-                        "block_code": "def SNOW_Update_Resolved(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):\n    phantom.debug('SNOW_Update_Resolved() called')\n    \n    template = \"\"\"{{\\\"work_notes\\\": \\\"Service was started and ITSI episode status is been set to resolved: {0}\\\"}}\"\"\"\n\n    # parameter list for template variable replacement\n    parameters = [\n        \"update_episode_1:action_result.parameter.status\",\n    ]\n\n    phantom.format(container=container, template=template, parameters=parameters, name=\"SNOW_Update_Resolved\")\n\n    format_4(container=container)\n\n    return",
-                        "callback_code": "",
-                        "callback_start": 1,
-                        "callsback": false,
-                        "connected_to_start": true,
-                        "connection_name": "update episode",
-                        "connection_type": "action",
-                        "custom_callback": "",
-                        "custom_code": "",
-                        "custom_join": "",
-                        "custom_name": "SNOW Update Resolved",
-                        "description": "",
-                        "format": "format",
-                        "has_custom": false,
-                        "has_custom_block": false,
-                        "has_custom_callback": false,
-                        "has_custom_join": false,
-                        "id": "dcaea38a-c503-4978-843a-f6ff8322c4a7",
-                        "inPorts": [
-                            "in"
-                        ],
-                        "join_code": "",
-                        "join_optional": [],
-                        "join_start": 1,
-                        "line_end": 158,
-                        "line_start": 142,
-                        "message": "Configuring now",
-                        "name": "format",
-                        "notes": "",
-                        "number": 1,
-                        "order": 7,
-                        "outPorts": [
-                            "out-1"
-                        ],
-                        "parameters": [
-                            {
-                                "position": 0,
-                                "type": "",
-                                "value": "update_episode_1:action_result.parameter.status"
-                            }
-                        ],
-                        "ports": {
-                            "groups": {
-                                "in": {
-                                    "attrs": {
-                                        ".port-body": {
-                                            "fill": "#fff",
-                                            "magnet": true,
-                                            "r": 10,
-                                            "stroke": "#000"
-                                        },
-                                        ".port-label": {
-                                            "fill": "#000"
-                                        }
-                                    },
-                                    "label": {
-                                        "position": {
-                                            "args": {
-                                                "y": 10
-                                            },
-                                            "name": "left"
-                                        }
-                                    },
-                                    "position": {
-                                        "name": "left"
-                                    }
-                                },
-                                "out": {
-                                    "attrs": {
-                                        ".port-body": {
-                                            "fill": "#fff",
-                                            "magnet": true,
-                                            "r": 10,
-                                            "stroke": "#000"
-                                        },
-                                        ".port-label": {
-                                            "fill": "#000"
-                                        }
-                                    },
-                                    "label": {
-                                        "position": {
-                                            "args": {
-                                                "y": 10
-                                            },
-                                            "name": "right"
-                                        }
-                                    },
-                                    "position": {
-                                        "name": "right"
-                                    }
-                                }
-                            }
-                        },
-                        "position": {
-                            "x": 700,
-                            "y": -60
-                        },
-                        "previous_function": "",
-                        "previous_name": "SNOW_Update_Resolved",
-                        "show_number": true,
-                        "size": {
-                            "height": 100,
-                            "width": 180
-                        },
-                        "state": "format",
-                        "status": "",
-                        "template": "{{\"work_notes\": \"Service was started and ITSI episode status is been set to resolved: {0}\"}}",
-                        "title": "format",
-                        "type": "coa.Format",
-                        "warn": false,
-                        "z": 212
-                    },
-                    {
-                        "active": false,
-                        "angle": 0,
-                        "attrs": {
-                            ".background": {
-                                "fill": "#FFFFFF",
-                                "stroke": "#818D99"
-                            },
-                            ".color-band": {
-                                "fill": "#171D21"
-                            },
-                            ".format": {
                                 "text": "SNOW Not Closed"
                             },
                             ".inPorts>.port-in": {
@@ -3412,13 +2385,13 @@
                         "join_code": "",
                         "join_optional": [],
                         "join_start": 1,
-                        "line_end": 246,
-                        "line_start": 230,
+                        "line_end": 191,
+                        "line_start": 175,
                         "message": "Configuring now",
                         "name": "format",
                         "notes": "",
                         "number": 3,
-                        "order": 11,
+                        "order": 9,
                         "outPorts": [
                             "out-1"
                         ],
@@ -4705,7 +3678,7 @@
                         "callsback": true,
                         "color": "",
                         "connected_to_start": true,
-                        "connection_name": "close episode 1",
+                        "connection_name": "Approval Close Incident",
                         "connection_type": "action",
                         "custom_callback": "",
                         "custom_code": "",
@@ -4724,13 +3697,13 @@
                         "join_code": "",
                         "join_optional": [],
                         "join_start": 1,
-                        "line_end": 230,
-                        "line_start": 202,
+                        "line_end": 175,
+                        "line_start": 147,
                         "message": "Configuring now",
                         "name": "update ticket",
                         "notes": "",
                         "number": 2,
-                        "order": 10,
+                        "order": 8,
                         "outPorts": [
                             "out"
                         ],
@@ -5875,13 +4848,13 @@
                         "join_code": "",
                         "join_optional": [],
                         "join_start": 1,
-                        "line_end": 274,
-                        "line_start": 246,
+                        "line_end": 219,
+                        "line_start": 191,
                         "message": "Configuring now",
                         "name": "update ticket",
                         "notes": "",
                         "number": 3,
-                        "order": 12,
+                        "order": 10,
                         "outPorts": [
                             "out"
                         ],
@@ -7079,7 +6052,7 @@
                                 "opacity": 1
                             }
                         },
-                        "block_code": "def update_ticket_5(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):\n    phantom.debug('update_ticket_5() called')\n        \n    #phantom.debug('Action: {0} {1}'.format(action['name'], ('SUCCEEDED' if success else 'FAILED')))\n    \n    # collect data for 'update_ticket_5' call\n    results_data_1 = phantom.collect2(container=container, datapath=['get_data_1:action_result.data.*.response_body.data.*.data', 'get_data_1:action_result.parameter.context.artifact_id'], action_results=results)\n    formatted_data_1 = phantom.get_format_data(name='format_6')\n\n    parameters = []\n    \n    # build parameters list for 'update_ticket_5' call\n    for results_item_1 in results_data_1:\n        if results_item_1[0]:\n            parameters.append({\n                'id': results_item_1[0],\n                'table': \"incident\",\n                'fields': formatted_data_1,\n                'vault_id': \"\",\n                'is_sys_id': True,\n                # context (artifact id) is added to associate results with the artifact\n                'context': {'artifact_id': results_item_1[1]},\n            })\n\n    phantom.act(action=\"update ticket\", parameters=parameters, assets=['servicenow'], callback=close_episode_2, name=\"update_ticket_5\")\n\n    return",
+                        "block_code": "def update_ticket_5(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):\n    phantom.debug('update_ticket_5() called')\n        \n    #phantom.debug('Action: {0} {1}'.format(action['name'], ('SUCCEEDED' if success else 'FAILED')))\n    \n    # collect data for 'update_ticket_5' call\n    results_data_1 = phantom.collect2(container=container, datapath=['get_data_1:action_result.data.*.response_body.data.*.data', 'get_data_1:action_result.parameter.context.artifact_id'], action_results=results)\n    formatted_data_1 = phantom.get_format_data(name='format_6')\n\n    parameters = []\n    \n    # build parameters list for 'update_ticket_5' call\n    for results_item_1 in results_data_1:\n        if results_item_1[0]:\n            parameters.append({\n                'id': results_item_1[0],\n                'table': \"incident\",\n                'fields': formatted_data_1,\n                'vault_id': \"\",\n                'is_sys_id': True,\n                # context (artifact id) is added to associate results with the artifact\n                'context': {'artifact_id': results_item_1[1]},\n            })\n\n    phantom.act(action=\"update ticket\", parameters=parameters, assets=['servicenow'], callback=join_set_status_1, name=\"update_ticket_5\")\n\n    return",
                         "callback_code": "",
                         "callback_start": 1,
                         "callsback": true,
@@ -7104,13 +6077,13 @@
                         "join_code": "",
                         "join_optional": [],
                         "join_start": 1,
-                        "line_end": 402,
-                        "line_start": 374,
+                        "line_end": 347,
+                        "line_start": 319,
                         "message": "Configuring now",
                         "name": "update ticket",
                         "notes": "",
                         "number": 5,
-                        "order": 18,
+                        "order": 16,
                         "outPorts": [
                             "out"
                         ],
@@ -7187,178 +6160,6 @@
                         "type": "coa.Action",
                         "warn": false,
                         "z": 250
-                    },
-                    {
-                        "active": false,
-                        "angle": 0,
-                        "attrs": {
-                            ".background": {
-                                "fill": "#FFFFFF",
-                                "stroke": "#818D99"
-                            },
-                            ".color-band": {
-                                "fill": "#171D21"
-                            },
-                            ".format": {
-                                "text": "SNOW Closed episode"
-                            },
-                            ".inPorts>.port-in": {
-                                "ref": ".background",
-                                "ref-x": 0.5
-                            },
-                            ".inPorts>.port-in>.port-body": {
-                                "port": {
-                                    "id": "in",
-                                    "type": "in"
-                                }
-                            },
-                            ".message": {
-                                "opacity": 0,
-                                "text": "Configuring now"
-                            },
-                            ".outPorts>.port-out-1": {
-                                "ref": ".background",
-                                "ref-x": 0.5
-                            },
-                            ".outPorts>.port-out-1>.port-body": {
-                                "port": {
-                                    "id": "out-1",
-                                    "type": "out"
-                                }
-                            },
-                            ".title": {
-                                "text": "format"
-                            },
-                            "g.code image": {
-                                "opacity": 1
-                            },
-                            "g.delete": {
-                                "display": "none"
-                            },
-                            "g.error": {
-                                "opacity": 0
-                            },
-                            "g.error image": {
-                                "xlink:href": "/inc/coa/img/block_icon_warn.svg"
-                            },
-                            "g.notes": {
-                                "display": "block"
-                            },
-                            "g.notes image": {
-                                "opacity": 1
-                            }
-                        },
-                        "block_code": "def SNOW_Closed_episode(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):\n    phantom.debug('SNOW_Closed_episode() called')\n    \n    template = \"\"\"{{\\\"work_notes\\\": \\\"Episode closed and broken: {0}\\\"}}\"\"\"\n\n    # parameter list for template variable replacement\n    parameters = [\n        \"close_episode_1:action_result.status\",\n    ]\n\n    phantom.format(container=container, template=template, parameters=parameters, name=\"SNOW_Closed_episode\")\n\n    update_ticket_2(container=container)\n\n    return",
-                        "callback_code": "",
-                        "callback_start": 1,
-                        "callsback": false,
-                        "connected_to_start": true,
-                        "connection_name": "close episode 1",
-                        "connection_type": "action",
-                        "custom_callback": "",
-                        "custom_code": "",
-                        "custom_join": "",
-                        "custom_name": "SNOW Closed episode",
-                        "description": "",
-                        "format": "format",
-                        "has_custom": false,
-                        "has_custom_block": false,
-                        "has_custom_callback": false,
-                        "has_custom_join": false,
-                        "id": "703faa83-5714-41ef-9f57-fb5583cf35b5",
-                        "inPorts": [
-                            "in"
-                        ],
-                        "join_code": "",
-                        "join_optional": [],
-                        "join_start": 1,
-                        "line_end": 202,
-                        "line_start": 186,
-                        "message": "Configuring now",
-                        "name": "format",
-                        "notes": "",
-                        "number": 2,
-                        "order": 9,
-                        "outPorts": [
-                            "out-1"
-                        ],
-                        "parameters": [
-                            {
-                                "position": 0,
-                                "type": "",
-                                "value": "close_episode_1:action_result.status"
-                            }
-                        ],
-                        "ports": {
-                            "groups": {
-                                "in": {
-                                    "attrs": {
-                                        ".port-body": {
-                                            "fill": "#fff",
-                                            "magnet": true,
-                                            "r": 10,
-                                            "stroke": "#000"
-                                        },
-                                        ".port-label": {
-                                            "fill": "#000"
-                                        }
-                                    },
-                                    "label": {
-                                        "position": {
-                                            "args": {
-                                                "y": 10
-                                            },
-                                            "name": "left"
-                                        }
-                                    },
-                                    "position": {
-                                        "name": "left"
-                                    }
-                                },
-                                "out": {
-                                    "attrs": {
-                                        ".port-body": {
-                                            "fill": "#fff",
-                                            "magnet": true,
-                                            "r": 10,
-                                            "stroke": "#000"
-                                        },
-                                        ".port-label": {
-                                            "fill": "#000"
-                                        }
-                                    },
-                                    "label": {
-                                        "position": {
-                                            "args": {
-                                                "y": 10
-                                            },
-                                            "name": "right"
-                                        }
-                                    },
-                                    "position": {
-                                        "name": "right"
-                                    }
-                                }
-                            }
-                        },
-                        "position": {
-                            "x": 840,
-                            "y": 120
-                        },
-                        "previous_function": "",
-                        "previous_name": "SNOW_Closed_episode",
-                        "show_number": true,
-                        "size": {
-                            "height": 100,
-                            "width": 180
-                        },
-                        "state": "format",
-                        "status": "",
-                        "template": "{{\"work_notes\": \"Episode closed and broken: {0}\"}}",
-                        "title": "format",
-                        "type": "coa.Format",
-                        "warn": false,
-                        "z": 251
                     },
                     {
                         "action": "update ticket",
@@ -8427,13 +7228,13 @@
                         "join_code": "",
                         "join_optional": [],
                         "join_start": 1,
-                        "line_end": 339,
-                        "line_start": 311,
+                        "line_end": 284,
+                        "line_start": 256,
                         "message": "Configuring now",
                         "name": "update ticket",
                         "notes": "",
                         "number": 4,
-                        "order": 15,
+                        "order": 13,
                         "outPorts": [
                             "out"
                         ],
@@ -8595,13 +7396,13 @@
                         "join_code": "",
                         "join_optional": [],
                         "join_start": 1,
-                        "line_end": 355,
-                        "line_start": 339,
+                        "line_end": 300,
+                        "line_start": 284,
                         "message": "Configuring now",
                         "name": "format",
                         "notes": "",
                         "number": 5,
-                        "order": 16,
+                        "order": 14,
                         "outPorts": [
                             "out-1"
                         ],
@@ -8767,13 +7568,13 @@
                         "join_code": "",
                         "join_optional": [],
                         "join_start": 1,
-                        "line_end": 418,
-                        "line_start": 402,
+                        "line_end": 363,
+                        "line_start": 347,
                         "message": "Configuring now",
                         "name": "format",
                         "notes": "",
                         "number": 6,
-                        "order": 19,
+                        "order": 17,
                         "outPorts": [
                             "out-1"
                         ],
@@ -8938,12 +7739,12 @@
                         "join_code": "",
                         "join_optional": [],
                         "join_start": 1,
-                        "line_end": 374,
-                        "line_start": 355,
+                        "line_end": 319,
+                        "line_start": 300,
                         "name": "decision",
                         "notes": "",
                         "number": 2,
-                        "order": 17,
+                        "order": 15,
                         "outPorts": [
                             "out-1",
                             "out-2"
@@ -9153,12 +7954,12 @@
                         "join_code": "",
                         "join_optional": [],
                         "join_start": 1,
-                        "line_end": 435,
-                        "line_start": 418,
+                        "line_end": 380,
+                        "line_start": 363,
                         "name": "filter",
                         "notes": "",
                         "number": 1,
-                        "order": 20,
+                        "order": 18,
                         "outPorts": [
                             "out-1"
                         ],
@@ -9339,6 +8140,9 @@
                             "g.error": {
                                 "opacity": 0
                             },
+                            "g.error image": {
+                                "xlink:href": "/inc/coa/img/block_icon_warn.svg"
+                            },
                             "g.notes": {
                                 "display": "block"
                             },
@@ -9359,7 +8163,7 @@
                             }
                         ],
                         "connected_to_start": true,
-                        "connection_name": "update ticket 4, close episode 2",
+                        "connection_name": "update ticket 4, update ticket 5",
                         "connection_type": "action",
                         "custom_callback": "",
                         "custom_code": "",
@@ -9374,16 +8178,16 @@
                         "inPorts": [
                             "in"
                         ],
-                        "join_code": "def join_set_status_1(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None):\n    phantom.debug('join_set_status_1() called')\n\n    # check if all connected incoming playbooks, actions, or custom functions are done i.e. have succeeded or failed\n    if phantom.completed(action_names=['update_ticket_4', 'close_episode_2']):\n        \n        # call connected block \"set_status_1\"\n        set_status_1(container=container, handle=handle)\n    \n    return",
+                        "join_code": "def join_set_status_1(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None):\n    phantom.debug('join_set_status_1() called')\n\n    # check if all connected incoming playbooks, actions, or custom functions are done i.e. have succeeded or failed\n    if phantom.completed(action_names=['update_ticket_4', 'update_ticket_5']):\n        \n        # call connected block \"set_status_1\"\n        set_status_1(container=container, handle=handle)\n    \n    return",
                         "join_optional": [],
-                        "join_start": 442,
-                        "line_end": 453,
-                        "line_start": 435,
+                        "join_start": 387,
+                        "line_end": 398,
+                        "line_start": 380,
                         "message": "Configuring now",
                         "name": "set status",
                         "notes": "",
                         "number": 1,
-                        "order": 21,
+                        "order": 19,
                         "outPorts": [
                             "out"
                         ],
@@ -9714,764 +8518,6 @@
                         "z": 266
                     },
                     {
-                        "attrs": {
-                            ".connection": {
-                                "stroke": "#818D99",
-                                "stroke-width": 2
-                            },
-                            ".marker-target": {
-                                "d": "M 10 0 L 0 5 L 10 10 z",
-                                "fill": "#818D99",
-                                "stroke": "#818D99"
-                            }
-                        },
-                        "connector": {
-                            "args": {
-                                "radius": 5
-                            },
-                            "name": "rounded"
-                        },
-                        "endDirections": [
-                            "left"
-                        ],
-                        "id": "29bfe136-8474-4332-8ac1-01b7b267b448",
-                        "router": {
-                            "name": "metro"
-                        },
-                        "source": {
-                            "id": "da3d13f7-f438-4de3-a3b6-f3425fbaa4ed",
-                            "selector": "> g:nth-child(1) > g:nth-child(2) > g:nth-child(1) > circle:nth-child(1)"
-                        },
-                        "startDirections": [
-                            "right"
-                        ],
-                        "target": {
-                            "id": "6ba8ee9e-86a8-46fb-8247-bb3acf79b2ab",
-                            "selector": ".port-body[type=\"input\"]"
-                        },
-                        "type": "link",
-                        "z": 268
-                    },
-                    {
-                        "action": "close episode",
-                        "action_type": "generic",
-                        "active": false,
-                        "active_keys": {},
-                        "active_values": {
-                            "break_episode": "True",
-                            "itsi_group_id": "update_episode_1:action_result.parameter.itsi_group_id",
-                            "itsi_policy_id": "artifact:*.cef.itsi_policy_id"
-                        },
-                        "angle": 0,
-                        "app": "Splunk IT Service Intelligence",
-                        "appid": "afab2702-4bb9-4b12-8cad-2035868db12d",
-                        "approver": "",
-                        "assets": [
-                            {
-                                "action": "close episode",
-                                "actions": [
-                                    "test connectivity",
-                                    "get episode",
-                                    "update episode",
-                                    "add episode comment",
-                                    "get episode events",
-                                    "break episode",
-                                    "close episode",
-                                    "add episode ticket",
-                                    "get episode tickets",
-                                    "get entity",
-                                    "get entity services",
-                                    "get service",
-                                    "get service entities",
-                                    "get service kpis",
-                                    "update service status",
-                                    "get maintenance window",
-                                    "add maintenance window",
-                                    "update maintenance window",
-                                    "end maintenance window",
-                                    "get neap",
-                                    "update neap status",
-                                    "get cs",
-                                    "update cs status"
-                                ],
-                                "active": true,
-                                "app_name": "Splunk IT Service Intelligence",
-                                "app_version": "0.5.0",
-                                "appid": "afab2702-4bb9-4b12-8cad-2035868db12d",
-                                "asset_name": "splunk itsi nova",
-                                "config_type": "asset",
-                                "count": 0,
-                                "fields": {
-                                    "break_episode": "True",
-                                    "itsi_group_id": "update_episode_1:action_result.parameter.itsi_group_id",
-                                    "itsi_policy_id": "artifact:*.cef.itsi_policy_id"
-                                },
-                                "has_app": true,
-                                "id": 11,
-                                "loaded": false,
-                                "missing": false,
-                                "name": "splunk itsi",
-                                "output": [
-                                    {
-                                        "column_name": "itsi_group_id",
-                                        "column_order": 0,
-                                        "contains": [
-                                            "splunk itsi episode id"
-                                        ],
-                                        "data_path": "action_result.parameter.itsi_group_id",
-                                        "data_type": "string"
-                                    },
-                                    {
-                                        "column_name": "break_episode",
-                                        "column_order": 1,
-                                        "contains": [
-                                            "boolean"
-                                        ],
-                                        "data_path": "action_result.parameter.break_episode",
-                                        "data_type": "boolean"
-                                    },
-                                    {
-                                        "column_name": "itsi_policy_id",
-                                        "column_order": 2,
-                                        "contains": [
-                                            "splunk itsi notable event aggregation policy id"
-                                        ],
-                                        "data_path": "action_result.parameter.itsi_policy_id",
-                                        "data_type": "string"
-                                    },
-                                    {
-                                        "column_name": "data",
-                                        "column_order": 3,
-                                        "data_path": "action_result.data",
-                                        "data_type": "string"
-                                    },
-                                    {
-                                        "column_name": "summary",
-                                        "column_order": 4,
-                                        "data_path": "action_result.summary",
-                                        "data_type": "string"
-                                    },
-                                    {
-                                        "column_name": "status",
-                                        "column_order": 5,
-                                        "data_path": "action_result.status",
-                                        "data_type": "string"
-                                    },
-                                    {
-                                        "data_path": "action_result.message",
-                                        "data_type": "string"
-                                    },
-                                    {
-                                        "data_path": "summary.total_objects",
-                                        "data_type": "numeric"
-                                    },
-                                    {
-                                        "data_path": "summary.total_objects_successful",
-                                        "data_type": "numeric"
-                                    }
-                                ],
-                                "parameters": {
-                                    "break_episode": {
-                                        "contains": [
-                                            "boolean"
-                                        ],
-                                        "data_type": "boolean",
-                                        "default": false,
-                                        "description": "Break episode",
-                                        "key": "break_episode",
-                                        "order": 1,
-                                        "required": false,
-                                        "value_list": []
-                                    },
-                                    "itsi_group_id": {
-                                        "contains": [
-                                            "splunk itsi episode id"
-                                        ],
-                                        "data_type": "string",
-                                        "default": "",
-                                        "description": "Splunk ITSI episode id",
-                                        "key": "itsi_group_id",
-                                        "order": 0,
-                                        "primary": true,
-                                        "required": true,
-                                        "value_list": []
-                                    },
-                                    "itsi_policy_id": {
-                                        "contains": [
-                                            "splunk itsi notable event aggregation policy id"
-                                        ],
-                                        "data_type": "string",
-                                        "default": "",
-                                        "description": "Splunk ITSI notable event aggregation policy id",
-                                        "key": "itsi_policy_id",
-                                        "order": 2,
-                                        "required": false,
-                                        "value_list": []
-                                    }
-                                },
-                                "product_name": "IT Service Intelligence",
-                                "product_vendor": "Splunk",
-                                "targets": "11",
-                                "type": "generic"
-                            }
-                        ],
-                        "attrs": {
-                            ".action": {
-                                "text": "close episode 1"
-                            },
-                            ".background": {
-                                "fill": "#FFFFFF",
-                                "stroke": "#E6984E"
-                            },
-                            ".color-band": {
-                                "fill": "#171D21"
-                            },
-                            ".inPorts>.port-in": {
-                                "ref": ".background",
-                                "ref-x": 0.5
-                            },
-                            ".inPorts>.port-in>.port-body": {
-                                "port": {
-                                    "id": "in",
-                                    "type": "in"
-                                }
-                            },
-                            ".message": {
-                                "opacity": 0,
-                                "ref-x": 5,
-                                "ref-y": 105,
-                                "text": "Configuring now"
-                            },
-                            ".outPorts>.port-out": {
-                                "ref": ".background",
-                                "ref-x": 0.5
-                            },
-                            ".outPorts>.port-out>.port-body": {
-                                "port": {
-                                    "id": "out",
-                                    "type": "out"
-                                }
-                            },
-                            ".title": {
-                                "text": "Generic"
-                            },
-                            "g.approver image": {
-                                "opacity": 1
-                            },
-                            "g.code image": {
-                                "opacity": 1
-                            },
-                            "g.delete": {
-                                "display": "none"
-                            },
-                            "g.error": {
-                                "opacity": 1
-                            },
-                            "g.error image": {
-                                "xlink:href": "/inc/coa/img/block_icon_warn.svg"
-                            },
-                            "g.icon image": {
-                                "xlink:href": "/inc/coa/img/block_icon_generic.svg"
-                            },
-                            "g.notes": {
-                                "display": "block"
-                            },
-                            "g.notes image": {
-                                "opacity": 1
-                            },
-                            "g.timer image": {
-                                "opacity": 1
-                            }
-                        },
-                        "block_code": "def close_episode_1(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):\n    phantom.debug('close_episode_1() called')\n        \n    #phantom.debug('Action: {0} {1}'.format(action['name'], ('SUCCEEDED' if success else 'FAILED')))\n    \n    # collect data for 'close_episode_1' call\n    container_data = phantom.collect2(container=container, datapath=['artifact:*.cef.itsi_policy_id', 'artifact:*.id'])\n    results_data_1 = phantom.collect2(container=container, datapath=['update_episode_1:action_result.parameter.itsi_group_id', 'update_episode_1:action_result.parameter.context.artifact_id'], action_results=results)\n\n    parameters = []\n    \n    # build parameters list for 'close_episode_1' call\n    for container_item in container_data:\n        for results_item_1 in results_data_1:\n            if results_item_1[0]:\n                parameters.append({\n                    'break_episode': True,\n                    'itsi_group_id': results_item_1[0],\n                    'itsi_policy_id': container_item[0],\n                    # context (artifact id) is added to associate results with the artifact\n                    'context': {'artifact_id': results_item_1[1]},\n                })\n\n    phantom.act(action=\"close episode\", parameters=parameters, assets=['splunk itsi'], callback=SNOW_Closed_episode, name=\"close_episode_1\")\n\n    return",
-                        "callback_code": "",
-                        "callback_start": 1,
-                        "callsback": true,
-                        "color": "",
-                        "connected_to_start": true,
-                        "connection_name": "Approval Close Incident",
-                        "connection_type": "action",
-                        "custom_callback": "",
-                        "custom_code": "",
-                        "custom_join": "",
-                        "custom_name": "",
-                        "delay": 0,
-                        "description": "",
-                        "has_custom": false,
-                        "has_custom_block": false,
-                        "has_custom_callback": false,
-                        "has_custom_join": false,
-                        "id": "8e62dddb-0516-4a47-a86a-571c6b270188",
-                        "inPorts": [
-                            "in"
-                        ],
-                        "join_code": "",
-                        "join_optional": [],
-                        "join_start": 1,
-                        "line_end": 142,
-                        "line_start": 115,
-                        "message": "Configuring now",
-                        "name": "close episode",
-                        "notes": "",
-                        "number": 1,
-                        "order": 6,
-                        "outPorts": [
-                            "out"
-                        ],
-                        "ports": {
-                            "groups": {
-                                "in": {
-                                    "attrs": {
-                                        ".port-body": {
-                                            "fill": "#fff",
-                                            "magnet": true,
-                                            "r": 10,
-                                            "stroke": "#000"
-                                        },
-                                        ".port-label": {
-                                            "fill": "#000"
-                                        }
-                                    },
-                                    "label": {
-                                        "position": {
-                                            "args": {
-                                                "y": 10
-                                            },
-                                            "name": "left"
-                                        }
-                                    },
-                                    "position": {
-                                        "name": "left"
-                                    }
-                                },
-                                "out": {
-                                    "attrs": {
-                                        ".port-body": {
-                                            "fill": "#fff",
-                                            "magnet": true,
-                                            "r": 10,
-                                            "stroke": "#000"
-                                        },
-                                        ".port-label": {
-                                            "fill": "#000"
-                                        }
-                                    },
-                                    "label": {
-                                        "position": {
-                                            "args": {
-                                                "y": 10
-                                            },
-                                            "name": "right"
-                                        }
-                                    },
-                                    "position": {
-                                        "name": "right"
-                                    }
-                                }
-                            }
-                        },
-                        "position": {
-                            "x": 580,
-                            "y": 120
-                        },
-                        "previous_function": "",
-                        "previous_name": "close_episode_1",
-                        "required_params": {
-                            "itsi_group_id": true
-                        },
-                        "reviewer": "",
-                        "show_number": true,
-                        "size": {
-                            "height": 100,
-                            "width": 180
-                        },
-                        "state": "app_action_assets",
-                        "status": "warn",
-                        "title": "Generic",
-                        "type": "coa.Action",
-                        "warn": false,
-                        "z": 275
-                    },
-                    {
-                        "action": "close episode",
-                        "action_type": "generic",
-                        "active": false,
-                        "active_keys": {},
-                        "active_values": {
-                            "break_episode": "True",
-                            "itsi_group_id": "update_episode_1:action_result.parameter.itsi_group_id",
-                            "itsi_policy_id": "artifact:*.cef.itsi_policy_id"
-                        },
-                        "angle": 0,
-                        "app": "Splunk IT Service Intelligence",
-                        "appid": "afab2702-4bb9-4b12-8cad-2035868db12d",
-                        "approver": "",
-                        "assets": [
-                            {
-                                "action": "close episode",
-                                "actions": [
-                                    "test connectivity",
-                                    "get episode",
-                                    "update episode",
-                                    "add episode comment",
-                                    "get episode events",
-                                    "break episode",
-                                    "close episode",
-                                    "add episode ticket",
-                                    "get episode tickets",
-                                    "get entity",
-                                    "get entity services",
-                                    "get service",
-                                    "get service entities",
-                                    "get service kpis",
-                                    "update service status",
-                                    "get maintenance window",
-                                    "add maintenance window",
-                                    "update maintenance window",
-                                    "end maintenance window",
-                                    "get neap",
-                                    "update neap status",
-                                    "get cs",
-                                    "update cs status"
-                                ],
-                                "active": true,
-                                "app_name": "Splunk IT Service Intelligence",
-                                "app_version": "0.5.0b",
-                                "appid": "afab2702-4bb9-4b12-8cad-2035868db12d",
-                                "asset_name": "splunk itsi",
-                                "config_type": "asset",
-                                "count": 0,
-                                "fields": {
-                                    "break_episode": "True",
-                                    "itsi_group_id": "update_episode_1:action_result.parameter.itsi_group_id",
-                                    "itsi_policy_id": "artifact:*.cef.itsi_policy_id"
-                                },
-                                "has_app": true,
-                                "id": 7,
-                                "loaded": false,
-                                "missing": false,
-                                "name": "splunk itsi",
-                                "output": [
-                                    {
-                                        "column_name": "itsi_group_id",
-                                        "column_order": 0,
-                                        "contains": [
-                                            "splunk itsi episode id"
-                                        ],
-                                        "data_path": "action_result.parameter.itsi_group_id",
-                                        "data_type": "string"
-                                    },
-                                    {
-                                        "column_name": "break_episode",
-                                        "column_order": 1,
-                                        "contains": [
-                                            "boolean"
-                                        ],
-                                        "data_path": "action_result.parameter.break_episode",
-                                        "data_type": "boolean"
-                                    },
-                                    {
-                                        "column_name": "itsi_policy_id",
-                                        "column_order": 2,
-                                        "contains": [
-                                            "splunk itsi notable event aggregation policy id"
-                                        ],
-                                        "data_path": "action_result.parameter.itsi_policy_id",
-                                        "data_type": "string"
-                                    },
-                                    {
-                                        "column_name": "data",
-                                        "column_order": 3,
-                                        "data_path": "action_result.data",
-                                        "data_type": "string"
-                                    },
-                                    {
-                                        "column_name": "summary",
-                                        "column_order": 4,
-                                        "data_path": "action_result.summary",
-                                        "data_type": "string"
-                                    },
-                                    {
-                                        "column_name": "status",
-                                        "column_order": 5,
-                                        "data_path": "action_result.status",
-                                        "data_type": "string"
-                                    },
-                                    {
-                                        "data_path": "action_result.message",
-                                        "data_type": "string"
-                                    },
-                                    {
-                                        "data_path": "summary.total_objects",
-                                        "data_type": "numeric"
-                                    },
-                                    {
-                                        "data_path": "summary.total_objects_successful",
-                                        "data_type": "numeric"
-                                    }
-                                ],
-                                "parameters": {
-                                    "break_episode": {
-                                        "contains": [
-                                            "boolean"
-                                        ],
-                                        "data_type": "boolean",
-                                        "default": false,
-                                        "description": "Break episode",
-                                        "key": "break_episode",
-                                        "order": 1,
-                                        "required": false,
-                                        "value_list": []
-                                    },
-                                    "itsi_group_id": {
-                                        "contains": [
-                                            "splunk itsi episode id"
-                                        ],
-                                        "data_type": "string",
-                                        "default": "",
-                                        "description": "Splunk ITSI episode id",
-                                        "key": "itsi_group_id",
-                                        "order": 0,
-                                        "primary": true,
-                                        "required": true,
-                                        "value_list": []
-                                    },
-                                    "itsi_policy_id": {
-                                        "contains": [
-                                            "splunk itsi notable event aggregation policy id"
-                                        ],
-                                        "data_type": "string",
-                                        "default": "",
-                                        "description": "Splunk ITSI notable event aggregation policy id",
-                                        "key": "itsi_policy_id",
-                                        "order": 2,
-                                        "required": false,
-                                        "value_list": []
-                                    }
-                                },
-                                "product_name": "IT Service Intelligence",
-                                "product_vendor": "Splunk",
-                                "targets": "7",
-                                "type": "generic"
-                            }
-                        ],
-                        "attrs": {
-                            ".action": {
-                                "text": "close episode 2"
-                            },
-                            ".background": {
-                                "fill": "#FFFFFF",
-                                "stroke": "#E6984E"
-                            },
-                            ".color-band": {
-                                "fill": "#171D21"
-                            },
-                            ".inPorts>.port-in": {
-                                "ref": ".background",
-                                "ref-x": 0.5
-                            },
-                            ".inPorts>.port-in>.port-body": {
-                                "port": {
-                                    "id": "in",
-                                    "type": "in"
-                                }
-                            },
-                            ".message": {
-                                "opacity": 0,
-                                "ref-x": 5,
-                                "ref-y": 105,
-                                "text": "Configuring now"
-                            },
-                            ".outPorts>.port-out": {
-                                "ref": ".background",
-                                "ref-x": 0.5
-                            },
-                            ".outPorts>.port-out>.port-body": {
-                                "port": {
-                                    "id": "out",
-                                    "type": "out"
-                                }
-                            },
-                            ".title": {
-                                "text": "Generic"
-                            },
-                            "g.approver image": {
-                                "opacity": 1
-                            },
-                            "g.code image": {
-                                "opacity": 1
-                            },
-                            "g.delete": {
-                                "display": "none"
-                            },
-                            "g.error": {
-                                "opacity": 1
-                            },
-                            "g.error image": {
-                                "xlink:href": "/inc/coa/img/block_icon_warn.svg"
-                            },
-                            "g.icon image": {
-                                "xlink:href": "/inc/coa/img/block_icon_generic.svg"
-                            },
-                            "g.notes": {
-                                "display": "block"
-                            },
-                            "g.notes image": {
-                                "opacity": 1
-                            },
-                            "g.timer image": {
-                                "opacity": 1
-                            }
-                        },
-                        "block_code": "def close_episode_2(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):\n    phantom.debug('close_episode_2() called')\n        \n    #phantom.debug('Action: {0} {1}'.format(action['name'], ('SUCCEEDED' if success else 'FAILED')))\n    \n    # collect data for 'close_episode_2' call\n    container_data = phantom.collect2(container=container, datapath=['artifact:*.cef.itsi_policy_id', 'artifact:*.id'])\n    results_data_1 = phantom.collect2(container=container, datapath=['update_episode_1:action_result.parameter.itsi_group_id', 'update_episode_1:action_result.parameter.context.artifact_id'], action_results=results)\n\n    parameters = []\n    \n    # build parameters list for 'close_episode_2' call\n    for container_item in container_data:\n        for results_item_1 in results_data_1:\n            if results_item_1[0]:\n                parameters.append({\n                    'break_episode': True,\n                    'itsi_group_id': results_item_1[0],\n                    'itsi_policy_id': container_item[0],\n                    # context (artifact id) is added to associate results with the artifact\n                    'context': {'artifact_id': results_item_1[1]},\n                })\n\n    phantom.act(action=\"close episode\", parameters=parameters, assets=['splunk itsi'], callback=join_set_status_1, name=\"close_episode_2\", parent_action=action)\n\n    return",
-                        "callback_code": "",
-                        "callback_start": 1,
-                        "callsback": true,
-                        "color": "",
-                        "connected_to_start": true,
-                        "connection_name": "update ticket 5",
-                        "connection_type": "action",
-                        "custom_callback": "",
-                        "custom_code": "",
-                        "custom_join": "",
-                        "custom_name": "",
-                        "delay": 0,
-                        "description": "",
-                        "has_custom": false,
-                        "has_custom_block": false,
-                        "has_custom_callback": false,
-                        "has_custom_join": false,
-                        "id": "6ba8ee9e-86a8-46fb-8247-bb3acf79b2ab",
-                        "inPorts": [
-                            "in"
-                        ],
-                        "join_code": "",
-                        "join_optional": [],
-                        "join_start": 1,
-                        "line_end": 480,
-                        "line_start": 453,
-                        "message": "Configuring now",
-                        "name": "close episode",
-                        "notes": "",
-                        "number": 2,
-                        "order": 22,
-                        "outPorts": [
-                            "out"
-                        ],
-                        "ports": {
-                            "groups": {
-                                "in": {
-                                    "attrs": {
-                                        ".port-body": {
-                                            "fill": "#fff",
-                                            "magnet": true,
-                                            "r": 10,
-                                            "stroke": "#000"
-                                        },
-                                        ".port-label": {
-                                            "fill": "#000"
-                                        }
-                                    },
-                                    "label": {
-                                        "position": {
-                                            "args": {
-                                                "y": 10
-                                            },
-                                            "name": "left"
-                                        }
-                                    },
-                                    "position": {
-                                        "name": "left"
-                                    }
-                                },
-                                "out": {
-                                    "attrs": {
-                                        ".port-body": {
-                                            "fill": "#fff",
-                                            "magnet": true,
-                                            "r": 10,
-                                            "stroke": "#000"
-                                        },
-                                        ".port-label": {
-                                            "fill": "#000"
-                                        }
-                                    },
-                                    "label": {
-                                        "position": {
-                                            "args": {
-                                                "y": 10
-                                            },
-                                            "name": "right"
-                                        }
-                                    },
-                                    "position": {
-                                        "name": "right"
-                                    }
-                                }
-                            }
-                        },
-                        "position": {
-                            "x": 1580,
-                            "y": 240
-                        },
-                        "previous_function": "",
-                        "previous_name": "close_episode_2",
-                        "required_params": {
-                            "itsi_group_id": true
-                        },
-                        "reviewer": "",
-                        "show_number": true,
-                        "size": {
-                            "height": 100,
-                            "width": 180
-                        },
-                        "state": "app_action_assets",
-                        "status": "warn",
-                        "title": "Generic",
-                        "type": "coa.Action",
-                        "warn": false,
-                        "z": 276
-                    },
-                    {
-                        "attrs": {
-                            ".connection": {
-                                "stroke": "#818D99",
-                                "stroke-width": 2
-                            },
-                            ".marker-target": {
-                                "d": "M 10 0 L 0 5 L 10 10 z",
-                                "fill": "#818D99",
-                                "stroke": "#818D99"
-                            }
-                        },
-                        "connector": {
-                            "args": {
-                                "radius": 5
-                            },
-                            "name": "rounded"
-                        },
-                        "endDirections": [
-                            "left"
-                        ],
-                        "id": "f63e8d2c-78b8-4be5-95df-db1d4c42d605",
-                        "router": {
-                            "name": "metro"
-                        },
-                        "source": {
-                            "id": "6ba8ee9e-86a8-46fb-8247-bb3acf79b2ab",
-                            "selector": "> g:nth-child(1) > g:nth-child(2) > g:nth-child(1) > circle:nth-child(1)"
-                        },
-                        "startDirections": [
-                            "right"
-                        ],
-                        "target": {
-                            "id": "8c83d66e-ae53-4812-a1cb-59db53d0c813",
-                            "selector": "> g:nth-child(1) > g:nth-child(1) > g:nth-child(1) > circle:nth-child(1)"
-                        },
-                        "type": "link",
-                        "z": 277
-                    },
-                    {
                         "active": false,
                         "angle": 0,
                         "attrs": {
@@ -10536,7 +8582,7 @@
                         "callback_start": 1,
                         "callsback": false,
                         "connected_to_start": true,
-                        "connection_name": "update episode",
+                        "connection_name": "add episode comment",
                         "connection_type": "action",
                         "custom_callback": "",
                         "custom_code": "",
@@ -10555,13 +8601,13 @@
                         "join_code": "",
                         "join_optional": [],
                         "join_start": 1,
-                        "line_end": 290,
-                        "line_start": 274,
+                        "line_end": 235,
+                        "line_start": 219,
                         "message": "Configuring now",
                         "name": "format",
                         "notes": "",
                         "number": 4,
-                        "order": 13,
+                        "order": 11,
                         "outPorts": [
                             "out-1"
                         ],
@@ -10642,6 +8688,794 @@
                         "type": "coa.Format",
                         "warn": false,
                         "z": 278
+                    },
+                    {
+                        "attrs": {
+                            ".connection": {
+                                "stroke": "#818D99",
+                                "stroke-width": 2
+                            },
+                            ".marker-target": {
+                                "d": "M 10 0 L 0 5 L 10 10 z",
+                                "fill": "#818D99",
+                                "stroke": "#818D99"
+                            }
+                        },
+                        "connector": {
+                            "args": {
+                                "radius": 5
+                            },
+                            "name": "rounded"
+                        },
+                        "endDirections": [
+                            "left"
+                        ],
+                        "id": "1e42334c-e2ed-4dbd-86e0-d83d1a4e7a25",
+                        "router": {
+                            "name": "metro"
+                        },
+                        "source": {
+                            "id": "0414a88c-51fd-411c-a624-6ead59fe89d5",
+                            "port": "out-1",
+                            "selector": "> g:nth-child(1) > g:nth-child(2) > g:nth-child(1) > circle:nth-child(1)"
+                        },
+                        "startDirections": [
+                            "right"
+                        ],
+                        "target": {
+                            "id": "703faa83-5714-41ef-9f57-fb5583cf35b5",
+                            "selector": "> g:nth-child(1) > g:nth-child(1) > g:nth-child(1) > circle:nth-child(1)"
+                        },
+                        "type": "link",
+                        "z": 279
+                    },
+                    {
+                        "attrs": {
+                            ".connection": {
+                                "stroke": "#818D99",
+                                "stroke-width": 2
+                            },
+                            ".marker-target": {
+                                "d": "M 10 0 L 0 5 L 10 10 z",
+                                "fill": "#818D99",
+                                "stroke": "#818D99"
+                            }
+                        },
+                        "connector": {
+                            "args": {
+                                "radius": 5
+                            },
+                            "name": "rounded"
+                        },
+                        "endDirections": [
+                            "left"
+                        ],
+                        "id": "a3024406-e97d-4776-9776-249308a4489d",
+                        "router": {
+                            "name": "metro"
+                        },
+                        "source": {
+                            "id": "da3d13f7-f438-4de3-a3b6-f3425fbaa4ed",
+                            "selector": "> g:nth-child(1) > g:nth-child(2) > g:nth-child(1) > circle:nth-child(1)"
+                        },
+                        "startDirections": [
+                            "right"
+                        ],
+                        "target": {
+                            "id": "8c83d66e-ae53-4812-a1cb-59db53d0c813",
+                            "selector": "> g:nth-child(1) > g:nth-child(1) > g:nth-child(1) > circle:nth-child(1)"
+                        },
+                        "type": "link",
+                        "z": 280
+                    },
+                    {
+                        "action": "add episode comment",
+                        "action_type": "generic",
+                        "active": false,
+                        "active_keys": {},
+                        "active_values": {
+                            "comment": "The service has restarted",
+                            "itsi_group_id": ""
+                        },
+                        "angle": 0,
+                        "app": "Splunk IT Service Intelligence",
+                        "appid": "94bcee41-329f-4907-8895-d4e2a10616b8",
+                        "approver": "",
+                        "assets": [
+                            {
+                                "action": "add episode comment",
+                                "active": true,
+                                "app_name": "",
+                                "app_version": "",
+                                "appid": "",
+                                "asset_name": "splunk itsi",
+                                "config_type": "asset",
+                                "fields": {},
+                                "has_app": true,
+                                "id": "",
+                                "loaded": true,
+                                "missing": true,
+                                "name": "",
+                                "output": {},
+                                "product_name": "",
+                                "product_vendor": "",
+                                "type": ""
+                            },
+                            {
+                                "action": "add episode comment",
+                                "actions": [
+                                    "test connectivity",
+                                    "get episode",
+                                    "update episode",
+                                    "add episode comment",
+                                    "break episode",
+                                    "close episode",
+                                    "get episode events",
+                                    "add episode ticket",
+                                    "get episode tickets",
+                                    "get entity",
+                                    "get service",
+                                    "get service entities",
+                                    "update service status",
+                                    "get maintenance window",
+                                    "add maintenance window",
+                                    "update maintenance window",
+                                    "end maintenance window"
+                                ],
+                                "active": true,
+                                "app_name": "Splunk IT Service Intelligence",
+                                "app_version": "1.0.0",
+                                "appid": "94bcee41-329f-4907-8895-d4e2a10616b8",
+                                "asset_name": "splunk itsi",
+                                "config_type": "asset",
+                                "count": 0,
+                                "fields": {
+                                    "comment": "The service has restarted",
+                                    "itsi_group_id": ""
+                                },
+                                "has_app": true,
+                                "id": 6,
+                                "loaded": false,
+                                "missing": false,
+                                "name": "splunk itsi",
+                                "output": [
+                                    {
+                                        "column_name": "Status",
+                                        "column_order": 2,
+                                        "data_path": "action_result.status",
+                                        "data_type": "string",
+                                        "example_values": [
+                                            "success",
+                                            "failed"
+                                        ]
+                                    },
+                                    {
+                                        "column_name": "Comment",
+                                        "column_order": 1,
+                                        "data_path": "action_result.parameter.comment",
+                                        "data_type": "string"
+                                    },
+                                    {
+                                        "column_name": "ITSI Group ID",
+                                        "column_order": 0,
+                                        "data_path": "action_result.parameter.itsi_group_id",
+                                        "data_type": "string"
+                                    },
+                                    {
+                                        "column_name": "Data",
+                                        "column_order": 3,
+                                        "data_path": "action_result.data",
+                                        "data_type": "string"
+                                    },
+                                    {
+                                        "column_name": "Summary",
+                                        "column_order": 4,
+                                        "data_path": "action_result.summary",
+                                        "data_type": "string"
+                                    },
+                                    {
+                                        "data_path": "action_result.message",
+                                        "data_type": "string"
+                                    },
+                                    {
+                                        "data_path": "summary.total_objects",
+                                        "data_type": "numeric",
+                                        "example_values": [
+                                            1
+                                        ]
+                                    },
+                                    {
+                                        "data_path": "summary.total_objects_successful",
+                                        "data_type": "numeric",
+                                        "example_values": [
+                                            1
+                                        ]
+                                    }
+                                ],
+                                "parameters": {
+                                    "comment": {
+                                        "data_type": "string",
+                                        "default": null,
+                                        "description": "Comment to add",
+                                        "key": "comment",
+                                        "order": 1,
+                                        "required": true
+                                    },
+                                    "itsi_group_id": {
+                                        "data_type": "string",
+                                        "default": null,
+                                        "description": "Splunk ITSI episode ID",
+                                        "key": "itsi_group_id",
+                                        "order": 0,
+                                        "required": true
+                                    }
+                                },
+                                "product_name": "Splunk ITSI",
+                                "product_vendor": "Splunk",
+                                "targets": "6",
+                                "type": "devops"
+                            }
+                        ],
+                        "attrs": {
+                            ".action": {
+                                "text": "add episode comment"
+                            },
+                            ".background": {
+                                "fill": "#FFFFFF",
+                                "stroke": "#818D99"
+                            },
+                            ".color-band": {
+                                "fill": "#171D21"
+                            },
+                            ".inPorts>.port-in": {
+                                "ref": ".background",
+                                "ref-x": 0.5
+                            },
+                            ".inPorts>.port-in>.port-body": {
+                                "port": {
+                                    "id": "in",
+                                    "type": "in"
+                                }
+                            },
+                            ".message": {
+                                "opacity": 0,
+                                "ref-x": 5,
+                                "ref-y": 105,
+                                "text": "Configuring now"
+                            },
+                            ".outPorts>.port-out": {
+                                "ref": ".background",
+                                "ref-x": 0.5
+                            },
+                            ".outPorts>.port-out>.port-body": {
+                                "port": {
+                                    "id": "out",
+                                    "type": "out"
+                                }
+                            },
+                            ".title": {
+                                "text": "Generic"
+                            },
+                            "g.approver image": {
+                                "opacity": 1
+                            },
+                            "g.code image": {
+                                "opacity": 1
+                            },
+                            "g.delete": {
+                                "display": "none"
+                            },
+                            "g.error": {
+                                "opacity": 0
+                            },
+                            "g.error image": {
+                                "xlink:href": "/inc/coa/img/block_icon_warn.svg"
+                            },
+                            "g.icon image": {
+                                "xlink:href": "/inc/coa/img/block_icon_generic.svg"
+                            },
+                            "g.notes": {
+                                "display": "block"
+                            },
+                            "g.notes image": {
+                                "opacity": 1
+                            },
+                            "g.timer image": {
+                                "opacity": 1
+                            }
+                        },
+                        "block_code": "def add_episode_comment_1(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):\n    phantom.debug('add_episode_comment_1() called')\n\n    # collect data for 'add_episode_comment_1' call\n\n    parameters = []\n    \n    # build parameters list for 'add_episode_comment_1' call\n    parameters.append({\n        'itsi_group_id': \"\",\n        'comment': \"The service has restarted\",\n    })\n\n    phantom.act(action=\"add episode comment\", parameters=parameters, assets=['','splunk itsi'], callback=SNOW_Update_Resolved, name=\"add_episode_comment_1\")\n\n    return",
+                        "callback_code": "",
+                        "callback_start": 1,
+                        "callsback": true,
+                        "color": "",
+                        "connected_to_start": true,
+                        "connection_name": "",
+                        "connection_type": "",
+                        "custom_callback": "",
+                        "custom_code": "",
+                        "custom_join": "",
+                        "custom_name": "",
+                        "delay": 0,
+                        "description": "",
+                        "has_custom": false,
+                        "has_custom_block": false,
+                        "has_custom_callback": false,
+                        "has_custom_join": false,
+                        "id": "c4c60b6a-12f0-4115-924e-c03142f032f0",
+                        "inPorts": [
+                            "in"
+                        ],
+                        "join_code": "",
+                        "join_optional": [],
+                        "join_start": 1,
+                        "line_end": 87,
+                        "line_start": 70,
+                        "message": "Configuring now",
+                        "name": "add episode comment",
+                        "notes": "",
+                        "number": 1,
+                        "order": 4,
+                        "outPorts": [
+                            "out"
+                        ],
+                        "ports": {
+                            "groups": {
+                                "in": {
+                                    "attrs": {
+                                        ".port-body": {
+                                            "fill": "#fff",
+                                            "magnet": true,
+                                            "r": 10,
+                                            "stroke": "#000"
+                                        },
+                                        ".port-label": {
+                                            "fill": "#000"
+                                        }
+                                    },
+                                    "label": {
+                                        "position": {
+                                            "args": {
+                                                "y": 10
+                                            },
+                                            "name": "left"
+                                        }
+                                    },
+                                    "position": {
+                                        "name": "left"
+                                    }
+                                },
+                                "out": {
+                                    "attrs": {
+                                        ".port-body": {
+                                            "fill": "#fff",
+                                            "magnet": true,
+                                            "r": 10,
+                                            "stroke": "#000"
+                                        },
+                                        ".port-label": {
+                                            "fill": "#000"
+                                        }
+                                    },
+                                    "label": {
+                                        "position": {
+                                            "args": {
+                                                "y": 10
+                                            },
+                                            "name": "right"
+                                        }
+                                    },
+                                    "position": {
+                                        "name": "right"
+                                    }
+                                }
+                            }
+                        },
+                        "position": {
+                            "x": 260,
+                            "y": -60
+                        },
+                        "previous_function": "",
+                        "previous_name": "add_episode_comment_1",
+                        "required_params": {
+                            "comment": true,
+                            "itsi_group_id": true
+                        },
+                        "reviewer": "",
+                        "show_number": false,
+                        "size": {
+                            "height": 100,
+                            "width": 180
+                        },
+                        "state": "app_action_assets",
+                        "status": "",
+                        "title": "Generic",
+                        "type": "coa.Action",
+                        "warn": "",
+                        "z": 281
+                    },
+                    {
+                        "attrs": {
+                            ".connection": {
+                                "stroke": "#818D99",
+                                "stroke-width": 2
+                            },
+                            ".marker-target": {
+                                "d": "M 10 0 L 0 5 L 10 10 z",
+                                "fill": "#818D99",
+                                "stroke": "#818D99"
+                            }
+                        },
+                        "connector": {
+                            "args": {
+                                "radius": 5
+                            },
+                            "name": "rounded"
+                        },
+                        "endDirections": [
+                            "left"
+                        ],
+                        "id": "9ac84777-5e28-4c6a-b4ab-e8bbf4eb2b0b",
+                        "router": {
+                            "name": "metro"
+                        },
+                        "source": {
+                            "id": "c4c60b6a-12f0-4115-924e-c03142f032f0",
+                            "selector": "> g:nth-child(1) > g:nth-child(2) > g:nth-child(1) > circle:nth-child(1)"
+                        },
+                        "startDirections": [
+                            "right"
+                        ],
+                        "target": {
+                            "id": "dcaea38a-c503-4978-843a-f6ff8322c4a7",
+                            "selector": "> g:nth-child(1) > g:nth-child(1) > g:nth-child(1) > circle:nth-child(1)"
+                        },
+                        "type": "link",
+                        "z": 286
+                    },
+                    {
+                        "active": false,
+                        "angle": 0,
+                        "attrs": {
+                            ".background": {
+                                "fill": "#FFFFFF",
+                                "stroke": "#818D99"
+                            },
+                            ".color-band": {
+                                "fill": "#171D21"
+                            },
+                            ".format": {
+                                "text": "SNOW Update Resolved"
+                            },
+                            ".inPorts>.port-in": {
+                                "ref": ".background",
+                                "ref-x": 0.5
+                            },
+                            ".inPorts>.port-in>.port-body": {
+                                "port": {
+                                    "id": "in",
+                                    "type": "in"
+                                }
+                            },
+                            ".message": {
+                                "opacity": 0,
+                                "text": "Configuring now"
+                            },
+                            ".outPorts>.port-out-1": {
+                                "ref": ".background",
+                                "ref-x": 0.5
+                            },
+                            ".outPorts>.port-out-1>.port-body": {
+                                "port": {
+                                    "id": "out-1",
+                                    "type": "out"
+                                }
+                            },
+                            ".title": {
+                                "text": "format"
+                            },
+                            "g.code image": {
+                                "opacity": 1
+                            },
+                            "g.delete": {
+                                "display": "none"
+                            },
+                            "g.error": {
+                                "opacity": 0
+                            },
+                            "g.error image": {
+                                "xlink:href": "/inc/coa/img/block_icon_warn.svg"
+                            },
+                            "g.notes": {
+                                "display": "block"
+                            },
+                            "g.notes image": {
+                                "opacity": 1
+                            }
+                        },
+                        "block_code": "def SNOW_Update_Resolved(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):\n    phantom.debug('SNOW_Update_Resolved() called')\n    \n    template = \"\"\"{{\\\"work_notes\\\": \\\"Service was started and ITSI episode status is been set to resolved\\\"}}\"\"\"\n\n    # parameter list for template variable replacement\n    parameters = [\n        \"artifact:*.cef.act\",\n    ]\n\n    phantom.format(container=container, template=template, parameters=parameters, name=\"SNOW_Update_Resolved\")\n\n    format_4(container=container)\n\n    return",
+                        "callback_code": "",
+                        "callback_start": 1,
+                        "callsback": false,
+                        "connected_to_start": true,
+                        "connection_name": "add episode comment",
+                        "connection_type": "action",
+                        "custom_callback": "",
+                        "custom_code": "",
+                        "custom_join": "",
+                        "custom_name": "SNOW Update Resolved",
+                        "description": "",
+                        "format": "format",
+                        "has_custom": false,
+                        "has_custom_block": false,
+                        "has_custom_callback": false,
+                        "has_custom_join": false,
+                        "id": "dcaea38a-c503-4978-843a-f6ff8322c4a7",
+                        "inPorts": [
+                            "in"
+                        ],
+                        "join_code": "",
+                        "join_optional": [],
+                        "join_start": 1,
+                        "line_end": 103,
+                        "line_start": 87,
+                        "message": "Configuring now",
+                        "name": "format",
+                        "notes": "",
+                        "number": 1,
+                        "order": 5,
+                        "outPorts": [
+                            "out-1"
+                        ],
+                        "parameters": [
+                            {
+                                "position": 0,
+                                "type": "",
+                                "value": "artifact:*.cef.act"
+                            }
+                        ],
+                        "ports": {
+                            "groups": {
+                                "in": {
+                                    "attrs": {
+                                        ".port-body": {
+                                            "fill": "#fff",
+                                            "magnet": true,
+                                            "r": 10,
+                                            "stroke": "#000"
+                                        },
+                                        ".port-label": {
+                                            "fill": "#000"
+                                        }
+                                    },
+                                    "label": {
+                                        "position": {
+                                            "args": {
+                                                "y": 10
+                                            },
+                                            "name": "left"
+                                        }
+                                    },
+                                    "position": {
+                                        "name": "left"
+                                    }
+                                },
+                                "out": {
+                                    "attrs": {
+                                        ".port-body": {
+                                            "fill": "#fff",
+                                            "magnet": true,
+                                            "r": 10,
+                                            "stroke": "#000"
+                                        },
+                                        ".port-label": {
+                                            "fill": "#000"
+                                        }
+                                    },
+                                    "label": {
+                                        "position": {
+                                            "args": {
+                                                "y": 10
+                                            },
+                                            "name": "right"
+                                        }
+                                    },
+                                    "position": {
+                                        "name": "right"
+                                    }
+                                }
+                            }
+                        },
+                        "position": {
+                            "x": 700,
+                            "y": -60
+                        },
+                        "previous_function": "",
+                        "previous_name": "SNOW_Update_Resolved",
+                        "show_number": true,
+                        "size": {
+                            "height": 100,
+                            "width": 180
+                        },
+                        "state": "format",
+                        "status": "",
+                        "template": "{{\"work_notes\": \"Service was started and ITSI episode status is been set to resolved\"}}",
+                        "title": "format",
+                        "type": "coa.Format",
+                        "warn": false,
+                        "z": 287
+                    },
+                    {
+                        "active": false,
+                        "angle": 0,
+                        "attrs": {
+                            ".background": {
+                                "fill": "#FFFFFF",
+                                "stroke": "#818D99"
+                            },
+                            ".color-band": {
+                                "fill": "#171D21"
+                            },
+                            ".format": {
+                                "text": "SNOW Closed episode"
+                            },
+                            ".inPorts>.port-in": {
+                                "ref": ".background",
+                                "ref-x": 0.5
+                            },
+                            ".inPorts>.port-in>.port-body": {
+                                "port": {
+                                    "id": "in",
+                                    "type": "in"
+                                }
+                            },
+                            ".message": {
+                                "opacity": 0,
+                                "text": "Configuring now"
+                            },
+                            ".outPorts>.port-out-1": {
+                                "ref": ".background",
+                                "ref-x": 0.5
+                            },
+                            ".outPorts>.port-out-1>.port-body": {
+                                "port": {
+                                    "id": "out-1",
+                                    "type": "out"
+                                }
+                            },
+                            ".title": {
+                                "text": "format"
+                            },
+                            "g.code image": {
+                                "opacity": 1
+                            },
+                            "g.delete": {
+                                "display": "none"
+                            },
+                            "g.error": {
+                                "opacity": 0
+                            },
+                            "g.error image": {
+                                "xlink:href": "/inc/coa/img/block_icon_warn.svg"
+                            },
+                            "g.notes": {
+                                "display": "block"
+                            },
+                            "g.notes image": {
+                                "opacity": 1
+                            }
+                        },
+                        "block_code": "def SNOW_Closed_episode(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):\n    phantom.debug('SNOW_Closed_episode() called')\n    \n    template = \"\"\"{{\\\"work_notes\\\": \\\"Episode closed and broken: {0}\\\"}}\"\"\"\n\n    # parameter list for template variable replacement\n    parameters = [\n        \"artifact:*.cef.act\",\n    ]\n\n    phantom.format(container=container, template=template, parameters=parameters, name=\"SNOW_Closed_episode\")\n\n    update_ticket_2(container=container)\n\n    return",
+                        "callback_code": "",
+                        "callback_start": 1,
+                        "callsback": false,
+                        "connected_to_start": true,
+                        "connection_name": "Approval Close Incident",
+                        "connection_type": "action",
+                        "custom_callback": "",
+                        "custom_code": "",
+                        "custom_join": "",
+                        "custom_name": "SNOW Closed episode",
+                        "description": "",
+                        "format": "format",
+                        "has_custom": false,
+                        "has_custom_block": false,
+                        "has_custom_callback": false,
+                        "has_custom_join": false,
+                        "id": "703faa83-5714-41ef-9f57-fb5583cf35b5",
+                        "inPorts": [
+                            "in"
+                        ],
+                        "join_code": "",
+                        "join_optional": [],
+                        "join_start": 1,
+                        "line_end": 147,
+                        "line_start": 131,
+                        "message": "Configuring now",
+                        "name": "format",
+                        "notes": "",
+                        "number": 2,
+                        "order": 7,
+                        "outPorts": [
+                            "out-1"
+                        ],
+                        "parameters": [
+                            {
+                                "position": 0,
+                                "type": "",
+                                "value": "artifact:*.cef.act"
+                            }
+                        ],
+                        "ports": {
+                            "groups": {
+                                "in": {
+                                    "attrs": {
+                                        ".port-body": {
+                                            "fill": "#fff",
+                                            "magnet": true,
+                                            "r": 10,
+                                            "stroke": "#000"
+                                        },
+                                        ".port-label": {
+                                            "fill": "#000"
+                                        }
+                                    },
+                                    "label": {
+                                        "position": {
+                                            "args": {
+                                                "y": 10
+                                            },
+                                            "name": "left"
+                                        }
+                                    },
+                                    "position": {
+                                        "name": "left"
+                                    }
+                                },
+                                "out": {
+                                    "attrs": {
+                                        ".port-body": {
+                                            "fill": "#fff",
+                                            "magnet": true,
+                                            "r": 10,
+                                            "stroke": "#000"
+                                        },
+                                        ".port-label": {
+                                            "fill": "#000"
+                                        }
+                                    },
+                                    "label": {
+                                        "position": {
+                                            "args": {
+                                                "y": 10
+                                            },
+                                            "name": "right"
+                                        }
+                                    },
+                                    "position": {
+                                        "name": "right"
+                                    }
+                                }
+                            }
+                        },
+                        "position": {
+                            "x": 840,
+                            "y": 120
+                        },
+                        "previous_function": "",
+                        "previous_name": "SNOW_Closed_episode",
+                        "show_number": true,
+                        "size": {
+                            "height": 100,
+                            "width": 180
+                        },
+                        "state": "format",
+                        "status": "",
+                        "template": "{{\"work_notes\": \"Episode closed and broken: {0}\"}}",
+                        "title": "format",
+                        "type": "coa.Format",
+                        "warn": false,
+                        "z": 288
                     }
                 ]
             },
@@ -10651,7 +9485,7 @@
         "schema": 4,
         "version": "4.9.34514"
     },
-    "create_time": "2020-08-18T08:53:06.085679+00:00",
+    "create_time": "2020-08-18T09:51:17.629233+00:00",
     "draft_mode": false,
     "labels": [
         "*"
