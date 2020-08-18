@@ -7,48 +7,48 @@ from datetime import datetime, timedelta
 def on_start(container):
     phantom.debug('on_start() called')
     
-    # call 'playbook_conf2020_Notable_clean_up_1' block
-    playbook_conf2020_Notable_clean_up_1(container=container)
+    # call 'playbook_conf2020_conf2020_Notable_clean_up_1' block
+    playbook_conf2020_conf2020_Notable_clean_up_1(container=container)
 
     return
 
-def playbook_conf2020_Add_SNOW_Information_1(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):
-    phantom.debug('playbook_conf2020_Add_SNOW_Information_1() called')
+def playbook_conf2020_conf2020_Add_SNOW_Information_1(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):
+    phantom.debug('playbook_conf2020_conf2020_Add_SNOW_Information_1() called')
     
     # call playbook "conf2020/Add SNOW Information", returns the playbook_run_id
-    playbook_run_id = phantom.playbook(playbook="conf2020/Add SNOW Information", container=container, name="playbook_conf2020_Add_SNOW_Information_1", callback=playbook_conf2020_Get_entity_information_1)
+    playbook_run_id = phantom.playbook(playbook="conf2020/Add SNOW Information", container=container, name="playbook_conf2020_conf2020_Add_SNOW_Information_1", callback=playbook_conf2020_Add_entity_information_1)
 
     return
 
-def playbook_conf2020_Notable_clean_up_1(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):
-    phantom.debug('playbook_conf2020_Notable_clean_up_1() called')
+def playbook_conf2020_conf2020_Notable_clean_up_1(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):
+    phantom.debug('playbook_conf2020_conf2020_Notable_clean_up_1() called')
     
     # call playbook "conf2020/Notable_clean_up", returns the playbook_run_id
-    playbook_run_id = phantom.playbook(playbook="conf2020/Notable_clean_up", container=container, name="playbook_conf2020_Notable_clean_up_1", callback=playbook_conf2020_Add_SNOW_Information_1)
+    playbook_run_id = phantom.playbook(playbook="conf2020/Notable_clean_up", container=container, name="playbook_conf2020_conf2020_Notable_clean_up_1", callback=playbook_conf2020_conf2020_Add_SNOW_Information_1)
 
     return
 
-def playbook_conf2020_Get_entity_information_1(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):
-    phantom.debug('playbook_conf2020_Get_entity_information_1() called')
+def playbook_conf2020_Add_entity_information_1(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):
+    phantom.debug('playbook_conf2020_Add_entity_information_1() called')
     
-    # call playbook "conf2020/Get entity information", returns the playbook_run_id
-    playbook_run_id = phantom.playbook(playbook="conf2020/Get entity information", container=container, name="playbook_conf2020_Get_entity_information_1", callback=playbook_conf2020_Get_Service_information_1)
+    # call playbook "conf2020/Add entity information", returns the playbook_run_id
+    playbook_run_id = phantom.playbook(playbook="conf2020/Add entity information", container=container, name="playbook_conf2020_Add_entity_information_1", callback=playbook_conf2020_conf2020_Get_Service_information_1)
 
     return
 
-def playbook_conf2020_Get_Service_information_1(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):
-    phantom.debug('playbook_conf2020_Get_Service_information_1() called')
+def playbook_conf2020_conf2020_Get_Service_information_1(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):
+    phantom.debug('playbook_conf2020_conf2020_Get_Service_information_1() called')
     
     # call playbook "conf2020/Get Service information", returns the playbook_run_id
-    playbook_run_id = phantom.playbook(playbook="conf2020/Get Service information", container=container, name="playbook_conf2020_Get_Service_information_1", callback=playbook_conf2020_Restart_Service_1)
+    playbook_run_id = phantom.playbook(playbook="conf2020/Get Service information", container=container, name="playbook_conf2020_conf2020_Get_Service_information_1", callback=playbook_conf2020_conf2020_Restart_Service_1)
 
     return
 
-def playbook_conf2020_Restart_Service_1(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):
-    phantom.debug('playbook_conf2020_Restart_Service_1() called')
+def playbook_conf2020_conf2020_Restart_Service_1(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):
+    phantom.debug('playbook_conf2020_conf2020_Restart_Service_1() called')
     
     # call playbook "conf2020/Restart Service", returns the playbook_run_id
-    playbook_run_id = phantom.playbook(playbook="conf2020/Restart Service", container=container, name="playbook_conf2020_Restart_Service_1", callback=playbook_itsi_itsi_ITSI_close_episode_snow_1)
+    playbook_run_id = phantom.playbook(playbook="conf2020/Restart Service", container=container, name="playbook_conf2020_conf2020_Restart_Service_1", callback=playbook_itsi_itsi_ITSI_close_episode_snow_1)
 
     return
 
