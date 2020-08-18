@@ -123,7 +123,7 @@ def Get_Service(action=None, success=None, container=None, results=None, handle=
 def Build_link_for_check_data_pin(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):
     phantom.debug('Build_link_for_check_data_pin() called')
     
-    template = """container_pin?_filter_container={0}&_filter_message=\"Service\"&_filter_data=\"{1}\""""
+    template = """/rest/container_pin?_filter_container={0}&_filter_message=\"Service\"&_filter_data=\"{1}\""""
 
     # parameter list for template variable replacement
     parameters = [
