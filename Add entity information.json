@@ -7,7 +7,7 @@
             "clean": true,
             "code_block": "",
             "description": "",
-            "hash": "76a03995ee3fa32d8c949fb493f9e7173755007f",
+            "hash": "a9da5ee39def9c469468ddb0690a369937738a8e",
             "joint": {
                 "cells": [
                     {
@@ -217,8 +217,8 @@
                         "join_code": "# read-only block view not available",
                         "join_optional": [],
                         "join_start": 1,
-                        "line_end": 162,
-                        "line_start": 149,
+                        "line_end": 167,
+                        "line_start": 154,
                         "name": "",
                         "notes": "",
                         "number": 0,
@@ -1987,7 +1987,8 @@
                                 "opacity": 1
                             },
                             "g.code image": {
-                                "opacity": 1
+                                "opacity": 1,
+                                "xlink:href": "/inc/coa/img/block_icon_code_light_on.svg"
                             },
                             "g.delete": {
                                 "display": "none"
@@ -2017,13 +2018,13 @@
                         "connection_name": "Get PIN",
                         "connection_type": "action",
                         "custom_callback": "",
-                        "custom_code": "",
+                        "custom_code": "def get_entity_1(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):\n    phantom.debug('get_entity_1() called')\n        \n    #phantom.debug('Action: {0} {1}'.format(action['name'], ('SUCCEEDED' if success else 'FAILED')))\n    \n    DedupeListEntries__entity_list = json.loads(phantom.get_run_data(key='DedupeListEntries:entity_list'))\n    # collect data for 'get_entity_1' call\n\n    parameters = []\n    \n    # build parameters list for 'get_entity_1' call\n    #parameters.append({\n    #    'itsi_entity_id': DedupeListEntries__entity_list,\n    #})\n    \n    for entity_title in DedupeListEntries__entity_list:\n        parameters.append({\n            'entity_title': entity_title,\n        })\n\n    phantom.act(action=\"get entity\", parameters=parameters, assets=['splunk itsi'], callback=pin_1, name=\"get_entity_1\")\n\n    return",
                         "custom_join": "",
                         "custom_name": "",
                         "delay": 0,
                         "description": "",
                         "has_custom": true,
-                        "has_custom_block": false,
+                        "has_custom_block": true,
                         "has_custom_callback": false,
                         "has_custom_join": false,
                         "id": "8121d508-30b9-4f5a-8942-a96f140ca9cd",
@@ -2033,7 +2034,7 @@
                         "join_code": "",
                         "join_optional": [],
                         "join_start": 1,
-                        "line_end": 149,
+                        "line_end": 154,
                         "line_start": 130,
                         "message": "Configuring now",
                         "name": "get entity",
@@ -2114,7 +2115,7 @@
                         "status": "",
                         "title": "Generic",
                         "type": "coa.Action",
-                        "warn": "",
+                        "warn": false,
                         "z": 181
                     }
                 ]
@@ -2125,7 +2126,7 @@
         "schema": 4,
         "version": "4.9.34514"
     },
-    "create_time": "2020-08-18T10:27:39.374238+00:00",
+    "create_time": "2020-08-18T10:29:33.418570+00:00",
     "draft_mode": false,
     "labels": [
         "itsi"

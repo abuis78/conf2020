@@ -138,9 +138,14 @@ def get_entity_1(action=None, success=None, container=None, results=None, handle
     parameters = []
     
     # build parameters list for 'get_entity_1' call
-    parameters.append({
-        'itsi_entity_id': DedupeListEntries__entity_list,
-    })
+    #parameters.append({
+    #    'itsi_entity_id': DedupeListEntries__entity_list,
+    #})
+    
+    for entity_title in DedupeListEntries__entity_list:
+        parameters.append({
+            'entity_title': entity_title,
+        })
 
     phantom.act(action="get entity", parameters=parameters, assets=['splunk itsi'], callback=pin_1, name="get_entity_1")
 
