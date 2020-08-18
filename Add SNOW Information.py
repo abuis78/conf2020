@@ -239,10 +239,10 @@ def add_episode_ticket_1(action=None, success=None, container=None, results=None
     # build parameters list for 'add_episode_ticket_1' call
     for results_item_1 in results_data_1:
         parameters.append({
-            'ticket_id': results_item_1[0],
-            'ticket_url': formatted_data_1,
             'itsi_group_id': source_data_identifier_value,
             'ticket_system': "Service Now",
+            'ticket_id': results_item_1[0],
+            'ticket_url': formatted_data_1,
             # context (artifact id) is added to associate results with the artifact
             'context': {'artifact_id': results_item_1[1]},
         })
