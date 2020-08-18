@@ -79,7 +79,7 @@ def restart_Service(action=None, success=None, container=None, results=None, han
     # build parameters list for 'restart_Service' call
     parameters.append({
         'command': "sudo systemctl start nginx",
-        'timeout': 10,
+        'timeout': "",
         'ip_hostname': formatted_data_1,
         'script_file': "",
     })
