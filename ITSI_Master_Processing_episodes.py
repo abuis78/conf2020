@@ -16,7 +16,7 @@ def playbook_conf2020_Add_SNOW_Information_1(action=None, success=None, containe
     phantom.debug('playbook_conf2020_Add_SNOW_Information_1() called')
     
     # call playbook "conf2020/Add SNOW Information", returns the playbook_run_id
-    playbook_run_id = phantom.playbook(playbook="conf2020/Add SNOW Information", container=container, name="playbook_conf2020_Add_SNOW_Information_1", callback=playbook_itsi_itsi_ITSI_Pin_Information_V2_1)
+    playbook_run_id = phantom.playbook(playbook="conf2020/Add SNOW Information", container=container, name="playbook_conf2020_Add_SNOW_Information_1", callback=playbook_conf2020_Get_entity_information_1)
 
     return
 
@@ -28,11 +28,11 @@ def playbook_conf2020_Notable_clean_up_1(action=None, success=None, container=No
 
     return
 
-def playbook_itsi_itsi_ITSI_Pin_Information_V2_1(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):
-    phantom.debug('playbook_itsi_itsi_ITSI_Pin_Information_V2_1() called')
+def playbook_conf2020_Get_entity_information_1(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):
+    phantom.debug('playbook_conf2020_Get_entity_information_1() called')
     
-    # call playbook "itsi/ITSI_Pin_Information_V2", returns the playbook_run_id
-    playbook_run_id = phantom.playbook(playbook="itsi/ITSI_Pin_Information_V2", container=container, name="playbook_itsi_itsi_ITSI_Pin_Information_V2_1", callback=playbook_itsi_itsi_ITSI_Pin_Service_information_1)
+    # call playbook "conf2020/Get entity information", returns the playbook_run_id
+    playbook_run_id = phantom.playbook(playbook="conf2020/Get entity information", container=container, name="playbook_conf2020_Get_entity_information_1", callback=playbook_itsi_itsi_ITSI_Pin_Service_information_1)
 
     return
 
