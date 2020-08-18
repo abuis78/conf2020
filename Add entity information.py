@@ -12,7 +12,7 @@ def on_start(container):
 
     return
 
-def pin_1(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None):
+def pin_1(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):
     phantom.debug('pin_1() called')
 
     results_data_1 = phantom.collect2(container=container, datapath=['get_entity_1:action_result.data.*.*.title', 'get_entity_1:action_result.data.*.*.ip.0'], action_results=results)
@@ -25,7 +25,7 @@ def pin_1(action=None, success=None, container=None, results=None, handle=None, 
 
     return
 
-def Get_PIN(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None):
+def Get_PIN(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):
     phantom.debug('Get_PIN() called')
 
     # collect data for 'Get_PIN' call
@@ -40,14 +40,14 @@ def Get_PIN(action=None, success=None, container=None, results=None, handle=None
         'verify_certificate': False,
     })
 
-    phantom.act("get data", parameters=parameters, assets=['http'], callback=decision_1, name="Get_PIN")
+    phantom.act(action="get data", parameters=parameters, assets=['http'], callback=decision_1, name="Get_PIN")
 
     return
 
-def Create_URL_Parameters(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None):
+def Create_URL_Parameters(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):
     phantom.debug('Create_URL_Parameters() called')
     
-    template = """container_pin?_filter_container={0}&_filter_message=\"{1}\""""
+    template = """/rest/container_pin?_filter_container={0}&_filter_message=\"{1}\""""
 
     # parameter list for template variable replacement
     parameters = [
@@ -61,11 +61,11 @@ def Create_URL_Parameters(action=None, success=None, container=None, results=Non
 
     return
 
-def decision_1(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None):
+def decision_1(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):
     phantom.debug('decision_1() called')
 
     # check for 'if' condition 1
-    matched_artifacts_1, matched_results_1 = phantom.condition(
+    matched = phantom.decision(
         container=container,
         action_results=results,
         conditions=[
@@ -73,17 +73,17 @@ def decision_1(action=None, success=None, container=None, results=None, handle=N
         ])
 
     # call connected blocks if condition 1 matched
-    if matched_artifacts_1 or matched_results_1:
-        get_entity_1(action=action, success=success, container=container, results=results, handle=handle)
+    if matched:
+        get_entity_1(action=action, success=success, container=container, results=results, handle=handle, custom_function=custom_function)
         return
 
     return
 
-def decision_2(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None):
+def decision_2(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):
     phantom.debug('decision_2() called')
 
     # check for 'if' condition 1
-    matched_artifacts_1, matched_results_1 = phantom.condition(
+    matched = phantom.decision(
         container=container,
         conditions=[
             ["artifact:*.cef.entity_title", "!=", ""],
@@ -92,14 +92,15 @@ def decision_2(action=None, success=None, container=None, results=None, handle=N
         logical_operator='and')
 
     # call connected blocks if condition 1 matched
-    if matched_artifacts_1 or matched_results_1:
-        DedupeListEntries(action=action, success=success, container=container, results=results, handle=handle)
+    if matched:
+        DedupeListEntries(action=action, success=success, container=container, results=results, handle=handle, custom_function=custom_function)
         return
 
     return
 
-def DedupeListEntries(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None):
+def DedupeListEntries(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):
     phantom.debug('DedupeListEntries() called')
+    
     container_data = phantom.collect2(container=container, datapath=['artifact:*.cef.entity_title', 'artifact:*.id'])
     container_item_0 = [item[0] for item in container_data]
 
@@ -126,7 +127,7 @@ def DedupeListEntries(action=None, success=None, container=None, results=None, h
 
     return
 
-def get_entity_1(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None):
+def get_entity_1(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):
     phantom.debug('get_entity_1() called')
     
     #phantom.debug('Action: {0} {1}'.format(action['name'], ('SUCCEEDED' if success else 'FAILED')))
@@ -149,7 +150,7 @@ def get_entity_1(action=None, success=None, container=None, results=None, handle
 def on_finish(container, summary):
     phantom.debug('on_finish() called')
     # This function is called after all actions are completed.
-    # summary of all the action and/or all detals of actions
+    # summary of all the action and/or all details of actions
     # can be collected here.
 
     # summary_json = phantom.get_summary()
