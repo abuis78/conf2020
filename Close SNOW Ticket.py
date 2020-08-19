@@ -104,18 +104,18 @@ def SNOW_Update_Resolved(action=None, success=None, container=None, results=None
 
     return
 
-def update_ticket_1(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):
-    phantom.debug('update_ticket_1() called')
+def Update_SNOW_work_note_ITSI_resolved(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):
+    phantom.debug('Update_SNOW_work_note_ITSI_resolved() called')
         
     #phantom.debug('Action: {0} {1}'.format(action['name'], ('SUCCEEDED' if success else 'FAILED')))
     
-    # collect data for 'update_ticket_1' call
+    # collect data for 'Update_SNOW_work_note_ITSI_resolved' call
     results_data_1 = phantom.collect2(container=container, datapath=['get_data_1:action_result.data.*.response_body.data.*.data', 'get_data_1:action_result.parameter.context.artifact_id'], action_results=results)
     formatted_data_1 = phantom.get_format_data(name='SNOW_Update_Resolved')
 
     parameters = []
     
-    # build parameters list for 'update_ticket_1' call
+    # build parameters list for 'Update_SNOW_work_note_ITSI_resolved' call
     for results_item_1 in results_data_1:
         if results_item_1[0]:
             parameters.append({
@@ -128,7 +128,7 @@ def update_ticket_1(action=None, success=None, container=None, results=None, han
                 'context': {'artifact_id': results_item_1[1]},
             })
 
-    phantom.act(action="update ticket", parameters=parameters, assets=['servicenow'], callback=Approval_Close_Incident, name="update_ticket_1", parent_action=action)
+    phantom.act(action="update ticket", parameters=parameters, assets=['servicenow'], callback=Approval_Close_Incident, name="Update_SNOW_work_note_ITSI_resolved", parent_action=action)
 
     return
 
@@ -144,22 +144,22 @@ def SNOW_Closed_episode(action=None, success=None, container=None, results=None,
 
     phantom.format(container=container, template=template, parameters=parameters, name="SNOW_Closed_episode")
 
-    update_ticket_2(container=container)
+    Update_SNOW_work_notes_ITSI_episode(container=container)
 
     return
 
-def update_ticket_2(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):
-    phantom.debug('update_ticket_2() called')
+def Update_SNOW_work_notes_ITSI_episode(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):
+    phantom.debug('Update_SNOW_work_notes_ITSI_episode() called')
         
     #phantom.debug('Action: {0} {1}'.format(action['name'], ('SUCCEEDED' if success else 'FAILED')))
     
-    # collect data for 'update_ticket_2' call
+    # collect data for 'Update_SNOW_work_notes_ITSI_episode' call
     results_data_1 = phantom.collect2(container=container, datapath=['get_data_1:action_result.data.*.response_body.data.*.data', 'get_data_1:action_result.parameter.context.artifact_id'], action_results=results)
     formatted_data_1 = phantom.get_format_data(name='SNOW_Closed_episode')
 
     parameters = []
     
-    # build parameters list for 'update_ticket_2' call
+    # build parameters list for 'Update_SNOW_work_notes_ITSI_episode' call
     for results_item_1 in results_data_1:
         if results_item_1[0]:
             parameters.append({
@@ -172,7 +172,7 @@ def update_ticket_2(action=None, success=None, container=None, results=None, han
                 'context': {'artifact_id': results_item_1[1]},
             })
 
-    phantom.act(action="update ticket", parameters=parameters, assets=['servicenow'], callback=format_5, name="update_ticket_2")
+    phantom.act(action="update ticket", parameters=parameters, assets=['servicenow'], callback=format_5, name="Update_SNOW_work_notes_ITSI_episode")
 
     return
 
@@ -253,22 +253,22 @@ def get_data_1(action=None, success=None, container=None, results=None, handle=N
         'verify_certificate': False,
     })
 
-    phantom.act(action="get data", parameters=parameters, assets=['http'], callback=update_ticket_1, name="get_data_1")
+    phantom.act(action="get data", parameters=parameters, assets=['http'], callback=Update_SNOW_work_note_ITSI_resolved, name="get_data_1")
 
     return
 
-def update_ticket_4(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):
-    phantom.debug('update_ticket_4() called')
+def Change_snow_ticket_status_closed(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):
+    phantom.debug('Change_snow_ticket_status_closed() called')
         
     #phantom.debug('Action: {0} {1}'.format(action['name'], ('SUCCEEDED' if success else 'FAILED')))
     
-    # collect data for 'update_ticket_4' call
+    # collect data for 'Change_snow_ticket_status_closed' call
     results_data_1 = phantom.collect2(container=container, datapath=['get_data_1:action_result.data.*.response_body.data.*.data', 'get_data_1:action_result.parameter.context.artifact_id'], action_results=results)
     formatted_data_1 = phantom.get_format_data(name='format_5')
 
     parameters = []
     
-    # build parameters list for 'update_ticket_4' call
+    # build parameters list for 'Change_snow_ticket_status_closed' call
     for results_item_1 in results_data_1:
         if results_item_1[0]:
             parameters.append({
@@ -281,7 +281,7 @@ def update_ticket_4(action=None, success=None, container=None, results=None, han
                 'context': {'artifact_id': results_item_1[1]},
             })
 
-    phantom.act(action="update ticket", parameters=parameters, assets=['servicenow'], callback=join_set_status_1, name="update_ticket_4")
+    phantom.act(action="update ticket", parameters=parameters, assets=['servicenow'], callback=join_set_status_1, name="Change_snow_ticket_status_closed")
 
     return
 
@@ -292,12 +292,12 @@ def format_5(action=None, success=None, container=None, results=None, handle=Non
 
     # parameter list for template variable replacement
     parameters = [
-        "update_ticket_2:action_result.data.*.caller_id",
+        "Update_SNOW_work_notes_ITSI_episode:action_result.data.*.caller_id",
     ]
 
     phantom.format(container=container, template=template, parameters=parameters, name="format_5")
 
-    update_ticket_4(container=container)
+    Change_snow_ticket_status_closed(container=container)
 
     return
 
@@ -392,7 +392,7 @@ def join_set_status_1(action=None, success=None, container=None, results=None, h
     phantom.debug('join_set_status_1() called')
 
     # check if all connected incoming playbooks, actions, or custom functions are done i.e. have succeeded or failed
-    if phantom.completed(action_names=['update_ticket_4', 'update_ticket_5']):
+    if phantom.completed(action_names=['Change_snow_ticket_status_closed', 'update_ticket_5']):
         
         # call connected block "set_status_1"
         set_status_1(container=container, handle=handle)
