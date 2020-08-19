@@ -15,7 +15,7 @@ def on_start(container):
 def pin_1(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):
     phantom.debug('pin_1() called')
 
-    results_data_1 = phantom.collect2(container=container, datapath=['Entity', 'get_entity_1:action_result.data.*.external_ip.0'], action_results=results)
+    results_data_1 = phantom.collect2(container=container, datapath=['get_entity_1:action_result.data.*.title', 'get_entity_1:action_result.data.*.external_ip.0'], action_results=results)
 
     for item in results_data_1:
         results_item_1_0 = item[0]
