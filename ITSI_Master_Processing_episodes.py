@@ -162,6 +162,9 @@ def decision_2(action=None, success=None, container=None, results=None, handle=N
         format_2(action=action, success=success, container=container, results=results, handle=handle, custom_function=custom_function)
         return
 
+    # call connected blocks for 'else' condition 2
+    add_comment_2(action=action, success=success, container=container, results=results, handle=handle, custom_function=custom_function)
+
     return
 
 def add_comment_1(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):
@@ -187,6 +190,13 @@ def format_2(action=None, success=None, container=None, results=None, handle=Non
     phantom.format(container=container, template=template, parameters=parameters, name="format_2")
 
     add_comment_1(container=container)
+
+    return
+
+def add_comment_2(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):
+    phantom.debug('add_comment_2() called')
+
+    phantom.comment(container=container, comment="nothing")
 
     return
 
