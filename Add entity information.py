@@ -104,7 +104,7 @@ def decision_2(action=None, success=None, container=None, results=None, handle=N
 def DedupeListEntries(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):
     phantom.debug('DedupeListEntries() called')
     
-    container_data = phantom.collect2(container=container, datapath=['artifact:*.cef.entity_title', 'artifact:*.id'])
+    container_data = phantom.collect2(container=container, datapath=['artifact:*.cef.entity_key', 'artifact:*.id'])
     container_item_0 = [item[0] for item in container_data]
 
     DedupeListEntries__entity_list = None
