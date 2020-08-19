@@ -138,9 +138,9 @@ def get_data_1(action=None, success=None, container=None, results=None, handle=N
     
     # build parameters list for 'get_data_1' call
     parameters.append({
+        'headers': "",
         'location': formatted_data_1,
         'verify_certificate': False,
-        'headers': "",
     })
 
     phantom.act(action="get data", parameters=parameters, assets=['http'], callback=get_data_1_callback, name="get_data_1")
@@ -182,7 +182,6 @@ def add_comment_1(action=None, success=None, container=None, results=None, handl
     formatted_data_1 = phantom.get_format_data(name='format_2')
 
     phantom.comment(container=container, comment=formatted_data_1)
-    playbook_conf2020_conf2020_Notable_clean_up_1(container=container)
 
     return
 
