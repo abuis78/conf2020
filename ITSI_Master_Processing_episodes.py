@@ -117,6 +117,7 @@ def format_1(action=None, success=None, container=None, results=None, handle=Non
 
     # parameter list for template variable replacement
     parameters = [
+        "container:id",
         "custom_function_1:custom_function:entity_list",
     ]
 
