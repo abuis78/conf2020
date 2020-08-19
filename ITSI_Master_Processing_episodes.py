@@ -7,8 +7,8 @@ from datetime import datetime, timedelta
 def on_start(container):
     phantom.debug('on_start() called')
     
-    # call 'playbook_conf2020_conf2020_Notable_clean_up_1' block
-    playbook_conf2020_conf2020_Notable_clean_up_1(container=container)
+    # call 'cf_community_list_deduplicate_1' block
+    cf_community_list_deduplicate_1(container=container)
 
     return
 
@@ -139,6 +139,33 @@ def add_comment_2(action=None, success=None, container=None, results=None, handl
     phantom.debug('add_comment_2() called')
 
     phantom.comment(container=container, comment="nothing")
+
+    return
+
+def cf_community_list_deduplicate_1(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):
+    phantom.debug('cf_community_list_deduplicate_1() called')
+    
+    container_data_0 = phantom.collect2(container=container, datapath=['artifact:*.cef.entity_title', 'artifact:*.id'])
+
+    parameters = []
+
+    container_data_0_0 = [item[0] for item in container_data_0]
+
+    parameters.append({
+        'input_list': container_data_0_0,
+    })
+    ################################################################################
+    ## Custom Code Start
+    ################################################################################
+
+    # Write your custom code here...
+
+    ################################################################################
+    ## Custom Code End
+    ################################################################################    
+
+    # call custom function "community/list_deduplicate", returns the custom_function_run_id
+    phantom.custom_function(custom_function='community/list_deduplicate', parameters=parameters, name='cf_community_list_deduplicate_1', callback=playbook_conf2020_conf2020_Notable_clean_up_1)
 
     return
 
