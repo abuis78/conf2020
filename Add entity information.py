@@ -18,7 +18,7 @@ def pin_1(action=None, success=None, container=None, results=None, handle=None, 
     results_data_1 = phantom.collect2(container=container, datapath=['get_entity_1:action_result.data.*.title', 'get_entity_1:action_result.data.*.external_ip.0'], action_results=results)
 
     for item in results_data_1:
-        results_item_1_0 = item[0]
+        results_item_1_0 = "Entity: "+item[0]
         results_item_1_1 = item[1]
 
         phantom.pin(container=container, data=results_item_1_1, message=results_item_1_0, pin_type="card", pin_style="grey", name=None)
