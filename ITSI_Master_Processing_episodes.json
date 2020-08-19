@@ -7,7 +7,7 @@
             "clean": true,
             "code_block": "",
             "description": "",
-            "hash": "a7a8eb75ddc13beb3aa30d0581ce2d4634f879b4",
+            "hash": "ab840cc78a18a370cf1c77416d74e85ca378de0f",
             "joint": {
                 "cells": [
                     {
@@ -217,12 +217,12 @@
                         "join_code": "# read-only block view not available",
                         "join_optional": [],
                         "join_start": 1,
-                        "line_end": 235,
-                        "line_start": 222,
+                        "line_end": 245,
+                        "line_start": 232,
                         "name": "",
                         "notes": "",
                         "number": 0,
-                        "order": 17,
+                        "order": 18,
                         "outPorts": [],
                         "ports": {
                             "groups": {
@@ -1259,199 +1259,6 @@
                         "z": 45
                     },
                     {
-                        "active": false,
-                        "angle": 0,
-                        "attrs": {
-                            ".background": {
-                                "fill": "#FFFFFF",
-                                "stroke": "#637282",
-                                "transform": "rotate(45 30 70)"
-                            },
-                            ".inPorts>.port-0>.port-body": {
-                                "port": {
-                                    "id": "in",
-                                    "type": "in"
-                                }
-                            },
-                            ".number": {
-                                "text": 1
-                            },
-                            ".outPorts>.port-0": {
-                                "port": {
-                                    "id": "out-1",
-                                    "type": "out"
-                                },
-                                "ref-x": 83,
-                                "ref-y": 40
-                            },
-                            ".outPorts>.port-0>.port-body": {
-                                "port": {
-                                    "id": "out-1",
-                                    "type": "out"
-                                }
-                            },
-                            ".outPorts>.port-1": {
-                                "port": {
-                                    "id": "out-2",
-                                    "type": "out"
-                                },
-                                "ref-x": 41,
-                                "ref-y": 82
-                            },
-                            ".outPorts>.port-1>.port-body": {
-                                "port": {
-                                    "id": "out-2",
-                                    "type": "out"
-                                }
-                            },
-                            "g.delete": {
-                                "display": "none"
-                            },
-                            "g.error": {
-                                "opacity": 0
-                            },
-                            "g.notes": {
-                                "display": "block"
-                            }
-                        },
-                        "block_code": "def decision_1(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):\n    phantom.debug('decision_1() called')\n\n    # check for 'if' condition 1\n    matched = phantom.decision(\n        container=container,\n        conditions=[\n            [\"artifact:*.cef.entity_title\", \"!=\", \"\"],\n            [\"artifact:*.cef.entity_key\", \"!=\", \"\"],\n        ],\n        logical_operator='and')\n\n    # call connected blocks if condition 1 matched\n    if matched:\n        custom_function_1(action=action, success=success, container=container, results=results, handle=handle, custom_function=custom_function)\n        return\n\n    # call connected blocks for 'else' condition 2\n\n    return",
-                        "callback_code": "",
-                        "callback_start": 1,
-                        "callsback": false,
-                        "connected_to_start": true,
-                        "connection_name": "",
-                        "connection_type": "",
-                        "custom_callback": "",
-                        "custom_code": "",
-                        "custom_join": "",
-                        "custom_name": "",
-                        "description": "",
-                        "hasElse": true,
-                        "has_custom": false,
-                        "has_custom_block": false,
-                        "has_custom_callback": false,
-                        "has_custom_join": false,
-                        "id": "9323f7b2-b68e-4041-8983-27a9a955ad61",
-                        "inPorts": [
-                            "in"
-                        ],
-                        "join_code": "",
-                        "join_optional": [],
-                        "join_start": 1,
-                        "line_end": 84,
-                        "line_start": 63,
-                        "name": "decision",
-                        "notes": "",
-                        "number": 1,
-                        "order": 8,
-                        "outPorts": [
-                            "out-1",
-                            "out-2"
-                        ],
-                        "outputs": [
-                            {
-                                "conditions": [
-                                    {
-                                        "comparison": "!=",
-                                        "data_type": "",
-                                        "param": "artifact:*.cef.entity_title",
-                                        "value": ""
-                                    },
-                                    {
-                                        "comparison": "!=",
-                                        "data_type": "",
-                                        "param": "artifact:*.cef.entity_key",
-                                        "value": ""
-                                    }
-                                ],
-                                "display": "If",
-                                "logic": "and",
-                                "type": "if"
-                            },
-                            {
-                                "conditions": [
-                                    {
-                                        "comparison": "==",
-                                        "data_type": "",
-                                        "param": "",
-                                        "value": ""
-                                    }
-                                ],
-                                "display": "Else",
-                                "logic": "and",
-                                "type": "else"
-                            }
-                        ],
-                        "ports": {
-                            "groups": {
-                                "in": {
-                                    "attrs": {
-                                        ".port-body": {
-                                            "fill": "#fff",
-                                            "magnet": true,
-                                            "r": 10,
-                                            "stroke": "#000"
-                                        },
-                                        ".port-label": {
-                                            "fill": "#000"
-                                        }
-                                    },
-                                    "label": {
-                                        "position": {
-                                            "args": {
-                                                "y": 10
-                                            },
-                                            "name": "left"
-                                        }
-                                    },
-                                    "position": {
-                                        "name": "left"
-                                    }
-                                },
-                                "out": {
-                                    "attrs": {
-                                        ".port-body": {
-                                            "fill": "#fff",
-                                            "magnet": true,
-                                            "r": 10,
-                                            "stroke": "#000"
-                                        },
-                                        ".port-label": {
-                                            "fill": "#000"
-                                        }
-                                    },
-                                    "label": {
-                                        "position": {
-                                            "args": {
-                                                "y": 10
-                                            },
-                                            "name": "right"
-                                        }
-                                    },
-                                    "position": {
-                                        "name": "right"
-                                    }
-                                }
-                            }
-                        },
-                        "position": {
-                            "x": 300,
-                            "y": -220
-                        },
-                        "previous_function": "",
-                        "previous_name": "decision_1",
-                        "show_number": true,
-                        "size": {
-                            "height": 82,
-                            "width": 82
-                        },
-                        "state": "decision",
-                        "status": "",
-                        "type": "coa.Decision",
-                        "warn": "",
-                        "z": 47
-                    },
-                    {
                         "attrs": {
                             ".connection": {
                                 "stroke": "#818D99",
@@ -1822,184 +1629,6 @@
                         "z": 58
                     },
                     {
-                        "active": false,
-                        "angle": 0,
-                        "attrs": {
-                            ".background": {
-                                "fill": "#FFFFFF",
-                                "stroke": "#818D99"
-                            },
-                            ".color-band": {
-                                "fill": "#171D21"
-                            },
-                            ".functionBlock": {
-                                "text": "custom function 1"
-                            },
-                            ".inPorts>.port-in": {
-                                "ref": ".background",
-                                "ref-x": 0.5
-                            },
-                            ".inPorts>.port-in>.port-body": {
-                                "port": {
-                                    "id": "in",
-                                    "type": "in"
-                                }
-                            },
-                            ".message": {
-                                "opacity": 0,
-                                "ref-x": 5,
-                                "ref-y": 105,
-                                "text": "Configuring now"
-                            },
-                            ".outPorts>.port-out": {
-                                "ref": ".background",
-                                "ref-x": 0.5
-                            },
-                            ".outPorts>.port-out>.port-body": {
-                                "port": {
-                                    "id": "out",
-                                    "type": "out"
-                                }
-                            },
-                            ".title": {
-                                "text": "custom function"
-                            },
-                            "g.delete": {
-                                "display": "none"
-                            },
-                            "g.error": {
-                                "opacity": 1
-                            },
-                            "g.error image": {
-                                "xlink:href": "/inc/coa/img/block_icon_warn_grey.svg"
-                            },
-                            "g.notes": {
-                                "display": "block"
-                            }
-                        },
-                        "block_code": "def custom_function_1(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):\n    phantom.debug('custom_function_1() called')\n    \n    container_data = phantom.collect2(container=container, datapath=['artifact:*.cef.entity_title', 'artifact:*.id'])\n    container_item_0 = [item[0] for item in container_data]\n\n    custom_function_1__entity_list = None\n\n    ################################################################################\n    ## Custom Code Start\n    ################################################################################\n\n    # Write your custom code here...\n    phantom.debug('DedupeListEntries() formatted_data_1: {}'.format(container_item_0))\n\n    seen = {}\n    DedupeListEntries__entity_list = [seen.setdefault(x, x) for x in container_item_0 if x not in seen]\n    \n    phantom.debug('DedupeListEntries() DedupeListEntries__entity_list: {}'.format(DedupeListEntries__entity_list))\n    ################################################################################\n    ################################################################################\n    ## Custom Code End\n    ################################################################################\n\n    phantom.save_run_data(key='custom_function_1:entity_list', value=json.dumps(custom_function_1__entity_list))\n    format_1(container=container)\n\n    return",
-                        "callback_code": "",
-                        "callback_start": 1,
-                        "callsback": false,
-                        "connected_to_start": true,
-                        "connection_name": "",
-                        "connection_type": "",
-                        "customCodeEndLineOffset": 7,
-                        "customCodeStartLine": 11,
-                        "custom_callback": "",
-                        "custom_code": "def custom_function_1(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):\n    phantom.debug('custom_function_1() called')\n    \n    container_data = phantom.collect2(container=container, datapath=['artifact:*.cef.entity_title', 'artifact:*.id'])\n    container_item_0 = [item[0] for item in container_data]\n\n    custom_function_1__entity_list = None\n\n    ################################################################################\n    ## Custom Code Start\n    ################################################################################\n\n    # Write your custom code here...\n    phantom.debug('DedupeListEntries() formatted_data_1: {}'.format(container_item_0))\n\n    seen = {}\n    DedupeListEntries__entity_list = [seen.setdefault(x, x) for x in container_item_0 if x not in seen]\n    \n    phantom.debug('DedupeListEntries() DedupeListEntries__entity_list: {}'.format(DedupeListEntries__entity_list))\n    ################################################################################\n    ## Custom Code End\n    ################################################################################\n\n    phantom.save_run_data(key='custom_function_1:entity_list', value=json.dumps(custom_function_1__entity_list))\n\n    return",
-                        "custom_join": "",
-                        "custom_name": "",
-                        "description": "",
-                        "functionBlock": "custom function",
-                        "has_custom": false,
-                        "has_custom_block": false,
-                        "has_custom_callback": false,
-                        "has_custom_join": false,
-                        "id": "82cfd285-cedf-4bd3-87ca-1b990131dc84",
-                        "inPorts": [
-                            "in"
-                        ],
-                        "join_code": "",
-                        "join_optional": [],
-                        "join_start": 1,
-                        "legacy": true,
-                        "line_end": 113,
-                        "line_start": 84,
-                        "message": "Configuring now",
-                        "name": "custom function",
-                        "notes": "",
-                        "number": 1,
-                        "order": 9,
-                        "outPorts": [
-                            "out"
-                        ],
-                        "outputVariables": [
-                            {
-                                "position": 0,
-                                "type": "",
-                                "value": "entity_list"
-                            }
-                        ],
-                        "parameters": [
-                            {
-                                "position": 0,
-                                "type": "",
-                                "value": "artifact:*.cef.entity_title"
-                            }
-                        ],
-                        "ports": {
-                            "groups": {
-                                "in": {
-                                    "attrs": {
-                                        ".port-body": {
-                                            "fill": "#fff",
-                                            "magnet": true,
-                                            "r": 10,
-                                            "stroke": "#000"
-                                        },
-                                        ".port-label": {
-                                            "fill": "#000"
-                                        }
-                                    },
-                                    "label": {
-                                        "position": {
-                                            "args": {
-                                                "y": 10
-                                            },
-                                            "name": "left"
-                                        }
-                                    },
-                                    "position": {
-                                        "name": "left"
-                                    }
-                                },
-                                "out": {
-                                    "attrs": {
-                                        ".port-body": {
-                                            "fill": "#fff",
-                                            "magnet": true,
-                                            "r": 10,
-                                            "stroke": "#000"
-                                        },
-                                        ".port-label": {
-                                            "fill": "#000"
-                                        }
-                                    },
-                                    "label": {
-                                        "position": {
-                                            "args": {
-                                                "y": 10
-                                            },
-                                            "name": "right"
-                                        }
-                                    },
-                                    "position": {
-                                        "name": "right"
-                                    }
-                                }
-                            }
-                        },
-                        "position": {
-                            "x": 500,
-                            "y": -220
-                        },
-                        "previous_function": "",
-                        "previous_name": "custom_function_1",
-                        "show_number": true,
-                        "size": {
-                            "height": 100,
-                            "width": 180
-                        },
-                        "state": "custom function",
-                        "status": "deprecating",
-                        "title": "custom function",
-                        "type": "coa.FunctionBlock",
-                        "userGeneratedCode": "\n    # Write your custom code here...\n    phantom.debug('DedupeListEntries() formatted_data_1: {}'.format(container_item_0))\n\n    seen = {}\n    DedupeListEntries__entity_list = [seen.setdefault(x, x) for x in container_item_0 if x not in seen]\n    \n    phantom.debug('DedupeListEntries() DedupeListEntries__entity_list: {}'.format(DedupeListEntries__entity_list))\n    ################################################################################",
-                        "warn": false,
-                        "z": 59
-                    },
-                    {
                         "attrs": {
                             ".connection": {
                                 "stroke": "#818D99",
@@ -2165,8 +1794,8 @@
                         "join_code": "",
                         "join_optional": [],
                         "join_start": 1,
-                        "line_end": 188,
-                        "line_start": 178,
+                        "line_end": 189,
+                        "line_start": 179,
                         "message": "Configuring now",
                         "name": "add comment",
                         "notes": "",
@@ -2539,174 +2168,6 @@
                     {
                         "active": false,
                         "angle": 0,
-                        "attrs": {
-                            ".background": {
-                                "fill": "#FFFFFF",
-                                "stroke": "#818D99"
-                            },
-                            ".color-band": {
-                                "fill": "#171D21"
-                            },
-                            ".format": {
-                                "text": "format 1"
-                            },
-                            ".inPorts>.port-in": {
-                                "ref": ".background",
-                                "ref-x": 0.5
-                            },
-                            ".inPorts>.port-in>.port-body": {
-                                "port": {
-                                    "id": "in",
-                                    "type": "in"
-                                }
-                            },
-                            ".message": {
-                                "opacity": 0,
-                                "text": "Configuring now"
-                            },
-                            ".outPorts>.port-out-1": {
-                                "ref": ".background",
-                                "ref-x": 0.5
-                            },
-                            ".outPorts>.port-out-1>.port-body": {
-                                "port": {
-                                    "id": "out-1",
-                                    "type": "out"
-                                }
-                            },
-                            ".title": {
-                                "text": "format"
-                            },
-                            "g.delete": {
-                                "display": "none"
-                            },
-                            "g.error": {
-                                "opacity": 0
-                            },
-                            "g.notes": {
-                                "display": "block"
-                            }
-                        },
-                        "block_code": "def format_1(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):\n    phantom.debug('format_1() called')\n    \n    template = \"\"\"/rest/container_pin?_filter_container={0}&_filter_message=\\\"Entity: {1}\\\"\"\"\"\n\n    # parameter list for template variable replacement\n    parameters = [\n        \"container:id\",\n        \"custom_function_1:custom_function:entity_list\",\n    ]\n\n    phantom.format(container=container, template=template, parameters=parameters, name=\"format_1\")\n\n    get_data_1(container=container)\n\n    return",
-                        "callback_code": "",
-                        "callback_start": 1,
-                        "callsback": false,
-                        "connected_to_start": true,
-                        "connection_name": "",
-                        "connection_type": "",
-                        "custom_callback": "",
-                        "custom_code": "",
-                        "custom_join": "",
-                        "custom_name": "",
-                        "description": "",
-                        "format": "format",
-                        "has_custom": false,
-                        "has_custom_block": false,
-                        "has_custom_callback": false,
-                        "has_custom_join": false,
-                        "id": "dd07a7e0-a75f-4f3d-85b5-cc5635127d17",
-                        "inPorts": [
-                            "in"
-                        ],
-                        "join_code": "",
-                        "join_optional": [],
-                        "join_start": 1,
-                        "line_end": 130,
-                        "line_start": 113,
-                        "message": "Configuring now",
-                        "name": "format",
-                        "notes": "",
-                        "number": 1,
-                        "order": 10,
-                        "outPorts": [
-                            "out-1"
-                        ],
-                        "parameters": [
-                            {
-                                "position": 0,
-                                "type": "",
-                                "value": "container:id"
-                            },
-                            {
-                                "position": 1,
-                                "type": "",
-                                "value": "custom_function_1:custom_function:entity_list"
-                            }
-                        ],
-                        "ports": {
-                            "groups": {
-                                "in": {
-                                    "attrs": {
-                                        ".port-body": {
-                                            "fill": "#fff",
-                                            "magnet": true,
-                                            "r": 10,
-                                            "stroke": "#000"
-                                        },
-                                        ".port-label": {
-                                            "fill": "#000"
-                                        }
-                                    },
-                                    "label": {
-                                        "position": {
-                                            "args": {
-                                                "y": 10
-                                            },
-                                            "name": "left"
-                                        }
-                                    },
-                                    "position": {
-                                        "name": "left"
-                                    }
-                                },
-                                "out": {
-                                    "attrs": {
-                                        ".port-body": {
-                                            "fill": "#fff",
-                                            "magnet": true,
-                                            "r": 10,
-                                            "stroke": "#000"
-                                        },
-                                        ".port-label": {
-                                            "fill": "#000"
-                                        }
-                                    },
-                                    "label": {
-                                        "position": {
-                                            "args": {
-                                                "y": 10
-                                            },
-                                            "name": "right"
-                                        }
-                                    },
-                                    "position": {
-                                        "name": "right"
-                                    }
-                                }
-                            }
-                        },
-                        "position": {
-                            "x": 780,
-                            "y": -220
-                        },
-                        "previous_function": "",
-                        "previous_name": "format_1",
-                        "show_number": true,
-                        "size": {
-                            "height": 100,
-                            "width": 180
-                        },
-                        "state": "format",
-                        "status": "",
-                        "template": "/rest/container_pin?_filter_container={0}&_filter_message=\"Entity: {1}\"",
-                        "title": "format",
-                        "type": "coa.Format",
-                        "warn": false,
-                        "z": 76
-                    },
-                    {
-                        "active": false,
-                        "angle": 0,
                         "api": "add comment",
                         "attrs": {
                             ".api": {
@@ -2788,8 +2249,8 @@
                         "join_code": "",
                         "join_optional": [],
                         "join_start": 1,
-                        "line_end": 211,
-                        "line_start": 204,
+                        "line_end": 212,
+                        "line_start": 205,
                         "message": "Configuring now",
                         "name": "add comment",
                         "notes": "",
@@ -2867,6 +2328,372 @@
                         "type": "coa.API",
                         "warn": false,
                         "z": 77
+                    },
+                    {
+                        "attrs": {
+                            ".connection": {
+                                "stroke": "#818D99",
+                                "stroke-width": 2
+                            },
+                            ".marker-target": {
+                                "d": "M 10 0 L 0 5 L 10 10 z",
+                                "fill": "#818D99",
+                                "stroke": "#818D99"
+                            }
+                        },
+                        "connector": {
+                            "args": {
+                                "radius": 5
+                            },
+                            "name": "rounded"
+                        },
+                        "endDirections": [
+                            "left"
+                        ],
+                        "id": "19a8a0dc-6ca5-4b89-8bae-ebaaea3703ef",
+                        "router": {
+                            "name": "metro"
+                        },
+                        "source": {
+                            "id": "9fb5e237-0681-4183-9996-583da6d9de78",
+                            "selector": "> g:nth-child(1) > g:nth-child(2) > g:nth-child(1) > circle:nth-child(1)"
+                        },
+                        "startDirections": [
+                            "right"
+                        ],
+                        "target": {
+                            "id": "807cdef1-9499-4e06-8fec-a25e601b6ec8",
+                            "selector": ".port-body[type=\"input\"]"
+                        },
+                        "type": "link",
+                        "z": 80
+                    },
+                    {
+                        "active": false,
+                        "angle": 0,
+                        "api": "add comment",
+                        "attrs": {
+                            ".api": {
+                                "text": "add comment"
+                            },
+                            ".background": {
+                                "fill": "#FFFFFF",
+                                "stroke": "#818D99"
+                            },
+                            ".color-band": {
+                                "fill": "#171D21"
+                            },
+                            ".inPorts>.port-in": {
+                                "ref": ".background",
+                                "ref-x": 0.5
+                            },
+                            ".inPorts>.port-in>.port-body": {
+                                "port": {
+                                    "id": "in",
+                                    "type": "in"
+                                }
+                            },
+                            ".message": {
+                                "opacity": 0,
+                                "ref-x": 5,
+                                "ref-y": 105,
+                                "text": "Configuring now"
+                            },
+                            ".outPorts>.port-out": {
+                                "ref": ".background",
+                                "ref-x": 0.5
+                            },
+                            ".outPorts>.port-out>.port-body": {
+                                "port": {
+                                    "id": "out",
+                                    "type": "out"
+                                }
+                            },
+                            ".title": {
+                                "text": "API"
+                            },
+                            "g.delete": {
+                                "display": "none"
+                            },
+                            "g.error": {
+                                "opacity": 0
+                            },
+                            "g.notes": {
+                                "display": "block"
+                            }
+                        },
+                        "block_code": "def add_comment_3(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):\n    phantom.debug('add_comment_3() called')\n\n    results_data_1 = phantom.collect2(container=container, datapath=['get_data_1:action_result.parameter.location'], action_results=results)\n\n    results_item_1_0 = [item[0] for item in results_data_1]\n\n    phantom.comment(container=container, comment=results_item_1_0)\n\n    return",
+                        "callback_code": "",
+                        "callback_start": 1,
+                        "callsback": false,
+                        "color": "",
+                        "configured": [
+                            {
+                                "addCommentComment": "get_data_1:action_result.parameter.location",
+                                "key": "add-comment"
+                            }
+                        ],
+                        "connected_to_start": true,
+                        "connection_name": "get data",
+                        "connection_type": "action",
+                        "custom_callback": "",
+                        "custom_code": "",
+                        "custom_join": "",
+                        "custom_name": "",
+                        "description": "",
+                        "has_custom": false,
+                        "has_custom_block": false,
+                        "has_custom_callback": false,
+                        "has_custom_join": false,
+                        "id": "807cdef1-9499-4e06-8fec-a25e601b6ec8",
+                        "inPorts": [
+                            "in"
+                        ],
+                        "join_code": "",
+                        "join_optional": [],
+                        "join_start": 1,
+                        "line_end": 223,
+                        "line_start": 212,
+                        "message": "Configuring now",
+                        "name": "add comment",
+                        "notes": "",
+                        "number": 3,
+                        "order": 16,
+                        "outPorts": [
+                            "out"
+                        ],
+                        "ports": {
+                            "groups": {
+                                "in": {
+                                    "attrs": {
+                                        ".port-body": {
+                                            "fill": "#fff",
+                                            "magnet": true,
+                                            "r": 10,
+                                            "stroke": "#000"
+                                        },
+                                        ".port-label": {
+                                            "fill": "#000"
+                                        }
+                                    },
+                                    "label": {
+                                        "position": {
+                                            "args": {
+                                                "y": 10
+                                            },
+                                            "name": "left"
+                                        }
+                                    },
+                                    "position": {
+                                        "name": "left"
+                                    }
+                                },
+                                "out": {
+                                    "attrs": {
+                                        ".port-body": {
+                                            "fill": "#fff",
+                                            "magnet": true,
+                                            "r": 10,
+                                            "stroke": "#000"
+                                        },
+                                        ".port-label": {
+                                            "fill": "#000"
+                                        }
+                                    },
+                                    "label": {
+                                        "position": {
+                                            "args": {
+                                                "y": 10
+                                            },
+                                            "name": "right"
+                                        }
+                                    },
+                                    "position": {
+                                        "name": "right"
+                                    }
+                                }
+                            }
+                        },
+                        "position": {
+                            "x": 1300,
+                            "y": -320
+                        },
+                        "previous_function": "",
+                        "previous_name": "add_comment_3",
+                        "show_number": false,
+                        "size": {
+                            "height": 100,
+                            "width": 180
+                        },
+                        "state": "api",
+                        "status": "",
+                        "title": "API",
+                        "type": "coa.API",
+                        "warn": false,
+                        "z": 81
+                    },
+                    {
+                        "active": false,
+                        "angle": 0,
+                        "attrs": {
+                            ".background": {
+                                "fill": "#FFFFFF",
+                                "stroke": "#818D99"
+                            },
+                            ".color-band": {
+                                "fill": "#171D21"
+                            },
+                            ".format": {
+                                "text": "format 2"
+                            },
+                            ".inPorts>.port-in": {
+                                "ref": ".background",
+                                "ref-x": 0.5
+                            },
+                            ".inPorts>.port-in>.port-body": {
+                                "port": {
+                                    "id": "in",
+                                    "type": "in"
+                                }
+                            },
+                            ".message": {
+                                "opacity": 0,
+                                "text": "Configuring now"
+                            },
+                            ".outPorts>.port-out-1": {
+                                "ref": ".background",
+                                "ref-x": 0.5
+                            },
+                            ".outPorts>.port-out-1>.port-body": {
+                                "port": {
+                                    "id": "out-1",
+                                    "type": "out"
+                                }
+                            },
+                            ".title": {
+                                "text": "format"
+                            },
+                            "g.delete": {
+                                "display": "none"
+                            },
+                            "g.error": {
+                                "opacity": 0
+                            },
+                            "g.notes": {
+                                "display": "block"
+                            }
+                        },
+                        "block_code": "def format_2(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):\n    phantom.debug('format_2() called')\n    \n    template = \"\"\"This entity is not jet   added for the process {0}\"\"\"\n\n    # parameter list for template variable replacement\n    parameters = [\n        \"custom_function_1:custom_function:entity_list\",\n    ]\n\n    phantom.format(container=container, template=template, parameters=parameters, name=\"format_2\")\n\n    add_comment_1(container=container)\n\n    return",
+                        "callback_code": "",
+                        "callback_start": 1,
+                        "callsback": false,
+                        "connected_to_start": true,
+                        "connection_name": "get data",
+                        "connection_type": "action",
+                        "custom_callback": "",
+                        "custom_code": "",
+                        "custom_join": "",
+                        "custom_name": "",
+                        "description": "",
+                        "format": "format",
+                        "has_custom": false,
+                        "has_custom_block": false,
+                        "has_custom_callback": false,
+                        "has_custom_join": false,
+                        "id": "6f2de8be-1861-4179-ad00-aff4595fe3f9",
+                        "inPorts": [
+                            "in"
+                        ],
+                        "join_code": "",
+                        "join_optional": [],
+                        "join_start": 1,
+                        "line_end": 205,
+                        "line_start": 189,
+                        "message": "Configuring now",
+                        "name": "format",
+                        "notes": "",
+                        "number": 2,
+                        "order": 14,
+                        "outPorts": [
+                            "out-1"
+                        ],
+                        "parameters": [
+                            {
+                                "position": 0,
+                                "type": "",
+                                "value": "custom_function_1:custom_function:entity_list"
+                            }
+                        ],
+                        "ports": {
+                            "groups": {
+                                "in": {
+                                    "attrs": {
+                                        ".port-body": {
+                                            "fill": "#fff",
+                                            "magnet": true,
+                                            "r": 10,
+                                            "stroke": "#000"
+                                        },
+                                        ".port-label": {
+                                            "fill": "#000"
+                                        }
+                                    },
+                                    "label": {
+                                        "position": {
+                                            "args": {
+                                                "y": 10
+                                            },
+                                            "name": "left"
+                                        }
+                                    },
+                                    "position": {
+                                        "name": "left"
+                                    }
+                                },
+                                "out": {
+                                    "attrs": {
+                                        ".port-body": {
+                                            "fill": "#fff",
+                                            "magnet": true,
+                                            "r": 10,
+                                            "stroke": "#000"
+                                        },
+                                        ".port-label": {
+                                            "fill": "#000"
+                                        }
+                                    },
+                                    "label": {
+                                        "position": {
+                                            "args": {
+                                                "y": 10
+                                            },
+                                            "name": "right"
+                                        }
+                                    },
+                                    "position": {
+                                        "name": "right"
+                                    }
+                                }
+                            }
+                        },
+                        "position": {
+                            "x": 1460,
+                            "y": -220
+                        },
+                        "previous_function": "",
+                        "previous_name": "format_2",
+                        "show_number": true,
+                        "size": {
+                            "height": 100,
+                            "width": 180
+                        },
+                        "state": "format",
+                        "status": "",
+                        "template": "This entity is not jet   added for the process {0}",
+                        "title": "format",
+                        "type": "coa.Format",
+                        "warn": false,
+                        "z": 82
                     },
                     {
                         "active": false,
@@ -2948,8 +2775,8 @@
                         "join_code": "",
                         "join_optional": [],
                         "join_start": 1,
-                        "line_end": 178,
-                        "line_start": 157,
+                        "line_end": 179,
+                        "line_start": 158,
                         "name": "decision",
                         "notes": "",
                         "number": 2,
@@ -3053,7 +2880,378 @@
                         "status": "",
                         "type": "coa.Decision",
                         "warn": "",
-                        "z": 78
+                        "z": 83
+                    },
+                    {
+                        "active": false,
+                        "angle": 0,
+                        "attrs": {
+                            ".background": {
+                                "fill": "#FFFFFF",
+                                "stroke": "#818D99"
+                            },
+                            ".color-band": {
+                                "fill": "#171D21"
+                            },
+                            ".functionBlock": {
+                                "text": "custom function 1"
+                            },
+                            ".inPorts>.port-in": {
+                                "ref": ".background",
+                                "ref-x": 0.5
+                            },
+                            ".inPorts>.port-in>.port-body": {
+                                "port": {
+                                    "id": "in",
+                                    "type": "in"
+                                }
+                            },
+                            ".message": {
+                                "opacity": 0,
+                                "ref-x": 5,
+                                "ref-y": 105,
+                                "text": "Configuring now"
+                            },
+                            ".outPorts>.port-out": {
+                                "ref": ".background",
+                                "ref-x": 0.5
+                            },
+                            ".outPorts>.port-out>.port-body": {
+                                "port": {
+                                    "id": "out",
+                                    "type": "out"
+                                }
+                            },
+                            ".title": {
+                                "text": "custom function"
+                            },
+                            "g.delete": {
+                                "display": "none"
+                            },
+                            "g.error": {
+                                "opacity": 1
+                            },
+                            "g.error image": {
+                                "xlink:href": "/inc/coa/img/block_icon_warn_grey.svg"
+                            },
+                            "g.notes": {
+                                "display": "block"
+                            }
+                        },
+                        "block_code": "def custom_function_1(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):\n    phantom.debug('custom_function_1() called')\n    \n    container_data = phantom.collect2(container=container, datapath=['artifact:*.cef.entity_title', 'artifact:*.id'])\n    container_item_0 = [item[0] for item in container_data]\n\n    custom_function_1__entity_list = None\n\n    ################################################################################\n    ## Custom Code Start\n    ################################################################################\n\n    # Write your custom code here...\n    phantom.debug('DedupeListEntries() formatted_data_1: {}'.format(container_item_0))\n\n    seen = {}\n    DedupeListEntries__entity_list = [seen.setdefault(x, x) for x in container_item_0 if x not in seen]\n    \n    phantom.debug('DedupeListEntries() DedupeListEntries__entity_list: {}'.format(DedupeListEntries__entity_list))\n    ################################################################################\n    ################################################################################\n    ## Custom Code End\n    ################################################################################\n\n    phantom.save_run_data(key='custom_function_1:entity_list', value=json.dumps(custom_function_1__entity_list))\n    format_1(container=container)\n    add_comment_4(container=container)\n\n    return",
+                        "callback_code": "",
+                        "callback_start": 1,
+                        "callsback": false,
+                        "connected_to_start": true,
+                        "connection_name": "",
+                        "connection_type": "",
+                        "customCodeEndLineOffset": 8,
+                        "customCodeStartLine": 11,
+                        "custom_callback": "",
+                        "custom_code": "def custom_function_1(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):\n    phantom.debug('custom_function_1() called')\n    \n    container_data = phantom.collect2(container=container, datapath=['artifact:*.cef.entity_title', 'artifact:*.id'])\n    container_item_0 = [item[0] for item in container_data]\n\n    custom_function_1__entity_list = None\n\n    ################################################################################\n    ## Custom Code Start\n    ################################################################################\n\n    # Write your custom code here...\n    phantom.debug('DedupeListEntries() formatted_data_1: {}'.format(container_item_0))\n\n    seen = {}\n    DedupeListEntries__entity_list = [seen.setdefault(x, x) for x in container_item_0 if x not in seen]\n    \n    phantom.debug('DedupeListEntries() DedupeListEntries__entity_list: {}'.format(DedupeListEntries__entity_list))\n    ################################################################################\n    ## Custom Code End\n    ################################################################################\n\n    phantom.save_run_data(key='custom_function_1:entity_list', value=json.dumps(custom_function_1__entity_list))\n\n    return",
+                        "custom_join": "",
+                        "custom_name": "",
+                        "description": "",
+                        "functionBlock": "custom function",
+                        "has_custom": false,
+                        "has_custom_block": false,
+                        "has_custom_callback": false,
+                        "has_custom_join": false,
+                        "id": "82cfd285-cedf-4bd3-87ca-1b990131dc84",
+                        "inPorts": [
+                            "in"
+                        ],
+                        "join_code": "",
+                        "join_optional": [],
+                        "join_start": 1,
+                        "legacy": true,
+                        "line_end": 114,
+                        "line_start": 84,
+                        "message": "Configuring now",
+                        "name": "custom function",
+                        "notes": "",
+                        "number": 1,
+                        "order": 9,
+                        "outPorts": [
+                            "out"
+                        ],
+                        "outputVariables": [
+                            {
+                                "position": 0,
+                                "type": "",
+                                "value": "entity_list"
+                            }
+                        ],
+                        "parameters": [
+                            {
+                                "position": 0,
+                                "type": "",
+                                "value": "artifact:*.cef.entity_title"
+                            }
+                        ],
+                        "ports": {
+                            "groups": {
+                                "in": {
+                                    "attrs": {
+                                        ".port-body": {
+                                            "fill": "#fff",
+                                            "magnet": true,
+                                            "r": 10,
+                                            "stroke": "#000"
+                                        },
+                                        ".port-label": {
+                                            "fill": "#000"
+                                        }
+                                    },
+                                    "label": {
+                                        "position": {
+                                            "args": {
+                                                "y": 10
+                                            },
+                                            "name": "left"
+                                        }
+                                    },
+                                    "position": {
+                                        "name": "left"
+                                    }
+                                },
+                                "out": {
+                                    "attrs": {
+                                        ".port-body": {
+                                            "fill": "#fff",
+                                            "magnet": true,
+                                            "r": 10,
+                                            "stroke": "#000"
+                                        },
+                                        ".port-label": {
+                                            "fill": "#000"
+                                        }
+                                    },
+                                    "label": {
+                                        "position": {
+                                            "args": {
+                                                "y": 10
+                                            },
+                                            "name": "right"
+                                        }
+                                    },
+                                    "position": {
+                                        "name": "right"
+                                    }
+                                }
+                            }
+                        },
+                        "position": {
+                            "x": 500,
+                            "y": -220
+                        },
+                        "previous_function": "",
+                        "previous_name": "custom_function_1",
+                        "show_number": true,
+                        "size": {
+                            "height": 100,
+                            "width": 180
+                        },
+                        "state": "custom function",
+                        "status": "deprecating",
+                        "title": "custom function",
+                        "type": "coa.FunctionBlock",
+                        "userGeneratedCode": "\n    # Write your custom code here...\n    phantom.debug('DedupeListEntries() formatted_data_1: {}'.format(container_item_0))\n\n    seen = {}\n    DedupeListEntries__entity_list = [seen.setdefault(x, x) for x in container_item_0 if x not in seen]\n    \n    phantom.debug('DedupeListEntries() DedupeListEntries__entity_list: {}'.format(DedupeListEntries__entity_list))\n    ################################################################################",
+                        "warn": false,
+                        "z": 85
+                    },
+                    {
+                        "active": false,
+                        "angle": 0,
+                        "attrs": {
+                            ".background": {
+                                "fill": "#FFFFFF",
+                                "stroke": "#637282",
+                                "transform": "rotate(45 30 70)"
+                            },
+                            ".inPorts>.port-0>.port-body": {
+                                "port": {
+                                    "id": "in",
+                                    "type": "in"
+                                }
+                            },
+                            ".number": {
+                                "text": 1
+                            },
+                            ".outPorts>.port-0": {
+                                "port": {
+                                    "id": "out-1",
+                                    "type": "out"
+                                },
+                                "ref-x": 83,
+                                "ref-y": 40
+                            },
+                            ".outPorts>.port-0>.port-body": {
+                                "port": {
+                                    "id": "out-1",
+                                    "type": "out"
+                                }
+                            },
+                            ".outPorts>.port-1": {
+                                "port": {
+                                    "id": "out-2",
+                                    "type": "out"
+                                },
+                                "ref-x": 41,
+                                "ref-y": 82
+                            },
+                            ".outPorts>.port-1>.port-body": {
+                                "port": {
+                                    "id": "out-2",
+                                    "type": "out"
+                                }
+                            },
+                            "g.delete": {
+                                "display": "none"
+                            },
+                            "g.error": {
+                                "opacity": 0
+                            },
+                            "g.notes": {
+                                "display": "block"
+                            }
+                        },
+                        "block_code": "def decision_1(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):\n    phantom.debug('decision_1() called')\n\n    # check for 'if' condition 1\n    matched = phantom.decision(\n        container=container,\n        conditions=[\n            [\"artifact:*.cef.entity_title\", \"!=\", \"\"],\n            [\"artifact:*.cef.entity_key\", \"!=\", \"\"],\n        ],\n        logical_operator='and')\n\n    # call connected blocks if condition 1 matched\n    if matched:\n        custom_function_1(action=action, success=success, container=container, results=results, handle=handle, custom_function=custom_function)\n        return\n\n    # call connected blocks for 'else' condition 2\n\n    return",
+                        "callback_code": "",
+                        "callback_start": 1,
+                        "callsback": false,
+                        "connected_to_start": true,
+                        "connection_name": "",
+                        "connection_type": "",
+                        "custom_callback": "",
+                        "custom_code": "",
+                        "custom_join": "",
+                        "custom_name": "",
+                        "description": "",
+                        "hasElse": true,
+                        "has_custom": false,
+                        "has_custom_block": false,
+                        "has_custom_callback": false,
+                        "has_custom_join": false,
+                        "id": "9323f7b2-b68e-4041-8983-27a9a955ad61",
+                        "inPorts": [
+                            "in"
+                        ],
+                        "join_code": "",
+                        "join_optional": [],
+                        "join_start": 1,
+                        "line_end": 84,
+                        "line_start": 63,
+                        "name": "decision",
+                        "notes": "",
+                        "number": 1,
+                        "order": 8,
+                        "outPorts": [
+                            "out-1",
+                            "out-2"
+                        ],
+                        "outputs": [
+                            {
+                                "conditions": [
+                                    {
+                                        "comparison": "!=",
+                                        "data_type": "",
+                                        "param": "artifact:*.cef.entity_title",
+                                        "value": ""
+                                    },
+                                    {
+                                        "comparison": "!=",
+                                        "data_type": "",
+                                        "param": "artifact:*.cef.entity_key",
+                                        "value": ""
+                                    }
+                                ],
+                                "display": "If",
+                                "logic": "and",
+                                "type": "if"
+                            },
+                            {
+                                "conditions": [
+                                    {
+                                        "comparison": "==",
+                                        "data_type": "",
+                                        "param": "",
+                                        "value": ""
+                                    }
+                                ],
+                                "display": "Else",
+                                "logic": "and",
+                                "type": "else"
+                            }
+                        ],
+                        "ports": {
+                            "groups": {
+                                "in": {
+                                    "attrs": {
+                                        ".port-body": {
+                                            "fill": "#fff",
+                                            "magnet": true,
+                                            "r": 10,
+                                            "stroke": "#000"
+                                        },
+                                        ".port-label": {
+                                            "fill": "#000"
+                                        }
+                                    },
+                                    "label": {
+                                        "position": {
+                                            "args": {
+                                                "y": 10
+                                            },
+                                            "name": "left"
+                                        }
+                                    },
+                                    "position": {
+                                        "name": "left"
+                                    }
+                                },
+                                "out": {
+                                    "attrs": {
+                                        ".port-body": {
+                                            "fill": "#fff",
+                                            "magnet": true,
+                                            "r": 10,
+                                            "stroke": "#000"
+                                        },
+                                        ".port-label": {
+                                            "fill": "#000"
+                                        }
+                                    },
+                                    "label": {
+                                        "position": {
+                                            "args": {
+                                                "y": 10
+                                            },
+                                            "name": "right"
+                                        }
+                                    },
+                                    "position": {
+                                        "name": "right"
+                                    }
+                                }
+                            }
+                        },
+                        "position": {
+                            "x": 300,
+                            "y": -220
+                        },
+                        "previous_function": "",
+                        "previous_name": "decision_1",
+                        "show_number": true,
+                        "size": {
+                            "height": 82,
+                            "width": 82
+                        },
+                        "state": "decision",
+                        "status": "",
+                        "type": "coa.Decision",
+                        "warn": "",
+                        "z": 87
                     },
                     {
                         "action": "get data",
@@ -3283,7 +3481,7 @@
                         },
                         "block_code": "def get_data_1(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):\n    phantom.debug('get_data_1() called')\n\n    # collect data for 'get_data_1' call\n    formatted_data_1 = phantom.get_format_data(name='format_1')\n\n    parameters = []\n    \n    # build parameters list for 'get_data_1' call\n    parameters.append({\n        'location': formatted_data_1,\n        'verify_certificate': False,\n        'headers': \"\",\n    })\n\n    phantom.act(action=\"get data\", parameters=parameters, assets=['http'], callback=get_data_1_callback, name=\"get_data_1\")\n\n    return",
                         "callback_code": "def get_data_1_callback(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None):\n    phantom.debug('get_data_1_callback() called')\n    \n    decision_2(action=action, success=success, container=container, results=results, handle=handle, custom_function=custom_function)\n    add_comment_3(action=action, success=success, container=container, results=results, handle=handle, custom_function=custom_function)\n\n    return",
-                        "callback_start": 149,
+                        "callback_start": 150,
                         "callsback": true,
                         "color": "",
                         "connected_to_start": true,
@@ -3306,8 +3504,8 @@
                         "join_code": "",
                         "join_optional": [],
                         "join_start": 1,
-                        "line_end": 157,
-                        "line_start": 130,
+                        "line_end": 158,
+                        "line_start": 131,
                         "message": "Configuring now",
                         "name": "get data",
                         "notes": "",
@@ -3389,210 +3587,7 @@
                         "title": "Generic",
                         "type": "coa.Action",
                         "warn": "",
-                        "z": 79
-                    },
-                    {
-                        "attrs": {
-                            ".connection": {
-                                "stroke": "#818D99",
-                                "stroke-width": 2
-                            },
-                            ".marker-target": {
-                                "d": "M 10 0 L 0 5 L 10 10 z",
-                                "fill": "#818D99",
-                                "stroke": "#818D99"
-                            }
-                        },
-                        "connector": {
-                            "args": {
-                                "radius": 5
-                            },
-                            "name": "rounded"
-                        },
-                        "endDirections": [
-                            "left"
-                        ],
-                        "id": "19a8a0dc-6ca5-4b89-8bae-ebaaea3703ef",
-                        "router": {
-                            "name": "metro"
-                        },
-                        "source": {
-                            "id": "9fb5e237-0681-4183-9996-583da6d9de78",
-                            "selector": "> g:nth-child(1) > g:nth-child(2) > g:nth-child(1) > circle:nth-child(1)"
-                        },
-                        "startDirections": [
-                            "right"
-                        ],
-                        "target": {
-                            "id": "807cdef1-9499-4e06-8fec-a25e601b6ec8",
-                            "selector": ".port-body[type=\"input\"]"
-                        },
-                        "type": "link",
-                        "z": 80
-                    },
-                    {
-                        "active": false,
-                        "angle": 0,
-                        "api": "add comment",
-                        "attrs": {
-                            ".api": {
-                                "text": "add comment"
-                            },
-                            ".background": {
-                                "fill": "#FFFFFF",
-                                "stroke": "#818D99"
-                            },
-                            ".color-band": {
-                                "fill": "#171D21"
-                            },
-                            ".inPorts>.port-in": {
-                                "ref": ".background",
-                                "ref-x": 0.5
-                            },
-                            ".inPorts>.port-in>.port-body": {
-                                "port": {
-                                    "id": "in",
-                                    "type": "in"
-                                }
-                            },
-                            ".message": {
-                                "opacity": 0,
-                                "ref-x": 5,
-                                "ref-y": 105,
-                                "text": "Configuring now"
-                            },
-                            ".outPorts>.port-out": {
-                                "ref": ".background",
-                                "ref-x": 0.5
-                            },
-                            ".outPorts>.port-out>.port-body": {
-                                "port": {
-                                    "id": "out",
-                                    "type": "out"
-                                }
-                            },
-                            ".title": {
-                                "text": "API"
-                            },
-                            "g.delete": {
-                                "display": "none"
-                            },
-                            "g.error": {
-                                "opacity": 0
-                            },
-                            "g.notes": {
-                                "display": "block"
-                            }
-                        },
-                        "block_code": "def add_comment_3(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):\n    phantom.debug('add_comment_3() called')\n\n    results_data_1 = phantom.collect2(container=container, datapath=['get_data_1:action_result.parameter.location'], action_results=results)\n\n    results_item_1_0 = [item[0] for item in results_data_1]\n\n    phantom.comment(container=container, comment=results_item_1_0)\n\n    return",
-                        "callback_code": "",
-                        "callback_start": 1,
-                        "callsback": false,
-                        "color": "",
-                        "configured": [
-                            {
-                                "addCommentComment": "get_data_1:action_result.parameter.location",
-                                "key": "add-comment"
-                            }
-                        ],
-                        "connected_to_start": true,
-                        "connection_name": "get data",
-                        "connection_type": "action",
-                        "custom_callback": "",
-                        "custom_code": "",
-                        "custom_join": "",
-                        "custom_name": "",
-                        "description": "",
-                        "has_custom": false,
-                        "has_custom_block": false,
-                        "has_custom_callback": false,
-                        "has_custom_join": false,
-                        "id": "807cdef1-9499-4e06-8fec-a25e601b6ec8",
-                        "inPorts": [
-                            "in"
-                        ],
-                        "join_code": "",
-                        "join_optional": [],
-                        "join_start": 1,
-                        "line_end": 222,
-                        "line_start": 211,
-                        "message": "Configuring now",
-                        "name": "add comment",
-                        "notes": "",
-                        "number": 3,
-                        "order": 16,
-                        "outPorts": [
-                            "out"
-                        ],
-                        "ports": {
-                            "groups": {
-                                "in": {
-                                    "attrs": {
-                                        ".port-body": {
-                                            "fill": "#fff",
-                                            "magnet": true,
-                                            "r": 10,
-                                            "stroke": "#000"
-                                        },
-                                        ".port-label": {
-                                            "fill": "#000"
-                                        }
-                                    },
-                                    "label": {
-                                        "position": {
-                                            "args": {
-                                                "y": 10
-                                            },
-                                            "name": "left"
-                                        }
-                                    },
-                                    "position": {
-                                        "name": "left"
-                                    }
-                                },
-                                "out": {
-                                    "attrs": {
-                                        ".port-body": {
-                                            "fill": "#fff",
-                                            "magnet": true,
-                                            "r": 10,
-                                            "stroke": "#000"
-                                        },
-                                        ".port-label": {
-                                            "fill": "#000"
-                                        }
-                                    },
-                                    "label": {
-                                        "position": {
-                                            "args": {
-                                                "y": 10
-                                            },
-                                            "name": "right"
-                                        }
-                                    },
-                                    "position": {
-                                        "name": "right"
-                                    }
-                                }
-                            }
-                        },
-                        "position": {
-                            "x": 1300,
-                            "y": -320
-                        },
-                        "previous_function": "",
-                        "previous_name": "add_comment_3",
-                        "show_number": false,
-                        "size": {
-                            "height": 100,
-                            "width": 180
-                        },
-                        "state": "api",
-                        "status": "",
-                        "title": "API",
-                        "type": "coa.API",
-                        "warn": false,
-                        "z": 81
+                        "z": 91
                     },
                     {
                         "active": false,
@@ -3606,7 +3601,7 @@
                                 "fill": "#171D21"
                             },
                             ".format": {
-                                "text": "format 2"
+                                "text": "format 1"
                             },
                             ".inPorts>.port-in": {
                                 "ref": ".background",
@@ -3645,13 +3640,13 @@
                                 "display": "block"
                             }
                         },
-                        "block_code": "def format_2(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):\n    phantom.debug('format_2() called')\n    \n    template = \"\"\"This entity is not jet   added for the process {0}\"\"\"\n\n    # parameter list for template variable replacement\n    parameters = [\n        \"custom_function_1:custom_function:entity_list\",\n    ]\n\n    phantom.format(container=container, template=template, parameters=parameters, name=\"format_2\")\n\n    add_comment_1(container=container)\n\n    return",
+                        "block_code": "def format_1(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):\n    phantom.debug('format_1() called')\n    \n    template = \"\"\"/rest/container_pin?_filter_container={0}&_filter_message=\\\"Entity: {1}\\\"\"\"\"\n\n    # parameter list for template variable replacement\n    parameters = [\n        \"container:id\",\n        \"custom_function_1:custom_function:entity_list\",\n    ]\n\n    phantom.format(container=container, template=template, parameters=parameters, name=\"format_1\")\n\n    get_data_1(container=container)\n\n    return",
                         "callback_code": "",
                         "callback_start": 1,
                         "callsback": false,
                         "connected_to_start": true,
-                        "connection_name": "get data",
-                        "connection_type": "action",
+                        "connection_name": "",
+                        "connection_type": "",
                         "custom_callback": "",
                         "custom_code": "",
                         "custom_join": "",
@@ -3662,26 +3657,31 @@
                         "has_custom_block": false,
                         "has_custom_callback": false,
                         "has_custom_join": false,
-                        "id": "6f2de8be-1861-4179-ad00-aff4595fe3f9",
+                        "id": "dd07a7e0-a75f-4f3d-85b5-cc5635127d17",
                         "inPorts": [
                             "in"
                         ],
                         "join_code": "",
                         "join_optional": [],
                         "join_start": 1,
-                        "line_end": 204,
-                        "line_start": 188,
+                        "line_end": 131,
+                        "line_start": 114,
                         "message": "Configuring now",
                         "name": "format",
                         "notes": "",
-                        "number": 2,
-                        "order": 14,
+                        "number": 1,
+                        "order": 10,
                         "outPorts": [
                             "out-1"
                         ],
                         "parameters": [
                             {
                                 "position": 0,
+                                "type": "",
+                                "value": "container:id"
+                            },
+                            {
+                                "position": 1,
                                 "type": "",
                                 "value": "custom_function_1:custom_function:entity_list"
                             }
@@ -3739,11 +3739,11 @@
                             }
                         },
                         "position": {
-                            "x": 1460,
+                            "x": 780,
                             "y": -220
                         },
                         "previous_function": "",
-                        "previous_name": "format_2",
+                        "previous_name": "format_1",
                         "show_number": true,
                         "size": {
                             "height": 100,
@@ -3751,11 +3751,214 @@
                         },
                         "state": "format",
                         "status": "",
-                        "template": "This entity is not jet   added for the process {0}",
+                        "template": "/rest/container_pin?_filter_container={0}&_filter_message=\"Entity: {1}\"",
                         "title": "format",
                         "type": "coa.Format",
                         "warn": false,
-                        "z": 82
+                        "z": 92
+                    },
+                    {
+                        "attrs": {
+                            ".connection": {
+                                "stroke": "#818D99",
+                                "stroke-width": 2
+                            },
+                            ".marker-target": {
+                                "d": "M 10 0 L 0 5 L 10 10 z",
+                                "fill": "#818D99",
+                                "stroke": "#818D99"
+                            }
+                        },
+                        "connector": {
+                            "args": {
+                                "radius": 5
+                            },
+                            "name": "rounded"
+                        },
+                        "endDirections": [
+                            "left"
+                        ],
+                        "id": "5a3fe444-4387-4432-a58b-4bc314731fea",
+                        "router": {
+                            "name": "metro"
+                        },
+                        "source": {
+                            "id": "82cfd285-cedf-4bd3-87ca-1b990131dc84",
+                            "selector": "> g:nth-child(1) > g:nth-child(2) > g:nth-child(1) > circle:nth-child(1)"
+                        },
+                        "startDirections": [
+                            "right"
+                        ],
+                        "target": {
+                            "id": "901ac256-cbc9-427a-afba-542ab4da3a90",
+                            "selector": ".port-body[type=\"input\"]"
+                        },
+                        "type": "link",
+                        "z": 93
+                    },
+                    {
+                        "active": false,
+                        "angle": 0,
+                        "api": "add comment",
+                        "attrs": {
+                            ".api": {
+                                "text": "add comment"
+                            },
+                            ".background": {
+                                "fill": "#FFFFFF",
+                                "stroke": "#818D99"
+                            },
+                            ".color-band": {
+                                "fill": "#171D21"
+                            },
+                            ".inPorts>.port-in": {
+                                "ref": ".background",
+                                "ref-x": 0.5
+                            },
+                            ".inPorts>.port-in>.port-body": {
+                                "port": {
+                                    "id": "in",
+                                    "type": "in"
+                                }
+                            },
+                            ".message": {
+                                "opacity": 0,
+                                "ref-x": 5,
+                                "ref-y": 105,
+                                "text": "Configuring now"
+                            },
+                            ".outPorts>.port-out": {
+                                "ref": ".background",
+                                "ref-x": 0.5
+                            },
+                            ".outPorts>.port-out>.port-body": {
+                                "port": {
+                                    "id": "out",
+                                    "type": "out"
+                                }
+                            },
+                            ".title": {
+                                "text": "API"
+                            },
+                            "g.delete": {
+                                "display": "none"
+                            },
+                            "g.error": {
+                                "opacity": 0
+                            },
+                            "g.notes": {
+                                "display": "block"
+                            }
+                        },
+                        "block_code": "def add_comment_4(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):\n    phantom.debug('add_comment_4() called')\n\n    custom_function_1__entity_list = json.loads(phantom.get_run_data(key='custom_function_1:entity_list'))\n\n    phantom.comment(container=container, comment=custom_function_1__entity_list)\n\n    return",
+                        "callback_code": "",
+                        "callback_start": 1,
+                        "callsback": false,
+                        "color": "",
+                        "configured": [
+                            {
+                                "addCommentComment": "custom_function_1:custom_function:entity_list",
+                                "key": "add-comment"
+                            }
+                        ],
+                        "connected_to_start": true,
+                        "connection_name": "",
+                        "connection_type": "",
+                        "custom_callback": "",
+                        "custom_code": "",
+                        "custom_join": "",
+                        "custom_name": "",
+                        "description": "",
+                        "has_custom": false,
+                        "has_custom_block": false,
+                        "has_custom_callback": false,
+                        "has_custom_join": false,
+                        "id": "901ac256-cbc9-427a-afba-542ab4da3a90",
+                        "inPorts": [
+                            "in"
+                        ],
+                        "join_code": "",
+                        "join_optional": [],
+                        "join_start": 1,
+                        "line_end": 232,
+                        "line_start": 223,
+                        "message": "Configuring now",
+                        "name": "add comment",
+                        "notes": "",
+                        "number": 4,
+                        "order": 17,
+                        "outPorts": [
+                            "out"
+                        ],
+                        "ports": {
+                            "groups": {
+                                "in": {
+                                    "attrs": {
+                                        ".port-body": {
+                                            "fill": "#fff",
+                                            "magnet": true,
+                                            "r": 10,
+                                            "stroke": "#000"
+                                        },
+                                        ".port-label": {
+                                            "fill": "#000"
+                                        }
+                                    },
+                                    "label": {
+                                        "position": {
+                                            "args": {
+                                                "y": 10
+                                            },
+                                            "name": "left"
+                                        }
+                                    },
+                                    "position": {
+                                        "name": "left"
+                                    }
+                                },
+                                "out": {
+                                    "attrs": {
+                                        ".port-body": {
+                                            "fill": "#fff",
+                                            "magnet": true,
+                                            "r": 10,
+                                            "stroke": "#000"
+                                        },
+                                        ".port-label": {
+                                            "fill": "#000"
+                                        }
+                                    },
+                                    "label": {
+                                        "position": {
+                                            "args": {
+                                                "y": 10
+                                            },
+                                            "name": "right"
+                                        }
+                                    },
+                                    "position": {
+                                        "name": "right"
+                                    }
+                                }
+                            }
+                        },
+                        "position": {
+                            "x": 780,
+                            "y": -320
+                        },
+                        "previous_function": "",
+                        "previous_name": "add_comment_4",
+                        "show_number": false,
+                        "size": {
+                            "height": 100,
+                            "width": 180
+                        },
+                        "state": "api",
+                        "status": "",
+                        "title": "API",
+                        "type": "coa.API",
+                        "warn": false,
+                        "z": 94
                     }
                 ]
             },
@@ -3765,7 +3968,7 @@
         "schema": 4,
         "version": "4.9.34514"
     },
-    "create_time": "2020-08-19T10:05:56.653281+00:00",
+    "create_time": "2020-08-19T10:12:22.036552+00:00",
     "draft_mode": false,
     "labels": [
         "itsi"

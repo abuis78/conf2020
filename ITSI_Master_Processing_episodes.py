@@ -107,6 +107,7 @@ def custom_function_1(action=None, success=None, container=None, results=None, h
 
     phantom.save_run_data(key='custom_function_1:entity_list', value=json.dumps(custom_function_1__entity_list))
     format_1(container=container)
+    add_comment_4(container=container)
 
     return
 
@@ -216,6 +217,15 @@ def add_comment_3(action=None, success=None, container=None, results=None, handl
     results_item_1_0 = [item[0] for item in results_data_1]
 
     phantom.comment(container=container, comment=results_item_1_0)
+
+    return
+
+def add_comment_4(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):
+    phantom.debug('add_comment_4() called')
+
+    custom_function_1__entity_list = json.loads(phantom.get_run_data(key='custom_function_1:entity_list'))
+
+    phantom.comment(container=container, comment=custom_function_1__entity_list)
 
     return
 
