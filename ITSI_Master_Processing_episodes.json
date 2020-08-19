@@ -7,7 +7,7 @@
             "clean": true,
             "code_block": "",
             "description": "",
-            "hash": "3a601b18c3278e0dd9eb4bbc54f9511701571889",
+            "hash": "b9893af98e6433af4c7761c0a07c76a719c9879a",
             "joint": {
                 "cells": [
                     {
@@ -199,7 +199,7 @@
                         "callback_start": 1,
                         "callsback": false,
                         "connected_to_start": true,
-                        "connection_name": "itsi/ITSI_close_episode_snow",
+                        "connection_name": "Close SNOW Ticket",
                         "connection_type": "action",
                         "custom_callback": "",
                         "custom_code": "",
@@ -804,7 +804,7 @@
                                 "opacity": 1
                             }
                         },
-                        "block_code": "def playbook_conf2020_conf2020_Add_SNOW_Information_1(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):\n    phantom.debug('playbook_conf2020_conf2020_Add_SNOW_Information_1() called')\n    \n    # call playbook \"conf2020/Add SNOW Information\", returns the playbook_run_id\n    playbook_run_id = phantom.playbook(playbook=\"conf2020/Add SNOW Information\", container=container, name=\"playbook_conf2020_conf2020_Add_SNOW_Information_1\", callback=playbook_conf2020_Add_entity_information_1)\n\n    return",
+                        "block_code": "def playbook_conf2020_conf2020_Add_SNOW_Information_1(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):\n    phantom.debug('playbook_conf2020_conf2020_Add_SNOW_Information_1() called')\n    \n    # call playbook \"conf2020/Add SNOW Information\", returns the playbook_run_id\n    playbook_run_id = phantom.playbook(playbook=\"conf2020/Add SNOW Information\", container=container, name=\"playbook_conf2020_conf2020_Add_SNOW_Information_1\", callback=playbook_conf2020_conf2020_Add_entity_information_1)\n\n    return",
                         "callback_code": "",
                         "callback_start": 1,
                         "callsback": true,
@@ -979,7 +979,7 @@
                         "callback_start": 1,
                         "callsback": true,
                         "connected_to_start": true,
-                        "connection_name": "Add entity information",
+                        "connection_name": "conf2020/Add entity information",
                         "connection_type": "action",
                         "custom_callback": "",
                         "custom_code": "",
@@ -1117,10 +1117,10 @@
                                 }
                             },
                             ".playbook": {
-                                "text": "ITSI_close_episode_snow"
+                                "text": "Add entity information"
                             },
                             ".scmName": {
-                                "text": "itsi"
+                                "text": "conf2020"
                             },
                             ".title": {
                                 "text": "Playbook"
@@ -1144,12 +1144,12 @@
                                 "opacity": 1
                             }
                         },
-                        "block_code": "def playbook_itsi_itsi_ITSI_close_episode_snow_1(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):\n    phantom.debug('playbook_itsi_itsi_ITSI_close_episode_snow_1() called')\n    \n    # call playbook \"itsi/ITSI_close_episode_snow\", returns the playbook_run_id\n    playbook_run_id = phantom.playbook(playbook=\"itsi/ITSI_close_episode_snow\", container=container, name=\"playbook_itsi_itsi_ITSI_close_episode_snow_1\")\n\n    return",
+                        "block_code": "def playbook_conf2020_conf2020_Add_entity_information_1(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):\n    phantom.debug('playbook_conf2020_conf2020_Add_entity_information_1() called')\n    \n    # call playbook \"conf2020/Add entity information\", returns the playbook_run_id\n    playbook_run_id = phantom.playbook(playbook=\"conf2020/Add entity information\", container=container, name=\"playbook_conf2020_conf2020_Add_entity_information_1\", callback=playbook_conf2020_conf2020_Get_Service_information_1)\n\n    return",
                         "callback_code": "",
                         "callback_start": 1,
                         "callsback": true,
                         "connected_to_start": true,
-                        "connection_name": "conf2020/Restart Service",
+                        "connection_name": "conf2020/Add SNOW Information",
                         "connection_type": "action",
                         "custom_callback": "",
                         "custom_code": "",
@@ -1160,24 +1160,24 @@
                         "has_custom_block": false,
                         "has_custom_callback": false,
                         "has_custom_join": false,
-                        "id": "83b61408-96b4-4c23-ae8a-97ca26f2e230",
+                        "id": "ab1a0282-edb7-466a-a0fa-f784e3ee574b",
                         "inPorts": [
                             "in"
                         ],
                         "join_code": "",
                         "join_optional": [],
                         "join_start": 1,
-                        "line_end": 63,
-                        "line_start": 55,
+                        "line_end": 39,
+                        "line_start": 31,
                         "message": "Configuring now",
-                        "name": "itsi/ITSI_close_episode_snow",
+                        "name": "conf2020/Add entity information",
                         "notes": "",
                         "number": 1,
-                        "order": 7,
+                        "order": 4,
                         "outPorts": [
                             "out"
                         ],
-                        "playbook": "itsi/ITSI_close_episode_snow",
+                        "playbook": "conf2020/Add entity information",
                         "ports": {
                             "groups": {
                                 "in": {
@@ -1231,12 +1231,12 @@
                             }
                         },
                         "position": {
-                            "x": 800,
-                            "y": 260
+                            "x": 960,
+                            "y": 100
                         },
                         "previous_function": "",
-                        "previous_name": "playbook_itsi_itsi_ITSI_close_episode_snow_1",
-                        "scmName": "itsi",
+                        "previous_name": "playbook_conf2020_conf2020_Add_entity_information_1",
+                        "scmName": "conf2020",
                         "show_number": false,
                         "size": {
                             "height": 100,
@@ -1247,7 +1247,7 @@
                         "title": "Playbook",
                         "type": "coa.CallPlaybook",
                         "warn": false,
-                        "z": 40
+                        "z": 42
                     },
                     {
                         "active": false,
@@ -1314,7 +1314,7 @@
                                 "opacity": 1
                             }
                         },
-                        "block_code": "def playbook_conf2020_conf2020_Restart_Service_1(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):\n    phantom.debug('playbook_conf2020_conf2020_Restart_Service_1() called')\n    \n    # call playbook \"conf2020/Restart Service\", returns the playbook_run_id\n    playbook_run_id = phantom.playbook(playbook=\"conf2020/Restart Service\", container=container, name=\"playbook_conf2020_conf2020_Restart_Service_1\", callback=playbook_itsi_itsi_ITSI_close_episode_snow_1)\n\n    return",
+                        "block_code": "def playbook_conf2020_conf2020_Restart_Service_1(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):\n    phantom.debug('playbook_conf2020_conf2020_Restart_Service_1() called')\n    \n    # call playbook \"conf2020/Restart Service\", returns the playbook_run_id\n    playbook_run_id = phantom.playbook(playbook=\"conf2020/Restart Service\", container=container, name=\"playbook_conf2020_conf2020_Restart_Service_1\", callback=playbook_conf2020_Close_SNOW_Ticket_1)\n\n    return",
                         "callback_code": "",
                         "callback_start": 1,
                         "callsback": true,
@@ -1417,7 +1417,7 @@
                         "title": "Playbook",
                         "type": "coa.CallPlaybook",
                         "warn": false,
-                        "z": 41
+                        "z": 43
                     },
                     {
                         "active": false,
@@ -1457,7 +1457,7 @@
                                 }
                             },
                             ".playbook": {
-                                "text": "Add entity information"
+                                "text": "Close SNOW Ticket"
                             },
                             ".scmName": {
                                 "text": "conf2020"
@@ -1484,12 +1484,12 @@
                                 "opacity": 1
                             }
                         },
-                        "block_code": "def playbook_conf2020_Add_entity_information_1(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):\n    phantom.debug('playbook_conf2020_Add_entity_information_1() called')\n    \n    # call playbook \"conf2020/Add entity information\", returns the playbook_run_id\n    playbook_run_id = phantom.playbook(playbook=\"conf2020/Add entity information\", container=container, name=\"playbook_conf2020_Add_entity_information_1\", callback=playbook_conf2020_conf2020_Get_Service_information_1)\n\n    return",
+                        "block_code": "def playbook_conf2020_Close_SNOW_Ticket_1(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):\n    phantom.debug('playbook_conf2020_Close_SNOW_Ticket_1() called')\n    \n    # call playbook \"conf2020/Close SNOW Ticket\", returns the playbook_run_id\n    playbook_run_id = phantom.playbook(playbook=\"conf2020/Close SNOW Ticket\", container=container, name=\"playbook_conf2020_Close_SNOW_Ticket_1\")\n\n    return",
                         "callback_code": "",
                         "callback_start": 1,
                         "callsback": true,
                         "connected_to_start": true,
-                        "connection_name": "conf2020/Add SNOW Information",
+                        "connection_name": "conf2020/Restart Service",
                         "connection_type": "action",
                         "custom_callback": "",
                         "custom_code": "",
@@ -1500,24 +1500,24 @@
                         "has_custom_block": false,
                         "has_custom_callback": false,
                         "has_custom_join": false,
-                        "id": "ab1a0282-edb7-466a-a0fa-f784e3ee574b",
+                        "id": "83b61408-96b4-4c23-ae8a-97ca26f2e230",
                         "inPorts": [
                             "in"
                         ],
                         "join_code": "",
                         "join_optional": [],
                         "join_start": 1,
-                        "line_end": 39,
-                        "line_start": 31,
+                        "line_end": 63,
+                        "line_start": 55,
                         "message": "Configuring now",
-                        "name": "Add entity information",
+                        "name": "Close SNOW Ticket",
                         "notes": "",
                         "number": 1,
-                        "order": 4,
+                        "order": 7,
                         "outPorts": [
                             "out"
                         ],
-                        "playbook": "conf2020/Add entity information",
+                        "playbook": "conf2020/Close SNOW Ticket",
                         "ports": {
                             "groups": {
                                 "in": {
@@ -1571,11 +1571,11 @@
                             }
                         },
                         "position": {
-                            "x": 960,
-                            "y": 100
+                            "x": 800,
+                            "y": 260
                         },
                         "previous_function": "",
-                        "previous_name": "playbook_conf2020_conf2020_Get_entity_information_1",
+                        "previous_name": "playbook_itsi_itsi_ITSI_close_episode_snow_1",
                         "scmName": "conf2020",
                         "show_number": false,
                         "size": {
@@ -1587,7 +1587,7 @@
                         "title": "Playbook",
                         "type": "coa.CallPlaybook",
                         "warn": false,
-                        "z": 42
+                        "z": 44
                     }
                 ]
             },
@@ -1597,7 +1597,7 @@
         "schema": 4,
         "version": "4.9.34514"
     },
-    "create_time": "2020-08-18T10:40:37.741076+00:00",
+    "create_time": "2020-08-19T08:09:29.810104+00:00",
     "draft_mode": false,
     "labels": [
         "itsi"
