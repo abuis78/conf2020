@@ -7,8 +7,8 @@ from datetime import datetime, timedelta
 def on_start(container):
     phantom.debug('on_start() called')
     
-    # call 'decision_1' block
-    decision_1(container=container)
+    # call 'playbook_conf2020_conf2020_Notable_clean_up_1' block
+    playbook_conf2020_conf2020_Notable_clean_up_1(container=container)
 
     return
 
@@ -77,8 +77,6 @@ def decision_1(action=None, success=None, container=None, results=None, handle=N
         rest_request_for_enity_check(action=action, success=success, container=container, results=results, handle=handle, custom_function=custom_function)
         return
 
-    # call connected blocks for 'else' condition 2
-
     return
 
 def rest_request_for_enity_check(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):
@@ -130,7 +128,6 @@ def decision_2(action=None, success=None, container=None, results=None, handle=N
 
     # call connected blocks if condition 1 matched
     if matched:
-        playbook_conf2020_conf2020_Notable_clean_up_1(action=action, success=success, container=container, results=results, handle=handle, custom_function=custom_function)
         return
 
     # call connected blocks for 'else' condition 2
