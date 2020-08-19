@@ -74,15 +74,15 @@ def decision_1(action=None, success=None, container=None, results=None, handle=N
 
     # call connected blocks if condition 1 matched
     if matched:
-        format_1(action=action, success=success, container=container, results=results, handle=handle, custom_function=custom_function)
+        rest_request_for_enity_check(action=action, success=success, container=container, results=results, handle=handle, custom_function=custom_function)
         return
 
     # call connected blocks for 'else' condition 2
 
     return
 
-def format_1(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):
-    phantom.debug('format_1() called')
+def rest_request_for_enity_check(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):
+    phantom.debug('rest_request_for_enity_check() called')
     
     template = """/rest/container_pin?_filter_container={0}&_filter_message=\"Entity: {1}\""""
 
@@ -92,7 +92,7 @@ def format_1(action=None, success=None, container=None, results=None, handle=Non
         "artifact:*.cef.entity_title",
     ]
 
-    phantom.format(container=container, template=template, parameters=parameters, name="format_1")
+    phantom.format(container=container, template=template, parameters=parameters, name="rest_request_for_enity_check")
 
     get_data_1(container=container)
 
@@ -102,7 +102,7 @@ def get_data_1(action=None, success=None, container=None, results=None, handle=N
     phantom.debug('get_data_1() called')
 
     # collect data for 'get_data_1' call
-    formatted_data_1 = phantom.get_format_data(name='format_1')
+    formatted_data_1 = phantom.get_format_data(name='rest_request_for_enity_check')
 
     parameters = []
     
@@ -113,15 +113,7 @@ def get_data_1(action=None, success=None, container=None, results=None, handle=N
         'verify_certificate': False,
     })
 
-    phantom.act(action="get data", parameters=parameters, assets=['http'], callback=get_data_1_callback, name="get_data_1")
-
-    return
-
-def get_data_1_callback(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None):
-    phantom.debug('get_data_1_callback() called')
-    
-    decision_2(action=action, success=success, container=container, results=results, handle=handle, custom_function=custom_function)
-    add_comment_3(action=action, success=success, container=container, results=results, handle=handle, custom_function=custom_function)
+    phantom.act(action="get data", parameters=parameters, assets=['http'], callback=decision_2, name="get_data_1")
 
     return
 
@@ -138,7 +130,7 @@ def decision_2(action=None, success=None, container=None, results=None, handle=N
 
     # call connected blocks if condition 1 matched
     if matched:
-        format_2(action=action, success=success, container=container, results=results, handle=handle, custom_function=custom_function)
+        playbook_conf2020_conf2020_Notable_clean_up_1(action=action, success=success, container=container, results=results, handle=handle, custom_function=custom_function)
         return
 
     # call connected blocks for 'else' condition 2
@@ -146,46 +138,10 @@ def decision_2(action=None, success=None, container=None, results=None, handle=N
 
     return
 
-def add_comment_1(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):
-    phantom.debug('add_comment_1() called')
-
-    formatted_data_1 = phantom.get_format_data(name='format_2')
-
-    phantom.comment(container=container, comment=formatted_data_1)
-
-    return
-
-def format_2(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):
-    phantom.debug('format_2() called')
-    
-    template = """This entity is not jet   added for the process {0}"""
-
-    # parameter list for template variable replacement
-    parameters = [
-        "custom_function_1:custom_function:entity_list",
-    ]
-
-    phantom.format(container=container, template=template, parameters=parameters, name="format_2")
-
-    add_comment_1(container=container)
-
-    return
-
 def add_comment_2(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):
     phantom.debug('add_comment_2() called')
 
     phantom.comment(container=container, comment="nothing")
-
-    return
-
-def add_comment_3(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):
-    phantom.debug('add_comment_3() called')
-
-    results_data_1 = phantom.collect2(container=container, datapath=['get_data_1:action_result.parameter.location'], action_results=results)
-
-    results_item_1_0 = [item[0] for item in results_data_1]
-
-    phantom.comment(container=container, comment=results_item_1_0)
 
     return
 
