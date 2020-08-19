@@ -7,7 +7,7 @@
             "clean": true,
             "code_block": "",
             "description": "",
-            "hash": "1b5b1c3253633b5bf25b8d6a3783e1a6392836fe",
+            "hash": "fa9aba3b9621438851a37c02e98383fabce84c6b",
             "joint": {
                 "cells": [
                     {
@@ -73,12 +73,12 @@
                         "join_code": "# read-only block view not available",
                         "join_optional": [],
                         "join_start": 1,
-                        "line_end": 175,
-                        "line_start": 162,
+                        "line_end": 185,
+                        "line_start": 172,
                         "name": "",
                         "notes": "",
                         "number": 0,
-                        "order": 10,
+                        "order": 11,
                         "outPorts": [],
                         "ports": {
                             "groups": {
@@ -701,8 +701,8 @@
                         "join_code": "",
                         "join_optional": [],
                         "join_start": 1,
-                        "line_end": 129,
-                        "line_start": 122,
+                        "line_end": 130,
+                        "line_start": 123,
                         "message": "Configuring now",
                         "name": "add comment",
                         "notes": "",
@@ -881,8 +881,8 @@
                         "join_code": "",
                         "join_optional": [],
                         "join_start": 1,
-                        "line_end": 142,
-                        "line_start": 129,
+                        "line_end": 143,
+                        "line_start": 130,
                         "message": "Configuring now",
                         "name": "pin",
                         "notes": "",
@@ -960,6 +960,750 @@
                         "type": "coa.API",
                         "warn": false,
                         "z": 752
+                    },
+                    {
+                        "attrs": {
+                            ".connection": {
+                                "stroke": "#818D99",
+                                "stroke-width": 2
+                            },
+                            ".marker-target": {
+                                "d": "M 10 0 L 0 5 L 10 10 z",
+                                "fill": "#818D99",
+                                "stroke": "#818D99"
+                            }
+                        },
+                        "connector": {
+                            "args": {
+                                "radius": 5
+                            },
+                            "name": "rounded"
+                        },
+                        "endDirections": [
+                            "left"
+                        ],
+                        "id": "18b69360-24ca-4be7-9c96-104cb507e412",
+                        "router": {
+                            "name": "metro"
+                        },
+                        "source": {
+                            "id": "64394075-17b9-4e67-a292-422a2ff58aa0",
+                            "port": "out-1",
+                            "selector": "> g:nth-child(1) > g:nth-child(2) > g:nth-child(1) > circle:nth-child(1)"
+                        },
+                        "startDirections": [
+                            "right"
+                        ],
+                        "target": {
+                            "id": "d37217d6-0e04-4d01-9fda-2d52e6364b7b",
+                            "selector": ".port-body[type=\"input\"]"
+                        },
+                        "type": "link",
+                        "z": 761
+                    },
+                    {
+                        "action": "get entity",
+                        "action_type": "investigate",
+                        "active": false,
+                        "active_keys": {},
+                        "active_values": {
+                            "itsi_entity_id": "DedupeListEntries:custom_function:new_list"
+                        },
+                        "angle": 0,
+                        "app": "Splunk IT Service Intelligence",
+                        "appid": "94bcee41-329f-4907-8895-d4e2a10616b8",
+                        "approver": "",
+                        "assets": [
+                            {
+                                "action": "get entity",
+                                "actions": [
+                                    "test connectivity",
+                                    "get episode",
+                                    "update episode",
+                                    "add episode comment",
+                                    "break episode",
+                                    "close episode",
+                                    "get episode events",
+                                    "add episode ticket",
+                                    "get episode tickets",
+                                    "get entity",
+                                    "get service",
+                                    "get service entities",
+                                    "update service status",
+                                    "get maintenance window",
+                                    "add maintenance window",
+                                    "update maintenance window",
+                                    "end maintenance window"
+                                ],
+                                "active": true,
+                                "app_name": "Splunk IT Service Intelligence",
+                                "app_version": "1.0.0",
+                                "appid": "94bcee41-329f-4907-8895-d4e2a10616b8",
+                                "asset_name": "splunk itsi",
+                                "config_type": "asset",
+                                "count": 0,
+                                "fields": {
+                                    "itsi_entity_id": "DedupeListEntries:custom_function:new_list"
+                                },
+                                "has_app": true,
+                                "id": 6,
+                                "loaded": false,
+                                "missing": false,
+                                "name": "splunk itsi",
+                                "output": [
+                                    {
+                                        "column_name": "Status",
+                                        "column_order": 1,
+                                        "data_path": "action_result.status",
+                                        "data_type": "string",
+                                        "example_values": [
+                                            "success",
+                                            "failed"
+                                        ]
+                                    },
+                                    {
+                                        "column_name": "ITSI Entity ID",
+                                        "column_order": 0,
+                                        "data_path": "action_result.parameter.itsi_entity_id",
+                                        "data_type": "string"
+                                    },
+                                    {
+                                        "column_name": "Data",
+                                        "column_order": 2,
+                                        "data_path": "action_result.data",
+                                        "data_type": "string"
+                                    },
+                                    {
+                                        "column_name": "Summary",
+                                        "column_order": 3,
+                                        "data_path": "action_result.summary",
+                                        "data_type": "string"
+                                    },
+                                    {
+                                        "data_path": "action_result.message",
+                                        "data_type": "string"
+                                    },
+                                    {
+                                        "data_path": "summary.total_objects",
+                                        "data_type": "numeric",
+                                        "example_values": [
+                                            1
+                                        ]
+                                    },
+                                    {
+                                        "data_path": "summary.total_objects_successful",
+                                        "data_type": "numeric",
+                                        "example_values": [
+                                            1
+                                        ]
+                                    }
+                                ],
+                                "parameters": {
+                                    "itsi_entity_id": {
+                                        "data_type": "string",
+                                        "default": null,
+                                        "description": "Splunk ITSI entity ID",
+                                        "key": "itsi_entity_id",
+                                        "order": 0,
+                                        "required": true
+                                    }
+                                },
+                                "product_name": "Splunk ITSI",
+                                "product_vendor": "Splunk",
+                                "targets": "6",
+                                "type": "devops"
+                            }
+                        ],
+                        "attrs": {
+                            ".action": {
+                                "text": "get entity"
+                            },
+                            ".background": {
+                                "fill": "#FFFFFF",
+                                "stroke": "#818D99"
+                            },
+                            ".color-band": {
+                                "fill": "#171D21"
+                            },
+                            ".inPorts>.port-in": {
+                                "ref": ".background",
+                                "ref-x": 0.5
+                            },
+                            ".inPorts>.port-in>.port-body": {
+                                "port": {
+                                    "id": "in",
+                                    "type": "in"
+                                }
+                            },
+                            ".message": {
+                                "opacity": 0,
+                                "ref-x": 5,
+                                "ref-y": 105,
+                                "text": "Configuring now"
+                            },
+                            ".outPorts>.port-out": {
+                                "ref": ".background",
+                                "ref-x": 0.5
+                            },
+                            ".outPorts>.port-out>.port-body": {
+                                "port": {
+                                    "id": "out",
+                                    "type": "out"
+                                }
+                            },
+                            ".title": {
+                                "text": "Investigate"
+                            },
+                            "g.approver image": {
+                                "opacity": 1
+                            },
+                            "g.code image": {
+                                "opacity": 1,
+                                "xlink:href": "/inc/coa/img/block_icon_code_light_on.svg"
+                            },
+                            "g.delete": {
+                                "display": "none"
+                            },
+                            "g.error": {
+                                "opacity": 0
+                            },
+                            "g.error image": {
+                                "xlink:href": "/inc/coa/img/block_icon_warn.svg"
+                            },
+                            "g.icon image": {
+                                "xlink:href": "/inc/coa/img/block_icon_investigate.svg"
+                            },
+                            "g.notes": {
+                                "display": "block"
+                            },
+                            "g.notes image": {
+                                "opacity": 1
+                            },
+                            "g.timer image": {
+                                "opacity": 1
+                            }
+                        },
+                        "block_code": "# read-only block view not available",
+                        "callback_code": "",
+                        "callback_start": 1,
+                        "callsback": true,
+                        "color": "",
+                        "connected_to_start": true,
+                        "connection_name": "get data",
+                        "connection_type": "action",
+                        "custom_callback": "",
+                        "custom_code": "def get_entity_3(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):\n    phantom.debug('get_entity_3() called')\n        \n    #phantom.debug('Action: {0} {1}'.format(action['name'], ('SUCCEEDED' if success else 'FAILED')))\n    \n    DedupeListEntries__new_list = json.loads(phantom.get_run_data(key='DedupeListEntries:new_list'))\n    # collect data for 'get_entity_3' call\n\n    parameters = []\n    \n    # build parameters list for 'get_entity_3' call\n    for entity_title in DedupeListEntries__new_list:\n        parameters.append({\n            'entity_title': entity_title,\n        })\n\n    phantom.act(action=\"get entity\", parameters=parameters, assets=['splunk itsi'], name=\"get_entity_3\")\n\n    return",
+                        "custom_join": "",
+                        "custom_name": "",
+                        "delay": 0,
+                        "description": "",
+                        "has_custom": true,
+                        "has_custom_block": true,
+                        "has_custom_callback": false,
+                        "has_custom_join": false,
+                        "id": "d37217d6-0e04-4d01-9fda-2d52e6364b7b",
+                        "inPorts": [
+                            "in"
+                        ],
+                        "join_code": "",
+                        "join_optional": [],
+                        "join_start": 1,
+                        "line_end": 163,
+                        "line_start": 143,
+                        "message": "Configuring now",
+                        "name": "get entity",
+                        "notes": "",
+                        "number": 3,
+                        "order": 9,
+                        "outPorts": [
+                            "out"
+                        ],
+                        "ports": {
+                            "groups": {
+                                "in": {
+                                    "attrs": {
+                                        ".port-body": {
+                                            "fill": "#fff",
+                                            "magnet": true,
+                                            "r": 10,
+                                            "stroke": "#000"
+                                        },
+                                        ".port-label": {
+                                            "fill": "#000"
+                                        }
+                                    },
+                                    "label": {
+                                        "position": {
+                                            "args": {
+                                                "y": 10
+                                            },
+                                            "name": "left"
+                                        }
+                                    },
+                                    "position": {
+                                        "name": "left"
+                                    }
+                                },
+                                "out": {
+                                    "attrs": {
+                                        ".port-body": {
+                                            "fill": "#fff",
+                                            "magnet": true,
+                                            "r": 10,
+                                            "stroke": "#000"
+                                        },
+                                        ".port-label": {
+                                            "fill": "#000"
+                                        }
+                                    },
+                                    "label": {
+                                        "position": {
+                                            "args": {
+                                                "y": 10
+                                            },
+                                            "name": "right"
+                                        }
+                                    },
+                                    "position": {
+                                        "name": "right"
+                                    }
+                                }
+                            }
+                        },
+                        "position": {
+                            "x": 420,
+                            "y": -420
+                        },
+                        "previous_function": "",
+                        "previous_name": "get_entity_3",
+                        "required_params": {
+                            "itsi_entity_id": true
+                        },
+                        "reviewer": "",
+                        "show_number": false,
+                        "size": {
+                            "height": 100,
+                            "width": 180
+                        },
+                        "state": "app_action_assets",
+                        "status": "",
+                        "title": "Investigate",
+                        "type": "coa.Action",
+                        "warn": false,
+                        "z": 775
+                    },
+                    {
+                        "attrs": {
+                            ".connection": {
+                                "stroke": "#818D99",
+                                "stroke-width": 2
+                            },
+                            ".marker-target": {
+                                "d": "M 10 0 L 0 5 L 10 10 z",
+                                "fill": "#818D99",
+                                "stroke": "#818D99"
+                            }
+                        },
+                        "connector": {
+                            "args": {
+                                "radius": 5
+                            },
+                            "name": "rounded"
+                        },
+                        "endDirections": [
+                            "left"
+                        ],
+                        "id": "68cb2333-7447-475b-94be-0e30a5986b18",
+                        "router": {
+                            "name": "metro"
+                        },
+                        "source": {
+                            "id": "d37217d6-0e04-4d01-9fda-2d52e6364b7b",
+                            "selector": "> g:nth-child(1) > g:nth-child(2) > g:nth-child(1) > circle:nth-child(1)"
+                        },
+                        "startDirections": [
+                            "right"
+                        ],
+                        "target": {
+                            "id": "12bf9eb5-7fda-4493-a923-15342d555f20",
+                            "selector": "> g:nth-child(1) > g:nth-child(1) > g:nth-child(1) > circle:nth-child(1)"
+                        },
+                        "type": "link",
+                        "z": 777
+                    },
+                    {
+                        "active": false,
+                        "angle": 0,
+                        "attrs": {
+                            ".background": {
+                                "fill": "#FFFFFF",
+                                "stroke": "#637282",
+                                "transform": "rotate(45 30 70)"
+                            },
+                            ".inPorts>.port-0>.port-body": {
+                                "port": {
+                                    "id": "in",
+                                    "type": "in"
+                                }
+                            },
+                            ".number": {
+                                "text": 6
+                            },
+                            ".outPorts>.port-0": {
+                                "port": {
+                                    "id": "out-1",
+                                    "type": "out"
+                                },
+                                "ref-x": 83,
+                                "ref-y": 40
+                            },
+                            ".outPorts>.port-0>.port-body": {
+                                "port": {
+                                    "id": "out-1",
+                                    "type": "out"
+                                }
+                            },
+                            ".outPorts>.port-1": {
+                                "port": {
+                                    "id": "out-2",
+                                    "type": "out"
+                                },
+                                "ref-x": 41,
+                                "ref-y": 82
+                            },
+                            ".outPorts>.port-1>.port-body": {
+                                "port": {
+                                    "id": "out-2",
+                                    "type": "out"
+                                }
+                            },
+                            "g.delete": {
+                                "display": "none"
+                            },
+                            "g.error": {
+                                "opacity": 0
+                            },
+                            "g.error image": {
+                                "xlink:href": "/inc/coa/img/block_icon_warn.svg"
+                            },
+                            "g.notes": {
+                                "display": "block"
+                            },
+                            "g.notes image": {
+                                "opacity": 1
+                            }
+                        },
+                        "block_code": "def decision_6(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):\n    phantom.debug('decision_6() called')\n\n    # check for 'if' condition 1\n    matched = phantom.decision(\n        container=container,\n        action_results=results,\n        conditions=[\n            [\"get_data_1:action_result.data.*.response_body.count\", \"==\", 0],\n        ])\n\n    # call connected blocks if condition 1 matched\n    if matched:\n        get_entity_3(action=action, success=success, container=container, results=results, handle=handle, custom_function=custom_function)\n        return\n\n    # call connected blocks for 'else' condition 2\n    add_comment_3(action=action, success=success, container=container, results=results, handle=handle, custom_function=custom_function)\n\n    return",
+                        "callback_code": "",
+                        "callback_start": 1,
+                        "callsback": false,
+                        "connected_to_start": true,
+                        "connection_name": "get data",
+                        "connection_type": "action",
+                        "custom_callback": "",
+                        "custom_code": "",
+                        "custom_join": "",
+                        "custom_name": "",
+                        "description": "",
+                        "hasElse": true,
+                        "has_custom": false,
+                        "has_custom_block": false,
+                        "has_custom_callback": false,
+                        "has_custom_join": false,
+                        "id": "64394075-17b9-4e67-a292-422a2ff58aa0",
+                        "inPorts": [
+                            "in"
+                        ],
+                        "join_code": "",
+                        "join_optional": [],
+                        "join_start": 1,
+                        "line_end": 123,
+                        "line_start": 102,
+                        "name": "decision",
+                        "notes": "",
+                        "number": 6,
+                        "order": 6,
+                        "outPorts": [
+                            "out-1",
+                            "out-2"
+                        ],
+                        "outputs": [
+                            {
+                                "conditions": [
+                                    {
+                                        "comparison": "==",
+                                        "data_type": "",
+                                        "param": "get_data_1:action_result.data.*.response_body.count",
+                                        "value": "0"
+                                    }
+                                ],
+                                "display": "If",
+                                "logic": "and",
+                                "type": "if"
+                            },
+                            {
+                                "conditions": [
+                                    {
+                                        "comparison": "==",
+                                        "data_type": "",
+                                        "param": "",
+                                        "value": ""
+                                    }
+                                ],
+                                "display": "Else",
+                                "logic": "and",
+                                "type": "else"
+                            }
+                        ],
+                        "ports": {
+                            "groups": {
+                                "in": {
+                                    "attrs": {
+                                        ".port-body": {
+                                            "fill": "#fff",
+                                            "magnet": true,
+                                            "r": 10,
+                                            "stroke": "#000"
+                                        },
+                                        ".port-label": {
+                                            "fill": "#000"
+                                        }
+                                    },
+                                    "label": {
+                                        "position": {
+                                            "args": {
+                                                "y": 10
+                                            },
+                                            "name": "left"
+                                        }
+                                    },
+                                    "position": {
+                                        "name": "left"
+                                    }
+                                },
+                                "out": {
+                                    "attrs": {
+                                        ".port-body": {
+                                            "fill": "#fff",
+                                            "magnet": true,
+                                            "r": 10,
+                                            "stroke": "#000"
+                                        },
+                                        ".port-label": {
+                                            "fill": "#000"
+                                        }
+                                    },
+                                    "label": {
+                                        "position": {
+                                            "args": {
+                                                "y": 10
+                                            },
+                                            "name": "right"
+                                        }
+                                    },
+                                    "position": {
+                                        "name": "right"
+                                    }
+                                }
+                            }
+                        },
+                        "position": {
+                            "x": 260,
+                            "y": -260
+                        },
+                        "previous_function": "",
+                        "previous_name": "decision_6",
+                        "show_number": true,
+                        "size": {
+                            "height": 82,
+                            "width": 82
+                        },
+                        "state": "decision",
+                        "status": "",
+                        "type": "coa.Decision",
+                        "warn": "",
+                        "z": 778
+                    },
+                    {
+                        "active": false,
+                        "angle": 0,
+                        "attrs": {
+                            ".background": {
+                                "fill": "#FFFFFF",
+                                "stroke": "#818D99"
+                            },
+                            ".color-band": {
+                                "fill": "#171D21"
+                            },
+                            ".functionBlock": {
+                                "text": "DedupeListEntries"
+                            },
+                            ".inPorts>.port-in": {
+                                "ref": ".background",
+                                "ref-x": 0.5
+                            },
+                            ".inPorts>.port-in>.port-body": {
+                                "port": {
+                                    "id": "in",
+                                    "type": "in"
+                                }
+                            },
+                            ".message": {
+                                "opacity": 0,
+                                "ref-x": 5,
+                                "ref-y": 105,
+                                "text": "Configuring now"
+                            },
+                            ".outPorts>.port-out": {
+                                "ref": ".background",
+                                "ref-x": 0.5
+                            },
+                            ".outPorts>.port-out>.port-body": {
+                                "port": {
+                                    "id": "out",
+                                    "type": "out"
+                                }
+                            },
+                            ".title": {
+                                "text": "custom function"
+                            },
+                            "g.delete": {
+                                "display": "none"
+                            },
+                            "g.error": {
+                                "opacity": 1
+                            },
+                            "g.error image": {
+                                "xlink:href": "/inc/coa/img/block_icon_warn_grey.svg"
+                            },
+                            "g.notes": {
+                                "display": "block"
+                            },
+                            "g.notes image": {
+                                "opacity": 1
+                            }
+                        },
+                        "block_code": "def DedupeListEntries(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):\n    phantom.debug('DedupeListEntries() called')\n    \n    container_data = phantom.collect2(container=container, datapath=['artifact:*.cef.entity_title', 'artifact:*.id'])\n    container_item_0 = [item[0] for item in container_data]\n\n    DedupeListEntries__new_list = None\n\n    ################################################################################\n    ## Custom Code Start\n    ################################################################################\n\n    # Write your custom code here...\n    phantom.debug('DedupeListEntries() formatted_data_1: {}'.format(container_item_0))\n\n    seen = {}\n    DedupeListEntries__new_list = [seen.setdefault(x, x) for x in container_item_0 if x not in seen]\n    phantom.debug('DedupeListEntries() DedupeListEntries__new_list: {}'.format(DedupeListEntries__new_list))\n\n    ################################################################################\n    ## Custom Code End\n    ################################################################################\n\n    phantom.save_run_data(key='DedupeListEntries:new_list', value=json.dumps(DedupeListEntries__new_list))\n    format_1(container=container)\n    add_comment_7(container=container)\n\n    return",
+                        "callback_code": "",
+                        "callback_start": 1,
+                        "callsback": false,
+                        "connected_to_start": true,
+                        "connection_name": "",
+                        "connection_type": "",
+                        "customCodeEndLineOffset": 8,
+                        "customCodeStartLine": 11,
+                        "custom_callback": "",
+                        "custom_code": "def DedupeListEntries(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None):\n    phantom.debug('DedupeListEntries() called')\n    container_data = phantom.collect2(container=container, datapath=['artifact:*.cef.entity_title', 'artifact:*.id'])\n    container_item_0 = [item[0] for item in container_data]\n\n    DedupeListEntries__new_list = None\n\n    ################################################################################\n    ## Custom Code Start\n    ################################################################################\n\n    # Write your custom code here...\n    phantom.debug('DedupeListEntries() formatted_data_1: {}'.format(container_item_0))\n\n    seen = {}\n    DedupeListEntries__new_list = [seen.setdefault(x, x) for x in container_item_0 if x not in seen]\n    phantom.debug('DedupeListEntries() DedupeListEntries__new_list: {}'.format(DedupeListEntries__new_list))\n\n    \n    ################################################################################\n    ## Custom Code End\n    ################################################################################\n\n    phantom.save_run_data(key='DedupeListEntries:new_list', value=json.dumps(DedupeListEntries__new_list))\n    format_1(container=container)\n\n    return",
+                        "custom_join": "",
+                        "custom_name": "DedupeListEntries",
+                        "description": "Removes duplicates from list and keeps list order",
+                        "functionBlock": "custom function",
+                        "has_custom": true,
+                        "has_custom_block": false,
+                        "has_custom_callback": false,
+                        "has_custom_join": false,
+                        "id": "f688a4d6-1c4b-45e3-a621-44e0bc70efe4",
+                        "inPorts": [
+                            "in"
+                        ],
+                        "join_code": "",
+                        "join_optional": [],
+                        "join_start": 1,
+                        "legacy": true,
+                        "line_end": 66,
+                        "line_start": 37,
+                        "message": "Configuring now",
+                        "name": "custom function",
+                        "notes": "",
+                        "number": 1,
+                        "order": 3,
+                        "outPorts": [
+                            "out"
+                        ],
+                        "outputVariables": [
+                            {
+                                "position": 0,
+                                "type": "",
+                                "value": "new_list"
+                            }
+                        ],
+                        "parameters": [
+                            {
+                                "position": 0,
+                                "type": "",
+                                "value": "artifact:*.cef.entity_title"
+                            }
+                        ],
+                        "ports": {
+                            "groups": {
+                                "in": {
+                                    "attrs": {
+                                        ".port-body": {
+                                            "fill": "#fff",
+                                            "magnet": true,
+                                            "r": 10,
+                                            "stroke": "#000"
+                                        },
+                                        ".port-label": {
+                                            "fill": "#000"
+                                        }
+                                    },
+                                    "label": {
+                                        "position": {
+                                            "args": {
+                                                "y": 10
+                                            },
+                                            "name": "left"
+                                        }
+                                    },
+                                    "position": {
+                                        "name": "left"
+                                    }
+                                },
+                                "out": {
+                                    "attrs": {
+                                        ".port-body": {
+                                            "fill": "#fff",
+                                            "magnet": true,
+                                            "r": 10,
+                                            "stroke": "#000"
+                                        },
+                                        ".port-label": {
+                                            "fill": "#000"
+                                        }
+                                    },
+                                    "label": {
+                                        "position": {
+                                            "args": {
+                                                "y": 10
+                                            },
+                                            "name": "right"
+                                        }
+                                    },
+                                    "position": {
+                                        "name": "right"
+                                    }
+                                }
+                            }
+                        },
+                        "position": {
+                            "x": -620,
+                            "y": -260
+                        },
+                        "previous_function": "",
+                        "previous_name": "DedupeListEntries",
+                        "show_number": true,
+                        "size": {
+                            "height": 100,
+                            "width": 180
+                        },
+                        "state": "custom function",
+                        "status": "deprecating",
+                        "title": "custom function",
+                        "type": "coa.FunctionBlock",
+                        "userGeneratedCode": "\n    # Write your custom code here...\n    phantom.debug('DedupeListEntries() formatted_data_1: {}'.format(container_item_0))\n\n    seen = {}\n    DedupeListEntries__new_list = [seen.setdefault(x, x) for x in container_item_0 if x not in seen]\n    phantom.debug('DedupeListEntries() DedupeListEntries__new_list: {}'.format(DedupeListEntries__new_list))\n\n    ",
+                        "warn": false,
+                        "z": 785
                     },
                     {
                         "action": "get data",
@@ -1227,8 +1971,8 @@
                         "join_code": "",
                         "join_optional": [],
                         "join_start": 1,
-                        "line_end": 101,
-                        "line_start": 82,
+                        "line_end": 102,
+                        "line_start": 83,
                         "message": "Configuring now",
                         "name": "get data",
                         "notes": "",
@@ -1310,7 +2054,7 @@
                         "title": "Investigate",
                         "type": "coa.Action",
                         "warn": false,
-                        "z": 754
+                        "z": 789
                     },
                     {
                         "active": false,
@@ -1396,8 +2140,8 @@
                         "join_code": "",
                         "join_optional": [],
                         "join_start": 1,
-                        "line_end": 82,
-                        "line_start": 65,
+                        "line_end": 83,
+                        "line_start": 66,
                         "message": "Configuring now",
                         "name": "format",
                         "notes": "",
@@ -1487,21 +2231,61 @@
                         "title": "format",
                         "type": "coa.Format",
                         "warn": false,
-                        "z": 755
+                        "z": 790
+                    },
+                    {
+                        "attrs": {
+                            ".connection": {
+                                "stroke": "#818D99",
+                                "stroke-width": 2
+                            },
+                            ".marker-target": {
+                                "d": "M 10 0 L 0 5 L 10 10 z",
+                                "fill": "#818D99",
+                                "stroke": "#818D99"
+                            }
+                        },
+                        "connector": {
+                            "args": {
+                                "radius": 5
+                            },
+                            "name": "rounded"
+                        },
+                        "endDirections": [
+                            "left"
+                        ],
+                        "id": "36d9e449-e5c8-4135-9609-a6cf55ff5aa2",
+                        "router": {
+                            "name": "metro"
+                        },
+                        "source": {
+                            "id": "f688a4d6-1c4b-45e3-a621-44e0bc70efe4",
+                            "selector": "> g:nth-child(1) > g:nth-child(2) > g:nth-child(1) > circle:nth-child(1)"
+                        },
+                        "startDirections": [
+                            "right"
+                        ],
+                        "target": {
+                            "id": "4d659758-8f4c-4a45-b0b4-c6d43ad59dde",
+                            "selector": ".port-body[type=\"input\"]"
+                        },
+                        "type": "link",
+                        "z": 791
                     },
                     {
                         "active": false,
                         "angle": 0,
+                        "api": "add comment",
                         "attrs": {
+                            ".api": {
+                                "text": "add comment"
+                            },
                             ".background": {
                                 "fill": "#FFFFFF",
                                 "stroke": "#818D99"
                             },
                             ".color-band": {
                                 "fill": "#171D21"
-                            },
-                            ".functionBlock": {
-                                "text": "DedupeListEntries"
                             },
                             ".inPorts>.port-in": {
                                 "ref": ".background",
@@ -1530,74 +2314,57 @@
                                 }
                             },
                             ".title": {
-                                "text": "custom function"
+                                "text": "API"
                             },
                             "g.delete": {
                                 "display": "none"
                             },
                             "g.error": {
-                                "opacity": 1
-                            },
-                            "g.error image": {
-                                "xlink:href": "/inc/coa/img/block_icon_warn_grey.svg"
+                                "opacity": 0
                             },
                             "g.notes": {
                                 "display": "block"
-                            },
-                            "g.notes image": {
-                                "opacity": 1
                             }
                         },
-                        "block_code": "def DedupeListEntries(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):\n    phantom.debug('DedupeListEntries() called')\n    \n    container_data = phantom.collect2(container=container, datapath=['artifact:*.cef.entity_title', 'artifact:*.id'])\n    container_item_0 = [item[0] for item in container_data]\n\n    DedupeListEntries__new_list = None\n\n    ################################################################################\n    ## Custom Code Start\n    ################################################################################\n\n    # Write your custom code here...\n    phantom.debug('DedupeListEntries() formatted_data_1: {}'.format(container_item_0))\n\n    seen = {}\n    DedupeListEntries__new_list = [seen.setdefault(x, x) for x in container_item_0 if x not in seen]\n    phantom.debug('DedupeListEntries() DedupeListEntries__new_list: {}'.format(DedupeListEntries__new_list))\n\n    ################################################################################\n    ## Custom Code End\n    ################################################################################\n\n    phantom.save_run_data(key='DedupeListEntries:new_list', value=json.dumps(DedupeListEntries__new_list))\n    format_1(container=container)\n\n    return",
+                        "block_code": "def add_comment_7(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):\n    phantom.debug('add_comment_7() called')\n\n    DedupeListEntries__new_list = json.loads(phantom.get_run_data(key='DedupeListEntries:new_list'))\n\n    phantom.comment(container=container, comment=DedupeListEntries__new_list)\n\n    return",
                         "callback_code": "",
                         "callback_start": 1,
                         "callsback": false,
+                        "color": "",
+                        "configured": [
+                            {
+                                "addCommentComment": "DedupeListEntries:custom_function:new_list",
+                                "key": "add-comment"
+                            }
+                        ],
                         "connected_to_start": true,
                         "connection_name": "",
                         "connection_type": "",
-                        "customCodeEndLineOffset": 7,
-                        "customCodeStartLine": 11,
                         "custom_callback": "",
-                        "custom_code": "def DedupeListEntries(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None):\n    phantom.debug('DedupeListEntries() called')\n    container_data = phantom.collect2(container=container, datapath=['artifact:*.cef.entity_title', 'artifact:*.id'])\n    container_item_0 = [item[0] for item in container_data]\n\n    DedupeListEntries__new_list = None\n\n    ################################################################################\n    ## Custom Code Start\n    ################################################################################\n\n    # Write your custom code here...\n    phantom.debug('DedupeListEntries() formatted_data_1: {}'.format(container_item_0))\n\n    seen = {}\n    DedupeListEntries__new_list = [seen.setdefault(x, x) for x in container_item_0 if x not in seen]\n    phantom.debug('DedupeListEntries() DedupeListEntries__new_list: {}'.format(DedupeListEntries__new_list))\n\n    \n    ################################################################################\n    ## Custom Code End\n    ################################################################################\n\n    phantom.save_run_data(key='DedupeListEntries:new_list', value=json.dumps(DedupeListEntries__new_list))\n    format_1(container=container)\n\n    return",
+                        "custom_code": "",
                         "custom_join": "",
-                        "custom_name": "DedupeListEntries",
-                        "description": "Removes duplicates from list and keeps list order",
-                        "functionBlock": "custom function",
-                        "has_custom": true,
+                        "custom_name": "",
+                        "description": "",
+                        "has_custom": false,
                         "has_custom_block": false,
                         "has_custom_callback": false,
                         "has_custom_join": false,
-                        "id": "f688a4d6-1c4b-45e3-a621-44e0bc70efe4",
+                        "id": "4d659758-8f4c-4a45-b0b4-c6d43ad59dde",
                         "inPorts": [
                             "in"
                         ],
                         "join_code": "",
                         "join_optional": [],
                         "join_start": 1,
-                        "legacy": true,
-                        "line_end": 65,
-                        "line_start": 37,
+                        "line_end": 172,
+                        "line_start": 163,
                         "message": "Configuring now",
-                        "name": "custom function",
+                        "name": "add comment",
                         "notes": "",
-                        "number": 1,
-                        "order": 3,
+                        "number": 7,
+                        "order": 10,
                         "outPorts": [
                             "out"
-                        ],
-                        "outputVariables": [
-                            {
-                                "position": 0,
-                                "type": "",
-                                "value": "new_list"
-                            }
-                        ],
-                        "parameters": [
-                            {
-                                "position": 0,
-                                "type": "",
-                                "value": "artifact:*.cef.entity_title"
-                            }
                         ],
                         "ports": {
                             "groups": {
@@ -1652,23 +2419,22 @@
                             }
                         },
                         "position": {
-                            "x": -620,
-                            "y": -260
+                            "x": -260,
+                            "y": 0
                         },
                         "previous_function": "",
-                        "previous_name": "DedupeListEntries",
-                        "show_number": true,
+                        "previous_name": "add_comment_7",
+                        "show_number": false,
                         "size": {
                             "height": 100,
                             "width": 180
                         },
-                        "state": "custom function",
-                        "status": "deprecating",
-                        "title": "custom function",
-                        "type": "coa.FunctionBlock",
-                        "userGeneratedCode": "\n    # Write your custom code here...\n    phantom.debug('DedupeListEntries() formatted_data_1: {}'.format(container_item_0))\n\n    seen = {}\n    DedupeListEntries__new_list = [seen.setdefault(x, x) for x in container_item_0 if x not in seen]\n    phantom.debug('DedupeListEntries() DedupeListEntries__new_list: {}'.format(DedupeListEntries__new_list))\n\n    ",
+                        "state": "api",
+                        "status": "",
+                        "title": "API",
+                        "type": "coa.API",
                         "warn": false,
-                        "z": 757
+                        "z": 793
                     },
                     {
                         "active": false,
@@ -1839,561 +2605,7 @@
                         "status": "",
                         "type": "coa.Decision",
                         "warn": "",
-                        "z": 758
-                    },
-                    {
-                        "attrs": {
-                            ".connection": {
-                                "stroke": "#818D99",
-                                "stroke-width": 2
-                            },
-                            ".marker-target": {
-                                "d": "M 10 0 L 0 5 L 10 10 z",
-                                "fill": "#818D99",
-                                "stroke": "#818D99"
-                            }
-                        },
-                        "connector": {
-                            "args": {
-                                "radius": 5
-                            },
-                            "name": "rounded"
-                        },
-                        "endDirections": [
-                            "left"
-                        ],
-                        "id": "18b69360-24ca-4be7-9c96-104cb507e412",
-                        "router": {
-                            "name": "metro"
-                        },
-                        "source": {
-                            "id": "64394075-17b9-4e67-a292-422a2ff58aa0",
-                            "port": "out-1",
-                            "selector": "> g:nth-child(1) > g:nth-child(2) > g:nth-child(1) > circle:nth-child(1)"
-                        },
-                        "startDirections": [
-                            "right"
-                        ],
-                        "target": {
-                            "id": "d37217d6-0e04-4d01-9fda-2d52e6364b7b",
-                            "selector": ".port-body[type=\"input\"]"
-                        },
-                        "type": "link",
-                        "z": 761
-                    },
-                    {
-                        "action": "get entity",
-                        "action_type": "investigate",
-                        "active": false,
-                        "active_keys": {},
-                        "active_values": {
-                            "itsi_entity_id": "DedupeListEntries:custom_function:new_list"
-                        },
-                        "angle": 0,
-                        "app": "Splunk IT Service Intelligence",
-                        "appid": "94bcee41-329f-4907-8895-d4e2a10616b8",
-                        "approver": "",
-                        "assets": [
-                            {
-                                "action": "get entity",
-                                "actions": [
-                                    "test connectivity",
-                                    "get episode",
-                                    "update episode",
-                                    "add episode comment",
-                                    "break episode",
-                                    "close episode",
-                                    "get episode events",
-                                    "add episode ticket",
-                                    "get episode tickets",
-                                    "get entity",
-                                    "get service",
-                                    "get service entities",
-                                    "update service status",
-                                    "get maintenance window",
-                                    "add maintenance window",
-                                    "update maintenance window",
-                                    "end maintenance window"
-                                ],
-                                "active": true,
-                                "app_name": "Splunk IT Service Intelligence",
-                                "app_version": "1.0.0",
-                                "appid": "94bcee41-329f-4907-8895-d4e2a10616b8",
-                                "asset_name": "splunk itsi",
-                                "config_type": "asset",
-                                "count": 0,
-                                "fields": {
-                                    "itsi_entity_id": "DedupeListEntries:custom_function:new_list"
-                                },
-                                "has_app": true,
-                                "id": 6,
-                                "loaded": false,
-                                "missing": false,
-                                "name": "splunk itsi",
-                                "output": [
-                                    {
-                                        "column_name": "Status",
-                                        "column_order": 1,
-                                        "data_path": "action_result.status",
-                                        "data_type": "string",
-                                        "example_values": [
-                                            "success",
-                                            "failed"
-                                        ]
-                                    },
-                                    {
-                                        "column_name": "ITSI Entity ID",
-                                        "column_order": 0,
-                                        "data_path": "action_result.parameter.itsi_entity_id",
-                                        "data_type": "string"
-                                    },
-                                    {
-                                        "column_name": "Data",
-                                        "column_order": 2,
-                                        "data_path": "action_result.data",
-                                        "data_type": "string"
-                                    },
-                                    {
-                                        "column_name": "Summary",
-                                        "column_order": 3,
-                                        "data_path": "action_result.summary",
-                                        "data_type": "string"
-                                    },
-                                    {
-                                        "data_path": "action_result.message",
-                                        "data_type": "string"
-                                    },
-                                    {
-                                        "data_path": "summary.total_objects",
-                                        "data_type": "numeric",
-                                        "example_values": [
-                                            1
-                                        ]
-                                    },
-                                    {
-                                        "data_path": "summary.total_objects_successful",
-                                        "data_type": "numeric",
-                                        "example_values": [
-                                            1
-                                        ]
-                                    }
-                                ],
-                                "parameters": {
-                                    "itsi_entity_id": {
-                                        "data_type": "string",
-                                        "default": null,
-                                        "description": "Splunk ITSI entity ID",
-                                        "key": "itsi_entity_id",
-                                        "order": 0,
-                                        "required": true
-                                    }
-                                },
-                                "product_name": "Splunk ITSI",
-                                "product_vendor": "Splunk",
-                                "targets": "6",
-                                "type": "devops"
-                            }
-                        ],
-                        "attrs": {
-                            ".action": {
-                                "text": "get entity"
-                            },
-                            ".background": {
-                                "fill": "#FFFFFF",
-                                "stroke": "#818D99"
-                            },
-                            ".color-band": {
-                                "fill": "#171D21"
-                            },
-                            ".inPorts>.port-in": {
-                                "ref": ".background",
-                                "ref-x": 0.5
-                            },
-                            ".inPorts>.port-in>.port-body": {
-                                "port": {
-                                    "id": "in",
-                                    "type": "in"
-                                }
-                            },
-                            ".message": {
-                                "opacity": 0,
-                                "ref-x": 5,
-                                "ref-y": 105,
-                                "text": "Configuring now"
-                            },
-                            ".outPorts>.port-out": {
-                                "ref": ".background",
-                                "ref-x": 0.5
-                            },
-                            ".outPorts>.port-out>.port-body": {
-                                "port": {
-                                    "id": "out",
-                                    "type": "out"
-                                }
-                            },
-                            ".title": {
-                                "text": "Investigate"
-                            },
-                            "g.code image": {
-                                "opacity": 1,
-                                "xlink:href": "/inc/coa/img/block_icon_code_light_on.svg"
-                            },
-                            "g.delete": {
-                                "display": "none"
-                            },
-                            "g.error": {
-                                "opacity": 0
-                            },
-                            "g.error image": {
-                                "xlink:href": "/inc/coa/img/block_icon_warn.svg"
-                            },
-                            "g.icon image": {
-                                "xlink:href": "/inc/coa/img/block_icon_investigate.svg"
-                            },
-                            "g.notes": {
-                                "display": "block"
-                            }
-                        },
-                        "block_code": "# read-only block view not available",
-                        "callback_code": "",
-                        "callback_start": 1,
-                        "callsback": true,
-                        "color": "",
-                        "connected_to_start": true,
-                        "connection_name": "get data",
-                        "connection_type": "action",
-                        "custom_callback": "",
-                        "custom_code": "def get_entity_3(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):\n    phantom.debug('get_entity_3() called')\n        \n    #phantom.debug('Action: {0} {1}'.format(action['name'], ('SUCCEEDED' if success else 'FAILED')))\n    \n    DedupeListEntries__new_list = json.loads(phantom.get_run_data(key='DedupeListEntries:new_list'))\n    # collect data for 'get_entity_3' call\n\n    parameters = []\n    \n    # build parameters list for 'get_entity_3' call\n    for entity_title in DedupeListEntries__new_list:\n        parameters.append({\n            'entity_title': entity_title,\n        })\n\n    phantom.act(action=\"get entity\", parameters=parameters, assets=['splunk itsi'], name=\"get_entity_3\")\n\n    return",
-                        "custom_join": "",
-                        "custom_name": "",
-                        "delay": 0,
-                        "description": "",
-                        "has_custom": false,
-                        "has_custom_block": true,
-                        "has_custom_callback": false,
-                        "has_custom_join": false,
-                        "id": "d37217d6-0e04-4d01-9fda-2d52e6364b7b",
-                        "inPorts": [
-                            "in"
-                        ],
-                        "join_code": "",
-                        "join_optional": [],
-                        "join_start": 1,
-                        "line_end": 162,
-                        "line_start": 142,
-                        "message": "Configuring now",
-                        "name": "get entity",
-                        "notes": "",
-                        "number": 3,
-                        "order": 9,
-                        "outPorts": [
-                            "out"
-                        ],
-                        "ports": {
-                            "groups": {
-                                "in": {
-                                    "attrs": {
-                                        ".port-body": {
-                                            "fill": "#fff",
-                                            "magnet": true,
-                                            "r": 10,
-                                            "stroke": "#000"
-                                        },
-                                        ".port-label": {
-                                            "fill": "#000"
-                                        }
-                                    },
-                                    "label": {
-                                        "position": {
-                                            "args": {
-                                                "y": 10
-                                            },
-                                            "name": "left"
-                                        }
-                                    },
-                                    "position": {
-                                        "name": "left"
-                                    }
-                                },
-                                "out": {
-                                    "attrs": {
-                                        ".port-body": {
-                                            "fill": "#fff",
-                                            "magnet": true,
-                                            "r": 10,
-                                            "stroke": "#000"
-                                        },
-                                        ".port-label": {
-                                            "fill": "#000"
-                                        }
-                                    },
-                                    "label": {
-                                        "position": {
-                                            "args": {
-                                                "y": 10
-                                            },
-                                            "name": "right"
-                                        }
-                                    },
-                                    "position": {
-                                        "name": "right"
-                                    }
-                                }
-                            }
-                        },
-                        "position": {
-                            "x": 420,
-                            "y": -420
-                        },
-                        "previous_function": "",
-                        "previous_name": "get_entity_3",
-                        "required_params": {
-                            "itsi_entity_id": true
-                        },
-                        "reviewer": "",
-                        "show_number": false,
-                        "size": {
-                            "height": 100,
-                            "width": 180
-                        },
-                        "state": "app_action_assets",
-                        "status": "",
-                        "title": "Investigate",
-                        "type": "coa.Action",
-                        "warn": false,
-                        "z": 775
-                    },
-                    {
-                        "active": false,
-                        "angle": 0,
-                        "attrs": {
-                            ".background": {
-                                "fill": "#FFFFFF",
-                                "stroke": "#637282",
-                                "transform": "rotate(45 30 70)"
-                            },
-                            ".inPorts>.port-0>.port-body": {
-                                "port": {
-                                    "id": "in",
-                                    "type": "in"
-                                }
-                            },
-                            ".number": {
-                                "text": 6
-                            },
-                            ".outPorts>.port-0": {
-                                "port": {
-                                    "id": "out-1",
-                                    "type": "out"
-                                },
-                                "ref-x": 83,
-                                "ref-y": 40
-                            },
-                            ".outPorts>.port-0>.port-body": {
-                                "port": {
-                                    "id": "out-1",
-                                    "type": "out"
-                                }
-                            },
-                            ".outPorts>.port-1": {
-                                "port": {
-                                    "id": "out-2",
-                                    "type": "out"
-                                },
-                                "ref-x": 41,
-                                "ref-y": 82
-                            },
-                            ".outPorts>.port-1>.port-body": {
-                                "port": {
-                                    "id": "out-2",
-                                    "type": "out"
-                                }
-                            },
-                            "g.delete": {
-                                "display": "none"
-                            },
-                            "g.error": {
-                                "opacity": 0
-                            },
-                            "g.error image": {
-                                "xlink:href": "/inc/coa/img/block_icon_warn.svg"
-                            },
-                            "g.notes": {
-                                "display": "block"
-                            },
-                            "g.notes image": {
-                                "opacity": 1
-                            }
-                        },
-                        "block_code": "def decision_6(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):\n    phantom.debug('decision_6() called')\n\n    # check for 'if' condition 1\n    matched = phantom.decision(\n        container=container,\n        action_results=results,\n        conditions=[\n            [\"get_data_1:action_result.data.*.response_body.count\", \"==\", 0],\n        ])\n\n    # call connected blocks if condition 1 matched\n    if matched:\n        get_entity_3(action=action, success=success, container=container, results=results, handle=handle, custom_function=custom_function)\n        return\n\n    # call connected blocks for 'else' condition 2\n    add_comment_3(action=action, success=success, container=container, results=results, handle=handle, custom_function=custom_function)\n\n    return",
-                        "callback_code": "",
-                        "callback_start": 1,
-                        "callsback": false,
-                        "connected_to_start": true,
-                        "connection_name": "get data",
-                        "connection_type": "action",
-                        "custom_callback": "",
-                        "custom_code": "",
-                        "custom_join": "",
-                        "custom_name": "",
-                        "description": "",
-                        "hasElse": true,
-                        "has_custom": false,
-                        "has_custom_block": false,
-                        "has_custom_callback": false,
-                        "has_custom_join": false,
-                        "id": "64394075-17b9-4e67-a292-422a2ff58aa0",
-                        "inPorts": [
-                            "in"
-                        ],
-                        "join_code": "",
-                        "join_optional": [],
-                        "join_start": 1,
-                        "line_end": 122,
-                        "line_start": 101,
-                        "name": "decision",
-                        "notes": "",
-                        "number": 6,
-                        "order": 6,
-                        "outPorts": [
-                            "out-1",
-                            "out-2"
-                        ],
-                        "outputs": [
-                            {
-                                "conditions": [
-                                    {
-                                        "comparison": "==",
-                                        "data_type": "",
-                                        "param": "get_data_1:action_result.data.*.response_body.count",
-                                        "value": "0"
-                                    }
-                                ],
-                                "display": "If",
-                                "logic": "and",
-                                "type": "if"
-                            },
-                            {
-                                "conditions": [
-                                    {
-                                        "comparison": "==",
-                                        "data_type": "",
-                                        "param": "",
-                                        "value": ""
-                                    }
-                                ],
-                                "display": "Else",
-                                "logic": "and",
-                                "type": "else"
-                            }
-                        ],
-                        "ports": {
-                            "groups": {
-                                "in": {
-                                    "attrs": {
-                                        ".port-body": {
-                                            "fill": "#fff",
-                                            "magnet": true,
-                                            "r": 10,
-                                            "stroke": "#000"
-                                        },
-                                        ".port-label": {
-                                            "fill": "#000"
-                                        }
-                                    },
-                                    "label": {
-                                        "position": {
-                                            "args": {
-                                                "y": 10
-                                            },
-                                            "name": "left"
-                                        }
-                                    },
-                                    "position": {
-                                        "name": "left"
-                                    }
-                                },
-                                "out": {
-                                    "attrs": {
-                                        ".port-body": {
-                                            "fill": "#fff",
-                                            "magnet": true,
-                                            "r": 10,
-                                            "stroke": "#000"
-                                        },
-                                        ".port-label": {
-                                            "fill": "#000"
-                                        }
-                                    },
-                                    "label": {
-                                        "position": {
-                                            "args": {
-                                                "y": 10
-                                            },
-                                            "name": "right"
-                                        }
-                                    },
-                                    "position": {
-                                        "name": "right"
-                                    }
-                                }
-                            }
-                        },
-                        "position": {
-                            "x": 260,
-                            "y": -260
-                        },
-                        "previous_function": "",
-                        "previous_name": "decision_6",
-                        "show_number": true,
-                        "size": {
-                            "height": 82,
-                            "width": 82
-                        },
-                        "state": "decision",
-                        "status": "",
-                        "type": "coa.Decision",
-                        "warn": "",
-                        "z": 776
-                    },
-                    {
-                        "attrs": {
-                            ".connection": {
-                                "stroke": "#818D99",
-                                "stroke-width": 2
-                            },
-                            ".marker-target": {
-                                "d": "M 10 0 L 0 5 L 10 10 z",
-                                "fill": "#818D99",
-                                "stroke": "#818D99"
-                            }
-                        },
-                        "connector": {
-                            "args": {
-                                "radius": 5
-                            },
-                            "name": "rounded"
-                        },
-                        "endDirections": [
-                            "left"
-                        ],
-                        "id": "68cb2333-7447-475b-94be-0e30a5986b18",
-                        "router": {
-                            "name": "metro"
-                        },
-                        "source": {
-                            "id": "d37217d6-0e04-4d01-9fda-2d52e6364b7b",
-                            "selector": "> g:nth-child(1) > g:nth-child(2) > g:nth-child(1) > circle:nth-child(1)"
-                        },
-                        "startDirections": [
-                            "right"
-                        ],
-                        "target": {
-                            "id": "12bf9eb5-7fda-4493-a923-15342d555f20",
-                            "selector": "> g:nth-child(1) > g:nth-child(1) > g:nth-child(1) > circle:nth-child(1)"
-                        },
-                        "type": "link",
-                        "z": 777
+                        "z": 794
                     }
                 ]
             },
@@ -2403,7 +2615,7 @@
         "schema": 4,
         "version": "4.9.34514"
     },
-    "create_time": "2020-08-18T10:07:23.752937+00:00",
+    "create_time": "2020-08-19T09:24:50.983327+00:00",
     "draft_mode": false,
     "labels": [
         "itsi"
