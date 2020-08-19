@@ -159,8 +159,34 @@ def decision_2(action=None, success=None, container=None, results=None, handle=N
 
     # call connected blocks if condition 1 matched
     if matched:
-        playbook_conf2020_conf2020_Notable_clean_up_1(action=action, success=success, container=container, results=results, handle=handle, custom_function=custom_function)
+        format_2(action=action, success=success, container=container, results=results, handle=handle, custom_function=custom_function)
         return
+
+    return
+
+def add_comment_1(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):
+    phantom.debug('add_comment_1() called')
+
+    formatted_data_1 = phantom.get_format_data(name='format_2')
+
+    phantom.comment(container=container, comment=formatted_data_1)
+    playbook_conf2020_conf2020_Notable_clean_up_1(container=container)
+
+    return
+
+def format_2(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):
+    phantom.debug('format_2() called')
+    
+    template = """This entity is not jet   added for the process {0}"""
+
+    # parameter list for template variable replacement
+    parameters = [
+        "custom_function_1:custom_function:entity_list",
+    ]
+
+    phantom.format(container=container, template=template, parameters=parameters, name="format_2")
+
+    add_comment_1(container=container)
 
     return
 
