@@ -165,7 +165,25 @@ def cf_community_list_deduplicate_1(action=None, success=None, container=None, r
     ################################################################################    
 
     # call custom function "community/list_deduplicate", returns the custom_function_run_id
-    phantom.custom_function(custom_function='community/list_deduplicate', parameters=parameters, name='cf_community_list_deduplicate_1', callback=playbook_conf2020_conf2020_Notable_clean_up_1)
+    phantom.custom_function(custom_function='community/list_deduplicate', parameters=parameters, name='cf_community_list_deduplicate_1', callback=decision_3)
+
+    return
+
+def decision_3(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):
+    phantom.debug('decision_3() called')
+
+    # check for 'if' condition 1
+    matched = phantom.decision(
+        container=container,
+        action_results=results,
+        conditions=[
+            ["cf_community_list_deduplicate_1:custom_function_result.data.*.item", "!=", ""],
+        ])
+
+    # call connected blocks if condition 1 matched
+    if matched:
+        playbook_conf2020_conf2020_Notable_clean_up_1(action=action, success=success, container=container, results=results, handle=handle, custom_function=custom_function)
+        return
 
     return
 
