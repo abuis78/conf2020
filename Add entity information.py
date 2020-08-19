@@ -40,7 +40,15 @@ def Get_PIN(action=None, success=None, container=None, results=None, handle=None
         'verify_certificate': False,
     })
 
-    phantom.act(action="get data", parameters=parameters, assets=['http'], callback=decision_1, name="Get_PIN")
+    phantom.act(action="get data", parameters=parameters, assets=['http'], callback=Get_PIN_callback, name="Get_PIN")
+
+    return
+
+def Get_PIN_callback(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None):
+    phantom.debug('Get_PIN_callback() called')
+    
+    decision_1(action=action, success=success, container=container, results=results, handle=handle, custom_function=custom_function)
+    add_comment_4(action=action, success=success, container=container, results=results, handle=handle, custom_function=custom_function)
 
     return
 
@@ -127,7 +135,6 @@ def DedupeListEntries(action=None, success=None, container=None, results=None, h
 
     phantom.save_run_data(key='DedupeListEntries:entity_list', value=json.dumps(DedupeListEntries__entity_list))
     Create_URL_Parameters(container=container)
-    add_comment_2(container=container)
 
     return
 
@@ -151,19 +158,21 @@ def get_entity_1(action=None, success=None, container=None, results=None, handle
 
     return
 
-def add_comment_2(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):
-    phantom.debug('add_comment_2() called')
-
-    DedupeListEntries__entity_list = json.loads(phantom.get_run_data(key='DedupeListEntries:entity_list'))
-
-    phantom.comment(container=container, comment=DedupeListEntries__entity_list)
-
-    return
-
 def add_comment_3(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):
     phantom.debug('add_comment_3() called')
 
     phantom.comment(container=container, comment="Entity has already been recorded")
+
+    return
+
+def add_comment_4(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):
+    phantom.debug('add_comment_4() called')
+
+    results_data_1 = phantom.collect2(container=container, datapath=['Get_PIN:action_result.parameter.location'], action_results=results)
+
+    results_item_1_0 = [item[0] for item in results_data_1]
+
+    phantom.comment(container=container, comment=results_item_1_0)
 
     return
 
