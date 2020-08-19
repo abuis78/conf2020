@@ -124,6 +124,7 @@ def DedupeListEntries(action=None, success=None, container=None, results=None, h
 
     phantom.save_run_data(key='DedupeListEntries:entity_list', value=json.dumps(DedupeListEntries__entity_list))
     Create_URL_Parameters(container=container)
+    add_comment_2(container=container)
 
     return
 
@@ -144,6 +145,15 @@ def get_entity_1(action=None, success=None, container=None, results=None, handle
         })
 
     phantom.act(action="get entity", parameters=parameters, assets=['splunk itsi'], callback=pin_1, name="get_entity_1")
+
+    return
+
+def add_comment_2(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):
+    phantom.debug('add_comment_2() called')
+
+    DedupeListEntries__entity_list = json.loads(phantom.get_run_data(key='DedupeListEntries:entity_list'))
+
+    phantom.comment(container=container, comment=DedupeListEntries__entity_list)
 
     return
 
