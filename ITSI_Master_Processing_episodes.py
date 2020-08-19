@@ -74,40 +74,10 @@ def decision_1(action=None, success=None, container=None, results=None, handle=N
 
     # call connected blocks if condition 1 matched
     if matched:
-        custom_function_1(action=action, success=success, container=container, results=results, handle=handle, custom_function=custom_function)
+        format_1(action=action, success=success, container=container, results=results, handle=handle, custom_function=custom_function)
         return
 
     # call connected blocks for 'else' condition 2
-
-    return
-
-def custom_function_1(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):
-    phantom.debug('custom_function_1() called')
-    
-    container_data = phantom.collect2(container=container, datapath=['artifact:*.cef.entity_title', 'artifact:*.id'])
-    container_item_0 = [item[0] for item in container_data]
-
-    custom_function_1__entity_list = None
-
-    ################################################################################
-    ## Custom Code Start
-    ################################################################################
-
-    # Write your custom code here...
-    phantom.debug('DedupeListEntries() formatted_data_1: {}'.format(container_item_0))
-
-    seen = {}
-    DedupeListEntries__entity_list = [seen.setdefault(x, x) for x in container_item_0 if x not in seen]
-    
-    phantom.debug('DedupeListEntries() DedupeListEntries__entity_list: {}'.format(DedupeListEntries__entity_list))
-    ################################################################################
-    ################################################################################
-    ## Custom Code End
-    ################################################################################
-
-    phantom.save_run_data(key='custom_function_1:entity_list', value=json.dumps(custom_function_1__entity_list))
-    format_1(container=container)
-    add_comment_4(container=container)
 
     return
 
@@ -119,7 +89,7 @@ def format_1(action=None, success=None, container=None, results=None, handle=Non
     # parameter list for template variable replacement
     parameters = [
         "container:id",
-        "custom_function_1:custom_function:entity_list",
+        "artifact:*.cef.entity_title",
     ]
 
     phantom.format(container=container, template=template, parameters=parameters, name="format_1")
@@ -216,15 +186,6 @@ def add_comment_3(action=None, success=None, container=None, results=None, handl
     results_item_1_0 = [item[0] for item in results_data_1]
 
     phantom.comment(container=container, comment=results_item_1_0)
-
-    return
-
-def add_comment_4(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):
-    phantom.debug('add_comment_4() called')
-
-    custom_function_1__entity_list = json.loads(phantom.get_run_data(key='custom_function_1:entity_list'))
-
-    phantom.comment(container=container, comment=custom_function_1__entity_list)
 
     return
 
