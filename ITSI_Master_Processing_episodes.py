@@ -142,7 +142,15 @@ def get_data_1(action=None, success=None, container=None, results=None, handle=N
         'headers': "",
     })
 
-    phantom.act(action="get data", parameters=parameters, assets=['http'], callback=decision_2, name="get_data_1")
+    phantom.act(action="get data", parameters=parameters, assets=['http'], callback=get_data_1_callback, name="get_data_1")
+
+    return
+
+def get_data_1_callback(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None):
+    phantom.debug('get_data_1_callback() called')
+    
+    decision_2(action=action, success=success, container=container, results=results, handle=handle, custom_function=custom_function)
+    add_comment_3(action=action, success=success, container=container, results=results, handle=handle, custom_function=custom_function)
 
     return
 
@@ -197,6 +205,17 @@ def add_comment_2(action=None, success=None, container=None, results=None, handl
     phantom.debug('add_comment_2() called')
 
     phantom.comment(container=container, comment="nothing")
+
+    return
+
+def add_comment_3(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):
+    phantom.debug('add_comment_3() called')
+
+    results_data_1 = phantom.collect2(container=container, datapath=['get_data_1:action_result.parameter.location'], action_results=results)
+
+    results_item_1_0 = [item[0] for item in results_data_1]
+
+    phantom.comment(container=container, comment=results_item_1_0)
 
     return
 
