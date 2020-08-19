@@ -77,6 +77,9 @@ def decision_1(action=None, success=None, container=None, results=None, handle=N
         get_entity_1(action=action, success=success, container=container, results=results, handle=handle, custom_function=custom_function)
         return
 
+    # call connected blocks for 'else' condition 2
+    add_comment_3(action=action, success=success, container=container, results=results, handle=handle, custom_function=custom_function)
+
     return
 
 def decision_2(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):
@@ -101,7 +104,7 @@ def decision_2(action=None, success=None, container=None, results=None, handle=N
 def DedupeListEntries(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):
     phantom.debug('DedupeListEntries() called')
     
-    container_data = phantom.collect2(container=container, datapath=['artifact:*.cef.entity_key', 'artifact:*.id'])
+    container_data = phantom.collect2(container=container, datapath=['artifact:*.cef.entity_title', 'artifact:*.id'])
     container_item_0 = [item[0] for item in container_data]
 
     DedupeListEntries__entity_list = None
@@ -154,6 +157,13 @@ def add_comment_2(action=None, success=None, container=None, results=None, handl
     DedupeListEntries__entity_list = json.loads(phantom.get_run_data(key='DedupeListEntries:entity_list'))
 
     phantom.comment(container=container, comment=DedupeListEntries__entity_list)
+
+    return
+
+def add_comment_3(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):
+    phantom.debug('add_comment_3() called')
+
+    phantom.comment(container=container, comment="Entity has already been recorded")
 
     return
 
