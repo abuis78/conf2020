@@ -67,20 +67,24 @@ def decision_1(action=None, success=None, container=None, results=None, handle=N
 
     return
 
-def add_episode_comment_1(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):
-    phantom.debug('add_episode_comment_1() called')
+def update_episode_1(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):
+    phantom.debug('update_episode_1() called')
 
-    # collect data for 'add_episode_comment_1' call
+    source_data_identifier_value = container.get('source_data_identifier', None)
+
+    # collect data for 'update_episode_1' call
 
     parameters = []
     
-    # build parameters list for 'add_episode_comment_1' call
+    # build parameters list for 'update_episode_1' call
     parameters.append({
-        'itsi_group_id': "",
-        'comment': "The service has restarted",
+        'itsi_group_id': source_data_identifier_value,
+        'status': "Resolved",
+        'severity': "Low",
+        'owner': "",
     })
 
-    phantom.act(action="add episode comment", parameters=parameters, assets=['','splunk itsi'], callback=SNOW_Update_Resolved, name="add_episode_comment_1")
+    phantom.act(action="update episode", parameters=parameters, assets=['splunk itsi'], callback=SNOW_Update_Resolved, name="update_episode_1")
 
     return
 
@@ -373,7 +377,7 @@ def filter_1(action=None, success=None, container=None, results=None, handle=Non
 
     # call connected blocks if filtered artifacts or results
     if matched_artifacts_1 or matched_results_1:
-        add_episode_comment_1(action=action, success=success, container=container, results=results, handle=handle, custom_function=custom_function, filtered_artifacts=matched_artifacts_1, filtered_results=matched_results_1)
+        update_episode_1(action=action, success=success, container=container, results=results, handle=handle, custom_function=custom_function, filtered_artifacts=matched_artifacts_1, filtered_results=matched_results_1)
 
     return
 
