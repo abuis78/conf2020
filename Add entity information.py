@@ -55,7 +55,7 @@ def Get_PIN_callback(action=None, success=None, container=None, results=None, ha
 def Create_URL_Parameters(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):
     phantom.debug('Create_URL_Parameters() called')
     
-    template = """/rest/container_pin?_filter_container={0}&_filter_message=\"{1}\""""
+    template = """/rest/container_pin?_filter_container={0}&_filter_message=\"Entity: {1}\""""
 
     # parameter list for template variable replacement
     parameters = [
