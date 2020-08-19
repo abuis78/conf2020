@@ -78,10 +78,10 @@ def update_episode_1(action=None, success=None, container=None, results=None, ha
     
     # build parameters list for 'update_episode_1' call
     parameters.append({
-        'itsi_group_id': source_data_identifier_value,
+        'owner': "",
         'status': "Resolved",
         'severity': "Low",
-        'owner': "",
+        'itsi_group_id': source_data_identifier_value,
     })
 
     phantom.act(action="update episode", parameters=parameters, assets=['splunk itsi'], callback=SNOW_Update_Resolved, name="update_episode_1")
@@ -281,7 +281,7 @@ def Change_snow_ticket_status_closed(action=None, success=None, container=None, 
                 'context': {'artifact_id': results_item_1[1]},
             })
 
-    phantom.act(action="update ticket", parameters=parameters, assets=['servicenow'], callback=join_set_status_1, name="Change_snow_ticket_status_closed")
+    phantom.act(action="update ticket", parameters=parameters, assets=['servicenow'], callback=join_set_status_set_severity_set_sensitivity_1, name="Change_snow_ticket_status_closed")
 
     return
 
@@ -344,7 +344,7 @@ def update_ticket_5(action=None, success=None, container=None, results=None, han
                 'context': {'artifact_id': results_item_1[1]},
             })
 
-    phantom.act(action="update ticket", parameters=parameters, assets=['servicenow'], callback=join_set_status_1, name="update_ticket_5")
+    phantom.act(action="update ticket", parameters=parameters, assets=['servicenow'], callback=join_set_status_set_severity_set_sensitivity_1, name="update_ticket_5")
 
     return
 
@@ -381,21 +381,25 @@ def filter_1(action=None, success=None, container=None, results=None, handle=Non
 
     return
 
-def set_status_1(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):
-    phantom.debug('set_status_1() called')
+def set_status_set_severity_set_sensitivity_1(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):
+    phantom.debug('set_status_set_severity_set_sensitivity_1() called')
 
     phantom.set_status(container=container, status="Closed")
 
+    phantom.set_severity(container=container, severity="Low")
+
+    phantom.set_sensitivity(container=container, sensitivity="green")
+
     return
 
-def join_set_status_1(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None):
-    phantom.debug('join_set_status_1() called')
+def join_set_status_set_severity_set_sensitivity_1(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None):
+    phantom.debug('join_set_status_set_severity_set_sensitivity_1() called')
 
     # check if all connected incoming playbooks, actions, or custom functions are done i.e. have succeeded or failed
     if phantom.completed(action_names=['Change_snow_ticket_status_closed', 'update_ticket_5']):
         
-        # call connected block "set_status_1"
-        set_status_1(container=container, handle=handle)
+        # call connected block "set_status_set_severity_set_sensitivity_1"
+        set_status_set_severity_set_sensitivity_1(container=container, handle=handle)
     
     return
 
