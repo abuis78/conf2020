@@ -794,28 +794,28 @@ def format_15(action=None, success=None, container=None, results=None, handle=No
 
     phantom.format(container=container, template=template, parameters=parameters, name="format_15")
 
-    get_data_4(container=container)
+    add_tag_service_restart_in_progress(container=container)
 
     return
 
-def get_data_4(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):
-    phantom.debug('get_data_4() called')
+def add_tag_service_restart_in_progress(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):
+    phantom.debug('add_tag_service_restart_in_progress() called')
         
     #phantom.debug('Action: {0} {1}'.format(action['name'], ('SUCCEEDED' if success else 'FAILED')))
     
-    # collect data for 'get_data_4' call
+    # collect data for 'add_tag_service_restart_in_progress' call
     formatted_data_1 = phantom.get_format_data(name='format_15')
 
     parameters = []
     
-    # build parameters list for 'get_data_4' call
+    # build parameters list for 'add_tag_service_restart_in_progress' call
     parameters.append({
         'headers': "",
         'location': formatted_data_1,
         'verify_certificate': False,
     })
 
-    phantom.act(action="get data", parameters=parameters, assets=['http'], callback=decision_10, name="get_data_4")
+    phantom.act(action="get data", parameters=parameters, assets=['http'], callback=decision_10, name="add_tag_service_restart_in_progress")
 
     return
 
@@ -827,7 +827,7 @@ def decision_10(action=None, success=None, container=None, results=None, handle=
         container=container,
         action_results=results,
         conditions=[
-            ["get_data_4:action_result.data.*.response_body.count", ">=", 1],
+            ["add_tag_service_restart_in_progress:action_result.data.*.response_body.count", ">=", 1],
         ])
 
     # call connected blocks if condition 1 matched
@@ -881,7 +881,7 @@ def join_add_tag_5(action=None, success=None, container=None, results=None, hand
         return
 
     # check if all connected incoming playbooks, actions, or custom functions are done i.e. have succeeded or failed
-    if phantom.completed(action_names=['get_pin_info_path']):
+    if phantom.completed(action_names=['add_tag_service_restart_in_progress', 'get_pin_info_path']):
         
         # save the state that the joined function has now been called
         phantom.save_run_data(key='join_add_tag_5_called', value='add_tag_5')
