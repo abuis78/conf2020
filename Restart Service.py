@@ -72,17 +72,21 @@ def restart_Service(action=None, success=None, container=None, results=None, han
     #phantom.debug('Action: {0} {1}'.format(action['name'], ('SUCCEEDED' if success else 'FAILED')))
     
     # collect data for 'restart_Service' call
-    formatted_data_1 = phantom.get_format_data(name='Format_Server_Address')
+    results_data_1 = phantom.collect2(container=container, datapath=['get_entity_pin:action_result.data.*.parsed_response_body.data.*.data', 'get_entity_pin:action_result.parameter.context.artifact_id'], action_results=results)
 
     parameters = []
     
     # build parameters list for 'restart_Service' call
-    parameters.append({
-        'command': "sudo systemctl start nginx",
-        'timeout': "",
-        'ip_hostname': formatted_data_1,
-        'script_file': "",
-    })
+    for results_item_1 in results_data_1:
+        if results_item_1[0]:
+            parameters.append({
+                'command': "sudo systemctl start nginx",
+                'timeout': "",
+                'ip_hostname': results_item_1[0],
+                'script_file': "",
+                # context (artifact id) is added to associate results with the artifact
+                'context': {'artifact_id': results_item_1[1]},
+            })
 
     phantom.act(action="execute program", parameters=parameters, assets=['ssh'], callback=add_tag_3, name="restart_Service")
 
@@ -664,17 +668,21 @@ def execute_program_3(action=None, success=None, container=None, results=None, h
     #phantom.debug('Action: {0} {1}'.format(action['name'], ('SUCCEEDED' if success else 'FAILED')))
     
     # collect data for 'execute_program_3' call
-    formatted_data_1 = phantom.get_format_data(name='Format_Server_Address')
+    results_data_1 = phantom.collect2(container=container, datapath=['get_entity_pin:action_result.data.*.parsed_response_body.data.*.data', 'get_entity_pin:action_result.parameter.context.artifact_id'], action_results=results)
 
     parameters = []
     
     # build parameters list for 'execute_program_3' call
-    parameters.append({
-        'command': "sudo systemctl start nginx",
-        'timeout': 10,
-        'ip_hostname': formatted_data_1,
-        'script_file': "",
-    })
+    for results_item_1 in results_data_1:
+        if results_item_1[0]:
+            parameters.append({
+                'command': "sudo systemctl start nginx",
+                'timeout': 10,
+                'ip_hostname': results_item_1[0],
+                'script_file': "",
+                # context (artifact id) is added to associate results with the artifact
+                'context': {'artifact_id': results_item_1[1]},
+            })
 
     phantom.act(action="execute program", parameters=parameters, assets=['ssh'], callback=add_tag_4, name="execute_program_3")
 
