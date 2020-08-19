@@ -235,7 +235,7 @@ def join_service_path(action=None, success=None, container=None, results=None, h
         return
 
     # check if all connected incoming playbooks, actions, or custom functions are done i.e. have succeeded or failed
-    if phantom.completed(action_names=['post_data_1', 'execute_program_2', 'post_data_2']):
+    if phantom.completed(action_names=['post_data_1', 'systemctl_is_service_active', 'post_data_2']):
         
         # save the state that the joined function has now been called
         phantom.save_run_data(key='join_service_path_called', value='service_path')
@@ -526,7 +526,7 @@ def decision_5(action=None, success=None, container=None, results=None, handle=N
 
     # call connected blocks if condition 1 matched
     if matched:
-        execute_program_2(action=action, success=success, container=container, results=results, handle=handle, custom_function=custom_function)
+        systemctl_is_service_active(action=action, success=success, container=container, results=results, handle=handle, custom_function=custom_function)
         return
 
     # call connected blocks for 'else' condition 2
@@ -534,17 +534,17 @@ def decision_5(action=None, success=None, container=None, results=None, handle=N
 
     return
 
-def execute_program_2(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):
-    phantom.debug('execute_program_2() called')
+def systemctl_is_service_active(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):
+    phantom.debug('systemctl_is_service_active() called')
         
     #phantom.debug('Action: {0} {1}'.format(action['name'], ('SUCCEEDED' if success else 'FAILED')))
     
-    # collect data for 'execute_program_2' call
+    # collect data for 'systemctl_is_service_active' call
     results_data_1 = phantom.collect2(container=container, datapath=['restart_Service:action_result.parameter.ip_hostname', 'restart_Service:action_result.parameter.context.artifact_id'], action_results=results)
 
     parameters = []
     
-    # build parameters list for 'execute_program_2' call
+    # build parameters list for 'systemctl_is_service_active' call
     for results_item_1 in results_data_1:
         if results_item_1[0]:
             parameters.append({
@@ -558,7 +558,7 @@ def execute_program_2(action=None, success=None, container=None, results=None, h
     # calculate start time using delay of 1 minutes
     start_time = datetime.now() + timedelta(minutes=1)
 
-    phantom.act(action="execute program", parameters=parameters, assets=['ssh'], callback=decision_8, start_time=start_time, name="execute_program_2")
+    phantom.act(action="execute program", parameters=parameters, assets=['ssh'], callback=decision_8, start_time=start_time, name="systemctl_is_service_active")
 
     return
 
@@ -570,7 +570,7 @@ def decision_6(action=None, success=None, container=None, results=None, handle=N
         container=container,
         action_results=results,
         conditions=[
-            ["execute_program_2:action_result.data.*.output", "==", "active"],
+            ["systemctl_is_service_active:action_result.data.*.output", "==", "active"],
         ])
 
     # call connected blocks if condition 1 matched
@@ -769,7 +769,7 @@ def decision_8(action=None, success=None, container=None, results=None, handle=N
         container=container,
         action_results=results,
         conditions=[
-            ["execute_program_2:action_result.status", "!=", "failed"],
+            ["systemctl_is_service_active:action_result.status", "!=", "failed"],
         ])
 
     # call connected blocks if condition 1 matched
