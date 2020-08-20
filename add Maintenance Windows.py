@@ -18,16 +18,17 @@ def add_maintenance_window_1(action=None, success=None, container=None, results=
     #phantom.debug('Action: {0} {1}'.format(action['name'], ('SUCCEEDED' if success else 'FAILED')))
     
     # collect data for 'add_maintenance_window_1' call
-    formatted_data_1 = phantom.get_format_data(name='entity_ID')
+    formatted_data_1 = phantom.get_format_data(name='format_6')
+    formatted_data_2 = phantom.get_format_data(name='entity_ID')
 
     parameters = []
     
     # build parameters list for 'add_maintenance_window_1' call
     parameters.append({
-        'title': "Bluber",
+        'title': formatted_data_1,
         'comment': "Phantom hast started Maintenance Windows",
         'end_time': "",
-        'object_ids': formatted_data_1,
+        'object_ids': formatted_data_2,
         'start_time': "",
         'object_type': "entity",
         'relative_end_time': 300,
@@ -87,7 +88,7 @@ def entity_ID(action=None, success=None, container=None, results=None, handle=No
 
     phantom.format(container=container, template=template, parameters=parameters, name="entity_ID")
 
-    add_maintenance_window_1(container=container)
+    format_6(container=container)
 
     return
 
@@ -120,6 +121,22 @@ def Maintenance_title(action=None, success=None, container=None, results=None, h
     phantom.format(container=container, template=template, parameters=parameters, name="Maintenance_title")
 
     pin_1(container=container)
+
+    return
+
+def format_6(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):
+    phantom.debug('format_6() called')
+    
+    template = """Affected entity ID {0}"""
+
+    # parameter list for template variable replacement
+    parameters = [
+        "cf_community_list_deduplicate_1:custom_function_result.data.*.item",
+    ]
+
+    phantom.format(container=container, template=template, parameters=parameters, name="format_6")
+
+    add_maintenance_window_1(container=container)
 
     return
 
