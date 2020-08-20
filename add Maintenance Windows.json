@@ -7,7 +7,7 @@
             "clean": true,
             "code_block": "",
             "description": "",
-            "hash": "1b5f72824c07e31596c3220655961e49fef1126b",
+            "hash": "f0b66f67c8ec178ba270588e9873b95a5da483ac",
             "joint": {
                 "cells": [
                     {
@@ -175,45 +175,6 @@
                         "endDirections": [
                             "left"
                         ],
-                        "id": "c44b9e5f-59fe-430d-a338-9d75748ac796",
-                        "router": {
-                            "name": "metro"
-                        },
-                        "source": {
-                            "id": "2fae84e0-2300-46aa-bbeb-f0f76b98f7fb",
-                            "selector": "> g:nth-child(1) > g:nth-child(2) > g:nth-child(1) > circle:nth-child(1)"
-                        },
-                        "startDirections": [
-                            "right"
-                        ],
-                        "target": {
-                            "id": "414709d0-d1df-4ee8-9a19-59d6b722695d",
-                            "selector": "> g:nth-child(1) > g:nth-child(1) > g:nth-child(1) > circle:nth-child(1)"
-                        },
-                        "type": "link",
-                        "z": 8
-                    },
-                    {
-                        "attrs": {
-                            ".connection": {
-                                "stroke": "#818D99",
-                                "stroke-width": 2
-                            },
-                            ".marker-target": {
-                                "d": "M 10 0 L 0 5 L 10 10 z",
-                                "fill": "#818D99",
-                                "stroke": "#818D99"
-                            }
-                        },
-                        "connector": {
-                            "args": {
-                                "radius": 5
-                            },
-                            "name": "rounded"
-                        },
-                        "endDirections": [
-                            "left"
-                        ],
                         "id": "4fe3cb3a-79df-4848-b21a-389f1c7a6025",
                         "router": {
                             "name": "metro"
@@ -324,13 +285,13 @@
                         "join_code": "",
                         "join_optional": [],
                         "join_start": 1,
-                        "line_end": 74,
-                        "line_start": 62,
+                        "line_end": 55,
+                        "line_start": 43,
                         "message": "Configuring now",
                         "name": "pin",
                         "notes": "",
                         "number": 1,
-                        "order": 4,
+                        "order": 3,
                         "outPorts": [
                             "out"
                         ],
@@ -444,43 +405,371 @@
                         "z": 13
                     },
                     {
+                        "0": "E",
+                        "1": "N",
+                        "2": "D",
+                        "active": false,
+                        "angle": 0,
                         "attrs": {
-                            ".connection": {
-                                "stroke": "#818D99",
-                                "stroke-width": 2
-                            },
-                            ".marker-target": {
-                                "d": "M 10 0 L 0 5 L 10 10 z",
-                                "fill": "#818D99",
+                            ".background": {
+                                "fill": "#FFFFFF",
                                 "stroke": "#818D99"
+                            },
+                            ".color-band": {
+                                "fill": "#171D21"
+                            },
+                            ".inPorts>.port-in": {
+                                "ref": ".background",
+                                "ref-x": 0.5
+                            },
+                            ".inPorts>.port-in>.port-body": {
+                                "port": {
+                                    "id": "in",
+                                    "type": "in"
+                                }
+                            },
+                            ".title": {
+                                "text": "END"
+                            },
+                            "g.delete": {
+                                "display": "none"
+                            },
+                            "g.error": {
+                                "opacity": 0
+                            },
+                            "g.icon image": {
+                                "xlink:href": "/inc/coa/img/block_icon_end.svg"
+                            },
+                            "g.notes": {
+                                "display": "block"
                             }
                         },
-                        "connector": {
-                            "args": {
-                                "radius": 5
+                        "block_code": "def on_finish(container, summary):\n    phantom.debug('on_finish() called')\n    # This function is called after all actions are completed.\n    # summary of all the action and/or all details of actions\n    # can be collected here.\n\n    # summary_json = phantom.get_summary()\n    # if 'result' in summary_json:\n        # for action_result in summary_json['result']:\n            # if 'action_run_id' in action_result:\n                # action_results = phantom.get_action_results(action_run_id=action_result['action_run_id'], result_data=False, flatten=False)\n                # phantom.debug(action_results)\n\n    return",
+                        "callback_code": "# read-only block view not available",
+                        "callback_start": 1,
+                        "callsback": false,
+                        "connected_to_start": false,
+                        "connection_name": "",
+                        "connection_type": "",
+                        "custom_callback": "",
+                        "custom_code": "",
+                        "custom_join": "",
+                        "custom_name": "",
+                        "description": "",
+                        "has_custom": false,
+                        "has_custom_block": false,
+                        "has_custom_callback": false,
+                        "has_custom_join": false,
+                        "id": "9da7d4b1-4a83-4837-b704-49f965128497",
+                        "inPorts": [
+                            "in"
+                        ],
+                        "join_code": "# read-only block view not available",
+                        "join_optional": [],
+                        "join_start": 1,
+                        "line_end": 121,
+                        "line_start": 108,
+                        "name": "",
+                        "notes": "",
+                        "number": 0,
+                        "order": 7,
+                        "outPorts": [],
+                        "ports": {
+                            "groups": {
+                                "in": {
+                                    "attrs": {
+                                        ".port-body": {
+                                            "fill": "#fff",
+                                            "magnet": true,
+                                            "r": 10,
+                                            "stroke": "#000"
+                                        },
+                                        ".port-label": {
+                                            "fill": "#000"
+                                        }
+                                    },
+                                    "label": {
+                                        "position": {
+                                            "args": {
+                                                "y": 10
+                                            },
+                                            "name": "left"
+                                        }
+                                    },
+                                    "position": {
+                                        "name": "left"
+                                    }
+                                },
+                                "out": {
+                                    "attrs": {
+                                        ".port-body": {
+                                            "fill": "#fff",
+                                            "magnet": true,
+                                            "r": 10,
+                                            "stroke": "#000"
+                                        },
+                                        ".port-label": {
+                                            "fill": "#000"
+                                        }
+                                    },
+                                    "label": {
+                                        "position": {
+                                            "args": {
+                                                "y": 10
+                                            },
+                                            "name": "right"
+                                        }
+                                    },
+                                    "position": {
+                                        "name": "right"
+                                    }
+                                }
+                            }
+                        },
+                        "position": {
+                            "x": 1520,
+                            "y": 80
+                        },
+                        "previous_function": "",
+                        "previous_name": "",
+                        "show_number": true,
+                        "size": {
+                            "height": 54,
+                            "width": 80
+                        },
+                        "status": "",
+                        "title": "END",
+                        "type": "coa.StartEnd",
+                        "warn": false,
+                        "z": 18
+                    },
+                    {
+                        ".scmName/text": "community",
+                        "active": false,
+                        "active_keys": {},
+                        "active_values": {},
+                        "angle": 0,
+                        "attrs": {
+                            ".background": {
+                                "fill": "#FFFFFF",
+                                "stroke": "#818D99"
                             },
-                            "name": "rounded"
+                            ".color-band": {
+                                "fill": "#171D21"
+                            },
+                            ".customFunction": {
+                                "text": "list_deduplicate"
+                            },
+                            ".inPorts>.port-in": {
+                                "ref": ".background",
+                                "ref-x": 0.5
+                            },
+                            ".inPorts>.port-in>.port-body": {
+                                "port": {
+                                    "id": "in",
+                                    "type": "in"
+                                }
+                            },
+                            ".message": {
+                                "opacity": 0,
+                                "ref-x": 5,
+                                "ref-y": 105,
+                                "text": "Configuring now"
+                            },
+                            ".outPorts>.port-out": {
+                                "ref": ".background",
+                                "ref-x": 0.5
+                            },
+                            ".outPorts>.port-out>.port-body": {
+                                "port": {
+                                    "id": "out",
+                                    "type": "out"
+                                }
+                            },
+                            ".scmName": {
+                                "text": "community"
+                            },
+                            ".title": {
+                                "text": "custom function"
+                            },
+                            ".title-info": {
+                                "text": ""
+                            },
+                            "g.branch image": {
+                                "opacity": 1
+                            },
+                            "g.delete": {
+                                "display": "none"
+                            },
+                            "g.error": {
+                                "opacity": 0
+                            },
+                            "g.notes": {
+                                "display": "block"
+                            }
                         },
-                        "endDirections": [
-                            "left"
+                        "block_code": "def cf_community_list_deduplicate_1(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):\n    phantom.debug('cf_community_list_deduplicate_1() called')\n    \n    container_data_0 = phantom.collect2(container=container, datapath=['artifact:*.cef.entity_key', 'artifact:*.id'])\n\n    parameters = []\n\n    container_data_0_0 = [item[0] for item in container_data_0]\n\n    parameters.append({\n        'input_list': container_data_0_0,\n    })\n    ################################################################################\n    ## Custom Code Start\n    ################################################################################\n\n    # Write your custom code here...\n\n    ################################################################################\n    ## Custom Code End\n    ################################################################################    \n\n    # call custom function \"community/list_deduplicate\", returns the custom_function_run_id\n    phantom.custom_function(custom_function='community/list_deduplicate', parameters=parameters, name='cf_community_list_deduplicate_1', callback=format_2)\n\n    return",
+                        "callback_code": "",
+                        "callback_start": 101,
+                        "callsback": true,
+                        "cfDisplayPath": "community/list_deduplicate",
+                        "cfInputs": {
+                            "input_list": {
+                                "collectionType": "container_data",
+                                "dataPath": "artifact:*.cef.entity_key",
+                                "paramName": "container_data_0_0",
+                                "type": "list"
+                            }
+                        },
+                        "color": "",
+                        "connected_to_start": true,
+                        "connection_name": "",
+                        "connection_type": "",
+                        "currentVersion": true,
+                        "customCodeEndLineOffset": 7,
+                        "customCodeStartLine": 15,
+                        "customFunction": "community/list_deduplicate",
+                        "customFunctionId": null,
+                        "custom_callback": "",
+                        "custom_code": "",
+                        "custom_join": "",
+                        "custom_name": "",
+                        "delay": 0,
+                        "description": "",
+                        "draftMode": false,
+                        "existingCF": true,
+                        "functionBlock": "custom function",
+                        "has_custom": false,
+                        "has_custom_block": false,
+                        "has_custom_callback": false,
+                        "has_custom_join": false,
+                        "id": "930b9513-4cd1-4d97-ad84-b2fc9ff7bab3",
+                        "inPorts": [
+                            "in"
                         ],
-                        "id": "2f8c75c7-139e-4185-9181-2ce17fc1c794",
-                        "router": {
-                            "name": "metro"
-                        },
-                        "source": {
-                            "id": "930b9513-4cd1-4d97-ad84-b2fc9ff7bab3",
-                            "selector": "> g:nth-child(1) > g:nth-child(2) > g:nth-child(1) > circle:nth-child(1)"
-                        },
-                        "startDirections": [
-                            "right"
+                        "input_list-0": "artifact:*.cef.entity_key",
+                        "join_code": "",
+                        "join_optional": [],
+                        "join_start": 1,
+                        "line_end": 82,
+                        "line_start": 55,
+                        "message": "Configuring now",
+                        "name": "list_deduplicate",
+                        "notes": "",
+                        "number": 1,
+                        "order": 4,
+                        "outPorts": [
+                            "out"
                         ],
-                        "target": {
-                            "id": "2fae84e0-2300-46aa-bbeb-f0f76b98f7fb",
-                            "selector": "> g:nth-child(1) > g:nth-child(1) > g:nth-child(1) > circle:nth-child(1)"
+                        "ports": {
+                            "groups": {
+                                "in": {
+                                    "attrs": {
+                                        ".port-body": {
+                                            "fill": "#fff",
+                                            "magnet": true,
+                                            "r": 10,
+                                            "stroke": "#000"
+                                        },
+                                        ".port-label": {
+                                            "fill": "#000"
+                                        }
+                                    },
+                                    "label": {
+                                        "position": {
+                                            "args": {
+                                                "y": 10
+                                            },
+                                            "name": "left"
+                                        }
+                                    },
+                                    "position": {
+                                        "name": "left"
+                                    }
+                                },
+                                "out": {
+                                    "attrs": {
+                                        ".port-body": {
+                                            "fill": "#fff",
+                                            "magnet": true,
+                                            "r": 10,
+                                            "stroke": "#000"
+                                        },
+                                        ".port-label": {
+                                            "fill": "#000"
+                                        }
+                                    },
+                                    "label": {
+                                        "position": {
+                                            "args": {
+                                                "y": 10
+                                            },
+                                            "name": "right"
+                                        }
+                                    },
+                                    "position": {
+                                        "name": "right"
+                                    }
+                                }
+                            }
                         },
-                        "type": "link",
-                        "z": 15
+                        "position": {
+                            "x": 280,
+                            "y": 80
+                        },
+                        "previous_function": "",
+                        "previous_name": "cf_community_list_deduplicate_1",
+                        "selectedCustomFunction": {
+                            "description": "Remove non-unique items from a list.",
+                            "draftMode": false,
+                            "id": 3,
+                            "inputs": [
+                                {
+                                    "_pretty_custom_function": "list_deduplicate",
+                                    "contains_type": [
+                                        "*"
+                                    ],
+                                    "custom_function": 3,
+                                    "description": "A list of items to deduplicate",
+                                    "id": 16,
+                                    "input_type": "list",
+                                    "name": "input_list",
+                                    "placeholder": ""
+                                }
+                            ],
+                            "name": "list_deduplicate",
+                            "outputs": [
+                                {
+                                    "_pretty_custom_function": "list_deduplicate",
+                                    "contains_type": [
+                                        "*"
+                                    ],
+                                    "custom_function": 3,
+                                    "data_path": "*.item",
+                                    "description": "A deduplicated list with all the unique items in input_list",
+                                    "id": 7
+                                }
+                            ],
+                            "playbooks": {
+                                "draft_playbooks": [],
+                                "draft_version_id": null,
+                                "playbooks": []
+                            },
+                            "scmId": 1,
+                            "scmName": "community"
+                        },
+                        "show_number": false,
+                        "size": {
+                            "height": 100,
+                            "width": 180
+                        },
+                        "state": "repo",
+                        "status": "",
+                        "title": "custom function",
+                        "type": "coa.CustomFunctionBlock",
+                        "userGeneratedCode": "    # Write your custom code here...",
+                        "warn": false,
+                        "z": 33
                     },
                     {
                         "action": "add maintenance window",
@@ -490,12 +779,12 @@
                         "active_values": {
                             "comment": "Phantom hast started Maintenance Windows",
                             "end_time": "",
-                            "object_ids": "artifact:*.cef.entity_key",
+                            "object_ids": "cf_community_list_deduplicate_1:custom_function_result.data.*.item",
                             "object_type": "entity",
                             "relative_end_time": 300,
                             "relative_start_time": "",
                             "start_time": "",
-                            "title": "format_1:formatted_data"
+                            "title": "Bluber"
                         },
                         "angle": 0,
                         "app": "Splunk IT Service Intelligence",
@@ -533,12 +822,12 @@
                                 "fields": {
                                     "comment": "Phantom hast started Maintenance Windows",
                                     "end_time": "",
-                                    "object_ids": "artifact:*.cef.entity_key",
+                                    "object_ids": "cf_community_list_deduplicate_1:custom_function_result.data.*.item",
                                     "object_type": "entity",
                                     "relative_end_time": 300,
                                     "relative_start_time": "",
                                     "start_time": "",
-                                    "title": "format_1:formatted_data"
+                                    "title": "Bluber"
                                 },
                                 "has_app": true,
                                 "id": 6,
@@ -775,7 +1064,7 @@
                                 "opacity": 1
                             }
                         },
-                        "block_code": "def add_maintenance_window_1(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):\n    phantom.debug('add_maintenance_window_1() called')\n        \n    #phantom.debug('Action: {0} {1}'.format(action['name'], ('SUCCEEDED' if success else 'FAILED')))\n    \n    # collect data for 'add_maintenance_window_1' call\n    container_data = phantom.collect2(container=container, datapath=['artifact:*.cef.entity_key', 'artifact:*.id'])\n    formatted_data_1 = phantom.get_format_data(name='format_1')\n\n    parameters = []\n    \n    # build parameters list for 'add_maintenance_window_1' call\n    for container_item in container_data:\n        if container_item[0]:\n            parameters.append({\n                'title': formatted_data_1,\n                'comment': \"Phantom hast started Maintenance Windows\",\n                'end_time': \"\",\n                'object_ids': container_item[0],\n                'start_time': \"\",\n                'object_type': \"entity\",\n                'relative_end_time': 300,\n                'relative_start_time': \"\",\n                # context (artifact id) is added to associate results with the artifact\n                'context': {'artifact_id': container_item[1]},\n            })\n\n    phantom.act(action=\"add maintenance window\", parameters=parameters, assets=['splunk itsi'], callback=pin_1, name=\"add_maintenance_window_1\")\n\n    return",
+                        "block_code": "def add_maintenance_window_1(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):\n    phantom.debug('add_maintenance_window_1() called')\n        \n    #phantom.debug('Action: {0} {1}'.format(action['name'], ('SUCCEEDED' if success else 'FAILED')))\n    \n    # collect data for 'add_maintenance_window_1' call\n    custom_function_results_data_1 = phantom.collect2(container=container, datapath=['cf_community_list_deduplicate_1:custom_function_result.data.*.item'], action_results=results)\n\n    parameters = []\n    \n    # build parameters list for 'add_maintenance_window_1' call\n    for custom_function_results_item_1 in custom_function_results_data_1:\n        if custom_function_results_item_1[0]:\n            parameters.append({\n                'title': \"Bluber\",\n                'comment': \"Phantom hast started Maintenance Windows\",\n                'end_time': \"\",\n                'object_ids': custom_function_results_item_1[0],\n                'start_time': \"\",\n                'object_type': \"entity\",\n                'relative_end_time': 300,\n                'relative_start_time': \"\",\n            })\n\n    phantom.act(action=\"add maintenance window\", parameters=parameters, assets=['splunk itsi'], callback=pin_1, name=\"add_maintenance_window_1\")\n\n    return",
                         "callback_code": "",
                         "callback_start": 1,
                         "callsback": true,
@@ -800,7 +1089,7 @@
                         "join_code": "",
                         "join_optional": [],
                         "join_start": 1,
-                        "line_end": 46,
+                        "line_end": 43,
                         "line_start": 15,
                         "message": "Configuring now",
                         "name": "add maintenance window",
@@ -863,7 +1152,7 @@
                             }
                         },
                         "position": {
-                            "x": 880,
+                            "x": 820,
                             "y": 80
                         },
                         "previous_function": "",
@@ -883,147 +1172,8 @@
                         "status": "",
                         "title": "Generic",
                         "type": "coa.Action",
-                        "warn": false,
-                        "z": 17
-                    },
-                    {
-                        "0": "E",
-                        "1": "N",
-                        "2": "D",
-                        "active": false,
-                        "angle": 0,
-                        "attrs": {
-                            ".background": {
-                                "fill": "#FFFFFF",
-                                "stroke": "#818D99"
-                            },
-                            ".color-band": {
-                                "fill": "#171D21"
-                            },
-                            ".inPorts>.port-in": {
-                                "ref": ".background",
-                                "ref-x": 0.5
-                            },
-                            ".inPorts>.port-in>.port-body": {
-                                "port": {
-                                    "id": "in",
-                                    "type": "in"
-                                }
-                            },
-                            ".title": {
-                                "text": "END"
-                            },
-                            "g.delete": {
-                                "display": "none"
-                            },
-                            "g.error": {
-                                "opacity": 0
-                            },
-                            "g.icon image": {
-                                "xlink:href": "/inc/coa/img/block_icon_end.svg"
-                            },
-                            "g.notes": {
-                                "display": "block"
-                            }
-                        },
-                        "block_code": "def on_finish(container, summary):\n    phantom.debug('on_finish() called')\n    # This function is called after all actions are completed.\n    # summary of all the action and/or all details of actions\n    # can be collected here.\n\n    # summary_json = phantom.get_summary()\n    # if 'result' in summary_json:\n        # for action_result in summary_json['result']:\n            # if 'action_run_id' in action_result:\n                # action_results = phantom.get_action_results(action_run_id=action_result['action_run_id'], result_data=False, flatten=False)\n                # phantom.debug(action_results)\n\n    return",
-                        "callback_code": "# read-only block view not available",
-                        "callback_start": 1,
-                        "callsback": false,
-                        "connected_to_start": false,
-                        "connection_name": "",
-                        "connection_type": "",
-                        "custom_callback": "",
-                        "custom_code": "",
-                        "custom_join": "",
-                        "custom_name": "",
-                        "description": "",
-                        "has_custom": false,
-                        "has_custom_block": false,
-                        "has_custom_callback": false,
-                        "has_custom_join": false,
-                        "id": "9da7d4b1-4a83-4837-b704-49f965128497",
-                        "inPorts": [
-                            "in"
-                        ],
-                        "join_code": "# read-only block view not available",
-                        "join_optional": [],
-                        "join_start": 1,
-                        "line_end": 133,
-                        "line_start": 120,
-                        "name": "",
-                        "notes": "",
-                        "number": 0,
-                        "order": 7,
-                        "outPorts": [],
-                        "ports": {
-                            "groups": {
-                                "in": {
-                                    "attrs": {
-                                        ".port-body": {
-                                            "fill": "#fff",
-                                            "magnet": true,
-                                            "r": 10,
-                                            "stroke": "#000"
-                                        },
-                                        ".port-label": {
-                                            "fill": "#000"
-                                        }
-                                    },
-                                    "label": {
-                                        "position": {
-                                            "args": {
-                                                "y": 10
-                                            },
-                                            "name": "left"
-                                        }
-                                    },
-                                    "position": {
-                                        "name": "left"
-                                    }
-                                },
-                                "out": {
-                                    "attrs": {
-                                        ".port-body": {
-                                            "fill": "#fff",
-                                            "magnet": true,
-                                            "r": 10,
-                                            "stroke": "#000"
-                                        },
-                                        ".port-label": {
-                                            "fill": "#000"
-                                        }
-                                    },
-                                    "label": {
-                                        "position": {
-                                            "args": {
-                                                "y": 10
-                                            },
-                                            "name": "right"
-                                        }
-                                    },
-                                    "position": {
-                                        "name": "right"
-                                    }
-                                }
-                            }
-                        },
-                        "position": {
-                            "x": 1520,
-                            "y": 80
-                        },
-                        "previous_function": "",
-                        "previous_name": "",
-                        "show_number": true,
-                        "size": {
-                            "height": 54,
-                            "width": 80
-                        },
-                        "status": "",
-                        "title": "END",
-                        "type": "coa.StartEnd",
-                        "warn": false,
-                        "z": 18
+                        "warn": "",
+                        "z": 34
                     },
                     {
                         "attrs": {
@@ -1046,7 +1196,7 @@
                         "endDirections": [
                             "left"
                         ],
-                        "id": "925d8981-b5d4-47b8-ad0b-f9cf0a3a85c6",
+                        "id": "3b5b9c73-91a7-4de3-8c5c-5f6d235cebc8",
                         "router": {
                             "name": "metro"
                         },
@@ -1058,239 +1208,11 @@
                             "right"
                         ],
                         "target": {
-                            "id": "a8befa2b-e8e7-40e5-b2ac-4324ab0e168f",
+                            "id": "fe88bf99-7a76-44cc-8598-04e203c6d4e9",
                             "selector": ".port-body[type=\"input\"]"
                         },
                         "type": "link",
-                        "z": 22
-                    },
-                    {
-                        ".scmName/text": "community",
-                        "active": false,
-                        "active_keys": {},
-                        "active_values": {},
-                        "angle": 0,
-                        "attrs": {
-                            ".background": {
-                                "fill": "#FFFFFF",
-                                "stroke": "#818D99"
-                            },
-                            ".color-band": {
-                                "fill": "#171D21"
-                            },
-                            ".customFunction": {
-                                "text": "list_deduplicate"
-                            },
-                            ".inPorts>.port-in": {
-                                "ref": ".background",
-                                "ref-x": 0.5
-                            },
-                            ".inPorts>.port-in>.port-body": {
-                                "port": {
-                                    "id": "in",
-                                    "type": "in"
-                                }
-                            },
-                            ".message": {
-                                "opacity": 0,
-                                "ref-x": 5,
-                                "ref-y": 105,
-                                "text": "Configuring now"
-                            },
-                            ".outPorts>.port-out": {
-                                "ref": ".background",
-                                "ref-x": 0.5
-                            },
-                            ".outPorts>.port-out>.port-body": {
-                                "port": {
-                                    "id": "out",
-                                    "type": "out"
-                                }
-                            },
-                            ".scmName": {
-                                "text": "community"
-                            },
-                            ".title": {
-                                "text": "custom function"
-                            },
-                            ".title-info": {
-                                "text": ""
-                            },
-                            "g.branch image": {
-                                "opacity": 1
-                            },
-                            "g.delete": {
-                                "display": "none"
-                            },
-                            "g.error": {
-                                "opacity": 0
-                            },
-                            "g.notes": {
-                                "display": "block"
-                            }
-                        },
-                        "block_code": "def cf_community_list_deduplicate_1(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):\n    phantom.debug('cf_community_list_deduplicate_1() called')\n    \n    container_data_0 = phantom.collect2(container=container, datapath=['artifact:*.cef.entity_key', 'artifact:*.id'])\n\n    parameters = []\n\n    container_data_0_0 = [item[0] for item in container_data_0]\n\n    parameters.append({\n        'input_list': container_data_0_0,\n    })\n    ################################################################################\n    ## Custom Code Start\n    ################################################################################\n\n    # Write your custom code here...\n\n    ################################################################################\n    ## Custom Code End\n    ################################################################################    \n\n    # call custom function \"community/list_deduplicate\", returns the custom_function_run_id\n    phantom.custom_function(custom_function='community/list_deduplicate', parameters=parameters, name='cf_community_list_deduplicate_1', callback=cf_community_list_deduplicate_1_callback)\n\n    return",
-                        "callback_code": "def cf_community_list_deduplicate_1_callback(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None):\n    phantom.debug('cf_community_list_deduplicate_1_callback() called')\n    \n    format_1(action=action, success=success, container=container, results=results, handle=handle, custom_function=custom_function)\n    add_comment_2(action=action, success=success, container=container, results=results, handle=handle, custom_function=custom_function)\n\n    return",
-                        "callback_start": 101,
-                        "callsback": true,
-                        "cfDisplayPath": "community/list_deduplicate",
-                        "cfInputs": {
-                            "input_list": {
-                                "collectionType": "container_data",
-                                "dataPath": "artifact:*.cef.entity_key",
-                                "paramName": "container_data_0_0",
-                                "type": "list"
-                            }
-                        },
-                        "color": "",
-                        "connected_to_start": true,
-                        "connection_name": "",
-                        "connection_type": "",
-                        "currentVersion": true,
-                        "customCodeEndLineOffset": 7,
-                        "customCodeStartLine": 15,
-                        "customFunction": "community/list_deduplicate",
-                        "customFunctionId": null,
-                        "custom_callback": "",
-                        "custom_code": "",
-                        "custom_join": "",
-                        "custom_name": "",
-                        "delay": 0,
-                        "description": "",
-                        "draftMode": false,
-                        "existingCF": true,
-                        "functionBlock": "custom function",
-                        "has_custom": false,
-                        "has_custom_block": false,
-                        "has_custom_callback": false,
-                        "has_custom_join": false,
-                        "id": "930b9513-4cd1-4d97-ad84-b2fc9ff7bab3",
-                        "inPorts": [
-                            "in"
-                        ],
-                        "input_list-0": "artifact:*.cef.entity_key",
-                        "join_code": "",
-                        "join_optional": [],
-                        "join_start": 1,
-                        "line_end": 109,
-                        "line_start": 74,
-                        "message": "Configuring now",
-                        "name": "list_deduplicate",
-                        "notes": "",
-                        "number": 1,
-                        "order": 5,
-                        "outPorts": [
-                            "out"
-                        ],
-                        "ports": {
-                            "groups": {
-                                "in": {
-                                    "attrs": {
-                                        ".port-body": {
-                                            "fill": "#fff",
-                                            "magnet": true,
-                                            "r": 10,
-                                            "stroke": "#000"
-                                        },
-                                        ".port-label": {
-                                            "fill": "#000"
-                                        }
-                                    },
-                                    "label": {
-                                        "position": {
-                                            "args": {
-                                                "y": 10
-                                            },
-                                            "name": "left"
-                                        }
-                                    },
-                                    "position": {
-                                        "name": "left"
-                                    }
-                                },
-                                "out": {
-                                    "attrs": {
-                                        ".port-body": {
-                                            "fill": "#fff",
-                                            "magnet": true,
-                                            "r": 10,
-                                            "stroke": "#000"
-                                        },
-                                        ".port-label": {
-                                            "fill": "#000"
-                                        }
-                                    },
-                                    "label": {
-                                        "position": {
-                                            "args": {
-                                                "y": 10
-                                            },
-                                            "name": "right"
-                                        }
-                                    },
-                                    "position": {
-                                        "name": "right"
-                                    }
-                                }
-                            }
-                        },
-                        "position": {
-                            "x": 280,
-                            "y": 80
-                        },
-                        "previous_function": "",
-                        "previous_name": "cf_community_list_deduplicate_1",
-                        "selectedCustomFunction": {
-                            "description": "Remove non-unique items from a list.",
-                            "draftMode": false,
-                            "id": 3,
-                            "inputs": [
-                                {
-                                    "_pretty_custom_function": "list_deduplicate",
-                                    "contains_type": [
-                                        "*"
-                                    ],
-                                    "custom_function": 3,
-                                    "description": "A list of items to deduplicate",
-                                    "id": 16,
-                                    "input_type": "list",
-                                    "name": "input_list",
-                                    "placeholder": ""
-                                }
-                            ],
-                            "name": "list_deduplicate",
-                            "outputs": [
-                                {
-                                    "_pretty_custom_function": "list_deduplicate",
-                                    "contains_type": [
-                                        "*"
-                                    ],
-                                    "custom_function": 3,
-                                    "data_path": "*.item",
-                                    "description": "A deduplicated list with all the unique items in input_list",
-                                    "id": 7
-                                }
-                            ],
-                            "playbooks": {
-                                "draft_playbooks": [],
-                                "draft_version_id": null,
-                                "playbooks": []
-                            },
-                            "scmId": 1,
-                            "scmName": "community"
-                        },
-                        "show_number": false,
-                        "size": {
-                            "height": 100,
-                            "width": 180
-                        },
-                        "state": "repo",
-                        "status": "",
-                        "title": "custom function",
-                        "type": "coa.CustomFunctionBlock",
-                        "userGeneratedCode": "    # Write your custom code here...",
-                        "warn": false,
-                        "z": 24
+                        "z": 35
                     },
                     {
                         "active": false,
@@ -1304,7 +1226,7 @@
                                 "fill": "#171D21"
                             },
                             ".format": {
-                                "text": "format 1"
+                                "text": "format 2"
                             },
                             ".inPorts>.port-in": {
                                 "ref": ".background",
@@ -1333,26 +1255,17 @@
                             ".title": {
                                 "text": "format"
                             },
-                            "g.code image": {
-                                "opacity": 1
-                            },
                             "g.delete": {
                                 "display": "none"
                             },
                             "g.error": {
                                 "opacity": 0
                             },
-                            "g.error image": {
-                                "xlink:href": "/inc/coa/img/block_icon_warn.svg"
-                            },
                             "g.notes": {
                                 "display": "block"
-                            },
-                            "g.notes image": {
-                                "opacity": 1
                             }
                         },
-                        "block_code": "def format_1(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):\n    phantom.debug('format_1() called')\n    \n    template = \"\"\"Maintenance Windows for entity {0}\"\"\"\n\n    # parameter list for template variable replacement\n    parameters = [\n        \"cf_community_list_deduplicate_1:custom_function_result.data.*.item\",\n    ]\n\n    phantom.format(container=container, template=template, parameters=parameters, name=\"format_1\")\n\n    add_maintenance_window_1(container=container)\n\n    return",
+                        "block_code": "def format_2(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):\n    phantom.debug('format_2() called')\n    \n    template = \"\"\"{0}\"\"\"\n\n    # parameter list for template variable replacement\n    parameters = [\n        \"cf_community_list_deduplicate_1:custom_function_result.data.*.item\",\n    ]\n\n    phantom.format(container=container, template=template, parameters=parameters, name=\"format_2\")\n\n    add_maintenance_window_1(container=container)\n    add_comment_3(container=container)\n\n    return",
                         "callback_code": "",
                         "callback_start": 1,
                         "callsback": false,
@@ -1369,20 +1282,20 @@
                         "has_custom_block": false,
                         "has_custom_callback": false,
                         "has_custom_join": false,
-                        "id": "2fae84e0-2300-46aa-bbeb-f0f76b98f7fb",
+                        "id": "fe88bf99-7a76-44cc-8598-04e203c6d4e9",
                         "inPorts": [
                             "in"
                         ],
                         "join_code": "",
                         "join_optional": [],
                         "join_start": 1,
-                        "line_end": 62,
-                        "line_start": 46,
+                        "line_end": 99,
+                        "line_start": 82,
                         "message": "Configuring now",
                         "name": "format",
                         "notes": "",
-                        "number": 1,
-                        "order": 3,
+                        "number": 2,
+                        "order": 5,
                         "outPorts": [
                             "out-1"
                         ],
@@ -1446,11 +1359,11 @@
                             }
                         },
                         "position": {
-                            "x": 560,
+                            "x": 520,
                             "y": 80
                         },
                         "previous_function": "",
-                        "previous_name": "format_1",
+                        "previous_name": "format_2",
                         "show_number": true,
                         "size": {
                             "height": 100,
@@ -1458,11 +1371,89 @@
                         },
                         "state": "format",
                         "status": "",
-                        "template": "Maintenance Windows for entity {0}",
+                        "template": "{0}",
                         "title": "format",
                         "type": "coa.Format",
                         "warn": false,
-                        "z": 26
+                        "z": 36
+                    },
+                    {
+                        "attrs": {
+                            ".connection": {
+                                "stroke": "#818D99",
+                                "stroke-width": 2
+                            },
+                            ".marker-target": {
+                                "d": "M 10 0 L 0 5 L 10 10 z",
+                                "fill": "#818D99",
+                                "stroke": "#818D99"
+                            }
+                        },
+                        "connector": {
+                            "args": {
+                                "radius": 5
+                            },
+                            "name": "rounded"
+                        },
+                        "endDirections": [
+                            "left"
+                        ],
+                        "id": "8ba81b36-eaca-48ab-8a13-9406c1e03492",
+                        "router": {
+                            "name": "metro"
+                        },
+                        "source": {
+                            "id": "fe88bf99-7a76-44cc-8598-04e203c6d4e9",
+                            "selector": "> g:nth-child(1) > g:nth-child(2) > g:nth-child(1) > circle:nth-child(1)"
+                        },
+                        "startDirections": [
+                            "right"
+                        ],
+                        "target": {
+                            "id": "414709d0-d1df-4ee8-9a19-59d6b722695d",
+                            "selector": "> g:nth-child(1) > g:nth-child(1) > g:nth-child(1) > circle:nth-child(1)"
+                        },
+                        "type": "link",
+                        "z": 37
+                    },
+                    {
+                        "attrs": {
+                            ".connection": {
+                                "stroke": "#818D99",
+                                "stroke-width": 2
+                            },
+                            ".marker-target": {
+                                "d": "M 10 0 L 0 5 L 10 10 z",
+                                "fill": "#818D99",
+                                "stroke": "#818D99"
+                            }
+                        },
+                        "connector": {
+                            "args": {
+                                "radius": 5
+                            },
+                            "name": "rounded"
+                        },
+                        "endDirections": [
+                            "left"
+                        ],
+                        "id": "d4b0f8b7-e56b-4309-9e98-713b649fa472",
+                        "router": {
+                            "name": "metro"
+                        },
+                        "source": {
+                            "id": "fe88bf99-7a76-44cc-8598-04e203c6d4e9",
+                            "selector": "> g:nth-child(1) > g:nth-child(2) > g:nth-child(1) > circle:nth-child(1)"
+                        },
+                        "startDirections": [
+                            "right"
+                        ],
+                        "target": {
+                            "id": "491d5c34-c777-4f46-b644-a8e406961ae5",
+                            "selector": ".port-body[type=\"input\"]"
+                        },
+                        "type": "link",
+                        "z": 38
                     },
                     {
                         "active": false,
@@ -1518,14 +1509,14 @@
                                 "display": "block"
                             }
                         },
-                        "block_code": "def add_comment_2(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):\n    phantom.debug('add_comment_2() called')\n\n    custom_function_results_data_1 = phantom.collect2(container=container, datapath=['cf_community_list_deduplicate_1:custom_function_result.data.*.item'], action_results=results)\n\n    custom_function_results_item_1_0 = [item[0] for item in custom_function_results_data_1]\n\n    phantom.comment(container=container, comment=custom_function_results_item_1_0)\n\n    return",
+                        "block_code": "def add_comment_3(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):\n    phantom.debug('add_comment_3() called')\n\n    formatted_data_1 = phantom.get_format_data(name='format_2')\n\n    phantom.comment(container=container, comment=formatted_data_1)\n\n    return",
                         "callback_code": "",
                         "callback_start": 1,
                         "callsback": false,
                         "color": "",
                         "configured": [
                             {
-                                "addCommentComment": "cf_community_list_deduplicate_1:custom_function_result.data.*.item",
+                                "addCommentComment": "format_2:formatted_data",
                                 "key": "add-comment"
                             }
                         ],
@@ -1541,19 +1532,19 @@
                         "has_custom_block": false,
                         "has_custom_callback": false,
                         "has_custom_join": false,
-                        "id": "a8befa2b-e8e7-40e5-b2ac-4324ab0e168f",
+                        "id": "491d5c34-c777-4f46-b644-a8e406961ae5",
                         "inPorts": [
                             "in"
                         ],
                         "join_code": "",
                         "join_optional": [],
                         "join_start": 1,
-                        "line_end": 120,
-                        "line_start": 109,
+                        "line_end": 108,
+                        "line_start": 99,
                         "message": "Configuring now",
                         "name": "add comment",
                         "notes": "",
-                        "number": 2,
+                        "number": 3,
                         "order": 6,
                         "outPorts": [
                             "out"
@@ -1611,11 +1602,11 @@
                             }
                         },
                         "position": {
-                            "x": 680,
-                            "y": 320
+                            "x": 840,
+                            "y": 340
                         },
                         "previous_function": "",
-                        "previous_name": "add_comment_2",
+                        "previous_name": "add_comment_3",
                         "show_number": false,
                         "size": {
                             "height": 100,
@@ -1626,7 +1617,7 @@
                         "title": "API",
                         "type": "coa.API",
                         "warn": false,
-                        "z": 27
+                        "z": 39
                     }
                 ]
             },
@@ -1636,7 +1627,7 @@
         "schema": 4,
         "version": "4.9.34514"
     },
-    "create_time": "2020-08-20T10:06:41.735668+00:00",
+    "create_time": "2020-08-20T10:11:19.313764+00:00",
     "draft_mode": false,
     "labels": [
         "itsi"
