@@ -7,7 +7,7 @@
             "clean": true,
             "code_block": "",
             "description": "",
-            "hash": "51e7174b9bccc6614c1faa2b2ab3fb32d9fbba17",
+            "hash": "6670385d4cf0b0635499d7ee55623b55e9d7b7bb",
             "joint": {
                 "cells": [
                     {
@@ -295,12 +295,12 @@
                         "join_code": "# read-only block view not available",
                         "join_optional": [],
                         "join_start": 1,
-                        "line_end": 154,
-                        "line_start": 141,
+                        "line_end": 109,
+                        "line_start": 96,
                         "name": "",
                         "notes": "",
                         "number": 0,
-                        "order": 8,
+                        "order": 6,
                         "outPorts": [],
                         "ports": {
                             "groups": {
@@ -479,8 +479,8 @@
                         "join_code": "",
                         "join_optional": [],
                         "join_start": 1,
-                        "line_end": 88,
-                        "line_start": 61,
+                        "line_end": 80,
+                        "line_start": 53,
                         "message": "Configuring now",
                         "name": "list_deduplicate",
                         "notes": "",
@@ -713,8 +713,8 @@
                         "join_code": "",
                         "join_optional": [],
                         "join_start": 1,
-                        "line_end": 104,
-                        "line_start": 88,
+                        "line_end": 96,
+                        "line_start": 80,
                         "message": "Configuring now",
                         "name": "format",
                         "notes": "",
@@ -1133,8 +1133,8 @@
                                 "opacity": 1
                             }
                         },
-                        "block_code": "def add_maintenance_window_1(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):\n    phantom.debug('add_maintenance_window_1() called')\n        \n    #phantom.debug('Action: {0} {1}'.format(action['name'], ('SUCCEEDED' if success else 'FAILED')))\n    \n    # collect data for 'add_maintenance_window_1' call\n    formatted_data_1 = phantom.get_format_data(name='format_2')\n\n    parameters = []\n    \n    # build parameters list for 'add_maintenance_window_1' call\n    parameters.append({\n        'title': \"Bluber\",\n        'comment': \"Phantom hast started Maintenance Windows\",\n        'end_time': \"\",\n        'object_ids': formatted_data_1,\n        'start_time': \"\",\n        'object_type': \"entity\",\n        'relative_end_time': 300,\n        'relative_start_time': \"\",\n    })\n\n    phantom.act(action=\"add maintenance window\", parameters=parameters, assets=['splunk itsi'], callback=add_maintenance_window_1_callback, name=\"add_maintenance_window_1\")\n\n    return",
-                        "callback_code": "def add_maintenance_window_1_callback(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None):\n    phantom.debug('add_maintenance_window_1_callback() called')\n    \n    pin_1(action=action, success=success, container=container, results=results, handle=handle, custom_function=custom_function)\n    format_3(action=action, success=success, container=container, results=results, handle=handle, custom_function=custom_function)\n\n    return",
+                        "block_code": "def add_maintenance_window_1(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):\n    phantom.debug('add_maintenance_window_1() called')\n        \n    #phantom.debug('Action: {0} {1}'.format(action['name'], ('SUCCEEDED' if success else 'FAILED')))\n    \n    # collect data for 'add_maintenance_window_1' call\n    formatted_data_1 = phantom.get_format_data(name='format_2')\n\n    parameters = []\n    \n    # build parameters list for 'add_maintenance_window_1' call\n    parameters.append({\n        'title': \"Bluber\",\n        'comment': \"Phantom hast started Maintenance Windows\",\n        'end_time': \"\",\n        'object_ids': formatted_data_1,\n        'start_time': \"\",\n        'object_type': \"entity\",\n        'relative_end_time': 300,\n        'relative_start_time': \"\",\n    })\n\n    phantom.act(action=\"add maintenance window\", parameters=parameters, assets=['splunk itsi'], callback=pin_1, name=\"add_maintenance_window_1\")\n\n    return",
+                        "callback_code": "",
                         "callback_start": 41,
                         "callsback": true,
                         "color": "",
@@ -1158,7 +1158,7 @@
                         "join_code": "",
                         "join_optional": [],
                         "join_start": 1,
-                        "line_end": 49,
+                        "line_end": 41,
                         "line_start": 15,
                         "message": "Configuring now",
                         "name": "add maintenance window",
@@ -1301,7 +1301,7 @@
                                 "display": "block"
                             }
                         },
-                        "block_code": "def pin_1(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):\n    phantom.debug('pin_1() called')\n\n    results_data_1 = phantom.collect2(container=container, datapath=['add_maintenance_window_1:action_result.parameter.title', 'add_maintenance_window_1:action_result.data.*._key'], action_results=results)\n\n    results_item_1_0 = [item[0] for item in results_data_1]\n    results_item_1_1 = [item[1] for item in results_data_1]\n\n    phantom.pin(container=container, data=results_item_1_1, message=results_item_1_0, name=None)\n\n    return",
+                        "block_code": "def pin_1(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):\n    phantom.debug('pin_1() called')\n\n    results_data_1 = phantom.collect2(container=container, datapath=['add_maintenance_window_1:action_result.parameter.title', 'add_maintenance_window_1:action_result.data.*._key[0]'], action_results=results)\n\n    results_item_1_0 = [item[0] for item in results_data_1]\n    results_item_1_1 = [item[1] for item in results_data_1]\n\n    phantom.pin(container=container, data=results_item_1_1, message=results_item_1_0, name=None)\n\n    return",
                         "callback_code": "",
                         "callback_start": 1,
                         "callsback": false,
@@ -1309,7 +1309,7 @@
                         "configured": [
                             {
                                 "key": "pin",
-                                "pinData": "add_maintenance_window_1:action_result.data.*._key",
+                                "pinData": "add_maintenance_window_1:action_result.data.*._key[0]",
                                 "pinMessage": "add_maintenance_window_1:action_result.parameter.title",
                                 "pinName": "",
                                 "pinPinColor": "",
@@ -1336,8 +1336,8 @@
                         "join_code": "",
                         "join_optional": [],
                         "join_start": 1,
-                        "line_end": 61,
-                        "line_start": 49,
+                        "line_end": 53,
+                        "line_start": 41,
                         "message": "Configuring now",
                         "name": "pin",
                         "notes": "",
@@ -1415,441 +1415,6 @@
                         "type": "coa.API",
                         "warn": false,
                         "z": 39
-                    },
-                    {
-                        "attrs": {
-                            ".connection": {
-                                "stroke": "#818D99",
-                                "stroke-width": 2
-                            },
-                            ".marker-target": {
-                                "d": "M 10 0 L 0 5 L 10 10 z",
-                                "fill": "#818D99",
-                                "stroke": "#818D99"
-                            }
-                        },
-                        "connector": {
-                            "args": {
-                                "radius": 5
-                            },
-                            "name": "rounded"
-                        },
-                        "endDirections": [
-                            "left"
-                        ],
-                        "id": "f86bb78d-3f9a-4da1-b0fe-e21239d1b5bd",
-                        "router": {
-                            "name": "metro"
-                        },
-                        "source": {
-                            "id": "414709d0-d1df-4ee8-9a19-59d6b722695d",
-                            "selector": "> g:nth-child(1) > g:nth-child(2) > g:nth-child(1) > circle:nth-child(1)"
-                        },
-                        "startDirections": [
-                            "right"
-                        ],
-                        "target": {
-                            "id": "f1d61cde-1ad0-4f0c-8b89-529ff73bce8e",
-                            "selector": ".port-body[type=\"input\"]"
-                        },
-                        "type": "link",
-                        "z": 40
-                    },
-                    {
-                        "active": false,
-                        "angle": 0,
-                        "attrs": {
-                            ".background": {
-                                "fill": "#FFFFFF",
-                                "stroke": "#818D99"
-                            },
-                            ".color-band": {
-                                "fill": "#171D21"
-                            },
-                            ".format": {
-                                "text": "format 3"
-                            },
-                            ".inPorts>.port-in": {
-                                "ref": ".background",
-                                "ref-x": 0.5
-                            },
-                            ".inPorts>.port-in>.port-body": {
-                                "port": {
-                                    "id": "in",
-                                    "type": "in"
-                                }
-                            },
-                            ".message": {
-                                "opacity": 0,
-                                "text": "Configuring now"
-                            },
-                            ".outPorts>.port-out-1": {
-                                "ref": ".background",
-                                "ref-x": 0.5
-                            },
-                            ".outPorts>.port-out-1>.port-body": {
-                                "port": {
-                                    "id": "out-1",
-                                    "type": "out"
-                                }
-                            },
-                            ".title": {
-                                "text": "format"
-                            },
-                            "g.delete": {
-                                "display": "none"
-                            },
-                            "g.error": {
-                                "opacity": 0
-                            },
-                            "g.notes": {
-                                "display": "block"
-                            }
-                        },
-                        "block_code": "def format_3(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):\n    phantom.debug('format_3() called')\n    \n    template = \"\"\"{0}\n{1}\n{2}\n{3}\n{4}\n{5}\n{6}\"\"\"\n\n    # parameter list for template variable replacement\n    parameters = [\n        \"add_maintenance_window_1:action_result.parameter.comment\",\n        \"add_maintenance_window_1:action_result.parameter.end_time\",\n        \"add_maintenance_window_1:action_result.parameter.object_ids\",\n        \"add_maintenance_window_1:action_result.parameter.object_type\",\n        \"add_maintenance_window_1:action_result.parameter.title\",\n        \"add_maintenance_window_1:action_result.data\",\n        \"add_maintenance_window_1:action_result.message\",\n    ]\n\n    phantom.format(container=container, template=template, parameters=parameters, name=\"format_3\")\n\n    add_comment_4(container=container)\n\n    return",
-                        "callback_code": "",
-                        "callback_start": 1,
-                        "callsback": false,
-                        "connected_to_start": true,
-                        "connection_name": "add maintenance window",
-                        "connection_type": "action",
-                        "custom_callback": "",
-                        "custom_code": "",
-                        "custom_join": "",
-                        "custom_name": "",
-                        "description": "",
-                        "format": "format",
-                        "has_custom": false,
-                        "has_custom_block": false,
-                        "has_custom_callback": false,
-                        "has_custom_join": false,
-                        "id": "f1d61cde-1ad0-4f0c-8b89-529ff73bce8e",
-                        "inPorts": [
-                            "in"
-                        ],
-                        "join_code": "",
-                        "join_optional": [],
-                        "join_start": 1,
-                        "line_end": 132,
-                        "line_start": 104,
-                        "message": "Configuring now",
-                        "name": "format",
-                        "notes": "",
-                        "number": 3,
-                        "order": 6,
-                        "outPorts": [
-                            "out-1"
-                        ],
-                        "parameters": [
-                            {
-                                "position": 0,
-                                "type": "",
-                                "value": "add_maintenance_window_1:action_result.parameter.comment"
-                            },
-                            {
-                                "position": 1,
-                                "type": "",
-                                "value": "add_maintenance_window_1:action_result.parameter.end_time"
-                            },
-                            {
-                                "position": 2,
-                                "type": "",
-                                "value": "add_maintenance_window_1:action_result.parameter.object_ids"
-                            },
-                            {
-                                "position": 3,
-                                "type": "",
-                                "value": "add_maintenance_window_1:action_result.parameter.object_type"
-                            },
-                            {
-                                "position": 4,
-                                "type": "",
-                                "value": "add_maintenance_window_1:action_result.parameter.title"
-                            },
-                            {
-                                "position": 5,
-                                "type": "",
-                                "value": "add_maintenance_window_1:action_result.data"
-                            },
-                            {
-                                "position": 6,
-                                "type": "",
-                                "value": "add_maintenance_window_1:action_result.message"
-                            }
-                        ],
-                        "ports": {
-                            "groups": {
-                                "in": {
-                                    "attrs": {
-                                        ".port-body": {
-                                            "fill": "#fff",
-                                            "magnet": true,
-                                            "r": 10,
-                                            "stroke": "#000"
-                                        },
-                                        ".port-label": {
-                                            "fill": "#000"
-                                        }
-                                    },
-                                    "label": {
-                                        "position": {
-                                            "args": {
-                                                "y": 10
-                                            },
-                                            "name": "left"
-                                        }
-                                    },
-                                    "position": {
-                                        "name": "left"
-                                    }
-                                },
-                                "out": {
-                                    "attrs": {
-                                        ".port-body": {
-                                            "fill": "#fff",
-                                            "magnet": true,
-                                            "r": 10,
-                                            "stroke": "#000"
-                                        },
-                                        ".port-label": {
-                                            "fill": "#000"
-                                        }
-                                    },
-                                    "label": {
-                                        "position": {
-                                            "args": {
-                                                "y": 10
-                                            },
-                                            "name": "right"
-                                        }
-                                    },
-                                    "position": {
-                                        "name": "right"
-                                    }
-                                }
-                            }
-                        },
-                        "position": {
-                            "x": 1220,
-                            "y": 420
-                        },
-                        "previous_function": "",
-                        "previous_name": "format_3",
-                        "show_number": true,
-                        "size": {
-                            "height": 100,
-                            "width": 180
-                        },
-                        "state": "format",
-                        "status": "",
-                        "template": "{0}\n{1}\n{2}\n{3}\n{4}\n{5}\n{6}",
-                        "title": "format",
-                        "type": "coa.Format",
-                        "warn": false,
-                        "z": 41
-                    },
-                    {
-                        "attrs": {
-                            ".connection": {
-                                "stroke": "#818D99",
-                                "stroke-width": 2
-                            },
-                            ".marker-target": {
-                                "d": "M 10 0 L 0 5 L 10 10 z",
-                                "fill": "#818D99",
-                                "stroke": "#818D99"
-                            }
-                        },
-                        "connector": {
-                            "args": {
-                                "radius": 5
-                            },
-                            "name": "rounded"
-                        },
-                        "endDirections": [
-                            "left"
-                        ],
-                        "id": "5bb2ae68-6e61-4224-89b1-8ac554d0197c",
-                        "router": {
-                            "name": "metro"
-                        },
-                        "source": {
-                            "id": "f1d61cde-1ad0-4f0c-8b89-529ff73bce8e",
-                            "selector": "> g:nth-child(1) > g:nth-child(2) > g:nth-child(1) > circle:nth-child(1)"
-                        },
-                        "startDirections": [
-                            "right"
-                        ],
-                        "target": {
-                            "id": "7d62f2b6-0fcc-4af0-ab3d-4047d6312d00",
-                            "selector": ".port-body[type=\"input\"]"
-                        },
-                        "type": "link",
-                        "z": 42
-                    },
-                    {
-                        "active": false,
-                        "angle": 0,
-                        "api": "add comment",
-                        "attrs": {
-                            ".api": {
-                                "text": "add comment"
-                            },
-                            ".background": {
-                                "fill": "#FFFFFF",
-                                "stroke": "#818D99"
-                            },
-                            ".color-band": {
-                                "fill": "#171D21"
-                            },
-                            ".inPorts>.port-in": {
-                                "ref": ".background",
-                                "ref-x": 0.5
-                            },
-                            ".inPorts>.port-in>.port-body": {
-                                "port": {
-                                    "id": "in",
-                                    "type": "in"
-                                }
-                            },
-                            ".message": {
-                                "opacity": 0,
-                                "ref-x": 5,
-                                "ref-y": 105,
-                                "text": "Configuring now"
-                            },
-                            ".outPorts>.port-out": {
-                                "ref": ".background",
-                                "ref-x": 0.5
-                            },
-                            ".outPorts>.port-out>.port-body": {
-                                "port": {
-                                    "id": "out",
-                                    "type": "out"
-                                }
-                            },
-                            ".title": {
-                                "text": "API"
-                            },
-                            "g.delete": {
-                                "display": "none"
-                            },
-                            "g.error": {
-                                "opacity": 0
-                            },
-                            "g.notes": {
-                                "display": "block"
-                            }
-                        },
-                        "block_code": "def add_comment_4(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):\n    phantom.debug('add_comment_4() called')\n\n    formatted_data_1 = phantom.get_format_data(name='format_3')\n\n    phantom.comment(container=container, comment=formatted_data_1)\n\n    return",
-                        "callback_code": "",
-                        "callback_start": 1,
-                        "callsback": false,
-                        "color": "",
-                        "configured": [
-                            {
-                                "addCommentComment": "format_3:formatted_data",
-                                "key": "add-comment"
-                            }
-                        ],
-                        "connected_to_start": true,
-                        "connection_name": "add maintenance window",
-                        "connection_type": "action",
-                        "custom_callback": "",
-                        "custom_code": "",
-                        "custom_join": "",
-                        "custom_name": "",
-                        "description": "",
-                        "has_custom": false,
-                        "has_custom_block": false,
-                        "has_custom_callback": false,
-                        "has_custom_join": false,
-                        "id": "7d62f2b6-0fcc-4af0-ab3d-4047d6312d00",
-                        "inPorts": [
-                            "in"
-                        ],
-                        "join_code": "",
-                        "join_optional": [],
-                        "join_start": 1,
-                        "line_end": 141,
-                        "line_start": 132,
-                        "message": "Configuring now",
-                        "name": "add comment",
-                        "notes": "",
-                        "number": 4,
-                        "order": 7,
-                        "outPorts": [
-                            "out"
-                        ],
-                        "ports": {
-                            "groups": {
-                                "in": {
-                                    "attrs": {
-                                        ".port-body": {
-                                            "fill": "#fff",
-                                            "magnet": true,
-                                            "r": 10,
-                                            "stroke": "#000"
-                                        },
-                                        ".port-label": {
-                                            "fill": "#000"
-                                        }
-                                    },
-                                    "label": {
-                                        "position": {
-                                            "args": {
-                                                "y": 10
-                                            },
-                                            "name": "left"
-                                        }
-                                    },
-                                    "position": {
-                                        "name": "left"
-                                    }
-                                },
-                                "out": {
-                                    "attrs": {
-                                        ".port-body": {
-                                            "fill": "#fff",
-                                            "magnet": true,
-                                            "r": 10,
-                                            "stroke": "#000"
-                                        },
-                                        ".port-label": {
-                                            "fill": "#000"
-                                        }
-                                    },
-                                    "label": {
-                                        "position": {
-                                            "args": {
-                                                "y": 10
-                                            },
-                                            "name": "right"
-                                        }
-                                    },
-                                    "position": {
-                                        "name": "right"
-                                    }
-                                }
-                            }
-                        },
-                        "position": {
-                            "x": 1600,
-                            "y": 420
-                        },
-                        "previous_function": "",
-                        "previous_name": "add_comment_4",
-                        "show_number": false,
-                        "size": {
-                            "height": 100,
-                            "width": 180
-                        },
-                        "state": "api",
-                        "status": "",
-                        "title": "API",
-                        "type": "coa.API",
-                        "warn": false,
-                        "z": 43
                     }
                 ]
             },
@@ -1859,7 +1424,7 @@
         "schema": 4,
         "version": "4.9.34514"
     },
-    "create_time": "2020-08-20T14:10:31.192108+00:00",
+    "create_time": "2020-08-20T14:16:04.622799+00:00",
     "draft_mode": false,
     "labels": [
         "itsi"
