@@ -18,7 +18,7 @@ def add_maintenance_window_1(action=None, success=None, container=None, results=
     #phantom.debug('Action: {0} {1}'.format(action['name'], ('SUCCEEDED' if success else 'FAILED')))
     
     # collect data for 'add_maintenance_window_1' call
-    formatted_data_1 = phantom.get_format_data(name='format_2')
+    formatted_data_1 = phantom.get_format_data(name='entity_ID')
 
     parameters = []
     
@@ -34,19 +34,17 @@ def add_maintenance_window_1(action=None, success=None, container=None, results=
         'relative_start_time': "",
     })
 
-    phantom.act(action="add maintenance window", parameters=parameters, assets=['splunk itsi'], callback=format_4, name="add_maintenance_window_1")
+    phantom.act(action="add maintenance window", parameters=parameters, assets=['splunk itsi'], callback=Maintenance_ID, name="add_maintenance_window_1")
 
     return
 
 def pin_1(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):
     phantom.debug('pin_1() called')
 
-    results_data_1 = phantom.collect2(container=container, datapath=['add_maintenance_window_1:action_result.parameter.title'], action_results=results)
-    formatted_data_1 = phantom.get_format_data(name='format_4')
+    formatted_data_1 = phantom.get_format_data(name='Maintenance_title')
+    formatted_data_2 = phantom.get_format_data(name='Maintenance_ID')
 
-    results_item_1_0 = [item[0] for item in results_data_1]
-
-    phantom.pin(container=container, data=formatted_data_1, message=results_item_1_0, name=None)
+    phantom.pin(container=container, data=formatted_data_2, message=formatted_data_1, name=None)
 
     return
 
@@ -73,12 +71,12 @@ def cf_community_list_deduplicate_1(action=None, success=None, container=None, r
     ################################################################################    
 
     # call custom function "community/list_deduplicate", returns the custom_function_run_id
-    phantom.custom_function(custom_function='community/list_deduplicate', parameters=parameters, name='cf_community_list_deduplicate_1', callback=format_2)
+    phantom.custom_function(custom_function='community/list_deduplicate', parameters=parameters, name='cf_community_list_deduplicate_1', callback=entity_ID)
 
     return
 
-def format_2(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):
-    phantom.debug('format_2() called')
+def entity_ID(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):
+    phantom.debug('entity_ID() called')
     
     template = """{0}"""
 
@@ -87,14 +85,14 @@ def format_2(action=None, success=None, container=None, results=None, handle=Non
         "cf_community_list_deduplicate_1:custom_function_result.data.*.item",
     ]
 
-    phantom.format(container=container, template=template, parameters=parameters, name="format_2")
+    phantom.format(container=container, template=template, parameters=parameters, name="entity_ID")
 
     add_maintenance_window_1(container=container)
 
     return
 
-def format_4(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):
-    phantom.debug('format_4() called')
+def Maintenance_ID(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):
+    phantom.debug('Maintenance_ID() called')
     
     template = """{0}"""
 
@@ -103,7 +101,23 @@ def format_4(action=None, success=None, container=None, results=None, handle=Non
         "add_maintenance_window_1:action_result.data.*._key",
     ]
 
-    phantom.format(container=container, template=template, parameters=parameters, name="format_4")
+    phantom.format(container=container, template=template, parameters=parameters, name="Maintenance_ID")
+
+    Maintenance_title(container=container)
+
+    return
+
+def Maintenance_title(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):
+    phantom.debug('Maintenance_title() called')
+    
+    template = """{0}"""
+
+    # parameter list for template variable replacement
+    parameters = [
+        "add_maintenance_window_1:action_result.parameter.title",
+    ]
+
+    phantom.format(container=container, template=template, parameters=parameters, name="Maintenance_title")
 
     pin_1(container=container)
 
