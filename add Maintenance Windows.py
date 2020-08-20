@@ -42,10 +42,10 @@ def add_maintenance_window_1(action=None, success=None, container=None, results=
 def pin_1(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):
     phantom.debug('pin_1() called')
 
-    formatted_data_1 = phantom.get_format_data(name='Maintenance_title')
-    formatted_data_2 = phantom.get_format_data(name='Maintenance_ID')
+    formatted_data_1 = phantom.get_format_data(name='Maintenance_ID')
+    formatted_data_2 = phantom.get_format_data(name='Maintenance_title')
 
-    phantom.pin(container=container, data=formatted_data_2, message=formatted_data_1, name=None)
+    phantom.pin(container=container, data=formatted_data_1, message=formatted_data_2, name=None)
 
     return
 
@@ -127,7 +127,7 @@ def Maintenance_title(action=None, success=None, container=None, results=None, h
 def format_6(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):
     phantom.debug('format_6() called')
     
-    template = """Affected entity ID {0}"""
+    template = """Maintenance Windows - Affected entity ID {0}"""
 
     # parameter list for template variable replacement
     parameters = [
