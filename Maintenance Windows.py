@@ -6,6 +6,54 @@ import json
 from datetime import datetime, timedelta
 def on_start(container):
     phantom.debug('on_start() called')
+    
+    # call 'format_1' block
+    format_1(container=container)
+
+    return
+
+def add_maintenance_window_1(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):
+    phantom.debug('add_maintenance_window_1() called')
+
+    # collect data for 'add_maintenance_window_1' call
+    container_data = phantom.collect2(container=container, datapath=['artifact:*.cef.entity_key', 'artifact:*.id'])
+    formatted_data_1 = phantom.get_format_data(name='format_1')
+
+    parameters = []
+    
+    # build parameters list for 'add_maintenance_window_1' call
+    for container_item in container_data:
+        if container_item[0]:
+            parameters.append({
+                'title': formatted_data_1,
+                'relative_start_time': "",
+                'relative_end_time': 300,
+                'start_time': "",
+                'end_time': "",
+                'object_type': "entity",
+                'object_ids': container_item[0],
+                'comment': "Phantom hast started Maintenance Windows",
+                # context (artifact id) is added to associate results with the artifact
+                'context': {'artifact_id': container_item[1]},
+            })
+
+    phantom.act(action="add maintenance window", parameters=parameters, assets=['splunk itsi'], name="add_maintenance_window_1")
+
+    return
+
+def format_1(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):
+    phantom.debug('format_1() called')
+    
+    template = """Maintenance Windows for entity {0}"""
+
+    # parameter list for template variable replacement
+    parameters = [
+        "artifact:*.cef.entity_title",
+    ]
+
+    phantom.format(container=container, template=template, parameters=parameters, name="format_1")
+
+    add_maintenance_window_1(container=container)
 
     return
 
