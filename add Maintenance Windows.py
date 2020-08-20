@@ -34,19 +34,19 @@ def add_maintenance_window_1(action=None, success=None, container=None, results=
         'relative_start_time': "",
     })
 
-    phantom.act(action="add maintenance window", parameters=parameters, assets=['splunk itsi'], callback=pin_1, name="add_maintenance_window_1")
+    phantom.act(action="add maintenance window", parameters=parameters, assets=['splunk itsi'], callback=format_4, name="add_maintenance_window_1")
 
     return
 
 def pin_1(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):
     phantom.debug('pin_1() called')
 
-    results_data_1 = phantom.collect2(container=container, datapath=['add_maintenance_window_1:action_result.parameter.title', 'add_maintenance_window_1:action_result.data.*._key'], action_results=results)
+    results_data_1 = phantom.collect2(container=container, datapath=['add_maintenance_window_1:action_result.parameter.title'], action_results=results)
+    formatted_data_1 = phantom.get_format_data(name='format_4')
 
     results_item_1_0 = [item[0] for item in results_data_1]
-    results_item_1_1 = [item[1] for item in results_data_1]
 
-    phantom.pin(container=container, data=results_item_1_1, message=results_item_1_0, name=None)
+    phantom.pin(container=container, data=formatted_data_1, message=results_item_1_0, name=None)
 
     return
 
@@ -90,6 +90,22 @@ def format_2(action=None, success=None, container=None, results=None, handle=Non
     phantom.format(container=container, template=template, parameters=parameters, name="format_2")
 
     add_maintenance_window_1(container=container)
+
+    return
+
+def format_4(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):
+    phantom.debug('format_4() called')
+    
+    template = """{0}"""
+
+    # parameter list for template variable replacement
+    parameters = [
+        "add_maintenance_window_1:action_result.data.*._key",
+    ]
+
+    phantom.format(container=container, template=template, parameters=parameters, name="format_4")
+
+    pin_1(container=container)
 
     return
 

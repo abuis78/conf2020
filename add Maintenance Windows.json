@@ -7,7 +7,7 @@
             "clean": true,
             "code_block": "",
             "description": "",
-            "hash": "0db7e305172a3b06b987cd4716d9d8df9f790456",
+            "hash": "83cf165dc023f9f0657d28625a2dde7c24184256",
             "joint": {
                 "cells": [
                     {
@@ -175,45 +175,6 @@
                         "endDirections": [
                             "left"
                         ],
-                        "id": "4fe3cb3a-79df-4848-b21a-389f1c7a6025",
-                        "router": {
-                            "name": "metro"
-                        },
-                        "source": {
-                            "id": "414709d0-d1df-4ee8-9a19-59d6b722695d",
-                            "selector": "> g:nth-child(1) > g:nth-child(2) > g:nth-child(1) > circle:nth-child(1)"
-                        },
-                        "startDirections": [
-                            "right"
-                        ],
-                        "target": {
-                            "id": "5127ff8c-6fa6-4bac-8065-3868d2139070",
-                            "selector": ".port-body[type=\"input\"]"
-                        },
-                        "type": "link",
-                        "z": 10
-                    },
-                    {
-                        "attrs": {
-                            ".connection": {
-                                "stroke": "#818D99",
-                                "stroke-width": 2
-                            },
-                            ".marker-target": {
-                                "d": "M 10 0 L 0 5 L 10 10 z",
-                                "fill": "#818D99",
-                                "stroke": "#818D99"
-                            }
-                        },
-                        "connector": {
-                            "args": {
-                                "radius": 5
-                            },
-                            "name": "rounded"
-                        },
-                        "endDirections": [
-                            "left"
-                        ],
                         "id": "9c8f7fbc-ce7a-4937-9a1d-8a0a14a13080",
                         "router": {
                             "name": "metro"
@@ -295,12 +256,12 @@
                         "join_code": "# read-only block view not available",
                         "join_optional": [],
                         "join_start": 1,
-                        "line_end": 109,
-                        "line_start": 96,
+                        "line_end": 125,
+                        "line_start": 112,
                         "name": "",
                         "notes": "",
                         "number": 0,
-                        "order": 6,
+                        "order": 7,
                         "outPorts": [],
                         "ports": {
                             "groups": {
@@ -355,8 +316,8 @@
                             }
                         },
                         "position": {
-                            "x": 1520,
-                            "y": 80
+                            "x": 1760,
+                            "y": 100
                         },
                         "previous_function": "",
                         "previous_name": "",
@@ -1133,7 +1094,7 @@
                                 "opacity": 1
                             }
                         },
-                        "block_code": "def add_maintenance_window_1(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):\n    phantom.debug('add_maintenance_window_1() called')\n        \n    #phantom.debug('Action: {0} {1}'.format(action['name'], ('SUCCEEDED' if success else 'FAILED')))\n    \n    # collect data for 'add_maintenance_window_1' call\n    formatted_data_1 = phantom.get_format_data(name='format_2')\n\n    parameters = []\n    \n    # build parameters list for 'add_maintenance_window_1' call\n    parameters.append({\n        'title': \"Bluber\",\n        'comment': \"Phantom hast started Maintenance Windows\",\n        'end_time': \"\",\n        'object_ids': formatted_data_1,\n        'start_time': \"\",\n        'object_type': \"entity\",\n        'relative_end_time': 300,\n        'relative_start_time': \"\",\n    })\n\n    phantom.act(action=\"add maintenance window\", parameters=parameters, assets=['splunk itsi'], callback=pin_1, name=\"add_maintenance_window_1\")\n\n    return",
+                        "block_code": "def add_maintenance_window_1(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):\n    phantom.debug('add_maintenance_window_1() called')\n        \n    #phantom.debug('Action: {0} {1}'.format(action['name'], ('SUCCEEDED' if success else 'FAILED')))\n    \n    # collect data for 'add_maintenance_window_1' call\n    formatted_data_1 = phantom.get_format_data(name='format_2')\n\n    parameters = []\n    \n    # build parameters list for 'add_maintenance_window_1' call\n    parameters.append({\n        'title': \"Bluber\",\n        'comment': \"Phantom hast started Maintenance Windows\",\n        'end_time': \"\",\n        'object_ids': formatted_data_1,\n        'start_time': \"\",\n        'object_type': \"entity\",\n        'relative_end_time': 300,\n        'relative_start_time': \"\",\n    })\n\n    phantom.act(action=\"add maintenance window\", parameters=parameters, assets=['splunk itsi'], callback=format_4, name=\"add_maintenance_window_1\")\n\n    return",
                         "callback_code": "",
                         "callback_start": 41,
                         "callsback": true,
@@ -1245,6 +1206,250 @@
                         "z": 38
                     },
                     {
+                        "attrs": {
+                            ".connection": {
+                                "stroke": "#818D99",
+                                "stroke-width": 2
+                            },
+                            ".marker-target": {
+                                "d": "M 10 0 L 0 5 L 10 10 z",
+                                "fill": "#818D99",
+                                "stroke": "#818D99"
+                            }
+                        },
+                        "connector": {
+                            "args": {
+                                "radius": 5
+                            },
+                            "name": "rounded"
+                        },
+                        "endDirections": [
+                            "left"
+                        ],
+                        "id": "e37656df-cebc-4e43-8d80-5a6276d1ebd1",
+                        "router": {
+                            "name": "metro"
+                        },
+                        "source": {
+                            "id": "414709d0-d1df-4ee8-9a19-59d6b722695d",
+                            "selector": "> g:nth-child(1) > g:nth-child(2) > g:nth-child(1) > circle:nth-child(1)"
+                        },
+                        "startDirections": [
+                            "right"
+                        ],
+                        "target": {
+                            "id": "f76cb240-6de9-4576-9ad2-40198a7bac90",
+                            "selector": ".port-body[type=\"input\"]"
+                        },
+                        "type": "link",
+                        "z": 40
+                    },
+                    {
+                        "attrs": {
+                            ".connection": {
+                                "stroke": "#818D99",
+                                "stroke-width": 2
+                            },
+                            ".marker-target": {
+                                "d": "M 10 0 L 0 5 L 10 10 z",
+                                "fill": "#818D99",
+                                "stroke": "#818D99"
+                            }
+                        },
+                        "connector": {
+                            "args": {
+                                "radius": 5
+                            },
+                            "name": "rounded"
+                        },
+                        "endDirections": [
+                            "left"
+                        ],
+                        "id": "ab3c8a2f-ce54-4421-951f-075af98e8e07",
+                        "router": {
+                            "name": "metro"
+                        },
+                        "source": {
+                            "id": "f76cb240-6de9-4576-9ad2-40198a7bac90",
+                            "selector": "> g:nth-child(1) > g:nth-child(2) > g:nth-child(1) > circle:nth-child(1)"
+                        },
+                        "startDirections": [
+                            "right"
+                        ],
+                        "target": {
+                            "id": "5127ff8c-6fa6-4bac-8065-3868d2139070",
+                            "selector": "> g:nth-child(1) > g:nth-child(1) > g:nth-child(1) > circle:nth-child(1)"
+                        },
+                        "type": "link",
+                        "z": 43
+                    },
+                    {
+                        "active": false,
+                        "angle": 0,
+                        "attrs": {
+                            ".background": {
+                                "fill": "#FFFFFF",
+                                "stroke": "#818D99"
+                            },
+                            ".color-band": {
+                                "fill": "#171D21"
+                            },
+                            ".format": {
+                                "text": "format 4"
+                            },
+                            ".inPorts>.port-in": {
+                                "ref": ".background",
+                                "ref-x": 0.5
+                            },
+                            ".inPorts>.port-in>.port-body": {
+                                "port": {
+                                    "id": "in",
+                                    "type": "in"
+                                }
+                            },
+                            ".message": {
+                                "opacity": 0,
+                                "text": "Configuring now"
+                            },
+                            ".outPorts>.port-out-1": {
+                                "ref": ".background",
+                                "ref-x": 0.5
+                            },
+                            ".outPorts>.port-out-1>.port-body": {
+                                "port": {
+                                    "id": "out-1",
+                                    "type": "out"
+                                }
+                            },
+                            ".title": {
+                                "text": "format"
+                            },
+                            "g.delete": {
+                                "display": "none"
+                            },
+                            "g.error": {
+                                "opacity": 0
+                            },
+                            "g.error image": {
+                                "xlink:href": "/inc/coa/img/block_icon_warn.svg"
+                            },
+                            "g.notes": {
+                                "display": "block"
+                            }
+                        },
+                        "block_code": "def format_4(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):\n    phantom.debug('format_4() called')\n    \n    template = \"\"\"{0}\"\"\"\n\n    # parameter list for template variable replacement\n    parameters = [\n        \"add_maintenance_window_1:action_result.data.*._key\",\n    ]\n\n    phantom.format(container=container, template=template, parameters=parameters, name=\"format_4\")\n\n    pin_1(container=container)\n\n    return",
+                        "callback_code": "",
+                        "callback_start": 1,
+                        "callsback": false,
+                        "connected_to_start": true,
+                        "connection_name": "add maintenance window",
+                        "connection_type": "action",
+                        "custom_callback": "",
+                        "custom_code": "",
+                        "custom_join": "",
+                        "custom_name": "",
+                        "description": "",
+                        "format": "format",
+                        "has_custom": false,
+                        "has_custom_block": false,
+                        "has_custom_callback": false,
+                        "has_custom_join": false,
+                        "id": "f76cb240-6de9-4576-9ad2-40198a7bac90",
+                        "inPorts": [
+                            "in"
+                        ],
+                        "join_code": "",
+                        "join_optional": [],
+                        "join_start": 1,
+                        "line_end": 112,
+                        "line_start": 96,
+                        "message": "Configuring now",
+                        "name": "format",
+                        "notes": "",
+                        "number": 4,
+                        "order": 6,
+                        "outPorts": [
+                            "out-1"
+                        ],
+                        "parameters": [
+                            {
+                                "position": 0,
+                                "type": "",
+                                "value": "add_maintenance_window_1:action_result.data.*._key"
+                            }
+                        ],
+                        "ports": {
+                            "groups": {
+                                "in": {
+                                    "attrs": {
+                                        ".port-body": {
+                                            "fill": "#fff",
+                                            "magnet": true,
+                                            "r": 10,
+                                            "stroke": "#000"
+                                        },
+                                        ".port-label": {
+                                            "fill": "#000"
+                                        }
+                                    },
+                                    "label": {
+                                        "position": {
+                                            "args": {
+                                                "y": 10
+                                            },
+                                            "name": "left"
+                                        }
+                                    },
+                                    "position": {
+                                        "name": "left"
+                                    }
+                                },
+                                "out": {
+                                    "attrs": {
+                                        ".port-body": {
+                                            "fill": "#fff",
+                                            "magnet": true,
+                                            "r": 10,
+                                            "stroke": "#000"
+                                        },
+                                        ".port-label": {
+                                            "fill": "#000"
+                                        }
+                                    },
+                                    "label": {
+                                        "position": {
+                                            "args": {
+                                                "y": 10
+                                            },
+                                            "name": "right"
+                                        }
+                                    },
+                                    "position": {
+                                        "name": "right"
+                                    }
+                                }
+                            }
+                        },
+                        "position": {
+                            "x": 1080,
+                            "y": 80
+                        },
+                        "previous_function": "",
+                        "previous_name": "format_4",
+                        "show_number": true,
+                        "size": {
+                            "height": 100,
+                            "width": 180
+                        },
+                        "state": "format",
+                        "status": "",
+                        "template": "{0}",
+                        "title": "format",
+                        "type": "coa.Format",
+                        "warn": false,
+                        "z": 49
+                    },
+                    {
                         "active": false,
                         "angle": 0,
                         "api": "pin",
@@ -1301,7 +1506,7 @@
                                 "display": "block"
                             }
                         },
-                        "block_code": "def pin_1(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):\n    phantom.debug('pin_1() called')\n\n    results_data_1 = phantom.collect2(container=container, datapath=['add_maintenance_window_1:action_result.parameter.title', 'add_maintenance_window_1:action_result.data.*._key'], action_results=results)\n\n    results_item_1_0 = [item[0] for item in results_data_1]\n    results_item_1_1 = [item[1] for item in results_data_1]\n\n    phantom.pin(container=container, data=results_item_1_1, message=results_item_1_0, name=None)\n\n    return",
+                        "block_code": "def pin_1(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):\n    phantom.debug('pin_1() called')\n\n    results_data_1 = phantom.collect2(container=container, datapath=['add_maintenance_window_1:action_result.parameter.title'], action_results=results)\n    formatted_data_1 = phantom.get_format_data(name='format_4')\n\n    results_item_1_0 = [item[0] for item in results_data_1]\n\n    phantom.pin(container=container, data=formatted_data_1, message=results_item_1_0, name=None)\n\n    return",
                         "callback_code": "",
                         "callback_start": 1,
                         "callsback": false,
@@ -1309,7 +1514,7 @@
                         "configured": [
                             {
                                 "key": "pin",
-                                "pinData": "add_maintenance_window_1:action_result.data.*._key",
+                                "pinData": "format_4:formatted_data",
                                 "pinMessage": "add_maintenance_window_1:action_result.parameter.title",
                                 "pinName": "",
                                 "pinPinColor": "",
@@ -1399,7 +1604,7 @@
                             }
                         },
                         "position": {
-                            "x": 1180,
+                            "x": 1420,
                             "y": 80
                         },
                         "previous_function": "",
@@ -1414,7 +1619,7 @@
                         "title": "API",
                         "type": "coa.API",
                         "warn": false,
-                        "z": 39
+                        "z": 50
                     }
                 ]
             },
@@ -1424,7 +1629,7 @@
         "schema": 4,
         "version": "4.9.34514"
     },
-    "create_time": "2020-08-20T14:16:39.223339+00:00",
+    "create_time": "2020-08-20T14:17:49.830135+00:00",
     "draft_mode": false,
     "labels": [
         "itsi"
