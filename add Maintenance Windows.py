@@ -34,14 +34,22 @@ def add_maintenance_window_1(action=None, success=None, container=None, results=
         'relative_start_time': "",
     })
 
-    phantom.act(action="add maintenance window", parameters=parameters, assets=['splunk itsi'], callback=pin_1, name="add_maintenance_window_1")
+    phantom.act(action="add maintenance window", parameters=parameters, assets=['splunk itsi'], callback=add_maintenance_window_1_callback, name="add_maintenance_window_1")
+
+    return
+
+def add_maintenance_window_1_callback(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None):
+    phantom.debug('add_maintenance_window_1_callback() called')
+    
+    pin_1(action=action, success=success, container=container, results=results, handle=handle, custom_function=custom_function)
+    format_3(action=action, success=success, container=container, results=results, handle=handle, custom_function=custom_function)
 
     return
 
 def pin_1(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):
     phantom.debug('pin_1() called')
 
-    results_data_1 = phantom.collect2(container=container, datapath=['add_maintenance_window_1:action_result.parameter.title', 'add_maintenance_window_1:action_result.data'], action_results=results)
+    results_data_1 = phantom.collect2(container=container, datapath=['add_maintenance_window_1:action_result.parameter.title', 'add_maintenance_window_1:action_result.data.*._key'], action_results=results)
 
     results_item_1_0 = [item[0] for item in results_data_1]
     results_item_1_1 = [item[1] for item in results_data_1]
@@ -90,6 +98,43 @@ def format_2(action=None, success=None, container=None, results=None, handle=Non
     phantom.format(container=container, template=template, parameters=parameters, name="format_2")
 
     add_maintenance_window_1(container=container)
+
+    return
+
+def format_3(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):
+    phantom.debug('format_3() called')
+    
+    template = """{0}
+{1}
+{2}
+{3}
+{4}
+{5}
+{6}"""
+
+    # parameter list for template variable replacement
+    parameters = [
+        "add_maintenance_window_1:action_result.parameter.comment",
+        "add_maintenance_window_1:action_result.parameter.end_time",
+        "add_maintenance_window_1:action_result.parameter.object_ids",
+        "add_maintenance_window_1:action_result.parameter.object_type",
+        "add_maintenance_window_1:action_result.parameter.title",
+        "add_maintenance_window_1:action_result.data",
+        "add_maintenance_window_1:action_result.message",
+    ]
+
+    phantom.format(container=container, template=template, parameters=parameters, name="format_3")
+
+    add_comment_4(container=container)
+
+    return
+
+def add_comment_4(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):
+    phantom.debug('add_comment_4() called')
+
+    formatted_data_1 = phantom.get_format_data(name='format_3')
+
+    phantom.comment(container=container, comment=formatted_data_1)
 
     return
 
