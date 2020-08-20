@@ -14,25 +14,25 @@ def on_start(container):
 
 def add_maintenance_window_1(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):
     phantom.debug('add_maintenance_window_1() called')
-
+        
+    #phantom.debug('Action: {0} {1}'.format(action['name'], ('SUCCEEDED' if success else 'FAILED')))
+    
     # collect data for 'add_maintenance_window_1' call
-    custom_function_results_data_1 = phantom.collect2(container=container, datapath=['cf_community_list_deduplicate_1:custom_function_result.data.*.item'], action_results=results)
+    formatted_data_1 = phantom.get_format_data(name='format_2')
 
     parameters = []
     
     # build parameters list for 'add_maintenance_window_1' call
-    for custom_function_results_item_1 in custom_function_results_data_1:
-        if custom_function_results_item_1[0]:
-            parameters.append({
-                'title': "Bluber",
-                'comment': "Phantom hast started Maintenance Windows",
-                'end_time': "",
-                'object_ids': custom_function_results_item_1[0],
-                'start_time': "",
-                'object_type': "entity",
-                'relative_end_time': 300,
-                'relative_start_time': "",
-            })
+    parameters.append({
+        'title': "Bluber",
+        'comment': "Phantom hast started Maintenance Windows",
+        'end_time': "",
+        'object_ids': formatted_data_1,
+        'start_time': "",
+        'object_type': "entity",
+        'relative_end_time': 300,
+        'relative_start_time': "",
+    })
 
     phantom.act(action="add maintenance window", parameters=parameters, assets=['splunk itsi'], callback=pin_1, name="add_maintenance_window_1")
 
@@ -89,16 +89,7 @@ def format_2(action=None, success=None, container=None, results=None, handle=Non
 
     phantom.format(container=container, template=template, parameters=parameters, name="format_2")
 
-    add_comment_3(container=container)
-
-    return
-
-def add_comment_3(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):
-    phantom.debug('add_comment_3() called')
-
-    formatted_data_1 = phantom.get_format_data(name='format_2')
-
-    phantom.comment(container=container, comment=formatted_data_1)
+    add_maintenance_window_1(container=container)
 
     return
 
