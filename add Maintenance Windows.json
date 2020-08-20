@@ -7,7 +7,7 @@
             "clean": true,
             "code_block": "",
             "description": "",
-            "hash": "6670385d4cf0b0635499d7ee55623b55e9d7b7bb",
+            "hash": "0db7e305172a3b06b987cd4716d9d8df9f790456",
             "joint": {
                 "cells": [
                     {
@@ -1301,7 +1301,7 @@
                                 "display": "block"
                             }
                         },
-                        "block_code": "def pin_1(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):\n    phantom.debug('pin_1() called')\n\n    results_data_1 = phantom.collect2(container=container, datapath=['add_maintenance_window_1:action_result.parameter.title', 'add_maintenance_window_1:action_result.data.*._key[0]'], action_results=results)\n\n    results_item_1_0 = [item[0] for item in results_data_1]\n    results_item_1_1 = [item[1] for item in results_data_1]\n\n    phantom.pin(container=container, data=results_item_1_1, message=results_item_1_0, name=None)\n\n    return",
+                        "block_code": "def pin_1(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):\n    phantom.debug('pin_1() called')\n\n    results_data_1 = phantom.collect2(container=container, datapath=['add_maintenance_window_1:action_result.parameter.title', 'add_maintenance_window_1:action_result.data.*._key'], action_results=results)\n\n    results_item_1_0 = [item[0] for item in results_data_1]\n    results_item_1_1 = [item[1] for item in results_data_1]\n\n    phantom.pin(container=container, data=results_item_1_1, message=results_item_1_0, name=None)\n\n    return",
                         "callback_code": "",
                         "callback_start": 1,
                         "callsback": false,
@@ -1309,7 +1309,7 @@
                         "configured": [
                             {
                                 "key": "pin",
-                                "pinData": "add_maintenance_window_1:action_result.data.*._key[0]",
+                                "pinData": "add_maintenance_window_1:action_result.data.*._key",
                                 "pinMessage": "add_maintenance_window_1:action_result.parameter.title",
                                 "pinName": "",
                                 "pinPinColor": "",
@@ -1424,7 +1424,7 @@
         "schema": 4,
         "version": "4.9.34514"
     },
-    "create_time": "2020-08-20T14:16:04.622799+00:00",
+    "create_time": "2020-08-20T14:16:39.223339+00:00",
     "draft_mode": false,
     "labels": [
         "itsi"

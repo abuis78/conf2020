@@ -41,7 +41,7 @@ def add_maintenance_window_1(action=None, success=None, container=None, results=
 def pin_1(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):
     phantom.debug('pin_1() called')
 
-    results_data_1 = phantom.collect2(container=container, datapath=['add_maintenance_window_1:action_result.parameter.title', 'add_maintenance_window_1:action_result.data.*._key[0]'], action_results=results)
+    results_data_1 = phantom.collect2(container=container, datapath=['add_maintenance_window_1:action_result.parameter.title', 'add_maintenance_window_1:action_result.data.*._key'], action_results=results)
 
     results_item_1_0 = [item[0] for item in results_data_1]
     results_item_1_1 = [item[1] for item in results_data_1]
