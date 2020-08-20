@@ -14,9 +14,7 @@ def on_start(container):
 
 def add_maintenance_window_1(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):
     phantom.debug('add_maintenance_window_1() called')
-        
-    #phantom.debug('Action: {0} {1}'.format(action['name'], ('SUCCEEDED' if success else 'FAILED')))
-    
+
     # collect data for 'add_maintenance_window_1' call
     custom_function_results_data_1 = phantom.collect2(container=container, datapath=['cf_community_list_deduplicate_1:custom_function_result.data.*.item'], action_results=results)
 
@@ -91,7 +89,6 @@ def format_2(action=None, success=None, container=None, results=None, handle=Non
 
     phantom.format(container=container, template=template, parameters=parameters, name="format_2")
 
-    add_maintenance_window_1(container=container)
     add_comment_3(container=container)
 
     return
