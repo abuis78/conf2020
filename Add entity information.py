@@ -76,7 +76,7 @@ def decision_1(action=None, success=None, container=None, results=None, handle=N
 
     # call connected blocks if condition 1 matched
     if matched:
-        get_entity_1(action=action, success=success, container=container, results=results, handle=handle, custom_function=custom_function)
+        get_entity_2(action=action, success=success, container=container, results=results, handle=handle, custom_function=custom_function)
         return
 
     # call connected blocks for 'else' condition 2
@@ -194,6 +194,27 @@ def add_comment_4(action=None, success=None, container=None, results=None, handl
 
     phantom.comment(container=container, comment=custom_function_results_item_1_0)
     Create_URL_Parameters(container=container)
+
+    return
+
+def get_entity_2(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):
+    phantom.debug('get_entity_2() called')
+        
+    #phantom.debug('Action: {0} {1}'.format(action['name'], ('SUCCEEDED' if success else 'FAILED')))
+    
+    # collect data for 'get_entity_2' call
+    custom_function_results_data_1 = phantom.collect2(container=container, datapath=['cf_community_list_deduplicate_1:custom_function_result.data.*.item'], action_results=results)
+
+    parameters = []
+    
+    # build parameters list for 'get_entity_2' call
+    for custom_function_results_item_1 in custom_function_results_data_1:
+        if custom_function_results_item_1[0]:
+            parameters.append({
+                'itsi_entity_id': custom_function_results_item_1[0],
+            })
+
+    phantom.act(action="get entity", parameters=parameters, assets=['splunk itsi'], callback=pin_1, name="get_entity_2")
 
     return
 
