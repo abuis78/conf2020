@@ -7,7 +7,7 @@
             "clean": true,
             "code_block": "",
             "description": "",
-            "hash": "408e7b3ded80b84c1c426eabfc7e6f94cdcc5c83",
+            "hash": "2f9148c9c49c1c0d9923ddfec32b33267da0f421",
             "joint": {
                 "cells": [
                     {
@@ -199,7 +199,7 @@
                         "callback_start": 1,
                         "callsback": false,
                         "connected_to_start": true,
-                        "connection_name": "Get PIN, get entity",
+                        "connection_name": "get entity",
                         "connection_type": "action",
                         "custom_callback": "",
                         "custom_code": "",
@@ -217,8 +217,8 @@
                         "join_code": "# read-only block view not available",
                         "join_optional": [],
                         "join_start": 1,
-                        "line_end": 174,
-                        "line_start": 161,
+                        "line_end": 171,
+                        "line_start": 158,
                         "name": "",
                         "notes": "",
                         "number": 0,
@@ -314,45 +314,6 @@
                         "endDirections": [
                             "left"
                         ],
-                        "id": "d2e9c9a0-27ba-44cc-9e0b-4dcafe6d294b",
-                        "router": {
-                            "name": "metro"
-                        },
-                        "source": {
-                            "id": "f31c6758-50a1-4c85-a0f5-e12b956e9724",
-                            "selector": "> g:nth-child(1) > g:nth-child(2) > g:nth-child(1) > circle:nth-child(1)"
-                        },
-                        "startDirections": [
-                            "right"
-                        ],
-                        "target": {
-                            "id": "c664ba00-1769-48a4-b967-10fbabb66f38",
-                            "selector": ".port-body[type=\"input\"]"
-                        },
-                        "type": "link",
-                        "z": 23
-                    },
-                    {
-                        "attrs": {
-                            ".connection": {
-                                "stroke": "#818D99",
-                                "stroke-width": 2
-                            },
-                            ".marker-target": {
-                                "d": "M 10 0 L 0 5 L 10 10 z",
-                                "fill": "#818D99",
-                                "stroke": "#818D99"
-                            }
-                        },
-                        "connector": {
-                            "args": {
-                                "radius": 5
-                            },
-                            "name": "rounded"
-                        },
-                        "endDirections": [
-                            "left"
-                        ],
                         "id": "458223a2-e944-4fd3-8a7e-3b2a97a94c5c",
                         "router": {
                             "name": "metro"
@@ -421,7 +382,7 @@
                             },
                             ".background": {
                                 "fill": "#FFFFFF",
-                                "stroke": "#818D99"
+                                "stroke": "#E6984E"
                             },
                             ".color-band": {
                                 "fill": "#171D21"
@@ -462,7 +423,7 @@
                                 "display": "none"
                             },
                             "g.error": {
-                                "opacity": 0
+                                "opacity": 1
                             },
                             "g.error image": {
                                 "xlink:href": "/inc/coa/img/block_icon_warn.svg"
@@ -486,8 +447,8 @@
                             }
                         ],
                         "connected_to_start": true,
-                        "connection_name": "Get PIN",
-                        "connection_type": "action",
+                        "connection_name": "",
+                        "connection_type": "",
                         "custom_callback": "",
                         "custom_code": "",
                         "custom_join": "",
@@ -504,8 +465,8 @@
                         "join_code": "",
                         "join_optional": [],
                         "join_start": 1,
-                        "line_end": 100,
-                        "line_start": 93,
+                        "line_end": 99,
+                        "line_start": 92,
                         "message": "Configuring now",
                         "name": "add comment",
                         "notes": "",
@@ -578,7 +539,7 @@
                             "width": 180
                         },
                         "state": "api",
-                        "status": "",
+                        "status": "warn",
                         "title": "API",
                         "type": "coa.API",
                         "warn": false,
@@ -692,8 +653,8 @@
                         "join_code": "",
                         "join_optional": [],
                         "join_start": 1,
-                        "line_end": 93,
-                        "line_start": 74,
+                        "line_end": 92,
+                        "line_start": 73,
                         "name": "decision",
                         "notes": "",
                         "number": 2,
@@ -837,7 +798,7 @@
                         "attrs": {
                             ".background": {
                                 "fill": "#FFFFFF",
-                                "stroke": "#637282",
+                                "stroke": "#E6984E",
                                 "transform": "rotate(45 30 70)"
                             },
                             ".inPorts>.port-0>.port-body": {
@@ -881,7 +842,7 @@
                                 "display": "none"
                             },
                             "g.error": {
-                                "opacity": 0
+                                "opacity": 1
                             },
                             "g.error image": {
                                 "xlink:href": "/inc/coa/img/block_icon_warn.svg"
@@ -893,13 +854,13 @@
                                 "opacity": 1
                             }
                         },
-                        "block_code": "def decision_1(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):\n    phantom.debug('decision_1() called')\n\n    # check for 'if' condition 1\n    matched = phantom.decision(\n        container=container,\n        action_results=results,\n        conditions=[\n            [\"Get_PIN:action_result.data.*.response_body.count\", \"==\", 0],\n        ])\n\n    # call connected blocks if condition 1 matched\n    if matched:\n        get_entity_2(action=action, success=success, container=container, results=results, handle=handle, custom_function=custom_function)\n        return\n\n    # call connected blocks for 'else' condition 2\n    add_comment_3(action=action, success=success, container=container, results=results, handle=handle, custom_function=custom_function)\n\n    return",
+                        "block_code": "def decision_1(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):\n    phantom.debug('decision_1() called')\n\n    # check for 'if' condition 1\n    matched = phantom.decision(\n        container=container,\n        conditions=[\n            [\"Get_PIN:action_result.data.*.response_body.count\", \"==\", 0],\n        ])\n\n    # call connected blocks if condition 1 matched\n    if matched:\n        get_entity_2(action=action, success=success, container=container, results=results, handle=handle, custom_function=custom_function)\n        return\n\n    # call connected blocks for 'else' condition 2\n    add_comment_3(action=action, success=success, container=container, results=results, handle=handle, custom_function=custom_function)\n\n    return",
                         "callback_code": "",
                         "callback_start": 1,
                         "callsback": false,
                         "connected_to_start": true,
-                        "connection_name": "Get PIN",
-                        "connection_type": "action",
+                        "connection_name": "",
+                        "connection_type": "",
                         "custom_callback": "",
                         "custom_code": "",
                         "custom_join": "",
@@ -917,7 +878,7 @@
                         "join_code": "",
                         "join_optional": [],
                         "join_start": 1,
-                        "line_end": 74,
+                        "line_end": 73,
                         "line_start": 53,
                         "name": "decision",
                         "notes": "",
@@ -1019,7 +980,7 @@
                             "width": 82
                         },
                         "state": "decision",
-                        "status": "",
+                        "status": "warn",
                         "type": "coa.Decision",
                         "warn": "",
                         "z": 232
@@ -1183,7 +1144,7 @@
                             },
                             ".background": {
                                 "fill": "#FFFFFF",
-                                "stroke": "#818D99"
+                                "stroke": "#E6984E"
                             },
                             ".color-band": {
                                 "fill": "#171D21"
@@ -1227,7 +1188,7 @@
                                 "display": "none"
                             },
                             "g.error": {
-                                "opacity": 0
+                                "opacity": 1
                             },
                             "g.error image": {
                                 "xlink:href": "/inc/coa/img/block_icon_warn.svg"
@@ -1245,14 +1206,14 @@
                                 "opacity": 1
                             }
                         },
-                        "block_code": "def get_entity_2(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):\n    phantom.debug('get_entity_2() called')\n        \n    #phantom.debug('Action: {0} {1}'.format(action['name'], ('SUCCEEDED' if success else 'FAILED')))\n    \n    # collect data for 'get_entity_2' call\n    custom_function_results_data_1 = phantom.collect2(container=container, datapath=['cf_community_list_deduplicate_1:custom_function_result.data.*.item'], action_results=results)\n\n    parameters = []\n    \n    # build parameters list for 'get_entity_2' call\n    for custom_function_results_item_1 in custom_function_results_data_1:\n        if custom_function_results_item_1[0]:\n            parameters.append({\n                'itsi_entity_id': custom_function_results_item_1[0],\n            })\n\n    phantom.act(action=\"get entity\", parameters=parameters, assets=['splunk itsi'], callback=custom_pin, name=\"get_entity_2\")\n\n    return",
+                        "block_code": "def get_entity_2(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):\n    phantom.debug('get_entity_2() called')\n\n    # collect data for 'get_entity_2' call\n    custom_function_results_data_1 = phantom.collect2(container=container, datapath=['cf_community_list_deduplicate_1:custom_function_result.data.*.item'], action_results=results)\n\n    parameters = []\n    \n    # build parameters list for 'get_entity_2' call\n    for custom_function_results_item_1 in custom_function_results_data_1:\n        if custom_function_results_item_1[0]:\n            parameters.append({\n                'itsi_entity_id': custom_function_results_item_1[0],\n            })\n\n    phantom.act(action=\"get entity\", parameters=parameters, assets=['splunk itsi'], callback=custom_pin, name=\"get_entity_2\")\n\n    return",
                         "callback_code": "",
                         "callback_start": 1,
                         "callsback": true,
                         "color": "",
                         "connected_to_start": true,
-                        "connection_name": "Get PIN",
-                        "connection_type": "action",
+                        "connection_name": "",
+                        "connection_type": "",
                         "custom_callback": "",
                         "custom_code": "",
                         "custom_join": "",
@@ -1270,8 +1231,8 @@
                         "join_code": "",
                         "join_optional": [],
                         "join_start": 1,
-                        "line_end": 148,
-                        "line_start": 127,
+                        "line_end": 145,
+                        "line_start": 126,
                         "message": "Configuring now",
                         "name": "get entity",
                         "notes": "",
@@ -1348,7 +1309,7 @@
                             "width": 180
                         },
                         "state": "app_action_assets",
-                        "status": "",
+                        "status": "warn",
                         "title": "Investigate",
                         "type": "coa.Action",
                         "warn": false,
@@ -1481,7 +1442,7 @@
                             },
                             ".background": {
                                 "fill": "#FFFFFF",
-                                "stroke": "#818D99"
+                                "stroke": "#E6984E"
                             },
                             ".color-band": {
                                 "fill": "#171D21"
@@ -1523,7 +1484,7 @@
                                 "display": "none"
                             },
                             "g.error": {
-                                "opacity": 0
+                                "opacity": 1
                             },
                             "g.error image": {
                                 "xlink:href": "/inc/coa/img/block_icon_warn.svg"
@@ -1571,8 +1532,8 @@
                         "join_code": "",
                         "join_optional": [],
                         "join_start": 1,
-                        "line_end": 161,
-                        "line_start": 148,
+                        "line_end": 158,
+                        "line_start": 145,
                         "message": "Configuring now",
                         "name": "pin",
                         "notes": "",
@@ -1645,7 +1606,7 @@
                             "width": 180
                         },
                         "state": "api",
-                        "status": "",
+                        "status": "warn",
                         "title": "API",
                         "type": "coa.API",
                         "warn": false,
@@ -1892,7 +1853,7 @@
                                 "opacity": 1
                             }
                         },
-                        "block_code": "def Get_PIN(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):\n    phantom.debug('Get_PIN() called')\n        \n    #phantom.debug('Action: {0} {1}'.format(action['name'], ('SUCCEEDED' if success else 'FAILED')))\n    \n    # collect data for 'Get_PIN' call\n    formatted_data_1 = phantom.get_format_data(name='Create_URL_Parameters')\n\n    parameters = []\n    \n    # build parameters list for 'Get_PIN' call\n    parameters.append({\n        'headers': \"\",\n        'location': formatted_data_1,\n        'verify_certificate': False,\n    })\n\n    phantom.act(action=\"get data\", parameters=parameters, assets=['http'], callback=decision_1, name=\"Get_PIN\")\n\n    return",
+                        "block_code": "def Get_PIN(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):\n    phantom.debug('Get_PIN() called')\n        \n    #phantom.debug('Action: {0} {1}'.format(action['name'], ('SUCCEEDED' if success else 'FAILED')))\n    \n    # collect data for 'Get_PIN' call\n    formatted_data_1 = phantom.get_format_data(name='Create_URL_Parameters')\n\n    parameters = []\n    \n    # build parameters list for 'Get_PIN' call\n    parameters.append({\n        'headers': \"\",\n        'location': formatted_data_1,\n        'verify_certificate': False,\n    })\n\n    phantom.act(action=\"get data\", parameters=parameters, assets=['http'], name=\"Get_PIN\")\n\n    return",
                         "callback_code": "",
                         "callback_start": 47,
                         "callsback": true,
@@ -2110,8 +2071,8 @@
                         "join_code": "",
                         "join_optional": [],
                         "join_start": 1,
-                        "line_end": 127,
-                        "line_start": 100,
+                        "line_end": 126,
+                        "line_start": 99,
                         "message": "Configuring now",
                         "name": "list_deduplicate",
                         "notes": "",
@@ -2454,7 +2415,7 @@
         "schema": 4,
         "version": "4.9.34514"
     },
-    "create_time": "2020-08-21T13:10:31.796107+00:00",
+    "create_time": "2020-08-21T13:33:35.308673+00:00",
     "draft_mode": false,
     "labels": [
         "itsi"
