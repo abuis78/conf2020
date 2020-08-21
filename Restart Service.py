@@ -88,7 +88,7 @@ def restart_Service(action=None, success=None, container=None, results=None, han
                 'context': {'artifact_id': results_item_1[1]},
             })
 
-    phantom.act(action="execute program", parameters=parameters, assets=['ssh'], callback=add_tag_3, name="restart_Service")
+    phantom.act(action="execute program", parameters=parameters, assets=['ssh'], callback=add_tag_3, name="restart_Service", parent_action=action)
 
     return
 
@@ -162,7 +162,7 @@ def decision_2(action=None, success=None, container=None, results=None, handle=N
 
     # call connected blocks if condition 1 matched
     if matched:
-        restart_Service(action=action, success=success, container=container, results=results, handle=handle, custom_function=custom_function)
+        format_17(action=action, success=success, container=container, results=results, handle=handle, custom_function=custom_function)
         return
 
     # call connected blocks for 'else' condition 2
@@ -252,7 +252,7 @@ def join_service_path(action=None, success=None, container=None, results=None, h
 def format_snow_ticket_id_request(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):
     phantom.debug('format_snow_ticket_id_request() called')
     
-    template = """container_pin?_filter_container={0}&_filter_message=\"snow inc\""""
+    template = """/rest/container_pin?_filter_container={0}&_filter_message=\"snow inc\""""
 
     # parameter list for template variable replacement
     parameters = [
@@ -903,6 +903,87 @@ def remove_tag_6(action=None, success=None, container=None, results=None, handle
     phantom.debug('remove_tag_6() called')
 
     phantom.remove_tags(container=container, tags="itsi_in_progress")
+
+    return
+
+def format_16(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):
+    phantom.debug('format_16() called')
+    
+    template = """I got approval from: {0} and restart the service / entity:  {1}"""
+
+    # parameter list for template variable replacement
+    parameters = [
+        "Request_approval_restart_service:action_result.parameter.message",
+        "Format_Server_Address:formatted_data",
+    ]
+
+    phantom.format(container=container, template=template, parameters=parameters, name="format_16")
+
+    add_work_note_2(container=container)
+
+    return
+
+def add_work_note_2(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):
+    phantom.debug('add_work_note_2() called')
+        
+    #phantom.debug('Action: {0} {1}'.format(action['name'], ('SUCCEEDED' if success else 'FAILED')))
+    
+    # collect data for 'add_work_note_2' call
+    results_data_1 = phantom.collect2(container=container, datapath=['get_data_5:action_result.data.*.response_body.data.*.data', 'get_data_5:action_result.parameter.context.artifact_id'], action_results=results)
+    formatted_data_1 = phantom.get_format_data(name='format_16')
+
+    parameters = []
+    
+    # build parameters list for 'add_work_note_2' call
+    for results_item_1 in results_data_1:
+        if results_item_1[0]:
+            parameters.append({
+                'table_name': "incident",
+                'id': results_item_1[0],
+                'work_note': formatted_data_1,
+                'is_sys_id': "",
+                # context (artifact id) is added to associate results with the artifact
+                'context': {'artifact_id': results_item_1[1]},
+            })
+
+    phantom.act(action="add work note", parameters=parameters, assets=['servicenow'], callback=restart_Service, name="add_work_note_2")
+
+    return
+
+def format_17(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):
+    phantom.debug('format_17() called')
+    
+    template = """/rest/container_pin?_filter_container={0}&_filter_message=\"snow inc\""""
+
+    # parameter list for template variable replacement
+    parameters = [
+        "container:id",
+    ]
+
+    phantom.format(container=container, template=template, parameters=parameters, name="format_17")
+
+    get_data_5(container=container)
+
+    return
+
+def get_data_5(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):
+    phantom.debug('get_data_5() called')
+        
+    #phantom.debug('Action: {0} {1}'.format(action['name'], ('SUCCEEDED' if success else 'FAILED')))
+    
+    # collect data for 'get_data_5' call
+    formatted_data_1 = phantom.get_format_data(name='format_17')
+
+    parameters = []
+    
+    # build parameters list for 'get_data_5' call
+    parameters.append({
+        'location': formatted_data_1,
+        'verify_certificate': False,
+        'headers': "",
+    })
+
+    phantom.act(action="get data", parameters=parameters, assets=['http'], callback=format_16, name="get_data_5")
 
     return
 
