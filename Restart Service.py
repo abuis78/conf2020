@@ -162,11 +162,11 @@ def decision_2(action=None, success=None, container=None, results=None, handle=N
 
     # call connected blocks if condition 1 matched
     if matched:
-        playbook_conf2020_add_Maintenance_Windows_1_1(action=action, success=success, container=container, results=results, handle=handle, custom_function=custom_function)
+        cf_community_list_deduplicate_1(action=action, success=success, container=container, results=results, handle=handle, custom_function=custom_function)
         return
 
     # call connected blocks for 'else' condition 2
-    playbook_conf2020_add_Maintenance_Windows_2_2(action=action, success=success, container=container, results=results, handle=handle, custom_function=custom_function)
+    playbook_conf2020_add_Maintenance_Windows_2(action=action, success=success, container=container, results=results, handle=handle, custom_function=custom_function)
 
     return
 
@@ -987,19 +987,11 @@ def get_data_5(action=None, success=None, container=None, results=None, handle=N
 
     return
 
-def playbook_conf2020_add_Maintenance_Windows_1_1(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):
-    phantom.debug('playbook_conf2020_add_Maintenance_Windows_1_1() called')
+def playbook_conf2020_add_Maintenance_Windows_2(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):
+    phantom.debug('playbook_conf2020_add_Maintenance_Windows_2() called')
     
     # call playbook "conf2020/add Maintenance Windows", returns the playbook_run_id
-    playbook_run_id = phantom.playbook(playbook="conf2020/add Maintenance Windows", container=container, name="playbook_conf2020_add_Maintenance_Windows_1_1", callback=format_17)
-
-    return
-
-def playbook_conf2020_add_Maintenance_Windows_2_2(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):
-    phantom.debug('playbook_conf2020_add_Maintenance_Windows_2_2() called')
-    
-    # call playbook "conf2020/add Maintenance Windows", returns the playbook_run_id
-    playbook_run_id = phantom.playbook(playbook="conf2020/add Maintenance Windows", container=container, name="playbook_conf2020_add_Maintenance_Windows_2_2", callback=execute_program_3)
+    playbook_run_id = phantom.playbook(playbook="conf2020/add Maintenance Windows", container=container, name="playbook_conf2020_add_Maintenance_Windows_2", callback=execute_program_3)
 
     return
 
@@ -1008,6 +1000,135 @@ def playbook_conf2020_end_Maintenance_Windows_1(action=None, success=None, conta
     
     # call playbook "conf2020/end Maintenance Windows", returns the playbook_run_id
     playbook_run_id = phantom.playbook(playbook="conf2020/end Maintenance Windows", container=container, name="playbook_conf2020_end_Maintenance_Windows_1", callback=format_snow_ticket_id_request)
+
+    return
+
+def cf_community_list_deduplicate_1(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):
+    phantom.debug('cf_community_list_deduplicate_1() called')
+    
+    container_data_0 = phantom.collect2(container=container, datapath=['artifact:*.cef.entity_key', 'artifact:*.id'])
+
+    parameters = []
+
+    container_data_0_0 = [item[0] for item in container_data_0]
+
+    parameters.append({
+        'input_list': container_data_0_0,
+    })
+    ################################################################################
+    ## Custom Code Start
+    ################################################################################
+
+    # Write your custom code here...
+
+    ################################################################################
+    ## Custom Code End
+    ################################################################################    
+
+    # call custom function "community/list_deduplicate", returns the custom_function_run_id
+    phantom.custom_function(custom_function='community/list_deduplicate', parameters=parameters, name='cf_community_list_deduplicate_1', callback=format_18)
+
+    return
+
+def format_18(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):
+    phantom.debug('format_18() called')
+    
+    template = """{0}"""
+
+    # parameter list for template variable replacement
+    parameters = [
+        "cf_community_list_deduplicate_1:custom_function_result.data.*.item",
+    ]
+
+    phantom.format(container=container, template=template, parameters=parameters, name="format_18")
+
+    format_19(container=container)
+
+    return
+
+def format_19(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):
+    phantom.debug('format_19() called')
+    
+    template = """Maintenance Windows - Affected entity ID {0}"""
+
+    # parameter list for template variable replacement
+    parameters = [
+        "cf_community_list_deduplicate_1:custom_function_result.data.*.item",
+    ]
+
+    phantom.format(container=container, template=template, parameters=parameters, name="format_19")
+
+    add_maintenance_window_1(container=container)
+
+    return
+
+def add_maintenance_window_1(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):
+    phantom.debug('add_maintenance_window_1() called')
+        
+    #phantom.debug('Action: {0} {1}'.format(action['name'], ('SUCCEEDED' if success else 'FAILED')))
+    
+    # collect data for 'add_maintenance_window_1' call
+    formatted_data_1 = phantom.get_format_data(name='format_19')
+    formatted_data_2 = phantom.get_format_data(name='format_18')
+
+    parameters = []
+    
+    # build parameters list for 'add_maintenance_window_1' call
+    parameters.append({
+        'title': formatted_data_1,
+        'relative_start_time': "",
+        'relative_end_time': 300,
+        'start_time': "",
+        'end_time': "",
+        'object_type': "entity",
+        'object_ids': formatted_data_2,
+        'comment': "Phantom hast started Maintenance Windows",
+    })
+
+    phantom.act(action="add maintenance window", parameters=parameters, assets=['splunk itsi'], callback=format_20, name="add_maintenance_window_1")
+
+    return
+
+def format_20(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):
+    phantom.debug('format_20() called')
+    
+    template = """{0}"""
+
+    # parameter list for template variable replacement
+    parameters = [
+        "add_maintenance_window_1:action_result.data.*._key",
+    ]
+
+    phantom.format(container=container, template=template, parameters=parameters, name="format_20")
+
+    format_21(container=container)
+
+    return
+
+def format_21(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):
+    phantom.debug('format_21() called')
+    
+    template = """{0}"""
+
+    # parameter list for template variable replacement
+    parameters = [
+        "add_maintenance_window_1:action_result.parameter.title",
+    ]
+
+    phantom.format(container=container, template=template, parameters=parameters, name="format_21")
+
+    pin_7(container=container)
+
+    return
+
+def pin_7(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):
+    phantom.debug('pin_7() called')
+
+    formatted_data_1 = phantom.get_format_data(name='format_21')
+    formatted_data_2 = phantom.get_format_data(name='format_20')
+
+    phantom.pin(container=container, data=formatted_data_2, message=formatted_data_1, name=None)
+    format_17(container=container)
 
     return
 
