@@ -31,36 +31,6 @@ def decision_5(action=None, success=None, container=None, results=None, handle=N
 
     return
 
-"""
-Removes duplicates from list and keeps list order
-"""
-def DedupeListEntries(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):
-    phantom.debug('DedupeListEntries() called')
-    
-    container_data = phantom.collect2(container=container, datapath=['artifact:*.cef.serviceid', 'artifact:*.id'])
-    container_item_0 = [item[0] for item in container_data]
-
-    DedupeListEntries__new_list = None
-
-    ################################################################################
-    ## Custom Code Start
-    ################################################################################
-
-    # Write your custom code here...
-    phantom.debug('DedupeListEntries() formatted_data_1: {}'.format(container_item_0))
-
-    seen = {}
-    DedupeListEntries__new_list = [seen.setdefault(x, x) for x in container_item_0 if x not in seen]
-    phantom.debug('DedupeListEntries() DedupeListEntries__new_list: {}'.format(DedupeListEntries__new_list))
-
-    ################################################################################
-    ## Custom Code End
-    ################################################################################
-
-    phantom.save_run_data(key='DedupeListEntries:new_list', value=json.dumps(DedupeListEntries__new_list))
-
-    return
-
 def Add_Pin_with_Service_Name(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):
     phantom.debug('Add_Pin_with_Service_Name() called')
 
