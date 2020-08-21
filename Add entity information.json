@@ -7,7 +7,7 @@
             "clean": true,
             "code_block": "",
             "description": "",
-            "hash": "db865f01996a8c8224ffea6d013c273ad9ce8016",
+            "hash": "335a46044905540917a5bef693a79c7d3d664cba",
             "joint": {
                 "cells": [
                     {
@@ -2989,7 +2989,7 @@
                         "connection_name": "get entity 2",
                         "connection_type": "action",
                         "custom_callback": "",
-                        "custom_code": "def custom_pin(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):\n    phantom.debug('pin_5() called')\n\n    results_data_1 = phantom.collect2(container=container, datapath=['get_entity_2:action_result.data.*.title.0', 'get_entity_2:action_result.data.*.external_ip.0.0'], action_results=results)\n\n    for item in results_data_1:\n        results_item_1_0 = \"Entity: \"+item[0]\n        results_item_1_1 = item[1]\n\n        phantom.pin(container=container, data=results_item_1_1, message=results_item_1_0, pin_type=\"card\", pin_style=\"grey\", name=None)\n    \n    return",
+                        "custom_code": "def custom_pin(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):\n    phantom.debug('pin_5() called')\n\n    results_data_1 = phantom.collect2(container=container, datapath=['get_entity_2:action_result.data.*.title', 'get_entity_2:action_result.data.*.external_ip.0'], action_results=results)\n\n    for item in results_data_1:\n        results_item_1_0 = \"Entity: \"+item[0]\n        results_item_1_1 = item[1]\n\n        phantom.pin(container=container, data=results_item_1_1, message=results_item_1_0, pin_type=\"card\", pin_style=\"grey\", name=None)\n    \n    return",
                         "custom_join": "",
                         "custom_name": "custom_pin",
                         "description": "",
@@ -3092,7 +3092,7 @@
         "schema": 4,
         "version": "4.9.34514"
     },
-    "create_time": "2020-08-21T12:19:17.468454+00:00",
+    "create_time": "2020-08-21T12:20:15.045662+00:00",
     "draft_mode": false,
     "labels": [
         "itsi"

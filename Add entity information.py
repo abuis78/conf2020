@@ -209,7 +209,7 @@ def get_entity_2(action=None, success=None, container=None, results=None, handle
 def custom_pin(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):
     phantom.debug('pin_5() called')
 
-    results_data_1 = phantom.collect2(container=container, datapath=['get_entity_2:action_result.data.*.title.0', 'get_entity_2:action_result.data.*.external_ip.0.0'], action_results=results)
+    results_data_1 = phantom.collect2(container=container, datapath=['get_entity_2:action_result.data.*.title', 'get_entity_2:action_result.data.*.external_ip.0'], action_results=results)
 
     for item in results_data_1:
         results_item_1_0 = "Entity: "+item[0]
