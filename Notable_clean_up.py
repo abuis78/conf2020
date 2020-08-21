@@ -136,7 +136,7 @@ def decision_3(action=None, success=None, container=None, results=None, handle=N
         container=container,
         action_results=results,
         conditions=[
-            ["artifact:*.cef.alert_severity", "!=", ""],
+            ["artifact:*.cef.alert_level", "!=", ""],
         ])
 
     # call connected blocks if condition 1 matched
