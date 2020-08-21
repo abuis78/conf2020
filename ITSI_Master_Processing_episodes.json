@@ -7,7 +7,6 @@
             "clean": true,
             "code_block": "",
             "description": "",
-            "hash": "8a4d8ffaa4acdd27a98d3ffbbeef429e1f9118a2",
             "joint": {
                 "cells": [
                     {
@@ -199,8 +198,8 @@
                         "callback_start": 1,
                         "callsback": false,
                         "connected_to_start": true,
-                        "connection_name": "",
-                        "connection_type": "",
+                        "connection_name": "conf2020/Close SNOW Ticket",
+                        "connection_type": "action",
                         "custom_callback": "",
                         "custom_code": "",
                         "custom_join": "",
@@ -277,8 +276,8 @@
                             }
                         },
                         "position": {
-                            "x": 340,
-                            "y": 400
+                            "x": 1400,
+                            "y": -60
                         },
                         "previous_function": "",
                         "previous_name": "",
@@ -1564,6 +1563,45 @@
                         },
                         "type": "link",
                         "z": 119
+                    },
+                    {
+                        "attrs": {
+                            ".connection": {
+                                "stroke": "#818D99",
+                                "stroke-width": 2
+                            },
+                            ".marker-target": {
+                                "d": "M 10 0 L 0 5 L 10 10 z",
+                                "fill": "#818D99",
+                                "stroke": "#818D99"
+                            }
+                        },
+                        "connector": {
+                            "args": {
+                                "radius": 5
+                            },
+                            "name": "rounded"
+                        },
+                        "endDirections": [
+                            "left"
+                        ],
+                        "id": "2530aa8b-5ee0-42cb-ab27-c18711e655bb",
+                        "router": {
+                            "name": "metro"
+                        },
+                        "source": {
+                            "id": "83b61408-96b4-4c23-ae8a-97ca26f2e230",
+                            "selector": "> g:nth-child(1) > g:nth-child(2) > g:nth-child(1) > circle:nth-child(1)"
+                        },
+                        "startDirections": [
+                            "right"
+                        ],
+                        "target": {
+                            "id": "b7c1f7f4-56b4-41cf-ac96-38bf70a049c1",
+                            "selector": "> g:nth-child(1) > g:nth-child(1) > g:nth-child(1) > circle:nth-child(1)"
+                        },
+                        "type": "link",
+                        "z": 120
                     }
                 ]
             },
