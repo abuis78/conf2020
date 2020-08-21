@@ -38,9 +38,9 @@ def get_entity_data(action=None, success=None, container=None, results=None, han
     
     # build parameters list for 'get_entity_data' call
     parameters.append({
+        'headers': "",
         'location': formatted_data_1,
         'verify_certificate': False,
-        'headers': "",
     })
 
     phantom.act(action="get data", parameters=parameters, assets=['http'], callback=check_service_HUD, name="get_entity_data")
@@ -140,9 +140,9 @@ def get_service_data(action=None, success=None, container=None, results=None, ha
     
     # build parameters list for 'get_service_data' call
     parameters.append({
+        'headers': "",
         'location': formatted_data_1,
         'verify_certificate': False,
-        'headers': "",
     })
 
     phantom.act(action="get data", parameters=parameters, assets=['http'], callback=decision_1, name="get_service_data")
@@ -162,7 +162,7 @@ def decision_3(action=None, success=None, container=None, results=None, handle=N
 
     # call connected blocks if condition 1 matched
     if matched:
-        playbook_conf2020_add_Maintenance_Windows_1(action=action, success=success, container=container, results=results, handle=handle, custom_function=custom_function)
+        playbook_conf2020_conf2020_add_Maintenance_Windows_1(action=action, success=success, container=container, results=results, handle=handle, custom_function=custom_function)
         return
 
     # check for 'elif' condition 2
@@ -179,11 +179,11 @@ def decision_3(action=None, success=None, container=None, results=None, handle=N
 
     return
 
-def playbook_conf2020_add_Maintenance_Windows_1(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):
-    phantom.debug('playbook_conf2020_add_Maintenance_Windows_1() called')
+def playbook_conf2020_conf2020_add_Maintenance_Windows_1(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):
+    phantom.debug('playbook_conf2020_conf2020_add_Maintenance_Windows_1() called')
     
     # call playbook "conf2020/add Maintenance Windows", returns the playbook_run_id
-    playbook_run_id = phantom.playbook(playbook="conf2020/add Maintenance Windows", container=container, name="playbook_conf2020_add_Maintenance_Windows_1", callback=restart_service)
+    playbook_run_id = phantom.playbook(playbook="conf2020/add Maintenance Windows", container=container, name="playbook_conf2020_conf2020_add_Maintenance_Windows_1", callback=restart_service)
 
     return
 
@@ -201,10 +201,10 @@ def restart_service(action=None, success=None, container=None, results=None, han
     for results_item_1 in results_data_1:
         if results_item_1[0]:
             parameters.append({
-                'ip_hostname': results_item_1[0],
                 'command': "sudo systemctl start nginx",
-                'script_file': "",
                 'timeout': "",
+                'ip_hostname': results_item_1[0],
+                'script_file': "",
                 # context (artifact id) is added to associate results with the artifact
                 'context': {'artifact_id': results_item_1[1]},
             })
@@ -245,10 +245,10 @@ def execute_program_2(action=None, success=None, container=None, results=None, h
     for results_item_1 in results_data_1:
         if results_item_1[0]:
             parameters.append({
-                'ip_hostname': results_item_1[0],
                 'command': "sudo systemctl is-active nginx",
-                'script_file': "",
                 'timeout': "",
+                'ip_hostname': results_item_1[0],
+                'script_file': "",
                 # context (artifact id) is added to associate results with the artifact
                 'context': {'artifact_id': results_item_1[1]},
             })
@@ -272,16 +272,70 @@ def decision_5(action=None, success=None, container=None, results=None, handle=N
 
     # call connected blocks if condition 1 matched
     if matched:
-        playbook_conf2020_end_Maintenance_Windows_1(action=action, success=success, container=container, results=results, handle=handle, custom_function=custom_function)
+        playbook_conf2020_conf2020_end_Maintenance_Windows_1(action=action, success=success, container=container, results=results, handle=handle, custom_function=custom_function)
         return
 
     return
 
-def playbook_conf2020_end_Maintenance_Windows_1(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):
-    phantom.debug('playbook_conf2020_end_Maintenance_Windows_1() called')
+def playbook_conf2020_conf2020_end_Maintenance_Windows_1(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):
+    phantom.debug('playbook_conf2020_conf2020_end_Maintenance_Windows_1() called')
     
     # call playbook "conf2020/end Maintenance Windows", returns the playbook_run_id
-    playbook_run_id = phantom.playbook(playbook="conf2020/end Maintenance Windows", container=container, name="playbook_conf2020_end_Maintenance_Windows_1")
+    playbook_run_id = phantom.playbook(playbook="conf2020/end Maintenance Windows", container=container, name="playbook_conf2020_conf2020_end_Maintenance_Windows_1", callback=format_4)
+
+    return
+
+def format_4(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):
+    phantom.debug('format_4() called')
+    
+    template = """/rest/container_pin/{0}"""
+
+    # parameter list for template variable replacement
+    parameters = [
+        "get_entity_data:parsed_response_body.data.*.id",
+    ]
+
+    phantom.format(container=container, template=template, parameters=parameters, name="format_4")
+
+    format_5(container=container)
+
+    return
+
+def post_data_1(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):
+    phantom.debug('post_data_1() called')
+        
+    #phantom.debug('Action: {0} {1}'.format(action['name'], ('SUCCEEDED' if success else 'FAILED')))
+    
+    # collect data for 'post_data_1' call
+    formatted_data_1 = phantom.get_format_data(name='format_4')
+
+    parameters = []
+    
+    # build parameters list for 'post_data_1' call
+    parameters.append({
+        'location': formatted_data_1,
+        'body': "",
+        'headers': "",
+        'verify_certificate': "",
+    })
+
+    phantom.act(action="post data", parameters=parameters, assets=['http'], name="post_data_1")
+
+    return
+
+def format_5(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):
+    phantom.debug('format_5() called')
+    
+    template = """{{ \"pin_style\": \"blue\" }}"""
+
+    # parameter list for template variable replacement
+    parameters = [
+        "prompt_1:action_result.status",
+    ]
+
+    phantom.format(container=container, template=template, parameters=parameters, name="format_5")
+
+    post_data_1(container=container)
 
     return
 
