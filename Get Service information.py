@@ -98,6 +98,8 @@ def format_2(action=None, success=None, container=None, results=None, handle=Non
 
     phantom.format(container=container, template=template, parameters=parameters, name="format_2")
 
+    get_service_1(container=container)
+
     return
 
 def Build_link_for_check_data_pin(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):
@@ -119,7 +121,9 @@ def Build_link_for_check_data_pin(action=None, success=None, container=None, res
 
 def get_data_1(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):
     phantom.debug('get_data_1() called')
-
+        
+    #phantom.debug('Action: {0} {1}'.format(action['name'], ('SUCCEEDED' if success else 'FAILED')))
+    
     # collect data for 'get_data_1' call
     formatted_data_1 = phantom.get_format_data(name='Build_link_for_check_data_pin')
 
@@ -180,6 +184,27 @@ def cf_community_list_deduplicate_1(action=None, success=None, container=None, r
 
     # call custom function "community/list_deduplicate", returns the custom_function_run_id
     phantom.custom_function(custom_function='community/list_deduplicate', parameters=parameters, name='cf_community_list_deduplicate_1', callback=format_2)
+
+    return
+
+def get_service_1(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):
+    phantom.debug('get_service_1() called')
+        
+    #phantom.debug('Action: {0} {1}'.format(action['name'], ('SUCCEEDED' if success else 'FAILED')))
+    
+    # collect data for 'get_service_1' call
+    custom_function_results_data_1 = phantom.collect2(container=container, datapath=['cf_community_list_deduplicate_1:custom_function_result.data.*.item'], action_results=results)
+
+    parameters = []
+    
+    # build parameters list for 'get_service_1' call
+    for custom_function_results_item_1 in custom_function_results_data_1:
+        if custom_function_results_item_1[0]:
+            parameters.append({
+                'itsi_service_id': custom_function_results_item_1[0],
+            })
+
+    phantom.act(action="get service", parameters=parameters, assets=['splunk itsi'], callback=Format_Service_Name, name="get_service_1")
 
     return
 
