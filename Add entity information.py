@@ -181,19 +181,7 @@ def cf_community_list_deduplicate_1(action=None, success=None, container=None, r
     ################################################################################    
 
     # call custom function "community/list_deduplicate", returns the custom_function_run_id
-    phantom.custom_function(custom_function='community/list_deduplicate', parameters=parameters, name='cf_community_list_deduplicate_1', callback=add_comment_4)
-
-    return
-
-def add_comment_4(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):
-    phantom.debug('add_comment_4() called')
-
-    custom_function_results_data_1 = phantom.collect2(container=container, datapath=['cf_community_list_deduplicate_1:custom_function_result.data.*.item'], action_results=results)
-
-    custom_function_results_item_1_0 = [item[0] for item in custom_function_results_data_1]
-
-    phantom.comment(container=container, comment=custom_function_results_item_1_0)
-    Create_URL_Parameters(container=container)
+    phantom.custom_function(custom_function='community/list_deduplicate', parameters=parameters, name='cf_community_list_deduplicate_1', callback=Create_URL_Parameters)
 
     return
 
@@ -214,7 +202,19 @@ def get_entity_2(action=None, success=None, container=None, results=None, handle
                 'itsi_entity_id': custom_function_results_item_1[0],
             })
 
-    phantom.act(action="get entity", parameters=parameters, assets=['splunk itsi'], callback=pin_1, name="get_entity_2")
+    phantom.act(action="get entity", parameters=parameters, assets=['splunk itsi'], callback=pin_5, name="get_entity_2")
+
+    return
+
+def pin_5(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):
+    phantom.debug('pin_5() called')
+
+    results_data_1 = phantom.collect2(container=container, datapath=['get_entity_2:action_result.data.*.title', 'get_entity_2:action_result.data.*.external_ip.0'], action_results=results)
+
+    results_item_1_0 = [item[0] for item in results_data_1]
+    results_item_1_1 = [item[1] for item in results_data_1]
+
+    phantom.pin(container=container, data=results_item_1_1, message=results_item_1_0, pin_type="card", pin_style="grey", name=None)
 
     return
 
