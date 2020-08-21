@@ -7,7 +7,7 @@
             "clean": true,
             "code_block": "",
             "description": "",
-            "hash": "fc32a2f112b6c19c13d3e046b0aa3deb4d70b7d2",
+            "hash": "274528915d80876845093a34f5127a08591384af",
             "joint": {
                 "cells": [
                     {
@@ -11772,7 +11772,7 @@
                         "active_values": {
                             "headers": "",
                             "location": "get_SNOW_ticket_ID:formatted_data",
-                            "verify_certificate": "True"
+                            "verify_certificate": "False"
                         },
                         "angle": 0,
                         "app": "HTTP",
@@ -11801,7 +11801,7 @@
                                 "fields": {
                                     "headers": "",
                                     "location": "get_SNOW_ticket_ID:formatted_data",
-                                    "verify_certificate": "True"
+                                    "verify_certificate": "False"
                                 },
                                 "has_app": true,
                                 "id": 17,
@@ -11990,7 +11990,7 @@
                                 "display": "block"
                             }
                         },
-                        "block_code": "def SNOW_Ticket_ID(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):\n    phantom.debug('SNOW_Ticket_ID() called')\n        \n    #phantom.debug('Action: {0} {1}'.format(action['name'], ('SUCCEEDED' if success else 'FAILED')))\n    \n    # collect data for 'SNOW_Ticket_ID' call\n    formatted_data_1 = phantom.get_format_data(name='get_SNOW_ticket_ID')\n\n    parameters = []\n    \n    # build parameters list for 'SNOW_Ticket_ID' call\n    parameters.append({\n        'location': formatted_data_1,\n        'verify_certificate': True,\n        'headers': \"\",\n    })\n\n    phantom.act(action=\"get data\", parameters=parameters, assets=['http'], callback=join_get_container_information, name=\"SNOW_Ticket_ID\")\n\n    return",
+                        "block_code": "def SNOW_Ticket_ID(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):\n    phantom.debug('SNOW_Ticket_ID() called')\n        \n    #phantom.debug('Action: {0} {1}'.format(action['name'], ('SUCCEEDED' if success else 'FAILED')))\n    \n    # collect data for 'SNOW_Ticket_ID' call\n    formatted_data_1 = phantom.get_format_data(name='get_SNOW_ticket_ID')\n\n    parameters = []\n    \n    # build parameters list for 'SNOW_Ticket_ID' call\n    parameters.append({\n        'location': formatted_data_1,\n        'verify_certificate': False,\n        'headers': \"\",\n    })\n\n    phantom.act(action=\"get data\", parameters=parameters, assets=['http'], callback=join_get_container_information, name=\"SNOW_Ticket_ID\")\n\n    return",
                         "callback_code": "",
                         "callback_start": 1,
                         "callsback": true,
@@ -12108,7 +12108,7 @@
         "schema": 4,
         "version": "4.9.34514"
     },
-    "create_time": "2020-08-21T13:17:30.808102+00:00",
+    "create_time": "2020-08-21T13:17:51.379033+00:00",
     "draft_mode": false,
     "labels": [
         "itsi"

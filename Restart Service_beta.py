@@ -584,7 +584,7 @@ def SNOW_Ticket_ID(action=None, success=None, container=None, results=None, hand
     # build parameters list for 'SNOW_Ticket_ID' call
     parameters.append({
         'location': formatted_data_1,
-        'verify_certificate': True,
+        'verify_certificate': False,
         'headers': "",
     })
 
