@@ -662,7 +662,7 @@ def get_container_information(action=None, success=None, container=None, results
         'sleep_seconds': 1,
     })
 
-    phantom.act(action="no op", parameters=parameters, assets=['phantom'], callback=cf_community_list_deduplicate_2, name="get_container_information", parent_action=action)
+    phantom.act(action="no op", parameters=parameters, assets=['phantom'], callback=decision_11, name="get_container_information", parent_action=action)
 
     return
 
@@ -699,6 +699,24 @@ def update_artifact_2(action=None, success=None, container=None, results=None, h
             })
 
     phantom.act(action="update artifact", parameters=parameters, assets=['phantom utilities'], callback=format_17, name="update_artifact_2")
+
+    return
+
+def decision_11(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):
+    phantom.debug('decision_11() called')
+
+    # check for 'if' condition 1
+    matched = phantom.decision(
+        container=container,
+        action_results=results,
+        conditions=[
+            ["service_restart_in_progress", "not in", "artifact:*.tags"],
+        ])
+
+    # call connected blocks if condition 1 matched
+    if matched:
+        cf_community_list_deduplicate_2(action=action, success=success, container=container, results=results, handle=handle, custom_function=custom_function)
+        return
 
     return
 
