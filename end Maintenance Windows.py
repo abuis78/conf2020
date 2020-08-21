@@ -40,11 +40,11 @@ def end_maintenance_window_1(action=None, success=None, container=None, results=
     
     # build parameters list for 'end_maintenance_window_1' call
     parameters.append({
-        'maintenance_window_id': formatted_data_1,
         'comment': "Phantom",
+        'maintenance_window_id': formatted_data_1,
     })
 
-    phantom.act(action="end maintenance window", parameters=parameters, assets=['splunk itsi'], name="end_maintenance_window_1")
+    phantom.act(action="end maintenance window", parameters=parameters, assets=['splunk itsi'], callback=add_episode_comment_1, name="end_maintenance_window_1")
 
     return
 
@@ -74,12 +74,33 @@ def get_data_1(action=None, success=None, container=None, results=None, handle=N
     
     # build parameters list for 'get_data_1' call
     parameters.append({
+        'headers': "",
         'location': formatted_data_1,
         'verify_certificate': False,
-        'headers': "",
     })
 
     phantom.act(action="get data", parameters=parameters, assets=['http'], callback=format_1, name="get_data_1")
+
+    return
+
+def add_episode_comment_1(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):
+    phantom.debug('add_episode_comment_1() called')
+        
+    #phantom.debug('Action: {0} {1}'.format(action['name'], ('SUCCEEDED' if success else 'FAILED')))
+    
+    source_data_identifier_value = container.get('source_data_identifier', None)
+
+    # collect data for 'add_episode_comment_1' call
+
+    parameters = []
+    
+    # build parameters list for 'add_episode_comment_1' call
+    parameters.append({
+        'itsi_group_id': source_data_identifier_value,
+        'comment': "Maintenance Windows end",
+    })
+
+    phantom.act(action="add episode comment", parameters=parameters, assets=['splunk itsi'], name="add_episode_comment_1", parent_action=action)
 
     return
 
