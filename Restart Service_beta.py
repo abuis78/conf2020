@@ -537,7 +537,7 @@ def add_work_note_3(action=None, success=None, container=None, results=None, han
             parameters.append({
                 'table_name': "incident",
                 'id': results_item_1[0],
-                'work_note': "asdasd",
+                'work_note': "",
                 'is_sys_id': "",
                 # context (artifact id) is added to associate results with the artifact
                 'context': {'artifact_id': results_item_1[1]},
@@ -577,20 +577,16 @@ def SNOW_Ticket_ID(action=None, success=None, container=None, results=None, hand
     #phantom.debug('Action: {0} {1}'.format(action['name'], ('SUCCEEDED' if success else 'FAILED')))
     
     # collect data for 'SNOW_Ticket_ID' call
-    results_data_1 = phantom.collect2(container=container, datapath=['get_SNOW_ticket_ID:action_result.data.*.response_body.data.*.data', 'get_SNOW_ticket_ID:action_result.parameter.context.artifact_id'], action_results=results)
+    formatted_data_1 = phantom.get_format_data(name='get_SNOW_ticket_ID')
 
     parameters = []
     
     # build parameters list for 'SNOW_Ticket_ID' call
-    for results_item_1 in results_data_1:
-        if results_item_1[0]:
-            parameters.append({
-                'location': results_item_1[0],
-                'verify_certificate': False,
-                'headers': "",
-                # context (artifact id) is added to associate results with the artifact
-                'context': {'artifact_id': results_item_1[1]},
-            })
+    parameters.append({
+        'location': formatted_data_1,
+        'verify_certificate': True,
+        'headers': "",
+    })
 
     phantom.act(action="get data", parameters=parameters, assets=['http'], callback=join_get_container_information, name="SNOW_Ticket_ID")
 
