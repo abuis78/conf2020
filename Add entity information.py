@@ -27,7 +27,9 @@ def pin_1(action=None, success=None, container=None, results=None, handle=None, 
 
 def Get_PIN(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):
     phantom.debug('Get_PIN() called')
-
+        
+    #phantom.debug('Action: {0} {1}'.format(action['name'], ('SUCCEEDED' if success else 'FAILED')))
+    
     # collect data for 'Get_PIN' call
     formatted_data_1 = phantom.get_format_data(name='Create_URL_Parameters')
 
@@ -52,7 +54,7 @@ def Create_URL_Parameters(action=None, success=None, container=None, results=Non
     # parameter list for template variable replacement
     parameters = [
         "container:id",
-        "DedupeListEntries:custom_function:entity_list",
+        "cf_community_list_deduplicate_1:custom_function_result.data.*.item",
     ]
 
     phantom.format(container=container, template=template, parameters=parameters, name="Create_URL_Parameters")
@@ -96,7 +98,7 @@ def decision_2(action=None, success=None, container=None, results=None, handle=N
 
     # call connected blocks if condition 1 matched
     if matched:
-        DedupeListEntries(action=action, success=success, container=container, results=results, handle=handle, custom_function=custom_function)
+        cf_community_list_deduplicate_1(action=action, success=success, container=container, results=results, handle=handle, custom_function=custom_function)
         return
 
     return
@@ -126,7 +128,6 @@ def DedupeListEntries(action=None, success=None, container=None, results=None, h
     ################################################################################
 
     phantom.save_run_data(key='DedupeListEntries:entity_list', value=json.dumps(DedupeListEntries__entity_list))
-    Create_URL_Parameters(container=container)
 
     return
 
@@ -154,6 +155,33 @@ def add_comment_3(action=None, success=None, container=None, results=None, handl
     phantom.debug('add_comment_3() called')
 
     phantom.comment(container=container, comment="Entity has already been recorded")
+
+    return
+
+def cf_community_list_deduplicate_1(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):
+    phantom.debug('cf_community_list_deduplicate_1() called')
+    
+    container_data_0 = phantom.collect2(container=container, datapath=['artifact:*.cef.entity_key', 'artifact:*.id'])
+
+    parameters = []
+
+    container_data_0_0 = [item[0] for item in container_data_0]
+
+    parameters.append({
+        'input_list': container_data_0_0,
+    })
+    ################################################################################
+    ## Custom Code Start
+    ################################################################################
+
+    # Write your custom code here...
+
+    ################################################################################
+    ## Custom Code End
+    ################################################################################    
+
+    # call custom function "community/list_deduplicate", returns the custom_function_run_id
+    phantom.custom_function(custom_function='community/list_deduplicate', parameters=parameters, name='cf_community_list_deduplicate_1', callback=Create_URL_Parameters)
 
     return
 
