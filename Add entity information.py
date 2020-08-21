@@ -202,20 +202,21 @@ def get_entity_2(action=None, success=None, container=None, results=None, handle
                 'itsi_entity_id': custom_function_results_item_1[0],
             })
 
-    phantom.act(action="get entity", parameters=parameters, assets=['splunk itsi'], callback=pin_5, name="get_entity_2")
+    phantom.act(action="get entity", parameters=parameters, assets=['splunk itsi'], callback=custom_pin, name="get_entity_2")
 
     return
 
-def pin_5(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):
+def custom_pin(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):
     phantom.debug('pin_5() called')
 
     results_data_1 = phantom.collect2(container=container, datapath=['get_entity_2:action_result.data.*.title.0', 'get_entity_2:action_result.data.*.external_ip.0.0'], action_results=results)
 
-    results_item_1_0 = [item[0] for item in results_data_1]
-    results_item_1_1 = [item[1] for item in results_data_1]
+    for item in results_data_1:
+        results_item_1_0 = "Entity: "+item[0]
+        results_item_1_1 = item[1]
 
-    phantom.pin(container=container, data=results_item_1_1, message=results_item_1_0, pin_type="card", pin_style="grey", name=None)
-
+        phantom.pin(container=container, data=results_item_1_1, message=results_item_1_0, pin_type="card", pin_style="grey", name=None)
+    
     return
 
 def on_finish(container, summary):
