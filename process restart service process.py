@@ -56,7 +56,7 @@ def decision_1(action=None, success=None, container=None, results=None, handle=N
         action_results=results,
         conditions=[
             ["get_entity_data:action_result.data.*.response_body.count", ">", 0],
-            ["action_result.data.*.response_body.pin_style", "==", "grey"],
+            ["action_result.data.*.response_body.data.*.pin_style", "==", "grey"],
         ],
         logical_operator='and')
 
