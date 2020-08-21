@@ -41,7 +41,7 @@ def Create_URL_Parameters(action=None, success=None, container=None, results=Non
     # parameter list for template variable replacement
     parameters = [
         "container:id",
-        "cf_community_list_deduplicate_1:custom_function_result.data.*.item",
+        "get_entity_2:action_result.data.*.entity_title",
     ]
 
     phantom.format(container=container, template=template, parameters=parameters, name="Create_URL_Parameters")
@@ -63,7 +63,7 @@ def decision_1(action=None, success=None, container=None, results=None, handle=N
 
     # call connected blocks if condition 1 matched
     if matched:
-        get_entity_2(action=action, success=success, container=container, results=results, handle=handle, custom_function=custom_function)
+        custom_pin(action=action, success=success, container=container, results=results, handle=handle, custom_function=custom_function)
         return
 
     # call connected blocks for 'else' condition 2
@@ -100,7 +100,7 @@ def add_comment_3(action=None, success=None, container=None, results=None, handl
 def cf_community_list_deduplicate_1(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):
     phantom.debug('cf_community_list_deduplicate_1() called')
     
-    container_data_0 = phantom.collect2(container=container, datapath=['artifact:*.cef.entity_title', 'artifact:*.id'])
+    container_data_0 = phantom.collect2(container=container, datapath=['artifact:*.cef.entity_key', 'artifact:*.id'])
 
     parameters = []
 
@@ -120,7 +120,7 @@ def cf_community_list_deduplicate_1(action=None, success=None, container=None, r
     ################################################################################    
 
     # call custom function "community/list_deduplicate", returns the custom_function_run_id
-    phantom.custom_function(custom_function='community/list_deduplicate', parameters=parameters, name='cf_community_list_deduplicate_1', callback=Create_URL_Parameters)
+    phantom.custom_function(custom_function='community/list_deduplicate', parameters=parameters, name='cf_community_list_deduplicate_1', callback=get_entity_2)
 
     return
 
@@ -141,7 +141,7 @@ def get_entity_2(action=None, success=None, container=None, results=None, handle
                 'itsi_entity_id': custom_function_results_item_1[0],
             })
 
-    phantom.act(action="get entity", parameters=parameters, assets=['splunk itsi'], callback=custom_pin, name="get_entity_2")
+    phantom.act(action="get entity", parameters=parameters, assets=['splunk itsi'], callback=Create_URL_Parameters, name="get_entity_2")
 
     return
 
