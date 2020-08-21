@@ -7,7 +7,7 @@
             "clean": true,
             "code_block": "",
             "description": "",
-            "hash": "ddca93c5244b15897b89b5f3f75e6340229f7128",
+            "hash": "5c1226e4bb90a3a454ffa016bd175a7491caf92f",
             "joint": {
                 "cells": [
                     {
@@ -5249,6 +5249,45 @@
                         "z": 154
                     },
                     {
+                        "attrs": {
+                            ".connection": {
+                                "stroke": "#818D99",
+                                "stroke-width": 2
+                            },
+                            ".marker-target": {
+                                "d": "M 10 0 L 0 5 L 10 10 z",
+                                "fill": "#818D99",
+                                "stroke": "#818D99"
+                            }
+                        },
+                        "connector": {
+                            "args": {
+                                "radius": 5
+                            },
+                            "name": "rounded"
+                        },
+                        "endDirections": [
+                            "left"
+                        ],
+                        "id": "4689239d-a5cf-4b0f-ae54-467858bb1846",
+                        "router": {
+                            "name": "metro"
+                        },
+                        "source": {
+                            "id": "bb35858e-7a43-472f-8106-41e515692161",
+                            "selector": "> g:nth-child(1) > g:nth-child(2) > g:nth-child(1) > circle:nth-child(1)"
+                        },
+                        "startDirections": [
+                            "right"
+                        ],
+                        "target": {
+                            "id": "ba7b1731-448d-4f7a-a78e-061e471fdbae",
+                            "selector": "> g:nth-child(1) > g:nth-child(1) > g:nth-child(1) > circle:nth-child(1)"
+                        },
+                        "type": "link",
+                        "z": 158
+                    },
+                    {
                         "active": false,
                         "angle": 0,
                         "attrs": {
@@ -5302,7 +5341,7 @@
                                 "display": "block"
                             }
                         },
-                        "block_code": "def format_9(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):\n    phantom.debug('format_9() called')\n    \n    template = \"\"\"{{\\\"state\\\":\\\"2\\\",\\\"caller_id\\\":\\\"{0}\\\"}}\"\"\"\n\n    # parameter list for template variable replacement\n    parameters = [\n        \"create_ticket_1:action_result.data.*.caller_id\",\n    ]\n\n    phantom.format(container=container, template=template, parameters=parameters, name=\"format_9\")\n\n    update_ticket_1(container=container)\n\n    return",
+                        "block_code": "def format_9(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):\n    phantom.debug('format_9() called')\n    \n    template = \"\"\"{{\\\"state\\\":\\\"2\\\"}}\"\"\"\n\n    # parameter list for template variable replacement\n    parameters = [\n        \"create_ticket_1:action_result.data.*.caller_id\",\n    ]\n\n    phantom.format(container=container, template=template, parameters=parameters, name=\"format_9\")\n\n    update_ticket_1(container=container)\n\n    return",
                         "callback_code": "",
                         "callback_start": 1,
                         "callsback": false,
@@ -5408,11 +5447,11 @@
                         },
                         "state": "format",
                         "status": "",
-                        "template": "{{\"state\":\"2\",\"caller_id\":\"{0}\"}}",
+                        "template": "{{\"state\":\"2\"}}",
                         "title": "format",
                         "type": "coa.Format",
                         "warn": false,
-                        "z": 156
+                        "z": 159
                     },
                     {
                         "action": "update ticket",
@@ -6548,46 +6587,7 @@
                         "title": "Generic",
                         "type": "coa.Action",
                         "warn": "",
-                        "z": 157
-                    },
-                    {
-                        "attrs": {
-                            ".connection": {
-                                "stroke": "#818D99",
-                                "stroke-width": 2
-                            },
-                            ".marker-target": {
-                                "d": "M 10 0 L 0 5 L 10 10 z",
-                                "fill": "#818D99",
-                                "stroke": "#818D99"
-                            }
-                        },
-                        "connector": {
-                            "args": {
-                                "radius": 5
-                            },
-                            "name": "rounded"
-                        },
-                        "endDirections": [
-                            "left"
-                        ],
-                        "id": "4689239d-a5cf-4b0f-ae54-467858bb1846",
-                        "router": {
-                            "name": "metro"
-                        },
-                        "source": {
-                            "id": "bb35858e-7a43-472f-8106-41e515692161",
-                            "selector": "> g:nth-child(1) > g:nth-child(2) > g:nth-child(1) > circle:nth-child(1)"
-                        },
-                        "startDirections": [
-                            "right"
-                        ],
-                        "target": {
-                            "id": "ba7b1731-448d-4f7a-a78e-061e471fdbae",
-                            "selector": "> g:nth-child(1) > g:nth-child(1) > g:nth-child(1) > circle:nth-child(1)"
-                        },
-                        "type": "link",
-                        "z": 158
+                        "z": 160
                     }
                 ]
             },
@@ -6597,7 +6597,7 @@
         "schema": 4,
         "version": "4.9.34514"
     },
-    "create_time": "2020-08-21T07:09:28.533407+00:00",
+    "create_time": "2020-08-21T07:10:46.928794+00:00",
     "draft_mode": false,
     "labels": [
         "itsi"
