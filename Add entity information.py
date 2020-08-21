@@ -181,15 +181,7 @@ def cf_community_list_deduplicate_1(action=None, success=None, container=None, r
     ################################################################################    
 
     # call custom function "community/list_deduplicate", returns the custom_function_run_id
-    phantom.custom_function(custom_function='community/list_deduplicate', parameters=parameters, name='cf_community_list_deduplicate_1', callback=cf_community_list_deduplicate_1_callback)
-
-    return
-
-def cf_community_list_deduplicate_1_callback(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None):
-    phantom.debug('cf_community_list_deduplicate_1_callback() called')
-    
-    Create_URL_Parameters(action=action, success=success, container=container, results=results, handle=handle, custom_function=custom_function)
-    add_comment_4(action=action, success=success, container=container, results=results, handle=handle, custom_function=custom_function)
+    phantom.custom_function(custom_function='community/list_deduplicate', parameters=parameters, name='cf_community_list_deduplicate_1', callback=add_comment_4)
 
     return
 
@@ -201,6 +193,7 @@ def add_comment_4(action=None, success=None, container=None, results=None, handl
     custom_function_results_item_1_0 = [item[0] for item in custom_function_results_data_1]
 
     phantom.comment(container=container, comment=custom_function_results_item_1_0)
+    Create_URL_Parameters(container=container)
 
     return
 
