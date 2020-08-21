@@ -239,7 +239,7 @@ def join_service_path(action=None, success=None, container=None, results=None, h
         return
 
     # check if all connected incoming playbooks, actions, or custom functions are done i.e. have succeeded or failed
-    if phantom.completed(action_names=['post_data_1', 'systemctl_is_service_active', 'post_data_2']):
+    if phantom.completed(action_names=['post_data_1', 'restart_Service']):
         
         # save the state that the joined function has now been called
         phantom.save_run_data(key='join_service_path_called', value='service_path')
