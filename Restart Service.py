@@ -227,7 +227,7 @@ def service_path(action=None, success=None, container=None, results=None, handle
         'sleep_seconds': 1,
     })
 
-    phantom.act(action="no op", parameters=parameters, assets=['phantom'], callback=format_snow_ticket_id_request, name="service_path")
+    phantom.act(action="no op", parameters=parameters, assets=['phantom'], callback=playbook_conf2020_end_Maintenance_Windows_1, name="service_path")
 
     return
 
@@ -903,7 +903,6 @@ def remove_tag_6(action=None, success=None, container=None, results=None, handle
     phantom.debug('remove_tag_6() called')
 
     phantom.remove_tags(container=container, tags="itsi_in_progress")
-    playbook_conf2020_end_Maintenance_Windows_1(container=container)
 
     return
 
@@ -1008,7 +1007,7 @@ def playbook_conf2020_end_Maintenance_Windows_1(action=None, success=None, conta
     phantom.debug('playbook_conf2020_end_Maintenance_Windows_1() called')
     
     # call playbook "conf2020/end Maintenance Windows", returns the playbook_run_id
-    playbook_run_id = phantom.playbook(playbook="conf2020/end Maintenance Windows", container=container, name="playbook_conf2020_end_Maintenance_Windows_1")
+    playbook_run_id = phantom.playbook(playbook="conf2020/end Maintenance Windows", container=container, name="playbook_conf2020_end_Maintenance_Windows_1", callback=format_snow_ticket_id_request)
 
     return
 

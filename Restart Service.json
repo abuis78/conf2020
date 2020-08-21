@@ -7,7 +7,7 @@
             "clean": true,
             "code_block": "",
             "description": "",
-            "hash": "c66701e3e29a5389a7f82d03a9e404f455d26f00",
+            "hash": "40baeec6215005a9c436e5e15b349fb946fdf3bb",
             "joint": {
                 "cells": [
                     {
@@ -199,7 +199,7 @@
                         "callback_start": 1,
                         "callsback": false,
                         "connected_to_start": true,
-                        "connection_name": "end Maintenance Windows",
+                        "connection_name": "add snow work note, add tag service_restart_in_progress, get pin info path",
                         "connection_type": "action",
                         "custom_callback": "",
                         "custom_code": "",
@@ -217,8 +217,8 @@
                         "join_code": "# read-only block view not available",
                         "join_optional": [],
                         "join_start": 1,
-                        "line_end": 1028,
-                        "line_start": 1015,
+                        "line_end": 1027,
+                        "line_start": 1014,
                         "name": "",
                         "notes": "",
                         "number": 0,
@@ -277,8 +277,8 @@
                             }
                         },
                         "position": {
-                            "x": 2320,
-                            "y": 660
+                            "x": 2620,
+                            "y": 1120
                         },
                         "previous_function": "",
                         "previous_name": "",
@@ -370,336 +370,6 @@
                         },
                         "type": "link",
                         "z": 6
-                    },
-                    {
-                        "action": "no op",
-                        "action_type": "investigate",
-                        "active": false,
-                        "active_keys": {},
-                        "active_values": {
-                            "sleep_seconds": "1"
-                        },
-                        "angle": 0,
-                        "app": "Phantom",
-                        "appid": "deb82aa9-22cc-4675-9cf1-534b8d006eb7",
-                        "approver": "",
-                        "assets": [
-                            {
-                                "action": "no op",
-                                "actions": [
-                                    "no op",
-                                    "update list",
-                                    "get action result",
-                                    "create container",
-                                    "import container",
-                                    "export container",
-                                    "deflate item",
-                                    "add artifact",
-                                    "find listitem",
-                                    "add listitem",
-                                    "find artifacts",
-                                    "update artifact tags",
-                                    "add note",
-                                    "update artifact",
-                                    "test connectivity"
-                                ],
-                                "active": true,
-                                "app_name": "Phantom",
-                                "app_version": "3.0.2",
-                                "appid": "deb82aa9-22cc-4675-9cf1-534b8d006eb7",
-                                "asset_name": "phantom",
-                                "config_type": "asset",
-                                "count": 0,
-                                "fields": {
-                                    "sleep_seconds": "1"
-                                },
-                                "has_app": true,
-                                "id": 8,
-                                "loaded": false,
-                                "missing": false,
-                                "name": "phantom",
-                                "output": [
-                                    {
-                                        "data_path": "action_result.status",
-                                        "data_type": "string",
-                                        "example_values": [
-                                            "success",
-                                            "failed"
-                                        ]
-                                    },
-                                    {
-                                        "data_path": "action_result.parameter.sleep_seconds",
-                                        "data_type": "numeric",
-                                        "example_values": [
-                                            15
-                                        ]
-                                    },
-                                    {
-                                        "data_path": "action_result.data",
-                                        "data_type": "string"
-                                    },
-                                    {
-                                        "data_path": "action_result.summary",
-                                        "data_type": "string"
-                                    },
-                                    {
-                                        "column_name": "Message",
-                                        "column_order": 0,
-                                        "data_path": "action_result.message",
-                                        "data_type": "string",
-                                        "example_values": [
-                                            "Slept for 15 seconds"
-                                        ]
-                                    },
-                                    {
-                                        "data_path": "summary.total_objects",
-                                        "data_type": "numeric",
-                                        "example_values": [
-                                            1
-                                        ]
-                                    },
-                                    {
-                                        "data_path": "summary.total_objects_successful",
-                                        "data_type": "numeric",
-                                        "example_values": [
-                                            1
-                                        ]
-                                    }
-                                ],
-                                "parameters": {
-                                    "sleep_seconds": {
-                                        "data_type": "numeric",
-                                        "default": null,
-                                        "description": "Sleep for this many seconds",
-                                        "key": "sleep_seconds",
-                                        "order": 0,
-                                        "required": true
-                                    }
-                                },
-                                "product_name": "Phantom",
-                                "product_vendor": "Phantom",
-                                "targets": "8",
-                                "type": "information"
-                            }
-                        ],
-                        "attrs": {
-                            ".action": {
-                                "text": "service path"
-                            },
-                            ".background": {
-                                "fill": "#FFFFFF",
-                                "stroke": "#818D99"
-                            },
-                            ".color-band": {
-                                "fill": "#171D21"
-                            },
-                            ".inPorts>.port-in": {
-                                "ref": ".background",
-                                "ref-x": 0.5
-                            },
-                            ".inPorts>.port-in>.port-body": {
-                                "port": {
-                                    "id": "in",
-                                    "type": "in"
-                                }
-                            },
-                            ".message": {
-                                "opacity": 0,
-                                "ref-x": 5,
-                                "ref-y": 105,
-                                "text": "Configuring now"
-                            },
-                            ".outPorts>.port-out": {
-                                "ref": ".background",
-                                "ref-x": 0.5
-                            },
-                            ".outPorts>.port-out>.port-body": {
-                                "port": {
-                                    "id": "out",
-                                    "type": "out"
-                                }
-                            },
-                            ".title": {
-                                "text": "Investigate"
-                            },
-                            "g.approver image": {
-                                "opacity": 1
-                            },
-                            "g.code image": {
-                                "opacity": 1
-                            },
-                            "g.delete": {
-                                "display": "none"
-                            },
-                            "g.error": {
-                                "opacity": 0
-                            },
-                            "g.error image": {
-                                "xlink:href": "/inc/coa/img/block_icon_warn.svg"
-                            },
-                            "g.icon image": {
-                                "xlink:href": "/inc/coa/img/block_icon_investigate.svg"
-                            },
-                            "g.notes": {
-                                "display": "block"
-                            },
-                            "g.notes image": {
-                                "opacity": 1
-                            },
-                            "g.timer image": {
-                                "opacity": 1
-                            }
-                        },
-                        "block_code": "def service_path(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):\n    phantom.debug('service_path() called')\n        \n    #phantom.debug('Action: {0} {1}'.format(action['name'], ('SUCCEEDED' if success else 'FAILED')))\n    \n    # collect data for 'service_path' call\n\n    parameters = []\n    \n    # build parameters list for 'service_path' call\n    parameters.append({\n        'sleep_seconds': 1,\n    })\n\n    phantom.act(action=\"no op\", parameters=parameters, assets=['phantom'], callback=format_snow_ticket_id_request, name=\"service_path\")\n\n    return",
-                        "callback_code": "",
-                        "callback_start": 1,
-                        "callsback": true,
-                        "color": "",
-                        "connected_to_start": true,
-                        "connection_name": "post data 1, restart Service, systemctl is service active, post data 2, systemctl is service active",
-                        "connection_type": "action",
-                        "custom_callback": "",
-                        "custom_code": "",
-                        "custom_join": "",
-                        "custom_name": "service path",
-                        "delay": 0,
-                        "description": "",
-                        "has_custom": false,
-                        "has_custom_block": false,
-                        "has_custom_callback": false,
-                        "has_custom_join": false,
-                        "id": "9fbe1f8e-0632-406b-9aa2-f2c0da95c44a",
-                        "inPorts": [
-                            "in"
-                        ],
-                        "join_code": "def join_service_path(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None):\n    phantom.debug('join_service_path() called')\n    \n    # if the joined function has already been called, do nothing\n    if phantom.get_run_data(key='join_service_path_called'):\n        return\n\n    # check if all connected incoming playbooks, actions, or custom functions are done i.e. have succeeded or failed\n    if phantom.completed(action_names=['post_data_1', 'systemctl_is_service_active', 'post_data_2']):\n        \n        # save the state that the joined function has now been called\n        phantom.save_run_data(key='join_service_path_called', value='service_path')\n        \n        # call connected block \"service_path\"\n        service_path(container=container, handle=handle)\n    \n    return",
-                        "join_optional": [
-                            "restart_Service",
-                            "prompt_1"
-                        ],
-                        "join_start": 234,
-                        "line_end": 252,
-                        "line_start": 216,
-                        "message": "Configuring now",
-                        "name": "no op",
-                        "notes": "",
-                        "number": 1,
-                        "order": 11,
-                        "outPorts": [
-                            "out"
-                        ],
-                        "ports": {
-                            "groups": {
-                                "in": {
-                                    "attrs": {
-                                        ".port-body": {
-                                            "fill": "#fff",
-                                            "magnet": true,
-                                            "r": 10,
-                                            "stroke": "#000"
-                                        },
-                                        ".port-label": {
-                                            "fill": "#000"
-                                        }
-                                    },
-                                    "label": {
-                                        "position": {
-                                            "args": {
-                                                "y": 10
-                                            },
-                                            "name": "left"
-                                        }
-                                    },
-                                    "position": {
-                                        "name": "left"
-                                    }
-                                },
-                                "out": {
-                                    "attrs": {
-                                        ".port-body": {
-                                            "fill": "#fff",
-                                            "magnet": true,
-                                            "r": 10,
-                                            "stroke": "#000"
-                                        },
-                                        ".port-label": {
-                                            "fill": "#000"
-                                        }
-                                    },
-                                    "label": {
-                                        "position": {
-                                            "args": {
-                                                "y": 10
-                                            },
-                                            "name": "right"
-                                        }
-                                    },
-                                    "position": {
-                                        "name": "right"
-                                    }
-                                }
-                            }
-                        },
-                        "position": {
-                            "x": 2200,
-                            "y": 300
-                        },
-                        "previous_function": "",
-                        "previous_name": "service_path",
-                        "required_params": {
-                            "sleep_seconds": true
-                        },
-                        "reviewer": "",
-                        "show_number": true,
-                        "size": {
-                            "height": 100,
-                            "width": 180
-                        },
-                        "state": "app_action_assets",
-                        "status": "",
-                        "title": "Investigate",
-                        "type": "coa.Action",
-                        "warn": false,
-                        "z": 37
-                    },
-                    {
-                        "attrs": {
-                            ".connection": {
-                                "stroke": "#818D99",
-                                "stroke-width": 2
-                            },
-                            ".marker-target": {
-                                "d": "M 10 0 L 0 5 L 10 10 z",
-                                "fill": "#818D99",
-                                "stroke": "#818D99"
-                            }
-                        },
-                        "connector": {
-                            "args": {
-                                "radius": 5
-                            },
-                            "name": "rounded"
-                        },
-                        "endDirections": [
-                            "left"
-                        ],
-                        "id": "ac786f0f-6657-4316-b231-e36ba95d2270",
-                        "router": {
-                            "name": "metro"
-                        },
-                        "source": {
-                            "id": "9fbe1f8e-0632-406b-9aa2-f2c0da95c44a",
-                            "selector": "> g:nth-child(1) > g:nth-child(2) > g:nth-child(1) > circle:nth-child(1)"
-                        },
-                        "startDirections": [
-                            "right"
-                        ],
-                        "target": {
-                            "id": "2a17ce03-f2ed-42e9-8eea-3e8698219d85",
-                            "selector": ".port-body[type=\"input\"]"
-                        },
-                        "type": "link",
-                        "z": 42
                     },
                     {
                         "attrs": {
@@ -2187,8 +1857,8 @@
                             }
                         },
                         "position": {
-                            "x": 1020,
-                            "y": 300
+                            "x": 660,
+                            "y": 740
                         },
                         "previous_function": "",
                         "previous_name": "SNOW_worknote_manual_task",
@@ -3377,7 +3047,7 @@
                                 "opacity": 1
                             }
                         },
-                        "block_code": "def remove_tag_6(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):\n    phantom.debug('remove_tag_6() called')\n\n    phantom.remove_tags(container=container, tags=\"itsi_in_progress\")\n    playbook_conf2020_end_Maintenance_Windows_1(container=container)\n\n    return",
+                        "block_code": "def remove_tag_6(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):\n    phantom.debug('remove_tag_6() called')\n\n    phantom.remove_tags(container=container, tags=\"itsi_in_progress\")\n\n    return",
                         "callback_code": "",
                         "callback_start": 1,
                         "callsback": false,
@@ -3407,7 +3077,7 @@
                         "join_code": "",
                         "join_optional": [],
                         "join_start": 1,
-                        "line_end": 910,
+                        "line_end": 909,
                         "line_start": 902,
                         "message": "Configuring now",
                         "name": "remove tag",
@@ -3470,8 +3140,8 @@
                             }
                         },
                         "position": {
-                            "x": 800,
-                            "y": 640
+                            "x": 2300,
+                            "y": 1100
                         },
                         "previous_function": "",
                         "previous_name": "remove_tag_6",
@@ -3683,8 +3353,8 @@
                             }
                         },
                         "position": {
-                            "x": 540,
-                            "y": 640
+                            "x": 2000,
+                            "y": 1100
                         },
                         "previous_function": "",
                         "previous_name": "add_tag_5",
@@ -4627,8 +4297,8 @@
                             }
                         },
                         "position": {
-                            "x": 1900,
-                            "y": 300
+                            "x": 1460,
+                            "y": 740
                         },
                         "previous_function": "",
                         "previous_name": "post_data_2",
@@ -4804,8 +4474,8 @@
                             }
                         },
                         "position": {
-                            "x": 1580,
-                            "y": 300
+                            "x": 1200,
+                            "y": 740
                         },
                         "previous_function": "",
                         "previous_name": "format_14",
@@ -4976,8 +4646,8 @@
                             }
                         },
                         "position": {
-                            "x": 1300,
-                            "y": 300
+                            "x": 940,
+                            "y": 740
                         },
                         "previous_function": "",
                         "previous_name": "format_13",
@@ -8245,8 +7915,8 @@
                             }
                         },
                         "position": {
-                            "x": 520,
-                            "y": 300
+                            "x": 320,
+                            "y": 440
                         },
                         "previous_function": "",
                         "previous_name": "execute_program_3",
@@ -8879,7 +8549,7 @@
                         "callback_start": 1,
                         "callsback": false,
                         "connected_to_start": true,
-                        "connection_name": "service path",
+                        "connection_name": "end Maintenance Windows",
                         "connection_type": "action",
                         "custom_callback": "",
                         "custom_code": "",
@@ -8968,8 +8638,8 @@
                             }
                         },
                         "position": {
-                            "x": 520,
-                            "y": 440
+                            "x": 2440,
+                            "y": 740
                         },
                         "previous_function": "",
                         "previous_name": "format_snow_ticket_id_request",
@@ -9311,7 +8981,7 @@
                         "callsback": true,
                         "color": "",
                         "connected_to_start": true,
-                        "connection_name": "service path",
+                        "connection_name": "end Maintenance Windows",
                         "connection_type": "action",
                         "custom_callback": "",
                         "custom_code": "",
@@ -9393,8 +9063,8 @@
                             }
                         },
                         "position": {
-                            "x": 780,
-                            "y": 440
+                            "x": 2660,
+                            "y": 740
                         },
                         "previous_function": "",
                         "previous_name": "get_snow_ticket",
@@ -10475,8 +10145,8 @@
                             }
                         },
                         "position": {
-                            "x": 1300,
-                            "y": 460
+                            "x": 2260,
+                            "y": 880
                         },
                         "previous_function": "",
                         "previous_name": "add_snow_work_note",
@@ -11290,8 +10960,8 @@
                         "join_code": "",
                         "join_optional": [],
                         "join_start": 1,
-                        "line_end": 954,
-                        "line_start": 927,
+                        "line_end": 953,
+                        "line_start": 926,
                         "message": "Configuring now",
                         "name": "add work note",
                         "notes": "",
@@ -12941,8 +12611,8 @@
                             }
                         },
                         "position": {
-                            "x": 780,
-                            "y": 300
+                            "x": 480,
+                            "y": 600
                         },
                         "previous_function": "",
                         "previous_name": "add_tag_4",
@@ -13043,8 +12713,8 @@
                         "join_code": "",
                         "join_optional": [],
                         "join_start": 1,
-                        "line_end": 999,
-                        "line_start": 991,
+                        "line_end": 998,
+                        "line_start": 990,
                         "message": "Configuring now",
                         "name": "add Maintenance Windows",
                         "notes": "",
@@ -13437,8 +13107,8 @@
                         "join_code": "",
                         "join_optional": [],
                         "join_start": 1,
-                        "line_end": 1007,
-                        "line_start": 999,
+                        "line_end": 1006,
+                        "line_start": 998,
                         "message": "Configuring now",
                         "name": "add Maintenance Windows",
                         "notes": "",
@@ -13559,45 +13229,6 @@
                         "z": 454
                     },
                     {
-                        "attrs": {
-                            ".connection": {
-                                "stroke": "#818D99",
-                                "stroke-width": 2
-                            },
-                            ".marker-target": {
-                                "d": "M 10 0 L 0 5 L 10 10 z",
-                                "fill": "#818D99",
-                                "stroke": "#818D99"
-                            }
-                        },
-                        "connector": {
-                            "args": {
-                                "radius": 5
-                            },
-                            "name": "rounded"
-                        },
-                        "endDirections": [
-                            "left"
-                        ],
-                        "id": "8bb238cb-2e29-4902-aa67-67ffde8201d1",
-                        "router": {
-                            "name": "metro"
-                        },
-                        "source": {
-                            "id": "3eac8f3d-28cb-40d7-b9fd-a34dd8989354",
-                            "selector": "> g:nth-child(1) > g:nth-child(2) > g:nth-child(1) > circle:nth-child(1)"
-                        },
-                        "startDirections": [
-                            "right"
-                        ],
-                        "target": {
-                            "id": "a8b9ae40-94d7-4ff0-ad1f-a90f135ea07d",
-                            "selector": ".port-body[type=\"input\"]"
-                        },
-                        "type": "link",
-                        "z": 455
-                    },
-                    {
                         "active": false,
                         "angle": 0,
                         "attrs": {
@@ -13652,16 +13283,19 @@
                             "g.error": {
                                 "opacity": 0
                             },
+                            "g.error image": {
+                                "xlink:href": "/inc/coa/img/block_icon_warn.svg"
+                            },
                             "g.notes": {
                                 "display": "block"
                             }
                         },
-                        "block_code": "def playbook_conf2020_end_Maintenance_Windows_1(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):\n    phantom.debug('playbook_conf2020_end_Maintenance_Windows_1() called')\n    \n    # call playbook \"conf2020/end Maintenance Windows\", returns the playbook_run_id\n    playbook_run_id = phantom.playbook(playbook=\"conf2020/end Maintenance Windows\", container=container, name=\"playbook_conf2020_end_Maintenance_Windows_1\")\n\n    return",
+                        "block_code": "def playbook_conf2020_end_Maintenance_Windows_1(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):\n    phantom.debug('playbook_conf2020_end_Maintenance_Windows_1() called')\n    \n    # call playbook \"conf2020/end Maintenance Windows\", returns the playbook_run_id\n    playbook_run_id = phantom.playbook(playbook=\"conf2020/end Maintenance Windows\", container=container, name=\"playbook_conf2020_end_Maintenance_Windows_1\", callback=format_snow_ticket_id_request)\n\n    return",
                         "callback_code": "",
                         "callback_start": 1,
                         "callsback": true,
                         "connected_to_start": true,
-                        "connection_name": "add snow work note, add tag service_restart_in_progress, get pin info path",
+                        "connection_name": "service path",
                         "connection_type": "action",
                         "custom_callback": "",
                         "custom_code": "",
@@ -13679,8 +13313,8 @@
                         "join_code": "",
                         "join_optional": [],
                         "join_start": 1,
-                        "line_end": 1015,
-                        "line_start": 1007,
+                        "line_end": 1014,
+                        "line_start": 1006,
                         "message": "Configuring now",
                         "name": "end Maintenance Windows",
                         "notes": "",
@@ -13743,8 +13377,8 @@
                             }
                         },
                         "position": {
-                            "x": 1180,
-                            "y": 640
+                            "x": 2160,
+                            "y": 740
                         },
                         "previous_function": "",
                         "previous_name": "playbook_conf2020_end_Maintenance_Windows_1",
@@ -13760,222 +13394,6 @@
                         "type": "coa.CallPlaybook",
                         "warn": false,
                         "z": 456
-                    },
-                    {
-                        "active": false,
-                        "angle": 0,
-                        "attrs": {
-                            ".background": {
-                                "fill": "#FFFFFF",
-                                "stroke": "#818D99"
-                            },
-                            ".color-band": {
-                                "fill": "#171D21"
-                            },
-                            ".format": {
-                                "text": "format snow worknote"
-                            },
-                            ".inPorts>.port-in": {
-                                "ref": ".background",
-                                "ref-x": 0.5
-                            },
-                            ".inPorts>.port-in>.port-body": {
-                                "port": {
-                                    "id": "in",
-                                    "type": "in"
-                                }
-                            },
-                            ".message": {
-                                "opacity": 0,
-                                "text": "Configuring now"
-                            },
-                            ".outPorts>.port-out-1": {
-                                "ref": ".background",
-                                "ref-x": 0.5
-                            },
-                            ".outPorts>.port-out-1>.port-body": {
-                                "port": {
-                                    "id": "out-1",
-                                    "type": "out"
-                                }
-                            },
-                            ".title": {
-                                "text": "format"
-                            },
-                            "g.code image": {
-                                "opacity": 1
-                            },
-                            "g.delete": {
-                                "display": "none"
-                            },
-                            "g.error": {
-                                "opacity": 0
-                            },
-                            "g.error image": {
-                                "xlink:href": "/inc/coa/img/block_icon_warn.svg"
-                            },
-                            "g.notes": {
-                                "display": "block"
-                            },
-                            "g.notes image": {
-                                "opacity": 1
-                            }
-                        },
-                        "block_code": "def format_snow_worknote(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):\n    phantom.debug('format_snow_worknote() called')\n    \n    template = \"\"\"The Service: {0} has been started / restarted on host {1}\"\"\"\n\n    # parameter list for template variable replacement\n    parameters = [\n        \"Format_Service_Name:formatted_data\",\n        \"Format_Server_Address:formatted_data\",\n    ]\n\n    phantom.format(container=container, template=template, parameters=parameters, name=\"format_snow_worknote\")\n\n    add_snow_work_note(container=container)\n\n    return",
-                        "callback_code": "",
-                        "callback_start": 1,
-                        "callsback": false,
-                        "connected_to_start": true,
-                        "connection_name": "get snow ticket",
-                        "connection_type": "action",
-                        "custom_callback": "",
-                        "custom_code": "",
-                        "custom_join": "",
-                        "custom_name": "format snow worknote",
-                        "description": "",
-                        "format": "format",
-                        "has_custom": false,
-                        "has_custom_block": false,
-                        "has_custom_callback": false,
-                        "has_custom_join": false,
-                        "id": "76d7e323-fe65-4f49-a97f-807e765c436c",
-                        "inPorts": [
-                            "in"
-                        ],
-                        "join_code": "",
-                        "join_optional": [],
-                        "join_start": 1,
-                        "line_end": 306,
-                        "line_start": 289,
-                        "message": "Configuring now",
-                        "name": "format",
-                        "notes": "",
-                        "number": 8,
-                        "order": 14,
-                        "outPorts": [
-                            "out-1"
-                        ],
-                        "parameters": [
-                            {
-                                "position": 0,
-                                "type": "",
-                                "value": "Format_Service_Name:formatted_data"
-                            },
-                            {
-                                "position": 1,
-                                "type": "",
-                                "value": "Format_Server_Address:formatted_data"
-                            }
-                        ],
-                        "ports": {
-                            "groups": {
-                                "in": {
-                                    "attrs": {
-                                        ".port-body": {
-                                            "fill": "#fff",
-                                            "magnet": true,
-                                            "r": 10,
-                                            "stroke": "#000"
-                                        },
-                                        ".port-label": {
-                                            "fill": "#000"
-                                        }
-                                    },
-                                    "label": {
-                                        "position": {
-                                            "args": {
-                                                "y": 10
-                                            },
-                                            "name": "left"
-                                        }
-                                    },
-                                    "position": {
-                                        "name": "left"
-                                    }
-                                },
-                                "out": {
-                                    "attrs": {
-                                        ".port-body": {
-                                            "fill": "#fff",
-                                            "magnet": true,
-                                            "r": 10,
-                                            "stroke": "#000"
-                                        },
-                                        ".port-label": {
-                                            "fill": "#000"
-                                        }
-                                    },
-                                    "label": {
-                                        "position": {
-                                            "args": {
-                                                "y": 10
-                                            },
-                                            "name": "right"
-                                        }
-                                    },
-                                    "position": {
-                                        "name": "right"
-                                    }
-                                }
-                            }
-                        },
-                        "position": {
-                            "x": 1040,
-                            "y": 460
-                        },
-                        "previous_function": "",
-                        "previous_name": "format_snow_worknote",
-                        "show_number": true,
-                        "size": {
-                            "height": 100,
-                            "width": 180
-                        },
-                        "state": "format",
-                        "status": "",
-                        "template": "The Service: {0} has been started / restarted on host {1}",
-                        "title": "format",
-                        "type": "coa.Format",
-                        "warn": false,
-                        "z": 457
-                    },
-                    {
-                        "attrs": {
-                            ".connection": {
-                                "stroke": "#818D99",
-                                "stroke-width": 2
-                            },
-                            ".marker-target": {
-                                "d": "M 10 0 L 0 5 L 10 10 z",
-                                "fill": "#818D99",
-                                "stroke": "#818D99"
-                            }
-                        },
-                        "connector": {
-                            "args": {
-                                "radius": 5
-                            },
-                            "name": "rounded"
-                        },
-                        "endDirections": [
-                            "left"
-                        ],
-                        "id": "57e4fba9-f3f9-476a-b5be-2e7b009d7b63",
-                        "router": {
-                            "name": "metro"
-                        },
-                        "source": {
-                            "id": "a8b9ae40-94d7-4ff0-ad1f-a90f135ea07d",
-                            "selector": "> g:nth-child(1) > g:nth-child(2) > g:nth-child(1) > circle:nth-child(1)"
-                        },
-                        "startDirections": [
-                            "right"
-                        ],
-                        "target": {
-                            "id": "b25da0b7-3568-4416-ba2d-4afee97b4f23",
-                            "selector": "> g:nth-child(1) > g:nth-child(1) > g:nth-child(1) > circle:nth-child(1)"
-                        },
-                        "type": "link",
-                        "z": 458
                     },
                     {
                         "attrs": {
@@ -14482,8 +13900,8 @@
                         "join_code": "",
                         "join_optional": [],
                         "join_start": 1,
-                        "line_end": 991,
-                        "line_start": 970,
+                        "line_end": 990,
+                        "line_start": 969,
                         "message": "Configuring now",
                         "name": "get data",
                         "notes": "",
@@ -14685,8 +14103,8 @@
                         "join_code": "",
                         "join_optional": [],
                         "join_start": 1,
-                        "line_end": 970,
-                        "line_start": 954,
+                        "line_end": 969,
+                        "line_start": 953,
                         "message": "Configuring now",
                         "name": "format",
                         "notes": "",
@@ -14851,8 +14269,8 @@
                         "join_code": "",
                         "join_optional": [],
                         "join_start": 1,
-                        "line_end": 927,
-                        "line_start": 910,
+                        "line_end": 926,
+                        "line_start": 909,
                         "message": "Configuring now",
                         "name": "format",
                         "notes": "",
@@ -14943,6 +14361,591 @@
                         "type": "coa.Format",
                         "warn": false,
                         "z": 467
+                    },
+                    {
+                        "action": "no op",
+                        "action_type": "investigate",
+                        "active": false,
+                        "active_keys": {},
+                        "active_values": {
+                            "sleep_seconds": "1"
+                        },
+                        "angle": 0,
+                        "app": "Phantom",
+                        "appid": "deb82aa9-22cc-4675-9cf1-534b8d006eb7",
+                        "approver": "",
+                        "assets": [
+                            {
+                                "action": "no op",
+                                "actions": [
+                                    "no op",
+                                    "update list",
+                                    "get action result",
+                                    "create container",
+                                    "import container",
+                                    "export container",
+                                    "deflate item",
+                                    "add artifact",
+                                    "find listitem",
+                                    "add listitem",
+                                    "find artifacts",
+                                    "update artifact tags",
+                                    "add note",
+                                    "update artifact",
+                                    "test connectivity"
+                                ],
+                                "active": true,
+                                "app_name": "Phantom",
+                                "app_version": "3.0.2",
+                                "appid": "deb82aa9-22cc-4675-9cf1-534b8d006eb7",
+                                "asset_name": "phantom",
+                                "config_type": "asset",
+                                "count": 0,
+                                "fields": {
+                                    "sleep_seconds": "1"
+                                },
+                                "has_app": true,
+                                "id": 8,
+                                "loaded": false,
+                                "missing": false,
+                                "name": "phantom",
+                                "output": [
+                                    {
+                                        "data_path": "action_result.status",
+                                        "data_type": "string",
+                                        "example_values": [
+                                            "success",
+                                            "failed"
+                                        ]
+                                    },
+                                    {
+                                        "data_path": "action_result.parameter.sleep_seconds",
+                                        "data_type": "numeric",
+                                        "example_values": [
+                                            15
+                                        ]
+                                    },
+                                    {
+                                        "data_path": "action_result.data",
+                                        "data_type": "string"
+                                    },
+                                    {
+                                        "data_path": "action_result.summary",
+                                        "data_type": "string"
+                                    },
+                                    {
+                                        "column_name": "Message",
+                                        "column_order": 0,
+                                        "data_path": "action_result.message",
+                                        "data_type": "string",
+                                        "example_values": [
+                                            "Slept for 15 seconds"
+                                        ]
+                                    },
+                                    {
+                                        "data_path": "summary.total_objects",
+                                        "data_type": "numeric",
+                                        "example_values": [
+                                            1
+                                        ]
+                                    },
+                                    {
+                                        "data_path": "summary.total_objects_successful",
+                                        "data_type": "numeric",
+                                        "example_values": [
+                                            1
+                                        ]
+                                    }
+                                ],
+                                "parameters": {
+                                    "sleep_seconds": {
+                                        "data_type": "numeric",
+                                        "default": null,
+                                        "description": "Sleep for this many seconds",
+                                        "key": "sleep_seconds",
+                                        "order": 0,
+                                        "required": true
+                                    }
+                                },
+                                "product_name": "Phantom",
+                                "product_vendor": "Phantom",
+                                "targets": "8",
+                                "type": "information"
+                            }
+                        ],
+                        "attrs": {
+                            ".action": {
+                                "text": "service path"
+                            },
+                            ".background": {
+                                "fill": "#FFFFFF",
+                                "stroke": "#818D99"
+                            },
+                            ".color-band": {
+                                "fill": "#171D21"
+                            },
+                            ".inPorts>.port-in": {
+                                "ref": ".background",
+                                "ref-x": 0.5
+                            },
+                            ".inPorts>.port-in>.port-body": {
+                                "port": {
+                                    "id": "in",
+                                    "type": "in"
+                                }
+                            },
+                            ".message": {
+                                "opacity": 0,
+                                "ref-x": 5,
+                                "ref-y": 105,
+                                "text": "Configuring now"
+                            },
+                            ".outPorts>.port-out": {
+                                "ref": ".background",
+                                "ref-x": 0.5
+                            },
+                            ".outPorts>.port-out>.port-body": {
+                                "port": {
+                                    "id": "out",
+                                    "type": "out"
+                                }
+                            },
+                            ".title": {
+                                "text": "Investigate"
+                            },
+                            "g.approver image": {
+                                "opacity": 1
+                            },
+                            "g.code image": {
+                                "opacity": 1
+                            },
+                            "g.delete": {
+                                "display": "none"
+                            },
+                            "g.error": {
+                                "opacity": 0
+                            },
+                            "g.error image": {
+                                "xlink:href": "/inc/coa/img/block_icon_warn.svg"
+                            },
+                            "g.icon image": {
+                                "xlink:href": "/inc/coa/img/block_icon_investigate.svg"
+                            },
+                            "g.notes": {
+                                "display": "block"
+                            },
+                            "g.notes image": {
+                                "opacity": 1
+                            },
+                            "g.timer image": {
+                                "opacity": 1
+                            }
+                        },
+                        "block_code": "def service_path(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):\n    phantom.debug('service_path() called')\n        \n    #phantom.debug('Action: {0} {1}'.format(action['name'], ('SUCCEEDED' if success else 'FAILED')))\n    \n    # collect data for 'service_path' call\n\n    parameters = []\n    \n    # build parameters list for 'service_path' call\n    parameters.append({\n        'sleep_seconds': 1,\n    })\n\n    phantom.act(action=\"no op\", parameters=parameters, assets=['phantom'], callback=playbook_conf2020_end_Maintenance_Windows_1, name=\"service_path\")\n\n    return",
+                        "callback_code": "",
+                        "callback_start": 1,
+                        "callsback": true,
+                        "color": "",
+                        "connected_to_start": true,
+                        "connection_name": "post data 1, restart Service, systemctl is service active, post data 2, systemctl is service active",
+                        "connection_type": "action",
+                        "custom_callback": "",
+                        "custom_code": "",
+                        "custom_join": "",
+                        "custom_name": "service path",
+                        "delay": 0,
+                        "description": "",
+                        "has_custom": false,
+                        "has_custom_block": false,
+                        "has_custom_callback": false,
+                        "has_custom_join": false,
+                        "id": "9fbe1f8e-0632-406b-9aa2-f2c0da95c44a",
+                        "inPorts": [
+                            "in"
+                        ],
+                        "join_code": "def join_service_path(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None):\n    phantom.debug('join_service_path() called')\n    \n    # if the joined function has already been called, do nothing\n    if phantom.get_run_data(key='join_service_path_called'):\n        return\n\n    # check if all connected incoming playbooks, actions, or custom functions are done i.e. have succeeded or failed\n    if phantom.completed(action_names=['post_data_1', 'systemctl_is_service_active', 'post_data_2']):\n        \n        # save the state that the joined function has now been called\n        phantom.save_run_data(key='join_service_path_called', value='service_path')\n        \n        # call connected block \"service_path\"\n        service_path(container=container, handle=handle)\n    \n    return",
+                        "join_optional": [
+                            "restart_Service",
+                            "prompt_1"
+                        ],
+                        "join_start": 234,
+                        "line_end": 252,
+                        "line_start": 216,
+                        "message": "Configuring now",
+                        "name": "no op",
+                        "notes": "",
+                        "number": 1,
+                        "order": 11,
+                        "outPorts": [
+                            "out"
+                        ],
+                        "ports": {
+                            "groups": {
+                                "in": {
+                                    "attrs": {
+                                        ".port-body": {
+                                            "fill": "#fff",
+                                            "magnet": true,
+                                            "r": 10,
+                                            "stroke": "#000"
+                                        },
+                                        ".port-label": {
+                                            "fill": "#000"
+                                        }
+                                    },
+                                    "label": {
+                                        "position": {
+                                            "args": {
+                                                "y": 10
+                                            },
+                                            "name": "left"
+                                        }
+                                    },
+                                    "position": {
+                                        "name": "left"
+                                    }
+                                },
+                                "out": {
+                                    "attrs": {
+                                        ".port-body": {
+                                            "fill": "#fff",
+                                            "magnet": true,
+                                            "r": 10,
+                                            "stroke": "#000"
+                                        },
+                                        ".port-label": {
+                                            "fill": "#000"
+                                        }
+                                    },
+                                    "label": {
+                                        "position": {
+                                            "args": {
+                                                "y": 10
+                                            },
+                                            "name": "right"
+                                        }
+                                    },
+                                    "position": {
+                                        "name": "right"
+                                    }
+                                }
+                            }
+                        },
+                        "position": {
+                            "x": 1900,
+                            "y": 740
+                        },
+                        "previous_function": "",
+                        "previous_name": "service_path",
+                        "required_params": {
+                            "sleep_seconds": true
+                        },
+                        "reviewer": "",
+                        "show_number": true,
+                        "size": {
+                            "height": 100,
+                            "width": 180
+                        },
+                        "state": "app_action_assets",
+                        "status": "",
+                        "title": "Investigate",
+                        "type": "coa.Action",
+                        "warn": false,
+                        "z": 468
+                    },
+                    {
+                        "attrs": {
+                            ".connection": {
+                                "stroke": "#818D99",
+                                "stroke-width": 2
+                            },
+                            ".marker-target": {
+                                "d": "M 10 0 L 0 5 L 10 10 z",
+                                "fill": "#818D99",
+                                "stroke": "#818D99"
+                            }
+                        },
+                        "connector": {
+                            "args": {
+                                "radius": 5
+                            },
+                            "name": "rounded"
+                        },
+                        "endDirections": [
+                            "left"
+                        ],
+                        "id": "77830d9a-2b27-44b8-bf7d-9a76961c9516",
+                        "router": {
+                            "name": "metro"
+                        },
+                        "source": {
+                            "id": "3eac8f3d-28cb-40d7-b9fd-a34dd8989354",
+                            "selector": "> g:nth-child(1) > g:nth-child(2) > g:nth-child(1) > circle:nth-child(1)"
+                        },
+                        "startDirections": [
+                            "right"
+                        ],
+                        "target": {
+                            "id": "b25da0b7-3568-4416-ba2d-4afee97b4f23",
+                            "selector": "> g:nth-child(1) > g:nth-child(1) > g:nth-child(1) > circle:nth-child(1)"
+                        },
+                        "type": "link",
+                        "z": 469
+                    },
+                    {
+                        "active": false,
+                        "angle": 0,
+                        "attrs": {
+                            ".background": {
+                                "fill": "#FFFFFF",
+                                "stroke": "#818D99"
+                            },
+                            ".color-band": {
+                                "fill": "#171D21"
+                            },
+                            ".format": {
+                                "text": "format snow worknote"
+                            },
+                            ".inPorts>.port-in": {
+                                "ref": ".background",
+                                "ref-x": 0.5
+                            },
+                            ".inPorts>.port-in>.port-body": {
+                                "port": {
+                                    "id": "in",
+                                    "type": "in"
+                                }
+                            },
+                            ".message": {
+                                "opacity": 0,
+                                "text": "Configuring now"
+                            },
+                            ".outPorts>.port-out-1": {
+                                "ref": ".background",
+                                "ref-x": 0.5
+                            },
+                            ".outPorts>.port-out-1>.port-body": {
+                                "port": {
+                                    "id": "out-1",
+                                    "type": "out"
+                                }
+                            },
+                            ".title": {
+                                "text": "format"
+                            },
+                            "g.code image": {
+                                "opacity": 1
+                            },
+                            "g.delete": {
+                                "display": "none"
+                            },
+                            "g.error": {
+                                "opacity": 0
+                            },
+                            "g.error image": {
+                                "xlink:href": "/inc/coa/img/block_icon_warn.svg"
+                            },
+                            "g.notes": {
+                                "display": "block"
+                            },
+                            "g.notes image": {
+                                "opacity": 1
+                            }
+                        },
+                        "block_code": "def format_snow_worknote(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):\n    phantom.debug('format_snow_worknote() called')\n    \n    template = \"\"\"The Service: {0} has been started / restarted on host {1}\"\"\"\n\n    # parameter list for template variable replacement\n    parameters = [\n        \"Format_Service_Name:formatted_data\",\n        \"Format_Server_Address:formatted_data\",\n    ]\n\n    phantom.format(container=container, template=template, parameters=parameters, name=\"format_snow_worknote\")\n\n    add_snow_work_note(container=container)\n\n    return",
+                        "callback_code": "",
+                        "callback_start": 1,
+                        "callsback": false,
+                        "connected_to_start": true,
+                        "connection_name": "get snow ticket",
+                        "connection_type": "action",
+                        "custom_callback": "",
+                        "custom_code": "",
+                        "custom_join": "",
+                        "custom_name": "format snow worknote",
+                        "description": "",
+                        "format": "format",
+                        "has_custom": false,
+                        "has_custom_block": false,
+                        "has_custom_callback": false,
+                        "has_custom_join": false,
+                        "id": "76d7e323-fe65-4f49-a97f-807e765c436c",
+                        "inPorts": [
+                            "in"
+                        ],
+                        "join_code": "",
+                        "join_optional": [],
+                        "join_start": 1,
+                        "line_end": 306,
+                        "line_start": 289,
+                        "message": "Configuring now",
+                        "name": "format",
+                        "notes": "",
+                        "number": 8,
+                        "order": 14,
+                        "outPorts": [
+                            "out-1"
+                        ],
+                        "parameters": [
+                            {
+                                "position": 0,
+                                "type": "",
+                                "value": "Format_Service_Name:formatted_data"
+                            },
+                            {
+                                "position": 1,
+                                "type": "",
+                                "value": "Format_Server_Address:formatted_data"
+                            }
+                        ],
+                        "ports": {
+                            "groups": {
+                                "in": {
+                                    "attrs": {
+                                        ".port-body": {
+                                            "fill": "#fff",
+                                            "magnet": true,
+                                            "r": 10,
+                                            "stroke": "#000"
+                                        },
+                                        ".port-label": {
+                                            "fill": "#000"
+                                        }
+                                    },
+                                    "label": {
+                                        "position": {
+                                            "args": {
+                                                "y": 10
+                                            },
+                                            "name": "left"
+                                        }
+                                    },
+                                    "position": {
+                                        "name": "left"
+                                    }
+                                },
+                                "out": {
+                                    "attrs": {
+                                        ".port-body": {
+                                            "fill": "#fff",
+                                            "magnet": true,
+                                            "r": 10,
+                                            "stroke": "#000"
+                                        },
+                                        ".port-label": {
+                                            "fill": "#000"
+                                        }
+                                    },
+                                    "label": {
+                                        "position": {
+                                            "args": {
+                                                "y": 10
+                                            },
+                                            "name": "right"
+                                        }
+                                    },
+                                    "position": {
+                                        "name": "right"
+                                    }
+                                }
+                            }
+                        },
+                        "position": {
+                            "x": 1980,
+                            "y": 880
+                        },
+                        "previous_function": "",
+                        "previous_name": "format_snow_worknote",
+                        "show_number": true,
+                        "size": {
+                            "height": 100,
+                            "width": 180
+                        },
+                        "state": "format",
+                        "status": "",
+                        "template": "The Service: {0} has been started / restarted on host {1}",
+                        "title": "format",
+                        "type": "coa.Format",
+                        "warn": false,
+                        "z": 470
+                    },
+                    {
+                        "attrs": {
+                            ".connection": {
+                                "stroke": "#818D99",
+                                "stroke-width": 2
+                            },
+                            ".marker-target": {
+                                "d": "M 10 0 L 0 5 L 10 10 z",
+                                "fill": "#818D99",
+                                "stroke": "#818D99"
+                            }
+                        },
+                        "connector": {
+                            "args": {
+                                "radius": 5
+                            },
+                            "name": "rounded"
+                        },
+                        "endDirections": [
+                            "left"
+                        ],
+                        "id": "22e33655-68db-4d06-a6f9-437b778e10ac",
+                        "router": {
+                            "name": "metro"
+                        },
+                        "source": {
+                            "id": "9fbe1f8e-0632-406b-9aa2-f2c0da95c44a",
+                            "selector": "> g:nth-child(1) > g:nth-child(2) > g:nth-child(1) > circle:nth-child(1)"
+                        },
+                        "startDirections": [
+                            "right"
+                        ],
+                        "target": {
+                            "id": "a8b9ae40-94d7-4ff0-ad1f-a90f135ea07d",
+                            "selector": "> g:nth-child(1) > g:nth-child(1) > g:nth-child(1) > circle:nth-child(1)"
+                        },
+                        "type": "link",
+                        "z": 471
+                    },
+                    {
+                        "attrs": {
+                            ".connection": {
+                                "stroke": "#818D99",
+                                "stroke-width": 2
+                            },
+                            ".marker-target": {
+                                "d": "M 10 0 L 0 5 L 10 10 z",
+                                "fill": "#818D99",
+                                "stroke": "#818D99"
+                            }
+                        },
+                        "connector": {
+                            "args": {
+                                "radius": 5
+                            },
+                            "name": "rounded"
+                        },
+                        "endDirections": [
+                            "left"
+                        ],
+                        "id": "1847ed87-6fca-4338-9c9d-fb12b2003fbf",
+                        "router": {
+                            "name": "metro"
+                        },
+                        "source": {
+                            "id": "a8b9ae40-94d7-4ff0-ad1f-a90f135ea07d",
+                            "selector": "> g:nth-child(1) > g:nth-child(2) > g:nth-child(1) > circle:nth-child(1)"
+                        },
+                        "startDirections": [
+                            "right"
+                        ],
+                        "target": {
+                            "id": "2a17ce03-f2ed-42e9-8eea-3e8698219d85",
+                            "selector": "> g:nth-child(1) > g:nth-child(1) > g:nth-child(1) > circle:nth-child(1)"
+                        },
+                        "type": "link",
+                        "z": 472
                     }
                 ]
             },
@@ -14952,7 +14955,7 @@
         "schema": 4,
         "version": "4.9.34514"
     },
-    "create_time": "2020-08-21T07:37:26.989834+00:00",
+    "create_time": "2020-08-21T07:45:00.394526+00:00",
     "draft_mode": false,
     "labels": [
         "itsi"
