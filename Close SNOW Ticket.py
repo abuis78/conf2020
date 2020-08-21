@@ -394,12 +394,15 @@ def set_status_set_severity_set_sensitivity_1(action=None, success=None, contain
 
 def join_set_status_set_severity_set_sensitivity_1(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None):
     phantom.debug('join_set_status_set_severity_set_sensitivity_1() called')
+    
+    # if the joined function has already been called, do nothing
+    if phantom.get_run_data(key='join_set_status_set_severity_set_sensitivity_1_called'):
+        return
 
-    # check if all connected incoming playbooks, actions, or custom functions are done i.e. have succeeded or failed
-    if phantom.completed(action_names=['Change_snow_ticket_status_closed', 'update_ticket_5']):
-        
-        # call connected block "set_status_set_severity_set_sensitivity_1"
-        set_status_set_severity_set_sensitivity_1(container=container, handle=handle)
+    # no callbacks to check, call connected block "set_status_set_severity_set_sensitivity_1"
+    phantom.save_run_data(key='join_set_status_set_severity_set_sensitivity_1_called', value='set_status_set_severity_set_sensitivity_1', auto=True)
+
+    set_status_set_severity_set_sensitivity_1(container=container, handle=handle)
     
     return
 

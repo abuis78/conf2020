@@ -7,7 +7,7 @@
             "clean": true,
             "code_block": "",
             "description": "",
-            "hash": "76b94fba6bf880def983c07858d575427a1489c7",
+            "hash": "d8a56d85a399038ec9934135bbadaa27a64e74bc",
             "joint": {
                 "cells": [
                     {
@@ -217,8 +217,8 @@
                         "join_code": "# read-only block view not available",
                         "join_optional": [],
                         "join_start": 1,
-                        "line_end": 419,
-                        "line_start": 406,
+                        "line_end": 422,
+                        "line_start": 409,
                         "name": "",
                         "notes": "",
                         "number": 0,
@@ -9433,10 +9433,13 @@
                         "inPorts": [
                             "in"
                         ],
-                        "join_code": "def join_set_status_set_severity_set_sensitivity_1(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None):\n    phantom.debug('join_set_status_set_severity_set_sensitivity_1() called')\n\n    # check if all connected incoming playbooks, actions, or custom functions are done i.e. have succeeded or failed\n    if phantom.completed(action_names=['Change_snow_ticket_status_closed', 'update_ticket_5']):\n        \n        # call connected block \"set_status_set_severity_set_sensitivity_1\"\n        set_status_set_severity_set_sensitivity_1(container=container, handle=handle)\n    \n    return",
-                        "join_optional": [],
+                        "join_code": "def join_set_status_set_severity_set_sensitivity_1(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None):\n    phantom.debug('join_set_status_set_severity_set_sensitivity_1() called')\n    \n    # if the joined function has already been called, do nothing\n    if phantom.get_run_data(key='join_set_status_set_severity_set_sensitivity_1_called'):\n        return\n\n    # no callbacks to check, call connected block \"set_status_set_severity_set_sensitivity_1\"\n    phantom.save_run_data(key='join_set_status_set_severity_set_sensitivity_1_called', value='set_status_set_severity_set_sensitivity_1', auto=True)\n\n    set_status_set_severity_set_sensitivity_1(container=container, handle=handle)\n    \n    return",
+                        "join_optional": [
+                            "Change_snow_ticket_status_closed",
+                            "update_ticket_5"
+                        ],
                         "join_start": 395,
-                        "line_end": 406,
+                        "line_end": 409,
                         "line_start": 384,
                         "message": "Configuring now",
                         "name": "set status, set severity, set sensitivity",
@@ -9524,7 +9527,7 @@
         "schema": 4,
         "version": "4.9.34514"
     },
-    "create_time": "2020-08-21T08:10:58.707714+00:00",
+    "create_time": "2020-08-21T08:23:52.652011+00:00",
     "draft_mode": false,
     "labels": [
         "*"
