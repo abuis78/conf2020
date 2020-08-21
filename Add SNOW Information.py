@@ -300,7 +300,7 @@ def format_9(action=None, success=None, container=None, results=None, handle=Non
 
     # parameter list for template variable replacement
     parameters = [
-        "",
+        "create_ticket_1:action_result.data.*.caller_id",
     ]
 
     phantom.format(container=container, template=template, parameters=parameters, name="format_9")

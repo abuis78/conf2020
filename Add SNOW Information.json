@@ -7,7 +7,7 @@
             "clean": true,
             "code_block": "",
             "description": "",
-            "hash": "bf2027386815633d86bdd7975c9ffcc5073d6a90",
+            "hash": "b7f0f0d5016c91c5f8cb1916ae435f9d60b0ef5c",
             "joint": {
                 "cells": [
                     {
@@ -6390,7 +6390,7 @@
                         "attrs": {
                             ".background": {
                                 "fill": "#FFFFFF",
-                                "stroke": "#E6984E"
+                                "stroke": "#818D99"
                             },
                             ".color-band": {
                                 "fill": "#171D21"
@@ -6429,7 +6429,7 @@
                                 "display": "none"
                             },
                             "g.error": {
-                                "opacity": 1
+                                "opacity": 0
                             },
                             "g.error image": {
                                 "xlink:href": "/inc/coa/img/block_icon_warn.svg"
@@ -6438,7 +6438,7 @@
                                 "display": "block"
                             }
                         },
-                        "block_code": "def format_9(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):\n    phantom.debug('format_9() called')\n    \n    template = \"\"\"{{\\\"state\\\":\\\"2\\\",\\\"caller_id\\\":\\\"{0}\\\"}}\"\"\"\n\n    # parameter list for template variable replacement\n    parameters = [\n        \"\",\n    ]\n\n    phantom.format(container=container, template=template, parameters=parameters, name=\"format_9\")\n\n    update_ticket_1(container=container)\n\n    return",
+                        "block_code": "def format_9(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):\n    phantom.debug('format_9() called')\n    \n    template = \"\"\"{{\\\"state\\\":\\\"2\\\",\\\"caller_id\\\":\\\"{0}\\\"}}\"\"\"\n\n    # parameter list for template variable replacement\n    parameters = [\n        \"create_ticket_1:action_result.data.*.caller_id\",\n    ]\n\n    phantom.format(container=container, template=template, parameters=parameters, name=\"format_9\")\n\n    update_ticket_1(container=container)\n\n    return",
                         "callback_code": "",
                         "callback_start": 1,
                         "callsback": false,
@@ -6476,7 +6476,7 @@
                             {
                                 "position": 0,
                                 "type": "",
-                                "value": ""
+                                "value": "create_ticket_1:action_result.data.*.caller_id"
                             }
                         ],
                         "ports": {
@@ -6543,7 +6543,7 @@
                             "width": 180
                         },
                         "state": "format",
-                        "status": "warn",
+                        "status": "",
                         "template": "{{\"state\":\"2\",\"caller_id\":\"{0}\"}}",
                         "title": "format",
                         "type": "coa.Format",
@@ -6558,7 +6558,7 @@
         "schema": 4,
         "version": "4.9.34514"
     },
-    "create_time": "2020-08-21T07:07:10.671811+00:00",
+    "create_time": "2020-08-21T07:08:20.667314+00:00",
     "draft_mode": false,
     "labels": [
         "itsi"
