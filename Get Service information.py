@@ -24,7 +24,7 @@ def decision_5(action=None, success=None, container=None, results=None, handle=N
 
     # call connected blocks if condition 1 matched
     if matched:
-        DedupeListEntries(action=action, success=success, container=container, results=results, handle=handle, custom_function=custom_function)
+        cf_community_list_deduplicate_1(action=action, success=success, container=container, results=results, handle=handle, custom_function=custom_function)
         return
 
     # call connected blocks for 'else' condition 2
@@ -58,7 +58,6 @@ def DedupeListEntries(action=None, success=None, container=None, results=None, h
     ################################################################################
 
     phantom.save_run_data(key='DedupeListEntries:new_list', value=json.dumps(DedupeListEntries__new_list))
-    format_2(container=container)
 
     return
 
@@ -94,29 +93,10 @@ def format_2(action=None, success=None, container=None, results=None, handle=Non
 
     # parameter list for template variable replacement
     parameters = [
-        "DedupeListEntries:custom_function:new_list",
+        "cf_community_list_deduplicate_1:custom_function_result.data.*.item",
     ]
 
     phantom.format(container=container, template=template, parameters=parameters, name="format_2")
-
-    get_service_2(container=container)
-
-    return
-
-def get_service_2(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):
-    phantom.debug('get_service_2() called')
-
-    # collect data for 'get_service_2' call
-    formatted_data_1 = phantom.get_format_data(name='format_2')
-
-    parameters = []
-    
-    # build parameters list for 'get_service_2' call
-    parameters.append({
-        'itsi_service_id': formatted_data_1,
-    })
-
-    phantom.act(action="get service", parameters=parameters, assets=['','splunk itsi'], callback=Format_Service_Name, name="get_service_2")
 
     return
 
@@ -139,9 +119,7 @@ def Build_link_for_check_data_pin(action=None, success=None, container=None, res
 
 def get_data_1(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):
     phantom.debug('get_data_1() called')
-        
-    #phantom.debug('Action: {0} {1}'.format(action['name'], ('SUCCEEDED' if success else 'FAILED')))
-    
+
     # collect data for 'get_data_1' call
     formatted_data_1 = phantom.get_format_data(name='Build_link_for_check_data_pin')
 
@@ -175,6 +153,33 @@ def decision_6(action=None, success=None, container=None, results=None, handle=N
         return
 
     # call connected blocks for 'else' condition 2
+
+    return
+
+def cf_community_list_deduplicate_1(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):
+    phantom.debug('cf_community_list_deduplicate_1() called')
+    
+    container_data_0 = phantom.collect2(container=container, datapath=['artifact:*.cef.serviceid', 'artifact:*.id'])
+
+    parameters = []
+
+    container_data_0_0 = [item[0] for item in container_data_0]
+
+    parameters.append({
+        'input_list': container_data_0_0,
+    })
+    ################################################################################
+    ## Custom Code Start
+    ################################################################################
+
+    # Write your custom code here...
+
+    ################################################################################
+    ## Custom Code End
+    ################################################################################    
+
+    # call custom function "community/list_deduplicate", returns the custom_function_run_id
+    phantom.custom_function(custom_function='community/list_deduplicate', parameters=parameters, name='cf_community_list_deduplicate_1', callback=format_2)
 
     return
 
