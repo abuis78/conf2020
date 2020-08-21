@@ -136,7 +136,7 @@ def get_entity_1(action=None, success=None, container=None, results=None, handle
         
     #phantom.debug('Action: {0} {1}'.format(action['name'], ('SUCCEEDED' if success else 'FAILED')))
     
-    DedupeListEntries__entity_list = json.loads(phantom.get_run_data(key='DedupeListEntries:entity_list'))
+    DedupeListEntries__entity_list = json.loads(phantom.get_run_data(key='cf_community_list_deduplicate_1:custom_function_result.data.*.item'))
     # collect data for 'get_entity_1' call
 
     parameters = []
