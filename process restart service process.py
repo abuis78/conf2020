@@ -183,21 +183,21 @@ def playbook_conf2020_add_Maintenance_Windows_1(action=None, success=None, conta
     phantom.debug('playbook_conf2020_add_Maintenance_Windows_1() called')
     
     # call playbook "conf2020/add Maintenance Windows", returns the playbook_run_id
-    playbook_run_id = phantom.playbook(playbook="conf2020/add Maintenance Windows", container=container, name="playbook_conf2020_add_Maintenance_Windows_1", callback=execute_program_1)
+    playbook_run_id = phantom.playbook(playbook="conf2020/add Maintenance Windows", container=container, name="playbook_conf2020_add_Maintenance_Windows_1", callback=restart_service)
 
     return
 
-def execute_program_1(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):
-    phantom.debug('execute_program_1() called')
+def restart_service(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):
+    phantom.debug('restart_service() called')
         
     #phantom.debug('Action: {0} {1}'.format(action['name'], ('SUCCEEDED' if success else 'FAILED')))
     
-    # collect data for 'execute_program_1' call
+    # collect data for 'restart_service' call
     results_data_1 = phantom.collect2(container=container, datapath=['get_entity_data:action_result.data.*.parsed_response_body.data.*.data', 'get_entity_data:action_result.parameter.context.artifact_id'], action_results=results)
 
     parameters = []
     
-    # build parameters list for 'execute_program_1' call
+    # build parameters list for 'restart_service' call
     for results_item_1 in results_data_1:
         if results_item_1[0]:
             parameters.append({
@@ -209,7 +209,79 @@ def execute_program_1(action=None, success=None, container=None, results=None, h
                 'context': {'artifact_id': results_item_1[1]},
             })
 
-    phantom.act(action="execute program", parameters=parameters, assets=['ssh'], name="execute_program_1")
+    phantom.act(action="execute program", parameters=parameters, assets=['ssh'], callback=decision_4, name="restart_service")
+
+    return
+
+def decision_4(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):
+    phantom.debug('decision_4() called')
+
+    # check for 'if' condition 1
+    matched = phantom.decision(
+        container=container,
+        action_results=results,
+        conditions=[
+            ["restart_service:action_result.status", "==", "success"],
+        ])
+
+    # call connected blocks if condition 1 matched
+    if matched:
+        execute_program_2(action=action, success=success, container=container, results=results, handle=handle, custom_function=custom_function)
+        return
+
+    return
+
+def execute_program_2(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):
+    phantom.debug('execute_program_2() called')
+        
+    #phantom.debug('Action: {0} {1}'.format(action['name'], ('SUCCEEDED' if success else 'FAILED')))
+    
+    # collect data for 'execute_program_2' call
+    results_data_1 = phantom.collect2(container=container, datapath=['restart_service:action_result.parameter.ip_hostname', 'restart_service:action_result.parameter.context.artifact_id'], action_results=results)
+
+    parameters = []
+    
+    # build parameters list for 'execute_program_2' call
+    for results_item_1 in results_data_1:
+        if results_item_1[0]:
+            parameters.append({
+                'ip_hostname': results_item_1[0],
+                'command': "sudo systemctl is-active nginx",
+                'script_file': "",
+                'timeout': "",
+                # context (artifact id) is added to associate results with the artifact
+                'context': {'artifact_id': results_item_1[1]},
+            })
+    # calculate start time using delay of 1 minutes
+    start_time = datetime.now() + timedelta(minutes=1)
+
+    phantom.act(action="execute program", parameters=parameters, assets=['ssh'], callback=decision_5, start_time=start_time, name="execute_program_2")
+
+    return
+
+def decision_5(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):
+    phantom.debug('decision_5() called')
+
+    # check for 'if' condition 1
+    matched = phantom.decision(
+        container=container,
+        action_results=results,
+        conditions=[
+            ["execute_program_2:action_result.status", "==", "success"],
+        ])
+
+    # call connected blocks if condition 1 matched
+    if matched:
+        playbook_conf2020_end_Maintenance_Windows_1(action=action, success=success, container=container, results=results, handle=handle, custom_function=custom_function)
+        return
+
+    return
+
+def playbook_conf2020_end_Maintenance_Windows_1(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):
+    phantom.debug('playbook_conf2020_end_Maintenance_Windows_1() called')
+    
+    # call playbook "conf2020/end Maintenance Windows", returns the playbook_run_id
+    playbook_run_id = phantom.playbook(playbook="conf2020/end Maintenance Windows", container=container, name="playbook_conf2020_end_Maintenance_Windows_1")
 
     return
 
