@@ -12,19 +12,6 @@ def on_start(container):
 
     return
 
-def pin_1(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):
-    phantom.debug('pin_1() called')
-
-    results_data_1 = phantom.collect2(container=container, datapath=['get_entity_1:action_result.data.*.title', 'get_entity_1:action_result.data.*.external_ip.0'], action_results=results)
-
-    for item in results_data_1:
-        results_item_1_0 = "Entity: "+item[0]
-        results_item_1_1 = item[1]
-
-        phantom.pin(container=container, data=results_item_1_1, message=results_item_1_0, pin_type="card", pin_style="grey", name=None)
-
-    return
-
 def Get_PIN(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):
     phantom.debug('Get_PIN() called')
         
@@ -100,54 +87,6 @@ def decision_2(action=None, success=None, container=None, results=None, handle=N
     if matched:
         cf_community_list_deduplicate_1(action=action, success=success, container=container, results=results, handle=handle, custom_function=custom_function)
         return
-
-    return
-
-def DedupeListEntries(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):
-    phantom.debug('DedupeListEntries() called')
-    
-    container_data = phantom.collect2(container=container, datapath=['artifact:*.cef.entity_key', 'artifact:*.id'])
-    container_item_0 = [item[0] for item in container_data]
-
-    DedupeListEntries__entity_list = None
-
-    ################################################################################
-    ## Custom Code Start
-    ################################################################################
-
-    # Write your custom code here...
-    phantom.debug('DedupeListEntries() formatted_data_1: {}'.format(container_item_0))
-
-    seen = {}
-    DedupeListEntries__entity_list = [seen.setdefault(x, x) for x in container_item_0 if x not in seen]
-    
-    phantom.debug('DedupeListEntries() DedupeListEntries__entity_list: {}'.format(DedupeListEntries__entity_list))
-
-    ################################################################################
-    ## Custom Code End
-    ################################################################################
-
-    phantom.save_run_data(key='DedupeListEntries:entity_list', value=json.dumps(DedupeListEntries__entity_list))
-
-    return
-
-def get_entity_1(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):
-    phantom.debug('get_entity_1() called')
-        
-    #phantom.debug('Action: {0} {1}'.format(action['name'], ('SUCCEEDED' if success else 'FAILED')))
-    
-    DedupeListEntries__entity_list = json.loads(phantom.get_run_data(key='cf_community_list_deduplicate_1:custom_function_result.data.*.item'))
-    # collect data for 'get_entity_1' call
-
-    parameters = []
-    
-    # build parameters list for 'get_entity_1' call
-    for entity_key in DedupeListEntries__entity_list:
-        parameters.append({
-            'itsi_entity_id': entity_key,
-        })
-
-    phantom.act(action="get entity", parameters=parameters, assets=['splunk itsi'], callback=pin_1, name="get_entity_1")
 
     return
 

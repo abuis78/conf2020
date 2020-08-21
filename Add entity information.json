@@ -7,7 +7,7 @@
             "clean": true,
             "code_block": "",
             "description": "",
-            "hash": "335a46044905540917a5bef693a79c7d3d664cba",
+            "hash": "4d8366aa0eb0b09c1254fac10403b8ae56b62a6a",
             "joint": {
                 "cells": [
                     {
@@ -138,7 +138,7 @@
                             }
                         },
                         "position": {
-                            "x": -740,
+                            "x": -720,
                             "y": 120
                         },
                         "previous_function": "",
@@ -199,7 +199,7 @@
                         "callback_start": 1,
                         "callsback": false,
                         "connected_to_start": true,
-                        "connection_name": "Get PIN, get entity 2",
+                        "connection_name": "Get PIN, get entity",
                         "connection_type": "action",
                         "custom_callback": "",
                         "custom_code": "",
@@ -217,12 +217,12 @@
                         "join_code": "# read-only block view not available",
                         "join_optional": [],
                         "join_start": 1,
-                        "line_end": 235,
-                        "line_start": 222,
+                        "line_end": 174,
+                        "line_start": 161,
                         "name": "",
                         "notes": "",
                         "number": 0,
-                        "order": 13,
+                        "order": 10,
                         "outPorts": [],
                         "ports": {
                             "groups": {
@@ -277,8 +277,8 @@
                             }
                         },
                         "position": {
-                            "x": 940,
-                            "y": 300
+                            "x": 920,
+                            "y": 240
                         },
                         "previous_function": "",
                         "previous_name": "",
@@ -543,13 +543,13 @@
                         "join_code": "",
                         "join_optional": [],
                         "join_start": 1,
-                        "line_end": 161,
-                        "line_start": 154,
+                        "line_end": 100,
+                        "line_start": 93,
                         "message": "Configuring now",
                         "name": "add comment",
                         "notes": "",
                         "number": 3,
-                        "order": 9,
+                        "order": 6,
                         "outPorts": [
                             "out"
                         ],
@@ -607,7 +607,7 @@
                         },
                         "position": {
                             "x": 420,
-                            "y": 280
+                            "y": 220
                         },
                         "previous_function": "",
                         "previous_name": "add_comment_3",
@@ -695,7 +695,7 @@
                                 }
                             },
                             "g.delete": {
-                                "display": "none"
+                                "display": "block"
                             },
                             "g.error": {
                                 "opacity": 0
@@ -731,12 +731,12 @@
                         "join_code": "",
                         "join_optional": [],
                         "join_start": 1,
-                        "line_end": 106,
-                        "line_start": 87,
+                        "line_end": 93,
+                        "line_start": 74,
                         "name": "decision",
                         "notes": "",
                         "number": 2,
-                        "order": 6,
+                        "order": 5,
                         "outPorts": [
                             "out-1"
                         ],
@@ -814,7 +814,7 @@
                             }
                         },
                         "position": {
-                            "x": -600,
+                            "x": -580,
                             "y": 100
                         },
                         "previous_function": "",
@@ -956,12 +956,12 @@
                         "join_code": "",
                         "join_optional": [],
                         "join_start": 1,
-                        "line_end": 87,
-                        "line_start": 66,
+                        "line_end": 74,
+                        "line_start": 53,
                         "name": "decision",
                         "notes": "",
                         "number": 1,
-                        "order": 5,
+                        "order": 4,
                         "outPorts": [
                             "out-1",
                             "out-2"
@@ -1329,13 +1329,13 @@
                         "join_code": "",
                         "join_optional": [],
                         "join_start": 1,
-                        "line_end": 49,
-                        "line_start": 28,
+                        "line_end": 36,
+                        "line_start": 15,
                         "message": "Configuring now",
                         "name": "get data",
                         "notes": "",
                         "number": 1,
-                        "order": 3,
+                        "order": 2,
                         "outPorts": [
                             "out"
                         ],
@@ -1392,7 +1392,7 @@
                             }
                         },
                         "position": {
-                            "x": 20,
+                            "x": 40,
                             "y": 100
                         },
                         "previous_function": "",
@@ -1498,13 +1498,13 @@
                         "join_code": "",
                         "join_optional": [],
                         "join_start": 1,
-                        "line_end": 66,
-                        "line_start": 49,
+                        "line_end": 53,
+                        "line_start": 36,
                         "message": "Configuring now",
                         "name": "format",
                         "notes": "",
                         "number": 3,
-                        "order": 4,
+                        "order": 3,
                         "outPorts": [
                             "out-1"
                         ],
@@ -1573,7 +1573,7 @@
                             }
                         },
                         "position": {
-                            "x": -220,
+                            "x": -200,
                             "y": 100
                         },
                         "previous_function": "",
@@ -1590,479 +1590,6 @@
                         "type": "coa.Format",
                         "warn": false,
                         "z": 234
-                    },
-                    {
-                        "active": false,
-                        "angle": 0,
-                        "attrs": {
-                            ".background": {
-                                "fill": "#FFFFFF",
-                                "stroke": "#E6984E"
-                            },
-                            ".color-band": {
-                                "fill": "#171D21"
-                            },
-                            ".functionBlock": {
-                                "text": "DedupeListEntries"
-                            },
-                            ".inPorts>.port-in": {
-                                "ref": ".background",
-                                "ref-x": 0.5
-                            },
-                            ".inPorts>.port-in>.port-body": {
-                                "port": {
-                                    "id": "in",
-                                    "type": "in"
-                                }
-                            },
-                            ".message": {
-                                "opacity": 0,
-                                "ref-x": 5,
-                                "ref-y": 105,
-                                "text": "Configuring now"
-                            },
-                            ".outPorts>.port-out": {
-                                "ref": ".background",
-                                "ref-x": 0.5
-                            },
-                            ".outPorts>.port-out>.port-body": {
-                                "port": {
-                                    "id": "out",
-                                    "type": "out"
-                                }
-                            },
-                            ".title": {
-                                "text": "custom function"
-                            },
-                            "g.delete": {
-                                "display": "none"
-                            },
-                            "g.error": {
-                                "opacity": 1
-                            },
-                            "g.error image": {
-                                "xlink:href": "/inc/coa/img/block_icon_warn.svg"
-                            },
-                            "g.notes": {
-                                "display": "block"
-                            },
-                            "g.notes image": {
-                                "opacity": 1
-                            }
-                        },
-                        "block_code": "def DedupeListEntries(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):\n    phantom.debug('DedupeListEntries() called')\n    \n    container_data = phantom.collect2(container=container, datapath=['artifact:*.cef.entity_key', 'artifact:*.id'])\n    container_item_0 = [item[0] for item in container_data]\n\n    DedupeListEntries__entity_list = None\n\n    ################################################################################\n    ## Custom Code Start\n    ################################################################################\n\n    # Write your custom code here...\n    phantom.debug('DedupeListEntries() formatted_data_1: {}'.format(container_item_0))\n\n    seen = {}\n    DedupeListEntries__entity_list = [seen.setdefault(x, x) for x in container_item_0 if x not in seen]\n    \n    phantom.debug('DedupeListEntries() DedupeListEntries__entity_list: {}'.format(DedupeListEntries__entity_list))\n\n    ################################################################################\n    ## Custom Code End\n    ################################################################################\n\n    phantom.save_run_data(key='DedupeListEntries:entity_list', value=json.dumps(DedupeListEntries__entity_list))\n\n    return",
-                        "callback_code": "",
-                        "callback_start": 1,
-                        "callsback": false,
-                        "connected_to_start": false,
-                        "connection_name": "",
-                        "connection_type": "",
-                        "customCodeEndLineOffset": 6,
-                        "customCodeStartLine": 11,
-                        "custom_callback": "",
-                        "custom_code": "def DedupeListEntries(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None):\n    phantom.debug('DedupeListEntries() called')\n    container_data = phantom.collect2(container=container, datapath=['artifact:*.cef.entity_title', 'artifact:*.id'])\n    container_item_0 = [item[0] for item in container_data]\n\n    DedupeListEntries__entity_list = None\n\n    ################################################################################\n    ## Custom Code Start\n    ################################################################################\n\n    # Write your custom code here...\n    phantom.debug('DedupeListEntries() formatted_data_1: {}'.format(container_item_0))\n\n    seen = {}\n    DedupeListEntries__entity_list = [seen.setdefault(x, x) for x in container_item_0 if x not in seen]\n    \n    phantom.debug('DedupeListEntries() DedupeListEntries__entity_list: {}'.format(DedupeListEntries__entity_list))\n\n    ################################################################################\n    ## Custom Code End\n    ################################################################################\n\n    phantom.save_run_data(key='DedupeListEntries:entity_list', value=json.dumps(DedupeListEntries__entity_list))\n    format_3(container=container)\n\n    return",
-                        "custom_join": "",
-                        "custom_name": "DedupeListEntries",
-                        "description": "",
-                        "functionBlock": "custom function",
-                        "has_custom": true,
-                        "has_custom_block": false,
-                        "has_custom_callback": false,
-                        "has_custom_join": false,
-                        "id": "a8dc7827-7774-4a39-b82b-12a6b3ae9595",
-                        "inPorts": [
-                            "in"
-                        ],
-                        "join_code": "",
-                        "join_optional": [],
-                        "join_start": 1,
-                        "legacy": true,
-                        "line_end": 134,
-                        "line_start": 106,
-                        "message": "Configuring now",
-                        "name": "custom function",
-                        "notes": "",
-                        "number": 1,
-                        "order": 7,
-                        "outPorts": [
-                            "out"
-                        ],
-                        "outputVariables": [
-                            {
-                                "position": 0,
-                                "type": "",
-                                "value": "entity_list"
-                            }
-                        ],
-                        "parameters": [
-                            {
-                                "position": 0,
-                                "type": "",
-                                "value": "artifact:*.cef.entity_key"
-                            }
-                        ],
-                        "ports": {
-                            "groups": {
-                                "in": {
-                                    "attrs": {
-                                        ".port-body": {
-                                            "fill": "#fff",
-                                            "magnet": true,
-                                            "r": 10,
-                                            "stroke": "#000"
-                                        },
-                                        ".port-label": {
-                                            "fill": "#000"
-                                        }
-                                    },
-                                    "label": {
-                                        "position": {
-                                            "args": {
-                                                "y": 10
-                                            },
-                                            "name": "left"
-                                        }
-                                    },
-                                    "position": {
-                                        "name": "left"
-                                    }
-                                },
-                                "out": {
-                                    "attrs": {
-                                        ".port-body": {
-                                            "fill": "#fff",
-                                            "magnet": true,
-                                            "r": 10,
-                                            "stroke": "#000"
-                                        },
-                                        ".port-label": {
-                                            "fill": "#000"
-                                        }
-                                    },
-                                    "label": {
-                                        "position": {
-                                            "args": {
-                                                "y": 10
-                                            },
-                                            "name": "right"
-                                        }
-                                    },
-                                    "position": {
-                                        "name": "right"
-                                    }
-                                }
-                            }
-                        },
-                        "position": {
-                            "x": -220,
-                            "y": 600
-                        },
-                        "previous_function": "",
-                        "previous_name": "DedupeListEntries",
-                        "show_number": true,
-                        "size": {
-                            "height": 100,
-                            "width": 180
-                        },
-                        "state": "custom function",
-                        "status": "warn",
-                        "title": "custom function",
-                        "type": "coa.FunctionBlock",
-                        "userGeneratedCode": "\n    # Write your custom code here...\n    phantom.debug('DedupeListEntries() formatted_data_1: {}'.format(container_item_0))\n\n    seen = {}\n    DedupeListEntries__entity_list = [seen.setdefault(x, x) for x in container_item_0 if x not in seen]\n    \n    phantom.debug('DedupeListEntries() DedupeListEntries__entity_list: {}'.format(DedupeListEntries__entity_list))\n",
-                        "warn": false,
-                        "z": 243
-                    },
-                    {
-                        "action": "get entity",
-                        "action_type": "generic",
-                        "active": false,
-                        "active_keys": {},
-                        "active_values": {
-                            "entity_title": "DedupeListEntries:custom_function:entity_list",
-                            "itsi_entity_id": "DedupeListEntries:custom_function:entity_list"
-                        },
-                        "angle": 0,
-                        "app": "Splunk IT Service Intelligence",
-                        "appid": "94bcee41-329f-4907-8895-d4e2a10616b8",
-                        "approver": "",
-                        "assets": [
-                            {
-                                "action": "get entity",
-                                "actions": [
-                                    "test connectivity",
-                                    "get episode",
-                                    "update episode",
-                                    "add episode comment",
-                                    "break episode",
-                                    "close episode",
-                                    "get episode events",
-                                    "add episode ticket",
-                                    "get episode tickets",
-                                    "get entity",
-                                    "get service",
-                                    "get service entities",
-                                    "update service status",
-                                    "get maintenance window",
-                                    "add maintenance window",
-                                    "update maintenance window",
-                                    "end maintenance window"
-                                ],
-                                "active": true,
-                                "app_name": "Splunk IT Service Intelligence",
-                                "app_version": "1.0.0",
-                                "appid": "94bcee41-329f-4907-8895-d4e2a10616b8",
-                                "asset_name": "splunk itsi",
-                                "config_type": "asset",
-                                "count": 0,
-                                "fields": {
-                                    "itsi_entity_id": "DedupeListEntries:custom_function:entity_list"
-                                },
-                                "has_app": true,
-                                "id": 6,
-                                "loaded": false,
-                                "missing": false,
-                                "name": "splunk itsi",
-                                "output": [
-                                    {
-                                        "column_name": "Status",
-                                        "column_order": 1,
-                                        "data_path": "action_result.status",
-                                        "data_type": "string",
-                                        "example_values": [
-                                            "success",
-                                            "failed"
-                                        ]
-                                    },
-                                    {
-                                        "column_name": "ITSI Entity ID",
-                                        "column_order": 0,
-                                        "data_path": "action_result.parameter.itsi_entity_id",
-                                        "data_type": "string"
-                                    },
-                                    {
-                                        "column_name": "Data",
-                                        "column_order": 2,
-                                        "data_path": "action_result.data",
-                                        "data_type": "string"
-                                    },
-                                    {
-                                        "column_name": "Summary",
-                                        "column_order": 3,
-                                        "data_path": "action_result.summary",
-                                        "data_type": "string"
-                                    },
-                                    {
-                                        "data_path": "action_result.message",
-                                        "data_type": "string"
-                                    },
-                                    {
-                                        "data_path": "summary.total_objects",
-                                        "data_type": "numeric",
-                                        "example_values": [
-                                            1
-                                        ]
-                                    },
-                                    {
-                                        "data_path": "summary.total_objects_successful",
-                                        "data_type": "numeric",
-                                        "example_values": [
-                                            1
-                                        ]
-                                    }
-                                ],
-                                "parameters": {
-                                    "itsi_entity_id": {
-                                        "data_type": "string",
-                                        "default": null,
-                                        "description": "Splunk ITSI entity ID",
-                                        "key": "itsi_entity_id",
-                                        "order": 0,
-                                        "required": true
-                                    }
-                                },
-                                "product_name": "Splunk ITSI",
-                                "product_vendor": "Splunk",
-                                "targets": "6",
-                                "type": "devops"
-                            }
-                        ],
-                        "attrs": {
-                            ".action": {
-                                "text": "get entity 1"
-                            },
-                            ".background": {
-                                "fill": "#FFFFFF",
-                                "stroke": "#E6984E"
-                            },
-                            ".color-band": {
-                                "fill": "#171D21"
-                            },
-                            ".inPorts>.port-in": {
-                                "ref": ".background",
-                                "ref-x": 0.5
-                            },
-                            ".inPorts>.port-in>.port-body": {
-                                "port": {
-                                    "id": "in",
-                                    "type": "in"
-                                }
-                            },
-                            ".message": {
-                                "opacity": 0,
-                                "ref-x": 5,
-                                "ref-y": 105,
-                                "text": "Configuring now"
-                            },
-                            ".outPorts>.port-out": {
-                                "ref": ".background",
-                                "ref-x": 0.5
-                            },
-                            ".outPorts>.port-out>.port-body": {
-                                "port": {
-                                    "id": "out",
-                                    "type": "out"
-                                }
-                            },
-                            ".title": {
-                                "text": "Generic"
-                            },
-                            "g.approver image": {
-                                "opacity": 1
-                            },
-                            "g.code image": {
-                                "opacity": 1,
-                                "xlink:href": "/inc/coa/img/block_icon_code_light_on.svg"
-                            },
-                            "g.delete": {
-                                "display": "none"
-                            },
-                            "g.error": {
-                                "opacity": 1
-                            },
-                            "g.error image": {
-                                "xlink:href": "/inc/coa/img/block_icon_warn.svg"
-                            },
-                            "g.icon image": {
-                                "xlink:href": "/inc/coa/img/block_icon_generic.svg"
-                            },
-                            "g.notes": {
-                                "display": "block"
-                            },
-                            "g.notes image": {
-                                "opacity": 1
-                            },
-                            "g.timer image": {
-                                "opacity": 1
-                            }
-                        },
-                        "block_code": "def get_entity_1(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):\n    phantom.debug('get_entity_1() called')\n        \n    #phantom.debug('Action: {0} {1}'.format(action['name'], ('SUCCEEDED' if success else 'FAILED')))\n    \n    DedupeListEntries__entity_list = json.loads(phantom.get_run_data(key='DedupeListEntries:entity_list'))\n    # collect data for 'get_entity_1' call\n\n    parameters = []\n    \n    # build parameters list for 'get_entity_1' call\n    parameters.append({\n        'itsi_entity_id': DedupeListEntries__entity_list,\n    })\n\n    phantom.act(action=\"get entity\", parameters=parameters, assets=['splunk itsi'], callback=pin_1, name=\"get_entity_1\")\n\n    return",
-                        "callback_code": "",
-                        "callback_start": 1,
-                        "callsback": true,
-                        "color": "",
-                        "connected_to_start": true,
-                        "connection_name": "",
-                        "connection_type": "",
-                        "custom_callback": "",
-                        "custom_code": "def get_entity_1(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):\n    phantom.debug('get_entity_1() called')\n        \n    #phantom.debug('Action: {0} {1}'.format(action['name'], ('SUCCEEDED' if success else 'FAILED')))\n    \n    DedupeListEntries__entity_list = json.loads(phantom.get_run_data(key='cf_community_list_deduplicate_1:custom_function_result.data.*.item'))\n    # collect data for 'get_entity_1' call\n\n    parameters = []\n    \n    # build parameters list for 'get_entity_1' call\n    for entity_key in DedupeListEntries__entity_list:\n        parameters.append({\n            'itsi_entity_id': entity_key,\n        })\n\n    phantom.act(action=\"get entity\", parameters=parameters, assets=['splunk itsi'], callback=pin_1, name=\"get_entity_1\")\n\n    return",
-                        "custom_join": "",
-                        "custom_name": "",
-                        "delay": 0,
-                        "description": "",
-                        "has_custom": true,
-                        "has_custom_block": true,
-                        "has_custom_callback": false,
-                        "has_custom_join": false,
-                        "id": "8121d508-30b9-4f5a-8942-a96f140ca9cd",
-                        "inPorts": [
-                            "in"
-                        ],
-                        "join_code": "",
-                        "join_optional": [],
-                        "join_start": 1,
-                        "line_end": 154,
-                        "line_start": 134,
-                        "message": "Configuring now",
-                        "name": "get entity",
-                        "notes": "",
-                        "number": 1,
-                        "order": 8,
-                        "outPorts": [
-                            "out"
-                        ],
-                        "ports": {
-                            "groups": {
-                                "in": {
-                                    "attrs": {
-                                        ".port-body": {
-                                            "fill": "#fff",
-                                            "magnet": true,
-                                            "r": 10,
-                                            "stroke": "#000"
-                                        },
-                                        ".port-label": {
-                                            "fill": "#000"
-                                        }
-                                    },
-                                    "label": {
-                                        "position": {
-                                            "args": {
-                                                "y": 10
-                                            },
-                                            "name": "left"
-                                        }
-                                    },
-                                    "position": {
-                                        "name": "left"
-                                    }
-                                },
-                                "out": {
-                                    "attrs": {
-                                        ".port-body": {
-                                            "fill": "#fff",
-                                            "magnet": true,
-                                            "r": 10,
-                                            "stroke": "#000"
-                                        },
-                                        ".port-label": {
-                                            "fill": "#000"
-                                        }
-                                    },
-                                    "label": {
-                                        "position": {
-                                            "args": {
-                                                "y": 10
-                                            },
-                                            "name": "right"
-                                        }
-                                    },
-                                    "position": {
-                                        "name": "right"
-                                    }
-                                }
-                            }
-                        },
-                        "position": {
-                            "x": 460,
-                            "y": 580
-                        },
-                        "previous_function": "",
-                        "previous_name": "get_entity_1",
-                        "required_params": {
-                            "itsi_entity_id": true
-                        },
-                        "reviewer": "",
-                        "show_number": true,
-                        "size": {
-                            "height": 100,
-                            "width": 180
-                        },
-                        "state": "app_action_assets",
-                        "status": "warn",
-                        "title": "Generic",
-                        "type": "coa.Action",
-                        "warn": false,
-                        "z": 249
                     },
                     {
                         "attrs": {
@@ -2219,7 +1746,7 @@
                         ],
                         "attrs": {
                             ".action": {
-                                "text": "get entity 2"
+                                "text": "get entity"
                             },
                             ".background": {
                                 "fill": "#FFFFFF",
@@ -2298,13 +1825,13 @@
                         "join_code": "",
                         "join_optional": [],
                         "join_start": 1,
-                        "line_end": 209,
-                        "line_start": 188,
+                        "line_end": 148,
+                        "line_start": 127,
                         "message": "Configuring now",
                         "name": "get entity",
                         "notes": "",
                         "number": 2,
-                        "order": 11,
+                        "order": 8,
                         "outPorts": [
                             "out"
                         ],
@@ -2370,7 +1897,7 @@
                             "itsi_entity_id": true
                         },
                         "reviewer": "",
-                        "show_number": true,
+                        "show_number": false,
                         "size": {
                             "height": 100,
                             "width": 180
@@ -2568,13 +2095,13 @@
                         "join_code": "",
                         "join_optional": [],
                         "join_start": 1,
-                        "line_end": 188,
-                        "line_start": 161,
+                        "line_end": 127,
+                        "line_start": 100,
                         "message": "Configuring now",
                         "name": "list_deduplicate",
                         "notes": "",
                         "number": 1,
-                        "order": 10,
+                        "order": 7,
                         "outPorts": [
                             "out"
                         ],
@@ -2631,7 +2158,7 @@
                             }
                         },
                         "position": {
-                            "x": -460,
+                            "x": -440,
                             "y": 100
                         },
                         "previous_function": "",
@@ -2733,186 +2260,6 @@
                         "api": "pin",
                         "attrs": {
                             ".api": {
-                                "text": "pin"
-                            },
-                            ".background": {
-                                "fill": "#FFFFFF",
-                                "stroke": "#E6984E"
-                            },
-                            ".color-band": {
-                                "fill": "#171D21"
-                            },
-                            ".inPorts>.port-in": {
-                                "ref": ".background",
-                                "ref-x": 0.5
-                            },
-                            ".inPorts>.port-in>.port-body": {
-                                "port": {
-                                    "id": "in",
-                                    "type": "in"
-                                }
-                            },
-                            ".message": {
-                                "opacity": 0,
-                                "ref-x": 5,
-                                "ref-y": 105,
-                                "text": "Configuring now"
-                            },
-                            ".outPorts>.port-out": {
-                                "ref": ".background",
-                                "ref-x": 0.5
-                            },
-                            ".outPorts>.port-out>.port-body": {
-                                "port": {
-                                    "id": "out",
-                                    "type": "out"
-                                }
-                            },
-                            ".title": {
-                                "text": "API"
-                            },
-                            "g.code image": {
-                                "opacity": 1,
-                                "xlink:href": "/inc/coa/img/block_icon_code_light_on.svg"
-                            },
-                            "g.delete": {
-                                "display": "none"
-                            },
-                            "g.error": {
-                                "opacity": 1
-                            },
-                            "g.error image": {
-                                "xlink:href": "/inc/coa/img/block_icon_warn.svg"
-                            },
-                            "g.notes": {
-                                "display": "block"
-                            },
-                            "g.notes image": {
-                                "opacity": 1
-                            }
-                        },
-                        "block_code": "def pin_1(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None):\n    phantom.debug('pin_1() called')\n\n    results_data_1 = phantom.collect2(container=container, datapath=['get_entity_1:action_result.data.*.*.title', 'get_entity_1:action_result.data.*.*.ip.0'], action_results=results)\n\n    results_item_1_0 = [item[0] for item in results_data_1]\n    results_item_1_1 = [item[1] for item in results_data_1]\n\n    phantom.pin(container=container, data=results_item_1_1, message=results_item_1_0, name=None)\n\n    return",
-                        "callback_code": "",
-                        "callback_start": 1,
-                        "callsback": false,
-                        "color": "",
-                        "configured": [
-                            {
-                                "key": "pin",
-                                "pinData": "get_entity_1:action_result.data.*.*.ip.0",
-                                "pinMessage": "get_entity_1:action_result.data.*.*.title",
-                                "pinName": "",
-                                "pinPinColor": "grey",
-                                "pinPinColor_display": "Grey",
-                                "pinPinType": "data",
-                                "pinPinType_display": "data"
-                            }
-                        ],
-                        "connected_to_start": false,
-                        "connection_name": "",
-                        "connection_type": "",
-                        "custom_callback": "",
-                        "custom_code": "def pin_1(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):\n    phantom.debug('pin_1() called')\n\n    results_data_1 = phantom.collect2(container=container, datapath=['get_entity_1:action_result.data.*.title', 'get_entity_1:action_result.data.*.external_ip.0'], action_results=results)\n\n    for item in results_data_1:\n        results_item_1_0 = \"Entity: \"+item[0]\n        results_item_1_1 = item[1]\n\n        phantom.pin(container=container, data=results_item_1_1, message=results_item_1_0, pin_type=\"card\", pin_style=\"grey\", name=None)\n\n    return",
-                        "custom_join": "",
-                        "custom_name": "",
-                        "description": "",
-                        "has_custom": true,
-                        "has_custom_block": true,
-                        "has_custom_callback": false,
-                        "has_custom_join": false,
-                        "id": "77c54e76-092b-4806-af4f-30b12ab551f0",
-                        "inPorts": [
-                            "in"
-                        ],
-                        "join_code": "",
-                        "join_optional": [],
-                        "join_start": 1,
-                        "line_end": 28,
-                        "line_start": 15,
-                        "message": "Configuring now",
-                        "name": "pin",
-                        "notes": "",
-                        "number": 1,
-                        "order": 2,
-                        "outPorts": [
-                            "out"
-                        ],
-                        "ports": {
-                            "groups": {
-                                "in": {
-                                    "attrs": {
-                                        ".port-body": {
-                                            "fill": "#fff",
-                                            "magnet": true,
-                                            "r": 10,
-                                            "stroke": "#000"
-                                        },
-                                        ".port-label": {
-                                            "fill": "#000"
-                                        }
-                                    },
-                                    "label": {
-                                        "position": {
-                                            "args": {
-                                                "y": 10
-                                            },
-                                            "name": "left"
-                                        }
-                                    },
-                                    "position": {
-                                        "name": "left"
-                                    }
-                                },
-                                "out": {
-                                    "attrs": {
-                                        ".port-body": {
-                                            "fill": "#fff",
-                                            "magnet": true,
-                                            "r": 10,
-                                            "stroke": "#000"
-                                        },
-                                        ".port-label": {
-                                            "fill": "#000"
-                                        }
-                                    },
-                                    "label": {
-                                        "position": {
-                                            "args": {
-                                                "y": 10
-                                            },
-                                            "name": "right"
-                                        }
-                                    },
-                                    "position": {
-                                        "name": "right"
-                                    }
-                                }
-                            }
-                        },
-                        "position": {
-                            "x": 760,
-                            "y": 560
-                        },
-                        "previous_function": "",
-                        "previous_name": "pin_1",
-                        "show_number": false,
-                        "size": {
-                            "height": 100,
-                            "width": 180
-                        },
-                        "state": "api",
-                        "status": "warn",
-                        "title": "API",
-                        "type": "coa.API",
-                        "warn": false,
-                        "z": 266
-                    },
-                    {
-                        "active": false,
-                        "angle": 0,
-                        "api": "pin",
-                        "attrs": {
-                            ".api": {
                                 "text": "custom_pin"
                             },
                             ".background": {
@@ -2986,7 +2333,7 @@
                             }
                         ],
                         "connected_to_start": true,
-                        "connection_name": "get entity 2",
+                        "connection_name": "get entity",
                         "connection_type": "action",
                         "custom_callback": "",
                         "custom_code": "def custom_pin(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):\n    phantom.debug('pin_5() called')\n\n    results_data_1 = phantom.collect2(container=container, datapath=['get_entity_2:action_result.data.*.title', 'get_entity_2:action_result.data.*.external_ip.0'], action_results=results)\n\n    for item in results_data_1:\n        results_item_1_0 = \"Entity: \"+item[0]\n        results_item_1_1 = item[1]\n\n        phantom.pin(container=container, data=results_item_1_1, message=results_item_1_0, pin_type=\"card\", pin_style=\"grey\", name=None)\n    \n    return",
@@ -3004,13 +2351,13 @@
                         "join_code": "",
                         "join_optional": [],
                         "join_start": 1,
-                        "line_end": 222,
-                        "line_start": 209,
+                        "line_end": 161,
+                        "line_start": 148,
                         "message": "Configuring now",
                         "name": "pin",
                         "notes": "",
                         "number": 5,
-                        "order": 12,
+                        "order": 9,
                         "outPorts": [
                             "out"
                         ],
@@ -3092,7 +2439,7 @@
         "schema": 4,
         "version": "4.9.34514"
     },
-    "create_time": "2020-08-21T12:20:15.045662+00:00",
+    "create_time": "2020-08-21T12:21:37.168539+00:00",
     "draft_mode": false,
     "labels": [
         "itsi"
