@@ -120,7 +120,7 @@ def decision_2(action=None, success=None, container=None, results=None, handle=N
 
     # call connected blocks if condition 1 matched
     if matched:
-        format_17(action=action, success=success, container=container, results=results, handle=handle, custom_function=custom_function)
+        update_artifact_2(action=action, success=success, container=container, results=results, handle=handle, custom_function=custom_function)
         return
 
     # check for 'elif' condition 2
@@ -218,7 +218,7 @@ def add_snow_work_note(action=None, success=None, container=None, results=None, 
     #phantom.debug('Action: {0} {1}'.format(action['name'], ('SUCCEEDED' if success else 'FAILED')))
     
     # collect data for 'add_snow_work_note' call
-    results_data_1 = phantom.collect2(container=container, datapath=['get_SNOW_ticket_ID:action_result.data.*.response_body.data.*.data', 'get_SNOW_ticket_ID:action_result.parameter.context.artifact_id'], action_results=results)
+    results_data_1 = phantom.collect2(container=container, datapath=['get_data_5:action_result.data.*.response_body.data.*.data', 'get_data_5:action_result.parameter.context.artifact_id'], action_results=results)
     formatted_data_1 = phantom.get_format_data(name='format_snow_worknote')
 
     parameters = []
@@ -675,6 +675,31 @@ def join_get_container_information(action=None, success=None, container=None, re
         # call connected block "get_container_information"
         get_container_information(container=container, handle=handle)
     
+    return
+
+def update_artifact_2(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):
+    phantom.debug('update_artifact_2() called')
+        
+    #phantom.debug('Action: {0} {1}'.format(action['name'], ('SUCCEEDED' if success else 'FAILED')))
+    
+    # collect data for 'update_artifact_2' call
+    container_data = phantom.collect2(container=container, datapath=['artifact:*.id', 'artifact:*.id'])
+
+    parameters = []
+    
+    # build parameters list for 'update_artifact_2' call
+    for container_item in container_data:
+        if container_item[0]:
+            parameters.append({
+                'data': "{ \"tags\": \"service_restart_in_progress \" }",
+                'overwrite': True,
+                'artifact_id': container_item[0],
+                # context (artifact id) is added to associate results with the artifact
+                'context': {'artifact_id': container_item[1]},
+            })
+
+    phantom.act(action="update artifact", parameters=parameters, assets=['phantom utilities'], callback=format_17, name="update_artifact_2")
+
     return
 
 def on_finish(container, summary):
