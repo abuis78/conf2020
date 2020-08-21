@@ -56,13 +56,11 @@ def decision_1(action=None, success=None, container=None, results=None, handle=N
         action_results=results,
         conditions=[
             ["get_entity_data:action_result.data.*.response_body.count", ">", 0],
-            ["action_result.data.*.response_body.data.*.pin_style", "==", "grey"],
-        ],
-        logical_operator='and')
+        ])
 
     # call connected blocks if condition 1 matched
     if matched:
-        add_comment_1(action=action, success=success, container=container, results=results, handle=handle, custom_function=custom_function)
+        decision_2(action=action, success=success, container=container, results=results, handle=handle, custom_function=custom_function)
         return
 
     # call connected blocks for 'else' condition 2
@@ -81,6 +79,23 @@ def add_comment_2(action=None, success=None, container=None, results=None, handl
     phantom.debug('add_comment_2() called')
 
     phantom.comment(container=container, comment="nein")
+
+    return
+
+def decision_2(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):
+    phantom.debug('decision_2() called')
+
+    # check for 'if' condition 1
+    matched = phantom.decision(
+        container=container,
+        action_results=results,
+        conditions=[
+            ["action_result.data.*.response_body.data.*. pin_style", "==", "grey"],
+        ])
+
+    # call connected blocks if condition 1 matched
+    if matched:
+        return
 
     return
 
