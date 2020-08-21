@@ -315,7 +315,7 @@ def update_ticket_1(action=None, success=None, container=None, results=None, han
     #phantom.debug('Action: {0} {1}'.format(action['name'], ('SUCCEEDED' if success else 'FAILED')))
     
     # collect data for 'update_ticket_1' call
-    results_data_1 = phantom.collect2(container=container, datapath=['create_ticket_1:action_result.summary.created_ticket_id', 'create_ticket_1:action_result.parameter.context.artifact_id'], action_results=results)
+    results_data_1 = phantom.collect2(container=container, datapath=['create_ticket_1:action_result.data.*.number', 'create_ticket_1:action_result.parameter.context.artifact_id'], action_results=results)
     formatted_data_1 = phantom.get_format_data(name='format_9')
 
     parameters = []
