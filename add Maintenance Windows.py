@@ -46,6 +46,7 @@ def pin_1(action=None, success=None, container=None, results=None, handle=None, 
     formatted_data_2 = phantom.get_format_data(name='Maintenance_title')
 
     phantom.pin(container=container, data=formatted_data_1, message=formatted_data_2, name=None)
+    add_episode_comment_1(container=container)
 
     return
 
@@ -137,6 +138,27 @@ def format_6(action=None, success=None, container=None, results=None, handle=Non
     phantom.format(container=container, template=template, parameters=parameters, name="format_6")
 
     add_maintenance_window_1(container=container)
+
+    return
+
+def add_episode_comment_1(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):
+    phantom.debug('add_episode_comment_1() called')
+        
+    #phantom.debug('Action: {0} {1}'.format(action['name'], ('SUCCEEDED' if success else 'FAILED')))
+    
+    source_data_identifier_value = container.get('source_data_identifier', None)
+
+    # collect data for 'add_episode_comment_1' call
+
+    parameters = []
+    
+    # build parameters list for 'add_episode_comment_1' call
+    parameters.append({
+        'itsi_group_id': source_data_identifier_value,
+        'comment': "Maintenance Windows habe been started",
+    })
+
+    phantom.act(action="add episode comment", parameters=parameters, assets=['splunk itsi'], name="add_episode_comment_1")
 
     return
 
