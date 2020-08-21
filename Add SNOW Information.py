@@ -204,6 +204,7 @@ def Pin_snow_inc(action=None, success=None, container=None, results=None, handle
     formatted_data_1 = phantom.get_format_data(name='format_7')
 
     phantom.pin(container=container, data=formatted_data_1, message="snow inc", name=None)
+    format_9(container=container)
 
     return
 
@@ -239,10 +240,10 @@ def add_episode_ticket_1(action=None, success=None, container=None, results=None
     # build parameters list for 'add_episode_ticket_1' call
     for results_item_1 in results_data_1:
         parameters.append({
-            'itsi_group_id': source_data_identifier_value,
-            'ticket_system': "Service Now",
             'ticket_id': results_item_1[0],
             'ticket_url': formatted_data_1,
+            'itsi_group_id': source_data_identifier_value,
+            'ticket_system': "Service Now",
             # context (artifact id) is added to associate results with the artifact
             'context': {'artifact_id': results_item_1[1]},
         })
@@ -289,6 +290,50 @@ def format_8(action=None, success=None, container=None, results=None, handle=Non
     phantom.format(container=container, template=template, parameters=parameters, name="format_8")
 
     add_episode_ticket_1(container=container)
+
+    return
+
+def format_9(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):
+    phantom.debug('format_9() called')
+    
+    template = """{{\"state\":\"2\",\"caller_id\":\"{0}\"}}"""
+
+    # parameter list for template variable replacement
+    parameters = [
+        "",
+    ]
+
+    phantom.format(container=container, template=template, parameters=parameters, name="format_9")
+
+    update_ticket_1(container=container)
+
+    return
+
+def update_ticket_1(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):
+    phantom.debug('update_ticket_1() called')
+        
+    #phantom.debug('Action: {0} {1}'.format(action['name'], ('SUCCEEDED' if success else 'FAILED')))
+    
+    # collect data for 'update_ticket_1' call
+    results_data_1 = phantom.collect2(container=container, datapath=['create_ticket_1:action_result.summary.created_ticket_id', 'create_ticket_1:action_result.parameter.context.artifact_id'], action_results=results)
+    formatted_data_1 = phantom.get_format_data(name='format_9')
+
+    parameters = []
+    
+    # build parameters list for 'update_ticket_1' call
+    for results_item_1 in results_data_1:
+        if results_item_1[0]:
+            parameters.append({
+                'id': results_item_1[0],
+                'table': "incident",
+                'fields': formatted_data_1,
+                'vault_id': "",
+                'is_sys_id': "",
+                # context (artifact id) is added to associate results with the artifact
+                'context': {'artifact_id': results_item_1[1]},
+            })
+
+    phantom.act(action="update ticket", parameters=parameters, assets=['servicenow'], name="update_ticket_1")
 
     return
 
