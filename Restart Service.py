@@ -166,7 +166,7 @@ def decision_2(action=None, success=None, container=None, results=None, handle=N
         return
 
     # call connected blocks for 'else' condition 2
-    playbook_conf2020_add_Maintenance_Windows_2(action=action, success=success, container=container, results=results, handle=handle, custom_function=custom_function)
+    playbook_conf2020_conf2020_add_Maintenance_Windows_2(action=action, success=success, container=container, results=results, handle=handle, custom_function=custom_function)
 
     return
 
@@ -227,7 +227,7 @@ def service_path(action=None, success=None, container=None, results=None, handle
         'sleep_seconds': 1,
     })
 
-    phantom.act(action="no op", parameters=parameters, assets=['phantom'], callback=playbook_conf2020_end_Maintenance_Windows_1, name="service_path")
+    phantom.act(action="no op", parameters=parameters, assets=['phantom'], callback=playbook_conf2020_conf2020_end_Maintenance_Windows_1, name="service_path")
 
     return
 
@@ -938,10 +938,10 @@ def add_work_note_2(action=None, success=None, container=None, results=None, han
     for results_item_1 in results_data_1:
         if results_item_1[0]:
             parameters.append({
-                'table_name': "incident",
                 'id': results_item_1[0],
-                'work_note': formatted_data_1,
                 'is_sys_id': "",
+                'work_note': formatted_data_1,
+                'table_name': "incident",
                 # context (artifact id) is added to associate results with the artifact
                 'context': {'artifact_id': results_item_1[1]},
             })
@@ -978,28 +978,28 @@ def get_data_5(action=None, success=None, container=None, results=None, handle=N
     
     # build parameters list for 'get_data_5' call
     parameters.append({
+        'headers': "",
         'location': formatted_data_1,
         'verify_certificate': False,
-        'headers': "",
     })
 
     phantom.act(action="get data", parameters=parameters, assets=['http'], callback=format_16, name="get_data_5")
 
     return
 
-def playbook_conf2020_add_Maintenance_Windows_2(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):
-    phantom.debug('playbook_conf2020_add_Maintenance_Windows_2() called')
+def playbook_conf2020_conf2020_add_Maintenance_Windows_2(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):
+    phantom.debug('playbook_conf2020_conf2020_add_Maintenance_Windows_2() called')
     
     # call playbook "conf2020/add Maintenance Windows", returns the playbook_run_id
-    playbook_run_id = phantom.playbook(playbook="conf2020/add Maintenance Windows", container=container, name="playbook_conf2020_add_Maintenance_Windows_2", callback=execute_program_3)
+    playbook_run_id = phantom.playbook(playbook="conf2020/add Maintenance Windows", container=container, name="playbook_conf2020_conf2020_add_Maintenance_Windows_2", callback=execute_program_3)
 
     return
 
-def playbook_conf2020_end_Maintenance_Windows_1(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):
-    phantom.debug('playbook_conf2020_end_Maintenance_Windows_1() called')
+def playbook_conf2020_conf2020_end_Maintenance_Windows_1(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):
+    phantom.debug('playbook_conf2020_conf2020_end_Maintenance_Windows_1() called')
     
     # call playbook "conf2020/end Maintenance Windows", returns the playbook_run_id
-    playbook_run_id = phantom.playbook(playbook="conf2020/end Maintenance Windows", container=container, name="playbook_conf2020_end_Maintenance_Windows_1", callback=format_snow_ticket_id_request)
+    playbook_run_id = phantom.playbook(playbook="conf2020/end Maintenance Windows", container=container, name="playbook_conf2020_conf2020_end_Maintenance_Windows_1", callback=format_snow_ticket_id_request)
 
     return
 
@@ -1076,13 +1076,13 @@ def add_maintenance_window_1(action=None, success=None, container=None, results=
     # build parameters list for 'add_maintenance_window_1' call
     parameters.append({
         'title': formatted_data_1,
-        'relative_start_time': "",
-        'relative_end_time': 300,
-        'start_time': "",
+        'comment': "Phantom created Maintenance Windows",
         'end_time': "",
-        'object_type': "entity",
         'object_ids': formatted_data_2,
-        'comment': "Phantom hast started Maintenance Windows",
+        'start_time': "",
+        'object_type': "entity",
+        'relative_end_time': 300,
+        'relative_start_time': "",
     })
 
     phantom.act(action="add maintenance window", parameters=parameters, assets=['splunk itsi'], callback=format_20, name="add_maintenance_window_1")
@@ -1124,10 +1124,10 @@ def format_21(action=None, success=None, container=None, results=None, handle=No
 def pin_7(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):
     phantom.debug('pin_7() called')
 
-    formatted_data_1 = phantom.get_format_data(name='format_21')
-    formatted_data_2 = phantom.get_format_data(name='format_20')
+    formatted_data_1 = phantom.get_format_data(name='format_20')
+    formatted_data_2 = phantom.get_format_data(name='format_21')
 
-    phantom.pin(container=container, data=formatted_data_2, message=formatted_data_1, name=None)
+    phantom.pin(container=container, data=formatted_data_1, message=formatted_data_2, name=None)
     format_22(container=container)
 
     return
@@ -1140,13 +1140,14 @@ def add_episode_comment_1(action=None, success=None, container=None, results=Non
     source_data_identifier_value = container.get('source_data_identifier', None)
 
     # collect data for 'add_episode_comment_1' call
+    formatted_data_1 = phantom.get_format_data(name='format_22')
 
     parameters = []
     
     # build parameters list for 'add_episode_comment_1' call
     parameters.append({
+        'comment': formatted_data_1,
         'itsi_group_id': source_data_identifier_value,
-        'comment': "",
     })
 
     phantom.act(action="add episode comment", parameters=parameters, assets=['splunk itsi'], callback=format_17, name="add_episode_comment_1")
