@@ -59,31 +59,6 @@ def add_tag_notable_to_artifakt(action=None, success=None, container=None, resul
 
     return
 
-def severity_critical(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):
-    phantom.debug('severity_critical() called')
-        
-    #phantom.debug('Action: {0} {1}'.format(action['name'], ('SUCCEEDED' if success else 'FAILED')))
-    
-    # collect data for 'severity_critical' call
-    container_data = phantom.collect2(container=container, datapath=['artifact:*.id', 'artifact:*.id'])
-
-    parameters = []
-    
-    # build parameters list for 'severity_critical' call
-    for container_item in container_data:
-        if container_item[0]:
-            parameters.append({
-                'data': "{ \"severity\": \"Critical\" }",
-                'overwrite': True,
-                'artifact_id': container_item[0],
-                # context (artifact id) is added to associate results with the artifact
-                'context': {'artifact_id': container_item[1]},
-            })
-
-    phantom.act(action="update artifact", parameters=parameters, assets=['phantom utilities'], name="severity_critical")
-
-    return
-
 def severity_high(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):
     phantom.debug('severity_high() called')
         
@@ -98,7 +73,7 @@ def severity_high(action=None, success=None, container=None, results=None, handl
     for container_item in container_data:
         if container_item[0]:
             parameters.append({
-                'data': "{ \"severity\": \"high\" }",
+                'data': "{ \"severity\": \"High\" }",
                 'overwrite': True,
                 'artifact_id': container_item[0],
                 # context (artifact id) is added to associate results with the artifact
@@ -109,17 +84,17 @@ def severity_high(action=None, success=None, container=None, results=None, handl
 
     return
 
-def update_artifact_4(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):
-    phantom.debug('update_artifact_4() called')
+def severity_low(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):
+    phantom.debug('severity_low() called')
         
     #phantom.debug('Action: {0} {1}'.format(action['name'], ('SUCCEEDED' if success else 'FAILED')))
     
-    # collect data for 'update_artifact_4' call
+    # collect data for 'severity_low' call
     container_data = phantom.collect2(container=container, datapath=['artifact:*.id', 'artifact:*.id'])
 
     parameters = []
     
-    # build parameters list for 'update_artifact_4' call
+    # build parameters list for 'severity_low' call
     for container_item in container_data:
         if container_item[0]:
             parameters.append({
@@ -130,7 +105,7 @@ def update_artifact_4(action=None, success=None, container=None, results=None, h
                 'context': {'artifact_id': container_item[1]},
             })
 
-    phantom.act(action="update artifact", parameters=parameters, assets=['phantom utilities'], name="update_artifact_4")
+    phantom.act(action="update artifact", parameters=parameters, assets=['phantom utilities'], name="severity_low")
 
     return
 
@@ -181,45 +156,64 @@ def filter_1(action=None, success=None, container=None, results=None, handle=Non
         container=container,
         action_results=results,
         conditions=[
-            ["artifact:*.cef.alert_severity", "==", "critical"],
-            ["artifact:*.id", "==", "artifact:*.id"],
+            ["artifact:*.cef.alert_level", ">=", 5],
         ],
-        logical_operator='and',
         name="filter_1:condition_1")
 
     # call connected blocks if filtered artifacts or results
     if matched_artifacts_1 or matched_results_1:
-        severity_critical(action=action, success=success, container=container, results=results, handle=handle, custom_function=custom_function, filtered_artifacts=matched_artifacts_1, filtered_results=matched_results_1)
+        severity_high(action=action, success=success, container=container, results=results, handle=handle, custom_function=custom_function, filtered_artifacts=matched_artifacts_1, filtered_results=matched_results_1)
 
     # collect filtered artifact ids for 'if' condition 2
     matched_artifacts_2, matched_results_2 = phantom.condition(
         container=container,
         action_results=results,
         conditions=[
-            ["artifact:*.cef.alert_severity", "==", "high"],
-            ["artifact:*.id", "==", "artifact:*.id"],
+            ["artifact:*.cef.alert_level", "==", 4],
         ],
-        logical_operator='and',
         name="filter_1:condition_2")
 
     # call connected blocks if filtered artifacts or results
     if matched_artifacts_2 or matched_results_2:
-        severity_high(action=action, success=success, container=container, results=results, handle=handle, custom_function=custom_function, filtered_artifacts=matched_artifacts_2, filtered_results=matched_results_2)
+        severity_medium(action=action, success=success, container=container, results=results, handle=handle, custom_function=custom_function, filtered_artifacts=matched_artifacts_2, filtered_results=matched_results_2)
 
     # collect filtered artifact ids for 'if' condition 3
     matched_artifacts_3, matched_results_3 = phantom.condition(
         container=container,
         action_results=results,
         conditions=[
-            ["artifact:*.cef.alert_severity", "==", "medium"],
-            ["artifact:*.id", "==", "artifact:*.id"],
+            ["artifact:*.cef.alert_level", "<=", 3],
         ],
-        logical_operator='and',
         name="filter_1:condition_3")
 
     # call connected blocks if filtered artifacts or results
     if matched_artifacts_3 or matched_results_3:
-        update_artifact_4(action=action, success=success, container=container, results=results, handle=handle, custom_function=custom_function, filtered_artifacts=matched_artifacts_3, filtered_results=matched_results_3)
+        severity_low(action=action, success=success, container=container, results=results, handle=handle, custom_function=custom_function, filtered_artifacts=matched_artifacts_3, filtered_results=matched_results_3)
+
+    return
+
+def severity_medium(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):
+    phantom.debug('severity_medium() called')
+        
+    #phantom.debug('Action: {0} {1}'.format(action['name'], ('SUCCEEDED' if success else 'FAILED')))
+    
+    # collect data for 'severity_medium' call
+    container_data = phantom.collect2(container=container, datapath=['artifact:*.id', 'artifact:*.id'])
+
+    parameters = []
+    
+    # build parameters list for 'severity_medium' call
+    for container_item in container_data:
+        if container_item[0]:
+            parameters.append({
+                'data': "{ \"severity\": \"Medium\" }",
+                'overwrite': True,
+                'artifact_id': container_item[0],
+                # context (artifact id) is added to associate results with the artifact
+                'context': {'artifact_id': container_item[1]},
+            })
+
+    phantom.act(action="update artifact", parameters=parameters, assets=['phantom utilities'], name="severity_medium")
 
     return
 
