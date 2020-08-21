@@ -7,7 +7,7 @@
             "clean": true,
             "code_block": "",
             "description": "",
-            "hash": "6430230a2747629930f67ea710e2b47665984be7",
+            "hash": "fd57e38d95a3ce99a18ca3eb93e3da90adf91f6e",
             "joint": {
                 "cells": [
                     {
@@ -199,7 +199,7 @@
                         "callback_start": 1,
                         "callsback": false,
                         "connected_to_start": true,
-                        "connection_name": "get pin, update episode",
+                        "connection_name": "get pin, update ticket",
                         "connection_type": "action",
                         "custom_callback": "",
                         "custom_code": "",
@@ -331,178 +331,6 @@
                         },
                         "type": "link",
                         "z": 8
-                    },
-                    {
-                        "active": false,
-                        "angle": 0,
-                        "attrs": {
-                            ".background": {
-                                "fill": "#FFFFFF",
-                                "stroke": "#818D99"
-                            },
-                            ".color-band": {
-                                "fill": "#171D21"
-                            },
-                            ".format": {
-                                "text": "Short description"
-                            },
-                            ".inPorts>.port-in": {
-                                "ref": ".background",
-                                "ref-x": 0.5
-                            },
-                            ".inPorts>.port-in>.port-body": {
-                                "port": {
-                                    "id": "in",
-                                    "type": "in"
-                                }
-                            },
-                            ".message": {
-                                "opacity": 0,
-                                "text": "Configuring now"
-                            },
-                            ".outPorts>.port-out-1": {
-                                "ref": ".background",
-                                "ref-x": 0.5
-                            },
-                            ".outPorts>.port-out-1>.port-body": {
-                                "port": {
-                                    "id": "out-1",
-                                    "type": "out"
-                                }
-                            },
-                            ".title": {
-                                "text": "format"
-                            },
-                            "g.code image": {
-                                "opacity": 1
-                            },
-                            "g.delete": {
-                                "display": "none"
-                            },
-                            "g.error": {
-                                "opacity": 0
-                            },
-                            "g.error image": {
-                                "xlink:href": "/inc/coa/img/block_icon_warn.svg"
-                            },
-                            "g.notes": {
-                                "display": "block"
-                            },
-                            "g.notes image": {
-                                "opacity": 1
-                            }
-                        },
-                        "block_code": "def Short_description(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):\n    phantom.debug('Short_description() called')\n    \n    template = \"\"\"New Ticket - Phantom ID: {0}\"\"\"\n\n    # parameter list for template variable replacement\n    parameters = [\n        \"container:id\",\n    ]\n\n    phantom.format(container=container, template=template, parameters=parameters, name=\"Short_description\")\n\n    description(container=container)\n\n    return",
-                        "callback_code": "",
-                        "callback_start": 1,
-                        "callsback": false,
-                        "connected_to_start": true,
-                        "connection_name": "get data",
-                        "connection_type": "action",
-                        "custom_callback": "",
-                        "custom_code": "",
-                        "custom_join": "",
-                        "custom_name": "Short description",
-                        "description": "",
-                        "format": "format",
-                        "has_custom": false,
-                        "has_custom_block": false,
-                        "has_custom_callback": false,
-                        "has_custom_join": false,
-                        "id": "521fd731-a389-4da3-81da-82602a224276",
-                        "inPorts": [
-                            "in"
-                        ],
-                        "join_code": "",
-                        "join_optional": [],
-                        "join_start": 1,
-                        "line_end": 55,
-                        "line_start": 39,
-                        "message": "Configuring now",
-                        "name": "format",
-                        "notes": "",
-                        "number": 1,
-                        "order": 3,
-                        "outPorts": [
-                            "out-1"
-                        ],
-                        "parameters": [
-                            {
-                                "position": 0,
-                                "type": "",
-                                "value": "container:id"
-                            }
-                        ],
-                        "ports": {
-                            "groups": {
-                                "in": {
-                                    "attrs": {
-                                        ".port-body": {
-                                            "fill": "#fff",
-                                            "magnet": true,
-                                            "r": 10,
-                                            "stroke": "#000"
-                                        },
-                                        ".port-label": {
-                                            "fill": "#000"
-                                        }
-                                    },
-                                    "label": {
-                                        "position": {
-                                            "args": {
-                                                "y": 10
-                                            },
-                                            "name": "left"
-                                        }
-                                    },
-                                    "position": {
-                                        "name": "left"
-                                    }
-                                },
-                                "out": {
-                                    "attrs": {
-                                        ".port-body": {
-                                            "fill": "#fff",
-                                            "magnet": true,
-                                            "r": 10,
-                                            "stroke": "#000"
-                                        },
-                                        ".port-label": {
-                                            "fill": "#000"
-                                        }
-                                    },
-                                    "label": {
-                                        "position": {
-                                            "args": {
-                                                "y": 10
-                                            },
-                                            "name": "right"
-                                        }
-                                    },
-                                    "position": {
-                                        "name": "right"
-                                    }
-                                }
-                            }
-                        },
-                        "position": {
-                            "x": 520,
-                            "y": 100
-                        },
-                        "previous_function": "",
-                        "previous_name": "Short_description",
-                        "show_number": true,
-                        "size": {
-                            "height": 100,
-                            "width": 180
-                        },
-                        "state": "format",
-                        "status": "",
-                        "template": "New Ticket - Phantom ID: {0}",
-                        "title": "format",
-                        "type": "coa.Format",
-                        "warn": false,
-                        "z": 10
                     },
                     {
                         "attrs": {
@@ -659,46 +487,6 @@
                         },
                         "type": "link",
                         "z": 23
-                    },
-                    {
-                        "attrs": {
-                            ".connection": {
-                                "stroke": "#818D99",
-                                "stroke-width": 2
-                            },
-                            ".marker-target": {
-                                "d": "M 10 0 L 0 5 L 10 10 z",
-                                "fill": "#818D99",
-                                "stroke": "#818D99"
-                            }
-                        },
-                        "connector": {
-                            "args": {
-                                "radius": 5
-                            },
-                            "name": "rounded"
-                        },
-                        "endDirections": [
-                            "left"
-                        ],
-                        "id": "21243b67-0cf8-4245-a863-adb2f4ef31ce",
-                        "router": {
-                            "name": "metro"
-                        },
-                        "source": {
-                            "id": "c664ba00-1769-48a4-b967-10fbabb66f38",
-                            "port": "out-1",
-                            "selector": "> g:nth-child(1) > g:nth-child(2) > g:nth-child(1) > circle:nth-child(1)"
-                        },
-                        "startDirections": [
-                            "right"
-                        ],
-                        "target": {
-                            "id": "521fd731-a389-4da3-81da-82602a224276",
-                            "selector": "> g:nth-child(1) > g:nth-child(1) > g:nth-child(1) > circle:nth-child(1)"
-                        },
-                        "type": "link",
-                        "z": 25
                     },
                     {
                         "attrs": {
@@ -1625,178 +1413,6 @@
                         "z": 136
                     },
                     {
-                        "active": false,
-                        "angle": 0,
-                        "attrs": {
-                            ".background": {
-                                "fill": "#FFFFFF",
-                                "stroke": "#818D99"
-                            },
-                            ".color-band": {
-                                "fill": "#171D21"
-                            },
-                            ".format": {
-                                "text": "format 6"
-                            },
-                            ".inPorts>.port-in": {
-                                "ref": ".background",
-                                "ref-x": 0.5
-                            },
-                            ".inPorts>.port-in>.port-body": {
-                                "port": {
-                                    "id": "in",
-                                    "type": "in"
-                                }
-                            },
-                            ".message": {
-                                "opacity": 0,
-                                "text": "Configuring now"
-                            },
-                            ".outPorts>.port-out-1": {
-                                "ref": ".background",
-                                "ref-x": 0.5
-                            },
-                            ".outPorts>.port-out-1>.port-body": {
-                                "port": {
-                                    "id": "out-1",
-                                    "type": "out"
-                                }
-                            },
-                            ".title": {
-                                "text": "format"
-                            },
-                            "g.code image": {
-                                "opacity": 1
-                            },
-                            "g.delete": {
-                                "display": "none"
-                            },
-                            "g.error": {
-                                "opacity": 0
-                            },
-                            "g.error image": {
-                                "xlink:href": "/inc/coa/img/block_icon_warn.svg"
-                            },
-                            "g.notes": {
-                                "display": "block"
-                            },
-                            "g.notes image": {
-                                "opacity": 1
-                            }
-                        },
-                        "block_code": "def format_6(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):\n    phantom.debug('format_6() called')\n    \n    template = \"\"\"{0}\"\"\"\n\n    # parameter list for template variable replacement\n    parameters = [\n        \"create_ticket_1:action_result.summary.created_ticket_id\",\n    ]\n\n    phantom.format(container=container, template=template, parameters=parameters, name=\"format_6\")\n\n    pin_snow_ticket_id(container=container)\n\n    return",
-                        "callback_code": "",
-                        "callback_start": 1,
-                        "callsback": false,
-                        "connected_to_start": true,
-                        "connection_name": "add episode ticket",
-                        "connection_type": "action",
-                        "custom_callback": "",
-                        "custom_code": "",
-                        "custom_join": "",
-                        "custom_name": "",
-                        "description": "",
-                        "format": "format",
-                        "has_custom": false,
-                        "has_custom_block": false,
-                        "has_custom_callback": false,
-                        "has_custom_join": false,
-                        "id": "77ec2896-1107-4e73-b721-a7399efb948d",
-                        "inPorts": [
-                            "in"
-                        ],
-                        "join_code": "",
-                        "join_optional": [],
-                        "join_start": 1,
-                        "line_end": 201,
-                        "line_start": 185,
-                        "message": "Configuring now",
-                        "name": "format",
-                        "notes": "",
-                        "number": 6,
-                        "order": 12,
-                        "outPorts": [
-                            "out-1"
-                        ],
-                        "parameters": [
-                            {
-                                "position": 0,
-                                "type": "",
-                                "value": "create_ticket_1:action_result.summary.created_ticket_id"
-                            }
-                        ],
-                        "ports": {
-                            "groups": {
-                                "in": {
-                                    "attrs": {
-                                        ".port-body": {
-                                            "fill": "#fff",
-                                            "magnet": true,
-                                            "r": 10,
-                                            "stroke": "#000"
-                                        },
-                                        ".port-label": {
-                                            "fill": "#000"
-                                        }
-                                    },
-                                    "label": {
-                                        "position": {
-                                            "args": {
-                                                "y": 10
-                                            },
-                                            "name": "left"
-                                        }
-                                    },
-                                    "position": {
-                                        "name": "left"
-                                    }
-                                },
-                                "out": {
-                                    "attrs": {
-                                        ".port-body": {
-                                            "fill": "#fff",
-                                            "magnet": true,
-                                            "r": 10,
-                                            "stroke": "#000"
-                                        },
-                                        ".port-label": {
-                                            "fill": "#000"
-                                        }
-                                    },
-                                    "label": {
-                                        "position": {
-                                            "args": {
-                                                "y": 10
-                                            },
-                                            "name": "right"
-                                        }
-                                    },
-                                    "position": {
-                                        "name": "right"
-                                    }
-                                }
-                            }
-                        },
-                        "position": {
-                            "x": 760,
-                            "y": 260
-                        },
-                        "previous_function": "",
-                        "previous_name": "format_6",
-                        "show_number": true,
-                        "size": {
-                            "height": 100,
-                            "width": 180
-                        },
-                        "state": "format",
-                        "status": "",
-                        "template": "{0}",
-                        "title": "format",
-                        "type": "coa.Format",
-                        "warn": false,
-                        "z": 138
-                    },
-                    {
                         "action": "get data",
                         "action_type": "investigate",
                         "active": false,
@@ -2632,7 +2248,7 @@
                                 "opacity": 1
                             }
                         },
-                        "block_code": "def decision_1(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):\n    phantom.debug('decision_1() called')\n\n    # check for 'if' condition 1\n    matched = phantom.decision(\n        container=container,\n        action_results=results,\n        conditions=[\n            [\"get_data_1:action_result.data.*.response_body.count\", \"==\", 0],\n        ])\n\n    # call connected blocks if condition 1 matched\n    if matched:\n        Short_description(action=action, success=success, container=container, results=results, handle=handle, custom_function=custom_function)\n        return\n\n    # call connected blocks for 'else' condition 2\n    get_pin_1(action=action, success=success, container=container, results=results, handle=handle, custom_function=custom_function)\n\n    return",
+                        "block_code": "def decision_1(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):\n    phantom.debug('decision_1() called')\n\n    # check for 'if' condition 1\n    matched = phantom.decision(\n        container=container,\n        action_results=results,\n        conditions=[\n            [\"get_data_1:action_result.data.*.response_body.count\", \"==\", 0],\n        ])\n\n    # call connected blocks if condition 1 matched\n    if matched:\n        update_episode_1(action=action, success=success, container=container, results=results, handle=handle, custom_function=custom_function)\n        return\n\n    # call connected blocks for 'else' condition 2\n    get_pin_1(action=action, success=success, container=container, results=results, handle=handle, custom_function=custom_function)\n\n    return",
                         "callback_code": "",
                         "callback_start": 1,
                         "callsback": false,
@@ -2828,7 +2444,7 @@
                         "callback_start": 1,
                         "callsback": false,
                         "connected_to_start": true,
-                        "connection_name": "get data",
+                        "connection_name": "update episode",
                         "connection_type": "action",
                         "custom_callback": "",
                         "custom_code": "",
@@ -2917,7 +2533,7 @@
                             }
                         },
                         "position": {
-                            "x": 760,
+                            "x": 1200,
                             "y": 100
                         },
                         "previous_function": "",
@@ -3288,6 +2904,9 @@
                             "g.error": {
                                 "opacity": 0
                             },
+                            "g.error image": {
+                                "xlink:href": "/inc/coa/img/block_icon_warn.svg"
+                            },
                             "g.icon image": {
                                 "xlink:href": "/inc/coa/img/block_icon_generic.svg"
                             },
@@ -3389,7 +3008,7 @@
                             }
                         },
                         "position": {
-                            "x": 1200,
+                            "x": 1640,
                             "y": 100
                         },
                         "previous_function": "",
@@ -3409,84 +3028,6 @@
                         "type": "coa.Action",
                         "warn": false,
                         "z": 169
-                    },
-                    {
-                        "attrs": {
-                            ".connection": {
-                                "stroke": "#818D99",
-                                "stroke-width": 2
-                            },
-                            ".marker-target": {
-                                "d": "M 10 0 L 0 5 L 10 10 z",
-                                "fill": "#818D99",
-                                "stroke": "#818D99"
-                            }
-                        },
-                        "connector": {
-                            "args": {
-                                "radius": 5
-                            },
-                            "name": "rounded"
-                        },
-                        "endDirections": [
-                            "left"
-                        ],
-                        "id": "82c35990-ffed-47b7-a376-2e2929f30e5a",
-                        "router": {
-                            "name": "metro"
-                        },
-                        "source": {
-                            "id": "bb35858e-7a43-472f-8106-41e515692161",
-                            "selector": "> g:nth-child(1) > g:nth-child(2) > g:nth-child(1) > circle:nth-child(1)"
-                        },
-                        "startDirections": [
-                            "right"
-                        ],
-                        "target": {
-                            "id": "fe9cafde-e0ab-4c67-bdf3-8ce9d0c4a7a3",
-                            "selector": ".port-body[type=\"input\"]"
-                        },
-                        "type": "link",
-                        "z": 171
-                    },
-                    {
-                        "attrs": {
-                            ".connection": {
-                                "stroke": "#818D99",
-                                "stroke-width": 2
-                            },
-                            ".marker-target": {
-                                "d": "M 10 0 L 0 5 L 10 10 z",
-                                "fill": "#818D99",
-                                "stroke": "#818D99"
-                            }
-                        },
-                        "connector": {
-                            "args": {
-                                "radius": 5
-                            },
-                            "name": "rounded"
-                        },
-                        "endDirections": [
-                            "left"
-                        ],
-                        "id": "b0011d1b-e053-4804-9a5e-e5cf0f629127",
-                        "router": {
-                            "name": "metro"
-                        },
-                        "source": {
-                            "id": "fe9cafde-e0ab-4c67-bdf3-8ce9d0c4a7a3",
-                            "selector": "> g:nth-child(1) > g:nth-child(2) > g:nth-child(1) > circle:nth-child(1)"
-                        },
-                        "startDirections": [
-                            "right"
-                        ],
-                        "target": {
-                            "id": "ba7b1731-448d-4f7a-a78e-061e471fdbae",
-                            "selector": "> g:nth-child(1) > g:nth-child(1) > g:nth-child(1) > circle:nth-child(1)"
-                        },
-                        "type": "link",
-                        "z": 174
                     },
                     {
                         "active": false,
@@ -3888,6 +3429,9 @@
                             "g.error": {
                                 "opacity": 0
                             },
+                            "g.error image": {
+                                "xlink:href": "/inc/coa/img/block_icon_warn.svg"
+                            },
                             "g.notes": {
                                 "display": "block"
                             },
@@ -3999,7 +3543,7 @@
                             }
                         },
                         "position": {
-                            "x": 1420,
+                            "x": 1860,
                             "y": 100
                         },
                         "previous_function": "",
@@ -4340,7 +3884,7 @@
                             }
                         },
                         "position": {
-                            "x": 1640,
+                            "x": 2080,
                             "y": 100
                         },
                         "previous_function": "",
@@ -4360,357 +3904,6 @@
                         "type": "coa.Action",
                         "warn": false,
                         "z": 186
-                    },
-                    {
-                        "action": "update episode",
-                        "action_type": "generic",
-                        "active": false,
-                        "active_keys": {},
-                        "active_values": {
-                            "itsi_group_id": "container:source_data_identifier",
-                            "owner": "",
-                            "severity": "Medium",
-                            "status": "In Progress"
-                        },
-                        "angle": 0,
-                        "app": "Splunk IT Service Intelligence",
-                        "appid": "94bcee41-329f-4907-8895-d4e2a10616b8",
-                        "approver": "",
-                        "assets": [
-                            {
-                                "action": "update episode",
-                                "actions": [
-                                    "test connectivity",
-                                    "get episode",
-                                    "update episode",
-                                    "add episode comment",
-                                    "break episode",
-                                    "close episode",
-                                    "get episode events",
-                                    "add episode ticket",
-                                    "get episode tickets",
-                                    "get entity",
-                                    "get service",
-                                    "get service entities",
-                                    "update service status",
-                                    "get maintenance window",
-                                    "add maintenance window",
-                                    "update maintenance window",
-                                    "end maintenance window"
-                                ],
-                                "active": true,
-                                "app_name": "Splunk IT Service Intelligence",
-                                "app_version": "1.0.0",
-                                "appid": "94bcee41-329f-4907-8895-d4e2a10616b8",
-                                "asset_name": "splunk itsi",
-                                "config_type": "asset",
-                                "count": 0,
-                                "fields": {
-                                    "itsi_group_id": "container:source_data_identifier",
-                                    "owner": "",
-                                    "severity": "Medium",
-                                    "status": "In Progress"
-                                },
-                                "has_app": true,
-                                "id": 6,
-                                "loaded": false,
-                                "missing": false,
-                                "name": "splunk itsi",
-                                "output": [
-                                    {
-                                        "column_name": "Status",
-                                        "column_order": 4,
-                                        "data_path": "action_result.status",
-                                        "data_type": "string",
-                                        "example_values": [
-                                            "success",
-                                            "failed"
-                                        ]
-                                    },
-                                    {
-                                        "column_name": "ITSI Group ID",
-                                        "column_order": 0,
-                                        "data_path": "action_result.parameter.itsi_group_id",
-                                        "data_type": "string"
-                                    },
-                                    {
-                                        "column_name": "Owner",
-                                        "column_order": 3,
-                                        "data_path": "action_result.parameter.owner",
-                                        "data_type": "string"
-                                    },
-                                    {
-                                        "column_name": "Severity",
-                                        "column_order": 2,
-                                        "data_path": "action_result.parameter.severity",
-                                        "data_type": "string"
-                                    },
-                                    {
-                                        "column_name": "Status",
-                                        "column_order": 1,
-                                        "data_path": "action_result.parameter.status",
-                                        "data_type": "string"
-                                    },
-                                    {
-                                        "column_name": "Data",
-                                        "column_order": 5,
-                                        "data_path": "action_result.data",
-                                        "data_type": "string"
-                                    },
-                                    {
-                                        "column_name": "Summary",
-                                        "column_order": 6,
-                                        "data_path": "action_result.summary",
-                                        "data_type": "string"
-                                    },
-                                    {
-                                        "data_path": "action_result.message",
-                                        "data_type": "string"
-                                    },
-                                    {
-                                        "data_path": "summary.total_objects",
-                                        "data_type": "numeric",
-                                        "example_values": [
-                                            1
-                                        ]
-                                    },
-                                    {
-                                        "data_path": "summary.total_objects_successful",
-                                        "data_type": "numeric",
-                                        "example_values": [
-                                            1
-                                        ]
-                                    }
-                                ],
-                                "parameters": {
-                                    "itsi_group_id": {
-                                        "data_type": "string",
-                                        "default": null,
-                                        "description": "Splunk ITSI episode ID",
-                                        "key": "itsi_group_id",
-                                        "order": 0,
-                                        "required": true
-                                    },
-                                    "owner": {
-                                        "data_type": "string",
-                                        "default": null,
-                                        "description": "Episode owner",
-                                        "key": "owner",
-                                        "order": 3,
-                                        "required": false
-                                    },
-                                    "severity": {
-                                        "data_type": "string",
-                                        "default": null,
-                                        "description": "Episode severity",
-                                        "key": "severity",
-                                        "order": 2,
-                                        "required": false,
-                                        "value_list": [
-                                            "Info",
-                                            "Normal",
-                                            "Low",
-                                            "Medium",
-                                            "High",
-                                            "Critical"
-                                        ]
-                                    },
-                                    "status": {
-                                        "data_type": "string",
-                                        "default": null,
-                                        "description": "Episode status",
-                                        "key": "status",
-                                        "order": 1,
-                                        "required": false,
-                                        "value_list": [
-                                            "Unassigned",
-                                            "New",
-                                            "In Progress",
-                                            "Pending",
-                                            "Resolved",
-                                            "Closed"
-                                        ]
-                                    }
-                                },
-                                "product_name": "Splunk ITSI",
-                                "product_vendor": "Splunk",
-                                "targets": "6",
-                                "type": "devops"
-                            }
-                        ],
-                        "attrs": {
-                            ".action": {
-                                "text": "update episode"
-                            },
-                            ".background": {
-                                "fill": "#FFFFFF",
-                                "stroke": "#818D99"
-                            },
-                            ".color-band": {
-                                "fill": "#171D21"
-                            },
-                            ".inPorts>.port-in": {
-                                "ref": ".background",
-                                "ref-x": 0.5
-                            },
-                            ".inPorts>.port-in>.port-body": {
-                                "port": {
-                                    "id": "in",
-                                    "type": "in"
-                                }
-                            },
-                            ".message": {
-                                "opacity": 0,
-                                "ref-x": 5,
-                                "ref-y": 105,
-                                "text": "Configuring now"
-                            },
-                            ".outPorts>.port-out": {
-                                "ref": ".background",
-                                "ref-x": 0.5
-                            },
-                            ".outPorts>.port-out>.port-body": {
-                                "port": {
-                                    "id": "out",
-                                    "type": "out"
-                                }
-                            },
-                            ".title": {
-                                "text": "Generic"
-                            },
-                            "g.approver image": {
-                                "opacity": 1
-                            },
-                            "g.code image": {
-                                "opacity": 1
-                            },
-                            "g.delete": {
-                                "display": "none"
-                            },
-                            "g.error": {
-                                "opacity": 0
-                            },
-                            "g.icon image": {
-                                "xlink:href": "/inc/coa/img/block_icon_generic.svg"
-                            },
-                            "g.notes": {
-                                "display": "block"
-                            },
-                            "g.notes image": {
-                                "opacity": 1
-                            },
-                            "g.timer image": {
-                                "opacity": 1
-                            }
-                        },
-                        "block_code": "def update_episode_1(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):\n    phantom.debug('update_episode_1() called')\n        \n    #phantom.debug('Action: {0} {1}'.format(action['name'], ('SUCCEEDED' if success else 'FAILED')))\n    \n    source_data_identifier_value = container.get('source_data_identifier', None)\n\n    # collect data for 'update_episode_1' call\n\n    parameters = []\n    \n    # build parameters list for 'update_episode_1' call\n    parameters.append({\n        'owner': \"\",\n        'status': \"In Progress\",\n        'severity': \"Medium\",\n        'itsi_group_id': source_data_identifier_value,\n    })\n\n    phantom.act(action=\"update episode\", parameters=parameters, assets=['splunk itsi'], name=\"update_episode_1\", parent_action=action)\n\n    return",
-                        "callback_code": "",
-                        "callback_start": 1,
-                        "callsback": true,
-                        "color": "",
-                        "connected_to_start": true,
-                        "connection_name": "update ticket",
-                        "connection_type": "action",
-                        "custom_callback": "",
-                        "custom_code": "",
-                        "custom_join": "",
-                        "custom_name": "",
-                        "delay": 0,
-                        "description": "",
-                        "has_custom": false,
-                        "has_custom_block": false,
-                        "has_custom_callback": false,
-                        "has_custom_join": false,
-                        "id": "fe9cafde-e0ab-4c67-bdf3-8ce9d0c4a7a3",
-                        "inPorts": [
-                            "in"
-                        ],
-                        "join_code": "",
-                        "join_optional": [],
-                        "join_start": 1,
-                        "line_end": 363,
-                        "line_start": 340,
-                        "message": "Configuring now",
-                        "name": "update episode",
-                        "notes": "",
-                        "number": 1,
-                        "order": 20,
-                        "outPorts": [
-                            "out"
-                        ],
-                        "ports": {
-                            "groups": {
-                                "in": {
-                                    "attrs": {
-                                        ".port-body": {
-                                            "fill": "#fff",
-                                            "magnet": true,
-                                            "r": 10,
-                                            "stroke": "#000"
-                                        },
-                                        ".port-label": {
-                                            "fill": "#000"
-                                        }
-                                    },
-                                    "label": {
-                                        "position": {
-                                            "args": {
-                                                "y": 10
-                                            },
-                                            "name": "left"
-                                        }
-                                    },
-                                    "position": {
-                                        "name": "left"
-                                    }
-                                },
-                                "out": {
-                                    "attrs": {
-                                        ".port-body": {
-                                            "fill": "#fff",
-                                            "magnet": true,
-                                            "r": 10,
-                                            "stroke": "#000"
-                                        },
-                                        ".port-label": {
-                                            "fill": "#000"
-                                        }
-                                    },
-                                    "label": {
-                                        "position": {
-                                            "args": {
-                                                "y": 10
-                                            },
-                                            "name": "right"
-                                        }
-                                    },
-                                    "position": {
-                                        "name": "right"
-                                    }
-                                }
-                            }
-                        },
-                        "position": {
-                            "x": 2080,
-                            "y": 260
-                        },
-                        "previous_function": "",
-                        "previous_name": "update_episode_1",
-                        "required_params": {
-                            "itsi_group_id": true
-                        },
-                        "reviewer": "",
-                        "show_number": false,
-                        "size": {
-                            "height": 100,
-                            "width": 180
-                        },
-                        "state": "app_action_assets",
-                        "status": "",
-                        "title": "Generic",
-                        "type": "coa.Action",
-                        "warn": false,
-                        "z": 188
                     },
                     {
                         "action": "create ticket",
@@ -5576,7 +4769,7 @@
                         "callsback": true,
                         "color": "",
                         "connected_to_start": true,
-                        "connection_name": "get data",
+                        "connection_name": "update episode",
                         "connection_type": "action",
                         "custom_callback": "",
                         "custom_code": "",
@@ -5658,7 +4851,7 @@
                             }
                         },
                         "position": {
-                            "x": 980,
+                            "x": 1420,
                             "y": 100
                         },
                         "previous_function": "",
@@ -6703,6 +5896,9 @@
                             "g.error": {
                                 "opacity": 0
                             },
+                            "g.error image": {
+                                "xlink:href": "/inc/coa/img/block_icon_warn.svg"
+                            },
                             "g.icon image": {
                                 "xlink:href": "/inc/coa/img/block_icon_generic.svg"
                             },
@@ -6716,7 +5912,7 @@
                                 "opacity": 1
                             }
                         },
-                        "block_code": "def update_ticket_1(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):\n    phantom.debug('update_ticket_1() called')\n        \n    #phantom.debug('Action: {0} {1}'.format(action['name'], ('SUCCEEDED' if success else 'FAILED')))\n    \n    # collect data for 'update_ticket_1' call\n    results_data_1 = phantom.collect2(container=container, datapath=['create_ticket_1:action_result.data.*.number', 'create_ticket_1:action_result.parameter.context.artifact_id'], action_results=results)\n    formatted_data_1 = phantom.get_format_data(name='format_9')\n\n    parameters = []\n    \n    # build parameters list for 'update_ticket_1' call\n    for results_item_1 in results_data_1:\n        if results_item_1[0]:\n            parameters.append({\n                'id': results_item_1[0],\n                'table': \"incident\",\n                'fields': formatted_data_1,\n                'vault_id': \"\",\n                'is_sys_id': \"\",\n                # context (artifact id) is added to associate results with the artifact\n                'context': {'artifact_id': results_item_1[1]},\n            })\n\n    phantom.act(action=\"update ticket\", parameters=parameters, assets=['servicenow'], callback=update_episode_1, name=\"update_ticket_1\")\n\n    return",
+                        "block_code": "def update_ticket_1(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):\n    phantom.debug('update_ticket_1() called')\n        \n    #phantom.debug('Action: {0} {1}'.format(action['name'], ('SUCCEEDED' if success else 'FAILED')))\n    \n    # collect data for 'update_ticket_1' call\n    results_data_1 = phantom.collect2(container=container, datapath=['create_ticket_1:action_result.data.*.number', 'create_ticket_1:action_result.parameter.context.artifact_id'], action_results=results)\n    formatted_data_1 = phantom.get_format_data(name='format_9')\n\n    parameters = []\n    \n    # build parameters list for 'update_ticket_1' call\n    for results_item_1 in results_data_1:\n        if results_item_1[0]:\n            parameters.append({\n                'id': results_item_1[0],\n                'table': \"incident\",\n                'fields': formatted_data_1,\n                'vault_id': \"\",\n                'is_sys_id': \"\",\n                # context (artifact id) is added to associate results with the artifact\n                'context': {'artifact_id': results_item_1[1]},\n            })\n\n    phantom.act(action=\"update ticket\", parameters=parameters, assets=['servicenow'], name=\"update_ticket_1\")\n\n    return",
                         "callback_code": "",
                         "callback_start": 1,
                         "callsback": true,
@@ -6996,6 +6192,822 @@
                         "type": "coa.Format",
                         "warn": false,
                         "z": 191
+                    },
+                    {
+                        "active": false,
+                        "angle": 0,
+                        "attrs": {
+                            ".background": {
+                                "fill": "#FFFFFF",
+                                "stroke": "#818D99"
+                            },
+                            ".color-band": {
+                                "fill": "#171D21"
+                            },
+                            ".format": {
+                                "text": "format 6"
+                            },
+                            ".inPorts>.port-in": {
+                                "ref": ".background",
+                                "ref-x": 0.5
+                            },
+                            ".inPorts>.port-in>.port-body": {
+                                "port": {
+                                    "id": "in",
+                                    "type": "in"
+                                }
+                            },
+                            ".message": {
+                                "opacity": 0,
+                                "text": "Configuring now"
+                            },
+                            ".outPorts>.port-out-1": {
+                                "ref": ".background",
+                                "ref-x": 0.5
+                            },
+                            ".outPorts>.port-out-1>.port-body": {
+                                "port": {
+                                    "id": "out-1",
+                                    "type": "out"
+                                }
+                            },
+                            ".title": {
+                                "text": "format"
+                            },
+                            "g.code image": {
+                                "opacity": 1
+                            },
+                            "g.delete": {
+                                "display": "none"
+                            },
+                            "g.error": {
+                                "opacity": 0
+                            },
+                            "g.error image": {
+                                "xlink:href": "/inc/coa/img/block_icon_warn.svg"
+                            },
+                            "g.notes": {
+                                "display": "block"
+                            },
+                            "g.notes image": {
+                                "opacity": 1
+                            }
+                        },
+                        "block_code": "def format_6(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):\n    phantom.debug('format_6() called')\n    \n    template = \"\"\"{0}\"\"\"\n\n    # parameter list for template variable replacement\n    parameters = [\n        \"create_ticket_1:action_result.summary.created_ticket_id\",\n    ]\n\n    phantom.format(container=container, template=template, parameters=parameters, name=\"format_6\")\n\n    pin_snow_ticket_id(container=container)\n\n    return",
+                        "callback_code": "",
+                        "callback_start": 1,
+                        "callsback": false,
+                        "connected_to_start": true,
+                        "connection_name": "add episode ticket",
+                        "connection_type": "action",
+                        "custom_callback": "",
+                        "custom_code": "",
+                        "custom_join": "",
+                        "custom_name": "",
+                        "description": "",
+                        "format": "format",
+                        "has_custom": false,
+                        "has_custom_block": false,
+                        "has_custom_callback": false,
+                        "has_custom_join": false,
+                        "id": "77ec2896-1107-4e73-b721-a7399efb948d",
+                        "inPorts": [
+                            "in"
+                        ],
+                        "join_code": "",
+                        "join_optional": [],
+                        "join_start": 1,
+                        "line_end": 201,
+                        "line_start": 185,
+                        "message": "Configuring now",
+                        "name": "format",
+                        "notes": "",
+                        "number": 6,
+                        "order": 12,
+                        "outPorts": [
+                            "out-1"
+                        ],
+                        "parameters": [
+                            {
+                                "position": 0,
+                                "type": "",
+                                "value": "create_ticket_1:action_result.summary.created_ticket_id"
+                            }
+                        ],
+                        "ports": {
+                            "groups": {
+                                "in": {
+                                    "attrs": {
+                                        ".port-body": {
+                                            "fill": "#fff",
+                                            "magnet": true,
+                                            "r": 10,
+                                            "stroke": "#000"
+                                        },
+                                        ".port-label": {
+                                            "fill": "#000"
+                                        }
+                                    },
+                                    "label": {
+                                        "position": {
+                                            "args": {
+                                                "y": 10
+                                            },
+                                            "name": "left"
+                                        }
+                                    },
+                                    "position": {
+                                        "name": "left"
+                                    }
+                                },
+                                "out": {
+                                    "attrs": {
+                                        ".port-body": {
+                                            "fill": "#fff",
+                                            "magnet": true,
+                                            "r": 10,
+                                            "stroke": "#000"
+                                        },
+                                        ".port-label": {
+                                            "fill": "#000"
+                                        }
+                                    },
+                                    "label": {
+                                        "position": {
+                                            "args": {
+                                                "y": 10
+                                            },
+                                            "name": "right"
+                                        }
+                                    },
+                                    "position": {
+                                        "name": "right"
+                                    }
+                                }
+                            }
+                        },
+                        "position": {
+                            "x": 760,
+                            "y": 260
+                        },
+                        "previous_function": "",
+                        "previous_name": "format_6",
+                        "show_number": true,
+                        "size": {
+                            "height": 100,
+                            "width": 180
+                        },
+                        "state": "format",
+                        "status": "",
+                        "template": "{0}",
+                        "title": "format",
+                        "type": "coa.Format",
+                        "warn": false,
+                        "z": 193
+                    },
+                    {
+                        "active": false,
+                        "angle": 0,
+                        "attrs": {
+                            ".background": {
+                                "fill": "#FFFFFF",
+                                "stroke": "#818D99"
+                            },
+                            ".color-band": {
+                                "fill": "#171D21"
+                            },
+                            ".format": {
+                                "text": "Short description"
+                            },
+                            ".inPorts>.port-in": {
+                                "ref": ".background",
+                                "ref-x": 0.5
+                            },
+                            ".inPorts>.port-in>.port-body": {
+                                "port": {
+                                    "id": "in",
+                                    "type": "in"
+                                }
+                            },
+                            ".message": {
+                                "opacity": 0,
+                                "text": "Configuring now"
+                            },
+                            ".outPorts>.port-out-1": {
+                                "ref": ".background",
+                                "ref-x": 0.5
+                            },
+                            ".outPorts>.port-out-1>.port-body": {
+                                "port": {
+                                    "id": "out-1",
+                                    "type": "out"
+                                }
+                            },
+                            ".title": {
+                                "text": "format"
+                            },
+                            "g.code image": {
+                                "opacity": 1
+                            },
+                            "g.delete": {
+                                "display": "none"
+                            },
+                            "g.error": {
+                                "opacity": 0
+                            },
+                            "g.error image": {
+                                "xlink:href": "/inc/coa/img/block_icon_warn.svg"
+                            },
+                            "g.notes": {
+                                "display": "block"
+                            },
+                            "g.notes image": {
+                                "opacity": 1
+                            }
+                        },
+                        "block_code": "def Short_description(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):\n    phantom.debug('Short_description() called')\n    \n    template = \"\"\"New Ticket - Phantom ID: {0}\"\"\"\n\n    # parameter list for template variable replacement\n    parameters = [\n        \"container:id\",\n    ]\n\n    phantom.format(container=container, template=template, parameters=parameters, name=\"Short_description\")\n\n    description(container=container)\n\n    return",
+                        "callback_code": "",
+                        "callback_start": 1,
+                        "callsback": false,
+                        "connected_to_start": true,
+                        "connection_name": "update episode",
+                        "connection_type": "action",
+                        "custom_callback": "",
+                        "custom_code": "",
+                        "custom_join": "",
+                        "custom_name": "Short description",
+                        "description": "",
+                        "format": "format",
+                        "has_custom": false,
+                        "has_custom_block": false,
+                        "has_custom_callback": false,
+                        "has_custom_join": false,
+                        "id": "521fd731-a389-4da3-81da-82602a224276",
+                        "inPorts": [
+                            "in"
+                        ],
+                        "join_code": "",
+                        "join_optional": [],
+                        "join_start": 1,
+                        "line_end": 55,
+                        "line_start": 39,
+                        "message": "Configuring now",
+                        "name": "format",
+                        "notes": "",
+                        "number": 1,
+                        "order": 3,
+                        "outPorts": [
+                            "out-1"
+                        ],
+                        "parameters": [
+                            {
+                                "position": 0,
+                                "type": "",
+                                "value": "container:id"
+                            }
+                        ],
+                        "ports": {
+                            "groups": {
+                                "in": {
+                                    "attrs": {
+                                        ".port-body": {
+                                            "fill": "#fff",
+                                            "magnet": true,
+                                            "r": 10,
+                                            "stroke": "#000"
+                                        },
+                                        ".port-label": {
+                                            "fill": "#000"
+                                        }
+                                    },
+                                    "label": {
+                                        "position": {
+                                            "args": {
+                                                "y": 10
+                                            },
+                                            "name": "left"
+                                        }
+                                    },
+                                    "position": {
+                                        "name": "left"
+                                    }
+                                },
+                                "out": {
+                                    "attrs": {
+                                        ".port-body": {
+                                            "fill": "#fff",
+                                            "magnet": true,
+                                            "r": 10,
+                                            "stroke": "#000"
+                                        },
+                                        ".port-label": {
+                                            "fill": "#000"
+                                        }
+                                    },
+                                    "label": {
+                                        "position": {
+                                            "args": {
+                                                "y": 10
+                                            },
+                                            "name": "right"
+                                        }
+                                    },
+                                    "position": {
+                                        "name": "right"
+                                    }
+                                }
+                            }
+                        },
+                        "position": {
+                            "x": 980,
+                            "y": 100
+                        },
+                        "previous_function": "",
+                        "previous_name": "Short_description",
+                        "show_number": true,
+                        "size": {
+                            "height": 100,
+                            "width": 180
+                        },
+                        "state": "format",
+                        "status": "",
+                        "template": "New Ticket - Phantom ID: {0}",
+                        "title": "format",
+                        "type": "coa.Format",
+                        "warn": false,
+                        "z": 194
+                    },
+                    {
+                        "attrs": {
+                            ".connection": {
+                                "stroke": "#818D99",
+                                "stroke-width": 2
+                            },
+                            ".marker-target": {
+                                "d": "M 10 0 L 0 5 L 10 10 z",
+                                "fill": "#818D99",
+                                "stroke": "#818D99"
+                            }
+                        },
+                        "connector": {
+                            "args": {
+                                "radius": 5
+                            },
+                            "name": "rounded"
+                        },
+                        "endDirections": [
+                            "left"
+                        ],
+                        "id": "cbf5a332-c607-4a3d-aeed-34dddb02d147",
+                        "router": {
+                            "name": "metro"
+                        },
+                        "source": {
+                            "id": "fe9cafde-e0ab-4c67-bdf3-8ce9d0c4a7a3",
+                            "selector": "> g:nth-child(1) > g:nth-child(2) > g:nth-child(1) > circle:nth-child(1)"
+                        },
+                        "startDirections": [
+                            "right"
+                        ],
+                        "target": {
+                            "id": "521fd731-a389-4da3-81da-82602a224276",
+                            "selector": "> g:nth-child(1) > g:nth-child(1) > g:nth-child(1) > circle:nth-child(1)"
+                        },
+                        "type": "link",
+                        "z": 196
+                    },
+                    {
+                        "attrs": {
+                            ".connection": {
+                                "stroke": "#818D99",
+                                "stroke-width": 2
+                            },
+                            ".marker-target": {
+                                "d": "M 10 0 L 0 5 L 10 10 z",
+                                "fill": "#818D99",
+                                "stroke": "#818D99"
+                            }
+                        },
+                        "connector": {
+                            "args": {
+                                "radius": 5
+                            },
+                            "name": "rounded"
+                        },
+                        "endDirections": [
+                            "left"
+                        ],
+                        "id": "d9aabfdb-69a5-4ee8-a114-6a0023f15749",
+                        "router": {
+                            "name": "metro"
+                        },
+                        "source": {
+                            "id": "c664ba00-1769-48a4-b967-10fbabb66f38",
+                            "port": "out-1",
+                            "selector": "> g:nth-child(1) > g:nth-child(2) > g:nth-child(1) > circle:nth-child(1)"
+                        },
+                        "startDirections": [
+                            "right"
+                        ],
+                        "target": {
+                            "id": "fe9cafde-e0ab-4c67-bdf3-8ce9d0c4a7a3",
+                            "selector": "> g:nth-child(1) > g:nth-child(1) > g:nth-child(1) > circle:nth-child(1)"
+                        },
+                        "type": "link",
+                        "z": 197
+                    },
+                    {
+                        "action": "update episode",
+                        "action_type": "generic",
+                        "active": false,
+                        "active_keys": {},
+                        "active_values": {
+                            "itsi_group_id": "container:source_data_identifier",
+                            "owner": "",
+                            "severity": "Medium",
+                            "status": "In Progress"
+                        },
+                        "angle": 0,
+                        "app": "Splunk IT Service Intelligence",
+                        "appid": "94bcee41-329f-4907-8895-d4e2a10616b8",
+                        "approver": "",
+                        "assets": [
+                            {
+                                "action": "update episode",
+                                "actions": [
+                                    "test connectivity",
+                                    "get episode",
+                                    "update episode",
+                                    "add episode comment",
+                                    "break episode",
+                                    "close episode",
+                                    "get episode events",
+                                    "add episode ticket",
+                                    "get episode tickets",
+                                    "get entity",
+                                    "get service",
+                                    "get service entities",
+                                    "update service status",
+                                    "get maintenance window",
+                                    "add maintenance window",
+                                    "update maintenance window",
+                                    "end maintenance window"
+                                ],
+                                "active": true,
+                                "app_name": "Splunk IT Service Intelligence",
+                                "app_version": "1.0.0",
+                                "appid": "94bcee41-329f-4907-8895-d4e2a10616b8",
+                                "asset_name": "splunk itsi",
+                                "config_type": "asset",
+                                "count": 0,
+                                "fields": {
+                                    "itsi_group_id": "container:source_data_identifier",
+                                    "owner": "",
+                                    "severity": "Medium",
+                                    "status": "In Progress"
+                                },
+                                "has_app": true,
+                                "id": 6,
+                                "loaded": false,
+                                "missing": false,
+                                "name": "splunk itsi",
+                                "output": [
+                                    {
+                                        "column_name": "Status",
+                                        "column_order": 4,
+                                        "data_path": "action_result.status",
+                                        "data_type": "string",
+                                        "example_values": [
+                                            "success",
+                                            "failed"
+                                        ]
+                                    },
+                                    {
+                                        "column_name": "ITSI Group ID",
+                                        "column_order": 0,
+                                        "data_path": "action_result.parameter.itsi_group_id",
+                                        "data_type": "string"
+                                    },
+                                    {
+                                        "column_name": "Owner",
+                                        "column_order": 3,
+                                        "data_path": "action_result.parameter.owner",
+                                        "data_type": "string"
+                                    },
+                                    {
+                                        "column_name": "Severity",
+                                        "column_order": 2,
+                                        "data_path": "action_result.parameter.severity",
+                                        "data_type": "string"
+                                    },
+                                    {
+                                        "column_name": "Status",
+                                        "column_order": 1,
+                                        "data_path": "action_result.parameter.status",
+                                        "data_type": "string"
+                                    },
+                                    {
+                                        "column_name": "Data",
+                                        "column_order": 5,
+                                        "data_path": "action_result.data",
+                                        "data_type": "string"
+                                    },
+                                    {
+                                        "column_name": "Summary",
+                                        "column_order": 6,
+                                        "data_path": "action_result.summary",
+                                        "data_type": "string"
+                                    },
+                                    {
+                                        "data_path": "action_result.message",
+                                        "data_type": "string"
+                                    },
+                                    {
+                                        "data_path": "summary.total_objects",
+                                        "data_type": "numeric",
+                                        "example_values": [
+                                            1
+                                        ]
+                                    },
+                                    {
+                                        "data_path": "summary.total_objects_successful",
+                                        "data_type": "numeric",
+                                        "example_values": [
+                                            1
+                                        ]
+                                    }
+                                ],
+                                "parameters": {
+                                    "itsi_group_id": {
+                                        "data_type": "string",
+                                        "default": null,
+                                        "description": "Splunk ITSI episode ID",
+                                        "key": "itsi_group_id",
+                                        "order": 0,
+                                        "required": true
+                                    },
+                                    "owner": {
+                                        "data_type": "string",
+                                        "default": null,
+                                        "description": "Episode owner",
+                                        "key": "owner",
+                                        "order": 3,
+                                        "required": false
+                                    },
+                                    "severity": {
+                                        "data_type": "string",
+                                        "default": null,
+                                        "description": "Episode severity",
+                                        "key": "severity",
+                                        "order": 2,
+                                        "required": false,
+                                        "value_list": [
+                                            "Info",
+                                            "Normal",
+                                            "Low",
+                                            "Medium",
+                                            "High",
+                                            "Critical"
+                                        ]
+                                    },
+                                    "status": {
+                                        "data_type": "string",
+                                        "default": null,
+                                        "description": "Episode status",
+                                        "key": "status",
+                                        "order": 1,
+                                        "required": false,
+                                        "value_list": [
+                                            "Unassigned",
+                                            "New",
+                                            "In Progress",
+                                            "Pending",
+                                            "Resolved",
+                                            "Closed"
+                                        ]
+                                    }
+                                },
+                                "product_name": "Splunk ITSI",
+                                "product_vendor": "Splunk",
+                                "targets": "6",
+                                "type": "devops"
+                            }
+                        ],
+                        "attrs": {
+                            ".action": {
+                                "text": "update episode"
+                            },
+                            ".background": {
+                                "fill": "#FFFFFF",
+                                "stroke": "#818D99"
+                            },
+                            ".color-band": {
+                                "fill": "#171D21"
+                            },
+                            ".inPorts>.port-in": {
+                                "ref": ".background",
+                                "ref-x": 0.5
+                            },
+                            ".inPorts>.port-in>.port-body": {
+                                "port": {
+                                    "id": "in",
+                                    "type": "in"
+                                }
+                            },
+                            ".message": {
+                                "opacity": 0,
+                                "ref-x": 5,
+                                "ref-y": 105,
+                                "text": "Configuring now"
+                            },
+                            ".outPorts>.port-out": {
+                                "ref": ".background",
+                                "ref-x": 0.5
+                            },
+                            ".outPorts>.port-out>.port-body": {
+                                "port": {
+                                    "id": "out",
+                                    "type": "out"
+                                }
+                            },
+                            ".title": {
+                                "text": "Generic"
+                            },
+                            "g.approver image": {
+                                "opacity": 1
+                            },
+                            "g.code image": {
+                                "opacity": 1
+                            },
+                            "g.delete": {
+                                "display": "none"
+                            },
+                            "g.error": {
+                                "opacity": 0
+                            },
+                            "g.error image": {
+                                "xlink:href": "/inc/coa/img/block_icon_warn.svg"
+                            },
+                            "g.icon image": {
+                                "xlink:href": "/inc/coa/img/block_icon_generic.svg"
+                            },
+                            "g.notes": {
+                                "display": "block"
+                            },
+                            "g.notes image": {
+                                "opacity": 1
+                            },
+                            "g.timer image": {
+                                "opacity": 1
+                            }
+                        },
+                        "block_code": "def update_episode_1(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):\n    phantom.debug('update_episode_1() called')\n        \n    #phantom.debug('Action: {0} {1}'.format(action['name'], ('SUCCEEDED' if success else 'FAILED')))\n    \n    source_data_identifier_value = container.get('source_data_identifier', None)\n\n    # collect data for 'update_episode_1' call\n\n    parameters = []\n    \n    # build parameters list for 'update_episode_1' call\n    parameters.append({\n        'owner': \"\",\n        'status': \"In Progress\",\n        'severity': \"Medium\",\n        'itsi_group_id': source_data_identifier_value,\n    })\n\n    phantom.act(action=\"update episode\", parameters=parameters, assets=['splunk itsi'], callback=Short_description, name=\"update_episode_1\", parent_action=action)\n\n    return",
+                        "callback_code": "",
+                        "callback_start": 1,
+                        "callsback": true,
+                        "color": "",
+                        "connected_to_start": true,
+                        "connection_name": "get data",
+                        "connection_type": "action",
+                        "custom_callback": "",
+                        "custom_code": "",
+                        "custom_join": "",
+                        "custom_name": "",
+                        "delay": 0,
+                        "description": "",
+                        "has_custom": false,
+                        "has_custom_block": false,
+                        "has_custom_callback": false,
+                        "has_custom_join": false,
+                        "id": "fe9cafde-e0ab-4c67-bdf3-8ce9d0c4a7a3",
+                        "inPorts": [
+                            "in"
+                        ],
+                        "join_code": "",
+                        "join_optional": [],
+                        "join_start": 1,
+                        "line_end": 363,
+                        "line_start": 340,
+                        "message": "Configuring now",
+                        "name": "update episode",
+                        "notes": "",
+                        "number": 1,
+                        "order": 20,
+                        "outPorts": [
+                            "out"
+                        ],
+                        "ports": {
+                            "groups": {
+                                "in": {
+                                    "attrs": {
+                                        ".port-body": {
+                                            "fill": "#fff",
+                                            "magnet": true,
+                                            "r": 10,
+                                            "stroke": "#000"
+                                        },
+                                        ".port-label": {
+                                            "fill": "#000"
+                                        }
+                                    },
+                                    "label": {
+                                        "position": {
+                                            "args": {
+                                                "y": 10
+                                            },
+                                            "name": "left"
+                                        }
+                                    },
+                                    "position": {
+                                        "name": "left"
+                                    }
+                                },
+                                "out": {
+                                    "attrs": {
+                                        ".port-body": {
+                                            "fill": "#fff",
+                                            "magnet": true,
+                                            "r": 10,
+                                            "stroke": "#000"
+                                        },
+                                        ".port-label": {
+                                            "fill": "#000"
+                                        }
+                                    },
+                                    "label": {
+                                        "position": {
+                                            "args": {
+                                                "y": 10
+                                            },
+                                            "name": "right"
+                                        }
+                                    },
+                                    "position": {
+                                        "name": "right"
+                                    }
+                                }
+                            }
+                        },
+                        "position": {
+                            "x": 760,
+                            "y": 100
+                        },
+                        "previous_function": "",
+                        "previous_name": "update_episode_1",
+                        "required_params": {
+                            "itsi_group_id": true
+                        },
+                        "reviewer": "",
+                        "show_number": false,
+                        "size": {
+                            "height": 100,
+                            "width": 180
+                        },
+                        "state": "app_action_assets",
+                        "status": "",
+                        "title": "Generic",
+                        "type": "coa.Action",
+                        "warn": false,
+                        "z": 198
+                    },
+                    {
+                        "attrs": {
+                            ".connection": {
+                                "stroke": "#818D99",
+                                "stroke-width": 2
+                            },
+                            ".marker-target": {
+                                "d": "M 10 0 L 0 5 L 10 10 z",
+                                "fill": "#818D99",
+                                "stroke": "#818D99"
+                            }
+                        },
+                        "connector": {
+                            "args": {
+                                "radius": 5
+                            },
+                            "name": "rounded"
+                        },
+                        "endDirections": [
+                            "left"
+                        ],
+                        "id": "eeb3288f-95bd-4a60-80f8-f30a2bb069f7",
+                        "router": {
+                            "name": "metro"
+                        },
+                        "source": {
+                            "id": "bb35858e-7a43-472f-8106-41e515692161",
+                            "selector": "> g:nth-child(1) > g:nth-child(2) > g:nth-child(1) > circle:nth-child(1)"
+                        },
+                        "startDirections": [
+                            "right"
+                        ],
+                        "target": {
+                            "id": "ba7b1731-448d-4f7a-a78e-061e471fdbae",
+                            "selector": "> g:nth-child(1) > g:nth-child(1) > g:nth-child(1) > circle:nth-child(1)"
+                        },
+                        "type": "link",
+                        "z": 199
                     }
                 ]
             },
@@ -7005,7 +7017,7 @@
         "schema": 4,
         "version": "4.9.34514"
     },
-    "create_time": "2020-08-21T11:19:22.834404+00:00",
+    "create_time": "2020-08-21T11:52:53.640275+00:00",
     "draft_mode": false,
     "labels": [
         "itsi"
