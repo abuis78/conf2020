@@ -7,7 +7,7 @@
             "clean": true,
             "code_block": "",
             "description": "",
-            "hash": "ea56da950ab08ce65edc2c4fa4f595a261af5677",
+            "hash": "7e1287a54873916fad8a8ccd19706b03f29cb812",
             "joint": {
                 "cells": [
                     {
@@ -218,8 +218,8 @@
                         "join_code": "# read-only block view not available",
                         "join_optional": [],
                         "join_start": 1,
-                        "line_end": 115,
-                        "line_start": 102,
+                        "line_end": 116,
+                        "line_start": 103,
                         "name": "",
                         "notes": "",
                         "number": 0,
@@ -921,7 +921,7 @@
                             },
                             ".background": {
                                 "fill": "#FFFFFF",
-                                "stroke": "#E6984E"
+                                "stroke": "#818D99"
                             },
                             ".color-band": {
                                 "fill": "#171D21"
@@ -959,7 +959,7 @@
                                 "display": "none"
                             },
                             "g.error": {
-                                "opacity": 1
+                                "opacity": 0
                             },
                             "g.error image": {
                                 "xlink:href": "/inc/coa/img/block_icon_warn.svg"
@@ -980,8 +980,8 @@
                             }
                         ],
                         "connected_to_start": true,
-                        "connection_name": "",
-                        "connection_type": "",
+                        "connection_name": "get entity data",
+                        "connection_type": "action",
                         "custom_callback": "",
                         "custom_code": "",
                         "custom_join": "",
@@ -1072,7 +1072,7 @@
                             "width": 180
                         },
                         "state": "api",
-                        "status": "warn",
+                        "status": "",
                         "title": "API",
                         "type": "coa.API",
                         "warn": false,
@@ -1551,7 +1551,7 @@
                                 "display": "block"
                             }
                         },
-                        "block_code": "def decision_2(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):\n    phantom.debug('decision_2() called')\n\n    # check for 'if' condition 1\n    matched = phantom.decision(\n        container=container,\n        action_results=results,\n        conditions=[\n            [\"action_result.data.*.response_body.data.*. pin_style\", \"==\", \"grey\"],\n        ])\n\n    # call connected blocks if condition 1 matched\n    if matched:\n        return\n\n    return",
+                        "block_code": "def decision_2(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):\n    phantom.debug('decision_2() called')\n\n    # check for 'if' condition 1\n    matched = phantom.decision(\n        container=container,\n        action_results=results,\n        conditions=[\n            [\"action_result.data.*.response_body.data.*. pin_style\", \"==\", \"grey\"],\n        ])\n\n    # call connected blocks if condition 1 matched\n    if matched:\n        add_comment_1(action=action, success=success, container=container, results=results, handle=handle, custom_function=custom_function)\n        return\n\n    return",
                         "callback_code": "",
                         "callback_start": 1,
                         "callsback": false,
@@ -1575,7 +1575,7 @@
                         "join_code": "",
                         "join_optional": [],
                         "join_start": 1,
-                        "line_end": 102,
+                        "line_end": 103,
                         "line_start": 85,
                         "name": "decision",
                         "notes": "",
@@ -1667,6 +1667,46 @@
                         "type": "coa.Decision",
                         "warn": "",
                         "z": 20
+                    },
+                    {
+                        "attrs": {
+                            ".connection": {
+                                "stroke": "#818D99",
+                                "stroke-width": 2
+                            },
+                            ".marker-target": {
+                                "d": "M 10 0 L 0 5 L 10 10 z",
+                                "fill": "#818D99",
+                                "stroke": "#818D99"
+                            }
+                        },
+                        "connector": {
+                            "args": {
+                                "radius": 5
+                            },
+                            "name": "rounded"
+                        },
+                        "endDirections": [
+                            "left"
+                        ],
+                        "id": "0654c2ac-aae9-4398-970d-6ce137319a8b",
+                        "router": {
+                            "name": "metro"
+                        },
+                        "source": {
+                            "id": "a6bb975b-8b5c-4eaa-a1f6-e3b920e8821f",
+                            "port": "out-1",
+                            "selector": "> g:nth-child(1) > g:nth-child(2) > g:nth-child(1) > circle:nth-child(1)"
+                        },
+                        "startDirections": [
+                            "right"
+                        ],
+                        "target": {
+                            "id": "c2cbf77e-2d61-476a-8824-45a7978bc8f8",
+                            "selector": "> g:nth-child(1) > g:nth-child(1) > g:nth-child(1) > circle:nth-child(1)"
+                        },
+                        "type": "link",
+                        "z": 21
                     }
                 ]
             },
@@ -1676,7 +1716,7 @@
         "schema": 4,
         "version": "4.9.34514"
     },
-    "create_time": "2020-08-21T15:46:18.142376+00:00",
+    "create_time": "2020-08-21T15:46:28.155648+00:00",
     "draft_mode": false,
     "labels": [
         "itsi"

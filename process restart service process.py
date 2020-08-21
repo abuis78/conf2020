@@ -95,6 +95,7 @@ def decision_2(action=None, success=None, container=None, results=None, handle=N
 
     # call connected blocks if condition 1 matched
     if matched:
+        add_comment_1(action=action, success=success, container=container, results=results, handle=handle, custom_function=custom_function)
         return
 
     return
