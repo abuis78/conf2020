@@ -29,7 +29,7 @@ def Get_PIN(action=None, success=None, container=None, results=None, handle=None
         'verify_certificate': False,
     })
 
-    phantom.act(action="get data", parameters=parameters, assets=['http'], name="Get_PIN")
+    phantom.act(action="get data", parameters=parameters, assets=['http'], callback=decision_1, name="Get_PIN")
 
     return
 
@@ -56,6 +56,7 @@ def decision_1(action=None, success=None, container=None, results=None, handle=N
     # check for 'if' condition 1
     matched = phantom.decision(
         container=container,
+        action_results=results,
         conditions=[
             ["Get_PIN:action_result.data.*.response_body.count", "==", 0],
         ])
@@ -125,7 +126,9 @@ def cf_community_list_deduplicate_1(action=None, success=None, container=None, r
 
 def get_entity_2(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):
     phantom.debug('get_entity_2() called')
-
+        
+    #phantom.debug('Action: {0} {1}'.format(action['name'], ('SUCCEEDED' if success else 'FAILED')))
+    
     # collect data for 'get_entity_2' call
     custom_function_results_data_1 = phantom.collect2(container=container, datapath=['cf_community_list_deduplicate_1:custom_function_result.data.*.item'], action_results=results)
 
