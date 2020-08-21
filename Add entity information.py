@@ -41,7 +41,7 @@ def Create_URL_Parameters(action=None, success=None, container=None, results=Non
     # parameter list for template variable replacement
     parameters = [
         "container:id",
-        "get_entity_2:action_results.data.*.entity_title",
+        "get_entity_2:action_results.data.*.title",
     ]
 
     phantom.format(container=container, template=template, parameters=parameters, name="Create_URL_Parameters")
