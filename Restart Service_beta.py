@@ -10,8 +10,8 @@ def on_start(container):
     # call 'Build_REST_call_for_entity_data' block
     Build_REST_call_for_entity_data(container=container)
 
-    # call 'format_9' block
-    format_9(container=container)
+    # call 'Build_rest_call_get_Service' block
+    Build_rest_call_get_Service(container=container)
 
     return
 
@@ -46,23 +46,7 @@ def get_entity_pin(action=None, success=None, container=None, results=None, hand
         'verify_certificate': False,
     })
 
-    phantom.act(action="get data", parameters=parameters, assets=['http'], callback=decision_3, name="get_entity_pin")
-
-    return
-
-def Format_Server_Address(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):
-    phantom.debug('Format_Server_Address() called')
-    
-    template = """{0}"""
-
-    # parameter list for template variable replacement
-    parameters = [
-        "get_entity_pin:action_result.data.*.parsed_response_body.data.*.data",
-    ]
-
-    phantom.format(container=container, template=template, parameters=parameters, name="Format_Server_Address")
-
-    join_get_info_host_path(container=container)
+    phantom.act(action="get data", parameters=parameters, assets=['http'], callback=get_SNOW_ticket_ID, name="get_entity_pin")
 
     return
 
@@ -92,44 +76,18 @@ def restart_Service(action=None, success=None, container=None, results=None, han
 
     return
 
-def Content_for_Approval(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):
-    phantom.debug('Content_for_Approval() called')
-    
-    template = """The Service on the Server needs to be started / restarted.
-Server IP / Host:  {0}
-Service Name: {1}"""
-
-    # parameter list for template variable replacement
-    parameters = [
-        "Format_Server_Address:formatted_data",
-        "Format_Service_Name:formatted_data",
-    ]
-
-    phantom.format(container=container, template=template, parameters=parameters, name="Content_for_Approval")
-
-    decision_7(container=container)
-
-    return
-
 def Request_approval_restart_service(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):
     phantom.debug('Request_approval_restart_service() called')
     
     # set user and message variables for phantom.prompt call
     user = "admin"
     message = """Hi,
-we have determined that the service: {1} (on the host: {2})- is not available. Details on the process can be found in the ticket . Please confirm as follows:
+we have determined that the service:  (on the host: )- is not available. Details on the process can be found in the ticket . Please confirm as follows:
 
 Yes = the service is automatically restarted
 No = we will assign the incident to you and the service will NOT be restarted
 
 Do not respond within 5 minutes - the service will automatically restart"""
-
-    # parameter list for template variable replacement
-    parameters = [
-        "Content_for_Approval:formatted_data",
-        "Format_Service_Name:formatted_data",
-        "Format_Server_Address:formatted_data",
-    ]
 
     #responses:
     response_types = [
@@ -145,7 +103,7 @@ Do not respond within 5 minutes - the service will automatically restart"""
         },
     ]
 
-    phantom.prompt2(container=container, user=user, message=message, respond_in_mins=5, name="Request_approval_restart_service", parameters=parameters, response_types=response_types, callback=decision_2)
+    phantom.prompt2(container=container, user=user, message=message, respond_in_mins=5, name="Request_approval_restart_service", response_types=response_types, callback=decision_2)
 
     return
 
@@ -162,11 +120,24 @@ def decision_2(action=None, success=None, container=None, results=None, handle=N
 
     # call connected blocks if condition 1 matched
     if matched:
-        cf_community_list_deduplicate_1(action=action, success=success, container=container, results=results, handle=handle, custom_function=custom_function)
+        format_17(action=action, success=success, container=container, results=results, handle=handle, custom_function=custom_function)
         return
 
-    # call connected blocks for 'else' condition 2
-    playbook_conf2020_conf2020_add_Maintenance_Windows_2(action=action, success=success, container=container, results=results, handle=handle, custom_function=custom_function)
+    # check for 'elif' condition 2
+    matched = phantom.decision(
+        container=container,
+        action_results=results,
+        conditions=[
+            ["Request_approval_restart_service:action_result.summary.responses.0", "==", "No"],
+        ])
+
+    # call connected blocks if condition 2 matched
+    if matched:
+        Request_was_denied(action=action, success=success, container=container, results=results, handle=handle, custom_function=custom_function)
+        return
+
+    # call connected blocks for 'else' condition 3
+    add_comment_9(action=action, success=success, container=container, results=results, handle=handle, custom_function=custom_function)
 
     return
 
@@ -179,12 +150,10 @@ def SNOW_worknote_service_started(action=None, success=None, container=None, res
 
 {1}
 
------------ Approved by --------------
-{2}"""
+----------- Approved by --------------"""
 
     # parameter list for template variable replacement
     parameters = [
-        "Format_Server_Address:formatted_data",
         "restart_Service:action_result.message",
         "Request_approval_restart_service:action_result.parameter.message",
     ]
@@ -192,24 +161,6 @@ def SNOW_worknote_service_started(action=None, success=None, container=None, res
     phantom.format(container=container, template=template, parameters=parameters, name="SNOW_worknote_service_started")
 
     join_service_path(container=container)
-
-    return
-
-def SNOW_worknote_manual_task(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):
-    phantom.debug('SNOW_worknote_manual_task() called')
-    
-    template = """{0}
-
-Server was started automaticaly"""
-
-    # parameter list for template variable replacement
-    parameters = [
-        "Format_Server_Address:formatted_data",
-    ]
-
-    phantom.format(container=container, template=template, parameters=parameters, name="SNOW_worknote_manual_task")
-
-    format_13(container=container)
 
     return
 
@@ -238,63 +189,21 @@ def join_service_path(action=None, success=None, container=None, results=None, h
     if phantom.get_run_data(key='join_service_path_called'):
         return
 
-    # check if all connected incoming playbooks, actions, or custom functions are done i.e. have succeeded or failed
-    if phantom.completed(action_names=['post_data_1', 'restart_Service']):
-        
-        # save the state that the joined function has now been called
-        phantom.save_run_data(key='join_service_path_called', value='service_path')
-        
-        # call connected block "service_path"
-        service_path(container=container, handle=handle)
+    # no callbacks to check, call connected block "service_path"
+    phantom.save_run_data(key='join_service_path_called', value='service_path', auto=True)
+
+    service_path(container=container, handle=handle)
     
-    return
-
-def format_snow_ticket_id_request(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):
-    phantom.debug('format_snow_ticket_id_request() called')
-    
-    template = """/rest/container_pin?_filter_container={0}&_filter_message=\"snow inc\""""
-
-    # parameter list for template variable replacement
-    parameters = [
-        "container:id",
-    ]
-
-    phantom.format(container=container, template=template, parameters=parameters, name="format_snow_ticket_id_request")
-
-    get_snow_ticket(container=container)
-
-    return
-
-def get_snow_ticket(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):
-    phantom.debug('get_snow_ticket() called')
-        
-    #phantom.debug('Action: {0} {1}'.format(action['name'], ('SUCCEEDED' if success else 'FAILED')))
-    
-    # collect data for 'get_snow_ticket' call
-    formatted_data_1 = phantom.get_format_data(name='format_snow_ticket_id_request')
-
-    parameters = []
-    
-    # build parameters list for 'get_snow_ticket' call
-    parameters.append({
-        'headers': "",
-        'location': formatted_data_1,
-        'verify_certificate': False,
-    })
-
-    phantom.act(action="get data", parameters=parameters, assets=['http'], callback=format_snow_worknote, name="get_snow_ticket")
-
     return
 
 def format_snow_worknote(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):
     phantom.debug('format_snow_worknote() called')
     
-    template = """The Service: {0} has been started / restarted on host {1}"""
+    template = """The Service: {0} has been started / restarted on host"""
 
     # parameter list for template variable replacement
     parameters = [
-        "Format_Service_Name:formatted_data",
-        "Format_Server_Address:formatted_data",
+        "get_entity_pin:action_result.data.*.location",
     ]
 
     phantom.format(container=container, template=template, parameters=parameters, name="format_snow_worknote")
@@ -309,7 +218,7 @@ def add_snow_work_note(action=None, success=None, container=None, results=None, 
     #phantom.debug('Action: {0} {1}'.format(action['name'], ('SUCCEEDED' if success else 'FAILED')))
     
     # collect data for 'add_snow_work_note' call
-    results_data_1 = phantom.collect2(container=container, datapath=['get_snow_ticket:action_result.data.*.response_body.data.*.data', 'get_snow_ticket:action_result.parameter.context.artifact_id'], action_results=results)
+    results_data_1 = phantom.collect2(container=container, datapath=['get_SNOW_ticket_ID:action_result.data.*.response_body.data.*.data', 'get_SNOW_ticket_ID:action_result.parameter.context.artifact_id'], action_results=results)
     formatted_data_1 = phantom.get_format_data(name='format_snow_worknote')
 
     parameters = []
@@ -326,195 +235,8 @@ def add_snow_work_note(action=None, success=None, container=None, results=None, 
                 'context': {'artifact_id': results_item_1[1]},
             })
 
-    phantom.act(action="add work note", parameters=parameters, assets=['servicenow'], callback=join_add_tag_5, name="add_snow_work_note")
+    phantom.act(action="add work note", parameters=parameters, assets=['servicenow'], callback=add_tag_5, name="add_snow_work_note")
 
-    return
-
-def format_9(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):
-    phantom.debug('format_9() called')
-    
-    template = """/rest/container_pin?_filter_container={0}&_filter_message__icontains=\"Service\""""
-
-    # parameter list for template variable replacement
-    parameters = [
-        "container:id",
-    ]
-
-    phantom.format(container=container, template=template, parameters=parameters, name="format_9")
-
-    get_service_pin(container=container)
-
-    return
-
-def get_service_pin(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):
-    phantom.debug('get_service_pin() called')
-
-    # collect data for 'get_service_pin' call
-    formatted_data_1 = phantom.get_format_data(name='format_9')
-
-    parameters = []
-    
-    # build parameters list for 'get_service_pin' call
-    parameters.append({
-        'headers': "",
-        'location': formatted_data_1,
-        'verify_certificate': False,
-    })
-
-    phantom.act(action="get data", parameters=parameters, assets=['http'], callback=decision_4, name="get_service_pin")
-
-    return
-
-def get_pin_info_path(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):
-    phantom.debug('get_pin_info_path() called')
-        
-    #phantom.debug('Action: {0} {1}'.format(action['name'], ('SUCCEEDED' if success else 'FAILED')))
-    
-    # collect data for 'get_pin_info_path' call
-
-    parameters = []
-    
-    # build parameters list for 'get_pin_info_path' call
-    parameters.append({
-        'sleep_seconds': 1,
-    })
-
-    phantom.act(action="no op", parameters=parameters, assets=['phantom'], callback=Content_for_Approval, name="get_pin_info_path")
-
-    return
-
-def join_get_pin_info_path(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None):
-    phantom.debug('join_get_pin_info_path() called')
-
-    # check if all connected incoming playbooks, actions, or custom functions are done i.e. have succeeded or failed
-    if phantom.completed(action_names=['get_info_host_path', 'get_info_service_path']):
-        
-        # call connected block "get_pin_info_path"
-        get_pin_info_path(container=container, handle=handle)
-    
-    return
-
-def Format_Service_Name(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):
-    phantom.debug('Format_Service_Name() called')
-    
-    template = """{0}"""
-
-    # parameter list for template variable replacement
-    parameters = [
-        "get_service_pin:action_result.data.*.response_body.data.*.data",
-    ]
-
-    phantom.format(container=container, template=template, parameters=parameters, name="Format_Service_Name")
-
-    join_get_info_service_path(container=container)
-
-    return
-
-def decision_3(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):
-    phantom.debug('decision_3() called')
-
-    # check for 'if' condition 1
-    matched = phantom.decision(
-        container=container,
-        action_results=results,
-        conditions=[
-            ["get_entity_pin:action_result.status", "==", "success"],
-        ])
-
-    # call connected blocks if condition 1 matched
-    if matched:
-        Format_Server_Address(action=action, success=success, container=container, results=results, handle=handle, custom_function=custom_function)
-        return
-
-    # call connected blocks for 'else' condition 2
-    join_get_info_host_path(action=action, success=success, container=container, results=results, handle=handle, custom_function=custom_function)
-
-    return
-
-def decision_4(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):
-    phantom.debug('decision_4() called')
-
-    # check for 'if' condition 1
-    matched = phantom.decision(
-        container=container,
-        action_results=results,
-        conditions=[
-            ["get_service_pin:action_result.status", "==", "success"],
-        ])
-
-    # call connected blocks if condition 1 matched
-    if matched:
-        Format_Service_Name(action=action, success=success, container=container, results=results, handle=handle, custom_function=custom_function)
-        return
-
-    # call connected blocks for 'else' condition 2
-    join_get_info_service_path(action=action, success=success, container=container, results=results, handle=handle, custom_function=custom_function)
-
-    return
-
-def get_info_host_path(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):
-    phantom.debug('get_info_host_path() called')
-        
-    #phantom.debug('Action: {0} {1}'.format(action['name'], ('SUCCEEDED' if success else 'FAILED')))
-    
-    # collect data for 'get_info_host_path' call
-
-    parameters = []
-    
-    # build parameters list for 'get_info_host_path' call
-    parameters.append({
-        'sleep_seconds': 1,
-    })
-
-    phantom.act(action="no op", parameters=parameters, assets=['phantom'], callback=join_get_pin_info_path, name="get_info_host_path")
-
-    return
-
-def join_get_info_host_path(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None):
-    phantom.debug('join_get_info_host_path() called')
-    
-    # if the joined function has already been called, do nothing
-    if phantom.get_run_data(key='join_get_info_host_path_called'):
-        return
-
-    # check if all connected incoming playbooks, actions, or custom functions are done i.e. have succeeded or failed
-    if phantom.completed(action_names=['get_entity_pin']):
-        
-        # save the state that the joined function has now been called
-        phantom.save_run_data(key='join_get_info_host_path_called', value='get_info_host_path')
-        
-        # call connected block "get_info_host_path"
-        get_info_host_path(container=container, handle=handle)
-    
-    return
-
-def get_info_service_path(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):
-    phantom.debug('get_info_service_path() called')
-        
-    #phantom.debug('Action: {0} {1}'.format(action['name'], ('SUCCEEDED' if success else 'FAILED')))
-    
-    # collect data for 'get_info_service_path' call
-
-    parameters = []
-    
-    # build parameters list for 'get_info_service_path' call
-    parameters.append({
-        'sleep_seconds': 1,
-    })
-
-    phantom.act(action="no op", parameters=parameters, assets=['phantom'], callback=join_get_pin_info_path, name="get_info_service_path")
-
-    return
-
-def join_get_info_service_path(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None):
-    phantom.debug('join_get_info_service_path() called')
-
-    # check if all connected incoming playbooks, actions, or custom functions are done i.e. have succeeded or failed
-    if phantom.completed(action_names=['get_service_pin']):
-        
-        # call connected block "get_info_service_path"
-        get_info_service_path(container=container, handle=handle)
-    
     return
 
 def decision_5(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):
@@ -563,27 +285,6 @@ def systemctl_is_service_active(action=None, success=None, container=None, resul
     start_time = datetime.now() + timedelta(minutes=1)
 
     phantom.act(action="execute program", parameters=parameters, assets=['ssh'], callback=decision_8, start_time=start_time, name="systemctl_is_service_active")
-
-    return
-
-def decision_6(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):
-    phantom.debug('decision_6() called')
-
-    # check for 'if' condition 1
-    matched = phantom.decision(
-        container=container,
-        action_results=results,
-        conditions=[
-            ["systemctl_is_service_active:action_result.data.*.output", "==", "active"],
-        ])
-
-    # call connected blocks if condition 1 matched
-    if matched:
-        Change_Pin_to_blue(action=action, success=success, container=container, results=results, handle=handle, custom_function=custom_function)
-        return
-
-    # call connected blocks for 'else' condition 2
-    join_service_path(action=action, success=success, container=container, results=results, handle=handle, custom_function=custom_function)
 
     return
 
@@ -636,58 +337,6 @@ def add_tag_3(action=None, success=None, container=None, results=None, handle=No
 
     return
 
-def decision_7(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):
-    phantom.debug('decision_7() called')
-    
-    tags_value = container.get('tags', None)
-    tags_value = container.get('tags', None)
-
-    # check for 'if' condition 1
-    matched = phantom.decision(
-        container=container,
-        action_results=results,
-        conditions=[
-            ["service_restart_in_progress", "in", tags_value],
-            ["itsi_service_restart_successful", "in", tags_value],
-        ],
-        logical_operator='or')
-
-    # call connected blocks if condition 1 matched
-    if matched:
-        join_add_tag_5(action=action, success=success, container=container, results=results, handle=handle, custom_function=custom_function)
-        return
-
-    # call connected blocks for 'else' condition 2
-    format_15(action=action, success=success, container=container, results=results, handle=handle, custom_function=custom_function)
-
-    return
-
-def execute_program_3(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):
-    phantom.debug('execute_program_3() called')
-        
-    #phantom.debug('Action: {0} {1}'.format(action['name'], ('SUCCEEDED' if success else 'FAILED')))
-    
-    # collect data for 'execute_program_3' call
-    results_data_1 = phantom.collect2(container=container, datapath=['get_entity_pin:action_result.data.*.parsed_response_body.data.*.data', 'get_entity_pin:action_result.parameter.context.artifact_id'], action_results=results)
-
-    parameters = []
-    
-    # build parameters list for 'execute_program_3' call
-    for results_item_1 in results_data_1:
-        if results_item_1[0]:
-            parameters.append({
-                'command': "sudo systemctl start nginx",
-                'timeout': 10,
-                'ip_hostname': results_item_1[0],
-                'script_file': "",
-                # context (artifact id) is added to associate results with the artifact
-                'context': {'artifact_id': results_item_1[1]},
-            })
-
-    phantom.act(action="execute program", parameters=parameters, assets=['ssh'], callback=add_tag_4, name="execute_program_3")
-
-    return
-
 def build_rest_call_url_1(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):
     phantom.debug('build_rest_call_url_1() called')
     
@@ -704,71 +353,6 @@ def build_rest_call_url_1(action=None, success=None, container=None, results=Non
 
     return
 
-def format_13(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):
-    phantom.debug('format_13() called')
-    
-    template = """{{
-\"pin_style\": \"blue\"
-}}"""
-
-    # parameter list for template variable replacement
-    parameters = [
-        "SNOW_worknote_manual_task:formatted_data",
-    ]
-
-    phantom.format(container=container, template=template, parameters=parameters, name="format_13")
-
-    format_14(container=container)
-
-    return
-
-def format_14(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):
-    phantom.debug('format_14() called')
-    
-    template = """/rest/container_pin/{0}"""
-
-    # parameter list for template variable replacement
-    parameters = [
-        "get_service_pin:action_result.data.*.parsed_response_body.data.*.id",
-    ]
-
-    phantom.format(container=container, template=template, parameters=parameters, name="format_14")
-
-    post_data_2(container=container)
-
-    return
-
-def post_data_2(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):
-    phantom.debug('post_data_2() called')
-        
-    #phantom.debug('Action: {0} {1}'.format(action['name'], ('SUCCEEDED' if success else 'FAILED')))
-    
-    # collect data for 'post_data_2' call
-    formatted_data_1 = phantom.get_format_data(name='format_13')
-    formatted_data_2 = phantom.get_format_data(name='format_14')
-
-    parameters = []
-    
-    # build parameters list for 'post_data_2' call
-    parameters.append({
-        'body': formatted_data_1,
-        'headers': "",
-        'location': formatted_data_2,
-        'verify_certificate': False,
-    })
-
-    phantom.act(action="post data", parameters=parameters, assets=['http'], callback=join_service_path, name="post_data_2")
-
-    return
-
-def add_tag_4(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):
-    phantom.debug('add_tag_4() called')
-
-    phantom.add_tags(container=container, tags="service_restart_in_progress")
-    SNOW_worknote_manual_task(container=container)
-
-    return
-
 def decision_8(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):
     phantom.debug('decision_8() called')
 
@@ -782,94 +366,11 @@ def decision_8(action=None, success=None, container=None, results=None, handle=N
 
     # call connected blocks if condition 1 matched
     if matched:
-        decision_6(action=action, success=success, container=container, results=results, handle=handle, custom_function=custom_function)
+        Change_Pin_to_blue(action=action, success=success, container=container, results=results, handle=handle, custom_function=custom_function)
         return
 
     # call connected blocks for 'else' condition 2
     join_service_path(action=action, success=success, container=container, results=results, handle=handle, custom_function=custom_function)
-
-    return
-
-def format_15(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):
-    phantom.debug('format_15() called')
-    
-    template = """/rest/artifact?_filter_container={0}&_filter_type=\"notable\"&_filter_tags__icontains=\"service_restart_in_progress\""""
-
-    # parameter list for template variable replacement
-    parameters = [
-        "container:id",
-    ]
-
-    phantom.format(container=container, template=template, parameters=parameters, name="format_15")
-
-    add_tag_service_restart_in_progress(container=container)
-
-    return
-
-def add_tag_service_restart_in_progress(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):
-    phantom.debug('add_tag_service_restart_in_progress() called')
-        
-    #phantom.debug('Action: {0} {1}'.format(action['name'], ('SUCCEEDED' if success else 'FAILED')))
-    
-    # collect data for 'add_tag_service_restart_in_progress' call
-    formatted_data_1 = phantom.get_format_data(name='format_15')
-
-    parameters = []
-    
-    # build parameters list for 'add_tag_service_restart_in_progress' call
-    parameters.append({
-        'headers': "",
-        'location': formatted_data_1,
-        'verify_certificate': False,
-    })
-
-    phantom.act(action="get data", parameters=parameters, assets=['http'], callback=decision_10, name="add_tag_service_restart_in_progress")
-
-    return
-
-def decision_10(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):
-    phantom.debug('decision_10() called')
-
-    # check for 'if' condition 1
-    matched = phantom.decision(
-        container=container,
-        action_results=results,
-        conditions=[
-            ["add_tag_service_restart_in_progress:action_result.data.*.response_body.count", ">=", 1],
-        ])
-
-    # call connected blocks if condition 1 matched
-    if matched:
-        join_add_tag_5(action=action, success=success, container=container, results=results, handle=handle, custom_function=custom_function)
-        return
-
-    # call connected blocks for 'else' condition 2
-    update_artifact_1(action=action, success=success, container=container, results=results, handle=handle, custom_function=custom_function)
-
-    return
-
-def update_artifact_1(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):
-    phantom.debug('update_artifact_1() called')
-        
-    #phantom.debug('Action: {0} {1}'.format(action['name'], ('SUCCEEDED' if success else 'FAILED')))
-    
-    # collect data for 'update_artifact_1' call
-    container_data = phantom.collect2(container=container, datapath=['artifact:*.id', 'artifact:*.id'])
-
-    parameters = []
-    
-    # build parameters list for 'update_artifact_1' call
-    for container_item in container_data:
-        if container_item[0]:
-            parameters.append({
-                'data': "{ \"tags\": \"service_restart_in_progress \" }",
-                'overwrite': True,
-                'artifact_id': container_item[0],
-                # context (artifact id) is added to associate results with the artifact
-                'context': {'artifact_id': container_item[1]},
-            })
-
-    phantom.act(action="update artifact", parameters=parameters, assets=['phantom utilities'], callback=Request_approval_restart_service, name="update_artifact_1")
 
     return
 
@@ -879,24 +380,6 @@ def add_tag_5(action=None, success=None, container=None, results=None, handle=No
     phantom.add_tags(container=container, tags="itsi_service_restart_successful")
     remove_tag_6(container=container)
 
-    return
-
-def join_add_tag_5(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None):
-    phantom.debug('join_add_tag_5() called')
-    
-    # if the joined function has already been called, do nothing
-    if phantom.get_run_data(key='join_add_tag_5_called'):
-        return
-
-    # check if all connected incoming playbooks, actions, or custom functions are done i.e. have succeeded or failed
-    if phantom.completed(action_names=['add_tag_service_restart_in_progress', 'get_pin_info_path']):
-        
-        # save the state that the joined function has now been called
-        phantom.save_run_data(key='join_add_tag_5_called', value='add_tag_5')
-        
-        # call connected block "add_tag_5"
-        add_tag_5(container=container, handle=handle)
-    
     return
 
 def remove_tag_6(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):
@@ -914,7 +397,7 @@ def format_16(action=None, success=None, container=None, results=None, handle=No
     # parameter list for template variable replacement
     parameters = [
         "Request_approval_restart_service:action_result.parameter.message",
-        "Format_Server_Address:formatted_data",
+        "cf_community_list_deduplicate_2:custom_function_result.data.*.item",
     ]
 
     phantom.format(container=container, template=template, parameters=parameters, name="format_16")
@@ -946,7 +429,7 @@ def add_work_note_2(action=None, success=None, container=None, results=None, han
                 'context': {'artifact_id': results_item_1[1]},
             })
 
-    phantom.act(action="add work note", parameters=parameters, assets=['servicenow'], callback=restart_Service, name="add_work_note_2")
+    phantom.act(action="add work note", parameters=parameters, assets=['servicenow'], callback=playbook_conf2020_add_Maintenance_Windows_3, name="add_work_note_2")
 
     return
 
@@ -987,33 +470,25 @@ def get_data_5(action=None, success=None, container=None, results=None, handle=N
 
     return
 
-def playbook_conf2020_conf2020_add_Maintenance_Windows_2(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):
-    phantom.debug('playbook_conf2020_conf2020_add_Maintenance_Windows_2() called')
-    
-    # call playbook "conf2020/add Maintenance Windows", returns the playbook_run_id
-    playbook_run_id = phantom.playbook(playbook="conf2020/add Maintenance Windows", container=container, name="playbook_conf2020_conf2020_add_Maintenance_Windows_2", callback=execute_program_3)
-
-    return
-
 def playbook_conf2020_conf2020_end_Maintenance_Windows_1(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):
     phantom.debug('playbook_conf2020_conf2020_end_Maintenance_Windows_1() called')
     
     # call playbook "conf2020/end Maintenance Windows", returns the playbook_run_id
-    playbook_run_id = phantom.playbook(playbook="conf2020/end Maintenance Windows", container=container, name="playbook_conf2020_conf2020_end_Maintenance_Windows_1", callback=format_snow_ticket_id_request)
+    playbook_run_id = phantom.playbook(playbook="conf2020/end Maintenance Windows", container=container, name="playbook_conf2020_conf2020_end_Maintenance_Windows_1", callback=format_snow_worknote)
 
     return
 
-def cf_community_list_deduplicate_1(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):
-    phantom.debug('cf_community_list_deduplicate_1() called')
+def cf_community_list_deduplicate_2(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):
+    phantom.debug('cf_community_list_deduplicate_2() called')
     
-    container_data_0 = phantom.collect2(container=container, datapath=['artifact:*.cef.entity_key', 'artifact:*.id'])
+    action_results_data_0 = phantom.collect2(container=container, datapath=['get_entity_pin:action_result.data.*.parsed_response_body.data.*.data', 'get_entity_pin:action_result.parameter.context.artifact_id'], action_results=results )
 
     parameters = []
 
-    container_data_0_0 = [item[0] for item in container_data_0]
+    action_results_data_0_0 = [item[0] for item in action_results_data_0]
 
     parameters.append({
-        'input_list': container_data_0_0,
+        'input_list': action_results_data_0_0,
     })
     ################################################################################
     ## Custom Code Start
@@ -1026,148 +501,184 @@ def cf_community_list_deduplicate_1(action=None, success=None, container=None, r
     ################################################################################    
 
     # call custom function "community/list_deduplicate", returns the custom_function_run_id
-    phantom.custom_function(custom_function='community/list_deduplicate', parameters=parameters, name='cf_community_list_deduplicate_1', callback=format_18)
+    phantom.custom_function(custom_function='community/list_deduplicate', parameters=parameters, name='cf_community_list_deduplicate_2', callback=Request_approval_restart_service)
 
     return
 
-def format_18(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):
-    phantom.debug('format_18() called')
+def playbook_conf2020_add_Maintenance_Windows_3(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):
+    phantom.debug('playbook_conf2020_add_Maintenance_Windows_3() called')
     
-    template = """{0}"""
-
-    # parameter list for template variable replacement
-    parameters = [
-        "cf_community_list_deduplicate_1:custom_function_result.data.*.item",
-    ]
-
-    phantom.format(container=container, template=template, parameters=parameters, name="format_18")
-
-    format_19(container=container)
+    # call playbook "conf2020/add Maintenance Windows", returns the playbook_run_id
+    playbook_run_id = phantom.playbook(playbook="conf2020/add Maintenance Windows", container=container, name="playbook_conf2020_add_Maintenance_Windows_3", callback=restart_Service)
 
     return
 
-def format_19(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):
-    phantom.debug('format_19() called')
-    
-    template = """Maintenance Windows - Affected entity ID {0}"""
+def Request_was_denied(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):
+    phantom.debug('Request_was_denied() called')
 
-    # parameter list for template variable replacement
-    parameters = [
-        "cf_community_list_deduplicate_1:custom_function_result.data.*.item",
-    ]
-
-    phantom.format(container=container, template=template, parameters=parameters, name="format_19")
-
-    add_maintenance_window_1(container=container)
+    phantom.comment(container=container, comment="Approver: Request was denied")
+    add_work_note_3(container=container)
 
     return
 
-def add_maintenance_window_1(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):
-    phantom.debug('add_maintenance_window_1() called')
+def add_work_note_3(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):
+    phantom.debug('add_work_note_3() called')
         
     #phantom.debug('Action: {0} {1}'.format(action['name'], ('SUCCEEDED' if success else 'FAILED')))
     
-    # collect data for 'add_maintenance_window_1' call
-    formatted_data_1 = phantom.get_format_data(name='format_19')
-    formatted_data_2 = phantom.get_format_data(name='format_18')
+    # collect data for 'add_work_note_3' call
+    results_data_1 = phantom.collect2(container=container, datapath=['get_data_6:action_result.data.*.response_body.data.*.data', 'get_data_6:action_result.parameter.context.artifact_id'], action_results=results)
 
     parameters = []
     
-    # build parameters list for 'add_maintenance_window_1' call
-    parameters.append({
-        'title': formatted_data_1,
-        'comment': "Phantom created Maintenance Windows",
-        'end_time': "",
-        'object_ids': formatted_data_2,
-        'start_time': "",
-        'object_type': "entity",
-        'relative_end_time': 300,
-        'relative_start_time': "",
-    })
+    # build parameters list for 'add_work_note_3' call
+    for results_item_1 in results_data_1:
+        if results_item_1[0]:
+            parameters.append({
+                'table_name': "incident",
+                'id': results_item_1[0],
+                'work_note': "asdasd",
+                'is_sys_id': "",
+                # context (artifact id) is added to associate results with the artifact
+                'context': {'artifact_id': results_item_1[1]},
+            })
 
-    phantom.act(action="add maintenance window", parameters=parameters, assets=['splunk itsi'], callback=format_20, name="add_maintenance_window_1")
+    phantom.act(action="add work note", parameters=parameters, assets=['servicenow'], name="add_work_note_3", parent_action=action)
 
     return
 
-def format_20(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):
-    phantom.debug('format_20() called')
+def add_comment_9(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):
+    phantom.debug('add_comment_9() called')
+
+    phantom.comment(container=container, comment="Approver request timeout")
+    add_work_note_4(container=container)
+
+    return
+
+def get_SNOW_ticket_ID(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):
+    phantom.debug('get_SNOW_ticket_ID() called')
     
-    template = """{0}"""
+    template = """/rest/container_pin?_filter_container={0}&_filter_message=\"snow inc\""""
 
     # parameter list for template variable replacement
     parameters = [
-        "add_maintenance_window_1:action_result.data.*._key",
+        "container:id",
     ]
 
-    phantom.format(container=container, template=template, parameters=parameters, name="format_20")
+    phantom.format(container=container, template=template, parameters=parameters, name="get_SNOW_ticket_ID")
 
-    format_21(container=container)
-
-    return
-
-def format_21(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):
-    phantom.debug('format_21() called')
-    
-    template = """{0}"""
-
-    # parameter list for template variable replacement
-    parameters = [
-        "add_maintenance_window_1:action_result.parameter.title",
-    ]
-
-    phantom.format(container=container, template=template, parameters=parameters, name="format_21")
-
-    pin_7(container=container)
+    SNOW_Ticket_ID(container=container)
 
     return
 
-def pin_7(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):
-    phantom.debug('pin_7() called')
-
-    formatted_data_1 = phantom.get_format_data(name='format_20')
-    formatted_data_2 = phantom.get_format_data(name='format_21')
-
-    phantom.pin(container=container, data=formatted_data_1, message=formatted_data_2, name=None)
-    format_22(container=container)
-
-    return
-
-def add_episode_comment_1(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):
-    phantom.debug('add_episode_comment_1() called')
+def SNOW_Ticket_ID(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):
+    phantom.debug('SNOW_Ticket_ID() called')
         
     #phantom.debug('Action: {0} {1}'.format(action['name'], ('SUCCEEDED' if success else 'FAILED')))
     
-    source_data_identifier_value = container.get('source_data_identifier', None)
-
-    # collect data for 'add_episode_comment_1' call
-    formatted_data_1 = phantom.get_format_data(name='format_22')
+    # collect data for 'SNOW_Ticket_ID' call
+    results_data_1 = phantom.collect2(container=container, datapath=['get_SNOW_ticket_ID:action_result.data.*.response_body.data.*.data', 'get_SNOW_ticket_ID:action_result.parameter.context.artifact_id'], action_results=results)
 
     parameters = []
     
-    # build parameters list for 'add_episode_comment_1' call
-    parameters.append({
-        'comment': formatted_data_1,
-        'itsi_group_id': source_data_identifier_value,
-    })
+    # build parameters list for 'SNOW_Ticket_ID' call
+    for results_item_1 in results_data_1:
+        if results_item_1[0]:
+            parameters.append({
+                'location': results_item_1[0],
+                'verify_certificate': False,
+                'headers': "",
+                # context (artifact id) is added to associate results with the artifact
+                'context': {'artifact_id': results_item_1[1]},
+            })
 
-    phantom.act(action="add episode comment", parameters=parameters, assets=['splunk itsi'], callback=format_17, name="add_episode_comment_1")
+    phantom.act(action="get data", parameters=parameters, assets=['http'], callback=join_get_container_information, name="SNOW_Ticket_ID")
 
     return
 
-def format_22(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):
-    phantom.debug('format_22() called')
+def add_work_note_4(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):
+    phantom.debug('add_work_note_4() called')
+        
+    #phantom.debug('Action: {0} {1}'.format(action['name'], ('SUCCEEDED' if success else 'FAILED')))
     
-    template = """Maintenance Windows has been started: {0}"""
+    # collect data for 'add_work_note_4' call
+
+    parameters = []
+    
+    # build parameters list for 'add_work_note_4' call
+    parameters.append({
+        'table_name': "incident",
+        'id': "SNOW_Ticket_ID:/rest/container_pin?_filter_container={0}&_filter_message=\"snow inc\"",
+        'work_note': "",
+        'is_sys_id': "",
+    })
+
+    phantom.act(action="add work note", parameters=parameters, assets=['servicenow'], name="add_work_note_4")
+
+    return
+
+def Build_rest_call_get_Service(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):
+    phantom.debug('Build_rest_call_get_Service() called')
+    
+    template = """/rest/container_pin?_filter_container={0}&_filter_message__icontains=\"Service\""""
 
     # parameter list for template variable replacement
     parameters = [
-        "add_maintenance_window_1:action_result.parameter.title",
+        "container:id",
     ]
 
-    phantom.format(container=container, template=template, parameters=parameters, name="format_22")
+    phantom.format(container=container, template=template, parameters=parameters, name="Build_rest_call_get_Service")
 
-    add_episode_comment_1(container=container)
+    get_service_pin(container=container)
 
+    return
+
+def get_service_pin(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):
+    phantom.debug('get_service_pin() called')
+
+    # collect data for 'get_service_pin' call
+    formatted_data_1 = phantom.get_format_data(name='Build_rest_call_get_Service')
+
+    parameters = []
+    
+    # build parameters list for 'get_service_pin' call
+    parameters.append({
+        'location': formatted_data_1,
+        'verify_certificate': False,
+        'headers': "",
+    })
+
+    phantom.act(action="get data", parameters=parameters, assets=['http'], callback=join_get_container_information, name="get_service_pin")
+
+    return
+
+def get_container_information(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):
+    phantom.debug('get_container_information() called')
+        
+    #phantom.debug('Action: {0} {1}'.format(action['name'], ('SUCCEEDED' if success else 'FAILED')))
+    
+    # collect data for 'get_container_information' call
+
+    parameters = []
+    
+    # build parameters list for 'get_container_information' call
+    parameters.append({
+        'sleep_seconds': 1,
+    })
+
+    phantom.act(action="no op", parameters=parameters, assets=['phantom'], callback=cf_community_list_deduplicate_2, name="get_container_information", parent_action=action)
+
+    return
+
+def join_get_container_information(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None):
+    phantom.debug('join_get_container_information() called')
+
+    # check if all connected incoming playbooks, actions, or custom functions are done i.e. have succeeded or failed
+    if phantom.completed(action_names=['get_service_pin', 'SNOW_Ticket_ID']):
+        
+        # call connected block "get_container_information"
+        get_container_information(container=container, handle=handle)
+    
     return
 
 def on_finish(container, summary):
