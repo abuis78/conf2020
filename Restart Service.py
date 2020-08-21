@@ -92,8 +92,8 @@ def restart_Service(action=None, success=None, container=None, results=None, han
 
     return
 
-def Cotent_for_Approval(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):
-    phantom.debug('Cotent_for_Approval() called')
+def Content_for_Approval(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):
+    phantom.debug('Content_for_Approval() called')
     
     template = """The Service on the Server needs to be started / restarted.
 Server IP / Host:  {0}
@@ -105,7 +105,7 @@ Service Name: {1}"""
         "Format_Service_Name:formatted_data",
     ]
 
-    phantom.format(container=container, template=template, parameters=parameters, name="Cotent_for_Approval")
+    phantom.format(container=container, template=template, parameters=parameters, name="Content_for_Approval")
 
     decision_7(container=container)
 
@@ -126,7 +126,7 @@ Do not respond within 5 minutes - the service will automatically restart"""
 
     # parameter list for template variable replacement
     parameters = [
-        "Cotent_for_Approval:formatted_data",
+        "Content_for_Approval:formatted_data",
         "Format_Service_Name:formatted_data",
         "Format_Server_Address:formatted_data",
     ]
@@ -379,7 +379,7 @@ def get_pin_info_path(action=None, success=None, container=None, results=None, h
         'sleep_seconds': 1,
     })
 
-    phantom.act(action="no op", parameters=parameters, assets=['phantom'], callback=Cotent_for_Approval, name="get_pin_info_path")
+    phantom.act(action="no op", parameters=parameters, assets=['phantom'], callback=Content_for_Approval, name="get_pin_info_path")
 
     return
 
