@@ -7,7 +7,7 @@
             "clean": true,
             "code_block": "",
             "description": "",
-            "hash": "4c23e773ad859331a164d7b77073fceebd915dba",
+            "hash": "8a4d8ffaa4acdd27a98d3ffbbeef429e1f9118a2",
             "joint": {
                 "cells": [
                     {
@@ -628,7 +628,7 @@
                         "attrs": {
                             ".background": {
                                 "fill": "#FFFFFF",
-                                "stroke": "#E6984E"
+                                "stroke": "#818D99"
                             },
                             ".color-band": {
                                 "fill": "#171D21"
@@ -678,7 +678,7 @@
                                 "display": "none"
                             },
                             "g.error": {
-                                "opacity": 1
+                                "opacity": 0
                             },
                             "g.error image": {
                                 "xlink:href": "/inc/coa/img/block_icon_warn.svg"
@@ -789,7 +789,7 @@
                             "width": 180
                         },
                         "state": "callplaybook",
-                        "status": "warn",
+                        "status": "",
                         "title": "Playbook",
                         "type": "coa.CallPlaybook",
                         "warn": false,
@@ -1147,7 +1147,7 @@
                         "attrs": {
                             ".background": {
                                 "fill": "#FFFFFF",
-                                "stroke": "#E6984E"
+                                "stroke": "#818D99"
                             },
                             ".color-band": {
                                 "fill": "#171D21"
@@ -1197,7 +1197,7 @@
                                 "display": "none"
                             },
                             "g.error": {
-                                "opacity": 1
+                                "opacity": 0
                             },
                             "g.error image": {
                                 "xlink:href": "/inc/coa/img/block_icon_warn.svg"
@@ -1214,8 +1214,8 @@
                         "callback_start": 1,
                         "callsback": true,
                         "connected_to_start": true,
-                        "connection_name": "",
-                        "connection_type": "",
+                        "connection_name": "conf2020/Get Service information",
+                        "connection_type": "action",
                         "custom_callback": "",
                         "custom_code": "",
                         "custom_join": "",
@@ -1308,7 +1308,7 @@
                             "width": 180
                         },
                         "state": "callplaybook",
-                        "status": "warn",
+                        "status": "",
                         "title": "Playbook",
                         "type": "coa.CallPlaybook",
                         "warn": false,
@@ -1421,7 +1421,7 @@
                                 "opacity": 1
                             }
                         },
-                        "block_code": "def playbook_conf2020_conf2020_Get_Service_information_1(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):\n    phantom.debug('playbook_conf2020_conf2020_Get_Service_information_1() called')\n    \n    # call playbook \"conf2020/Get Service information\", returns the playbook_run_id\n    playbook_run_id = phantom.playbook(playbook=\"conf2020/Get Service information\", container=container, name=\"playbook_conf2020_conf2020_Get_Service_information_1\")\n\n    return",
+                        "block_code": "def playbook_conf2020_conf2020_Get_Service_information_1(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):\n    phantom.debug('playbook_conf2020_conf2020_Get_Service_information_1() called')\n    \n    # call playbook \"conf2020/Get Service information\", returns the playbook_run_id\n    playbook_run_id = phantom.playbook(playbook=\"conf2020/Get Service information\", container=container, name=\"playbook_conf2020_conf2020_Get_Service_information_1\", callback=playbook_conf2020_conf2020_Restart_Service_1)\n\n    return",
                         "callback_code": "",
                         "callback_start": 1,
                         "callsback": true,
@@ -1525,6 +1525,45 @@
                         "type": "coa.CallPlaybook",
                         "warn": false,
                         "z": 118
+                    },
+                    {
+                        "attrs": {
+                            ".connection": {
+                                "stroke": "#818D99",
+                                "stroke-width": 2
+                            },
+                            ".marker-target": {
+                                "d": "M 10 0 L 0 5 L 10 10 z",
+                                "fill": "#818D99",
+                                "stroke": "#818D99"
+                            }
+                        },
+                        "connector": {
+                            "args": {
+                                "radius": 5
+                            },
+                            "name": "rounded"
+                        },
+                        "endDirections": [
+                            "left"
+                        ],
+                        "id": "e1ecc0d1-a971-42df-9224-8bd33404b13d",
+                        "router": {
+                            "name": "metro"
+                        },
+                        "source": {
+                            "id": "fe505534-9d30-48db-bf2d-46943fd3e70c",
+                            "selector": "> g:nth-child(1) > g:nth-child(2) > g:nth-child(1) > circle:nth-child(1)"
+                        },
+                        "startDirections": [
+                            "right"
+                        ],
+                        "target": {
+                            "id": "090fb934-eb4a-4df3-8291-f33a131ff585",
+                            "selector": "> g:nth-child(1) > g:nth-child(1) > g:nth-child(1) > circle:nth-child(1)"
+                        },
+                        "type": "link",
+                        "z": 119
                     }
                 ]
             },
@@ -1534,7 +1573,7 @@
         "schema": 4,
         "version": "4.9.34514"
     },
-    "create_time": "2020-08-21T12:48:34.036624+00:00",
+    "create_time": "2020-08-21T15:16:37.548874+00:00",
     "draft_mode": false,
     "labels": [
         "itsi"

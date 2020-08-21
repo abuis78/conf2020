@@ -40,7 +40,7 @@ def playbook_conf2020_conf2020_Get_Service_information_1(action=None, success=No
     phantom.debug('playbook_conf2020_conf2020_Get_Service_information_1() called')
     
     # call playbook "conf2020/Get Service information", returns the playbook_run_id
-    playbook_run_id = phantom.playbook(playbook="conf2020/Get Service information", container=container, name="playbook_conf2020_conf2020_Get_Service_information_1")
+    playbook_run_id = phantom.playbook(playbook="conf2020/Get Service information", container=container, name="playbook_conf2020_conf2020_Get_Service_information_1", callback=playbook_conf2020_conf2020_Restart_Service_1)
 
     return
 
