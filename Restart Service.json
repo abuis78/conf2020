@@ -7,7 +7,7 @@
             "clean": true,
             "code_block": "",
             "description": "",
-            "hash": "2da634f5869d93e64237e2219666d6fecff716c9",
+            "hash": "c66701e3e29a5389a7f82d03a9e404f455d26f00",
             "joint": {
                 "cells": [
                     {
@@ -7838,7 +7838,7 @@
                         "callsback": true,
                         "color": "",
                         "connected_to_start": true,
-                        "connection_name": "add Maintenance Windows 1",
+                        "connection_name": "add work note 2",
                         "connection_type": "action",
                         "custom_callback": "",
                         "custom_code": "",
@@ -8815,46 +8815,6 @@
                         "z": 411
                     },
                     {
-                        "attrs": {
-                            ".connection": {
-                                "stroke": "#818D99",
-                                "stroke-width": 2
-                            },
-                            ".marker-target": {
-                                "d": "M 10 0 L 0 5 L 10 10 z",
-                                "fill": "#818D99",
-                                "stroke": "#818D99"
-                            }
-                        },
-                        "connector": {
-                            "args": {
-                                "radius": 5
-                            },
-                            "name": "rounded"
-                        },
-                        "endDirections": [
-                            "left"
-                        ],
-                        "id": "a580343d-1164-4020-a16a-7ee423318529",
-                        "router": {
-                            "name": "metro"
-                        },
-                        "source": {
-                            "id": "f42ceafb-454e-4c15-ab3d-899f0d86342e",
-                            "port": "out-1",
-                            "selector": "> g:nth-child(1) > g:nth-child(2) > g:nth-child(1) > circle:nth-child(1)"
-                        },
-                        "startDirections": [
-                            "right"
-                        ],
-                        "target": {
-                            "id": "79f57f25-9da1-492c-af57-85546a97065e",
-                            "selector": ".port-body[type=\"input\"]"
-                        },
-                        "type": "link",
-                        "z": 415
-                    },
-                    {
                         "active": false,
                         "angle": 0,
                         "attrs": {
@@ -9064,342 +9024,6 @@
                         },
                         "type": "link",
                         "z": 420
-                    },
-                    {
-                        "action": "get data",
-                        "action_type": "generic",
-                        "active": false,
-                        "active_keys": {},
-                        "active_values": {
-                            "headers": "",
-                            "location": "format_17:formatted_data",
-                            "verify_certificate": "False"
-                        },
-                        "angle": 0,
-                        "app": "HTTP",
-                        "appid": "290b7499-0374-4930-9cdc-5e9b05d65827",
-                        "approver": "",
-                        "assets": [
-                            {
-                                "action": "get data",
-                                "actions": [
-                                    "post data",
-                                    "get data",
-                                    "get options",
-                                    "get headers",
-                                    "delete data",
-                                    "patch data",
-                                    "put data",
-                                    "test connectivity"
-                                ],
-                                "active": true,
-                                "app_name": "HTTP",
-                                "app_version": "2.1.15",
-                                "appid": "290b7499-0374-4930-9cdc-5e9b05d65827",
-                                "asset_name": "http",
-                                "config_type": "asset",
-                                "count": 0,
-                                "fields": {
-                                    "headers": "",
-                                    "location": "format_17:formatted_data",
-                                    "verify_certificate": "False"
-                                },
-                                "has_app": true,
-                                "id": 17,
-                                "loaded": false,
-                                "missing": false,
-                                "name": "http",
-                                "output": [
-                                    {
-                                        "data_path": "action_result.status",
-                                        "data_type": "string",
-                                        "example_values": [
-                                            "failed"
-                                        ]
-                                    },
-                                    {
-                                        "data_path": "action_result.parameter.headers",
-                                        "data_type": "string"
-                                    },
-                                    {
-                                        "data_path": "action_result.parameter.location",
-                                        "data_type": "string",
-                                        "example_values": [
-                                            "/rest/cont"
-                                        ]
-                                    },
-                                    {
-                                        "data_path": "action_result.parameter.verify_certificate",
-                                        "data_type": "boolean",
-                                        "example_values": [
-                                            "false"
-                                        ]
-                                    },
-                                    {
-                                        "contains": [
-                                            "url"
-                                        ],
-                                        "data_path": "action_result.data.*.location",
-                                        "data_type": "string",
-                                        "example_values": [
-                                            "http://192.168.1.26/rest/cont"
-                                        ]
-                                    },
-                                    {
-                                        "data_path": "action_result.data.*.method",
-                                        "data_type": "string",
-                                        "example_values": [
-                                            "GET"
-                                        ]
-                                    },
-                                    {
-                                        "data_path": "action_result.data.*.parsed_response_body",
-                                        "data_type": "string",
-                                        "example_values": [
-                                            "{\"failed\": true, \"message\": \"Requested item not found\"}"
-                                        ]
-                                    },
-                                    {
-                                        "data_path": "action_result.data.*.response_body",
-                                        "data_type": "string",
-                                        "example_values": [
-                                            "{\"failed\": true, \"message\": \"Requested item not found\"}"
-                                        ]
-                                    },
-                                    {
-                                        "data_path": "action_result.data.*.response_headers",
-                                        "data_type": "string"
-                                    },
-                                    {
-                                        "data_path": "action_result.summary.reason",
-                                        "data_type": "string",
-                                        "example_values": [
-                                            "Not Found"
-                                        ]
-                                    },
-                                    {
-                                        "data_path": "action_result.summary.status_code",
-                                        "data_type": "numeric",
-                                        "example_values": [
-                                            404
-                                        ]
-                                    },
-                                    {
-                                        "data_path": "action_result.message",
-                                        "data_type": "string",
-                                        "example_values": [
-                                            "Can't process response from server. Status Code: 404 Data from server: {\"failed\": true, \"message\": \"Requested item not found\"}"
-                                        ]
-                                    },
-                                    {
-                                        "data_path": "summary.total_objects",
-                                        "data_type": "numeric",
-                                        "example_values": [
-                                            1
-                                        ]
-                                    },
-                                    {
-                                        "data_path": "summary.total_objects_successful",
-                                        "data_type": "numeric",
-                                        "example_values": [
-                                            0
-                                        ]
-                                    }
-                                ],
-                                "parameters": {
-                                    "headers": {
-                                        "data_type": "string",
-                                        "default": null,
-                                        "description": "Additional headers (JSON object with headers)",
-                                        "key": "headers",
-                                        "order": 2,
-                                        "required": false
-                                    },
-                                    "location": {
-                                        "data_type": "string",
-                                        "default": null,
-                                        "description": "Location (e.g. path/to/endpoint?query=string)",
-                                        "key": "location",
-                                        "order": 0,
-                                        "required": true
-                                    },
-                                    "verify_certificate": {
-                                        "data_type": "boolean",
-                                        "default": null,
-                                        "description": "Verify certificates (if using HTTPS)",
-                                        "key": "verify_certificate",
-                                        "order": 1,
-                                        "required": true
-                                    }
-                                },
-                                "product_name": "HTTP",
-                                "product_vendor": "Generic",
-                                "targets": "17",
-                                "type": "information"
-                            }
-                        ],
-                        "attrs": {
-                            ".action": {
-                                "text": "get data 5"
-                            },
-                            ".background": {
-                                "fill": "#FFFFFF",
-                                "stroke": "#818D99"
-                            },
-                            ".color-band": {
-                                "fill": "#171D21"
-                            },
-                            ".inPorts>.port-in": {
-                                "ref": ".background",
-                                "ref-x": 0.5
-                            },
-                            ".inPorts>.port-in>.port-body": {
-                                "port": {
-                                    "id": "in",
-                                    "type": "in"
-                                }
-                            },
-                            ".message": {
-                                "opacity": 0,
-                                "ref-x": 5,
-                                "ref-y": 105,
-                                "text": "Configuring now"
-                            },
-                            ".outPorts>.port-out": {
-                                "ref": ".background",
-                                "ref-x": 0.5
-                            },
-                            ".outPorts>.port-out>.port-body": {
-                                "port": {
-                                    "id": "out",
-                                    "type": "out"
-                                }
-                            },
-                            ".title": {
-                                "text": "Generic"
-                            },
-                            "g.delete": {
-                                "display": "none"
-                            },
-                            "g.error": {
-                                "opacity": 0
-                            },
-                            "g.icon image": {
-                                "xlink:href": "/inc/coa/img/block_icon_generic.svg"
-                            },
-                            "g.notes": {
-                                "display": "block"
-                            }
-                        },
-                        "block_code": "def get_data_5(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):\n    phantom.debug('get_data_5() called')\n        \n    #phantom.debug('Action: {0} {1}'.format(action['name'], ('SUCCEEDED' if success else 'FAILED')))\n    \n    # collect data for 'get_data_5' call\n    formatted_data_1 = phantom.get_format_data(name='format_17')\n\n    parameters = []\n    \n    # build parameters list for 'get_data_5' call\n    parameters.append({\n        'location': formatted_data_1,\n        'verify_certificate': False,\n        'headers': \"\",\n    })\n\n    phantom.act(action=\"get data\", parameters=parameters, assets=['http'], callback=format_16, name=\"get_data_5\")\n\n    return",
-                        "callback_code": "",
-                        "callback_start": 1,
-                        "callsback": true,
-                        "color": "",
-                        "connected_to_start": true,
-                        "connection_name": "Request approval restart service",
-                        "connection_type": "action",
-                        "custom_callback": "",
-                        "custom_code": "",
-                        "custom_join": "",
-                        "custom_name": "",
-                        "delay": 0,
-                        "description": "",
-                        "has_custom": false,
-                        "has_custom_block": false,
-                        "has_custom_callback": false,
-                        "has_custom_join": false,
-                        "id": "d113a1fc-adde-4579-bf04-e3063127ea21",
-                        "inPorts": [
-                            "in"
-                        ],
-                        "join_code": "",
-                        "join_optional": [],
-                        "join_start": 1,
-                        "line_end": 991,
-                        "line_start": 970,
-                        "message": "Configuring now",
-                        "name": "get data",
-                        "notes": "",
-                        "number": 5,
-                        "order": 47,
-                        "outPorts": [
-                            "out"
-                        ],
-                        "ports": {
-                            "groups": {
-                                "in": {
-                                    "attrs": {
-                                        ".port-body": {
-                                            "fill": "#fff",
-                                            "magnet": true,
-                                            "r": 10,
-                                            "stroke": "#000"
-                                        },
-                                        ".port-label": {
-                                            "fill": "#000"
-                                        }
-                                    },
-                                    "label": {
-                                        "position": {
-                                            "args": {
-                                                "y": 10
-                                            },
-                                            "name": "left"
-                                        }
-                                    },
-                                    "position": {
-                                        "name": "left"
-                                    }
-                                },
-                                "out": {
-                                    "attrs": {
-                                        ".port-body": {
-                                            "fill": "#fff",
-                                            "magnet": true,
-                                            "r": 10,
-                                            "stroke": "#000"
-                                        },
-                                        ".port-label": {
-                                            "fill": "#000"
-                                        }
-                                    },
-                                    "label": {
-                                        "position": {
-                                            "args": {
-                                                "y": 10
-                                            },
-                                            "name": "right"
-                                        }
-                                    },
-                                    "position": {
-                                        "name": "right"
-                                    }
-                                }
-                            }
-                        },
-                        "position": {
-                            "x": 860,
-                            "y": -200
-                        },
-                        "previous_function": "",
-                        "previous_name": "get_data_5",
-                        "required_params": {
-                            "location": true,
-                            "verify_certificate": true
-                        },
-                        "reviewer": "",
-                        "show_number": true,
-                        "size": {
-                            "height": 100,
-                            "width": 180
-                        },
-                        "state": "app_action_assets",
-                        "status": "",
-                        "title": "Generic",
-                        "type": "coa.Action",
-                        "warn": "",
-                        "z": 422
                     },
                     {
                         "attrs": {
@@ -11641,7 +11265,7 @@
                                 "display": "block"
                             }
                         },
-                        "block_code": "def add_work_note_2(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):\n    phantom.debug('add_work_note_2() called')\n        \n    #phantom.debug('Action: {0} {1}'.format(action['name'], ('SUCCEEDED' if success else 'FAILED')))\n    \n    # collect data for 'add_work_note_2' call\n    results_data_1 = phantom.collect2(container=container, datapath=['get_data_5:action_result.data.*.response_body.data.*.data', 'get_data_5:action_result.parameter.context.artifact_id'], action_results=results)\n    formatted_data_1 = phantom.get_format_data(name='format_16')\n\n    parameters = []\n    \n    # build parameters list for 'add_work_note_2' call\n    for results_item_1 in results_data_1:\n        if results_item_1[0]:\n            parameters.append({\n                'table_name': \"incident\",\n                'id': results_item_1[0],\n                'work_note': formatted_data_1,\n                'is_sys_id': \"\",\n                # context (artifact id) is added to associate results with the artifact\n                'context': {'artifact_id': results_item_1[1]},\n            })\n\n    phantom.act(action=\"add work note\", parameters=parameters, assets=['servicenow'], callback=playbook_conf2020_add_Maintenance_Windows_1_1, name=\"add_work_note_2\")\n\n    return",
+                        "block_code": "def add_work_note_2(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):\n    phantom.debug('add_work_note_2() called')\n        \n    #phantom.debug('Action: {0} {1}'.format(action['name'], ('SUCCEEDED' if success else 'FAILED')))\n    \n    # collect data for 'add_work_note_2' call\n    results_data_1 = phantom.collect2(container=container, datapath=['get_data_5:action_result.data.*.response_body.data.*.data', 'get_data_5:action_result.parameter.context.artifact_id'], action_results=results)\n    formatted_data_1 = phantom.get_format_data(name='format_16')\n\n    parameters = []\n    \n    # build parameters list for 'add_work_note_2' call\n    for results_item_1 in results_data_1:\n        if results_item_1[0]:\n            parameters.append({\n                'table_name': \"incident\",\n                'id': results_item_1[0],\n                'work_note': formatted_data_1,\n                'is_sys_id': \"\",\n                # context (artifact id) is added to associate results with the artifact\n                'context': {'artifact_id': results_item_1[1]},\n            })\n\n    phantom.act(action=\"add work note\", parameters=parameters, assets=['servicenow'], callback=restart_Service, name=\"add_work_note_2\")\n\n    return",
                         "callback_code": "",
                         "callback_start": 1,
                         "callsback": true,
@@ -11730,7 +11354,7 @@
                         },
                         "position": {
                             "x": 1340,
-                            "y": -200
+                            "y": -60
                         },
                         "previous_function": "",
                         "previous_name": "add_work_note_2",
@@ -12297,179 +11921,6 @@
                         "z": 436
                     },
                     {
-                        "active": false,
-                        "angle": 0,
-                        "api": "add tag",
-                        "attrs": {
-                            ".api": {
-                                "text": "add tag"
-                            },
-                            ".background": {
-                                "fill": "#FFFFFF",
-                                "stroke": "#818D99"
-                            },
-                            ".color-band": {
-                                "fill": "#171D21"
-                            },
-                            ".inPorts>.port-in": {
-                                "ref": ".background",
-                                "ref-x": 0.5
-                            },
-                            ".inPorts>.port-in>.port-body": {
-                                "port": {
-                                    "id": "in",
-                                    "type": "in"
-                                }
-                            },
-                            ".message": {
-                                "opacity": 0,
-                                "ref-x": 5,
-                                "ref-y": 105,
-                                "text": "Configuring now"
-                            },
-                            ".outPorts>.port-out": {
-                                "ref": ".background",
-                                "ref-x": 0.5
-                            },
-                            ".outPorts>.port-out>.port-body": {
-                                "port": {
-                                    "id": "out",
-                                    "type": "out"
-                                }
-                            },
-                            ".title": {
-                                "text": "API"
-                            },
-                            "g.code image": {
-                                "opacity": 1
-                            },
-                            "g.delete": {
-                                "display": "none"
-                            },
-                            "g.error": {
-                                "opacity": 0
-                            },
-                            "g.error image": {
-                                "xlink:href": "/inc/coa/img/block_icon_warn.svg"
-                            },
-                            "g.notes": {
-                                "display": "block"
-                            },
-                            "g.notes image": {
-                                "opacity": 1
-                            }
-                        },
-                        "block_code": "def add_tag_3(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):\n    phantom.debug('add_tag_3() called')\n\n    phantom.add_tags(container=container, tags=\"service_restart_in_progress\")\n    decision_5(container=container)\n\n    return",
-                        "callback_code": "",
-                        "callback_start": 1,
-                        "callsback": false,
-                        "color": "",
-                        "configured": [
-                            {
-                                "addTagTag": "service_restart_in_progress",
-                                "key": "add-tag"
-                            }
-                        ],
-                        "connected_to_start": true,
-                        "connection_name": "restart Service",
-                        "connection_type": "action",
-                        "custom_callback": "",
-                        "custom_code": "",
-                        "custom_join": "",
-                        "custom_name": "",
-                        "description": "",
-                        "has_custom": false,
-                        "has_custom_block": false,
-                        "has_custom_callback": false,
-                        "has_custom_join": false,
-                        "id": "a3945b9c-47b8-4f12-8a44-b3e1dae23d53",
-                        "inPorts": [
-                            "in"
-                        ],
-                        "join_code": "",
-                        "join_optional": [],
-                        "join_start": 1,
-                        "line_end": 639,
-                        "line_start": 631,
-                        "message": "Configuring now",
-                        "name": "add tag",
-                        "notes": "",
-                        "number": 3,
-                        "order": 29,
-                        "outPorts": [
-                            "out"
-                        ],
-                        "ports": {
-                            "groups": {
-                                "in": {
-                                    "attrs": {
-                                        ".port-body": {
-                                            "fill": "#fff",
-                                            "magnet": true,
-                                            "r": 10,
-                                            "stroke": "#000"
-                                        },
-                                        ".port-label": {
-                                            "fill": "#000"
-                                        }
-                                    },
-                                    "label": {
-                                        "position": {
-                                            "args": {
-                                                "y": 10
-                                            },
-                                            "name": "left"
-                                        }
-                                    },
-                                    "position": {
-                                        "name": "left"
-                                    }
-                                },
-                                "out": {
-                                    "attrs": {
-                                        ".port-body": {
-                                            "fill": "#fff",
-                                            "magnet": true,
-                                            "r": 10,
-                                            "stroke": "#000"
-                                        },
-                                        ".port-label": {
-                                            "fill": "#000"
-                                        }
-                                    },
-                                    "label": {
-                                        "position": {
-                                            "args": {
-                                                "y": 10
-                                            },
-                                            "name": "right"
-                                        }
-                                    },
-                                    "position": {
-                                        "name": "right"
-                                    }
-                                }
-                            }
-                        },
-                        "position": {
-                            "x": 840,
-                            "y": 100
-                        },
-                        "previous_function": "",
-                        "previous_name": "add_tag_3",
-                        "show_number": false,
-                        "size": {
-                            "height": 100,
-                            "width": 180
-                        },
-                        "state": "api",
-                        "status": "",
-                        "title": "API",
-                        "type": "coa.API",
-                        "warn": false,
-                        "z": 437
-                    },
-                    {
                         "action": "update artifact",
                         "action_type": "generic",
                         "active": false,
@@ -12827,7 +12278,7 @@
                                 "opacity": 1
                             }
                         },
-                        "block_code": "def decision_2(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):\n    phantom.debug('decision_2() called')\n\n    # check for 'if' condition 1\n    matched = phantom.decision(\n        container=container,\n        action_results=results,\n        conditions=[\n            [\"Request_approval_restart_service:action_result.summary.responses.0\", \"==\", \"Yes\"],\n        ])\n\n    # call connected blocks if condition 1 matched\n    if matched:\n        format_17(action=action, success=success, container=container, results=results, handle=handle, custom_function=custom_function)\n        return\n\n    # call connected blocks for 'else' condition 2\n    playbook_conf2020_add_Maintenance_Windows_2_2(action=action, success=success, container=container, results=results, handle=handle, custom_function=custom_function)\n\n    return",
+                        "block_code": "def decision_2(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):\n    phantom.debug('decision_2() called')\n\n    # check for 'if' condition 1\n    matched = phantom.decision(\n        container=container,\n        action_results=results,\n        conditions=[\n            [\"Request_approval_restart_service:action_result.summary.responses.0\", \"==\", \"Yes\"],\n        ])\n\n    # call connected blocks if condition 1 matched\n    if matched:\n        playbook_conf2020_add_Maintenance_Windows_1_1(action=action, success=success, container=container, results=results, handle=handle, custom_function=custom_function)\n        return\n\n    # call connected blocks for 'else' condition 2\n    playbook_conf2020_add_Maintenance_Windows_2_2(action=action, success=success, container=container, results=results, handle=handle, custom_function=custom_function)\n\n    return",
                         "callback_code": "",
                         "callback_start": 1,
                         "callsback": false,
@@ -12957,169 +12408,6 @@
                         "type": "coa.Decision",
                         "warn": "",
                         "z": 441
-                    },
-                    {
-                        "active": false,
-                        "angle": 0,
-                        "attrs": {
-                            ".background": {
-                                "fill": "#FFFFFF",
-                                "stroke": "#818D99"
-                            },
-                            ".color-band": {
-                                "fill": "#171D21"
-                            },
-                            ".format": {
-                                "text": "format 17"
-                            },
-                            ".inPorts>.port-in": {
-                                "ref": ".background",
-                                "ref-x": 0.5
-                            },
-                            ".inPorts>.port-in>.port-body": {
-                                "port": {
-                                    "id": "in",
-                                    "type": "in"
-                                }
-                            },
-                            ".message": {
-                                "opacity": 0,
-                                "text": "Configuring now"
-                            },
-                            ".outPorts>.port-out-1": {
-                                "ref": ".background",
-                                "ref-x": 0.5
-                            },
-                            ".outPorts>.port-out-1>.port-body": {
-                                "port": {
-                                    "id": "out-1",
-                                    "type": "out"
-                                }
-                            },
-                            ".title": {
-                                "text": "format"
-                            },
-                            "g.delete": {
-                                "display": "none"
-                            },
-                            "g.error": {
-                                "opacity": 0
-                            },
-                            "g.notes": {
-                                "display": "block"
-                            }
-                        },
-                        "block_code": "def format_17(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):\n    phantom.debug('format_17() called')\n    \n    template = \"\"\"/rest/container_pin?_filter_container={0}&_filter_message=\\\"snow inc\\\"\"\"\"\n\n    # parameter list for template variable replacement\n    parameters = [\n        \"container:id\",\n    ]\n\n    phantom.format(container=container, template=template, parameters=parameters, name=\"format_17\")\n\n    get_data_5(container=container)\n\n    return",
-                        "callback_code": "",
-                        "callback_start": 1,
-                        "callsback": false,
-                        "connected_to_start": true,
-                        "connection_name": "Request approval restart service",
-                        "connection_type": "action",
-                        "custom_callback": "",
-                        "custom_code": "",
-                        "custom_join": "",
-                        "custom_name": "",
-                        "description": "",
-                        "format": "format",
-                        "has_custom": false,
-                        "has_custom_block": false,
-                        "has_custom_callback": false,
-                        "has_custom_join": false,
-                        "id": "79f57f25-9da1-492c-af57-85546a97065e",
-                        "inPorts": [
-                            "in"
-                        ],
-                        "join_code": "",
-                        "join_optional": [],
-                        "join_start": 1,
-                        "line_end": 970,
-                        "line_start": 954,
-                        "message": "Configuring now",
-                        "name": "format",
-                        "notes": "",
-                        "number": 17,
-                        "order": 46,
-                        "outPorts": [
-                            "out-1"
-                        ],
-                        "parameters": [
-                            {
-                                "position": 0,
-                                "type": "",
-                                "value": "container:id"
-                            }
-                        ],
-                        "ports": {
-                            "groups": {
-                                "in": {
-                                    "attrs": {
-                                        ".port-body": {
-                                            "fill": "#fff",
-                                            "magnet": true,
-                                            "r": 10,
-                                            "stroke": "#000"
-                                        },
-                                        ".port-label": {
-                                            "fill": "#000"
-                                        }
-                                    },
-                                    "label": {
-                                        "position": {
-                                            "args": {
-                                                "y": 10
-                                            },
-                                            "name": "left"
-                                        }
-                                    },
-                                    "position": {
-                                        "name": "left"
-                                    }
-                                },
-                                "out": {
-                                    "attrs": {
-                                        ".port-body": {
-                                            "fill": "#fff",
-                                            "magnet": true,
-                                            "r": 10,
-                                            "stroke": "#000"
-                                        },
-                                        ".port-label": {
-                                            "fill": "#000"
-                                        }
-                                    },
-                                    "label": {
-                                        "position": {
-                                            "args": {
-                                                "y": 10
-                                            },
-                                            "name": "right"
-                                        }
-                                    },
-                                    "position": {
-                                        "name": "right"
-                                    }
-                                }
-                            }
-                        },
-                        "position": {
-                            "x": 580,
-                            "y": -200
-                        },
-                        "previous_function": "",
-                        "previous_name": "format_17",
-                        "show_number": true,
-                        "size": {
-                            "height": 100,
-                            "width": 180
-                        },
-                        "state": "format",
-                        "status": "",
-                        "template": "/rest/container_pin?_filter_container={0}&_filter_message=\"snow inc\"",
-                        "title": "format",
-                        "type": "coa.Format",
-                        "warn": false,
-                        "z": 442
                     },
                     {
                         "active": false,
@@ -13303,177 +12591,6 @@
                         "type": "coa.Prompt",
                         "warn": false,
                         "z": 444
-                    },
-                    {
-                        "active": false,
-                        "angle": 0,
-                        "attrs": {
-                            ".background": {
-                                "fill": "#FFFFFF",
-                                "stroke": "#818D99"
-                            },
-                            ".color-band": {
-                                "fill": "#171D21"
-                            },
-                            ".format": {
-                                "text": "format 16"
-                            },
-                            ".inPorts>.port-in": {
-                                "ref": ".background",
-                                "ref-x": 0.5
-                            },
-                            ".inPorts>.port-in>.port-body": {
-                                "port": {
-                                    "id": "in",
-                                    "type": "in"
-                                }
-                            },
-                            ".message": {
-                                "opacity": 0,
-                                "text": "Configuring now"
-                            },
-                            ".outPorts>.port-out-1": {
-                                "ref": ".background",
-                                "ref-x": 0.5
-                            },
-                            ".outPorts>.port-out-1>.port-body": {
-                                "port": {
-                                    "id": "out-1",
-                                    "type": "out"
-                                }
-                            },
-                            ".title": {
-                                "text": "format"
-                            },
-                            "g.delete": {
-                                "display": "none"
-                            },
-                            "g.error": {
-                                "opacity": 0
-                            },
-                            "g.error image": {
-                                "xlink:href": "/inc/coa/img/block_icon_warn.svg"
-                            },
-                            "g.notes": {
-                                "display": "block"
-                            }
-                        },
-                        "block_code": "def format_16(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):\n    phantom.debug('format_16() called')\n    \n    template = \"\"\"I got approval from: {0} and restart the service / entity:  {1}\"\"\"\n\n    # parameter list for template variable replacement\n    parameters = [\n        \"Request_approval_restart_service:action_result.parameter.message\",\n        \"Format_Server_Address:formatted_data\",\n    ]\n\n    phantom.format(container=container, template=template, parameters=parameters, name=\"format_16\")\n\n    add_work_note_2(container=container)\n\n    return",
-                        "callback_code": "",
-                        "callback_start": 1,
-                        "callsback": false,
-                        "connected_to_start": true,
-                        "connection_name": "get data 5",
-                        "connection_type": "action",
-                        "custom_callback": "",
-                        "custom_code": "",
-                        "custom_join": "",
-                        "custom_name": "",
-                        "description": "",
-                        "format": "format",
-                        "has_custom": false,
-                        "has_custom_block": false,
-                        "has_custom_callback": false,
-                        "has_custom_join": false,
-                        "id": "ea551dbb-02bb-470e-9e26-b0496abe55f9",
-                        "inPorts": [
-                            "in"
-                        ],
-                        "join_code": "",
-                        "join_optional": [],
-                        "join_start": 1,
-                        "line_end": 927,
-                        "line_start": 910,
-                        "message": "Configuring now",
-                        "name": "format",
-                        "notes": "",
-                        "number": 16,
-                        "order": 44,
-                        "outPorts": [
-                            "out-1"
-                        ],
-                        "parameters": [
-                            {
-                                "position": 0,
-                                "type": "",
-                                "value": "Request_approval_restart_service:action_result.parameter.message"
-                            },
-                            {
-                                "position": 1,
-                                "type": "",
-                                "value": "Format_Server_Address:formatted_data"
-                            }
-                        ],
-                        "ports": {
-                            "groups": {
-                                "in": {
-                                    "attrs": {
-                                        ".port-body": {
-                                            "fill": "#fff",
-                                            "magnet": true,
-                                            "r": 10,
-                                            "stroke": "#000"
-                                        },
-                                        ".port-label": {
-                                            "fill": "#000"
-                                        }
-                                    },
-                                    "label": {
-                                        "position": {
-                                            "args": {
-                                                "y": 10
-                                            },
-                                            "name": "left"
-                                        }
-                                    },
-                                    "position": {
-                                        "name": "left"
-                                    }
-                                },
-                                "out": {
-                                    "attrs": {
-                                        ".port-body": {
-                                            "fill": "#fff",
-                                            "magnet": true,
-                                            "r": 10,
-                                            "stroke": "#000"
-                                        },
-                                        ".port-label": {
-                                            "fill": "#000"
-                                        }
-                                    },
-                                    "label": {
-                                        "position": {
-                                            "args": {
-                                                "y": 10
-                                            },
-                                            "name": "right"
-                                        }
-                                    },
-                                    "position": {
-                                        "name": "right"
-                                    }
-                                }
-                            }
-                        },
-                        "position": {
-                            "x": 1100,
-                            "y": -200
-                        },
-                        "previous_function": "",
-                        "previous_name": "format_16",
-                        "show_number": true,
-                        "size": {
-                            "height": 100,
-                            "width": 180
-                        },
-                        "state": "format",
-                        "status": "",
-                        "template": "I got approval from: {0} and restart the service / entity:  {1}",
-                        "title": "format",
-                        "type": "coa.Format",
-                        "warn": false,
-                        "z": 445
                     },
                     {
                         "active": false,
@@ -13842,45 +12959,6 @@
                         "z": 447
                     },
                     {
-                        "attrs": {
-                            ".connection": {
-                                "stroke": "#818D99",
-                                "stroke-width": 2
-                            },
-                            ".marker-target": {
-                                "d": "M 10 0 L 0 5 L 10 10 z",
-                                "fill": "#818D99",
-                                "stroke": "#818D99"
-                            }
-                        },
-                        "connector": {
-                            "args": {
-                                "radius": 5
-                            },
-                            "name": "rounded"
-                        },
-                        "endDirections": [
-                            "left"
-                        ],
-                        "id": "d29a8b09-5971-4664-b112-77e8cc99a0be",
-                        "router": {
-                            "name": "metro"
-                        },
-                        "source": {
-                            "id": "b6d2d1bb-f6aa-4be9-8734-53f39211add3",
-                            "selector": "> g:nth-child(1) > g:nth-child(2) > g:nth-child(1) > circle:nth-child(1)"
-                        },
-                        "startDirections": [
-                            "right"
-                        ],
-                        "target": {
-                            "id": "8e7302ea-69f7-4977-94a1-413e6641832d",
-                            "selector": ".port-body[type=\"input\"]"
-                        },
-                        "type": "link",
-                        "z": 448
-                    },
-                    {
                         "active": false,
                         "angle": 0,
                         "attrs": {
@@ -13935,16 +13013,19 @@
                             "g.error": {
                                 "opacity": 0
                             },
+                            "g.error image": {
+                                "xlink:href": "/inc/coa/img/block_icon_warn.svg"
+                            },
                             "g.notes": {
                                 "display": "block"
                             }
                         },
-                        "block_code": "def playbook_conf2020_add_Maintenance_Windows_1_1(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):\n    phantom.debug('playbook_conf2020_add_Maintenance_Windows_1_1() called')\n    \n    # call playbook \"conf2020/add Maintenance Windows\", returns the playbook_run_id\n    playbook_run_id = phantom.playbook(playbook=\"conf2020/add Maintenance Windows\", container=container, name=\"playbook_conf2020_add_Maintenance_Windows_1_1\", callback=restart_Service)\n\n    return",
+                        "block_code": "def playbook_conf2020_add_Maintenance_Windows_1_1(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):\n    phantom.debug('playbook_conf2020_add_Maintenance_Windows_1_1() called')\n    \n    # call playbook \"conf2020/add Maintenance Windows\", returns the playbook_run_id\n    playbook_run_id = phantom.playbook(playbook=\"conf2020/add Maintenance Windows\", container=container, name=\"playbook_conf2020_add_Maintenance_Windows_1_1\", callback=format_17)\n\n    return",
                         "callback_code": "",
                         "callback_start": 1,
                         "callsback": true,
                         "connected_to_start": true,
-                        "connection_name": "add work note 2",
+                        "connection_name": "Request approval restart service",
                         "connection_type": "action",
                         "custom_callback": "",
                         "custom_code": "",
@@ -14026,7 +13107,7 @@
                             }
                         },
                         "position": {
-                            "x": 1600,
+                            "x": 580,
                             "y": -200
                         },
                         "previous_function": "",
@@ -14043,45 +13124,6 @@
                         "type": "coa.CallPlaybook",
                         "warn": false,
                         "z": 449
-                    },
-                    {
-                        "attrs": {
-                            ".connection": {
-                                "stroke": "#818D99",
-                                "stroke-width": 2
-                            },
-                            ".marker-target": {
-                                "d": "M 10 0 L 0 5 L 10 10 z",
-                                "fill": "#818D99",
-                                "stroke": "#818D99"
-                            }
-                        },
-                        "connector": {
-                            "args": {
-                                "radius": 5
-                            },
-                            "name": "rounded"
-                        },
-                        "endDirections": [
-                            "left"
-                        ],
-                        "id": "22ce2bcd-6dfb-417b-92a5-49edf04ba989",
-                        "router": {
-                            "name": "metro"
-                        },
-                        "source": {
-                            "id": "8e7302ea-69f7-4977-94a1-413e6641832d",
-                            "selector": "> g:nth-child(1) > g:nth-child(2) > g:nth-child(1) > circle:nth-child(1)"
-                        },
-                        "startDirections": [
-                            "right"
-                        ],
-                        "target": {
-                            "id": "3ba6f8fc-218f-4ebb-a10f-3e5c99579565",
-                            "selector": "> g:nth-child(1) > g:nth-child(1) > g:nth-child(1) > circle:nth-child(1)"
-                        },
-                        "type": "link",
-                        "z": 450
                     },
                     {
                         "attrs": {
@@ -14934,6 +13976,973 @@
                         },
                         "type": "link",
                         "z": 458
+                    },
+                    {
+                        "attrs": {
+                            ".connection": {
+                                "stroke": "#818D99",
+                                "stroke-width": 2
+                            },
+                            ".marker-target": {
+                                "d": "M 10 0 L 0 5 L 10 10 z",
+                                "fill": "#818D99",
+                                "stroke": "#818D99"
+                            }
+                        },
+                        "connector": {
+                            "args": {
+                                "radius": 5
+                            },
+                            "name": "rounded"
+                        },
+                        "endDirections": [
+                            "left"
+                        ],
+                        "id": "fb1c3d66-34f7-4a00-a7a7-64f38bf10f9f",
+                        "router": {
+                            "name": "metro"
+                        },
+                        "source": {
+                            "id": "b6d2d1bb-f6aa-4be9-8734-53f39211add3",
+                            "selector": "> g:nth-child(1) > g:nth-child(2) > g:nth-child(1) > circle:nth-child(1)"
+                        },
+                        "startDirections": [
+                            "right"
+                        ],
+                        "target": {
+                            "id": "3ba6f8fc-218f-4ebb-a10f-3e5c99579565",
+                            "selector": "> g:nth-child(1) > g:nth-child(1) > g:nth-child(1) > circle:nth-child(1)"
+                        },
+                        "type": "link",
+                        "z": 459
+                    },
+                    {
+                        "active": false,
+                        "angle": 0,
+                        "api": "add tag",
+                        "attrs": {
+                            ".api": {
+                                "text": "add tag"
+                            },
+                            ".background": {
+                                "fill": "#FFFFFF",
+                                "stroke": "#818D99"
+                            },
+                            ".color-band": {
+                                "fill": "#171D21"
+                            },
+                            ".inPorts>.port-in": {
+                                "ref": ".background",
+                                "ref-x": 0.5
+                            },
+                            ".inPorts>.port-in>.port-body": {
+                                "port": {
+                                    "id": "in",
+                                    "type": "in"
+                                }
+                            },
+                            ".message": {
+                                "opacity": 0,
+                                "ref-x": 5,
+                                "ref-y": 105,
+                                "text": "Configuring now"
+                            },
+                            ".outPorts>.port-out": {
+                                "ref": ".background",
+                                "ref-x": 0.5
+                            },
+                            ".outPorts>.port-out>.port-body": {
+                                "port": {
+                                    "id": "out",
+                                    "type": "out"
+                                }
+                            },
+                            ".title": {
+                                "text": "API"
+                            },
+                            "g.code image": {
+                                "opacity": 1
+                            },
+                            "g.delete": {
+                                "display": "none"
+                            },
+                            "g.error": {
+                                "opacity": 0
+                            },
+                            "g.error image": {
+                                "xlink:href": "/inc/coa/img/block_icon_warn.svg"
+                            },
+                            "g.notes": {
+                                "display": "block"
+                            },
+                            "g.notes image": {
+                                "opacity": 1
+                            }
+                        },
+                        "block_code": "def add_tag_3(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):\n    phantom.debug('add_tag_3() called')\n\n    phantom.add_tags(container=container, tags=\"service_restart_in_progress\")\n    decision_5(container=container)\n\n    return",
+                        "callback_code": "",
+                        "callback_start": 1,
+                        "callsback": false,
+                        "color": "",
+                        "configured": [
+                            {
+                                "addTagTag": "service_restart_in_progress",
+                                "key": "add-tag"
+                            }
+                        ],
+                        "connected_to_start": true,
+                        "connection_name": "restart Service",
+                        "connection_type": "action",
+                        "custom_callback": "",
+                        "custom_code": "",
+                        "custom_join": "",
+                        "custom_name": "",
+                        "description": "",
+                        "has_custom": false,
+                        "has_custom_block": false,
+                        "has_custom_callback": false,
+                        "has_custom_join": false,
+                        "id": "a3945b9c-47b8-4f12-8a44-b3e1dae23d53",
+                        "inPorts": [
+                            "in"
+                        ],
+                        "join_code": "",
+                        "join_optional": [],
+                        "join_start": 1,
+                        "line_end": 639,
+                        "line_start": 631,
+                        "message": "Configuring now",
+                        "name": "add tag",
+                        "notes": "",
+                        "number": 3,
+                        "order": 29,
+                        "outPorts": [
+                            "out"
+                        ],
+                        "ports": {
+                            "groups": {
+                                "in": {
+                                    "attrs": {
+                                        ".port-body": {
+                                            "fill": "#fff",
+                                            "magnet": true,
+                                            "r": 10,
+                                            "stroke": "#000"
+                                        },
+                                        ".port-label": {
+                                            "fill": "#000"
+                                        }
+                                    },
+                                    "label": {
+                                        "position": {
+                                            "args": {
+                                                "y": 10
+                                            },
+                                            "name": "left"
+                                        }
+                                    },
+                                    "position": {
+                                        "name": "left"
+                                    }
+                                },
+                                "out": {
+                                    "attrs": {
+                                        ".port-body": {
+                                            "fill": "#fff",
+                                            "magnet": true,
+                                            "r": 10,
+                                            "stroke": "#000"
+                                        },
+                                        ".port-label": {
+                                            "fill": "#000"
+                                        }
+                                    },
+                                    "label": {
+                                        "position": {
+                                            "args": {
+                                                "y": 10
+                                            },
+                                            "name": "right"
+                                        }
+                                    },
+                                    "position": {
+                                        "name": "right"
+                                    }
+                                }
+                            }
+                        },
+                        "position": {
+                            "x": 840,
+                            "y": 100
+                        },
+                        "previous_function": "",
+                        "previous_name": "add_tag_3",
+                        "show_number": false,
+                        "size": {
+                            "height": 100,
+                            "width": 180
+                        },
+                        "state": "api",
+                        "status": "",
+                        "title": "API",
+                        "type": "coa.API",
+                        "warn": false,
+                        "z": 460
+                    },
+                    {
+                        "attrs": {
+                            ".connection": {
+                                "stroke": "#818D99",
+                                "stroke-width": 2
+                            },
+                            ".marker-target": {
+                                "d": "M 10 0 L 0 5 L 10 10 z",
+                                "fill": "#818D99",
+                                "stroke": "#818D99"
+                            }
+                        },
+                        "connector": {
+                            "args": {
+                                "radius": 5
+                            },
+                            "name": "rounded"
+                        },
+                        "endDirections": [
+                            "left"
+                        ],
+                        "id": "1eb5e668-1ba2-4612-99d9-452ac9699571",
+                        "router": {
+                            "name": "metro"
+                        },
+                        "source": {
+                            "id": "8e7302ea-69f7-4977-94a1-413e6641832d",
+                            "selector": "> g:nth-child(1) > g:nth-child(2) > g:nth-child(1) > circle:nth-child(1)"
+                        },
+                        "startDirections": [
+                            "right"
+                        ],
+                        "target": {
+                            "id": "79f57f25-9da1-492c-af57-85546a97065e",
+                            "selector": "> g:nth-child(1) > g:nth-child(1) > g:nth-child(1) > circle:nth-child(1)"
+                        },
+                        "type": "link",
+                        "z": 462
+                    },
+                    {
+                        "action": "get data",
+                        "action_type": "generic",
+                        "active": false,
+                        "active_keys": {},
+                        "active_values": {
+                            "headers": "",
+                            "location": "format_17:formatted_data",
+                            "verify_certificate": "False"
+                        },
+                        "angle": 0,
+                        "app": "HTTP",
+                        "appid": "290b7499-0374-4930-9cdc-5e9b05d65827",
+                        "approver": "",
+                        "assets": [
+                            {
+                                "action": "get data",
+                                "actions": [
+                                    "post data",
+                                    "get data",
+                                    "get options",
+                                    "get headers",
+                                    "delete data",
+                                    "patch data",
+                                    "put data",
+                                    "test connectivity"
+                                ],
+                                "active": true,
+                                "app_name": "HTTP",
+                                "app_version": "2.1.15",
+                                "appid": "290b7499-0374-4930-9cdc-5e9b05d65827",
+                                "asset_name": "http",
+                                "config_type": "asset",
+                                "count": 0,
+                                "fields": {
+                                    "headers": "",
+                                    "location": "format_17:formatted_data",
+                                    "verify_certificate": "False"
+                                },
+                                "has_app": true,
+                                "id": 17,
+                                "loaded": false,
+                                "missing": false,
+                                "name": "http",
+                                "output": [
+                                    {
+                                        "data_path": "action_result.status",
+                                        "data_type": "string",
+                                        "example_values": [
+                                            "failed"
+                                        ]
+                                    },
+                                    {
+                                        "data_path": "action_result.parameter.headers",
+                                        "data_type": "string"
+                                    },
+                                    {
+                                        "data_path": "action_result.parameter.location",
+                                        "data_type": "string",
+                                        "example_values": [
+                                            "/rest/cont"
+                                        ]
+                                    },
+                                    {
+                                        "data_path": "action_result.parameter.verify_certificate",
+                                        "data_type": "boolean",
+                                        "example_values": [
+                                            "false"
+                                        ]
+                                    },
+                                    {
+                                        "contains": [
+                                            "url"
+                                        ],
+                                        "data_path": "action_result.data.*.location",
+                                        "data_type": "string",
+                                        "example_values": [
+                                            "http://192.168.1.26/rest/cont"
+                                        ]
+                                    },
+                                    {
+                                        "data_path": "action_result.data.*.method",
+                                        "data_type": "string",
+                                        "example_values": [
+                                            "GET"
+                                        ]
+                                    },
+                                    {
+                                        "data_path": "action_result.data.*.parsed_response_body",
+                                        "data_type": "string",
+                                        "example_values": [
+                                            "{\"failed\": true, \"message\": \"Requested item not found\"}"
+                                        ]
+                                    },
+                                    {
+                                        "data_path": "action_result.data.*.response_body",
+                                        "data_type": "string",
+                                        "example_values": [
+                                            "{\"failed\": true, \"message\": \"Requested item not found\"}"
+                                        ]
+                                    },
+                                    {
+                                        "data_path": "action_result.data.*.response_headers",
+                                        "data_type": "string"
+                                    },
+                                    {
+                                        "data_path": "action_result.summary.reason",
+                                        "data_type": "string",
+                                        "example_values": [
+                                            "Not Found"
+                                        ]
+                                    },
+                                    {
+                                        "data_path": "action_result.summary.status_code",
+                                        "data_type": "numeric",
+                                        "example_values": [
+                                            404
+                                        ]
+                                    },
+                                    {
+                                        "data_path": "action_result.message",
+                                        "data_type": "string",
+                                        "example_values": [
+                                            "Can't process response from server. Status Code: 404 Data from server: {\"failed\": true, \"message\": \"Requested item not found\"}"
+                                        ]
+                                    },
+                                    {
+                                        "data_path": "summary.total_objects",
+                                        "data_type": "numeric",
+                                        "example_values": [
+                                            1
+                                        ]
+                                    },
+                                    {
+                                        "data_path": "summary.total_objects_successful",
+                                        "data_type": "numeric",
+                                        "example_values": [
+                                            0
+                                        ]
+                                    }
+                                ],
+                                "parameters": {
+                                    "headers": {
+                                        "data_type": "string",
+                                        "default": null,
+                                        "description": "Additional headers (JSON object with headers)",
+                                        "key": "headers",
+                                        "order": 2,
+                                        "required": false
+                                    },
+                                    "location": {
+                                        "data_type": "string",
+                                        "default": null,
+                                        "description": "Location (e.g. path/to/endpoint?query=string)",
+                                        "key": "location",
+                                        "order": 0,
+                                        "required": true
+                                    },
+                                    "verify_certificate": {
+                                        "data_type": "boolean",
+                                        "default": null,
+                                        "description": "Verify certificates (if using HTTPS)",
+                                        "key": "verify_certificate",
+                                        "order": 1,
+                                        "required": true
+                                    }
+                                },
+                                "product_name": "HTTP",
+                                "product_vendor": "Generic",
+                                "targets": "17",
+                                "type": "information"
+                            }
+                        ],
+                        "attrs": {
+                            ".action": {
+                                "text": "get data 5"
+                            },
+                            ".background": {
+                                "fill": "#FFFFFF",
+                                "stroke": "#818D99"
+                            },
+                            ".color-band": {
+                                "fill": "#171D21"
+                            },
+                            ".inPorts>.port-in": {
+                                "ref": ".background",
+                                "ref-x": 0.5
+                            },
+                            ".inPorts>.port-in>.port-body": {
+                                "port": {
+                                    "id": "in",
+                                    "type": "in"
+                                }
+                            },
+                            ".message": {
+                                "opacity": 0,
+                                "ref-x": 5,
+                                "ref-y": 105,
+                                "text": "Configuring now"
+                            },
+                            ".outPorts>.port-out": {
+                                "ref": ".background",
+                                "ref-x": 0.5
+                            },
+                            ".outPorts>.port-out>.port-body": {
+                                "port": {
+                                    "id": "out",
+                                    "type": "out"
+                                }
+                            },
+                            ".title": {
+                                "text": "Generic"
+                            },
+                            "g.delete": {
+                                "display": "none"
+                            },
+                            "g.error": {
+                                "opacity": 0
+                            },
+                            "g.error image": {
+                                "xlink:href": "/inc/coa/img/block_icon_warn.svg"
+                            },
+                            "g.icon image": {
+                                "xlink:href": "/inc/coa/img/block_icon_generic.svg"
+                            },
+                            "g.notes": {
+                                "display": "block"
+                            }
+                        },
+                        "block_code": "def get_data_5(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):\n    phantom.debug('get_data_5() called')\n        \n    #phantom.debug('Action: {0} {1}'.format(action['name'], ('SUCCEEDED' if success else 'FAILED')))\n    \n    # collect data for 'get_data_5' call\n    formatted_data_1 = phantom.get_format_data(name='format_17')\n\n    parameters = []\n    \n    # build parameters list for 'get_data_5' call\n    parameters.append({\n        'location': formatted_data_1,\n        'verify_certificate': False,\n        'headers': \"\",\n    })\n\n    phantom.act(action=\"get data\", parameters=parameters, assets=['http'], callback=format_16, name=\"get_data_5\")\n\n    return",
+                        "callback_code": "",
+                        "callback_start": 1,
+                        "callsback": true,
+                        "color": "",
+                        "connected_to_start": true,
+                        "connection_name": "add Maintenance Windows 1",
+                        "connection_type": "action",
+                        "custom_callback": "",
+                        "custom_code": "",
+                        "custom_join": "",
+                        "custom_name": "",
+                        "delay": 0,
+                        "description": "",
+                        "has_custom": false,
+                        "has_custom_block": false,
+                        "has_custom_callback": false,
+                        "has_custom_join": false,
+                        "id": "d113a1fc-adde-4579-bf04-e3063127ea21",
+                        "inPorts": [
+                            "in"
+                        ],
+                        "join_code": "",
+                        "join_optional": [],
+                        "join_start": 1,
+                        "line_end": 991,
+                        "line_start": 970,
+                        "message": "Configuring now",
+                        "name": "get data",
+                        "notes": "",
+                        "number": 5,
+                        "order": 47,
+                        "outPorts": [
+                            "out"
+                        ],
+                        "ports": {
+                            "groups": {
+                                "in": {
+                                    "attrs": {
+                                        ".port-body": {
+                                            "fill": "#fff",
+                                            "magnet": true,
+                                            "r": 10,
+                                            "stroke": "#000"
+                                        },
+                                        ".port-label": {
+                                            "fill": "#000"
+                                        }
+                                    },
+                                    "label": {
+                                        "position": {
+                                            "args": {
+                                                "y": 10
+                                            },
+                                            "name": "left"
+                                        }
+                                    },
+                                    "position": {
+                                        "name": "left"
+                                    }
+                                },
+                                "out": {
+                                    "attrs": {
+                                        ".port-body": {
+                                            "fill": "#fff",
+                                            "magnet": true,
+                                            "r": 10,
+                                            "stroke": "#000"
+                                        },
+                                        ".port-label": {
+                                            "fill": "#000"
+                                        }
+                                    },
+                                    "label": {
+                                        "position": {
+                                            "args": {
+                                                "y": 10
+                                            },
+                                            "name": "right"
+                                        }
+                                    },
+                                    "position": {
+                                        "name": "right"
+                                    }
+                                }
+                            }
+                        },
+                        "position": {
+                            "x": 840,
+                            "y": -60
+                        },
+                        "previous_function": "",
+                        "previous_name": "get_data_5",
+                        "required_params": {
+                            "location": true,
+                            "verify_certificate": true
+                        },
+                        "reviewer": "",
+                        "show_number": true,
+                        "size": {
+                            "height": 100,
+                            "width": 180
+                        },
+                        "state": "app_action_assets",
+                        "status": "",
+                        "title": "Generic",
+                        "type": "coa.Action",
+                        "warn": "",
+                        "z": 464
+                    },
+                    {
+                        "attrs": {
+                            ".connection": {
+                                "stroke": "#818D99",
+                                "stroke-width": 2
+                            },
+                            ".marker-target": {
+                                "d": "M 10 0 L 0 5 L 10 10 z",
+                                "fill": "#818D99",
+                                "stroke": "#818D99"
+                            }
+                        },
+                        "connector": {
+                            "args": {
+                                "radius": 5
+                            },
+                            "name": "rounded"
+                        },
+                        "endDirections": [
+                            "left"
+                        ],
+                        "id": "4b425382-4a61-4404-beae-468757cd3e25",
+                        "router": {
+                            "name": "metro"
+                        },
+                        "source": {
+                            "id": "f42ceafb-454e-4c15-ab3d-899f0d86342e",
+                            "port": "out-1",
+                            "selector": "> g:nth-child(1) > g:nth-child(2) > g:nth-child(1) > circle:nth-child(1)"
+                        },
+                        "startDirections": [
+                            "right"
+                        ],
+                        "target": {
+                            "id": "8e7302ea-69f7-4977-94a1-413e6641832d",
+                            "selector": "> g:nth-child(1) > g:nth-child(1) > g:nth-child(1) > circle:nth-child(1)"
+                        },
+                        "type": "link",
+                        "z": 465
+                    },
+                    {
+                        "active": false,
+                        "angle": 0,
+                        "attrs": {
+                            ".background": {
+                                "fill": "#FFFFFF",
+                                "stroke": "#818D99"
+                            },
+                            ".color-band": {
+                                "fill": "#171D21"
+                            },
+                            ".format": {
+                                "text": "format 17"
+                            },
+                            ".inPorts>.port-in": {
+                                "ref": ".background",
+                                "ref-x": 0.5
+                            },
+                            ".inPorts>.port-in>.port-body": {
+                                "port": {
+                                    "id": "in",
+                                    "type": "in"
+                                }
+                            },
+                            ".message": {
+                                "opacity": 0,
+                                "text": "Configuring now"
+                            },
+                            ".outPorts>.port-out-1": {
+                                "ref": ".background",
+                                "ref-x": 0.5
+                            },
+                            ".outPorts>.port-out-1>.port-body": {
+                                "port": {
+                                    "id": "out-1",
+                                    "type": "out"
+                                }
+                            },
+                            ".title": {
+                                "text": "format"
+                            },
+                            "g.delete": {
+                                "display": "none"
+                            },
+                            "g.error": {
+                                "opacity": 0
+                            },
+                            "g.error image": {
+                                "xlink:href": "/inc/coa/img/block_icon_warn.svg"
+                            },
+                            "g.notes": {
+                                "display": "block"
+                            }
+                        },
+                        "block_code": "def format_17(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):\n    phantom.debug('format_17() called')\n    \n    template = \"\"\"/rest/container_pin?_filter_container={0}&_filter_message=\\\"snow inc\\\"\"\"\"\n\n    # parameter list for template variable replacement\n    parameters = [\n        \"container:id\",\n    ]\n\n    phantom.format(container=container, template=template, parameters=parameters, name=\"format_17\")\n\n    get_data_5(container=container)\n\n    return",
+                        "callback_code": "",
+                        "callback_start": 1,
+                        "callsback": false,
+                        "connected_to_start": true,
+                        "connection_name": "add Maintenance Windows 1",
+                        "connection_type": "action",
+                        "custom_callback": "",
+                        "custom_code": "",
+                        "custom_join": "",
+                        "custom_name": "",
+                        "description": "",
+                        "format": "format",
+                        "has_custom": false,
+                        "has_custom_block": false,
+                        "has_custom_callback": false,
+                        "has_custom_join": false,
+                        "id": "79f57f25-9da1-492c-af57-85546a97065e",
+                        "inPorts": [
+                            "in"
+                        ],
+                        "join_code": "",
+                        "join_optional": [],
+                        "join_start": 1,
+                        "line_end": 970,
+                        "line_start": 954,
+                        "message": "Configuring now",
+                        "name": "format",
+                        "notes": "",
+                        "number": 17,
+                        "order": 46,
+                        "outPorts": [
+                            "out-1"
+                        ],
+                        "parameters": [
+                            {
+                                "position": 0,
+                                "type": "",
+                                "value": "container:id"
+                            }
+                        ],
+                        "ports": {
+                            "groups": {
+                                "in": {
+                                    "attrs": {
+                                        ".port-body": {
+                                            "fill": "#fff",
+                                            "magnet": true,
+                                            "r": 10,
+                                            "stroke": "#000"
+                                        },
+                                        ".port-label": {
+                                            "fill": "#000"
+                                        }
+                                    },
+                                    "label": {
+                                        "position": {
+                                            "args": {
+                                                "y": 10
+                                            },
+                                            "name": "left"
+                                        }
+                                    },
+                                    "position": {
+                                        "name": "left"
+                                    }
+                                },
+                                "out": {
+                                    "attrs": {
+                                        ".port-body": {
+                                            "fill": "#fff",
+                                            "magnet": true,
+                                            "r": 10,
+                                            "stroke": "#000"
+                                        },
+                                        ".port-label": {
+                                            "fill": "#000"
+                                        }
+                                    },
+                                    "label": {
+                                        "position": {
+                                            "args": {
+                                                "y": 10
+                                            },
+                                            "name": "right"
+                                        }
+                                    },
+                                    "position": {
+                                        "name": "right"
+                                    }
+                                }
+                            }
+                        },
+                        "position": {
+                            "x": 580,
+                            "y": -60
+                        },
+                        "previous_function": "",
+                        "previous_name": "format_17",
+                        "show_number": true,
+                        "size": {
+                            "height": 100,
+                            "width": 180
+                        },
+                        "state": "format",
+                        "status": "",
+                        "template": "/rest/container_pin?_filter_container={0}&_filter_message=\"snow inc\"",
+                        "title": "format",
+                        "type": "coa.Format",
+                        "warn": false,
+                        "z": 466
+                    },
+                    {
+                        "active": false,
+                        "angle": 0,
+                        "attrs": {
+                            ".background": {
+                                "fill": "#FFFFFF",
+                                "stroke": "#818D99"
+                            },
+                            ".color-band": {
+                                "fill": "#171D21"
+                            },
+                            ".format": {
+                                "text": "format 16"
+                            },
+                            ".inPorts>.port-in": {
+                                "ref": ".background",
+                                "ref-x": 0.5
+                            },
+                            ".inPorts>.port-in>.port-body": {
+                                "port": {
+                                    "id": "in",
+                                    "type": "in"
+                                }
+                            },
+                            ".message": {
+                                "opacity": 0,
+                                "text": "Configuring now"
+                            },
+                            ".outPorts>.port-out-1": {
+                                "ref": ".background",
+                                "ref-x": 0.5
+                            },
+                            ".outPorts>.port-out-1>.port-body": {
+                                "port": {
+                                    "id": "out-1",
+                                    "type": "out"
+                                }
+                            },
+                            ".title": {
+                                "text": "format"
+                            },
+                            "g.delete": {
+                                "display": "none"
+                            },
+                            "g.error": {
+                                "opacity": 0
+                            },
+                            "g.error image": {
+                                "xlink:href": "/inc/coa/img/block_icon_warn.svg"
+                            },
+                            "g.notes": {
+                                "display": "block"
+                            }
+                        },
+                        "block_code": "def format_16(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):\n    phantom.debug('format_16() called')\n    \n    template = \"\"\"I got approval from: {0} and restart the service / entity:  {1}.\"\"\"\n\n    # parameter list for template variable replacement\n    parameters = [\n        \"Request_approval_restart_service:action_result.parameter.message\",\n        \"Format_Server_Address:formatted_data\",\n    ]\n\n    phantom.format(container=container, template=template, parameters=parameters, name=\"format_16\")\n\n    add_work_note_2(container=container)\n\n    return",
+                        "callback_code": "",
+                        "callback_start": 1,
+                        "callsback": false,
+                        "connected_to_start": true,
+                        "connection_name": "get data 5",
+                        "connection_type": "action",
+                        "custom_callback": "",
+                        "custom_code": "",
+                        "custom_join": "",
+                        "custom_name": "",
+                        "description": "",
+                        "format": "format",
+                        "has_custom": false,
+                        "has_custom_block": false,
+                        "has_custom_callback": false,
+                        "has_custom_join": false,
+                        "id": "ea551dbb-02bb-470e-9e26-b0496abe55f9",
+                        "inPorts": [
+                            "in"
+                        ],
+                        "join_code": "",
+                        "join_optional": [],
+                        "join_start": 1,
+                        "line_end": 927,
+                        "line_start": 910,
+                        "message": "Configuring now",
+                        "name": "format",
+                        "notes": "",
+                        "number": 16,
+                        "order": 44,
+                        "outPorts": [
+                            "out-1"
+                        ],
+                        "parameters": [
+                            {
+                                "position": 0,
+                                "type": "",
+                                "value": "Request_approval_restart_service:action_result.parameter.message"
+                            },
+                            {
+                                "position": 1,
+                                "type": "",
+                                "value": "Format_Server_Address:formatted_data"
+                            }
+                        ],
+                        "ports": {
+                            "groups": {
+                                "in": {
+                                    "attrs": {
+                                        ".port-body": {
+                                            "fill": "#fff",
+                                            "magnet": true,
+                                            "r": 10,
+                                            "stroke": "#000"
+                                        },
+                                        ".port-label": {
+                                            "fill": "#000"
+                                        }
+                                    },
+                                    "label": {
+                                        "position": {
+                                            "args": {
+                                                "y": 10
+                                            },
+                                            "name": "left"
+                                        }
+                                    },
+                                    "position": {
+                                        "name": "left"
+                                    }
+                                },
+                                "out": {
+                                    "attrs": {
+                                        ".port-body": {
+                                            "fill": "#fff",
+                                            "magnet": true,
+                                            "r": 10,
+                                            "stroke": "#000"
+                                        },
+                                        ".port-label": {
+                                            "fill": "#000"
+                                        }
+                                    },
+                                    "label": {
+                                        "position": {
+                                            "args": {
+                                                "y": 10
+                                            },
+                                            "name": "right"
+                                        }
+                                    },
+                                    "position": {
+                                        "name": "right"
+                                    }
+                                }
+                            }
+                        },
+                        "position": {
+                            "x": 1100,
+                            "y": -60
+                        },
+                        "previous_function": "",
+                        "previous_name": "format_16",
+                        "show_number": true,
+                        "size": {
+                            "height": 100,
+                            "width": 180
+                        },
+                        "state": "format",
+                        "status": "",
+                        "template": "I got approval from: {0} and restart the service / entity:  {1}.",
+                        "title": "format",
+                        "type": "coa.Format",
+                        "warn": false,
+                        "z": 467
                     }
                 ]
             },
@@ -14943,7 +14952,7 @@
         "schema": 4,
         "version": "4.9.34514"
     },
-    "create_time": "2020-08-21T07:32:56.478864+00:00",
+    "create_time": "2020-08-21T07:37:26.989834+00:00",
     "draft_mode": false,
     "labels": [
         "itsi"
