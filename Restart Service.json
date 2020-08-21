@@ -7,7 +7,7 @@
             "clean": true,
             "code_block": "",
             "description": "",
-            "hash": "b6a91eabd2c031ef4fef72d1e31a667ba0173247",
+            "hash": "459fe0aa9c2624944fe8628e009267563699aca7",
             "joint": {
                 "cells": [
                     {
@@ -217,12 +217,12 @@
                         "join_code": "# read-only block view not available",
                         "join_optional": [],
                         "join_start": 1,
-                        "line_end": 1003,
-                        "line_start": 990,
+                        "line_end": 1011,
+                        "line_start": 998,
                         "name": "",
                         "notes": "",
                         "number": 0,
-                        "order": 48,
+                        "order": 49,
                         "outPorts": [],
                         "ports": {
                             "groups": {
@@ -7917,7 +7917,7 @@
                         "callsback": true,
                         "color": "",
                         "connected_to_start": true,
-                        "connection_name": "add work note 2",
+                        "connection_name": "add Maintenance Windows",
                         "connection_type": "action",
                         "custom_callback": "",
                         "custom_code": "",
@@ -11131,45 +11131,6 @@
                         "z": 431
                     },
                     {
-                        "attrs": {
-                            ".connection": {
-                                "stroke": "#818D99",
-                                "stroke-width": 2
-                            },
-                            ".marker-target": {
-                                "d": "M 10 0 L 0 5 L 10 10 z",
-                                "fill": "#818D99",
-                                "stroke": "#818D99"
-                            }
-                        },
-                        "connector": {
-                            "args": {
-                                "radius": 5
-                            },
-                            "name": "rounded"
-                        },
-                        "endDirections": [
-                            "left"
-                        ],
-                        "id": "f3ce1604-a839-455b-9a97-feb371a0c046",
-                        "router": {
-                            "name": "metro"
-                        },
-                        "source": {
-                            "id": "b6d2d1bb-f6aa-4be9-8734-53f39211add3",
-                            "selector": "> g:nth-child(1) > g:nth-child(2) > g:nth-child(1) > circle:nth-child(1)"
-                        },
-                        "startDirections": [
-                            "right"
-                        ],
-                        "target": {
-                            "id": "3ba6f8fc-218f-4ebb-a10f-3e5c99579565",
-                            "selector": "> g:nth-child(1) > g:nth-child(1) > g:nth-child(1) > circle:nth-child(1)"
-                        },
-                        "type": "link",
-                        "z": 432
-                    },
-                    {
                         "action": "add work note",
                         "action_type": "generic",
                         "active": false,
@@ -11936,7 +11897,7 @@
                                 "display": "block"
                             }
                         },
-                        "block_code": "def add_work_note_2(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):\n    phantom.debug('add_work_note_2() called')\n        \n    #phantom.debug('Action: {0} {1}'.format(action['name'], ('SUCCEEDED' if success else 'FAILED')))\n    \n    # collect data for 'add_work_note_2' call\n    results_data_1 = phantom.collect2(container=container, datapath=['get_data_5:action_result.data.*.response_body.data.*.data', 'get_data_5:action_result.parameter.context.artifact_id'], action_results=results)\n    formatted_data_1 = phantom.get_format_data(name='format_16')\n\n    parameters = []\n    \n    # build parameters list for 'add_work_note_2' call\n    for results_item_1 in results_data_1:\n        if results_item_1[0]:\n            parameters.append({\n                'table_name': \"incident\",\n                'id': results_item_1[0],\n                'work_note': formatted_data_1,\n                'is_sys_id': \"\",\n                # context (artifact id) is added to associate results with the artifact\n                'context': {'artifact_id': results_item_1[1]},\n            })\n\n    phantom.act(action=\"add work note\", parameters=parameters, assets=['servicenow'], callback=restart_Service, name=\"add_work_note_2\")\n\n    return",
+                        "block_code": "def add_work_note_2(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):\n    phantom.debug('add_work_note_2() called')\n        \n    #phantom.debug('Action: {0} {1}'.format(action['name'], ('SUCCEEDED' if success else 'FAILED')))\n    \n    # collect data for 'add_work_note_2' call\n    results_data_1 = phantom.collect2(container=container, datapath=['get_data_5:action_result.data.*.response_body.data.*.data', 'get_data_5:action_result.parameter.context.artifact_id'], action_results=results)\n    formatted_data_1 = phantom.get_format_data(name='format_16')\n\n    parameters = []\n    \n    # build parameters list for 'add_work_note_2' call\n    for results_item_1 in results_data_1:\n        if results_item_1[0]:\n            parameters.append({\n                'table_name': \"incident\",\n                'id': results_item_1[0],\n                'work_note': formatted_data_1,\n                'is_sys_id': \"\",\n                # context (artifact id) is added to associate results with the artifact\n                'context': {'artifact_id': results_item_1[1]},\n            })\n\n    phantom.act(action=\"add work note\", parameters=parameters, assets=['servicenow'], callback=playbook_conf2020_add_Maintenance_Windows_1, name=\"add_work_note_2\")\n\n    return",
                         "callback_code": "",
                         "callback_start": 1,
                         "callsback": true,
@@ -14325,6 +14286,248 @@
                         "type": "coa.API",
                         "warn": false,
                         "z": 447
+                    },
+                    {
+                        "attrs": {
+                            ".connection": {
+                                "stroke": "#818D99",
+                                "stroke-width": 2
+                            },
+                            ".marker-target": {
+                                "d": "M 10 0 L 0 5 L 10 10 z",
+                                "fill": "#818D99",
+                                "stroke": "#818D99"
+                            }
+                        },
+                        "connector": {
+                            "args": {
+                                "radius": 5
+                            },
+                            "name": "rounded"
+                        },
+                        "endDirections": [
+                            "left"
+                        ],
+                        "id": "d29a8b09-5971-4664-b112-77e8cc99a0be",
+                        "router": {
+                            "name": "metro"
+                        },
+                        "source": {
+                            "id": "b6d2d1bb-f6aa-4be9-8734-53f39211add3",
+                            "selector": "> g:nth-child(1) > g:nth-child(2) > g:nth-child(1) > circle:nth-child(1)"
+                        },
+                        "startDirections": [
+                            "right"
+                        ],
+                        "target": {
+                            "id": "8e7302ea-69f7-4977-94a1-413e6641832d",
+                            "selector": ".port-body[type=\"input\"]"
+                        },
+                        "type": "link",
+                        "z": 448
+                    },
+                    {
+                        "active": false,
+                        "angle": 0,
+                        "attrs": {
+                            ".background": {
+                                "fill": "#FFFFFF",
+                                "stroke": "#818D99"
+                            },
+                            ".color-band": {
+                                "fill": "#171D21"
+                            },
+                            ".inPorts>.port-in": {
+                                "ref": ".background",
+                                "ref-x": 0.5
+                            },
+                            ".inPorts>.port-in>.port-body": {
+                                "port": {
+                                    "id": "in",
+                                    "type": "in"
+                                }
+                            },
+                            ".message": {
+                                "opacity": 0,
+                                "ref-x": 5,
+                                "ref-y": 105,
+                                "text": "Configuring now"
+                            },
+                            ".outPorts>.port-out": {
+                                "ref": ".background",
+                                "ref-x": 0.5
+                            },
+                            ".outPorts>.port-out>.port-body": {
+                                "port": {
+                                    "id": "out",
+                                    "type": "out"
+                                }
+                            },
+                            ".playbook": {
+                                "text": "add Maintenance Windo..."
+                            },
+                            ".scmName": {
+                                "text": "conf2020"
+                            },
+                            ".title": {
+                                "text": "Playbook"
+                            },
+                            "g.branch image": {
+                                "opacity": 1
+                            },
+                            "g.delete": {
+                                "display": "none"
+                            },
+                            "g.error": {
+                                "opacity": 0
+                            },
+                            "g.notes": {
+                                "display": "block"
+                            }
+                        },
+                        "block_code": "def playbook_conf2020_add_Maintenance_Windows_1(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):\n    phantom.debug('playbook_conf2020_add_Maintenance_Windows_1() called')\n    \n    # call playbook \"conf2020/add Maintenance Windows\", returns the playbook_run_id\n    playbook_run_id = phantom.playbook(playbook=\"conf2020/add Maintenance Windows\", container=container, name=\"playbook_conf2020_add_Maintenance_Windows_1\", callback=restart_Service)\n\n    return",
+                        "callback_code": "",
+                        "callback_start": 1,
+                        "callsback": true,
+                        "connected_to_start": true,
+                        "connection_name": "add work note 2",
+                        "connection_type": "action",
+                        "custom_callback": "",
+                        "custom_code": "",
+                        "custom_join": "",
+                        "custom_name": "",
+                        "description": "",
+                        "has_custom": false,
+                        "has_custom_block": false,
+                        "has_custom_callback": false,
+                        "has_custom_join": false,
+                        "id": "8e7302ea-69f7-4977-94a1-413e6641832d",
+                        "inPorts": [
+                            "in"
+                        ],
+                        "join_code": "",
+                        "join_optional": [],
+                        "join_start": 1,
+                        "line_end": 998,
+                        "line_start": 990,
+                        "message": "Configuring now",
+                        "name": "add Maintenance Windows",
+                        "notes": "",
+                        "number": 1,
+                        "order": 48,
+                        "outPorts": [
+                            "out"
+                        ],
+                        "playbook": "conf2020/add Maintenance Windows",
+                        "ports": {
+                            "groups": {
+                                "in": {
+                                    "attrs": {
+                                        ".port-body": {
+                                            "fill": "#fff",
+                                            "magnet": true,
+                                            "r": 10,
+                                            "stroke": "#000"
+                                        },
+                                        ".port-label": {
+                                            "fill": "#000"
+                                        }
+                                    },
+                                    "label": {
+                                        "position": {
+                                            "args": {
+                                                "y": 10
+                                            },
+                                            "name": "left"
+                                        }
+                                    },
+                                    "position": {
+                                        "name": "left"
+                                    }
+                                },
+                                "out": {
+                                    "attrs": {
+                                        ".port-body": {
+                                            "fill": "#fff",
+                                            "magnet": true,
+                                            "r": 10,
+                                            "stroke": "#000"
+                                        },
+                                        ".port-label": {
+                                            "fill": "#000"
+                                        }
+                                    },
+                                    "label": {
+                                        "position": {
+                                            "args": {
+                                                "y": 10
+                                            },
+                                            "name": "right"
+                                        }
+                                    },
+                                    "position": {
+                                        "name": "right"
+                                    }
+                                }
+                            }
+                        },
+                        "position": {
+                            "x": 1600,
+                            "y": -200
+                        },
+                        "previous_function": "",
+                        "previous_name": "playbook_conf2020_add_Maintenance_Windows_1",
+                        "scmName": "conf2020",
+                        "show_number": false,
+                        "size": {
+                            "height": 100,
+                            "width": 180
+                        },
+                        "state": "callplaybook",
+                        "status": "",
+                        "title": "Playbook",
+                        "type": "coa.CallPlaybook",
+                        "warn": false,
+                        "z": 449
+                    },
+                    {
+                        "attrs": {
+                            ".connection": {
+                                "stroke": "#818D99",
+                                "stroke-width": 2
+                            },
+                            ".marker-target": {
+                                "d": "M 10 0 L 0 5 L 10 10 z",
+                                "fill": "#818D99",
+                                "stroke": "#818D99"
+                            }
+                        },
+                        "connector": {
+                            "args": {
+                                "radius": 5
+                            },
+                            "name": "rounded"
+                        },
+                        "endDirections": [
+                            "left"
+                        ],
+                        "id": "22ce2bcd-6dfb-417b-92a5-49edf04ba989",
+                        "router": {
+                            "name": "metro"
+                        },
+                        "source": {
+                            "id": "8e7302ea-69f7-4977-94a1-413e6641832d",
+                            "selector": "> g:nth-child(1) > g:nth-child(2) > g:nth-child(1) > circle:nth-child(1)"
+                        },
+                        "startDirections": [
+                            "right"
+                        ],
+                        "target": {
+                            "id": "3ba6f8fc-218f-4ebb-a10f-3e5c99579565",
+                            "selector": "> g:nth-child(1) > g:nth-child(1) > g:nth-child(1) > circle:nth-child(1)"
+                        },
+                        "type": "link",
+                        "z": 450
                     }
                 ]
             },
@@ -14334,7 +14537,7 @@
         "schema": 4,
         "version": "4.9.34514"
     },
-    "create_time": "2020-08-21T07:26:24.824287+00:00",
+    "create_time": "2020-08-21T07:31:20.520481+00:00",
     "draft_mode": false,
     "labels": [
         "itsi"

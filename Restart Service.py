@@ -946,7 +946,7 @@ def add_work_note_2(action=None, success=None, container=None, results=None, han
                 'context': {'artifact_id': results_item_1[1]},
             })
 
-    phantom.act(action="add work note", parameters=parameters, assets=['servicenow'], callback=restart_Service, name="add_work_note_2")
+    phantom.act(action="add work note", parameters=parameters, assets=['servicenow'], callback=playbook_conf2020_add_Maintenance_Windows_1, name="add_work_note_2")
 
     return
 
@@ -984,6 +984,14 @@ def get_data_5(action=None, success=None, container=None, results=None, handle=N
     })
 
     phantom.act(action="get data", parameters=parameters, assets=['http'], callback=format_16, name="get_data_5")
+
+    return
+
+def playbook_conf2020_add_Maintenance_Windows_1(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):
+    phantom.debug('playbook_conf2020_add_Maintenance_Windows_1() called')
+    
+    # call playbook "conf2020/add Maintenance Windows", returns the playbook_run_id
+    playbook_run_id = phantom.playbook(playbook="conf2020/add Maintenance Windows", container=container, name="playbook_conf2020_add_Maintenance_Windows_1", callback=restart_Service)
 
     return
 
