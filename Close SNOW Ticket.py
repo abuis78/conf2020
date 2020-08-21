@@ -67,6 +67,27 @@ def decision_1(action=None, success=None, container=None, results=None, handle=N
 
     return
 
+def update_episode_1(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):
+    phantom.debug('update_episode_1() called')
+
+    source_data_identifier_value = container.get('source_data_identifier', None)
+
+    # collect data for 'update_episode_1' call
+
+    parameters = []
+    
+    # build parameters list for 'update_episode_1' call
+    parameters.append({
+        'owner': "",
+        'status': "Resolved",
+        'severity': "Low",
+        'itsi_group_id': source_data_identifier_value,
+    })
+
+    phantom.act(action="update episode", parameters=parameters, assets=['splunk itsi'], callback=SNOW_Update_Resolved, name="update_episode_1")
+
+    return
+
 def SNOW_Update_Resolved(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):
     phantom.debug('SNOW_Update_Resolved() called')
     
@@ -217,7 +238,9 @@ def format_4(action=None, success=None, container=None, results=None, handle=Non
 
 def get_data_1(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):
     phantom.debug('get_data_1() called')
-
+        
+    #phantom.debug('Action: {0} {1}'.format(action['name'], ('SUCCEEDED' if success else 'FAILED')))
+    
     # collect data for 'get_data_1' call
     formatted_data_1 = phantom.get_format_data(name='format_4')
 
@@ -354,7 +377,7 @@ def filter_1(action=None, success=None, container=None, results=None, handle=Non
 
     # call connected blocks if filtered artifacts or results
     if matched_artifacts_1 or matched_results_1:
-        SNOW_Update_Resolved(action=action, success=success, container=container, results=results, handle=handle, custom_function=custom_function, filtered_artifacts=matched_artifacts_1, filtered_results=matched_results_1)
+        update_episode_1(action=action, success=success, container=container, results=results, handle=handle, custom_function=custom_function, filtered_artifacts=matched_artifacts_1, filtered_results=matched_results_1)
 
     return
 
