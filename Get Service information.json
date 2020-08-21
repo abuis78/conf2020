@@ -7,7 +7,7 @@
             "clean": true,
             "code_block": "",
             "description": "",
-            "hash": "2b54204c8d0e29f5d4b6ddb849c44abfe6dd93d1",
+            "hash": "31fad11f99ff952a439bce551c57584eea8ca5f0",
             "joint": {
                 "cells": [
                     {
@@ -2721,7 +2721,7 @@
                         "attrs": {
                             ".background": {
                                 "fill": "#FFFFFF",
-                                "stroke": "#E6984E"
+                                "stroke": "#818D99"
                             },
                             ".color-band": {
                                 "fill": "#171D21"
@@ -2763,7 +2763,7 @@
                                 "display": "none"
                             },
                             "g.error": {
-                                "opacity": 1
+                                "opacity": 0
                             },
                             "g.error image": {
                                 "xlink:href": "/inc/coa/img/block_icon_warn.svg"
@@ -2775,7 +2775,7 @@
                                 "opacity": 1
                             }
                         },
-                        "block_code": "def Format_Service_Name(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):\n    phantom.debug('Format_Service_Name() called')\n    \n    template = \"\"\"{0}\"\"\"\n\n    # parameter list for template variable replacement\n    parameters = [\n        \"get_service_2:action_result.data.*.identifying_name\",\n    ]\n\n    phantom.format(container=container, template=template, parameters=parameters, name=\"Format_Service_Name\")\n\n    Build_link_for_check_data_pin(container=container)\n\n    return",
+                        "block_code": "def Format_Service_Name(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):\n    phantom.debug('Format_Service_Name() called')\n    \n    template = \"\"\"{0}\"\"\"\n\n    # parameter list for template variable replacement\n    parameters = [\n        \"get_service_1:action_result.data.*.identifying_name\",\n    ]\n\n    phantom.format(container=container, template=template, parameters=parameters, name=\"Format_Service_Name\")\n\n    Build_link_for_check_data_pin(container=container)\n\n    return",
                         "callback_code": "",
                         "callback_start": 1,
                         "callsback": false,
@@ -2813,7 +2813,7 @@
                             {
                                 "position": 0,
                                 "type": "",
-                                "value": "get_service_2:action_result.data.*.identifying_name"
+                                "value": "get_service_1:action_result.data.*.identifying_name"
                             }
                         ],
                         "ports": {
@@ -2880,7 +2880,7 @@
                             "width": 180
                         },
                         "state": "format",
-                        "status": "warn",
+                        "status": "",
                         "template": "{0}",
                         "title": "format",
                         "type": "coa.Format",
@@ -2895,7 +2895,7 @@
         "schema": 4,
         "version": "4.9.34514"
     },
-    "create_time": "2020-08-21T12:32:02.683136+00:00",
+    "create_time": "2020-08-21T12:32:40.338373+00:00",
     "draft_mode": false,
     "labels": [
         "itsi"

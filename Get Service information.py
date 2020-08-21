@@ -77,7 +77,7 @@ def Format_Service_Name(action=None, success=None, container=None, results=None,
 
     # parameter list for template variable replacement
     parameters = [
-        "get_service_2:action_result.data.*.identifying_name",
+        "get_service_1:action_result.data.*.identifying_name",
     ]
 
     phantom.format(container=container, template=template, parameters=parameters, name="Format_Service_Name")
