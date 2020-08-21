@@ -333,7 +333,30 @@ def update_ticket_1(action=None, success=None, container=None, results=None, han
                 'context': {'artifact_id': results_item_1[1]},
             })
 
-    phantom.act(action="update ticket", parameters=parameters, assets=['servicenow'], name="update_ticket_1")
+    phantom.act(action="update ticket", parameters=parameters, assets=['servicenow'], callback=update_episode_1, name="update_ticket_1")
+
+    return
+
+def update_episode_1(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):
+    phantom.debug('update_episode_1() called')
+        
+    #phantom.debug('Action: {0} {1}'.format(action['name'], ('SUCCEEDED' if success else 'FAILED')))
+    
+    source_data_identifier_value = container.get('source_data_identifier', None)
+
+    # collect data for 'update_episode_1' call
+
+    parameters = []
+    
+    # build parameters list for 'update_episode_1' call
+    parameters.append({
+        'itsi_group_id': source_data_identifier_value,
+        'status': "In Progress",
+        'severity': "Medium",
+        'owner': "",
+    })
+
+    phantom.act(action="update episode", parameters=parameters, assets=['splunk itsi'], name="update_episode_1", parent_action=action)
 
     return
 

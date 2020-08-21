@@ -7,7 +7,7 @@
             "clean": true,
             "code_block": "",
             "description": "",
-            "hash": "69807f67c59ffdd9e675187cad1bc01dc69b0c04",
+            "hash": "031c5d153a6f1b259a4e175200057880b83c283e",
             "joint": {
                 "cells": [
                     {
@@ -199,7 +199,7 @@
                         "callback_start": 1,
                         "callsback": false,
                         "connected_to_start": true,
-                        "connection_name": "get pin, update ticket",
+                        "connection_name": "get pin, update episode",
                         "connection_type": "action",
                         "custom_callback": "",
                         "custom_code": "",
@@ -217,12 +217,12 @@
                         "join_code": "# read-only block view not available",
                         "join_optional": [],
                         "join_start": 1,
-                        "line_end": 353,
-                        "line_start": 340,
+                        "line_end": 376,
+                        "line_start": 363,
                         "name": "",
                         "notes": "",
                         "number": 0,
-                        "order": 20,
+                        "order": 21,
                         "outPorts": [],
                         "ports": {
                             "groups": {
@@ -277,8 +277,8 @@
                             }
                         },
                         "position": {
-                            "x": 2180,
-                            "y": 320
+                            "x": 2780,
+                            "y": 580
                         },
                         "previous_function": "",
                         "previous_name": "",
@@ -1158,7 +1158,7 @@
                         },
                         "position": {
                             "x": 520,
-                            "y": 260
+                            "y": 540
                         },
                         "previous_function": "",
                         "previous_name": "get_pin_1",
@@ -1373,8 +1373,8 @@
                             }
                         },
                         "position": {
-                            "x": 980,
-                            "y": 260
+                            "x": 1040,
+                            "y": 620
                         },
                         "previous_function": "",
                         "previous_name": "add_comment_2",
@@ -1470,7 +1470,7 @@
                             }
                         ],
                         "connected_to_start": true,
-                        "connection_name": "add episode ticket",
+                        "connection_name": "add episode ticket 1",
                         "connection_type": "action",
                         "custom_callback": "",
                         "custom_code": "",
@@ -1551,8 +1551,8 @@
                             }
                         },
                         "position": {
-                            "x": 1440,
-                            "y": 100
+                            "x": 980,
+                            "y": 360
                         },
                         "previous_function": "",
                         "previous_name": "pin_snow_ticket_id",
@@ -1672,7 +1672,7 @@
                         "callback_start": 1,
                         "callsback": false,
                         "connected_to_start": true,
-                        "connection_name": "add episode ticket",
+                        "connection_name": "add episode ticket 1",
                         "connection_type": "action",
                         "custom_callback": "",
                         "custom_code": "",
@@ -1761,8 +1761,8 @@
                             }
                         },
                         "position": {
-                            "x": 1660,
-                            "y": 100
+                            "x": 1220,
+                            "y": 360
                         },
                         "previous_function": "",
                         "previous_name": "format_7",
@@ -2057,8 +2057,8 @@
                             }
                         },
                         "position": {
-                            "x": 1440,
-                            "y": -60
+                            "x": 1460,
+                            "y": 100
                         },
                         "previous_function": "",
                         "previous_name": "format_8",
@@ -2218,7 +2218,7 @@
                         "callback_start": 1,
                         "callsback": false,
                         "connected_to_start": true,
-                        "connection_name": "add episode ticket",
+                        "connection_name": "add episode ticket 1",
                         "connection_type": "action",
                         "custom_callback": "",
                         "custom_code": "",
@@ -2307,8 +2307,8 @@
                             }
                         },
                         "position": {
-                            "x": 1220,
-                            "y": 100
+                            "x": 720,
+                            "y": 360
                         },
                         "previous_function": "",
                         "previous_name": "format_6",
@@ -3291,312 +3291,6 @@
                         "z": 140
                     },
                     {
-                        "action": "parse url",
-                        "action_type": "generic",
-                        "active": false,
-                        "active_keys": {},
-                        "active_values": {
-                            "url_to_parse": "create_ticket_1:action_result.data.*.sys_domain.link"
-                        },
-                        "angle": 0,
-                        "app": "Phantom Utilities",
-                        "appid": "f006b969-7253-423f-85df-db0f708826b7",
-                        "approver": "",
-                        "assets": [
-                            {
-                                "action": "parse url",
-                                "actions": [
-                                    "add to datapath",
-                                    "multi collect",
-                                    "hash text",
-                                    "replace partial string",
-                                    "get pin",
-                                    "modify date",
-                                    "convert list to dict",
-                                    "split string",
-                                    "modify number",
-                                    "format string",
-                                    "unshorten url",
-                                    "parse url",
-                                    "make table",
-                                    "get indicator",
-                                    "modify indicator tag",
-                                    "update artifact",
-                                    "update container",
-                                    "modify string",
-                                    "change encoding",
-                                    "test connectivity"
-                                ],
-                                "active": true,
-                                "app_name": "Phantom Utilities",
-                                "app_version": "1.0.1",
-                                "appid": "f006b969-7253-423f-85df-db0f708826b7",
-                                "asset_name": "phantom utilities",
-                                "config_type": "asset",
-                                "count": 0,
-                                "fields": {
-                                    "url_to_parse": "create_ticket_1:action_result.data.*.sys_domain.link"
-                                },
-                                "has_app": true,
-                                "id": 10,
-                                "loaded": false,
-                                "missing": false,
-                                "name": "phantom utilities",
-                                "output": [
-                                    {
-                                        "column_name": "Status",
-                                        "data_path": "action_result.status",
-                                        "data_type": "string"
-                                    },
-                                    {
-                                        "column_name": "URL",
-                                        "column_order": 0,
-                                        "contains": [
-                                            "url"
-                                        ],
-                                        "data_path": "action_result.parameter.url_to_parse",
-                                        "data_type": "string"
-                                    },
-                                    {
-                                        "column_name": "Fragment",
-                                        "column_order": 6,
-                                        "data_path": "action_result.data.*.frament",
-                                        "data_type": "string"
-                                    },
-                                    {
-                                        "column_name": "Netloc",
-                                        "column_order": 2,
-                                        "data_path": "action_result.data.*.netloc",
-                                        "data_type": "string"
-                                    },
-                                    {
-                                        "column_name": "Params",
-                                        "column_order": 4,
-                                        "data_path": "action_result.data.*.params",
-                                        "data_type": "string"
-                                    },
-                                    {
-                                        "column_name": "Path",
-                                        "column_order": 3,
-                                        "data_path": "action_result.data.*.path",
-                                        "data_type": "string"
-                                    },
-                                    {
-                                        "column_name": "Query",
-                                        "column_order": 5,
-                                        "data_path": "action_result.data.*.query",
-                                        "data_type": "string"
-                                    },
-                                    {
-                                        "column_name": "Scheme",
-                                        "column_order": 1,
-                                        "data_path": "action_result.data.*.scheme",
-                                        "data_type": "string"
-                                    },
-                                    {
-                                        "data_path": "action_result.summary",
-                                        "data_type": "string"
-                                    },
-                                    {
-                                        "column_name": "Message",
-                                        "data_path": "action_result.message",
-                                        "data_type": "string"
-                                    }
-                                ],
-                                "parameters": {
-                                    "url_to_parse": {
-                                        "contains": [
-                                            "url"
-                                        ],
-                                        "data_type": "string",
-                                        "default": null,
-                                        "description": "url to parse",
-                                        "key": "url_to_parse",
-                                        "primary": true,
-                                        "required": true
-                                    }
-                                },
-                                "product_name": "Phantom Common Actions",
-                                "product_vendor": "Phantom",
-                                "targets": "10",
-                                "type": "Generic"
-                            }
-                        ],
-                        "attrs": {
-                            ".action": {
-                                "text": "parse url"
-                            },
-                            ".background": {
-                                "fill": "#FFFFFF",
-                                "stroke": "#818D99"
-                            },
-                            ".color-band": {
-                                "fill": "#171D21"
-                            },
-                            ".inPorts>.port-in": {
-                                "ref": ".background",
-                                "ref-x": 0.5
-                            },
-                            ".inPorts>.port-in>.port-body": {
-                                "port": {
-                                    "id": "in",
-                                    "type": "in"
-                                }
-                            },
-                            ".message": {
-                                "opacity": 0,
-                                "ref-x": 5,
-                                "ref-y": 105,
-                                "text": "Configuring now"
-                            },
-                            ".outPorts>.port-out": {
-                                "ref": ".background",
-                                "ref-x": 0.5
-                            },
-                            ".outPorts>.port-out>.port-body": {
-                                "port": {
-                                    "id": "out",
-                                    "type": "out"
-                                }
-                            },
-                            ".title": {
-                                "text": "Generic"
-                            },
-                            "g.approver image": {
-                                "opacity": 1
-                            },
-                            "g.code image": {
-                                "opacity": 1
-                            },
-                            "g.delete": {
-                                "display": "none"
-                            },
-                            "g.error": {
-                                "opacity": 0
-                            },
-                            "g.icon image": {
-                                "xlink:href": "/inc/coa/img/block_icon_generic.svg"
-                            },
-                            "g.notes": {
-                                "display": "block"
-                            },
-                            "g.notes image": {
-                                "opacity": 1
-                            },
-                            "g.timer image": {
-                                "opacity": 1
-                            }
-                        },
-                        "block_code": "def parse_url_1(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):\n    phantom.debug('parse_url_1() called')\n        \n    #phantom.debug('Action: {0} {1}'.format(action['name'], ('SUCCEEDED' if success else 'FAILED')))\n    \n    # collect data for 'parse_url_1' call\n    results_data_1 = phantom.collect2(container=container, datapath=['create_ticket_1:action_result.data.*.sys_domain.link', 'create_ticket_1:action_result.parameter.context.artifact_id'], action_results=results)\n\n    parameters = []\n    \n    # build parameters list for 'parse_url_1' call\n    for results_item_1 in results_data_1:\n        if results_item_1[0]:\n            parameters.append({\n                'url_to_parse': results_item_1[0],\n                # context (artifact id) is added to associate results with the artifact\n                'context': {'artifact_id': results_item_1[1]},\n            })\n\n    phantom.act(action=\"parse url\", parameters=parameters, assets=['phantom utilities'], callback=format_8, name=\"parse_url_1\", parent_action=action)\n\n    return",
-                        "callback_code": "",
-                        "callback_start": 1,
-                        "callsback": true,
-                        "color": "",
-                        "connected_to_start": true,
-                        "connection_name": "create ticket",
-                        "connection_type": "action",
-                        "custom_callback": "",
-                        "custom_code": "",
-                        "custom_join": "",
-                        "custom_name": "",
-                        "delay": 0,
-                        "description": "",
-                        "has_custom": false,
-                        "has_custom_block": false,
-                        "has_custom_callback": false,
-                        "has_custom_join": false,
-                        "id": "55bc2c89-a15f-4cfe-90f6-680ab0e308fb",
-                        "inPorts": [
-                            "in"
-                        ],
-                        "join_code": "",
-                        "join_optional": [],
-                        "join_start": 1,
-                        "line_end": 278,
-                        "line_start": 255,
-                        "message": "Configuring now",
-                        "name": "parse url",
-                        "notes": "",
-                        "number": 1,
-                        "order": 16,
-                        "outPorts": [
-                            "out"
-                        ],
-                        "ports": {
-                            "groups": {
-                                "in": {
-                                    "attrs": {
-                                        ".port-body": {
-                                            "fill": "#fff",
-                                            "magnet": true,
-                                            "r": 10,
-                                            "stroke": "#000"
-                                        },
-                                        ".port-label": {
-                                            "fill": "#000"
-                                        }
-                                    },
-                                    "label": {
-                                        "position": {
-                                            "args": {
-                                                "y": 10
-                                            },
-                                            "name": "left"
-                                        }
-                                    },
-                                    "position": {
-                                        "name": "left"
-                                    }
-                                },
-                                "out": {
-                                    "attrs": {
-                                        ".port-body": {
-                                            "fill": "#fff",
-                                            "magnet": true,
-                                            "r": 10,
-                                            "stroke": "#000"
-                                        },
-                                        ".port-label": {
-                                            "fill": "#000"
-                                        }
-                                    },
-                                    "label": {
-                                        "position": {
-                                            "args": {
-                                                "y": 10
-                                            },
-                                            "name": "right"
-                                        }
-                                    },
-                                    "position": {
-                                        "name": "right"
-                                    }
-                                }
-                            }
-                        },
-                        "position": {
-                            "x": 1220,
-                            "y": -60
-                        },
-                        "previous_function": "",
-                        "previous_name": "parse_url_1",
-                        "required_params": {
-                            "url_to_parse": true
-                        },
-                        "reviewer": "",
-                        "show_number": false,
-                        "size": {
-                            "height": 100,
-                            "width": 180
-                        },
-                        "state": "app_action_assets",
-                        "status": "",
-                        "title": "Generic",
-                        "type": "coa.Action",
-                        "warn": false,
-                        "z": 141
-                    },
-                    {
                         "action": "get data",
                         "action_type": "investigate",
                         "active": false,
@@ -4195,214 +3889,6 @@
                         "z": 154
                     },
                     {
-                        "attrs": {
-                            ".connection": {
-                                "stroke": "#818D99",
-                                "stroke-width": 2
-                            },
-                            ".marker-target": {
-                                "d": "M 10 0 L 0 5 L 10 10 z",
-                                "fill": "#818D99",
-                                "stroke": "#818D99"
-                            }
-                        },
-                        "connector": {
-                            "args": {
-                                "radius": 5
-                            },
-                            "name": "rounded"
-                        },
-                        "endDirections": [
-                            "left"
-                        ],
-                        "id": "4689239d-a5cf-4b0f-ae54-467858bb1846",
-                        "router": {
-                            "name": "metro"
-                        },
-                        "source": {
-                            "id": "bb35858e-7a43-472f-8106-41e515692161",
-                            "selector": "> g:nth-child(1) > g:nth-child(2) > g:nth-child(1) > circle:nth-child(1)"
-                        },
-                        "startDirections": [
-                            "right"
-                        ],
-                        "target": {
-                            "id": "ba7b1731-448d-4f7a-a78e-061e471fdbae",
-                            "selector": "> g:nth-child(1) > g:nth-child(1) > g:nth-child(1) > circle:nth-child(1)"
-                        },
-                        "type": "link",
-                        "z": 158
-                    },
-                    {
-                        "active": false,
-                        "angle": 0,
-                        "attrs": {
-                            ".background": {
-                                "fill": "#FFFFFF",
-                                "stroke": "#818D99"
-                            },
-                            ".color-band": {
-                                "fill": "#171D21"
-                            },
-                            ".format": {
-                                "text": "format 5"
-                            },
-                            ".inPorts>.port-in": {
-                                "ref": ".background",
-                                "ref-x": 0.5
-                            },
-                            ".inPorts>.port-in>.port-body": {
-                                "port": {
-                                    "id": "in",
-                                    "type": "in"
-                                }
-                            },
-                            ".message": {
-                                "opacity": 0,
-                                "text": "Configuring now"
-                            },
-                            ".outPorts>.port-out-1": {
-                                "ref": ".background",
-                                "ref-x": 0.5
-                            },
-                            ".outPorts>.port-out-1>.port-body": {
-                                "port": {
-                                    "id": "out-1",
-                                    "type": "out"
-                                }
-                            },
-                            ".title": {
-                                "text": "format"
-                            },
-                            "g.code image": {
-                                "opacity": 1
-                            },
-                            "g.delete": {
-                                "display": "none"
-                            },
-                            "g.error": {
-                                "opacity": 0
-                            },
-                            "g.notes": {
-                                "display": "block"
-                            },
-                            "g.notes image": {
-                                "opacity": 1
-                            }
-                        },
-                        "block_code": "def format_5(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):\n    phantom.debug('format_5() called')\n    \n    template = \"\"\"%%\n{0}\n%%\"\"\"\n\n    # parameter list for template variable replacement\n    parameters = [\n        \"get_pin_1:action_result.data.*.data\",\n    ]\n\n    phantom.format(container=container, template=template, parameters=parameters, name=\"format_5\")\n\n    add_comment_2(container=container)\n\n    return",
-                        "callback_code": "",
-                        "callback_start": 1,
-                        "callsback": false,
-                        "connected_to_start": true,
-                        "connection_name": "get pin",
-                        "connection_type": "action",
-                        "custom_callback": "",
-                        "custom_code": "",
-                        "custom_join": "",
-                        "custom_name": "",
-                        "description": "",
-                        "format": "format",
-                        "has_custom": false,
-                        "has_custom_block": false,
-                        "has_custom_callback": false,
-                        "has_custom_join": false,
-                        "id": "ed03e999-02cc-4ac4-86e7-199a25d6c64c",
-                        "inPorts": [
-                            "in"
-                        ],
-                        "join_code": "",
-                        "join_optional": [],
-                        "join_start": 1,
-                        "line_end": 185,
-                        "line_start": 167,
-                        "message": "Configuring now",
-                        "name": "format",
-                        "notes": "",
-                        "number": 5,
-                        "order": 11,
-                        "outPorts": [
-                            "out-1"
-                        ],
-                        "parameters": [
-                            {
-                                "position": 0,
-                                "type": "",
-                                "value": "get_pin_1:action_result.data.*.data"
-                            }
-                        ],
-                        "ports": {
-                            "groups": {
-                                "in": {
-                                    "attrs": {
-                                        ".port-body": {
-                                            "fill": "#fff",
-                                            "magnet": true,
-                                            "r": 10,
-                                            "stroke": "#000"
-                                        },
-                                        ".port-label": {
-                                            "fill": "#000"
-                                        }
-                                    },
-                                    "label": {
-                                        "position": {
-                                            "args": {
-                                                "y": 10
-                                            },
-                                            "name": "left"
-                                        }
-                                    },
-                                    "position": {
-                                        "name": "left"
-                                    }
-                                },
-                                "out": {
-                                    "attrs": {
-                                        ".port-body": {
-                                            "fill": "#fff",
-                                            "magnet": true,
-                                            "r": 10,
-                                            "stroke": "#000"
-                                        },
-                                        ".port-label": {
-                                            "fill": "#000"
-                                        }
-                                    },
-                                    "label": {
-                                        "position": {
-                                            "args": {
-                                                "y": 10
-                                            },
-                                            "name": "right"
-                                        }
-                                    },
-                                    "position": {
-                                        "name": "right"
-                                    }
-                                }
-                            }
-                        },
-                        "position": {
-                            "x": 760,
-                            "y": 260
-                        },
-                        "previous_function": "",
-                        "previous_name": "format_5",
-                        "show_number": true,
-                        "size": {
-                            "height": 100,
-                            "width": 180
-                        },
-                        "state": "format",
-                        "status": "",
-                        "template": "%%\n{0}\n%%",
-                        "title": "format",
-                        "type": "coa.Format",
-                        "warn": false,
-                        "z": 161
-                    },
-                    {
                         "active": false,
                         "angle": 0,
                         "api": "pin",
@@ -4483,7 +3969,7 @@
                             }
                         ],
                         "connected_to_start": true,
-                        "connection_name": "add episode ticket",
+                        "connection_name": "add episode ticket 1",
                         "connection_type": "action",
                         "custom_callback": "",
                         "custom_code": "",
@@ -4564,8 +4050,8 @@
                             }
                         },
                         "position": {
-                            "x": 1900,
-                            "y": 100
+                            "x": 1520,
+                            "y": 360
                         },
                         "previous_function": "",
                         "previous_name": "Pin_snow_inc",
@@ -4622,6 +4108,9 @@
                             ".title": {
                                 "text": "format"
                             },
+                            "g.code image": {
+                                "opacity": 1
+                            },
                             "g.delete": {
                                 "display": "none"
                             },
@@ -4633,6 +4122,9 @@
                             },
                             "g.notes": {
                                 "display": "block"
+                            },
+                            "g.notes image": {
+                                "opacity": 1
                             }
                         },
                         "block_code": "def format_9(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):\n    phantom.debug('format_9() called')\n    \n    template = \"\"\"{{\\\"state\\\":\\\"2\\\"}}\"\"\"\n\n    # parameter list for template variable replacement\n    parameters = [\n        \"create_ticket_1:action_result.data.*.caller_id\",\n    ]\n\n    phantom.format(container=container, template=template, parameters=parameters, name=\"format_9\")\n\n    update_ticket_1(container=container)\n\n    return",
@@ -4640,7 +4132,7 @@
                         "callback_start": 1,
                         "callsback": false,
                         "connected_to_start": true,
-                        "connection_name": "add episode ticket",
+                        "connection_name": "add episode ticket 1",
                         "connection_type": "action",
                         "custom_callback": "",
                         "custom_code": "",
@@ -4729,8 +4221,8 @@
                             }
                         },
                         "position": {
-                            "x": 2180,
-                            "y": 120
+                            "x": 1780,
+                            "y": 360
                         },
                         "previous_function": "",
                         "previous_name": "format_9",
@@ -5278,7 +4770,7 @@
                         ],
                         "attrs": {
                             ".action": {
-                                "text": "add episode ticket"
+                                "text": "add episode ticket 1"
                             },
                             ".background": {
                                 "fill": "#FFFFFF",
@@ -5432,13 +4924,488 @@
                             }
                         },
                         "position": {
-                            "x": 1680,
-                            "y": -60
+                            "x": 1700,
+                            "y": 100
                         },
                         "previous_function": "",
                         "previous_name": "add_episode_ticket_1",
                         "required_params": {
                             "itsi_group_id": true
+                        },
+                        "reviewer": "",
+                        "show_number": true,
+                        "size": {
+                            "height": 100,
+                            "width": 180
+                        },
+                        "state": "app_action_assets",
+                        "status": "",
+                        "title": "Generic",
+                        "type": "coa.Action",
+                        "warn": false,
+                        "z": 166
+                    },
+                    {
+                        "active": false,
+                        "angle": 0,
+                        "attrs": {
+                            ".background": {
+                                "fill": "#FFFFFF",
+                                "stroke": "#818D99"
+                            },
+                            ".color-band": {
+                                "fill": "#171D21"
+                            },
+                            ".format": {
+                                "text": "format 5"
+                            },
+                            ".inPorts>.port-in": {
+                                "ref": ".background",
+                                "ref-x": 0.5
+                            },
+                            ".inPorts>.port-in>.port-body": {
+                                "port": {
+                                    "id": "in",
+                                    "type": "in"
+                                }
+                            },
+                            ".message": {
+                                "opacity": 0,
+                                "text": "Configuring now"
+                            },
+                            ".outPorts>.port-out-1": {
+                                "ref": ".background",
+                                "ref-x": 0.5
+                            },
+                            ".outPorts>.port-out-1>.port-body": {
+                                "port": {
+                                    "id": "out-1",
+                                    "type": "out"
+                                }
+                            },
+                            ".title": {
+                                "text": "format"
+                            },
+                            "g.code image": {
+                                "opacity": 1
+                            },
+                            "g.delete": {
+                                "display": "none"
+                            },
+                            "g.error": {
+                                "opacity": 0
+                            },
+                            "g.notes": {
+                                "display": "block"
+                            },
+                            "g.notes image": {
+                                "opacity": 1
+                            }
+                        },
+                        "block_code": "def format_5(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):\n    phantom.debug('format_5() called')\n    \n    template = \"\"\"%%\n{0}\n%%\"\"\"\n\n    # parameter list for template variable replacement\n    parameters = [\n        \"get_pin_1:action_result.data.*.data\",\n    ]\n\n    phantom.format(container=container, template=template, parameters=parameters, name=\"format_5\")\n\n    add_comment_2(container=container)\n\n    return",
+                        "callback_code": "",
+                        "callback_start": 1,
+                        "callsback": false,
+                        "connected_to_start": true,
+                        "connection_name": "get pin",
+                        "connection_type": "action",
+                        "custom_callback": "",
+                        "custom_code": "",
+                        "custom_join": "",
+                        "custom_name": "",
+                        "description": "",
+                        "format": "format",
+                        "has_custom": false,
+                        "has_custom_block": false,
+                        "has_custom_callback": false,
+                        "has_custom_join": false,
+                        "id": "ed03e999-02cc-4ac4-86e7-199a25d6c64c",
+                        "inPorts": [
+                            "in"
+                        ],
+                        "join_code": "",
+                        "join_optional": [],
+                        "join_start": 1,
+                        "line_end": 185,
+                        "line_start": 167,
+                        "message": "Configuring now",
+                        "name": "format",
+                        "notes": "",
+                        "number": 5,
+                        "order": 11,
+                        "outPorts": [
+                            "out-1"
+                        ],
+                        "parameters": [
+                            {
+                                "position": 0,
+                                "type": "",
+                                "value": "get_pin_1:action_result.data.*.data"
+                            }
+                        ],
+                        "ports": {
+                            "groups": {
+                                "in": {
+                                    "attrs": {
+                                        ".port-body": {
+                                            "fill": "#fff",
+                                            "magnet": true,
+                                            "r": 10,
+                                            "stroke": "#000"
+                                        },
+                                        ".port-label": {
+                                            "fill": "#000"
+                                        }
+                                    },
+                                    "label": {
+                                        "position": {
+                                            "args": {
+                                                "y": 10
+                                            },
+                                            "name": "left"
+                                        }
+                                    },
+                                    "position": {
+                                        "name": "left"
+                                    }
+                                },
+                                "out": {
+                                    "attrs": {
+                                        ".port-body": {
+                                            "fill": "#fff",
+                                            "magnet": true,
+                                            "r": 10,
+                                            "stroke": "#000"
+                                        },
+                                        ".port-label": {
+                                            "fill": "#000"
+                                        }
+                                    },
+                                    "label": {
+                                        "position": {
+                                            "args": {
+                                                "y": 10
+                                            },
+                                            "name": "right"
+                                        }
+                                    },
+                                    "position": {
+                                        "name": "right"
+                                    }
+                                }
+                            }
+                        },
+                        "position": {
+                            "x": 740,
+                            "y": 560
+                        },
+                        "previous_function": "",
+                        "previous_name": "format_5",
+                        "show_number": true,
+                        "size": {
+                            "height": 100,
+                            "width": 180
+                        },
+                        "state": "format",
+                        "status": "",
+                        "template": "%%\n{0}\n%%",
+                        "title": "format",
+                        "type": "coa.Format",
+                        "warn": false,
+                        "z": 168
+                    },
+                    {
+                        "action": "parse url",
+                        "action_type": "generic",
+                        "active": false,
+                        "active_keys": {},
+                        "active_values": {
+                            "url_to_parse": "create_ticket_1:action_result.data.*.sys_domain.link"
+                        },
+                        "angle": 0,
+                        "app": "Phantom Utilities",
+                        "appid": "f006b969-7253-423f-85df-db0f708826b7",
+                        "approver": "",
+                        "assets": [
+                            {
+                                "action": "parse url",
+                                "actions": [
+                                    "add to datapath",
+                                    "multi collect",
+                                    "hash text",
+                                    "replace partial string",
+                                    "get pin",
+                                    "modify date",
+                                    "convert list to dict",
+                                    "split string",
+                                    "modify number",
+                                    "format string",
+                                    "unshorten url",
+                                    "parse url",
+                                    "make table",
+                                    "get indicator",
+                                    "modify indicator tag",
+                                    "update artifact",
+                                    "update container",
+                                    "modify string",
+                                    "change encoding",
+                                    "test connectivity"
+                                ],
+                                "active": true,
+                                "app_name": "Phantom Utilities",
+                                "app_version": "1.0.1",
+                                "appid": "f006b969-7253-423f-85df-db0f708826b7",
+                                "asset_name": "phantom utilities",
+                                "config_type": "asset",
+                                "count": 0,
+                                "fields": {
+                                    "url_to_parse": "create_ticket_1:action_result.data.*.sys_domain.link"
+                                },
+                                "has_app": true,
+                                "id": 10,
+                                "loaded": false,
+                                "missing": false,
+                                "name": "phantom utilities",
+                                "output": [
+                                    {
+                                        "column_name": "Status",
+                                        "data_path": "action_result.status",
+                                        "data_type": "string"
+                                    },
+                                    {
+                                        "column_name": "URL",
+                                        "column_order": 0,
+                                        "contains": [
+                                            "url"
+                                        ],
+                                        "data_path": "action_result.parameter.url_to_parse",
+                                        "data_type": "string"
+                                    },
+                                    {
+                                        "column_name": "Fragment",
+                                        "column_order": 6,
+                                        "data_path": "action_result.data.*.frament",
+                                        "data_type": "string"
+                                    },
+                                    {
+                                        "column_name": "Netloc",
+                                        "column_order": 2,
+                                        "data_path": "action_result.data.*.netloc",
+                                        "data_type": "string"
+                                    },
+                                    {
+                                        "column_name": "Params",
+                                        "column_order": 4,
+                                        "data_path": "action_result.data.*.params",
+                                        "data_type": "string"
+                                    },
+                                    {
+                                        "column_name": "Path",
+                                        "column_order": 3,
+                                        "data_path": "action_result.data.*.path",
+                                        "data_type": "string"
+                                    },
+                                    {
+                                        "column_name": "Query",
+                                        "column_order": 5,
+                                        "data_path": "action_result.data.*.query",
+                                        "data_type": "string"
+                                    },
+                                    {
+                                        "column_name": "Scheme",
+                                        "column_order": 1,
+                                        "data_path": "action_result.data.*.scheme",
+                                        "data_type": "string"
+                                    },
+                                    {
+                                        "data_path": "action_result.summary",
+                                        "data_type": "string"
+                                    },
+                                    {
+                                        "column_name": "Message",
+                                        "data_path": "action_result.message",
+                                        "data_type": "string"
+                                    }
+                                ],
+                                "parameters": {
+                                    "url_to_parse": {
+                                        "contains": [
+                                            "url"
+                                        ],
+                                        "data_type": "string",
+                                        "default": null,
+                                        "description": "url to parse",
+                                        "key": "url_to_parse",
+                                        "primary": true,
+                                        "required": true
+                                    }
+                                },
+                                "product_name": "Phantom Common Actions",
+                                "product_vendor": "Phantom",
+                                "targets": "10",
+                                "type": "Generic"
+                            }
+                        ],
+                        "attrs": {
+                            ".action": {
+                                "text": "parse url"
+                            },
+                            ".background": {
+                                "fill": "#FFFFFF",
+                                "stroke": "#818D99"
+                            },
+                            ".color-band": {
+                                "fill": "#171D21"
+                            },
+                            ".inPorts>.port-in": {
+                                "ref": ".background",
+                                "ref-x": 0.5
+                            },
+                            ".inPorts>.port-in>.port-body": {
+                                "port": {
+                                    "id": "in",
+                                    "type": "in"
+                                }
+                            },
+                            ".message": {
+                                "opacity": 0,
+                                "ref-x": 5,
+                                "ref-y": 105,
+                                "text": "Configuring now"
+                            },
+                            ".outPorts>.port-out": {
+                                "ref": ".background",
+                                "ref-x": 0.5
+                            },
+                            ".outPorts>.port-out>.port-body": {
+                                "port": {
+                                    "id": "out",
+                                    "type": "out"
+                                }
+                            },
+                            ".title": {
+                                "text": "Generic"
+                            },
+                            "g.approver image": {
+                                "opacity": 1
+                            },
+                            "g.code image": {
+                                "opacity": 1
+                            },
+                            "g.delete": {
+                                "display": "none"
+                            },
+                            "g.error": {
+                                "opacity": 0
+                            },
+                            "g.icon image": {
+                                "xlink:href": "/inc/coa/img/block_icon_generic.svg"
+                            },
+                            "g.notes": {
+                                "display": "block"
+                            },
+                            "g.notes image": {
+                                "opacity": 1
+                            },
+                            "g.timer image": {
+                                "opacity": 1
+                            }
+                        },
+                        "block_code": "def parse_url_1(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):\n    phantom.debug('parse_url_1() called')\n        \n    #phantom.debug('Action: {0} {1}'.format(action['name'], ('SUCCEEDED' if success else 'FAILED')))\n    \n    # collect data for 'parse_url_1' call\n    results_data_1 = phantom.collect2(container=container, datapath=['create_ticket_1:action_result.data.*.sys_domain.link', 'create_ticket_1:action_result.parameter.context.artifact_id'], action_results=results)\n\n    parameters = []\n    \n    # build parameters list for 'parse_url_1' call\n    for results_item_1 in results_data_1:\n        if results_item_1[0]:\n            parameters.append({\n                'url_to_parse': results_item_1[0],\n                # context (artifact id) is added to associate results with the artifact\n                'context': {'artifact_id': results_item_1[1]},\n            })\n\n    phantom.act(action=\"parse url\", parameters=parameters, assets=['phantom utilities'], callback=format_8, name=\"parse_url_1\", parent_action=action)\n\n    return",
+                        "callback_code": "",
+                        "callback_start": 1,
+                        "callsback": true,
+                        "color": "",
+                        "connected_to_start": true,
+                        "connection_name": "create ticket",
+                        "connection_type": "action",
+                        "custom_callback": "",
+                        "custom_code": "",
+                        "custom_join": "",
+                        "custom_name": "",
+                        "delay": 0,
+                        "description": "",
+                        "has_custom": false,
+                        "has_custom_block": false,
+                        "has_custom_callback": false,
+                        "has_custom_join": false,
+                        "id": "55bc2c89-a15f-4cfe-90f6-680ab0e308fb",
+                        "inPorts": [
+                            "in"
+                        ],
+                        "join_code": "",
+                        "join_optional": [],
+                        "join_start": 1,
+                        "line_end": 278,
+                        "line_start": 255,
+                        "message": "Configuring now",
+                        "name": "parse url",
+                        "notes": "",
+                        "number": 1,
+                        "order": 16,
+                        "outPorts": [
+                            "out"
+                        ],
+                        "ports": {
+                            "groups": {
+                                "in": {
+                                    "attrs": {
+                                        ".port-body": {
+                                            "fill": "#fff",
+                                            "magnet": true,
+                                            "r": 10,
+                                            "stroke": "#000"
+                                        },
+                                        ".port-label": {
+                                            "fill": "#000"
+                                        }
+                                    },
+                                    "label": {
+                                        "position": {
+                                            "args": {
+                                                "y": 10
+                                            },
+                                            "name": "left"
+                                        }
+                                    },
+                                    "position": {
+                                        "name": "left"
+                                    }
+                                },
+                                "out": {
+                                    "attrs": {
+                                        ".port-body": {
+                                            "fill": "#fff",
+                                            "magnet": true,
+                                            "r": 10,
+                                            "stroke": "#000"
+                                        },
+                                        ".port-label": {
+                                            "fill": "#000"
+                                        }
+                                    },
+                                    "label": {
+                                        "position": {
+                                            "args": {
+                                                "y": 10
+                                            },
+                                            "name": "right"
+                                        }
+                                    },
+                                    "position": {
+                                        "name": "right"
+                                    }
+                                }
+                            }
+                        },
+                        "position": {
+                            "x": 1220,
+                            "y": 100
+                        },
+                        "previous_function": "",
+                        "previous_name": "parse_url_1",
+                        "required_params": {
+                            "url_to_parse": true
                         },
                         "reviewer": "",
                         "show_number": false,
@@ -5451,7 +5418,7 @@
                         "title": "Generic",
                         "type": "coa.Action",
                         "warn": false,
-                        "z": 166
+                        "z": 169
                     },
                     {
                         "action": "update ticket",
@@ -6467,6 +6434,12 @@
                             ".title": {
                                 "text": "Generic"
                             },
+                            "g.approver image": {
+                                "opacity": 1
+                            },
+                            "g.code image": {
+                                "opacity": 1
+                            },
                             "g.delete": {
                                 "display": "none"
                             },
@@ -6478,15 +6451,21 @@
                             },
                             "g.notes": {
                                 "display": "block"
+                            },
+                            "g.notes image": {
+                                "opacity": 1
+                            },
+                            "g.timer image": {
+                                "opacity": 1
                             }
                         },
-                        "block_code": "def update_ticket_1(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):\n    phantom.debug('update_ticket_1() called')\n        \n    #phantom.debug('Action: {0} {1}'.format(action['name'], ('SUCCEEDED' if success else 'FAILED')))\n    \n    # collect data for 'update_ticket_1' call\n    results_data_1 = phantom.collect2(container=container, datapath=['create_ticket_1:action_result.data.*.number', 'create_ticket_1:action_result.parameter.context.artifact_id'], action_results=results)\n    formatted_data_1 = phantom.get_format_data(name='format_9')\n\n    parameters = []\n    \n    # build parameters list for 'update_ticket_1' call\n    for results_item_1 in results_data_1:\n        if results_item_1[0]:\n            parameters.append({\n                'id': results_item_1[0],\n                'table': \"incident\",\n                'fields': formatted_data_1,\n                'vault_id': \"\",\n                'is_sys_id': \"\",\n                # context (artifact id) is added to associate results with the artifact\n                'context': {'artifact_id': results_item_1[1]},\n            })\n\n    phantom.act(action=\"update ticket\", parameters=parameters, assets=['servicenow'], name=\"update_ticket_1\")\n\n    return",
+                        "block_code": "def update_ticket_1(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):\n    phantom.debug('update_ticket_1() called')\n        \n    #phantom.debug('Action: {0} {1}'.format(action['name'], ('SUCCEEDED' if success else 'FAILED')))\n    \n    # collect data for 'update_ticket_1' call\n    results_data_1 = phantom.collect2(container=container, datapath=['create_ticket_1:action_result.data.*.number', 'create_ticket_1:action_result.parameter.context.artifact_id'], action_results=results)\n    formatted_data_1 = phantom.get_format_data(name='format_9')\n\n    parameters = []\n    \n    # build parameters list for 'update_ticket_1' call\n    for results_item_1 in results_data_1:\n        if results_item_1[0]:\n            parameters.append({\n                'id': results_item_1[0],\n                'table': \"incident\",\n                'fields': formatted_data_1,\n                'vault_id': \"\",\n                'is_sys_id': \"\",\n                # context (artifact id) is added to associate results with the artifact\n                'context': {'artifact_id': results_item_1[1]},\n            })\n\n    phantom.act(action=\"update ticket\", parameters=parameters, assets=['servicenow'], callback=update_episode_1, name=\"update_ticket_1\")\n\n    return",
                         "callback_code": "",
                         "callback_start": 1,
                         "callsback": true,
                         "color": "",
                         "connected_to_start": true,
-                        "connection_name": "add episode ticket",
+                        "connection_name": "add episode ticket 1",
                         "connection_type": "action",
                         "custom_callback": "",
                         "custom_code": "",
@@ -6568,8 +6547,8 @@
                             }
                         },
                         "position": {
-                            "x": 2500,
-                            "y": 100
+                            "x": 2060,
+                            "y": 360
                         },
                         "previous_function": "",
                         "previous_name": "update_ticket_1",
@@ -6586,8 +6565,425 @@
                         "status": "",
                         "title": "Generic",
                         "type": "coa.Action",
+                        "warn": false,
+                        "z": 170
+                    },
+                    {
+                        "attrs": {
+                            ".connection": {
+                                "stroke": "#818D99",
+                                "stroke-width": 2
+                            },
+                            ".marker-target": {
+                                "d": "M 10 0 L 0 5 L 10 10 z",
+                                "fill": "#818D99",
+                                "stroke": "#818D99"
+                            }
+                        },
+                        "connector": {
+                            "args": {
+                                "radius": 5
+                            },
+                            "name": "rounded"
+                        },
+                        "endDirections": [
+                            "left"
+                        ],
+                        "id": "82c35990-ffed-47b7-a376-2e2929f30e5a",
+                        "router": {
+                            "name": "metro"
+                        },
+                        "source": {
+                            "id": "bb35858e-7a43-472f-8106-41e515692161",
+                            "selector": "> g:nth-child(1) > g:nth-child(2) > g:nth-child(1) > circle:nth-child(1)"
+                        },
+                        "startDirections": [
+                            "right"
+                        ],
+                        "target": {
+                            "id": "fe9cafde-e0ab-4c67-bdf3-8ce9d0c4a7a3",
+                            "selector": ".port-body[type=\"input\"]"
+                        },
+                        "type": "link",
+                        "z": 171
+                    },
+                    {
+                        "action": "update episode",
+                        "action_type": "generic",
+                        "active": false,
+                        "active_keys": {},
+                        "active_values": {
+                            "itsi_group_id": "container:source_data_identifier",
+                            "owner": "",
+                            "severity": "Medium",
+                            "status": "In Progress"
+                        },
+                        "angle": 0,
+                        "app": "Splunk IT Service Intelligence",
+                        "appid": "94bcee41-329f-4907-8895-d4e2a10616b8",
+                        "approver": "",
+                        "assets": [
+                            {
+                                "action": "update episode",
+                                "actions": [
+                                    "test connectivity",
+                                    "get episode",
+                                    "update episode",
+                                    "add episode comment",
+                                    "break episode",
+                                    "close episode",
+                                    "get episode events",
+                                    "add episode ticket",
+                                    "get episode tickets",
+                                    "get entity",
+                                    "get service",
+                                    "get service entities",
+                                    "update service status",
+                                    "get maintenance window",
+                                    "add maintenance window",
+                                    "update maintenance window",
+                                    "end maintenance window"
+                                ],
+                                "active": true,
+                                "app_name": "Splunk IT Service Intelligence",
+                                "app_version": "1.0.0",
+                                "appid": "94bcee41-329f-4907-8895-d4e2a10616b8",
+                                "asset_name": "splunk itsi",
+                                "config_type": "asset",
+                                "count": 0,
+                                "fields": {
+                                    "itsi_group_id": "container:source_data_identifier",
+                                    "owner": "",
+                                    "severity": "Medium",
+                                    "status": "In Progress"
+                                },
+                                "has_app": true,
+                                "id": 6,
+                                "loaded": false,
+                                "missing": false,
+                                "name": "splunk itsi",
+                                "output": [
+                                    {
+                                        "column_name": "Status",
+                                        "column_order": 4,
+                                        "data_path": "action_result.status",
+                                        "data_type": "string",
+                                        "example_values": [
+                                            "success",
+                                            "failed"
+                                        ]
+                                    },
+                                    {
+                                        "column_name": "ITSI Group ID",
+                                        "column_order": 0,
+                                        "data_path": "action_result.parameter.itsi_group_id",
+                                        "data_type": "string"
+                                    },
+                                    {
+                                        "column_name": "Owner",
+                                        "column_order": 3,
+                                        "data_path": "action_result.parameter.owner",
+                                        "data_type": "string"
+                                    },
+                                    {
+                                        "column_name": "Severity",
+                                        "column_order": 2,
+                                        "data_path": "action_result.parameter.severity",
+                                        "data_type": "string"
+                                    },
+                                    {
+                                        "column_name": "Status",
+                                        "column_order": 1,
+                                        "data_path": "action_result.parameter.status",
+                                        "data_type": "string"
+                                    },
+                                    {
+                                        "column_name": "Data",
+                                        "column_order": 5,
+                                        "data_path": "action_result.data",
+                                        "data_type": "string"
+                                    },
+                                    {
+                                        "column_name": "Summary",
+                                        "column_order": 6,
+                                        "data_path": "action_result.summary",
+                                        "data_type": "string"
+                                    },
+                                    {
+                                        "data_path": "action_result.message",
+                                        "data_type": "string"
+                                    },
+                                    {
+                                        "data_path": "summary.total_objects",
+                                        "data_type": "numeric",
+                                        "example_values": [
+                                            1
+                                        ]
+                                    },
+                                    {
+                                        "data_path": "summary.total_objects_successful",
+                                        "data_type": "numeric",
+                                        "example_values": [
+                                            1
+                                        ]
+                                    }
+                                ],
+                                "parameters": {
+                                    "itsi_group_id": {
+                                        "data_type": "string",
+                                        "default": null,
+                                        "description": "Splunk ITSI episode ID",
+                                        "key": "itsi_group_id",
+                                        "order": 0,
+                                        "required": true
+                                    },
+                                    "owner": {
+                                        "data_type": "string",
+                                        "default": null,
+                                        "description": "Episode owner",
+                                        "key": "owner",
+                                        "order": 3,
+                                        "required": false
+                                    },
+                                    "severity": {
+                                        "data_type": "string",
+                                        "default": null,
+                                        "description": "Episode severity",
+                                        "key": "severity",
+                                        "order": 2,
+                                        "required": false,
+                                        "value_list": [
+                                            "Info",
+                                            "Normal",
+                                            "Low",
+                                            "Medium",
+                                            "High",
+                                            "Critical"
+                                        ]
+                                    },
+                                    "status": {
+                                        "data_type": "string",
+                                        "default": null,
+                                        "description": "Episode status",
+                                        "key": "status",
+                                        "order": 1,
+                                        "required": false,
+                                        "value_list": [
+                                            "Unassigned",
+                                            "New",
+                                            "In Progress",
+                                            "Pending",
+                                            "Resolved",
+                                            "Closed"
+                                        ]
+                                    }
+                                },
+                                "product_name": "Splunk ITSI",
+                                "product_vendor": "Splunk",
+                                "targets": "6",
+                                "type": "devops"
+                            }
+                        ],
+                        "attrs": {
+                            ".action": {
+                                "text": "update episode"
+                            },
+                            ".background": {
+                                "fill": "#FFFFFF",
+                                "stroke": "#818D99"
+                            },
+                            ".color-band": {
+                                "fill": "#171D21"
+                            },
+                            ".inPorts>.port-in": {
+                                "ref": ".background",
+                                "ref-x": 0.5
+                            },
+                            ".inPorts>.port-in>.port-body": {
+                                "port": {
+                                    "id": "in",
+                                    "type": "in"
+                                }
+                            },
+                            ".message": {
+                                "opacity": 0,
+                                "ref-x": 5,
+                                "ref-y": 105,
+                                "text": "Configuring now"
+                            },
+                            ".outPorts>.port-out": {
+                                "ref": ".background",
+                                "ref-x": 0.5
+                            },
+                            ".outPorts>.port-out>.port-body": {
+                                "port": {
+                                    "id": "out",
+                                    "type": "out"
+                                }
+                            },
+                            ".title": {
+                                "text": "Generic"
+                            },
+                            "g.delete": {
+                                "display": "none"
+                            },
+                            "g.error": {
+                                "opacity": 0
+                            },
+                            "g.icon image": {
+                                "xlink:href": "/inc/coa/img/block_icon_generic.svg"
+                            },
+                            "g.notes": {
+                                "display": "block"
+                            }
+                        },
+                        "block_code": "def update_episode_1(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):\n    phantom.debug('update_episode_1() called')\n        \n    #phantom.debug('Action: {0} {1}'.format(action['name'], ('SUCCEEDED' if success else 'FAILED')))\n    \n    source_data_identifier_value = container.get('source_data_identifier', None)\n\n    # collect data for 'update_episode_1' call\n\n    parameters = []\n    \n    # build parameters list for 'update_episode_1' call\n    parameters.append({\n        'itsi_group_id': source_data_identifier_value,\n        'status': \"In Progress\",\n        'severity': \"Medium\",\n        'owner': \"\",\n    })\n\n    phantom.act(action=\"update episode\", parameters=parameters, assets=['splunk itsi'], name=\"update_episode_1\", parent_action=action)\n\n    return",
+                        "callback_code": "",
+                        "callback_start": 1,
+                        "callsback": true,
+                        "color": "",
+                        "connected_to_start": true,
+                        "connection_name": "update ticket",
+                        "connection_type": "action",
+                        "custom_callback": "",
+                        "custom_code": "",
+                        "custom_join": "",
+                        "custom_name": "",
+                        "delay": 0,
+                        "description": "",
+                        "has_custom": false,
+                        "has_custom_block": false,
+                        "has_custom_callback": false,
+                        "has_custom_join": false,
+                        "id": "fe9cafde-e0ab-4c67-bdf3-8ce9d0c4a7a3",
+                        "inPorts": [
+                            "in"
+                        ],
+                        "join_code": "",
+                        "join_optional": [],
+                        "join_start": 1,
+                        "line_end": 363,
+                        "line_start": 340,
+                        "message": "Configuring now",
+                        "name": "update episode",
+                        "notes": "",
+                        "number": 1,
+                        "order": 20,
+                        "outPorts": [
+                            "out"
+                        ],
+                        "ports": {
+                            "groups": {
+                                "in": {
+                                    "attrs": {
+                                        ".port-body": {
+                                            "fill": "#fff",
+                                            "magnet": true,
+                                            "r": 10,
+                                            "stroke": "#000"
+                                        },
+                                        ".port-label": {
+                                            "fill": "#000"
+                                        }
+                                    },
+                                    "label": {
+                                        "position": {
+                                            "args": {
+                                                "y": 10
+                                            },
+                                            "name": "left"
+                                        }
+                                    },
+                                    "position": {
+                                        "name": "left"
+                                    }
+                                },
+                                "out": {
+                                    "attrs": {
+                                        ".port-body": {
+                                            "fill": "#fff",
+                                            "magnet": true,
+                                            "r": 10,
+                                            "stroke": "#000"
+                                        },
+                                        ".port-label": {
+                                            "fill": "#000"
+                                        }
+                                    },
+                                    "label": {
+                                        "position": {
+                                            "args": {
+                                                "y": 10
+                                            },
+                                            "name": "right"
+                                        }
+                                    },
+                                    "position": {
+                                        "name": "right"
+                                    }
+                                }
+                            }
+                        },
+                        "position": {
+                            "x": 2300,
+                            "y": 360
+                        },
+                        "previous_function": "",
+                        "previous_name": "update_episode_1",
+                        "required_params": {
+                            "itsi_group_id": true
+                        },
+                        "reviewer": "",
+                        "show_number": false,
+                        "size": {
+                            "height": 100,
+                            "width": 180
+                        },
+                        "state": "app_action_assets",
+                        "status": "",
+                        "title": "Generic",
+                        "type": "coa.Action",
                         "warn": "",
-                        "z": 167
+                        "z": 173
+                    },
+                    {
+                        "attrs": {
+                            ".connection": {
+                                "stroke": "#818D99",
+                                "stroke-width": 2
+                            },
+                            ".marker-target": {
+                                "d": "M 10 0 L 0 5 L 10 10 z",
+                                "fill": "#818D99",
+                                "stroke": "#818D99"
+                            }
+                        },
+                        "connector": {
+                            "args": {
+                                "radius": 5
+                            },
+                            "name": "rounded"
+                        },
+                        "endDirections": [
+                            "left"
+                        ],
+                        "id": "b0011d1b-e053-4804-9a5e-e5cf0f629127",
+                        "router": {
+                            "name": "metro"
+                        },
+                        "source": {
+                            "id": "fe9cafde-e0ab-4c67-bdf3-8ce9d0c4a7a3",
+                            "selector": "> g:nth-child(1) > g:nth-child(2) > g:nth-child(1) > circle:nth-child(1)"
+                        },
+                        "startDirections": [
+                            "right"
+                        ],
+                        "target": {
+                            "id": "ba7b1731-448d-4f7a-a78e-061e471fdbae",
+                            "selector": "> g:nth-child(1) > g:nth-child(1) > g:nth-child(1) > circle:nth-child(1)"
+                        },
+                        "type": "link",
+                        "z": 174
                     }
                 ]
             },
@@ -6597,7 +6993,7 @@
         "schema": 4,
         "version": "4.9.34514"
     },
-    "create_time": "2020-08-21T07:14:21.697493+00:00",
+    "create_time": "2020-08-21T08:22:29.473579+00:00",
     "draft_mode": false,
     "labels": [
         "itsi"
