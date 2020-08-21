@@ -46,7 +46,7 @@ def Create_URL_Parameters(action=None, success=None, container=None, results=Non
 
     phantom.format(container=container, template=template, parameters=parameters, name="Create_URL_Parameters")
 
-    add_comment_6(container=container)
+    Get_PIN(container=container)
 
     return
 
@@ -100,7 +100,7 @@ def add_comment_3(action=None, success=None, container=None, results=None, handl
 def cf_community_list_deduplicate_1(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):
     phantom.debug('cf_community_list_deduplicate_1() called')
     
-    container_data_0 = phantom.collect2(container=container, datapath=['artifact:*.cef.entity_key', 'artifact:*.id'])
+    container_data_0 = phantom.collect2(container=container, datapath=['artifact:*.cef.entity_title', 'artifact:*.id'])
 
     parameters = []
 
@@ -156,16 +156,6 @@ def custom_pin(action=None, success=None, container=None, results=None, handle=N
 
         phantom.pin(container=container, data=results_item_1_1, message=results_item_1_0, pin_type="card", pin_style="grey", name=None)
     
-    return
-
-def add_comment_6(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):
-    phantom.debug('add_comment_6() called')
-
-    formatted_data_1 = phantom.get_format_data(name='Create_URL_Parameters')
-
-    phantom.comment(container=container, comment=formatted_data_1)
-    Get_PIN(container=container)
-
     return
 
 def on_finish(container, summary):
