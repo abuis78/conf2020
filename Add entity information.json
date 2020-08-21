@@ -7,7 +7,7 @@
             "clean": true,
             "code_block": "",
             "description": "",
-            "hash": "964a17052941dfdc31705b7a3bda569fe9c5f74a",
+            "hash": "f79bd4bbdcc35706760b842ae59c9ffd4409674b",
             "joint": {
                 "cells": [
                     {
@@ -314,45 +314,6 @@
                         "endDirections": [
                             "left"
                         ],
-                        "id": "fd79e977-2767-4c8c-8866-702fb3b4827a",
-                        "router": {
-                            "name": "metro"
-                        },
-                        "source": {
-                            "id": "6ad36b16-5dbb-4a16-beaa-a28a452c5b50",
-                            "selector": "> g:nth-child(1) > g:nth-child(2) > g:nth-child(1) > circle:nth-child(1)"
-                        },
-                        "startDirections": [
-                            "right"
-                        ],
-                        "target": {
-                            "id": "f31c6758-50a1-4c85-a0f5-e12b956e9724",
-                            "selector": "> g:nth-child(1) > g:nth-child(1) > g:nth-child(1) > circle:nth-child(1)"
-                        },
-                        "type": "link",
-                        "z": 20
-                    },
-                    {
-                        "attrs": {
-                            ".connection": {
-                                "stroke": "#818D99",
-                                "stroke-width": 2
-                            },
-                            ".marker-target": {
-                                "d": "M 10 0 L 0 5 L 10 10 z",
-                                "fill": "#818D99",
-                                "stroke": "#818D99"
-                            }
-                        },
-                        "connector": {
-                            "args": {
-                                "radius": 5
-                            },
-                            "name": "rounded"
-                        },
-                        "endDirections": [
-                            "left"
-                        ],
                         "id": "d2e9c9a0-27ba-44cc-9e0b-4dcafe6d294b",
                         "router": {
                             "name": "metro"
@@ -543,8 +504,8 @@
                         "join_code": "",
                         "join_optional": [],
                         "join_start": 1,
-                        "line_end": 101,
-                        "line_start": 94,
+                        "line_end": 100,
+                        "line_start": 93,
                         "message": "Configuring now",
                         "name": "add comment",
                         "notes": "",
@@ -731,8 +692,8 @@
                         "join_code": "",
                         "join_optional": [],
                         "join_start": 1,
-                        "line_end": 94,
-                        "line_start": 75,
+                        "line_end": 93,
+                        "line_start": 74,
                         "name": "decision",
                         "notes": "",
                         "number": 2,
@@ -956,8 +917,8 @@
                         "join_code": "",
                         "join_optional": [],
                         "join_start": 1,
-                        "line_end": 75,
-                        "line_start": 54,
+                        "line_end": 74,
+                        "line_start": 53,
                         "name": "decision",
                         "notes": "",
                         "number": 1,
@@ -1309,8 +1270,8 @@
                         "join_code": "",
                         "join_optional": [],
                         "join_start": 1,
-                        "line_end": 149,
-                        "line_start": 128,
+                        "line_end": 148,
+                        "line_start": 127,
                         "message": "Configuring now",
                         "name": "get entity",
                         "notes": "",
@@ -1579,8 +1540,8 @@
                         "join_code": "",
                         "join_optional": [],
                         "join_start": 1,
-                        "line_end": 128,
-                        "line_start": 101,
+                        "line_end": 127,
+                        "line_start": 100,
                         "message": "Configuring now",
                         "name": "list_deduplicate",
                         "notes": "",
@@ -1838,8 +1799,8 @@
                         "join_code": "",
                         "join_optional": [],
                         "join_start": 1,
-                        "line_end": 162,
-                        "line_start": 149,
+                        "line_end": 161,
+                        "line_start": 148,
                         "message": "Configuring now",
                         "name": "pin",
                         "notes": "",
@@ -1978,7 +1939,7 @@
                                 "opacity": 1
                             }
                         },
-                        "block_code": "def Create_URL_Parameters(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):\n    phantom.debug('Create_URL_Parameters() called')\n    \n    template = \"\"\"/rest/container_pin?_filter_container={0}&_filter_message=\\\"Entity: {1}\\\"\"\"\"\n\n    # parameter list for template variable replacement\n    parameters = [\n        \"container:id\",\n        \"cf_community_list_deduplicate_1:custom_function_result.data.*.item\",\n    ]\n\n    phantom.format(container=container, template=template, parameters=parameters, name=\"Create_URL_Parameters\")\n\n    Get_PIN(container=container)\n    add_comment_6(container=container)\n\n    return",
+                        "block_code": "def Create_URL_Parameters(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):\n    phantom.debug('Create_URL_Parameters() called')\n    \n    template = \"\"\"/rest/container_pin?_filter_container={0}&_filter_message=\\\"Entity: {1}\\\"\"\"\"\n\n    # parameter list for template variable replacement\n    parameters = [\n        \"container:id\",\n        \"cf_community_list_deduplicate_1:custom_function_result.data.*.item\",\n    ]\n\n    phantom.format(container=container, template=template, parameters=parameters, name=\"Create_URL_Parameters\")\n\n    add_comment_6(container=container)\n\n    return",
                         "callback_code": "",
                         "callback_start": 1,
                         "callsback": false,
@@ -2002,7 +1963,7 @@
                         "join_code": "",
                         "join_optional": [],
                         "join_start": 1,
-                        "line_end": 54,
+                        "line_end": 53,
                         "line_start": 36,
                         "message": "Configuring now",
                         "name": "format",
@@ -2077,8 +2038,8 @@
                             }
                         },
                         "position": {
-                            "x": -200,
-                            "y": 100
+                            "x": -320,
+                            "y": 320
                         },
                         "previous_function": "",
                         "previous_name": "Create_URL_Parameters",
@@ -2188,7 +2149,7 @@
                                 "display": "block"
                             }
                         },
-                        "block_code": "def add_comment_6(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):\n    phantom.debug('add_comment_6() called')\n\n    formatted_data_1 = phantom.get_format_data(name='Create_URL_Parameters')\n\n    phantom.comment(container=container, comment=formatted_data_1)\n\n    return",
+                        "block_code": "def add_comment_6(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):\n    phantom.debug('add_comment_6() called')\n\n    formatted_data_1 = phantom.get_format_data(name='Create_URL_Parameters')\n\n    phantom.comment(container=container, comment=formatted_data_1)\n    Get_PIN(container=container)\n\n    return",
                         "callback_code": "",
                         "callback_start": 1,
                         "callsback": false,
@@ -2219,7 +2180,7 @@
                         "join_optional": [],
                         "join_start": 1,
                         "line_end": 171,
-                        "line_start": 162,
+                        "line_start": 161,
                         "message": "Configuring now",
                         "name": "add comment",
                         "notes": "",
@@ -2281,8 +2242,8 @@
                             }
                         },
                         "position": {
-                            "x": 60,
-                            "y": 300
+                            "x": -20,
+                            "y": 580
                         },
                         "previous_function": "",
                         "previous_name": "add_comment_6",
@@ -2648,6 +2609,45 @@
                         "type": "coa.Action",
                         "warn": false,
                         "z": 273
+                    },
+                    {
+                        "attrs": {
+                            ".connection": {
+                                "stroke": "#818D99",
+                                "stroke-width": 2
+                            },
+                            ".marker-target": {
+                                "d": "M 10 0 L 0 5 L 10 10 z",
+                                "fill": "#818D99",
+                                "stroke": "#818D99"
+                            }
+                        },
+                        "connector": {
+                            "args": {
+                                "radius": 5
+                            },
+                            "name": "rounded"
+                        },
+                        "endDirections": [
+                            "left"
+                        ],
+                        "id": "273a8444-baa5-438b-8757-ab6544a5df9e",
+                        "router": {
+                            "name": "metro"
+                        },
+                        "source": {
+                            "id": "c7451a84-2ab0-4ae2-b4ca-77b6f3dfc274",
+                            "selector": "> g:nth-child(1) > g:nth-child(2) > g:nth-child(1) > circle:nth-child(1)"
+                        },
+                        "startDirections": [
+                            "right"
+                        ],
+                        "target": {
+                            "id": "f31c6758-50a1-4c85-a0f5-e12b956e9724",
+                            "selector": "> g:nth-child(1) > g:nth-child(1) > g:nth-child(1) > circle:nth-child(1)"
+                        },
+                        "type": "link",
+                        "z": 274
                     }
                 ]
             },
@@ -2657,7 +2657,7 @@
         "schema": 4,
         "version": "4.9.34514"
     },
-    "create_time": "2020-08-21T13:06:54.425900+00:00",
+    "create_time": "2020-08-21T13:08:47.131982+00:00",
     "draft_mode": false,
     "labels": [
         "itsi"

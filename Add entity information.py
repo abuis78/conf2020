@@ -46,7 +46,6 @@ def Create_URL_Parameters(action=None, success=None, container=None, results=Non
 
     phantom.format(container=container, template=template, parameters=parameters, name="Create_URL_Parameters")
 
-    Get_PIN(container=container)
     add_comment_6(container=container)
 
     return
@@ -165,6 +164,7 @@ def add_comment_6(action=None, success=None, container=None, results=None, handl
     formatted_data_1 = phantom.get_format_data(name='Create_URL_Parameters')
 
     phantom.comment(container=container, comment=formatted_data_1)
+    Get_PIN(container=container)
 
     return
 
