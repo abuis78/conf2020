@@ -7,7 +7,7 @@
             "clean": true,
             "code_block": "",
             "description": "",
-            "hash": "d17daf44d4026544ff0b6ccc8cdd926f5d26ec34",
+            "hash": "587112f5a57e1bb67c63777626daf922e1999117",
             "joint": {
                 "cells": [
                     {
@@ -199,8 +199,8 @@
                         "callback_start": 1,
                         "callsback": false,
                         "connected_to_start": true,
-                        "connection_name": "",
-                        "connection_type": "",
+                        "connection_name": "add episode comment",
+                        "connection_type": "action",
                         "custom_callback": "",
                         "custom_code": "",
                         "custom_join": "",
@@ -217,12 +217,12 @@
                         "join_code": "# read-only block view not available",
                         "join_optional": [],
                         "join_start": 1,
-                        "line_end": 120,
-                        "line_start": 107,
+                        "line_end": 145,
+                        "line_start": 132,
                         "name": "",
                         "notes": "",
                         "number": 0,
-                        "order": 7,
+                        "order": 8,
                         "outPorts": [],
                         "ports": {
                             "groups": {
@@ -292,45 +292,6 @@
                         "type": "coa.StartEnd",
                         "warn": false,
                         "z": 2
-                    },
-                    {
-                        "attrs": {
-                            ".connection": {
-                                "stroke": "#818D99",
-                                "stroke-width": 2
-                            },
-                            ".marker-target": {
-                                "d": "M 10 0 L 0 5 L 10 10 z",
-                                "fill": "#818D99",
-                                "stroke": "#818D99"
-                            }
-                        },
-                        "connector": {
-                            "args": {
-                                "radius": 5
-                            },
-                            "name": "rounded"
-                        },
-                        "endDirections": [
-                            "left"
-                        ],
-                        "id": "dd2d637e-743e-467a-9457-86df6c5794bc",
-                        "router": {
-                            "name": "metro"
-                        },
-                        "source": {
-                            "id": "35b7cf97-dc04-4a88-a242-95e835d3fa38",
-                            "selector": "> g:nth-child(1) > g:nth-child(2) > g:nth-child(1) > circle:nth-child(1)"
-                        },
-                        "startDirections": [
-                            "right"
-                        ],
-                        "target": {
-                            "id": "46c0b365-f159-436f-9b3b-b45b95d2e833",
-                            "selector": ".port-body[type=\"input\"]"
-                        },
-                        "type": "link",
-                        "z": 6
                     },
                     {
                         "attrs": {
@@ -452,8 +413,8 @@
                         "join_code": "",
                         "join_optional": [],
                         "join_start": 1,
-                        "line_end": 67,
-                        "line_start": 51,
+                        "line_end": 65,
+                        "line_start": 49,
                         "message": "Configuring now",
                         "name": "format",
                         "notes": "",
@@ -842,8 +803,8 @@
                         "join_code": "",
                         "join_optional": [],
                         "join_start": 1,
-                        "line_end": 86,
-                        "line_start": 67,
+                        "line_end": 84,
+                        "line_start": 65,
                         "message": "Configuring now",
                         "name": "get data",
                         "notes": "",
@@ -967,311 +928,43 @@
                         "z": 13
                     },
                     {
-                        "action": "end maintenance window",
-                        "action_type": "generic",
-                        "active": false,
-                        "active_keys": {},
-                        "active_values": {
-                            "comment": "Phantom",
-                            "maintenance_window_id": "format_1:formatted_data"
-                        },
-                        "angle": 0,
-                        "app": "Splunk IT Service Intelligence",
-                        "appid": "94bcee41-329f-4907-8895-d4e2a10616b8",
-                        "approver": "",
-                        "assets": [
-                            {
-                                "action": "end maintenance window",
-                                "actions": [
-                                    "test connectivity",
-                                    "get episode",
-                                    "update episode",
-                                    "add episode comment",
-                                    "break episode",
-                                    "close episode",
-                                    "get episode events",
-                                    "add episode ticket",
-                                    "get episode tickets",
-                                    "get entity",
-                                    "get service",
-                                    "get service entities",
-                                    "update service status",
-                                    "get maintenance window",
-                                    "add maintenance window",
-                                    "update maintenance window",
-                                    "end maintenance window"
-                                ],
-                                "active": true,
-                                "app_name": "Splunk IT Service Intelligence",
-                                "app_version": "1.0.0",
-                                "appid": "94bcee41-329f-4907-8895-d4e2a10616b8",
-                                "asset_name": "splunk itsi",
-                                "config_type": "asset",
-                                "count": 0,
-                                "fields": {
-                                    "comment": "Phantom",
-                                    "maintenance_window_id": "format_1:formatted_data"
-                                },
-                                "has_app": true,
-                                "id": 6,
-                                "loaded": false,
-                                "missing": false,
-                                "name": "splunk itsi",
-                                "output": [
-                                    {
-                                        "column_name": "Status",
-                                        "column_order": 4,
-                                        "data_path": "action_result.status",
-                                        "data_type": "string",
-                                        "example_values": [
-                                            "success",
-                                            "failed"
-                                        ]
-                                    },
-                                    {
-                                        "column_name": "Comment",
-                                        "column_order": 1,
-                                        "data_path": "action_result.parameter.comment",
-                                        "data_type": "string"
-                                    },
-                                    {
-                                        "column_name": "Maintenance Window ID",
-                                        "column_order": 0,
-                                        "data_path": "action_result.parameter.maintenance_window_id",
-                                        "data_type": "string"
-                                    },
-                                    {
-                                        "column_name": "Data",
-                                        "column_order": 2,
-                                        "data_path": "action_result.data",
-                                        "data_type": "string"
-                                    },
-                                    {
-                                        "column_name": "Summary",
-                                        "column_order": 3,
-                                        "data_path": "action_result.summary",
-                                        "data_type": "string"
-                                    },
-                                    {
-                                        "data_path": "action_result.message",
-                                        "data_type": "string"
-                                    },
-                                    {
-                                        "data_path": "summary.total_objects",
-                                        "data_type": "numeric",
-                                        "example_values": [
-                                            1
-                                        ]
-                                    },
-                                    {
-                                        "data_path": "summary.total_objects_successful",
-                                        "data_type": "numeric",
-                                        "example_values": [
-                                            1
-                                        ]
-                                    }
-                                ],
-                                "parameters": {
-                                    "comment": {
-                                        "data_type": "string",
-                                        "default": null,
-                                        "description": "Comment",
-                                        "key": "comment",
-                                        "order": 1,
-                                        "required": true
-                                    },
-                                    "maintenance_window_id": {
-                                        "data_type": "string",
-                                        "default": null,
-                                        "description": "Splunk ITSI maintenance window ID",
-                                        "key": "maintenance_window_id",
-                                        "order": 0,
-                                        "required": true
-                                    }
-                                },
-                                "product_name": "Splunk ITSI",
-                                "product_vendor": "Splunk",
-                                "targets": "6",
-                                "type": "devops"
-                            }
-                        ],
                         "attrs": {
-                            ".action": {
-                                "text": "end maintenance window"
+                            ".connection": {
+                                "stroke": "#818D99",
+                                "stroke-width": 2
                             },
-                            ".background": {
-                                "fill": "#FFFFFF",
+                            ".marker-target": {
+                                "d": "M 10 0 L 0 5 L 10 10 z",
+                                "fill": "#818D99",
                                 "stroke": "#818D99"
-                            },
-                            ".color-band": {
-                                "fill": "#171D21"
-                            },
-                            ".inPorts>.port-in": {
-                                "ref": ".background",
-                                "ref-x": 0.5
-                            },
-                            ".inPorts>.port-in>.port-body": {
-                                "port": {
-                                    "id": "in",
-                                    "type": "in"
-                                }
-                            },
-                            ".message": {
-                                "opacity": 0,
-                                "ref-x": 5,
-                                "ref-y": 105,
-                                "text": "Configuring now"
-                            },
-                            ".outPorts>.port-out": {
-                                "ref": ".background",
-                                "ref-x": 0.5
-                            },
-                            ".outPorts>.port-out>.port-body": {
-                                "port": {
-                                    "id": "out",
-                                    "type": "out"
-                                }
-                            },
-                            ".title": {
-                                "text": "Generic"
-                            },
-                            "g.approver image": {
-                                "opacity": 1
-                            },
-                            "g.code image": {
-                                "opacity": 1
-                            },
-                            "g.delete": {
-                                "display": "none"
-                            },
-                            "g.error": {
-                                "opacity": 0
-                            },
-                            "g.error image": {
-                                "xlink:href": "/inc/coa/img/block_icon_warn.svg"
-                            },
-                            "g.icon image": {
-                                "xlink:href": "/inc/coa/img/block_icon_generic.svg"
-                            },
-                            "g.notes": {
-                                "display": "block"
-                            },
-                            "g.notes image": {
-                                "opacity": 1
-                            },
-                            "g.timer image": {
-                                "opacity": 1
                             }
                         },
-                        "block_code": "def end_maintenance_window_1(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):\n    phantom.debug('end_maintenance_window_1() called')\n        \n    #phantom.debug('Action: {0} {1}'.format(action['name'], ('SUCCEEDED' if success else 'FAILED')))\n    \n    # collect data for 'end_maintenance_window_1' call\n    formatted_data_1 = phantom.get_format_data(name='format_1')\n\n    parameters = []\n    \n    # build parameters list for 'end_maintenance_window_1' call\n    parameters.append({\n        'comment': \"Phantom\",\n        'maintenance_window_id': formatted_data_1,\n    })\n\n    phantom.act(action=\"end maintenance window\", parameters=parameters, assets=['splunk itsi'], callback=add_episode_comment_1, name=\"end_maintenance_window_1\")\n\n    return",
-                        "callback_code": "",
-                        "callback_start": 1,
-                        "callsback": true,
-                        "color": "",
-                        "connected_to_start": true,
-                        "connection_name": "get data",
-                        "connection_type": "action",
-                        "custom_callback": "",
-                        "custom_code": "",
-                        "custom_join": "",
-                        "custom_name": "",
-                        "delay": "0",
-                        "description": "",
-                        "has_custom": false,
-                        "has_custom_block": false,
-                        "has_custom_callback": false,
-                        "has_custom_join": false,
-                        "id": "46c0b365-f159-436f-9b3b-b45b95d2e833",
-                        "inPorts": [
-                            "in"
+                        "connector": {
+                            "args": {
+                                "radius": 5
+                            },
+                            "name": "rounded"
+                        },
+                        "endDirections": [
+                            "left"
                         ],
-                        "join_code": "",
-                        "join_optional": [],
-                        "join_start": 1,
-                        "line_end": 51,
-                        "line_start": 31,
-                        "message": "Configuring now",
-                        "name": "end maintenance window",
-                        "notes": "",
-                        "number": 1,
-                        "order": 3,
-                        "outPorts": [
-                            "out"
+                        "id": "1395ee12-b818-402d-967b-9f5eaf308810",
+                        "router": {
+                            "name": "metro"
+                        },
+                        "source": {
+                            "id": "35b7cf97-dc04-4a88-a242-95e835d3fa38",
+                            "selector": "> g:nth-child(1) > g:nth-child(2) > g:nth-child(1) > circle:nth-child(1)"
+                        },
+                        "startDirections": [
+                            "right"
                         ],
-                        "ports": {
-                            "groups": {
-                                "in": {
-                                    "attrs": {
-                                        ".port-body": {
-                                            "fill": "#fff",
-                                            "magnet": true,
-                                            "r": 10,
-                                            "stroke": "#000"
-                                        },
-                                        ".port-label": {
-                                            "fill": "#000"
-                                        }
-                                    },
-                                    "label": {
-                                        "position": {
-                                            "args": {
-                                                "y": 10
-                                            },
-                                            "name": "left"
-                                        }
-                                    },
-                                    "position": {
-                                        "name": "left"
-                                    }
-                                },
-                                "out": {
-                                    "attrs": {
-                                        ".port-body": {
-                                            "fill": "#fff",
-                                            "magnet": true,
-                                            "r": 10,
-                                            "stroke": "#000"
-                                        },
-                                        ".port-label": {
-                                            "fill": "#000"
-                                        }
-                                    },
-                                    "label": {
-                                        "position": {
-                                            "args": {
-                                                "y": 10
-                                            },
-                                            "name": "right"
-                                        }
-                                    },
-                                    "position": {
-                                        "name": "right"
-                                    }
-                                }
-                            }
+                        "target": {
+                            "id": "a4baf750-1246-48e4-851c-52d063aa8ffd",
+                            "selector": ".port-body[type=\"input\"]"
                         },
-                        "position": {
-                            "x": 1000,
-                            "y": 80
-                        },
-                        "previous_function": "",
-                        "previous_name": "end_maintenance_window_1",
-                        "required_params": {
-                            "comment": true,
-                            "maintenance_window_id": true
-                        },
-                        "reviewer": "",
-                        "show_number": false,
-                        "size": {
-                            "height": 100,
-                            "width": 180
-                        },
-                        "state": "app_action_assets",
-                        "status": "",
-                        "title": "Generic",
-                        "type": "coa.Action",
-                        "warn": false,
-                        "z": 15
+                        "type": "link",
+                        "z": 22
                     },
                     {
                         "active": false,
@@ -1333,7 +1026,7 @@
                                 "opacity": 1
                             }
                         },
-                        "block_code": "def format_1(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):\n    phantom.debug('format_1() called')\n    \n    template = \"\"\"{0}\"\"\"\n\n    # parameter list for template variable replacement\n    parameters = [\n        \"get_data_1:action_result.data.*.response_body.data.*.data\",\n    ]\n\n    phantom.format(container=container, template=template, parameters=parameters, name=\"format_1\")\n\n    end_maintenance_window_1(container=container)\n\n    return",
+                        "block_code": "def format_1(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):\n    phantom.debug('format_1() called')\n    \n    template = \"\"\"{0}\"\"\"\n\n    # parameter list for template variable replacement\n    parameters = [\n        \"get_data_1:action_result.data.*.response_body.data.*.data\",\n    ]\n\n    phantom.format(container=container, template=template, parameters=parameters, name=\"format_1\")\n\n    update_maintenance_window_1(container=container)\n\n    return",
                         "callback_code": "",
                         "callback_start": 1,
                         "callsback": false,
@@ -1443,46 +1136,314 @@
                         "title": "format",
                         "type": "coa.Format",
                         "warn": false,
-                        "z": 16
+                        "z": 25
                     },
                     {
+                        "action": "end maintenance window",
+                        "action_type": "generic",
+                        "active": false,
+                        "active_keys": {},
+                        "active_values": {
+                            "comment": "Maintenance Windows closed by Phantom",
+                            "maintenance_window_id": "format_1:formatted_data"
+                        },
+                        "angle": 0,
+                        "app": "Splunk IT Service Intelligence",
+                        "appid": "94bcee41-329f-4907-8895-d4e2a10616b8",
+                        "approver": "",
+                        "assets": [
+                            {
+                                "action": "end maintenance window",
+                                "actions": [
+                                    "test connectivity",
+                                    "get episode",
+                                    "update episode",
+                                    "add episode comment",
+                                    "break episode",
+                                    "close episode",
+                                    "get episode events",
+                                    "add episode ticket",
+                                    "get episode tickets",
+                                    "get entity",
+                                    "get service",
+                                    "get service entities",
+                                    "update service status",
+                                    "get maintenance window",
+                                    "add maintenance window",
+                                    "update maintenance window",
+                                    "end maintenance window"
+                                ],
+                                "active": true,
+                                "app_name": "Splunk IT Service Intelligence",
+                                "app_version": "1.0.0",
+                                "appid": "94bcee41-329f-4907-8895-d4e2a10616b8",
+                                "asset_name": "splunk itsi",
+                                "config_type": "asset",
+                                "count": 0,
+                                "fields": {
+                                    "comment": "Maintenance Windows closed by Phantom",
+                                    "maintenance_window_id": "format_1:formatted_data"
+                                },
+                                "has_app": true,
+                                "id": 6,
+                                "loaded": false,
+                                "missing": false,
+                                "name": "splunk itsi",
+                                "output": [
+                                    {
+                                        "column_name": "Status",
+                                        "column_order": 4,
+                                        "data_path": "action_result.status",
+                                        "data_type": "string",
+                                        "example_values": [
+                                            "success",
+                                            "failed"
+                                        ]
+                                    },
+                                    {
+                                        "column_name": "Comment",
+                                        "column_order": 1,
+                                        "data_path": "action_result.parameter.comment",
+                                        "data_type": "string"
+                                    },
+                                    {
+                                        "column_name": "Maintenance Window ID",
+                                        "column_order": 0,
+                                        "data_path": "action_result.parameter.maintenance_window_id",
+                                        "data_type": "string"
+                                    },
+                                    {
+                                        "column_name": "Data",
+                                        "column_order": 2,
+                                        "data_path": "action_result.data",
+                                        "data_type": "string"
+                                    },
+                                    {
+                                        "column_name": "Summary",
+                                        "column_order": 3,
+                                        "data_path": "action_result.summary",
+                                        "data_type": "string"
+                                    },
+                                    {
+                                        "data_path": "action_result.message",
+                                        "data_type": "string"
+                                    },
+                                    {
+                                        "data_path": "summary.total_objects",
+                                        "data_type": "numeric",
+                                        "example_values": [
+                                            1
+                                        ]
+                                    },
+                                    {
+                                        "data_path": "summary.total_objects_successful",
+                                        "data_type": "numeric",
+                                        "example_values": [
+                                            1
+                                        ]
+                                    }
+                                ],
+                                "parameters": {
+                                    "comment": {
+                                        "data_type": "string",
+                                        "default": null,
+                                        "description": "Comment",
+                                        "key": "comment",
+                                        "order": 1,
+                                        "required": true
+                                    },
+                                    "maintenance_window_id": {
+                                        "data_type": "string",
+                                        "default": null,
+                                        "description": "Splunk ITSI maintenance window ID",
+                                        "key": "maintenance_window_id",
+                                        "order": 0,
+                                        "required": true
+                                    }
+                                },
+                                "product_name": "Splunk ITSI",
+                                "product_vendor": "Splunk",
+                                "targets": "6",
+                                "type": "devops"
+                            }
+                        ],
                         "attrs": {
-                            ".connection": {
-                                "stroke": "#818D99",
-                                "stroke-width": 2
+                            ".action": {
+                                "text": "end maintenance window"
                             },
-                            ".marker-target": {
-                                "d": "M 10 0 L 0 5 L 10 10 z",
-                                "fill": "#818D99",
-                                "stroke": "#818D99"
+                            ".background": {
+                                "fill": "#FFFFFF",
+                                "stroke": "#E6984E"
+                            },
+                            ".color-band": {
+                                "fill": "#171D21"
+                            },
+                            ".inPorts>.port-in": {
+                                "ref": ".background",
+                                "ref-x": 0.5
+                            },
+                            ".inPorts>.port-in>.port-body": {
+                                "port": {
+                                    "id": "in",
+                                    "type": "in"
+                                }
+                            },
+                            ".message": {
+                                "opacity": 0,
+                                "ref-x": 5,
+                                "ref-y": 105,
+                                "text": "Configuring now"
+                            },
+                            ".outPorts>.port-out": {
+                                "ref": ".background",
+                                "ref-x": 0.5
+                            },
+                            ".outPorts>.port-out>.port-body": {
+                                "port": {
+                                    "id": "out",
+                                    "type": "out"
+                                }
+                            },
+                            ".title": {
+                                "text": "Generic"
+                            },
+                            "g.approver image": {
+                                "opacity": 1
+                            },
+                            "g.code image": {
+                                "opacity": 1
+                            },
+                            "g.delete": {
+                                "display": "none"
+                            },
+                            "g.error": {
+                                "opacity": 1
+                            },
+                            "g.error image": {
+                                "xlink:href": "/inc/coa/img/block_icon_warn.svg"
+                            },
+                            "g.icon image": {
+                                "xlink:href": "/inc/coa/img/block_icon_generic.svg"
+                            },
+                            "g.notes": {
+                                "display": "block"
+                            },
+                            "g.notes image": {
+                                "opacity": 1
+                            },
+                            "g.timer image": {
+                                "opacity": 1
                             }
                         },
-                        "connector": {
-                            "args": {
-                                "radius": 5
-                            },
-                            "name": "rounded"
-                        },
-                        "endDirections": [
-                            "left"
+                        "block_code": "def end_maintenance_window_1(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):\n    phantom.debug('end_maintenance_window_1() called')\n\n    # collect data for 'end_maintenance_window_1' call\n    formatted_data_1 = phantom.get_format_data(name='format_1')\n\n    parameters = []\n    \n    # build parameters list for 'end_maintenance_window_1' call\n    parameters.append({\n        'comment': \"Maintenance Windows closed by Phantom\",\n        'maintenance_window_id': formatted_data_1,\n    })\n\n    phantom.act(action=\"end maintenance window\", parameters=parameters, assets=['splunk itsi'], name=\"end_maintenance_window_1\")\n\n    return",
+                        "callback_code": "",
+                        "callback_start": 1,
+                        "callsback": true,
+                        "color": "",
+                        "connected_to_start": false,
+                        "connection_name": "",
+                        "connection_type": "",
+                        "custom_callback": "",
+                        "custom_code": "",
+                        "custom_join": "",
+                        "custom_name": "",
+                        "delay": "0",
+                        "description": "",
+                        "has_custom": false,
+                        "has_custom_block": false,
+                        "has_custom_callback": false,
+                        "has_custom_join": false,
+                        "id": "46c0b365-f159-436f-9b3b-b45b95d2e833",
+                        "inPorts": [
+                            "in"
                         ],
-                        "id": "36ae0621-e95d-4536-aae0-9a16b505fcff",
-                        "router": {
-                            "name": "metro"
-                        },
-                        "source": {
-                            "id": "46c0b365-f159-436f-9b3b-b45b95d2e833",
-                            "selector": "> g:nth-child(1) > g:nth-child(2) > g:nth-child(1) > circle:nth-child(1)"
-                        },
-                        "startDirections": [
-                            "right"
+                        "join_code": "",
+                        "join_optional": [],
+                        "join_start": 1,
+                        "line_end": 49,
+                        "line_start": 31,
+                        "message": "Configuring now",
+                        "name": "end maintenance window",
+                        "notes": "",
+                        "number": 1,
+                        "order": 3,
+                        "outPorts": [
+                            "out"
                         ],
-                        "target": {
-                            "id": "9fe4e88d-9b76-4dbc-82cd-2f1f8954d8df",
-                            "selector": ".port-body[type=\"input\"]"
+                        "ports": {
+                            "groups": {
+                                "in": {
+                                    "attrs": {
+                                        ".port-body": {
+                                            "fill": "#fff",
+                                            "magnet": true,
+                                            "r": 10,
+                                            "stroke": "#000"
+                                        },
+                                        ".port-label": {
+                                            "fill": "#000"
+                                        }
+                                    },
+                                    "label": {
+                                        "position": {
+                                            "args": {
+                                                "y": 10
+                                            },
+                                            "name": "left"
+                                        }
+                                    },
+                                    "position": {
+                                        "name": "left"
+                                    }
+                                },
+                                "out": {
+                                    "attrs": {
+                                        ".port-body": {
+                                            "fill": "#fff",
+                                            "magnet": true,
+                                            "r": 10,
+                                            "stroke": "#000"
+                                        },
+                                        ".port-label": {
+                                            "fill": "#000"
+                                        }
+                                    },
+                                    "label": {
+                                        "position": {
+                                            "args": {
+                                                "y": 10
+                                            },
+                                            "name": "right"
+                                        }
+                                    },
+                                    "position": {
+                                        "name": "right"
+                                    }
+                                }
+                            }
                         },
-                        "type": "link",
-                        "z": 17
+                        "position": {
+                            "x": 1060,
+                            "y": 300
+                        },
+                        "previous_function": "",
+                        "previous_name": "end_maintenance_window_1",
+                        "required_params": {
+                            "comment": true,
+                            "maintenance_window_id": true
+                        },
+                        "reviewer": "",
+                        "show_number": false,
+                        "size": {
+                            "height": 100,
+                            "width": 180
+                        },
+                        "state": "app_action_assets",
+                        "status": "warn",
+                        "title": "Generic",
+                        "type": "coa.Action",
+                        "warn": "",
+                        "z": 27
                     },
                     {
                         "action": "add episode comment",
@@ -1490,7 +1451,7 @@
                         "active": false,
                         "active_keys": {},
                         "active_values": {
-                            "comment": "Maintenance Windows end",
+                            "comment": "Phantom: maintenance window will end in 60 seconds",
                             "itsi_group_id": "container:source_data_identifier"
                         },
                         "angle": 0,
@@ -1527,7 +1488,7 @@
                                 "config_type": "asset",
                                 "count": 0,
                                 "fields": {
-                                    "comment": "Maintenance Windows end",
+                                    "comment": "Phantom: maintenance window will end in 60 seconds",
                                     "itsi_group_id": "container:source_data_identifier"
                                 },
                                 "has_app": true,
@@ -1653,26 +1614,41 @@
                             ".title": {
                                 "text": "Generic"
                             },
+                            "g.approver image": {
+                                "opacity": 1
+                            },
+                            "g.code image": {
+                                "opacity": 1
+                            },
                             "g.delete": {
                                 "display": "none"
                             },
                             "g.error": {
                                 "opacity": 0
                             },
+                            "g.error image": {
+                                "xlink:href": "/inc/coa/img/block_icon_warn.svg"
+                            },
                             "g.icon image": {
                                 "xlink:href": "/inc/coa/img/block_icon_generic.svg"
                             },
                             "g.notes": {
                                 "display": "block"
+                            },
+                            "g.notes image": {
+                                "opacity": 1
+                            },
+                            "g.timer image": {
+                                "opacity": 1
                             }
                         },
-                        "block_code": "def add_episode_comment_1(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):\n    phantom.debug('add_episode_comment_1() called')\n        \n    #phantom.debug('Action: {0} {1}'.format(action['name'], ('SUCCEEDED' if success else 'FAILED')))\n    \n    source_data_identifier_value = container.get('source_data_identifier', None)\n\n    # collect data for 'add_episode_comment_1' call\n\n    parameters = []\n    \n    # build parameters list for 'add_episode_comment_1' call\n    parameters.append({\n        'itsi_group_id': source_data_identifier_value,\n        'comment': \"Maintenance Windows end\",\n    })\n\n    phantom.act(action=\"add episode comment\", parameters=parameters, assets=['splunk itsi'], name=\"add_episode_comment_1\", parent_action=action)\n\n    return",
+                        "block_code": "def add_episode_comment_1(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):\n    phantom.debug('add_episode_comment_1() called')\n        \n    #phantom.debug('Action: {0} {1}'.format(action['name'], ('SUCCEEDED' if success else 'FAILED')))\n    \n    source_data_identifier_value = container.get('source_data_identifier', None)\n\n    # collect data for 'add_episode_comment_1' call\n\n    parameters = []\n    \n    # build parameters list for 'add_episode_comment_1' call\n    parameters.append({\n        'comment': \"Phantom: maintenance window will end in 60 seconds\",\n        'itsi_group_id': source_data_identifier_value,\n    })\n\n    phantom.act(action=\"add episode comment\", parameters=parameters, assets=['splunk itsi'], name=\"add_episode_comment_1\", parent_action=action)\n\n    return",
                         "callback_code": "",
                         "callback_start": 1,
                         "callsback": true,
                         "color": "",
-                        "connected_to_start": true,
-                        "connection_name": "end maintenance window",
+                        "connected_to_start": false,
+                        "connection_name": "update maintenance window",
                         "connection_type": "action",
                         "custom_callback": "",
                         "custom_code": "",
@@ -1691,8 +1667,8 @@
                         "join_code": "",
                         "join_optional": [],
                         "join_start": 1,
-                        "line_end": 107,
-                        "line_start": 86,
+                        "line_end": 105,
+                        "line_start": 84,
                         "message": "Configuring now",
                         "name": "add episode comment",
                         "notes": "",
@@ -1774,7 +1750,488 @@
                         "title": "Generic",
                         "type": "coa.Action",
                         "warn": "",
-                        "z": 19
+                        "z": 29
+                    },
+                    {
+                        "attrs": {
+                            ".connection": {
+                                "stroke": "#818D99",
+                                "stroke-width": 2
+                            },
+                            ".marker-target": {
+                                "d": "M 10 0 L 0 5 L 10 10 z",
+                                "fill": "#818D99",
+                                "stroke": "#818D99"
+                            }
+                        },
+                        "connector": {
+                            "args": {
+                                "radius": 5
+                            },
+                            "name": "rounded"
+                        },
+                        "endDirections": [
+                            "left"
+                        ],
+                        "id": "1d22f5f0-f156-415a-a307-11f274bc5cd9",
+                        "router": {
+                            "name": "metro"
+                        },
+                        "source": {
+                            "id": "a4baf750-1246-48e4-851c-52d063aa8ffd",
+                            "selector": "> g:nth-child(1) > g:nth-child(2) > g:nth-child(1) > circle:nth-child(1)"
+                        },
+                        "startDirections": [
+                            "right"
+                        ],
+                        "target": {
+                            "id": "9fe4e88d-9b76-4dbc-82cd-2f1f8954d8df",
+                            "selector": "> g:nth-child(1) > g:nth-child(1) > g:nth-child(1) > circle:nth-child(1)"
+                        },
+                        "type": "link",
+                        "z": 30
+                    },
+                    {
+                        "attrs": {
+                            ".connection": {
+                                "stroke": "#818D99",
+                                "stroke-width": 2
+                            },
+                            ".marker-target": {
+                                "d": "M 10 0 L 0 5 L 10 10 z",
+                                "fill": "#818D99",
+                                "stroke": "#818D99"
+                            }
+                        },
+                        "connector": {
+                            "args": {
+                                "radius": 5
+                            },
+                            "name": "rounded"
+                        },
+                        "endDirections": [
+                            "left"
+                        ],
+                        "id": "f842548f-8454-4188-932e-e2a632cdd9a1",
+                        "router": {
+                            "name": "metro"
+                        },
+                        "source": {
+                            "id": "9fe4e88d-9b76-4dbc-82cd-2f1f8954d8df",
+                            "selector": "> g:nth-child(1) > g:nth-child(2) > g:nth-child(1) > circle:nth-child(1)"
+                        },
+                        "startDirections": [
+                            "right"
+                        ],
+                        "target": {
+                            "id": "d6d551db-f4cd-44f6-a898-50fbbab05607",
+                            "selector": "> g:nth-child(1) > g:nth-child(1) > g:nth-child(1) > circle:nth-child(1)"
+                        },
+                        "type": "link",
+                        "z": 31
+                    },
+                    {
+                        "action": "update maintenance window",
+                        "action_type": "generic",
+                        "active": false,
+                        "active_keys": {},
+                        "active_values": {
+                            "comment": "Phantom: end maintenance window in 60 seconds",
+                            "end_time": "",
+                            "maintenance_window_id": "format_1:formatted_data",
+                            "object_ids": "",
+                            "object_type": "",
+                            "relative_end_time": "60",
+                            "relative_start_time": "",
+                            "start_time": "",
+                            "title": ""
+                        },
+                        "angle": 0,
+                        "app": "Splunk IT Service Intelligence",
+                        "appid": "94bcee41-329f-4907-8895-d4e2a10616b8",
+                        "approver": "",
+                        "assets": [
+                            {
+                                "action": "update maintenance window",
+                                "actions": [
+                                    "test connectivity",
+                                    "get episode",
+                                    "update episode",
+                                    "add episode comment",
+                                    "break episode",
+                                    "close episode",
+                                    "get episode events",
+                                    "add episode ticket",
+                                    "get episode tickets",
+                                    "get entity",
+                                    "get service",
+                                    "get service entities",
+                                    "update service status",
+                                    "get maintenance window",
+                                    "add maintenance window",
+                                    "update maintenance window",
+                                    "end maintenance window"
+                                ],
+                                "active": true,
+                                "app_name": "Splunk IT Service Intelligence",
+                                "app_version": "1.0.0",
+                                "appid": "94bcee41-329f-4907-8895-d4e2a10616b8",
+                                "asset_name": "splunk itsi",
+                                "config_type": "asset",
+                                "count": 0,
+                                "fields": {
+                                    "comment": "Phantom: end maintenance window in 60 seconds",
+                                    "end_time": "",
+                                    "maintenance_window_id": "format_1:formatted_data",
+                                    "object_ids": "",
+                                    "object_type": "",
+                                    "relative_end_time": "60",
+                                    "relative_start_time": "",
+                                    "start_time": "",
+                                    "title": ""
+                                },
+                                "has_app": true,
+                                "id": 6,
+                                "loaded": false,
+                                "missing": false,
+                                "name": "splunk itsi",
+                                "output": [
+                                    {
+                                        "column_name": "Status",
+                                        "column_order": 9,
+                                        "data_path": "action_result.status",
+                                        "data_type": "string",
+                                        "example_values": [
+                                            "success",
+                                            "failed"
+                                        ]
+                                    },
+                                    {
+                                        "column_name": "Comment",
+                                        "column_order": 6,
+                                        "data_path": "action_result.parameter.comment",
+                                        "data_type": "string"
+                                    },
+                                    {
+                                        "column_name": "End Time",
+                                        "column_order": 3,
+                                        "data_path": "action_result.parameter.end_time",
+                                        "data_type": "numeric"
+                                    },
+                                    {
+                                        "column_name": "Maintenance Window ID",
+                                        "column_order": 0,
+                                        "data_path": "action_result.parameter.maintenance_window_id",
+                                        "data_type": "string"
+                                    },
+                                    {
+                                        "column_name": "Object IDs",
+                                        "column_order": 5,
+                                        "data_path": "action_result.parameter.object_ids",
+                                        "data_type": "string"
+                                    },
+                                    {
+                                        "column_name": "Object Type",
+                                        "column_order": 4,
+                                        "data_path": "action_result.parameter.object_type",
+                                        "data_type": "string"
+                                    },
+                                    {
+                                        "data_path": "action_result.parameter.relative_end_time",
+                                        "data_type": "numeric"
+                                    },
+                                    {
+                                        "data_path": "action_result.parameter.relative_start_time",
+                                        "data_type": "numeric"
+                                    },
+                                    {
+                                        "column_name": "Start Time",
+                                        "column_order": 2,
+                                        "data_path": "action_result.parameter.start_time",
+                                        "data_type": "numeric"
+                                    },
+                                    {
+                                        "column_name": "Title",
+                                        "column_order": 1,
+                                        "data_path": "action_result.parameter.title",
+                                        "data_type": "string"
+                                    },
+                                    {
+                                        "column_name": "Data",
+                                        "column_order": 7,
+                                        "data_path": "action_result.data",
+                                        "data_type": "string"
+                                    },
+                                    {
+                                        "column_name": "Summary",
+                                        "column_order": 8,
+                                        "data_path": "action_result.summary",
+                                        "data_type": "string"
+                                    },
+                                    {
+                                        "data_path": "action_result.message",
+                                        "data_type": "string"
+                                    },
+                                    {
+                                        "data_path": "summary.total_objects",
+                                        "data_type": "numeric",
+                                        "example_values": [
+                                            1
+                                        ]
+                                    },
+                                    {
+                                        "data_path": "summary.total_objects_successful",
+                                        "data_type": "numeric",
+                                        "example_values": [
+                                            1
+                                        ]
+                                    }
+                                ],
+                                "parameters": {
+                                    "comment": {
+                                        "data_type": "string",
+                                        "default": null,
+                                        "description": "Comment",
+                                        "key": "comment",
+                                        "order": 8,
+                                        "required": false
+                                    },
+                                    "end_time": {
+                                        "data_type": "numeric",
+                                        "default": null,
+                                        "description": "End time (epochtime in seconds)",
+                                        "key": "end_time",
+                                        "order": 5,
+                                        "required": false
+                                    },
+                                    "maintenance_window_id": {
+                                        "data_type": "string",
+                                        "default": null,
+                                        "description": "Splunk ITSI maintenance window ID",
+                                        "key": "maintenance_window_id",
+                                        "order": 0,
+                                        "required": true
+                                    },
+                                    "object_ids": {
+                                        "data_type": "string",
+                                        "default": null,
+                                        "description": "Object IDs (comma separated list)",
+                                        "key": "object_ids",
+                                        "order": 7,
+                                        "required": false
+                                    },
+                                    "object_type": {
+                                        "data_type": "string",
+                                        "default": null,
+                                        "description": "Object type",
+                                        "key": "object_type",
+                                        "order": 6,
+                                        "required": false,
+                                        "value_list": [
+                                            "entity",
+                                            "service"
+                                        ]
+                                    },
+                                    "relative_end_time": {
+                                        "data_type": "numeric",
+                                        "default": null,
+                                        "description": "Relative end time in seconds. To end maintenance window in 1 min from now - 60, to end maintenance window after 5 mins - 300, to end maintenance window after 1 hour - 3600",
+                                        "key": "relative_end_time",
+                                        "order": 3,
+                                        "required": false
+                                    },
+                                    "relative_start_time": {
+                                        "data_type": "numeric",
+                                        "default": null,
+                                        "description": "Relative start time in seconds. To start maintenance window now - 0, to start maintenance window after 5 mins - 300, to start maintenance window after 1 hour - 3600",
+                                        "key": "relative_start_time",
+                                        "order": 2,
+                                        "required": false
+                                    },
+                                    "start_time": {
+                                        "data_type": "numeric",
+                                        "default": null,
+                                        "description": "Start time (epochtime in seconds)",
+                                        "key": "start_time",
+                                        "order": 4,
+                                        "required": false
+                                    },
+                                    "title": {
+                                        "data_type": "string",
+                                        "default": null,
+                                        "description": "Maintenance window title",
+                                        "key": "title",
+                                        "order": 1,
+                                        "required": false
+                                    }
+                                },
+                                "product_name": "Splunk ITSI",
+                                "product_vendor": "Splunk",
+                                "targets": "6",
+                                "type": "devops"
+                            }
+                        ],
+                        "attrs": {
+                            ".action": {
+                                "text": "update maintenance win..."
+                            },
+                            ".background": {
+                                "fill": "#FFFFFF",
+                                "stroke": "#818D99"
+                            },
+                            ".color-band": {
+                                "fill": "#171D21"
+                            },
+                            ".inPorts>.port-in": {
+                                "ref": ".background",
+                                "ref-x": 0.5
+                            },
+                            ".inPorts>.port-in>.port-body": {
+                                "port": {
+                                    "id": "in",
+                                    "type": "in"
+                                }
+                            },
+                            ".message": {
+                                "opacity": 0,
+                                "ref-x": 5,
+                                "ref-y": 105,
+                                "text": "Configuring now"
+                            },
+                            ".outPorts>.port-out": {
+                                "ref": ".background",
+                                "ref-x": 0.5
+                            },
+                            ".outPorts>.port-out>.port-body": {
+                                "port": {
+                                    "id": "out",
+                                    "type": "out"
+                                }
+                            },
+                            ".title": {
+                                "text": "Generic"
+                            },
+                            "g.delete": {
+                                "display": "none"
+                            },
+                            "g.error": {
+                                "opacity": 0
+                            },
+                            "g.icon image": {
+                                "xlink:href": "/inc/coa/img/block_icon_generic.svg"
+                            },
+                            "g.notes": {
+                                "display": "block"
+                            }
+                        },
+                        "block_code": "def update_maintenance_window_1(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):\n    phantom.debug('update_maintenance_window_1() called')\n        \n    #phantom.debug('Action: {0} {1}'.format(action['name'], ('SUCCEEDED' if success else 'FAILED')))\n    \n    # collect data for 'update_maintenance_window_1' call\n    formatted_data_1 = phantom.get_format_data(name='format_1')\n\n    parameters = []\n    \n    # build parameters list for 'update_maintenance_window_1' call\n    parameters.append({\n        'maintenance_window_id': formatted_data_1,\n        'title': \"\",\n        'relative_start_time': \"\",\n        'relative_end_time': 60,\n        'start_time': \"\",\n        'end_time': \"\",\n        'object_type': \"\",\n        'object_ids': \"\",\n        'comment': \"Phantom: end maintenance window in 60 seconds\",\n    })\n\n    phantom.act(action=\"update maintenance window\", parameters=parameters, assets=['splunk itsi'], callback=add_episode_comment_1, name=\"update_maintenance_window_1\")\n\n    return",
+                        "callback_code": "",
+                        "callback_start": 1,
+                        "callsback": true,
+                        "color": "",
+                        "connected_to_start": true,
+                        "connection_name": "get data",
+                        "connection_type": "action",
+                        "custom_callback": "",
+                        "custom_code": "",
+                        "custom_join": "",
+                        "custom_name": "",
+                        "delay": 0,
+                        "description": "",
+                        "has_custom": false,
+                        "has_custom_block": false,
+                        "has_custom_callback": false,
+                        "has_custom_join": false,
+                        "id": "a4baf750-1246-48e4-851c-52d063aa8ffd",
+                        "inPorts": [
+                            "in"
+                        ],
+                        "join_code": "",
+                        "join_optional": [],
+                        "join_start": 1,
+                        "line_end": 132,
+                        "line_start": 105,
+                        "message": "Configuring now",
+                        "name": "update maintenance window",
+                        "notes": "",
+                        "number": 1,
+                        "order": 7,
+                        "outPorts": [
+                            "out"
+                        ],
+                        "ports": {
+                            "groups": {
+                                "in": {
+                                    "attrs": {
+                                        ".port-body": {
+                                            "fill": "#fff",
+                                            "magnet": true,
+                                            "r": 10,
+                                            "stroke": "#000"
+                                        },
+                                        ".port-label": {
+                                            "fill": "#000"
+                                        }
+                                    },
+                                    "label": {
+                                        "position": {
+                                            "args": {
+                                                "y": 10
+                                            },
+                                            "name": "left"
+                                        }
+                                    },
+                                    "position": {
+                                        "name": "left"
+                                    }
+                                },
+                                "out": {
+                                    "attrs": {
+                                        ".port-body": {
+                                            "fill": "#fff",
+                                            "magnet": true,
+                                            "r": 10,
+                                            "stroke": "#000"
+                                        },
+                                        ".port-label": {
+                                            "fill": "#000"
+                                        }
+                                    },
+                                    "label": {
+                                        "position": {
+                                            "args": {
+                                                "y": 10
+                                            },
+                                            "name": "right"
+                                        }
+                                    },
+                                    "position": {
+                                        "name": "right"
+                                    }
+                                }
+                            }
+                        },
+                        "position": {
+                            "x": 1060,
+                            "y": 80
+                        },
+                        "previous_function": "",
+                        "previous_name": "update_maintenance_window_1",
+                        "required_params": {
+                            "maintenance_window_id": true
+                        },
+                        "reviewer": "",
+                        "show_number": false,
+                        "size": {
+                            "height": 100,
+                            "width": 180
+                        },
+                        "state": "app_action_assets",
+                        "status": "",
+                        "title": "Generic",
+                        "type": "coa.Action",
+                        "warn": "",
+                        "z": 32
                     }
                 ]
             },
@@ -1784,7 +2241,7 @@
         "schema": 4,
         "version": "4.9.34514"
     },
-    "create_time": "2020-08-21T11:04:00.245981+00:00",
+    "create_time": "2020-08-22T16:13:49.186852+00:00",
     "draft_mode": false,
     "labels": [
         "*"

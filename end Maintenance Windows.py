@@ -24,15 +24,13 @@ def format_1(action=None, success=None, container=None, results=None, handle=Non
 
     phantom.format(container=container, template=template, parameters=parameters, name="format_1")
 
-    end_maintenance_window_1(container=container)
+    update_maintenance_window_1(container=container)
 
     return
 
 def end_maintenance_window_1(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):
     phantom.debug('end_maintenance_window_1() called')
-        
-    #phantom.debug('Action: {0} {1}'.format(action['name'], ('SUCCEEDED' if success else 'FAILED')))
-    
+
     # collect data for 'end_maintenance_window_1' call
     formatted_data_1 = phantom.get_format_data(name='format_1')
 
@@ -40,11 +38,11 @@ def end_maintenance_window_1(action=None, success=None, container=None, results=
     
     # build parameters list for 'end_maintenance_window_1' call
     parameters.append({
-        'comment': "Phantom",
+        'comment': "Maintenance Windows closed by Phantom",
         'maintenance_window_id': formatted_data_1,
     })
 
-    phantom.act(action="end maintenance window", parameters=parameters, assets=['splunk itsi'], callback=add_episode_comment_1, name="end_maintenance_window_1")
+    phantom.act(action="end maintenance window", parameters=parameters, assets=['splunk itsi'], name="end_maintenance_window_1")
 
     return
 
@@ -96,11 +94,38 @@ def add_episode_comment_1(action=None, success=None, container=None, results=Non
     
     # build parameters list for 'add_episode_comment_1' call
     parameters.append({
+        'comment': "Phantom: maintenance window will end in 60 seconds",
         'itsi_group_id': source_data_identifier_value,
-        'comment': "Maintenance Windows end",
     })
 
     phantom.act(action="add episode comment", parameters=parameters, assets=['splunk itsi'], name="add_episode_comment_1", parent_action=action)
+
+    return
+
+def update_maintenance_window_1(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):
+    phantom.debug('update_maintenance_window_1() called')
+        
+    #phantom.debug('Action: {0} {1}'.format(action['name'], ('SUCCEEDED' if success else 'FAILED')))
+    
+    # collect data for 'update_maintenance_window_1' call
+    formatted_data_1 = phantom.get_format_data(name='format_1')
+
+    parameters = []
+    
+    # build parameters list for 'update_maintenance_window_1' call
+    parameters.append({
+        'maintenance_window_id': formatted_data_1,
+        'title': "",
+        'relative_start_time': "",
+        'relative_end_time': 60,
+        'start_time': "",
+        'end_time': "",
+        'object_type': "",
+        'object_ids': "",
+        'comment': "Phantom: end maintenance window in 60 seconds",
+    })
+
+    phantom.act(action="update maintenance window", parameters=parameters, assets=['splunk itsi'], callback=add_episode_comment_1, name="update_maintenance_window_1")
 
     return
 
