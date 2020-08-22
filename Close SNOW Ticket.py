@@ -84,7 +84,7 @@ def update_episode_1(action=None, success=None, container=None, results=None, ha
         'itsi_group_id': source_data_identifier_value,
     })
 
-    phantom.act(action="update episode", parameters=parameters, assets=['splunk itsi'], callback=SNOW_Update_Resolved, name="update_episode_1")
+    phantom.act(action="update episode", parameters=parameters, assets=['splunk itsi'], callback=break_episode_1, name="update_episode_1")
 
     return
 
@@ -404,6 +404,32 @@ def join_set_status_set_severity_set_sensitivity_1(action=None, success=None, co
 
     set_status_set_severity_set_sensitivity_1(container=container, handle=handle)
     
+    return
+
+def break_episode_1(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):
+    phantom.debug('break_episode_1() called')
+        
+    #phantom.debug('Action: {0} {1}'.format(action['name'], ('SUCCEEDED' if success else 'FAILED')))
+    
+    source_data_identifier_value = container.get('source_data_identifier', None)
+
+    # collect data for 'break_episode_1' call
+    container_data = phantom.collect2(container=container, datapath=['artifact:*.cef.itsi_policy_id', 'artifact:*.id'])
+
+    parameters = []
+    
+    # build parameters list for 'break_episode_1' call
+    for container_item in container_data:
+        if container_item[0]:
+            parameters.append({
+                'itsi_group_id': source_data_identifier_value,
+                'itsi_policy_id': container_item[0],
+                # context (artifact id) is added to associate results with the artifact
+                'context': {'artifact_id': container_item[1]},
+            })
+
+    phantom.act(action="break episode", parameters=parameters, assets=['splunk itsi'], callback=SNOW_Update_Resolved, name="break_episode_1", parent_action=action)
+
     return
 
 def on_finish(container, summary):
