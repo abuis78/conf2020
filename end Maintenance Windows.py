@@ -28,24 +28,6 @@ def format_1(action=None, success=None, container=None, results=None, handle=Non
 
     return
 
-def end_maintenance_window_1(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):
-    phantom.debug('end_maintenance_window_1() called')
-
-    # collect data for 'end_maintenance_window_1' call
-    formatted_data_1 = phantom.get_format_data(name='format_1')
-
-    parameters = []
-    
-    # build parameters list for 'end_maintenance_window_1' call
-    parameters.append({
-        'comment': "Maintenance Windows closed by Phantom",
-        'maintenance_window_id': formatted_data_1,
-    })
-
-    phantom.act(action="end maintenance window", parameters=parameters, assets=['splunk itsi'], name="end_maintenance_window_1")
-
-    return
-
 def format_2(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):
     phantom.debug('format_2() called')
     
