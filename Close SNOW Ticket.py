@@ -91,7 +91,7 @@ def update_episode_1(action=None, success=None, container=None, results=None, ha
 def SNOW_Update_Resolved(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):
     phantom.debug('SNOW_Update_Resolved() called')
     
-    template = """{{\"state\":\"6\", \"work_notes\": \"Service was started and ITSI episode status is been set to resolved\"}}"""
+    template = """{{\"close_code\":\"Solved Remotely (Workaround)\",\"state\":\"6\",\"caller_id\":\"phantom\",\"close_notes\":\"Phantom: resolved via API\", \"work_notes\": \"Service was started and ITSI episode status is been set to resolved\"}}"""
 
     # parameter list for template variable replacement
     parameters = [
@@ -216,7 +216,7 @@ def update_ticket_3(action=None, success=None, container=None, results=None, han
                 'context': {'artifact_id': results_item_1[1]},
             })
 
-    phantom.act(action="update ticket", parameters=parameters, assets=['servicenow'], callback=format_6, name="update_ticket_3")
+    phantom.act(action="update ticket", parameters=parameters, assets=['servicenow'], callback=join_set_status_set_severity_set_sensitivity_1, name="update_ticket_3")
 
     return
 
@@ -288,7 +288,7 @@ def Change_snow_ticket_status_closed(action=None, success=None, container=None, 
 def format_5(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):
     phantom.debug('format_5() called')
     
-    template = """{{\"close_code\":\"Closed/Resolved By Caller\",\"state\":\"7\",\"caller_id\":\"{0}\",\"close_notes\":\"Closed by API\"}}"""
+    template = """{{\"close_code\":\"Closed/Resolved By Caller\",\"state\":\"7\",\"caller_id\":\"phantom\",\"close_notes\":\"Phantom: closed by API\"}}"""
 
     # parameter list for template variable replacement
     parameters = [
@@ -317,50 +317,6 @@ def decision_2(action=None, success=None, container=None, results=None, handle=N
         return
 
     # call connected blocks for 'else' condition 2
-
-    return
-
-def update_ticket_5(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):
-    phantom.debug('update_ticket_5() called')
-        
-    #phantom.debug('Action: {0} {1}'.format(action['name'], ('SUCCEEDED' if success else 'FAILED')))
-    
-    # collect data for 'update_ticket_5' call
-    results_data_1 = phantom.collect2(container=container, datapath=['get_data_1:action_result.data.*.response_body.data.*.data', 'get_data_1:action_result.parameter.context.artifact_id'], action_results=results)
-    formatted_data_1 = phantom.get_format_data(name='format_6')
-
-    parameters = []
-    
-    # build parameters list for 'update_ticket_5' call
-    for results_item_1 in results_data_1:
-        if results_item_1[0]:
-            parameters.append({
-                'id': results_item_1[0],
-                'table': "incident",
-                'fields': formatted_data_1,
-                'vault_id': "",
-                'is_sys_id': True,
-                # context (artifact id) is added to associate results with the artifact
-                'context': {'artifact_id': results_item_1[1]},
-            })
-
-    phantom.act(action="update ticket", parameters=parameters, assets=['servicenow'], callback=join_set_status_set_severity_set_sensitivity_1, name="update_ticket_5")
-
-    return
-
-def format_6(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):
-    phantom.debug('format_6() called')
-    
-    template = """{{\"close_code\":\"Closed/Resolved By Caller\",\"state\":\"7\",\"caller_id\":\"{0}\",\"close_notes\":\"Closed by API\"}}"""
-
-    # parameter list for template variable replacement
-    parameters = [
-        "update_ticket_3:action_result.data.*.caller_id",
-    ]
-
-    phantom.format(container=container, template=template, parameters=parameters, name="format_6")
-
-    update_ticket_5(container=container)
 
     return
 
@@ -399,10 +355,14 @@ def join_set_status_set_severity_set_sensitivity_1(action=None, success=None, co
     if phantom.get_run_data(key='join_set_status_set_severity_set_sensitivity_1_called'):
         return
 
-    # no callbacks to check, call connected block "set_status_set_severity_set_sensitivity_1"
-    phantom.save_run_data(key='join_set_status_set_severity_set_sensitivity_1_called', value='set_status_set_severity_set_sensitivity_1', auto=True)
-
-    set_status_set_severity_set_sensitivity_1(container=container, handle=handle)
+    # check if all connected incoming playbooks, actions, or custom functions are done i.e. have succeeded or failed
+    if phantom.completed(action_names=['update_ticket_3']):
+        
+        # save the state that the joined function has now been called
+        phantom.save_run_data(key='join_set_status_set_severity_set_sensitivity_1_called', value='set_status_set_severity_set_sensitivity_1')
+        
+        # call connected block "set_status_set_severity_set_sensitivity_1"
+        set_status_set_severity_set_sensitivity_1(container=container, handle=handle)
     
     return
 
