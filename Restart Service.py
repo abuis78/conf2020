@@ -227,7 +227,7 @@ def service_path(action=None, success=None, container=None, results=None, handle
         'sleep_seconds': 1,
     })
 
-    phantom.act(action="no op", parameters=parameters, assets=['phantom'], callback=playbook_conf2020_End_Maintenance_Windows_1, name="service_path")
+    phantom.act(action="no op", parameters=parameters, assets=['phantom'], callback=playbook_conf2020_conf2020_End_Maintenance_Windows_1, name="service_path")
 
     return
 
@@ -995,11 +995,11 @@ def playbook_conf2020_conf2020_add_Maintenance_Windows_2(action=None, success=No
 
     return
 
-def playbook_conf2020_End_Maintenance_Windows_1(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):
-    phantom.debug('playbook_conf2020_End_Maintenance_Windows_1() called')
+def playbook_conf2020_conf2020_End_Maintenance_Windows_1(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):
+    phantom.debug('playbook_conf2020_conf2020_End_Maintenance_Windows_1() called')
     
     # call playbook "conf2020/End Maintenance Windows", returns the playbook_run_id
-    playbook_run_id = phantom.playbook(playbook="conf2020/End Maintenance Windows", container=container, name="playbook_conf2020_End_Maintenance_Windows_1", callback=format_snow_ticket_id_request)
+    playbook_run_id = phantom.playbook(playbook="conf2020/End Maintenance Windows", container=container, name="playbook_conf2020_conf2020_End_Maintenance_Windows_1", callback=format_snow_ticket_id_request)
 
     return
 
@@ -1076,7 +1076,7 @@ def add_maintenance_window_1(action=None, success=None, container=None, results=
     # build parameters list for 'add_maintenance_window_1' call
     parameters.append({
         'title': formatted_data_1,
-        'comment': "Phantom created Maintenance Windows",
+        'comment': "Phantom: Maintenance Window created",
         'end_time': "",
         'object_ids': formatted_data_2,
         'start_time': "",
@@ -1157,7 +1157,7 @@ def add_episode_comment_1(action=None, success=None, container=None, results=Non
 def format_22(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):
     phantom.debug('format_22() called')
     
-    template = """Maintenance Windows has been started: {0}"""
+    template = """Maintenance Window has been started: {0}"""
 
     # parameter list for template variable replacement
     parameters = [
