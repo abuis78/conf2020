@@ -26,7 +26,7 @@ def create_ticket_1(action=None, success=None, container=None, results=None, han
     # build parameters list for 'create_ticket_1' call
     parameters.append({
         'table': "incident",
-        'fields': "",
+        'fields': "{ \"caller_id\": \"phantom\" }",
         'vault_id': "",
         'description': formatted_data_1,
         'short_description': formatted_data_2,
@@ -356,7 +356,7 @@ def update_episode_1(action=None, success=None, container=None, results=None, ha
         'itsi_group_id': source_data_identifier_value,
     })
 
-    phantom.act(action="update episode", parameters=parameters, assets=['splunk itsi'], callback=Short_description, name="update_episode_1", parent_action=action)
+    phantom.act(action="update episode", parameters=parameters, assets=['splunk itsi'], callback=Short_description, name="update_episode_1")
 
     return
 
