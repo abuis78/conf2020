@@ -91,7 +91,7 @@ def update_episode_1(action=None, success=None, container=None, results=None, ha
 def SNOW_Update_Resolved(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):
     phantom.debug('SNOW_Update_Resolved() called')
     
-    template = """{{\"work_notes\": \"Service was started and ITSI episode status is been set to resolved\"}}"""
+    template = """{{\"state\":\"6\", \"work_notes\": \"Service was started and ITSI episode status is been set to resolved\"}}"""
 
     # parameter list for template variable replacement
     parameters = [
