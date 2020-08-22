@@ -296,7 +296,7 @@ def format_8(action=None, success=None, container=None, results=None, handle=Non
 def format_9(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):
     phantom.debug('format_9() called')
     
-    template = """{{\"state\":\"2\", \"caller_id\":\"itsi\"}}"""
+    template = """{{\"state\":\"2\"}}"""
 
     # parameter list for template variable replacement
     parameters = [
