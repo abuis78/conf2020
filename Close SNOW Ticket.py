@@ -59,11 +59,11 @@ def decision_1(action=None, success=None, container=None, results=None, handle=N
 
     # call connected blocks if condition 1 matched
     if matched:
-        SNOW_Closed_episode(action=action, success=success, container=container, results=results, handle=handle, custom_function=custom_function)
+        SNOW_Close_ticket(action=action, success=success, container=container, results=results, handle=handle, custom_function=custom_function)
         return
 
     # call connected blocks for 'else' condition 2
-    SNOW_Not_Closed(action=action, success=success, container=container, results=results, handle=handle, custom_function=custom_function)
+    SNOW_Do_Not_Close_Ticket(action=action, success=success, container=container, results=results, handle=handle, custom_function=custom_function)
 
     return
 
@@ -132,17 +132,17 @@ def Update_SNOW_work_note_ITSI_resolved(action=None, success=None, container=Non
 
     return
 
-def SNOW_Closed_episode(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):
-    phantom.debug('SNOW_Closed_episode() called')
+def SNOW_Close_ticket(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):
+    phantom.debug('SNOW_Close_ticket() called')
     
-    template = """{{\"work_notes\": \"Episode closed and broken: {0}\"}}"""
+    template = """{{\"work_notes\": \"Approval response: {0}. Ticket will be closed.\"}}"""
 
     # parameter list for template variable replacement
     parameters = [
-        "artifact:*.cef.act",
+        "Approval_Close_Incident:action_result.summary.responses.0",
     ]
 
-    phantom.format(container=container, template=template, parameters=parameters, name="SNOW_Closed_episode")
+    phantom.format(container=container, template=template, parameters=parameters, name="SNOW_Close_ticket")
 
     Update_SNOW_work_notes_ITSI_episode(container=container)
 
@@ -155,7 +155,7 @@ def Update_SNOW_work_notes_ITSI_episode(action=None, success=None, container=Non
     
     # collect data for 'Update_SNOW_work_notes_ITSI_episode' call
     results_data_1 = phantom.collect2(container=container, datapath=['get_data_1:action_result.data.*.response_body.data.*.data', 'get_data_1:action_result.parameter.context.artifact_id'], action_results=results)
-    formatted_data_1 = phantom.get_format_data(name='SNOW_Closed_episode')
+    formatted_data_1 = phantom.get_format_data(name='SNOW_Close_ticket')
 
     parameters = []
     
@@ -176,17 +176,17 @@ def Update_SNOW_work_notes_ITSI_episode(action=None, success=None, container=Non
 
     return
 
-def SNOW_Not_Closed(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):
-    phantom.debug('SNOW_Not_Closed() called')
+def SNOW_Do_Not_Close_Ticket(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):
+    phantom.debug('SNOW_Do_Not_Close_Ticket() called')
     
-    template = """{{\"work_notes\": \"Approval response: {0}. ITSI episode neither closed nor broken.\"}}"""
+    template = """{{\"work_notes\": \"Approval response: {0}. Ticket will not be closed.\"}}"""
 
     # parameter list for template variable replacement
     parameters = [
         "Approval_Close_Incident:action_result.summary.responses.0",
     ]
 
-    phantom.format(container=container, template=template, parameters=parameters, name="SNOW_Not_Closed")
+    phantom.format(container=container, template=template, parameters=parameters, name="SNOW_Do_Not_Close_Ticket")
 
     update_ticket_3(container=container)
 
@@ -199,7 +199,7 @@ def update_ticket_3(action=None, success=None, container=None, results=None, han
     
     # collect data for 'update_ticket_3' call
     results_data_1 = phantom.collect2(container=container, datapath=['get_data_1:action_result.data.*.response_body.data.*.data', 'get_data_1:action_result.parameter.context.artifact_id'], action_results=results)
-    formatted_data_1 = phantom.get_format_data(name='SNOW_Not_Closed')
+    formatted_data_1 = phantom.get_format_data(name='SNOW_Do_Not_Close_Ticket')
 
     parameters = []
     
