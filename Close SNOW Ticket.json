@@ -7,6 +7,7 @@
             "clean": true,
             "code_block": "",
             "description": "",
+            "hash": "0232d8af985e85e192413f3e775e1e583e5a6014",
             "joint": {
                 "cells": [
                     {
@@ -5604,178 +5605,6 @@
                         "z": 367
                     },
                     {
-                        "active": false,
-                        "angle": 0,
-                        "attrs": {
-                            ".background": {
-                                "fill": "#FFFFFF",
-                                "stroke": "#818D99"
-                            },
-                            ".color-band": {
-                                "fill": "#171D21"
-                            },
-                            ".format": {
-                                "text": "SNOW Close ticket"
-                            },
-                            ".inPorts>.port-in": {
-                                "ref": ".background",
-                                "ref-x": 0.5
-                            },
-                            ".inPorts>.port-in>.port-body": {
-                                "port": {
-                                    "id": "in",
-                                    "type": "in"
-                                }
-                            },
-                            ".message": {
-                                "opacity": 0,
-                                "text": "Configuring now"
-                            },
-                            ".outPorts>.port-out-1": {
-                                "ref": ".background",
-                                "ref-x": 0.5
-                            },
-                            ".outPorts>.port-out-1>.port-body": {
-                                "port": {
-                                    "id": "out-1",
-                                    "type": "out"
-                                }
-                            },
-                            ".title": {
-                                "text": "format"
-                            },
-                            "g.code image": {
-                                "opacity": 1
-                            },
-                            "g.delete": {
-                                "display": "none"
-                            },
-                            "g.error": {
-                                "opacity": 0
-                            },
-                            "g.error image": {
-                                "xlink:href": "/inc/coa/img/block_icon_warn.svg"
-                            },
-                            "g.notes": {
-                                "display": "block"
-                            },
-                            "g.notes image": {
-                                "opacity": 1
-                            }
-                        },
-                        "block_code": "def SNOW_Close_ticket(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):\n    phantom.debug('SNOW_Close_ticket() called')\n    \n    template = \"\"\"{{\\\"work_notes\\\": \\\"Approval response: {0}. Ticket will be closed.\\\"}}\"\"\"\n\n    # parameter list for template variable replacement\n    parameters = [\n        \"Approval_Close_Incident:action_result.summary.responses.0\",\n    ]\n\n    phantom.format(container=container, template=template, parameters=parameters, name=\"SNOW_Close_ticket\")\n\n    Update_SNOW_work_notes_ITSI_episode(container=container)\n\n    return",
-                        "callback_code": "",
-                        "callback_start": 1,
-                        "callsback": false,
-                        "connected_to_start": true,
-                        "connection_name": "Approval Close Incident",
-                        "connection_type": "action",
-                        "custom_callback": "",
-                        "custom_code": "",
-                        "custom_join": "",
-                        "custom_name": "SNOW Close ticket",
-                        "description": "",
-                        "format": "format",
-                        "has_custom": false,
-                        "has_custom_block": false,
-                        "has_custom_callback": false,
-                        "has_custom_join": false,
-                        "id": "703faa83-5714-41ef-9f57-fb5583cf35b5",
-                        "inPorts": [
-                            "in"
-                        ],
-                        "join_code": "",
-                        "join_optional": [],
-                        "join_start": 1,
-                        "line_end": 151,
-                        "line_start": 135,
-                        "message": "Configuring now",
-                        "name": "format",
-                        "notes": "",
-                        "number": 2,
-                        "order": 7,
-                        "outPorts": [
-                            "out-1"
-                        ],
-                        "parameters": [
-                            {
-                                "position": 0,
-                                "type": "",
-                                "value": "Approval_Close_Incident:action_result.summary.responses.0"
-                            }
-                        ],
-                        "ports": {
-                            "groups": {
-                                "in": {
-                                    "attrs": {
-                                        ".port-body": {
-                                            "fill": "#fff",
-                                            "magnet": true,
-                                            "r": 10,
-                                            "stroke": "#000"
-                                        },
-                                        ".port-label": {
-                                            "fill": "#000"
-                                        }
-                                    },
-                                    "label": {
-                                        "position": {
-                                            "args": {
-                                                "y": 10
-                                            },
-                                            "name": "left"
-                                        }
-                                    },
-                                    "position": {
-                                        "name": "left"
-                                    }
-                                },
-                                "out": {
-                                    "attrs": {
-                                        ".port-body": {
-                                            "fill": "#fff",
-                                            "magnet": true,
-                                            "r": 10,
-                                            "stroke": "#000"
-                                        },
-                                        ".port-label": {
-                                            "fill": "#000"
-                                        }
-                                    },
-                                    "label": {
-                                        "position": {
-                                            "args": {
-                                                "y": 10
-                                            },
-                                            "name": "right"
-                                        }
-                                    },
-                                    "position": {
-                                        "name": "right"
-                                    }
-                                }
-                            }
-                        },
-                        "position": {
-                            "x": 580,
-                            "y": 120
-                        },
-                        "previous_function": "",
-                        "previous_name": "SNOW_Close_ticket",
-                        "show_number": true,
-                        "size": {
-                            "height": 100,
-                            "width": 180
-                        },
-                        "state": "format",
-                        "status": "",
-                        "template": "{{\"work_notes\": \"Approval response: {0}. Ticket will be closed.\"}}",
-                        "title": "format",
-                        "type": "coa.Format",
-                        "warn": false,
-                        "z": 368
-                    },
-                    {
                         "attrs": {
                             ".connection": {
                                 "stroke": "#818D99",
@@ -8286,7 +8115,179 @@
                         "title": "Generic",
                         "type": "coa.Action",
                         "warn": false,
-                        "z": 376
+                        "z": 378
+                    },
+                    {
+                        "active": false,
+                        "angle": 0,
+                        "attrs": {
+                            ".background": {
+                                "fill": "#FFFFFF",
+                                "stroke": "#818D99"
+                            },
+                            ".color-band": {
+                                "fill": "#171D21"
+                            },
+                            ".format": {
+                                "text": "SNOW Close ticket"
+                            },
+                            ".inPorts>.port-in": {
+                                "ref": ".background",
+                                "ref-x": 0.5
+                            },
+                            ".inPorts>.port-in>.port-body": {
+                                "port": {
+                                    "id": "in",
+                                    "type": "in"
+                                }
+                            },
+                            ".message": {
+                                "opacity": 0,
+                                "text": "Configuring now"
+                            },
+                            ".outPorts>.port-out-1": {
+                                "ref": ".background",
+                                "ref-x": 0.5
+                            },
+                            ".outPorts>.port-out-1>.port-body": {
+                                "port": {
+                                    "id": "out-1",
+                                    "type": "out"
+                                }
+                            },
+                            ".title": {
+                                "text": "format"
+                            },
+                            "g.code image": {
+                                "opacity": 1
+                            },
+                            "g.delete": {
+                                "display": "none"
+                            },
+                            "g.error": {
+                                "opacity": 0
+                            },
+                            "g.error image": {
+                                "xlink:href": "/inc/coa/img/block_icon_warn.svg"
+                            },
+                            "g.notes": {
+                                "display": "block"
+                            },
+                            "g.notes image": {
+                                "opacity": 1
+                            }
+                        },
+                        "block_code": "def SNOW_Close_ticket(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):\n    phantom.debug('SNOW_Close_ticket() called')\n    \n    template = \"\"\"{{\\\"work_notes\\\": \\\"Approval response: {0}. Ticket will be closed.\\\"}}\"\"\"\n\n    # parameter list for template variable replacement\n    parameters = [\n        \"Approval_Close_Incident:action_result.summary.responses.0\",\n    ]\n\n    phantom.format(container=container, template=template, parameters=parameters, name=\"SNOW_Close_ticket\")\n\n    Update_SNOW_work_notes_ITSI_episode(container=container)\n\n    return",
+                        "callback_code": "",
+                        "callback_start": 1,
+                        "callsback": false,
+                        "connected_to_start": true,
+                        "connection_name": "Approval Close Incident",
+                        "connection_type": "action",
+                        "custom_callback": "",
+                        "custom_code": "",
+                        "custom_join": "",
+                        "custom_name": "SNOW Close ticket",
+                        "description": "",
+                        "format": "format",
+                        "has_custom": false,
+                        "has_custom_block": false,
+                        "has_custom_callback": false,
+                        "has_custom_join": false,
+                        "id": "703faa83-5714-41ef-9f57-fb5583cf35b5",
+                        "inPorts": [
+                            "in"
+                        ],
+                        "join_code": "",
+                        "join_optional": [],
+                        "join_start": 1,
+                        "line_end": 151,
+                        "line_start": 135,
+                        "message": "Configuring now",
+                        "name": "format",
+                        "notes": "",
+                        "number": 2,
+                        "order": 7,
+                        "outPorts": [
+                            "out-1"
+                        ],
+                        "parameters": [
+                            {
+                                "position": 0,
+                                "type": "",
+                                "value": "Approval_Close_Incident:action_result.summary.responses.0"
+                            }
+                        ],
+                        "ports": {
+                            "groups": {
+                                "in": {
+                                    "attrs": {
+                                        ".port-body": {
+                                            "fill": "#fff",
+                                            "magnet": true,
+                                            "r": 10,
+                                            "stroke": "#000"
+                                        },
+                                        ".port-label": {
+                                            "fill": "#000"
+                                        }
+                                    },
+                                    "label": {
+                                        "position": {
+                                            "args": {
+                                                "y": 10
+                                            },
+                                            "name": "left"
+                                        }
+                                    },
+                                    "position": {
+                                        "name": "left"
+                                    }
+                                },
+                                "out": {
+                                    "attrs": {
+                                        ".port-body": {
+                                            "fill": "#fff",
+                                            "magnet": true,
+                                            "r": 10,
+                                            "stroke": "#000"
+                                        },
+                                        ".port-label": {
+                                            "fill": "#000"
+                                        }
+                                    },
+                                    "label": {
+                                        "position": {
+                                            "args": {
+                                                "y": 10
+                                            },
+                                            "name": "right"
+                                        }
+                                    },
+                                    "position": {
+                                        "name": "right"
+                                    }
+                                }
+                            }
+                        },
+                        "position": {
+                            "x": 580,
+                            "y": 120
+                        },
+                        "previous_function": "",
+                        "previous_name": "SNOW_Close_ticket",
+                        "show_number": true,
+                        "size": {
+                            "height": 100,
+                            "width": 180
+                        },
+                        "state": "format",
+                        "status": "",
+                        "template": "{{\"work_notes\": \"Approval response: {0}. Ticket will be closed.\"}}",
+                        "title": "format",
+                        "type": "coa.Format",
+                        "warn": false,
+                        "z": 379
                     },
                     {
                         "active": false,
@@ -8348,7 +8349,7 @@
                                 "opacity": 1
                             }
                         },
-                        "block_code": "def SNOW_Update_Resolved(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):\n    phantom.debug('SNOW_Update_Resolved() called')\n    \n    template = \"\"\"{{\\\"resolution_code\\\":\\\"Solved Remotely (Workaround)\\\",\\\"state\\\":\\\"6\\\",\\\"caller_id\\\":\\\"phantom\\\",\\\"resolution_notes\\\":\\\"Phantom: resolved via API\\\", \\\"work_notes\\\": \\\"Service was started and ITSI episode status is been set to resolved\\\"}}\"\"\"\n\n    # parameter list for template variable replacement\n    parameters = [\n        \"artifact:*.cef.act\",\n    ]\n\n    phantom.format(container=container, template=template, parameters=parameters, name=\"SNOW_Update_Resolved\")\n\n    format_4(container=container)\n\n    return",
+                        "block_code": "def SNOW_Update_Resolved(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):\n    phantom.debug('SNOW_Update_Resolved() called')\n    \n    template = \"\"\"{{\\\"resolution_code\\\":\\\"Solved Remotely (Workaround)\\\",\\\"state\\\":\\\"6\\\",\\\"caller_id\\\":\\\"phantom\\\",\\\"close_notes\\\":\\\"Phantom: resolved via API\\\", \\\"work_notes\\\": \\\"Service was started and ITSI episode status is been set to resolved\\\"}}\"\"\"\n\n    # parameter list for template variable replacement\n    parameters = [\n        \"artifact:*.cef.act\",\n    ]\n\n    phantom.format(container=container, template=template, parameters=parameters, name=\"SNOW_Update_Resolved\")\n\n    format_4(container=container)\n\n    return",
                         "callback_code": "",
                         "callback_start": 1,
                         "callsback": false,
@@ -8454,11 +8455,11 @@
                         },
                         "state": "format",
                         "status": "",
-                        "template": "{{\"resolution_code\":\"Solved Remotely (Workaround)\",\"state\":\"6\",\"caller_id\":\"phantom\",\"resolution_notes\":\"Phantom: resolved via API\", \"work_notes\": \"Service was started and ITSI episode status is been set to resolved\"}}",
+                        "template": "{{\"resolution_code\":\"Solved Remotely (Workaround)\",\"state\":\"6\",\"caller_id\":\"phantom\",\"close_notes\":\"Phantom: resolved via API\", \"work_notes\": \"Service was started and ITSI episode status is been set to resolved\"}}",
                         "title": "format",
                         "type": "coa.Format",
                         "warn": false,
-                        "z": 377
+                        "z": 380
                     }
                 ]
             },
@@ -8468,7 +8469,7 @@
         "schema": 4,
         "version": "4.9.34514"
     },
-    "create_time": "2020-08-22T17:37:42.450496+00:00",
+    "create_time": "2020-08-23T09:02:27.915987+00:00",
     "draft_mode": false,
     "labels": [
         "*"
