@@ -32,7 +32,7 @@ def create_ticket_1(action=None, success=None, container=None, results=None, han
         'short_description': formatted_data_2,
     })
 
-    phantom.act(action="create ticket", parameters=parameters, assets=['servicenow'], callback=parse_url_1, name="create_ticket_1")
+    phantom.act(action="create ticket", parameters=parameters, assets=['servicenow'], callback=update_episode_1, name="create_ticket_1")
 
     return
 
@@ -126,7 +126,7 @@ def decision_1(action=None, success=None, container=None, results=None, handle=N
 
     # call connected blocks if condition 1 matched
     if matched:
-        update_episode_1(action=action, success=success, container=container, results=results, handle=handle, custom_function=custom_function)
+        Short_description(action=action, success=success, container=container, results=results, handle=handle, custom_function=custom_function)
         return
 
     # call connected blocks for 'else' condition 2
@@ -356,7 +356,7 @@ def update_episode_1(action=None, success=None, container=None, results=None, ha
         'itsi_group_id': source_data_identifier_value,
     })
 
-    phantom.act(action="update episode", parameters=parameters, assets=['splunk itsi'], callback=Short_description, name="update_episode_1")
+    phantom.act(action="update episode", parameters=parameters, assets=['splunk itsi'], callback=parse_url_1, name="update_episode_1", parent_action=action)
 
     return
 
