@@ -16,7 +16,7 @@ def Approval_Close_Incident(action=None, success=None, container=None, results=N
     phantom.debug('Approval_Close_Incident() called')
     
     # set user and message variables for phantom.prompt call
-    user = "admin"
+    user = "Administrator"
     message = """The Episode {0} is resolved.
 All steps are documented in the ticket: {1}
 
