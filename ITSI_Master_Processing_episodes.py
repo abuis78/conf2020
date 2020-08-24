@@ -16,7 +16,7 @@ def playbook_conf2020_Create_Service_Now_Ticket_1(action=None, success=None, con
     phantom.debug('playbook_conf2020_Create_Service_Now_Ticket_1() called')
     
     # call playbook "conf2020/Create Service Now Ticket", returns the playbook_run_id
-    playbook_run_id = phantom.playbook(playbook="conf2020/Create Service Now Ticket", container=container, name="playbook_conf2020_Create_Service_Now_Ticket_1", callback=playbook_conf2020_conf2020_Add_entity_information_1)
+    playbook_run_id = phantom.playbook(playbook="conf2020/Create Service Now Ticket", container=container, name="playbook_conf2020_Create_Service_Now_Ticket_1", callback=playbook_conf2020_Collect_entity_information_from_ITSI_1)
 
     return
 
@@ -28,11 +28,11 @@ def playbook_conf2020_conf2020_interaction_with_ITSI_notable_Event_1(action=None
 
     return
 
-def playbook_conf2020_conf2020_Add_entity_information_1(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):
-    phantom.debug('playbook_conf2020_conf2020_Add_entity_information_1() called')
+def playbook_conf2020_Collect_entity_information_from_ITSI_1(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):
+    phantom.debug('playbook_conf2020_Collect_entity_information_from_ITSI_1() called')
     
-    # call playbook "conf2020/Add entity information", returns the playbook_run_id
-    playbook_run_id = phantom.playbook(playbook="conf2020/Add entity information", container=container, name="playbook_conf2020_conf2020_Add_entity_information_1", callback=playbook_conf2020_conf2020_Get_Service_information_1)
+    # call playbook "conf2020/Collect entity information from ITSI", returns the playbook_run_id
+    playbook_run_id = phantom.playbook(playbook="conf2020/Collect entity information from ITSI", container=container, name="playbook_conf2020_Collect_entity_information_from_ITSI_1", callback=playbook_conf2020_conf2020_Get_Service_information_1)
 
     return
 
