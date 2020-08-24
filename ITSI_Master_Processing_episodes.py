@@ -7,8 +7,8 @@ from datetime import datetime, timedelta
 def on_start(container):
     phantom.debug('on_start() called')
     
-    # call 'playbook_conf2020_conf2020_Notable_clean_up_1' block
-    playbook_conf2020_conf2020_Notable_clean_up_1(container=container)
+    # call 'playbook_conf2020_interaction_with_ITSI_notable_Event_1' block
+    playbook_conf2020_interaction_with_ITSI_notable_Event_1(container=container)
 
     return
 
@@ -20,11 +20,11 @@ def playbook_conf2020_conf2020_Add_SNOW_Information_1(action=None, success=None,
 
     return
 
-def playbook_conf2020_conf2020_Notable_clean_up_1(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):
-    phantom.debug('playbook_conf2020_conf2020_Notable_clean_up_1() called')
+def playbook_conf2020_interaction_with_ITSI_notable_Event_1(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):
+    phantom.debug('playbook_conf2020_interaction_with_ITSI_notable_Event_1() called')
     
-    # call playbook "conf2020/Notable_clean_up", returns the playbook_run_id
-    playbook_run_id = phantom.playbook(playbook="conf2020/Notable_clean_up", container=container, name="playbook_conf2020_conf2020_Notable_clean_up_1", callback=playbook_conf2020_conf2020_Add_SNOW_Information_1)
+    # call playbook "conf2020/interaction with ITSI notable Event", returns the playbook_run_id
+    playbook_run_id = phantom.playbook(playbook="conf2020/interaction with ITSI notable Event", container=container, name="playbook_conf2020_interaction_with_ITSI_notable_Event_1", callback=playbook_conf2020_conf2020_Add_SNOW_Information_1)
 
     return
 
