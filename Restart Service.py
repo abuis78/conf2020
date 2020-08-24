@@ -115,7 +115,7 @@ def Request_approval_restart_service(action=None, success=None, container=None, 
     phantom.debug('Request_approval_restart_service() called')
     
     # set user and message variables for phantom.prompt call
-    user = "admin"
+    user = "Administrator"
     message = """Hi,
 we have determined that the service: {1} (on the host: {2})- is not available. Details on the process can be found in the ticket . Please confirm as follows:
 
