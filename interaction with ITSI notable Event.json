@@ -7,7 +7,6 @@
             "clean": true,
             "code_block": "",
             "description": "",
-            "hash": "23c5582666c06f18ddfd1c7d22c15eef8653a61d",
             "joint": {
                 "cells": [
                     {
@@ -1234,7 +1233,7 @@
                         "status": "",
                         "title": "Generic",
                         "type": "coa.Action",
-                        "warn": "",
+                        "warn": false,
                         "z": 107
                     },
                     {
@@ -1570,7 +1569,7 @@
                         "status": "",
                         "title": "Generic",
                         "type": "coa.Action",
-                        "warn": "",
+                        "warn": false,
                         "z": 117
                     },
                     {
@@ -1731,6 +1730,12 @@
                             ".title": {
                                 "text": "Generic"
                             },
+                            "g.approver image": {
+                                "opacity": 1
+                            },
+                            "g.code image": {
+                                "opacity": 1
+                            },
                             "g.delete": {
                                 "display": "none"
                             },
@@ -1745,6 +1750,12 @@
                             },
                             "g.notes": {
                                 "display": "block"
+                            },
+                            "g.notes image": {
+                                "opacity": 1
+                            },
+                            "g.timer image": {
+                                "opacity": 1
                             }
                         },
                         "block_code": "def severity_medium(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):\n    phantom.debug('severity_medium() called')\n        \n    #phantom.debug('Action: {0} {1}'.format(action['name'], ('SUCCEEDED' if success else 'FAILED')))\n    \n    # collect data for 'severity_medium' call\n    container_data = phantom.collect2(container=container, datapath=['artifact:*.id', 'artifact:*.id'])\n\n    parameters = []\n    \n    # build parameters list for 'severity_medium' call\n    for container_item in container_data:\n        if container_item[0]:\n            parameters.append({\n                'data': \"{ \\\"severity\\\": \\\"Medium\\\" }\",\n                'overwrite': True,\n                'artifact_id': container_item[0],\n                # context (artifact id) is added to associate results with the artifact\n                'context': {'artifact_id': container_item[1]},\n            })\n\n    phantom.act(action=\"update artifact\", parameters=parameters, assets=['phantom utilities'], name=\"severity_medium\")\n\n    return",
@@ -1854,7 +1865,7 @@
                         "status": "",
                         "title": "Generic",
                         "type": "coa.Action",
-                        "warn": "",
+                        "warn": false,
                         "z": 118
                     },
                     {
@@ -2711,7 +2722,7 @@
                         "state": "filter",
                         "status": "",
                         "type": "coa.Filter",
-                        "warn": "",
+                        "warn": false,
                         "z": 127
                     }
                 ]
