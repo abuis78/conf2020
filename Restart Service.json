@@ -7,7 +7,7 @@
             "clean": true,
             "code_block": "",
             "description": "",
-            "hash": "718b2f92a771edb7c6d9dee8f676b86299f906b6",
+            "hash": "3be6f3f0505f25dbe5fb554fab58ee2dbb68132a",
             "joint": {
                 "cells": [
                     {
@@ -217,8 +217,8 @@
                         "join_code": "# read-only block view not available",
                         "join_optional": [],
                         "join_start": 1,
-                        "line_end": 1186,
-                        "line_start": 1173,
+                        "line_end": 1184,
+                        "line_start": 1171,
                         "name": "",
                         "notes": "",
                         "number": 0,
@@ -2076,8 +2076,8 @@
                         "join_code": "",
                         "join_optional": [],
                         "join_start": 1,
-                        "line_end": 631,
-                        "line_start": 613,
+                        "line_end": 629,
+                        "line_start": 611,
                         "message": "Configuring now",
                         "name": "format",
                         "notes": "",
@@ -2884,8 +2884,8 @@
                         "join_code": "",
                         "join_optional": [],
                         "join_start": 1,
-                        "line_end": 909,
-                        "line_start": 902,
+                        "line_end": 907,
+                        "line_start": 900,
                         "message": "Configuring now",
                         "name": "remove tag",
                         "notes": "",
@@ -3327,8 +3327,8 @@
                         "join_code": "",
                         "join_optional": [],
                         "join_start": 1,
-                        "line_end": 613,
-                        "line_start": 590,
+                        "line_end": 611,
+                        "line_start": 588,
                         "message": "Configuring now",
                         "name": "post data",
                         "notes": "",
@@ -3497,8 +3497,8 @@
                         "join_code": "",
                         "join_optional": [],
                         "join_start": 1,
-                        "line_end": 707,
-                        "line_start": 691,
+                        "line_end": 705,
+                        "line_start": 689,
                         "message": "Configuring now",
                         "name": "format",
                         "notes": "",
@@ -3669,8 +3669,8 @@
                         "join_code": "",
                         "join_optional": [],
                         "join_start": 1,
-                        "line_end": 741,
-                        "line_start": 725,
+                        "line_end": 739,
+                        "line_start": 723,
                         "message": "Configuring now",
                         "name": "format",
                         "notes": "",
@@ -3841,8 +3841,8 @@
                         "join_code": "",
                         "join_optional": [],
                         "join_start": 1,
-                        "line_end": 725,
-                        "line_start": 707,
+                        "line_end": 723,
+                        "line_start": 705,
                         "message": "Configuring now",
                         "name": "format",
                         "notes": "",
@@ -5829,8 +5829,8 @@
                         "join_code": "",
                         "join_optional": [],
                         "join_start": 1,
-                        "line_end": 809,
-                        "line_start": 793,
+                        "line_end": 807,
+                        "line_start": 791,
                         "message": "Configuring now",
                         "name": "format",
                         "notes": "",
@@ -6413,333 +6413,6 @@
                         "type": "coa.Action",
                         "warn": false,
                         "z": 399
-                    },
-                    {
-                        "action": "execute program",
-                        "action_type": "generic",
-                        "active": false,
-                        "active_keys": {},
-                        "active_values": {
-                            "command": "sudo systemctl is-active nginx",
-                            "ip_hostname": "restart_Service:action_result.parameter.ip_hostname",
-                            "script_file": "",
-                            "timeout": ""
-                        },
-                        "angle": 0,
-                        "app": "SSH",
-                        "appid": "d37aa7fe-c973-44ee-a164-2ca5bf321b1f",
-                        "approver": "",
-                        "assets": [
-                            {
-                                "action": "execute program",
-                                "actions": [
-                                    "put file",
-                                    "get file",
-                                    "get memory usage",
-                                    "get disk usage",
-                                    "list processes",
-                                    "logoff user",
-                                    "terminate process",
-                                    "shutdown system",
-                                    "reboot system",
-                                    "delete firewall rule",
-                                    "list firewall rules",
-                                    "block ip",
-                                    "list connections",
-                                    "execute program",
-                                    "test connectivity"
-                                ],
-                                "active": true,
-                                "app_name": "SSH",
-                                "app_version": "1.0.47",
-                                "appid": "d37aa7fe-c973-44ee-a164-2ca5bf321b1f",
-                                "asset_name": "ssh",
-                                "config_type": "asset",
-                                "count": 0,
-                                "fields": {
-                                    "command": "sudo systemctl is-active nginx",
-                                    "ip_hostname": "restart_Service:action_result.parameter.ip_hostname",
-                                    "script_file": "",
-                                    "timeout": ""
-                                },
-                                "has_app": true,
-                                "id": 9,
-                                "loaded": false,
-                                "missing": false,
-                                "name": "ssh",
-                                "output": [
-                                    {
-                                        "data_path": "action_result.status",
-                                        "data_type": "string"
-                                    },
-                                    {
-                                        "data_path": "action_result.parameter.command",
-                                        "data_type": "string"
-                                    },
-                                    {
-                                        "contains": [
-                                            "ip",
-                                            "host name"
-                                        ],
-                                        "data_path": "action_result.parameter.ip_hostname",
-                                        "data_type": "string"
-                                    },
-                                    {
-                                        "data_path": "action_result.parameter.script_file",
-                                        "data_type": "string"
-                                    },
-                                    {
-                                        "data_path": "action_result.parameter.timeout",
-                                        "data_type": "numeric"
-                                    },
-                                    {
-                                        "data_path": "action_result.data.*.output",
-                                        "data_type": "string"
-                                    },
-                                    {
-                                        "data_path": "action_result.summary",
-                                        "data_type": "string"
-                                    },
-                                    {
-                                        "data_path": "action_result.message",
-                                        "data_type": "string"
-                                    },
-                                    {
-                                        "data_path": "summary.exit_status",
-                                        "data_type": "numeric"
-                                    },
-                                    {
-                                        "data_path": "summary.total_objects",
-                                        "data_type": "numeric"
-                                    },
-                                    {
-                                        "data_path": "summary.total_objects_successful",
-                                        "data_type": "numeric"
-                                    }
-                                ],
-                                "parameters": {
-                                    "command": {
-                                        "data_type": "string",
-                                        "default": null,
-                                        "description": "Command to be executed on endpoint",
-                                        "key": "command",
-                                        "order": 1,
-                                        "required": false
-                                    },
-                                    "ip_hostname": {
-                                        "contains": [
-                                            "ip",
-                                            "host name"
-                                        ],
-                                        "data_type": "string",
-                                        "default": null,
-                                        "description": "Hostname/IP to execute command on",
-                                        "key": "ip_hostname",
-                                        "order": 0,
-                                        "primary": true,
-                                        "required": true
-                                    },
-                                    "script_file": {
-                                        "data_type": "string",
-                                        "default": null,
-                                        "description": "Local path to shell script",
-                                        "key": "script_file",
-                                        "order": 2,
-                                        "required": false
-                                    },
-                                    "timeout": {
-                                        "data_type": "numeric",
-                                        "default": null,
-                                        "description": "Seconds before timeout (Default: 60)",
-                                        "key": "timeout",
-                                        "order": 3,
-                                        "required": false
-                                    }
-                                },
-                                "product_name": "SSH",
-                                "product_vendor": "Generic",
-                                "targets": "9",
-                                "type": "endpoint"
-                            }
-                        ],
-                        "attrs": {
-                            ".action": {
-                                "text": "systemctl is service activ..."
-                            },
-                            ".background": {
-                                "fill": "#FFFFFF",
-                                "stroke": "#818D99"
-                            },
-                            ".color-band": {
-                                "fill": "#171D21"
-                            },
-                            ".inPorts>.port-in": {
-                                "ref": ".background",
-                                "ref-x": 0.5
-                            },
-                            ".inPorts>.port-in>.port-body": {
-                                "port": {
-                                    "id": "in",
-                                    "type": "in"
-                                }
-                            },
-                            ".message": {
-                                "opacity": 0,
-                                "ref-x": 5,
-                                "ref-y": 105,
-                                "text": "Configuring now"
-                            },
-                            ".outPorts>.port-out": {
-                                "ref": ".background",
-                                "ref-x": 0.5
-                            },
-                            ".outPorts>.port-out>.port-body": {
-                                "port": {
-                                    "id": "out",
-                                    "type": "out"
-                                }
-                            },
-                            ".title": {
-                                "text": "Generic"
-                            },
-                            "g.approver image": {
-                                "opacity": 1
-                            },
-                            "g.code image": {
-                                "opacity": 1
-                            },
-                            "g.delete": {
-                                "display": "none"
-                            },
-                            "g.error": {
-                                "opacity": 0
-                            },
-                            "g.error image": {
-                                "xlink:href": "/inc/coa/img/block_icon_warn.svg"
-                            },
-                            "g.icon image": {
-                                "xlink:href": "/inc/coa/img/block_icon_generic.svg"
-                            },
-                            "g.notes": {
-                                "display": "block"
-                            },
-                            "g.notes image": {
-                                "opacity": 1
-                            },
-                            "g.timer image": {
-                                "opacity": 1,
-                                "xlink:href": "/inc/coa/img/block_icon_delay_light_on.svg"
-                            }
-                        },
-                        "block_code": "def systemctl_is_service_active(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):\n    phantom.debug('systemctl_is_service_active() called')\n        \n    #phantom.debug('Action: {0} {1}'.format(action['name'], ('SUCCEEDED' if success else 'FAILED')))\n    \n    # collect data for 'systemctl_is_service_active' call\n    results_data_1 = phantom.collect2(container=container, datapath=['restart_Service:action_result.parameter.ip_hostname', 'restart_Service:action_result.parameter.context.artifact_id'], action_results=results)\n\n    parameters = []\n    \n    # build parameters list for 'systemctl_is_service_active' call\n    for results_item_1 in results_data_1:\n        if results_item_1[0]:\n            parameters.append({\n                'command': \"sudo systemctl is-active nginx\",\n                'timeout': \"\",\n                'ip_hostname': results_item_1[0],\n                'script_file': \"\",\n                # context (artifact id) is added to associate results with the artifact\n                'context': {'artifact_id': results_item_1[1]},\n            })\n    # calculate start time using delay of 1 minutes\n    start_time = datetime.now() + timedelta(minutes=1)\n\n    phantom.act(action=\"execute program\", parameters=parameters, assets=['ssh'], callback=decision_8, start_time=start_time, name=\"systemctl_is_service_active\")\n\n    return",
-                        "callback_code": "",
-                        "callback_start": 557,
-                        "callsback": true,
-                        "color": "",
-                        "connected_to_start": true,
-                        "connection_name": "restart Service",
-                        "connection_type": "action",
-                        "custom_callback": "",
-                        "custom_code": "",
-                        "custom_join": "",
-                        "custom_name": "systemctl is service active",
-                        "delay": "1",
-                        "description": "",
-                        "has_custom": false,
-                        "has_custom_block": false,
-                        "has_custom_callback": false,
-                        "has_custom_join": false,
-                        "id": "53891820-22fe-458d-9ff5-2841fa87170f",
-                        "inPorts": [
-                            "in"
-                        ],
-                        "join_code": "",
-                        "join_optional": [],
-                        "join_start": 1,
-                        "line_end": 569,
-                        "line_start": 541,
-                        "message": "Configuring now",
-                        "name": "execute program",
-                        "notes": "",
-                        "number": 2,
-                        "order": 25,
-                        "outPorts": [
-                            "out"
-                        ],
-                        "ports": {
-                            "groups": {
-                                "in": {
-                                    "attrs": {
-                                        ".port-body": {
-                                            "fill": "#fff",
-                                            "magnet": true,
-                                            "r": 10,
-                                            "stroke": "#000"
-                                        },
-                                        ".port-label": {
-                                            "fill": "#000"
-                                        }
-                                    },
-                                    "label": {
-                                        "position": {
-                                            "args": {
-                                                "y": 10
-                                            },
-                                            "name": "left"
-                                        }
-                                    },
-                                    "position": {
-                                        "name": "left"
-                                    }
-                                },
-                                "out": {
-                                    "attrs": {
-                                        ".port-body": {
-                                            "fill": "#fff",
-                                            "magnet": true,
-                                            "r": 10,
-                                            "stroke": "#000"
-                                        },
-                                        ".port-label": {
-                                            "fill": "#000"
-                                        }
-                                    },
-                                    "label": {
-                                        "position": {
-                                            "args": {
-                                                "y": 10
-                                            },
-                                            "name": "right"
-                                        }
-                                    },
-                                    "position": {
-                                        "name": "right"
-                                    }
-                                }
-                            }
-                        },
-                        "position": {
-                            "x": 1280,
-                            "y": 100
-                        },
-                        "previous_function": "",
-                        "previous_name": "systemctl_is_service_active",
-                        "required_params": {
-                            "ip_hostname": true
-                        },
-                        "reviewer": "",
-                        "show_delay": true,
-                        "show_number": true,
-                        "size": {
-                            "height": 100,
-                            "width": 180
-                        },
-                        "state": "app_action_assets",
-                        "status": "",
-                        "title": "Generic",
-                        "type": "coa.Action",
-                        "warn": false,
-                        "z": 401
                     },
                     {
                         "active": false,
@@ -9257,8 +8930,8 @@
                         "join_code": "",
                         "join_optional": [],
                         "join_start": 1,
-                        "line_end": 953,
-                        "line_start": 926,
+                        "line_end": 951,
+                        "line_start": 924,
                         "message": "Configuring now",
                         "name": "add work note",
                         "notes": "",
@@ -9554,8 +9227,8 @@
                         "join_code": "",
                         "join_optional": [],
                         "join_start": 1,
-                        "line_end": 876,
-                        "line_start": 851,
+                        "line_end": 874,
+                        "line_start": 849,
                         "message": "Configuring now",
                         "name": "update artifact",
                         "notes": "",
@@ -9732,8 +9405,8 @@
                         "join_code": "",
                         "join_optional": [],
                         "join_start": 1,
-                        "line_end": 772,
-                        "line_start": 764,
+                        "line_end": 770,
+                        "line_start": 762,
                         "message": "Configuring now",
                         "name": "add tag",
                         "notes": "",
@@ -10023,8 +9696,8 @@
                         "join_code": "",
                         "join_optional": [],
                         "join_start": 1,
-                        "line_end": 639,
-                        "line_start": 631,
+                        "line_end": 637,
+                        "line_start": 629,
                         "message": "Configuring now",
                         "name": "add tag",
                         "notes": "",
@@ -10369,8 +10042,8 @@
                         "join_code": "",
                         "join_optional": [],
                         "join_start": 1,
-                        "line_end": 990,
-                        "line_start": 969,
+                        "line_end": 988,
+                        "line_start": 967,
                         "message": "Configuring now",
                         "name": "get data",
                         "notes": "",
@@ -11027,8 +10700,8 @@
                         "join_code": "",
                         "join_optional": [],
                         "join_start": 1,
-                        "line_end": 793,
-                        "line_start": 772,
+                        "line_end": 791,
+                        "line_start": 770,
                         "name": "decision",
                         "notes": "",
                         "number": 8,
@@ -11220,8 +10893,8 @@
                         "join_code": "",
                         "join_optional": [],
                         "join_start": 1,
-                        "line_end": 590,
-                        "line_start": 569,
+                        "line_end": 588,
+                        "line_start": 567,
                         "name": "decision",
                         "notes": "",
                         "number": 6,
@@ -11475,8 +11148,8 @@
                         "join_code": "",
                         "join_optional": [],
                         "join_start": 1,
-                        "line_end": 1033,
-                        "line_start": 1006,
+                        "line_end": 1031,
+                        "line_start": 1004,
                         "message": "Configuring now",
                         "name": "list_deduplicate",
                         "notes": "",
@@ -11874,8 +11547,8 @@
                         "join_code": "",
                         "join_optional": [],
                         "join_start": 1,
-                        "line_end": 969,
-                        "line_start": 953,
+                        "line_end": 967,
+                        "line_start": 951,
                         "message": "Configuring now",
                         "name": "format",
                         "notes": "",
@@ -12493,8 +12166,8 @@
                         "join_code": "",
                         "join_optional": [],
                         "join_start": 1,
-                        "line_end": 926,
-                        "line_start": 909,
+                        "line_end": 924,
+                        "line_start": 907,
                         "message": "Configuring now",
                         "name": "format",
                         "notes": "",
@@ -12681,8 +12354,8 @@
                         "join_code": "",
                         "join_optional": [],
                         "join_start": 1,
-                        "line_end": 1135,
-                        "line_start": 1124,
+                        "line_end": 1133,
+                        "line_start": 1122,
                         "message": "Configuring now",
                         "name": "pin",
                         "notes": "",
@@ -13237,8 +12910,8 @@
                         "join_code": "",
                         "join_optional": [],
                         "join_start": 1,
-                        "line_end": 764,
-                        "line_start": 741,
+                        "line_end": 762,
+                        "line_start": 739,
                         "message": "Configuring now",
                         "name": "post data",
                         "notes": "",
@@ -13583,8 +13256,8 @@
                         "join_code": "",
                         "join_optional": [],
                         "join_start": 1,
-                        "line_end": 665,
-                        "line_start": 639,
+                        "line_end": 663,
+                        "line_start": 637,
                         "name": "decision",
                         "notes": "",
                         "number": 7,
@@ -14069,8 +13742,8 @@
                         "join_code": "",
                         "join_optional": [],
                         "join_start": 1,
-                        "line_end": 998,
-                        "line_start": 990,
+                        "line_end": 996,
+                        "line_start": 988,
                         "message": "Configuring now",
                         "name": "conf2020/add Maintenance Windows",
                         "notes": "",
@@ -14392,8 +14065,8 @@
                         "join_code": "",
                         "join_optional": [],
                         "join_start": 1,
-                        "line_end": 691,
-                        "line_start": 665,
+                        "line_end": 689,
+                        "line_start": 663,
                         "message": "Configuring now",
                         "name": "execute program",
                         "notes": "",
@@ -14567,8 +14240,8 @@
                         "join_code": "",
                         "join_optional": [],
                         "join_start": 1,
-                        "line_end": 1006,
-                        "line_start": 998,
+                        "line_end": 1004,
+                        "line_start": 996,
                         "message": "Configuring now",
                         "name": "conf2020/End Maintenance Windows",
                         "notes": "",
@@ -14741,9 +14414,9 @@
                             "add_snow_work_note",
                             "get_data_4"
                         ],
-                        "join_start": 884,
-                        "line_end": 902,
-                        "line_start": 876,
+                        "join_start": 882,
+                        "line_end": 900,
+                        "line_start": 874,
                         "message": "Configuring now",
                         "name": "add tag",
                         "notes": "",
@@ -14903,8 +14576,8 @@
                         "join_code": "",
                         "join_optional": [],
                         "join_start": 1,
-                        "line_end": 1065,
-                        "line_start": 1049,
+                        "line_end": 1063,
+                        "line_start": 1047,
                         "message": "Configuring now",
                         "name": "format",
                         "notes": "",
@@ -15072,8 +14745,8 @@
                         "join_code": "",
                         "join_optional": [],
                         "join_start": 1,
-                        "line_end": 1049,
-                        "line_start": 1033,
+                        "line_end": 1047,
+                        "line_start": 1031,
                         "message": "Configuring now",
                         "name": "format",
                         "notes": "",
@@ -15382,8 +15055,8 @@
                         "join_code": "",
                         "join_optional": [],
                         "join_start": 1,
-                        "line_end": 1157,
-                        "line_start": 1135,
+                        "line_end": 1155,
+                        "line_start": 1133,
                         "message": "Configuring now",
                         "name": "add episode comment",
                         "notes": "",
@@ -15551,8 +15224,8 @@
                         "join_code": "",
                         "join_optional": [],
                         "join_start": 1,
-                        "line_end": 1173,
-                        "line_start": 1157,
+                        "line_end": 1171,
+                        "line_start": 1155,
                         "message": "Configuring now",
                         "name": "format",
                         "notes": "",
@@ -15902,8 +15575,8 @@
                         "join_code": "",
                         "join_optional": [],
                         "join_start": 1,
-                        "line_end": 830,
-                        "line_start": 809,
+                        "line_end": 828,
+                        "line_start": 807,
                         "message": "Configuring now",
                         "name": "get data",
                         "notes": "",
@@ -16068,8 +15741,8 @@
                         "join_code": "",
                         "join_optional": [],
                         "join_start": 1,
-                        "line_end": 1124,
-                        "line_start": 1108,
+                        "line_end": 1122,
+                        "line_start": 1106,
                         "message": "Configuring now",
                         "name": "format",
                         "notes": "",
@@ -16240,8 +15913,8 @@
                         "join_code": "",
                         "join_optional": [],
                         "join_start": 1,
-                        "line_end": 1108,
-                        "line_start": 1092,
+                        "line_end": 1106,
+                        "line_start": 1090,
                         "message": "Configuring now",
                         "name": "format",
                         "notes": "",
@@ -16643,8 +16316,8 @@
                         "join_code": "",
                         "join_optional": [],
                         "join_start": 1,
-                        "line_end": 1092,
-                        "line_start": 1065,
+                        "line_end": 1090,
+                        "line_start": 1063,
                         "message": "Configuring now",
                         "name": "add maintenance window",
                         "notes": "",
@@ -16995,8 +16668,8 @@
                         "join_code": "",
                         "join_optional": [],
                         "join_start": 1,
-                        "line_end": 851,
-                        "line_start": 830,
+                        "line_end": 849,
+                        "line_start": 828,
                         "name": "decision",
                         "notes": "",
                         "number": 10,
@@ -17101,6 +16774,332 @@
                         "type": "coa.Decision",
                         "warn": "",
                         "z": 544
+                    },
+                    {
+                        "action": "execute program",
+                        "action_type": "generic",
+                        "active": false,
+                        "active_keys": {},
+                        "active_values": {
+                            "command": "sudo systemctl is-active nginx",
+                            "ip_hostname": "restart_Service:action_result.parameter.ip_hostname",
+                            "script_file": "",
+                            "timeout": ""
+                        },
+                        "angle": 0,
+                        "app": "SSH",
+                        "appid": "d37aa7fe-c973-44ee-a164-2ca5bf321b1f",
+                        "approver": "",
+                        "assets": [
+                            {
+                                "action": "execute program",
+                                "actions": [
+                                    "put file",
+                                    "get file",
+                                    "get memory usage",
+                                    "get disk usage",
+                                    "list processes",
+                                    "logoff user",
+                                    "terminate process",
+                                    "shutdown system",
+                                    "reboot system",
+                                    "delete firewall rule",
+                                    "list firewall rules",
+                                    "block ip",
+                                    "list connections",
+                                    "execute program",
+                                    "test connectivity"
+                                ],
+                                "active": true,
+                                "app_name": "SSH",
+                                "app_version": "1.0.47",
+                                "appid": "d37aa7fe-c973-44ee-a164-2ca5bf321b1f",
+                                "asset_name": "ssh",
+                                "config_type": "asset",
+                                "count": 0,
+                                "fields": {
+                                    "command": "sudo systemctl is-active nginx",
+                                    "ip_hostname": "restart_Service:action_result.parameter.ip_hostname",
+                                    "script_file": "",
+                                    "timeout": ""
+                                },
+                                "has_app": true,
+                                "id": 9,
+                                "loaded": false,
+                                "missing": false,
+                                "name": "ssh",
+                                "output": [
+                                    {
+                                        "data_path": "action_result.status",
+                                        "data_type": "string"
+                                    },
+                                    {
+                                        "data_path": "action_result.parameter.command",
+                                        "data_type": "string"
+                                    },
+                                    {
+                                        "contains": [
+                                            "ip",
+                                            "host name"
+                                        ],
+                                        "data_path": "action_result.parameter.ip_hostname",
+                                        "data_type": "string"
+                                    },
+                                    {
+                                        "data_path": "action_result.parameter.script_file",
+                                        "data_type": "string"
+                                    },
+                                    {
+                                        "data_path": "action_result.parameter.timeout",
+                                        "data_type": "numeric"
+                                    },
+                                    {
+                                        "data_path": "action_result.data.*.output",
+                                        "data_type": "string"
+                                    },
+                                    {
+                                        "data_path": "action_result.summary",
+                                        "data_type": "string"
+                                    },
+                                    {
+                                        "data_path": "action_result.message",
+                                        "data_type": "string"
+                                    },
+                                    {
+                                        "data_path": "summary.exit_status",
+                                        "data_type": "numeric"
+                                    },
+                                    {
+                                        "data_path": "summary.total_objects",
+                                        "data_type": "numeric"
+                                    },
+                                    {
+                                        "data_path": "summary.total_objects_successful",
+                                        "data_type": "numeric"
+                                    }
+                                ],
+                                "parameters": {
+                                    "command": {
+                                        "data_type": "string",
+                                        "default": null,
+                                        "description": "Command to be executed on endpoint",
+                                        "key": "command",
+                                        "order": 1,
+                                        "required": false
+                                    },
+                                    "ip_hostname": {
+                                        "contains": [
+                                            "ip",
+                                            "host name"
+                                        ],
+                                        "data_type": "string",
+                                        "default": null,
+                                        "description": "Hostname/IP to execute command on",
+                                        "key": "ip_hostname",
+                                        "order": 0,
+                                        "primary": true,
+                                        "required": true
+                                    },
+                                    "script_file": {
+                                        "data_type": "string",
+                                        "default": null,
+                                        "description": "Local path to shell script",
+                                        "key": "script_file",
+                                        "order": 2,
+                                        "required": false
+                                    },
+                                    "timeout": {
+                                        "data_type": "numeric",
+                                        "default": null,
+                                        "description": "Seconds before timeout (Default: 60)",
+                                        "key": "timeout",
+                                        "order": 3,
+                                        "required": false
+                                    }
+                                },
+                                "product_name": "SSH",
+                                "product_vendor": "Generic",
+                                "targets": "9",
+                                "type": "endpoint"
+                            }
+                        ],
+                        "attrs": {
+                            ".action": {
+                                "text": "systemctl is service activ..."
+                            },
+                            ".background": {
+                                "fill": "#FFFFFF",
+                                "stroke": "#818D99"
+                            },
+                            ".color-band": {
+                                "fill": "#171D21"
+                            },
+                            ".inPorts>.port-in": {
+                                "ref": ".background",
+                                "ref-x": 0.5
+                            },
+                            ".inPorts>.port-in>.port-body": {
+                                "port": {
+                                    "id": "in",
+                                    "type": "in"
+                                }
+                            },
+                            ".message": {
+                                "opacity": 0,
+                                "ref-x": 5,
+                                "ref-y": 105,
+                                "text": "Configuring now"
+                            },
+                            ".outPorts>.port-out": {
+                                "ref": ".background",
+                                "ref-x": 0.5
+                            },
+                            ".outPorts>.port-out>.port-body": {
+                                "port": {
+                                    "id": "out",
+                                    "type": "out"
+                                }
+                            },
+                            ".title": {
+                                "text": "Generic"
+                            },
+                            "g.approver image": {
+                                "opacity": 1
+                            },
+                            "g.code image": {
+                                "opacity": 1
+                            },
+                            "g.delete": {
+                                "display": "none"
+                            },
+                            "g.error": {
+                                "opacity": 0
+                            },
+                            "g.error image": {
+                                "xlink:href": "/inc/coa/img/block_icon_warn.svg"
+                            },
+                            "g.icon image": {
+                                "xlink:href": "/inc/coa/img/block_icon_generic.svg"
+                            },
+                            "g.notes": {
+                                "display": "block"
+                            },
+                            "g.notes image": {
+                                "opacity": 1
+                            },
+                            "g.timer image": {
+                                "opacity": 1
+                            }
+                        },
+                        "block_code": "def systemctl_is_service_active(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):\n    phantom.debug('systemctl_is_service_active() called')\n        \n    #phantom.debug('Action: {0} {1}'.format(action['name'], ('SUCCEEDED' if success else 'FAILED')))\n    \n    # collect data for 'systemctl_is_service_active' call\n    results_data_1 = phantom.collect2(container=container, datapath=['restart_Service:action_result.parameter.ip_hostname', 'restart_Service:action_result.parameter.context.artifact_id'], action_results=results)\n\n    parameters = []\n    \n    # build parameters list for 'systemctl_is_service_active' call\n    for results_item_1 in results_data_1:\n        if results_item_1[0]:\n            parameters.append({\n                'command': \"sudo systemctl is-active nginx\",\n                'timeout': \"\",\n                'ip_hostname': results_item_1[0],\n                'script_file': \"\",\n                # context (artifact id) is added to associate results with the artifact\n                'context': {'artifact_id': results_item_1[1]},\n            })\n\n    phantom.act(action=\"execute program\", parameters=parameters, assets=['ssh'], callback=decision_8, name=\"systemctl_is_service_active\")\n\n    return",
+                        "callback_code": "",
+                        "callback_start": 557,
+                        "callsback": true,
+                        "color": "",
+                        "connected_to_start": true,
+                        "connection_name": "restart Service",
+                        "connection_type": "action",
+                        "custom_callback": "",
+                        "custom_code": "",
+                        "custom_join": "",
+                        "custom_name": "systemctl is service active",
+                        "delay": "0",
+                        "description": "",
+                        "has_custom": false,
+                        "has_custom_block": false,
+                        "has_custom_callback": false,
+                        "has_custom_join": false,
+                        "id": "53891820-22fe-458d-9ff5-2841fa87170f",
+                        "inPorts": [
+                            "in"
+                        ],
+                        "join_code": "",
+                        "join_optional": [],
+                        "join_start": 1,
+                        "line_end": 567,
+                        "line_start": 541,
+                        "message": "Configuring now",
+                        "name": "execute program",
+                        "notes": "",
+                        "number": 2,
+                        "order": 25,
+                        "outPorts": [
+                            "out"
+                        ],
+                        "ports": {
+                            "groups": {
+                                "in": {
+                                    "attrs": {
+                                        ".port-body": {
+                                            "fill": "#fff",
+                                            "magnet": true,
+                                            "r": 10,
+                                            "stroke": "#000"
+                                        },
+                                        ".port-label": {
+                                            "fill": "#000"
+                                        }
+                                    },
+                                    "label": {
+                                        "position": {
+                                            "args": {
+                                                "y": 10
+                                            },
+                                            "name": "left"
+                                        }
+                                    },
+                                    "position": {
+                                        "name": "left"
+                                    }
+                                },
+                                "out": {
+                                    "attrs": {
+                                        ".port-body": {
+                                            "fill": "#fff",
+                                            "magnet": true,
+                                            "r": 10,
+                                            "stroke": "#000"
+                                        },
+                                        ".port-label": {
+                                            "fill": "#000"
+                                        }
+                                    },
+                                    "label": {
+                                        "position": {
+                                            "args": {
+                                                "y": 10
+                                            },
+                                            "name": "right"
+                                        }
+                                    },
+                                    "position": {
+                                        "name": "right"
+                                    }
+                                }
+                            }
+                        },
+                        "position": {
+                            "x": 1280,
+                            "y": 100
+                        },
+                        "previous_function": "",
+                        "previous_name": "systemctl_is_service_active",
+                        "required_params": {
+                            "ip_hostname": true
+                        },
+                        "reviewer": "",
+                        "show_delay": false,
+                        "show_number": true,
+                        "size": {
+                            "height": 100,
+                            "width": 180
+                        },
+                        "state": "app_action_assets",
+                        "status": "",
+                        "title": "Generic",
+                        "type": "coa.Action",
+                        "warn": false,
+                        "z": 545
                     }
                 ]
             },
@@ -17110,7 +17109,7 @@
         "schema": 4,
         "version": "4.9.34514"
     },
-    "create_time": "2020-08-24T12:40:55.348143+00:00",
+    "create_time": "2020-09-30T08:22:09.593906+00:00",
     "draft_mode": false,
     "labels": [
         "itsi"

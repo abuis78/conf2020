@@ -559,10 +559,8 @@ def systemctl_is_service_active(action=None, success=None, container=None, resul
                 # context (artifact id) is added to associate results with the artifact
                 'context': {'artifact_id': results_item_1[1]},
             })
-    # calculate start time using delay of 1 minutes
-    start_time = datetime.now() + timedelta(minutes=1)
 
-    phantom.act(action="execute program", parameters=parameters, assets=['ssh'], callback=decision_8, start_time=start_time, name="systemctl_is_service_active")
+    phantom.act(action="execute program", parameters=parameters, assets=['ssh'], callback=decision_8, name="systemctl_is_service_active")
 
     return
 
