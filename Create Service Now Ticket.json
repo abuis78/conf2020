@@ -7,6 +7,7 @@
             "clean": true,
             "code_block": "",
             "description": "",
+            "hash": "1ab88cea8b99d2ad31f1073a514d39bf5bbcfefd",
             "joint": {
                 "cells": [
                     {
@@ -5351,360 +5352,6 @@
                         "z": 206
                     },
                     {
-                        "action": "update episode",
-                        "action_type": "generic",
-                        "active": false,
-                        "active_keys": {},
-                        "active_values": {
-                            "itsi_group_id": "container:source_data_identifier",
-                            "owner": "",
-                            "severity": "Medium",
-                            "status": "In Progress"
-                        },
-                        "angle": 0,
-                        "app": "Splunk IT Service Intelligence",
-                        "appid": "94bcee41-329f-4907-8895-d4e2a10616b8",
-                        "approver": "",
-                        "assets": [
-                            {
-                                "action": "update episode",
-                                "actions": [
-                                    "test connectivity",
-                                    "get episode",
-                                    "update episode",
-                                    "add episode comment",
-                                    "break episode",
-                                    "close episode",
-                                    "get episode events",
-                                    "add episode ticket",
-                                    "get episode tickets",
-                                    "get entity",
-                                    "get service",
-                                    "get service entities",
-                                    "update service status",
-                                    "get maintenance window",
-                                    "add maintenance window",
-                                    "update maintenance window",
-                                    "end maintenance window"
-                                ],
-                                "active": true,
-                                "app_name": "Splunk IT Service Intelligence",
-                                "app_version": "1.0.0",
-                                "appid": "94bcee41-329f-4907-8895-d4e2a10616b8",
-                                "asset_name": "splunk itsi",
-                                "config_type": "asset",
-                                "count": 0,
-                                "fields": {
-                                    "itsi_group_id": "container:source_data_identifier",
-                                    "owner": "",
-                                    "severity": "Medium",
-                                    "status": "In Progress"
-                                },
-                                "has_app": true,
-                                "id": 6,
-                                "loaded": false,
-                                "missing": false,
-                                "name": "splunk itsi",
-                                "output": [
-                                    {
-                                        "column_name": "Status",
-                                        "column_order": 4,
-                                        "data_path": "action_result.status",
-                                        "data_type": "string",
-                                        "example_values": [
-                                            "success",
-                                            "failed"
-                                        ]
-                                    },
-                                    {
-                                        "column_name": "ITSI Group ID",
-                                        "column_order": 0,
-                                        "data_path": "action_result.parameter.itsi_group_id",
-                                        "data_type": "string"
-                                    },
-                                    {
-                                        "column_name": "Owner",
-                                        "column_order": 3,
-                                        "data_path": "action_result.parameter.owner",
-                                        "data_type": "string"
-                                    },
-                                    {
-                                        "column_name": "Severity",
-                                        "column_order": 2,
-                                        "data_path": "action_result.parameter.severity",
-                                        "data_type": "string"
-                                    },
-                                    {
-                                        "column_name": "Status",
-                                        "column_order": 1,
-                                        "data_path": "action_result.parameter.status",
-                                        "data_type": "string"
-                                    },
-                                    {
-                                        "column_name": "Data",
-                                        "column_order": 5,
-                                        "data_path": "action_result.data",
-                                        "data_type": "string"
-                                    },
-                                    {
-                                        "column_name": "Summary",
-                                        "column_order": 6,
-                                        "data_path": "action_result.summary",
-                                        "data_type": "string"
-                                    },
-                                    {
-                                        "data_path": "action_result.message",
-                                        "data_type": "string"
-                                    },
-                                    {
-                                        "data_path": "summary.total_objects",
-                                        "data_type": "numeric",
-                                        "example_values": [
-                                            1
-                                        ]
-                                    },
-                                    {
-                                        "data_path": "summary.total_objects_successful",
-                                        "data_type": "numeric",
-                                        "example_values": [
-                                            1
-                                        ]
-                                    }
-                                ],
-                                "parameters": {
-                                    "itsi_group_id": {
-                                        "data_type": "string",
-                                        "default": null,
-                                        "description": "Splunk ITSI episode ID",
-                                        "key": "itsi_group_id",
-                                        "order": 0,
-                                        "required": true
-                                    },
-                                    "owner": {
-                                        "data_type": "string",
-                                        "default": null,
-                                        "description": "Episode owner",
-                                        "key": "owner",
-                                        "order": 3,
-                                        "required": false
-                                    },
-                                    "severity": {
-                                        "data_type": "string",
-                                        "default": null,
-                                        "description": "Episode severity",
-                                        "key": "severity",
-                                        "order": 2,
-                                        "required": false,
-                                        "value_list": [
-                                            "Info",
-                                            "Normal",
-                                            "Low",
-                                            "Medium",
-                                            "High",
-                                            "Critical"
-                                        ]
-                                    },
-                                    "status": {
-                                        "data_type": "string",
-                                        "default": null,
-                                        "description": "Episode status",
-                                        "key": "status",
-                                        "order": 1,
-                                        "required": false,
-                                        "value_list": [
-                                            "Unassigned",
-                                            "New",
-                                            "In Progress",
-                                            "Pending",
-                                            "Resolved",
-                                            "Closed"
-                                        ]
-                                    }
-                                },
-                                "product_name": "Splunk ITSI",
-                                "product_vendor": "Splunk",
-                                "targets": "6",
-                                "type": "devops"
-                            }
-                        ],
-                        "attrs": {
-                            ".action": {
-                                "text": "update episode"
-                            },
-                            ".background": {
-                                "fill": "#FFFFFF",
-                                "stroke": "#818D99"
-                            },
-                            ".color-band": {
-                                "fill": "#171D21"
-                            },
-                            ".inPorts>.port-in": {
-                                "ref": ".background",
-                                "ref-x": 0.5
-                            },
-                            ".inPorts>.port-in>.port-body": {
-                                "port": {
-                                    "id": "in",
-                                    "type": "in"
-                                }
-                            },
-                            ".message": {
-                                "opacity": 0,
-                                "ref-x": 5,
-                                "ref-y": 105,
-                                "text": "Configuring now"
-                            },
-                            ".outPorts>.port-out": {
-                                "ref": ".background",
-                                "ref-x": 0.5
-                            },
-                            ".outPorts>.port-out>.port-body": {
-                                "port": {
-                                    "id": "out",
-                                    "type": "out"
-                                }
-                            },
-                            ".title": {
-                                "text": "Generic"
-                            },
-                            "g.approver image": {
-                                "opacity": 1
-                            },
-                            "g.code image": {
-                                "opacity": 1
-                            },
-                            "g.delete": {
-                                "display": "none"
-                            },
-                            "g.error": {
-                                "opacity": 0
-                            },
-                            "g.error image": {
-                                "xlink:href": "/inc/coa/img/block_icon_warn.svg"
-                            },
-                            "g.icon image": {
-                                "xlink:href": "/inc/coa/img/block_icon_generic.svg"
-                            },
-                            "g.notes": {
-                                "display": "block"
-                            },
-                            "g.notes image": {
-                                "opacity": 1
-                            },
-                            "g.timer image": {
-                                "opacity": 1
-                            }
-                        },
-                        "block_code": "def update_episode_1(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):\n    phantom.debug('update_episode_1() called')\n        \n    #phantom.debug('Action: {0} {1}'.format(action['name'], ('SUCCEEDED' if success else 'FAILED')))\n    \n    source_data_identifier_value = container.get('source_data_identifier', None)\n\n    # collect data for 'update_episode_1' call\n\n    parameters = []\n    \n    # build parameters list for 'update_episode_1' call\n    parameters.append({\n        'owner': \"\",\n        'status': \"In Progress\",\n        'severity': \"Medium\",\n        'itsi_group_id': source_data_identifier_value,\n    })\n\n    phantom.act(action=\"update episode\", parameters=parameters, assets=['splunk itsi'], callback=parse_url_1, name=\"update_episode_1\", parent_action=action)\n\n    return",
-                        "callback_code": "",
-                        "callback_start": 1,
-                        "callsback": true,
-                        "color": "",
-                        "connected_to_start": true,
-                        "connection_name": "create ticket",
-                        "connection_type": "action",
-                        "custom_callback": "",
-                        "custom_code": "",
-                        "custom_join": "",
-                        "custom_name": "",
-                        "delay": 0,
-                        "description": "",
-                        "has_custom": false,
-                        "has_custom_block": false,
-                        "has_custom_callback": false,
-                        "has_custom_join": false,
-                        "id": "fe9cafde-e0ab-4c67-bdf3-8ce9d0c4a7a3",
-                        "inPorts": [
-                            "in"
-                        ],
-                        "join_code": "",
-                        "join_optional": [],
-                        "join_start": 1,
-                        "line_end": 363,
-                        "line_start": 340,
-                        "message": "Configuring now",
-                        "name": "update episode",
-                        "notes": "",
-                        "number": 1,
-                        "order": 20,
-                        "outPorts": [
-                            "out"
-                        ],
-                        "ports": {
-                            "groups": {
-                                "in": {
-                                    "attrs": {
-                                        ".port-body": {
-                                            "fill": "#fff",
-                                            "magnet": true,
-                                            "r": 10,
-                                            "stroke": "#000"
-                                        },
-                                        ".port-label": {
-                                            "fill": "#000"
-                                        }
-                                    },
-                                    "label": {
-                                        "position": {
-                                            "args": {
-                                                "y": 10
-                                            },
-                                            "name": "left"
-                                        }
-                                    },
-                                    "position": {
-                                        "name": "left"
-                                    }
-                                },
-                                "out": {
-                                    "attrs": {
-                                        ".port-body": {
-                                            "fill": "#fff",
-                                            "magnet": true,
-                                            "r": 10,
-                                            "stroke": "#000"
-                                        },
-                                        ".port-label": {
-                                            "fill": "#000"
-                                        }
-                                    },
-                                    "label": {
-                                        "position": {
-                                            "args": {
-                                                "y": 10
-                                            },
-                                            "name": "right"
-                                        }
-                                    },
-                                    "position": {
-                                        "name": "right"
-                                    }
-                                }
-                            }
-                        },
-                        "position": {
-                            "x": 1200,
-                            "y": 100
-                        },
-                        "previous_function": "",
-                        "previous_name": "update_episode_1",
-                        "required_params": {
-                            "itsi_group_id": true
-                        },
-                        "reviewer": "",
-                        "show_number": false,
-                        "size": {
-                            "height": 100,
-                            "width": 180
-                        },
-                        "state": "app_action_assets",
-                        "status": "",
-                        "title": "Generic",
-                        "type": "coa.Action",
-                        "warn": false,
-                        "z": 207
-                    },
-                    {
                         "action": "parse url",
                         "action_type": "generic",
                         "active": false,
@@ -7007,6 +6654,360 @@
                         "type": "coa.Format",
                         "warn": false,
                         "z": 216
+                    },
+                    {
+                        "action": "update episode",
+                        "action_type": "generic",
+                        "active": false,
+                        "active_keys": {},
+                        "active_values": {
+                            "itsi_group_id": "container:source_data_identifier",
+                            "owner": "admin",
+                            "severity": "Medium",
+                            "status": "In Progress"
+                        },
+                        "angle": 0,
+                        "app": "Splunk IT Service Intelligence",
+                        "appid": "94bcee41-329f-4907-8895-d4e2a10616b8",
+                        "approver": "",
+                        "assets": [
+                            {
+                                "action": "update episode",
+                                "actions": [
+                                    "test connectivity",
+                                    "get episode",
+                                    "update episode",
+                                    "add episode comment",
+                                    "break episode",
+                                    "close episode",
+                                    "get episode events",
+                                    "add episode ticket",
+                                    "get episode tickets",
+                                    "get entity",
+                                    "get service",
+                                    "get service entities",
+                                    "update service status",
+                                    "get maintenance window",
+                                    "add maintenance window",
+                                    "update maintenance window",
+                                    "end maintenance window"
+                                ],
+                                "active": true,
+                                "app_name": "Splunk IT Service Intelligence",
+                                "app_version": "1.0.0",
+                                "appid": "94bcee41-329f-4907-8895-d4e2a10616b8",
+                                "asset_name": "splunk itsi",
+                                "config_type": "asset",
+                                "count": 0,
+                                "fields": {
+                                    "itsi_group_id": "container:source_data_identifier",
+                                    "owner": "admin",
+                                    "severity": "Medium",
+                                    "status": "In Progress"
+                                },
+                                "has_app": true,
+                                "id": 6,
+                                "loaded": false,
+                                "missing": false,
+                                "name": "splunk itsi",
+                                "output": [
+                                    {
+                                        "column_name": "Status",
+                                        "column_order": 4,
+                                        "data_path": "action_result.status",
+                                        "data_type": "string",
+                                        "example_values": [
+                                            "success",
+                                            "failed"
+                                        ]
+                                    },
+                                    {
+                                        "column_name": "ITSI Group ID",
+                                        "column_order": 0,
+                                        "data_path": "action_result.parameter.itsi_group_id",
+                                        "data_type": "string"
+                                    },
+                                    {
+                                        "column_name": "Owner",
+                                        "column_order": 3,
+                                        "data_path": "action_result.parameter.owner",
+                                        "data_type": "string"
+                                    },
+                                    {
+                                        "column_name": "Severity",
+                                        "column_order": 2,
+                                        "data_path": "action_result.parameter.severity",
+                                        "data_type": "string"
+                                    },
+                                    {
+                                        "column_name": "Status",
+                                        "column_order": 1,
+                                        "data_path": "action_result.parameter.status",
+                                        "data_type": "string"
+                                    },
+                                    {
+                                        "column_name": "Data",
+                                        "column_order": 5,
+                                        "data_path": "action_result.data",
+                                        "data_type": "string"
+                                    },
+                                    {
+                                        "column_name": "Summary",
+                                        "column_order": 6,
+                                        "data_path": "action_result.summary",
+                                        "data_type": "string"
+                                    },
+                                    {
+                                        "data_path": "action_result.message",
+                                        "data_type": "string"
+                                    },
+                                    {
+                                        "data_path": "summary.total_objects",
+                                        "data_type": "numeric",
+                                        "example_values": [
+                                            1
+                                        ]
+                                    },
+                                    {
+                                        "data_path": "summary.total_objects_successful",
+                                        "data_type": "numeric",
+                                        "example_values": [
+                                            1
+                                        ]
+                                    }
+                                ],
+                                "parameters": {
+                                    "itsi_group_id": {
+                                        "data_type": "string",
+                                        "default": null,
+                                        "description": "Splunk ITSI episode ID",
+                                        "key": "itsi_group_id",
+                                        "order": 0,
+                                        "required": true
+                                    },
+                                    "owner": {
+                                        "data_type": "string",
+                                        "default": null,
+                                        "description": "Episode owner",
+                                        "key": "owner",
+                                        "order": 3,
+                                        "required": false
+                                    },
+                                    "severity": {
+                                        "data_type": "string",
+                                        "default": null,
+                                        "description": "Episode severity",
+                                        "key": "severity",
+                                        "order": 2,
+                                        "required": false,
+                                        "value_list": [
+                                            "Info",
+                                            "Normal",
+                                            "Low",
+                                            "Medium",
+                                            "High",
+                                            "Critical"
+                                        ]
+                                    },
+                                    "status": {
+                                        "data_type": "string",
+                                        "default": null,
+                                        "description": "Episode status",
+                                        "key": "status",
+                                        "order": 1,
+                                        "required": false,
+                                        "value_list": [
+                                            "Unassigned",
+                                            "New",
+                                            "In Progress",
+                                            "Pending",
+                                            "Resolved",
+                                            "Closed"
+                                        ]
+                                    }
+                                },
+                                "product_name": "Splunk ITSI",
+                                "product_vendor": "Splunk",
+                                "targets": "6",
+                                "type": "devops"
+                            }
+                        ],
+                        "attrs": {
+                            ".action": {
+                                "text": "update episode"
+                            },
+                            ".background": {
+                                "fill": "#FFFFFF",
+                                "stroke": "#818D99"
+                            },
+                            ".color-band": {
+                                "fill": "#171D21"
+                            },
+                            ".inPorts>.port-in": {
+                                "ref": ".background",
+                                "ref-x": 0.5
+                            },
+                            ".inPorts>.port-in>.port-body": {
+                                "port": {
+                                    "id": "in",
+                                    "type": "in"
+                                }
+                            },
+                            ".message": {
+                                "opacity": 0,
+                                "ref-x": 5,
+                                "ref-y": 105,
+                                "text": "Configuring now"
+                            },
+                            ".outPorts>.port-out": {
+                                "ref": ".background",
+                                "ref-x": 0.5
+                            },
+                            ".outPorts>.port-out>.port-body": {
+                                "port": {
+                                    "id": "out",
+                                    "type": "out"
+                                }
+                            },
+                            ".title": {
+                                "text": "Generic"
+                            },
+                            "g.approver image": {
+                                "opacity": 1
+                            },
+                            "g.code image": {
+                                "opacity": 1
+                            },
+                            "g.delete": {
+                                "display": "none"
+                            },
+                            "g.error": {
+                                "opacity": 0
+                            },
+                            "g.error image": {
+                                "xlink:href": "/inc/coa/img/block_icon_warn.svg"
+                            },
+                            "g.icon image": {
+                                "xlink:href": "/inc/coa/img/block_icon_generic.svg"
+                            },
+                            "g.notes": {
+                                "display": "block"
+                            },
+                            "g.notes image": {
+                                "opacity": 1
+                            },
+                            "g.timer image": {
+                                "opacity": 1
+                            }
+                        },
+                        "block_code": "def update_episode_1(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):\n    phantom.debug('update_episode_1() called')\n        \n    #phantom.debug('Action: {0} {1}'.format(action['name'], ('SUCCEEDED' if success else 'FAILED')))\n    \n    source_data_identifier_value = container.get('source_data_identifier', None)\n\n    # collect data for 'update_episode_1' call\n\n    parameters = []\n    \n    # build parameters list for 'update_episode_1' call\n    parameters.append({\n        'owner': \"admin\",\n        'status': \"In Progress\",\n        'severity': \"Medium\",\n        'itsi_group_id': source_data_identifier_value,\n    })\n\n    phantom.act(action=\"update episode\", parameters=parameters, assets=['splunk itsi'], callback=parse_url_1, name=\"update_episode_1\", parent_action=action)\n\n    return",
+                        "callback_code": "",
+                        "callback_start": 1,
+                        "callsback": true,
+                        "color": "",
+                        "connected_to_start": true,
+                        "connection_name": "create ticket",
+                        "connection_type": "action",
+                        "custom_callback": "",
+                        "custom_code": "",
+                        "custom_join": "",
+                        "custom_name": "",
+                        "delay": 0,
+                        "description": "",
+                        "has_custom": false,
+                        "has_custom_block": false,
+                        "has_custom_callback": false,
+                        "has_custom_join": false,
+                        "id": "fe9cafde-e0ab-4c67-bdf3-8ce9d0c4a7a3",
+                        "inPorts": [
+                            "in"
+                        ],
+                        "join_code": "",
+                        "join_optional": [],
+                        "join_start": 1,
+                        "line_end": 363,
+                        "line_start": 340,
+                        "message": "Configuring now",
+                        "name": "update episode",
+                        "notes": "",
+                        "number": 1,
+                        "order": 20,
+                        "outPorts": [
+                            "out"
+                        ],
+                        "ports": {
+                            "groups": {
+                                "in": {
+                                    "attrs": {
+                                        ".port-body": {
+                                            "fill": "#fff",
+                                            "magnet": true,
+                                            "r": 10,
+                                            "stroke": "#000"
+                                        },
+                                        ".port-label": {
+                                            "fill": "#000"
+                                        }
+                                    },
+                                    "label": {
+                                        "position": {
+                                            "args": {
+                                                "y": 10
+                                            },
+                                            "name": "left"
+                                        }
+                                    },
+                                    "position": {
+                                        "name": "left"
+                                    }
+                                },
+                                "out": {
+                                    "attrs": {
+                                        ".port-body": {
+                                            "fill": "#fff",
+                                            "magnet": true,
+                                            "r": 10,
+                                            "stroke": "#000"
+                                        },
+                                        ".port-label": {
+                                            "fill": "#000"
+                                        }
+                                    },
+                                    "label": {
+                                        "position": {
+                                            "args": {
+                                                "y": 10
+                                            },
+                                            "name": "right"
+                                        }
+                                    },
+                                    "position": {
+                                        "name": "right"
+                                    }
+                                }
+                            }
+                        },
+                        "position": {
+                            "x": 1200,
+                            "y": 100
+                        },
+                        "previous_function": "",
+                        "previous_name": "update_episode_1",
+                        "required_params": {
+                            "itsi_group_id": true
+                        },
+                        "reviewer": "",
+                        "show_number": false,
+                        "size": {
+                            "height": 100,
+                            "width": 180
+                        },
+                        "state": "app_action_assets",
+                        "status": "",
+                        "title": "Generic",
+                        "type": "coa.Action",
+                        "warn": "",
+                        "z": 217
                     }
                 ]
             },
@@ -7016,7 +7017,7 @@
         "schema": 4,
         "version": "4.9.34514"
     },
-    "create_time": "2020-08-23T10:18:57.988307+00:00",
+    "create_time": "2020-11-05T10:47:36.409934+00:00",
     "draft_mode": false,
     "labels": [
         "itsi"

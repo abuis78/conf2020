@@ -350,7 +350,7 @@ def update_episode_1(action=None, success=None, container=None, results=None, ha
     
     # build parameters list for 'update_episode_1' call
     parameters.append({
-        'owner': "",
+        'owner': "admin",
         'status': "In Progress",
         'severity': "Medium",
         'itsi_group_id': source_data_identifier_value,
