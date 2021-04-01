@@ -12,11 +12,11 @@ def on_start(container):
 
     return
 
-def playbook_conf2020_Create_Service_Now_Ticket_1(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):
-    phantom.debug('playbook_conf2020_Create_Service_Now_Ticket_1() called')
+def playbook_conf2020_conf2020_Create_Service_Now_Ticket_1(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):
+    phantom.debug('playbook_conf2020_conf2020_Create_Service_Now_Ticket_1() called')
     
     # call playbook "conf2020/Create Service Now Ticket", returns the playbook_run_id
-    playbook_run_id = phantom.playbook(playbook="conf2020/Create Service Now Ticket", container=container, name="playbook_conf2020_Create_Service_Now_Ticket_1", callback=playbook_conf2020_Collect_entity_information_from_ITSI_1)
+    playbook_run_id = phantom.playbook(playbook="conf2020/Create Service Now Ticket", container=container, name="playbook_conf2020_conf2020_Create_Service_Now_Ticket_1", callback=playbook_conf2020_conf2020_Collect_entity_information_from_ITSI_1)
 
     return
 
@@ -24,15 +24,15 @@ def playbook_conf2020_conf2020_interaction_with_ITSI_notable_Event_1(action=None
     phantom.debug('playbook_conf2020_conf2020_interaction_with_ITSI_notable_Event_1() called')
     
     # call playbook "conf2020/interaction with ITSI notable Event", returns the playbook_run_id
-    playbook_run_id = phantom.playbook(playbook="conf2020/interaction with ITSI notable Event", container=container, name="playbook_conf2020_conf2020_interaction_with_ITSI_notable_Event_1", callback=playbook_conf2020_Create_Service_Now_Ticket_1)
+    playbook_run_id = phantom.playbook(playbook="conf2020/interaction with ITSI notable Event", container=container, name="playbook_conf2020_conf2020_interaction_with_ITSI_notable_Event_1", callback=playbook_conf2020_conf2020_Create_Service_Now_Ticket_1)
 
     return
 
-def playbook_conf2020_Collect_entity_information_from_ITSI_1(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):
-    phantom.debug('playbook_conf2020_Collect_entity_information_from_ITSI_1() called')
+def playbook_conf2020_conf2020_Collect_entity_information_from_ITSI_1(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):
+    phantom.debug('playbook_conf2020_conf2020_Collect_entity_information_from_ITSI_1() called')
     
     # call playbook "conf2020/Collect entity information from ITSI", returns the playbook_run_id
-    playbook_run_id = phantom.playbook(playbook="conf2020/Collect entity information from ITSI", container=container, name="playbook_conf2020_Collect_entity_information_from_ITSI_1", callback=playbook_conf2020_conf2020_Get_Service_information_1)
+    playbook_run_id = phantom.playbook(playbook="conf2020/Collect entity information from ITSI", container=container, name="playbook_conf2020_conf2020_Collect_entity_information_from_ITSI_1", callback=playbook_conf2020_conf2020_Get_Service_information_1)
 
     return
 
@@ -56,7 +56,14 @@ def playbook_conf2020_conf2020_Close_SNOW_Ticket_1(action=None, success=None, co
     phantom.debug('playbook_conf2020_conf2020_Close_SNOW_Ticket_1() called')
     
     # call playbook "conf2020/Close SNOW Ticket", returns the playbook_run_id
-    playbook_run_id = phantom.playbook(playbook="conf2020/Close SNOW Ticket", container=container, name="playbook_conf2020_conf2020_Close_SNOW_Ticket_1")
+    playbook_run_id = phantom.playbook(playbook="conf2020/Close SNOW Ticket", container=container, name="playbook_conf2020_conf2020_Close_SNOW_Ticket_1", callback=set_status_1)
+
+    return
+
+def set_status_1(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):
+    phantom.debug('set_status_1() called')
+
+    phantom.set_status(container=container, status="Closed")
 
     return
 

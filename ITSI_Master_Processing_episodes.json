@@ -7,7 +7,7 @@
             "clean": true,
             "code_block": "",
             "description": "",
-            "hash": "dc65580fedd72a338ee50cfcf12421455aad700c",
+            "hash": "e691f20184d537314e24ad3d8474341fbccff113",
             "joint": {
                 "cells": [
                     {
@@ -217,12 +217,12 @@
                         "join_code": "# read-only block view not available",
                         "join_optional": [],
                         "join_start": 1,
-                        "line_end": 76,
-                        "line_start": 63,
+                        "line_end": 83,
+                        "line_start": 70,
                         "name": "",
                         "notes": "",
                         "number": 0,
-                        "order": 8,
+                        "order": 9,
                         "outPorts": [],
                         "ports": {
                             "groups": {
@@ -277,7 +277,7 @@
                             }
                         },
                         "position": {
-                            "x": 1400,
+                            "x": 1540,
                             "y": -60
                         },
                         "previous_function": "",
@@ -517,7 +517,7 @@
                                 "opacity": 1
                             }
                         },
-                        "block_code": "def playbook_conf2020_conf2020_Close_SNOW_Ticket_1(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):\n    phantom.debug('playbook_conf2020_conf2020_Close_SNOW_Ticket_1() called')\n    \n    # call playbook \"conf2020/Close SNOW Ticket\", returns the playbook_run_id\n    playbook_run_id = phantom.playbook(playbook=\"conf2020/Close SNOW Ticket\", container=container, name=\"playbook_conf2020_conf2020_Close_SNOW_Ticket_1\")\n\n    return",
+                        "block_code": "def playbook_conf2020_conf2020_Close_SNOW_Ticket_1(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):\n    phantom.debug('playbook_conf2020_conf2020_Close_SNOW_Ticket_1() called')\n    \n    # call playbook \"conf2020/Close SNOW Ticket\", returns the playbook_run_id\n    playbook_run_id = phantom.playbook(playbook=\"conf2020/Close SNOW Ticket\", container=container, name=\"playbook_conf2020_conf2020_Close_SNOW_Ticket_1\", callback=set_status_1)\n\n    return",
                         "callback_code": "",
                         "callback_start": 1,
                         "callsback": true,
@@ -907,7 +907,7 @@
                         "callback_start": 1,
                         "callsback": true,
                         "connected_to_start": true,
-                        "connection_name": "Collect entity information from ITSI",
+                        "connection_name": "conf2020/Collect entity information from ITSI",
                         "connection_type": "action",
                         "custom_callback": "",
                         "custom_code": "",
@@ -1047,45 +1047,6 @@
                         "z": 119
                     },
                     {
-                        "attrs": {
-                            ".connection": {
-                                "stroke": "#818D99",
-                                "stroke-width": 2
-                            },
-                            ".marker-target": {
-                                "d": "M 10 0 L 0 5 L 10 10 z",
-                                "fill": "#818D99",
-                                "stroke": "#818D99"
-                            }
-                        },
-                        "connector": {
-                            "args": {
-                                "radius": 5
-                            },
-                            "name": "rounded"
-                        },
-                        "endDirections": [
-                            "left"
-                        ],
-                        "id": "2530aa8b-5ee0-42cb-ab27-c18711e655bb",
-                        "router": {
-                            "name": "metro"
-                        },
-                        "source": {
-                            "id": "83b61408-96b4-4c23-ae8a-97ca26f2e230",
-                            "selector": "> g:nth-child(1) > g:nth-child(2) > g:nth-child(1) > circle:nth-child(1)"
-                        },
-                        "startDirections": [
-                            "right"
-                        ],
-                        "target": {
-                            "id": "b7c1f7f4-56b4-41cf-ac96-38bf70a049c1",
-                            "selector": "> g:nth-child(1) > g:nth-child(1) > g:nth-child(1) > circle:nth-child(1)"
-                        },
-                        "type": "link",
-                        "z": 120
-                    },
-                    {
                         "active": false,
                         "angle": 0,
                         "attrs": {
@@ -1153,7 +1114,7 @@
                                 "opacity": 1
                             }
                         },
-                        "block_code": "def playbook_conf2020_conf2020_interaction_with_ITSI_notable_Event_1(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):\n    phantom.debug('playbook_conf2020_conf2020_interaction_with_ITSI_notable_Event_1() called')\n    \n    # call playbook \"conf2020/interaction with ITSI notable Event\", returns the playbook_run_id\n    playbook_run_id = phantom.playbook(playbook=\"conf2020/interaction with ITSI notable Event\", container=container, name=\"playbook_conf2020_conf2020_interaction_with_ITSI_notable_Event_1\", callback=playbook_conf2020_Create_Service_Now_Ticket_1)\n\n    return",
+                        "block_code": "def playbook_conf2020_conf2020_interaction_with_ITSI_notable_Event_1(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):\n    phantom.debug('playbook_conf2020_conf2020_interaction_with_ITSI_notable_Event_1() called')\n    \n    # call playbook \"conf2020/interaction with ITSI notable Event\", returns the playbook_run_id\n    playbook_run_id = phantom.playbook(playbook=\"conf2020/interaction with ITSI notable Event\", container=container, name=\"playbook_conf2020_conf2020_interaction_with_ITSI_notable_Event_1\", callback=playbook_conf2020_conf2020_Create_Service_Now_Ticket_1)\n\n    return",
                         "callback_code": "",
                         "callback_start": 1,
                         "callsback": true,
@@ -1326,7 +1287,7 @@
                                 "opacity": 1
                             }
                         },
-                        "block_code": "def playbook_conf2020_Create_Service_Now_Ticket_1(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):\n    phantom.debug('playbook_conf2020_Create_Service_Now_Ticket_1() called')\n    \n    # call playbook \"conf2020/Create Service Now Ticket\", returns the playbook_run_id\n    playbook_run_id = phantom.playbook(playbook=\"conf2020/Create Service Now Ticket\", container=container, name=\"playbook_conf2020_Create_Service_Now_Ticket_1\", callback=playbook_conf2020_Collect_entity_information_from_ITSI_1)\n\n    return",
+                        "block_code": "def playbook_conf2020_conf2020_Create_Service_Now_Ticket_1(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):\n    phantom.debug('playbook_conf2020_conf2020_Create_Service_Now_Ticket_1() called')\n    \n    # call playbook \"conf2020/Create Service Now Ticket\", returns the playbook_run_id\n    playbook_run_id = phantom.playbook(playbook=\"conf2020/Create Service Now Ticket\", container=container, name=\"playbook_conf2020_conf2020_Create_Service_Now_Ticket_1\", callback=playbook_conf2020_conf2020_Collect_entity_information_from_ITSI_1)\n\n    return",
                         "callback_code": "",
                         "callback_start": 1,
                         "callsback": true,
@@ -1352,7 +1313,7 @@
                         "line_end": 23,
                         "line_start": 15,
                         "message": "Configuring now",
-                        "name": "Create Service Now Ticket",
+                        "name": "conf2020/Create Service Now Ticket",
                         "notes": "",
                         "number": 1,
                         "order": 2,
@@ -1417,7 +1378,7 @@
                             "y": -220
                         },
                         "previous_function": "",
-                        "previous_name": "playbook_conf2020_conf2020_Add_SNOW_Information_1",
+                        "previous_name": "playbook_conf2020_conf2020_Create_Service_Now_Ticket_1",
                         "scmName": "conf2020",
                         "show_number": false,
                         "size": {
@@ -1499,12 +1460,12 @@
                                 "opacity": 1
                             }
                         },
-                        "block_code": "def playbook_conf2020_Collect_entity_information_from_ITSI_1(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):\n    phantom.debug('playbook_conf2020_Collect_entity_information_from_ITSI_1() called')\n    \n    # call playbook \"conf2020/Collect entity information from ITSI\", returns the playbook_run_id\n    playbook_run_id = phantom.playbook(playbook=\"conf2020/Collect entity information from ITSI\", container=container, name=\"playbook_conf2020_Collect_entity_information_from_ITSI_1\", callback=playbook_conf2020_conf2020_Get_Service_information_1)\n\n    return",
+                        "block_code": "def playbook_conf2020_conf2020_Collect_entity_information_from_ITSI_1(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):\n    phantom.debug('playbook_conf2020_conf2020_Collect_entity_information_from_ITSI_1() called')\n    \n    # call playbook \"conf2020/Collect entity information from ITSI\", returns the playbook_run_id\n    playbook_run_id = phantom.playbook(playbook=\"conf2020/Collect entity information from ITSI\", container=container, name=\"playbook_conf2020_conf2020_Collect_entity_information_from_ITSI_1\", callback=playbook_conf2020_conf2020_Get_Service_information_1)\n\n    return",
                         "callback_code": "",
                         "callback_start": 1,
                         "callsback": true,
                         "connected_to_start": true,
-                        "connection_name": "Create Service Now Ticket",
+                        "connection_name": "conf2020/Create Service Now Ticket",
                         "connection_type": "action",
                         "custom_callback": "",
                         "custom_code": "",
@@ -1525,7 +1486,7 @@
                         "line_end": 39,
                         "line_start": 31,
                         "message": "Configuring now",
-                        "name": "Collect entity information from ITSI",
+                        "name": "conf2020/Collect entity information from ITSI",
                         "notes": "",
                         "number": 1,
                         "order": 4,
@@ -1590,7 +1551,7 @@
                             "y": -220
                         },
                         "previous_function": "",
-                        "previous_name": "playbook_conf2020_conf2020_Add_entity_information_1",
+                        "previous_name": "playbook_conf2020_conf2020_Collect_entity_information_from_ITSI_1",
                         "scmName": "conf2020",
                         "show_number": false,
                         "size": {
@@ -1603,6 +1564,249 @@
                         "type": "coa.CallPlaybook",
                         "warn": false,
                         "z": 123
+                    },
+                    {
+                        "attrs": {
+                            ".connection": {
+                                "stroke": "#818D99",
+                                "stroke-width": 2
+                            },
+                            ".marker-target": {
+                                "d": "M 10 0 L 0 5 L 10 10 z",
+                                "fill": "#818D99",
+                                "stroke": "#818D99"
+                            }
+                        },
+                        "connector": {
+                            "args": {
+                                "radius": 5
+                            },
+                            "name": "rounded"
+                        },
+                        "endDirections": [
+                            "left"
+                        ],
+                        "id": "ad27aa88-203c-4a97-9b1d-1e10a008dac9",
+                        "router": {
+                            "name": "metro"
+                        },
+                        "source": {
+                            "id": "83b61408-96b4-4c23-ae8a-97ca26f2e230",
+                            "selector": "> g:nth-child(1) > g:nth-child(2) > g:nth-child(1) > circle:nth-child(1)"
+                        },
+                        "startDirections": [
+                            "right"
+                        ],
+                        "target": {
+                            "id": "bbfb0993-bd98-45ca-924f-de845a0fad46",
+                            "selector": ".port-body[type=\"input\"]"
+                        },
+                        "type": "link",
+                        "z": 124
+                    },
+                    {
+                        "active": false,
+                        "angle": 0,
+                        "api": "set status",
+                        "attrs": {
+                            ".api": {
+                                "text": "set status"
+                            },
+                            ".background": {
+                                "fill": "#FFFFFF",
+                                "stroke": "#818D99"
+                            },
+                            ".color-band": {
+                                "fill": "#171D21"
+                            },
+                            ".inPorts>.port-in": {
+                                "ref": ".background",
+                                "ref-x": 0.5
+                            },
+                            ".inPorts>.port-in>.port-body": {
+                                "port": {
+                                    "id": "in",
+                                    "type": "in"
+                                }
+                            },
+                            ".message": {
+                                "opacity": 0,
+                                "ref-x": 5,
+                                "ref-y": 105,
+                                "text": "Configuring now"
+                            },
+                            ".outPorts>.port-out": {
+                                "ref": ".background",
+                                "ref-x": 0.5
+                            },
+                            ".outPorts>.port-out>.port-body": {
+                                "port": {
+                                    "id": "out",
+                                    "type": "out"
+                                }
+                            },
+                            ".title": {
+                                "text": "API"
+                            },
+                            "g.delete": {
+                                "display": "none"
+                            },
+                            "g.error": {
+                                "opacity": 0
+                            },
+                            "g.notes": {
+                                "display": "block"
+                            }
+                        },
+                        "block_code": "def set_status_1(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):\n    phantom.debug('set_status_1() called')\n\n    phantom.set_status(container=container, status=\"Closed\")\n\n    return",
+                        "callback_code": "",
+                        "callback_start": 1,
+                        "callsback": false,
+                        "color": "",
+                        "configured": [
+                            {
+                                "key": "set-status",
+                                "setStatusStatus": "Closed",
+                                "setStatusStatus_display": "Closed"
+                            }
+                        ],
+                        "connected_to_start": true,
+                        "connection_name": "conf2020/Close SNOW Ticket",
+                        "connection_type": "action",
+                        "custom_callback": "",
+                        "custom_code": "",
+                        "custom_join": "",
+                        "custom_name": "",
+                        "description": "",
+                        "has_custom": false,
+                        "has_custom_block": false,
+                        "has_custom_callback": false,
+                        "has_custom_join": false,
+                        "id": "bbfb0993-bd98-45ca-924f-de845a0fad46",
+                        "inPorts": [
+                            "in"
+                        ],
+                        "join_code": "",
+                        "join_optional": [],
+                        "join_start": 1,
+                        "line_end": 70,
+                        "line_start": 63,
+                        "message": "Configuring now",
+                        "name": "set status",
+                        "notes": "",
+                        "number": 1,
+                        "order": 8,
+                        "outPorts": [
+                            "out"
+                        ],
+                        "ports": {
+                            "groups": {
+                                "in": {
+                                    "attrs": {
+                                        ".port-body": {
+                                            "fill": "#fff",
+                                            "magnet": true,
+                                            "r": 10,
+                                            "stroke": "#000"
+                                        },
+                                        ".port-label": {
+                                            "fill": "#000"
+                                        }
+                                    },
+                                    "label": {
+                                        "position": {
+                                            "args": {
+                                                "y": 10
+                                            },
+                                            "name": "left"
+                                        }
+                                    },
+                                    "position": {
+                                        "name": "left"
+                                    }
+                                },
+                                "out": {
+                                    "attrs": {
+                                        ".port-body": {
+                                            "fill": "#fff",
+                                            "magnet": true,
+                                            "r": 10,
+                                            "stroke": "#000"
+                                        },
+                                        ".port-label": {
+                                            "fill": "#000"
+                                        }
+                                    },
+                                    "label": {
+                                        "position": {
+                                            "args": {
+                                                "y": 10
+                                            },
+                                            "name": "right"
+                                        }
+                                    },
+                                    "position": {
+                                        "name": "right"
+                                    }
+                                }
+                            }
+                        },
+                        "position": {
+                            "x": 1280,
+                            "y": -80
+                        },
+                        "previous_function": "",
+                        "previous_name": "set_status_1",
+                        "show_number": false,
+                        "size": {
+                            "height": 100,
+                            "width": 180
+                        },
+                        "state": "api",
+                        "status": "",
+                        "title": "API",
+                        "type": "coa.API",
+                        "warn": false,
+                        "z": 126
+                    },
+                    {
+                        "attrs": {
+                            ".connection": {
+                                "stroke": "#818D99",
+                                "stroke-width": 2
+                            },
+                            ".marker-target": {
+                                "d": "M 10 0 L 0 5 L 10 10 z",
+                                "fill": "#818D99",
+                                "stroke": "#818D99"
+                            }
+                        },
+                        "connector": {
+                            "args": {
+                                "radius": 5
+                            },
+                            "name": "rounded"
+                        },
+                        "endDirections": [
+                            "left"
+                        ],
+                        "id": "783eaee1-b50d-481e-9cf7-3a77f0a053ce",
+                        "router": {
+                            "name": "metro"
+                        },
+                        "source": {
+                            "id": "bbfb0993-bd98-45ca-924f-de845a0fad46",
+                            "selector": "> g:nth-child(1) > g:nth-child(2) > g:nth-child(1) > circle:nth-child(1)"
+                        },
+                        "startDirections": [
+                            "right"
+                        ],
+                        "target": {
+                            "id": "b7c1f7f4-56b4-41cf-ac96-38bf70a049c1",
+                            "selector": "> g:nth-child(1) > g:nth-child(1) > g:nth-child(1) > circle:nth-child(1)"
+                        },
+                        "type": "link",
+                        "z": 127
                     }
                 ]
             },
@@ -1612,7 +1816,7 @@
         "schema": 4,
         "version": "4.9.34514"
     },
-    "create_time": "2020-08-24T11:12:47.386105+00:00",
+    "create_time": "2021-04-01T14:46:17.584740+00:00",
     "draft_mode": false,
     "labels": [
         "itsi"
